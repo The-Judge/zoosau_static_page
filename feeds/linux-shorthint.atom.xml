@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Linux, Shorthint</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/linux-shorthint.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2013-10-07T07:43:00+02:00</updated><entry><title>Quickhint: Could not chdir to /var/spool/fcron: Permission denied</title><link href="https://www.zoosau.de/quickhint-could-not-chdir-to-varspoolfcron-permission-denied.html" rel="alternate"></link><published>2013-10-07T07:43:00+02:00</published><updated>2013-10-07T07:43:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2013-10-07:/quickhint-could-not-chdir-to-varspoolfcron-permission-denied.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Could not chdir to /var/spool/fcron: Permission denied
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This message I got after a system-update on my Raspberry Pi running
+ArchLinux everytime, I tried to edit my root-crontab using:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#&amp;gt; fcrontab -e
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The solution is very simple: Even when you are root, you have to be a
+member of the …&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Could not chdir to /var/spool/fcron: Permission denied
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This message I got after a system-update on my Raspberry Pi running
+ArchLinux everytime, I tried to edit my root-crontab using:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#&amp;gt; fcrontab -e
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The solution is very simple: Even when you are root, you have to be a
+member of the fcron group. After adding a user to this group, editing
+the crontabs works again. Do not forget to logout and re-login prior to
+editing the crontabs! ;)&lt;/p&gt;</content><category term="cron"></category><category term="crontab"></category><category term="fcron"></category><category term="fcrontab"></category><category term="permission denied"></category><category term="shorhint"></category></entry></feed>

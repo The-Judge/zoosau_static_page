@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Linux, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/linux-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2013-02-15T21:46:00+01:00</updated><entry><title>GNU Screen und der Scrollback Buffer</title><link href="https://www.zoosau.de/gnu-screen-und-der-scrollback-buffer.html" rel="alternate"></link><published>2013-02-15T21:46:00+01:00</published><updated>2013-02-15T21:46:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2013-02-15:/gnu-screen-und-der-scrollback-buffer.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.gnu.org/software/screen/" title="Homepage GNU Screen"&gt;GNU Screen&lt;/a&gt;
+ist ein Terminal Multiplexer, welcher einem über in der Manpage
+dokumentierte Tastenkombinationen die komfortable Steuerung mehrerer
+Terminal-Sitzungen über nur eine "echte" Konsole ermöglicht. Dieses kann
+man sich vorstellen wie "Tabs", welche man heutzutage von allen Internet
+Browsern her kennt. Ein weiterer Vorteil ist, das man so einen Container …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.gnu.org/software/screen/" title="Homepage GNU Screen"&gt;GNU Screen&lt;/a&gt;
+ist ein Terminal Multiplexer, welcher einem über in der Manpage
+dokumentierte Tastenkombinationen die komfortable Steuerung mehrerer
+Terminal-Sitzungen über nur eine "echte" Konsole ermöglicht. Dieses kann
+man sich vorstellen wie "Tabs", welche man heutzutage von allen Internet
+Browsern her kennt. Ein weiterer Vorteil ist, das man so einen Container
+einfach mitsamt den darin laufenden Sitzungen in den Hintergrund
+schicken kann und die darin enthaltenen Sitzungen weiterhin ausgeführt
+werden. Dieses gilt auch für "unfreiwilliges" schließen der Verbindung;
+beispielsweise wenn die Internetverbindung abbricht, der Computer
+abstürzt, etc.&lt;/p&gt;
+&lt;p&gt;Ich suche mir jedes Mal die folgende Information neu aus dem Internet
+heraus, daher notiere ich sie mir einmal, leicht auffindbar, hier.&lt;/p&gt;
+&lt;p&gt;Man kann in Screen auch in jeder einzelnen Sitzung scrollen. Jedoch sind
+die Zeilen, die Screen dabei speichert, von Haus aus auf recht wenige
+eingestellt: 100 Zeilen; das ist, bei heutigen Auflösungen der meisten
+Konsolen, gerade mal etwas mehr als ein Bildschirm. Für mich ist das
+viel zu wenig! Daher erhöhe ich das meistens per Default auf 5000. Das
+kann, je nach Einsatzgebiet auch zu viel sein; wenn jemand nun 200
+Konsolen darin startet und in jeder ein Logfile mit "tail -f"
+durchlaufen lässt, kann hierbei schonmal recht viel Arbeitsspeicher für
+belegt werden. Daher: Bitte diese Einstellung nicht ungeprüft
+übernehmen.&lt;/p&gt;
+&lt;p&gt;Es gibt zwei Konfigurationsdateien für &lt;a href="http://www.gnu.org/software/screen/" title="Homepage von GNU Screen"&gt;GNU
+Screen&lt;/a&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span style="line-height: 13px;"&gt;Globale Konfigurationsdatei
+    : &lt;em&gt;/etc/screenrc&lt;/em&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Userbezogene Konfigurationsdatei : &lt;em&gt;\~/.screenrc&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Beide verwenden soweit dieselbe Syntax; Details sind der Manpage zu
+Screen zu entnehmen.&lt;/p&gt;
+&lt;p&gt;Nun aber zum Kern des Artikels:&lt;/p&gt;
+&lt;p&gt;Man füge folgende Einstellung hinzu:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defscrollback 5000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Fertig :)&lt;/p&gt;</content><category term="buffer"></category><category term="gnu"></category><category term="Linux"></category><category term="screen"></category><category term="scrollback"></category></entry><entry><title>Konvertieren von SVN, CVS oder Git Repositories zu Mercurial</title><link href="https://www.zoosau.de/konvertieren-von-svn-cvs-oder-git-repositories-zu-mercurial.html" rel="alternate"></link><published>2011-05-29T23:31:00+02:00</published><updated>2011-05-29T23:31:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-05-29:/konvertieren-von-svn-cvs-oder-git-repositories-zu-mercurial.html</id><summary type="html">&lt;p&gt;Diese Mini-Anleitung ist nur etwas für Leute, denen die Überschrift
+etwas sagt. Für alle anderen: Geduldet Euch; ich werde in nächster Zeit
+voraussichtlich einen umfassenderen Artikel zu Mercurial und
+(D)&lt;a href="http://de.wikipedia.org/wiki/Versionsverwaltung" title="Wikiartikel zu Versionskontrolle"&gt;VCS&lt;/a&gt;
+im allgemeinen verfassen.&lt;/p&gt;
+&lt;p&gt;Also, zunächst einmal: Mercurial bringt bereits ein Kommando mit, um von
+einem SVN (Subversion), CVS oder …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Diese Mini-Anleitung ist nur etwas für Leute, denen die Überschrift
+etwas sagt. Für alle anderen: Geduldet Euch; ich werde in nächster Zeit
+voraussichtlich einen umfassenderen Artikel zu Mercurial und
+(D)&lt;a href="http://de.wikipedia.org/wiki/Versionsverwaltung" title="Wikiartikel zu Versionskontrolle"&gt;VCS&lt;/a&gt;
+im allgemeinen verfassen.&lt;/p&gt;
+&lt;p&gt;Also, zunächst einmal: Mercurial bringt bereits ein Kommando mit, um von
+einem SVN (Subversion), CVS oder Git Repository alle Daten, inklusive
+der kompletten Historie, in ein Mercurial Repository konvertieren zu
+können. Der Befehl heißt schlicht "convert", ist jedoch standardmäßig
+deaktiviert und steht als Extension zur Verfügung. BTW: Eine Übersicht
+über (de-)aktivierte Extensions bekommt ihr, wenn Ihr einfach folgende
+Hilfe aufruft:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hg help extensions&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In dieser Ausgabe wird an sich das folgende auch bereits erklärt. Zudem
+ist hier die Zeile zu "&lt;em&gt;convert&lt;/em&gt;" interessant:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;convert  Importiert Änderungssätze von anderen
+Versionsverwaltungssystemen nach Mercurial&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Genau was wir wollen also!&lt;br&gt;
+Man aktiviert diese Extension, indem man in "seiner" (\~/.hgrc) oder der
+globalen Mercurial Konfigurationsdatei folgende Zeilen einträgt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[extensions]&lt;br&gt;
+convert =&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kein Fehler: Da kommt in der Tat nichts hinter das "=".&lt;/p&gt;
+&lt;p&gt;Nun kann man beliebig viele Repositories ganz einfach konvertieren,
+indem man die HTTP-URL eingibt, oder das lokale Quell- und
+Zielverzeichnis. Letzteres folgt als Beispiel:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;#&amp;gt; hg convert
+python_spielwiese ../../hg/repos/python_spielwiese&lt;br&gt;
+Initialisiere Ziel-Projektarchiv ../../hg/repos/python_spielwiese&lt;br&gt;
+Durchsuche Quelle...&lt;br&gt;
+Sortiere...&lt;br&gt;
+Konvertiere...&lt;br&gt;
+1 Initial Import&lt;br&gt;
+0 Initial PyDev Checkout&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Wie man sieht, übernimmt das Programm die komplette commit-History; in
+diesem Fall nur 2.&lt;br&gt;
+Easy Peasy :)&lt;/p&gt;</content><category term="convert"></category><category term="cvs"></category><category term="git"></category><category term="hg"></category><category term="konvertieren"></category><category term="mercurial"></category><category term="python"></category><category term="subversion"></category></entry><entry><title>Der langweiligeste Ort im Universum und Multithreaded bzip2/gzip</title><link href="https://www.zoosau.de/der-langweiligeste-ort-im-universum.html" rel="alternate"></link><published>2011-02-11T13:32:00+01:00</published><updated>2011-02-11T13:32:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-11:/der-langweiligeste-ort-im-universum.html</id><summary type="html">&lt;p&gt;So wurde mein Blog letztens von einem guten Kumpel bezeichnet - und
+recht hat der Sack auch noch ;)&lt;br&gt;
+Ich gelobe (wie immer ;D ) Besserung und fange mal mit einem technischen
+Artikel an. Diese kommen hier in letzter Zeit viel zu kurz und ich neige
+immer mehr dazu, alles im Kopf haben …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So wurde mein Blog letztens von einem guten Kumpel bezeichnet - und
+recht hat der Sack auch noch ;)&lt;br&gt;
+Ich gelobe (wie immer ;D ) Besserung und fange mal mit einem technischen
+Artikel an. Diese kommen hier in letzter Zeit viel zu kurz und ich neige
+immer mehr dazu, alles im Kopf haben zu wollen, da ich mir die Zeit zum
+aufschreiben einfach nicht nehme. Stattdessen landet hier nur so ein
+privat-Blödsinn ... Ich erkläre hiermit das Ziel, diesem Blog wieder
+einen Schwerpunkt auf die IT und technische Hintergründe zu legen - bin
+selbst gespannt ... ;)&lt;/p&gt;
+&lt;p&gt;Beginnen möchte ich mit einem super geilen Tipp.&lt;/p&gt;
+&lt;p&gt;Ich verwende, wie wohl die meisten Linuxer auf der Welt auch, seit Jahr
+und Tag GNU bzip2 und GNU gzip zur Kompression von Daten auf der Shell.
+Was mir jedoch heute das erste Mal aufgefallen ist, ist das diese beiden
+Programme nur einen einzigen Core aktueller Multi-Core CPUs zu 100%
+auslasten, und die restlichen brach liegen. Gerade bei der Kompression
+von Daten dreht sich alles um die Leistungsfähigkeit des Prozessors -
+eine der wenigen Ausnahmen in meinem Arbeitsalltag, wo die Festplatten
+mal nicht der Flaschenhals sind. Von daher ist diese Verschwendung in
+der heutigen Okta-Core - Zeit schon ziemlich maßgeblich für manche
+Vorgänge, wie z.B. beim (De-)Komprimieren von MySQL Dumps, ISO Images
+von DVDs, Logfilerotation, etc.&lt;/p&gt;
+&lt;p&gt;Ich habe also etwas recherchiert und bin zunächst auf
+&lt;a href="http://compression.ca/pbzip2/" title="Homepage von pbzip2"&gt;pbzip2&lt;/a&gt; gestoßen;
+einem Re-Write des GNU bzip2 Programmes, welches Multicores
+unterstützt.&lt;br&gt;
+Hiermit hatte ich aber zunächst nur eine Lösung für bzip2, also suchte
+ich weiter.&lt;/p&gt;
+&lt;p&gt;Schließlich stieß ich auf einen guten, alten Bekannten, den in seiner
+GUI - Form sicherlich auch Nicht-Linuxer kennen:
+&lt;a href="http://www.7-zip.org/" title="Homepage von 7-zip"&gt;7zip&lt;/a&gt; ! Kurzbeschreibung:
+7zip ist ein freies Programm (&lt;a href="http://www.gnu.org/copyleft/lesser.html" title="GNU LGPL"&gt;GNU
+LGPL&lt;/a&gt;) für nahezu
+alle gängigen Betriebssysteme, welches sowohl nahezu alle gängigen
+Archivformate und Kompressionsalgorithmen beherrscht, sowie auch ein
+eigenes Format mitsamt Algorithmus mit sich bringt, welches in vielen
+Situationen sogar eine höhere Kompressionsrate erreicht als bzip2
+(durchschnittlich etwa 50-70% höher als ZIP!).&lt;br&gt;
+Dieses beherrscht nicht nur die Archivformate 7z, zip, gzip, bzip2, tar
+und rar (beim reinen entpacken unterstützt es zudem sogar noch: ARJ,
+CAB, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, MBR, MSI,
+NSIS, NTFS, RAR, RPM, SquashFS, UDF, VHD, WIM, XAR und Z) , sondern auch
+Multi-Threading und ist somit die perfekte Lösung für Multicores. Es
+liegt beispielsweise im Ubuntu Lucid Lynx (10.04) Repository unter den
+Namen "p7zip", "p7zip-full" und "p7zip-rar" vor und kann somit ganz
+normal und einfach installiert werden.&lt;/p&gt;
+&lt;p&gt;Ich habe damit heute mal einen schnellen Test gemacht. Diese zahlen
+stammen von einem Quad-Core System, auf welchem neben diesen Tests auch
+meine ganz normale Arbeitsumgebung ausgeführt wird, also bitte dizzed
+mich nicht wegen "lamer"Ergebnisse ;)&lt;/p&gt;
+&lt;h2&gt;Testbeschreibung&lt;/h2&gt;
+&lt;p&gt;Ich habe das ISO Image kubuntu-9.10-alternate-i386.iso von einem Kubuntu
+- Mirror herunter geladen. Dieses werde ich mit dem bzip2 Algorithmus
+zunächst mit GNU bzip2 und 7zip auf höchster Kompressionsstufe (9)
+komprimieren. Diesen Prozess messe ich mit dem Linux-Tool "time".
+Anschließend entpacke ich beide Varianten mit GNU bzip2 und erzeuge für
+die Ergebnisse einen MD5 Hash, um die Kompatibilität mit der
+Refferenzimplementation sicher zu stellen.&lt;/p&gt;
+&lt;h2&gt;Test mit GNU bzip2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@archangel:~# time bzip2 ~mr/Downloads/ISO_Images/kubuntu-9.10-alternate-i386.iso -c -9 &amp;gt; bzip2.bz2
+
+real    2m41.266s
+user    2m29.250s
+sys     0m1.400s
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;h2&gt;Test mit 7zip&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@archangel:~# time 7z a -tbzip2 -o. bzip2_7z.bz2 ~mr/Downloads/ISO_Images/kubuntu-9.10-alternate-i386.iso
+
+7-Zip 9.04 beta  Copyright (c) 1999-2009 Igor Pavlov  2009-05-30
+p7zip Version 9.04 (locale=de_DE.UTF-8,Utf16=on,HugeFiles=on,4 CPUs)
+Scanning
+
+Creating archive bzip2_7z.bz2
+
+Compressing  kubuntu-9.10-alternate-i386.iso
+
+Everything is Ok
+
+real    1m17.121s
+user    4m6.090s
+sys     0m1.420s
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;h2&gt;Auswertung&lt;/h2&gt;
+&lt;p&gt;Ich habe dabei mit "htop -d 1" die CPU Auslastung beobachtet: Bei GNU
+bzip2 wurde erwartungsgemäß nur einer der 4 Cores zu 100% ausgelastet.
+Mit 7zip tatsächlich alle 4!&lt;/p&gt;
+&lt;p&gt;Das Ergebnis dieser Kompressionen war nahezu identisch. Nur ca 2 kb (bei
+einer Eingangsgröße von rund 700 MB) Abweichung war feststellbar, was
+ich für vernachlässigbar halte. Die MD5 Sums der mit GNU bzip2
+entpackten Archive war identisch; die GNU bzip2 Kompatibilität des durch
+7zip erzeugten Archives ist also gegeben.&lt;/p&gt;
+&lt;p&gt;Wie die obigen Zahlen zeigen, war 7zip ziemlich genau doppelt so
+schnell, wie die GNU bzip2 Refferenzimplementation. Ich hätte zwar mehr
+erwartet, jedoch wird ziemlich viel für die Threadverwaltung aufgewendet
+werden müsen.&lt;/p&gt;
+&lt;p&gt;Dasselbe lässt sich nun natürlich auch mit GNU gzip erreichen - Zahlen
+spare ich mir mal. Das kann jeder selbst mal messen :)&lt;/p&gt;</content><category term="7zip"></category><category term="bzip2"></category><category term="gzip"></category><category term="mehrere cores"></category><category term="mehrere cpu"></category><category term="mehrere kerne"></category><category term="mehrere prozessoren"></category><category term="multithread"></category></entry><entry><title>Postgres Datenbankbackups per Script erstellen</title><link href="https://www.zoosau.de/postgres-datenbankbackups-per-script-erstellen.html" rel="alternate"></link><published>2009-11-16T00:40:00+01:00</published><updated>2009-11-16T00:40:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-16:/postgres-datenbankbackups-per-script-erstellen.html</id><summary type="html">&lt;p&gt;Ich habe damals, als ich noch 0 Ahnung von Datenbanken hatte, mit
+&lt;a href="http://www.postgresql.org/" title="Homepage von PostgreSQL"&gt;PostgreSQL&lt;/a&gt;
+angefangen. Ich dachte in der Tat, das
+&lt;a href="http://www.mysql.com/" title="Homepage von MySQL"&gt;MySQL&lt;/a&gt; ja eine kommerzielle
+Anwendung ist und es ja daher jederzeit vorbei sein kann mit der freien
+Verfügbarkeit. Da ich eh keine Ahnung hatte, und PostgreSQL im Community
+- Mund sehr …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe damals, als ich noch 0 Ahnung von Datenbanken hatte, mit
+&lt;a href="http://www.postgresql.org/" title="Homepage von PostgreSQL"&gt;PostgreSQL&lt;/a&gt;
+angefangen. Ich dachte in der Tat, das
+&lt;a href="http://www.mysql.com/" title="Homepage von MySQL"&gt;MySQL&lt;/a&gt; ja eine kommerzielle
+Anwendung ist und es ja daher jederzeit vorbei sein kann mit der freien
+Verfügbarkeit. Da ich eh keine Ahnung hatte, und PostgreSQL im Community
+- Mund sehr viel mehr können sollte als MySQL, hatte ich mich dafür
+entschieden.&lt;/p&gt;
+&lt;p&gt;Inzwischen kenne ich mich wenigstens etwas mit MySQL und dessen
+Administration aus und habe das zu meiner Standard-Datenbank gemacht.
+Von PostgreSQL komme ich wegen eines
+&lt;a href="http://www.phpbb.com/" title="Homepage des phpBB2 Projektes"&gt;phpBB2&lt;/a&gt; - Forums
+aber nicht mehr los - also habe ich mich auf die Suche nach einer
+Möglickeit gemacht, auch PostgreSQL Datenbanken automatisiert per Script
+Backupen zu können. Standardmäßig hat das Kommandozeilenprogramm
+"pg_dump" keinen Parameter für das Passwort wie "mysql" und
+"mysqldump".&lt;/p&gt;
+&lt;p&gt;Es gibt dennoch einen ähnlich unsicheren Trick, wie man das ganze auf
+der Shell automatisieren kann: Die Umgebungsvariablen "PGUSER" und
+"PGPASSWORD". Über die beiden folgenden Methoden kann damit die
+Authentifikation an der Postgres Datenbank durchgeführt werden:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;export PGUSER="postgres_user"&lt;br&gt;
+export PGPASSWORD="Passwort"&lt;br&gt;
+pg_dump -f /DB.pgsqldump -F c -C -D -h localhost DB&lt;/p&gt;
+&lt;p&gt;oder alles in einer Zeile:&lt;/p&gt;
+&lt;p&gt;PGUSER="postgres_user" PGPASSWORD="Passwort" pg_dump -f
+/DB.pgsqldump -F c -C -D -h localhost DB&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich denke ich muss nicht erwähnen das dieses sehr unsicher ist. Während
+die Variablen gesetzt sind kann sie theoretisch fast jeder auf dem
+System auslesen. Daher sollte als Mindestsicherheitsmaßnahme unmittelbar
+nach dem dumpen der Inhalt der Variablen durch "unset PGUSER ; unset
+PGPASSWORD" wieder gelöscht werden. Aber es ist immerhin eine Möglickeit
+:)&lt;/p&gt;</content><category term="backup"></category><category term="kommandozeile"></category><category term="phpbb2"></category><category term="postgres"></category><category term="postgresql"></category><category term="script"></category></entry><entry><title>Wenn der couriertcpd "malloc: Input/output error" meldet</title><link href="https://www.zoosau.de/wenn-der-couriertcpd-malloc-input-output-error-meldet.html" rel="alternate"></link><published>2009-07-19T11:06:00+02:00</published><updated>2009-07-19T11:06:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-07-19:/wenn-der-couriertcpd-malloc-input-output-error-meldet.html</id><summary type="html">&lt;p&gt;Hab heute mal wieder eines dieser zunächst unerklärlichen Probleme
+gehabt:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Der courier-authdaemond und der courier-imapd laufen seit JAHREN
+    unverändert problemfrei.&lt;/li&gt;
+&lt;li&gt;Ich habe nichts geändert.&lt;/li&gt;
+&lt;li&gt;Trotzdem bekomme ich im mail.info - Log diese Zeile:&lt;br&gt;
+   "couriertcpd: malloc: Input/output error"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich habe die Configs überprüft, Rechte im Dateisystem, alles. Nichts
+gefunden.&lt;/p&gt;
+&lt;p&gt;Schließlich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hab heute mal wieder eines dieser zunächst unerklärlichen Probleme
+gehabt:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Der courier-authdaemond und der courier-imapd laufen seit JAHREN
+    unverändert problemfrei.&lt;/li&gt;
+&lt;li&gt;Ich habe nichts geändert.&lt;/li&gt;
+&lt;li&gt;Trotzdem bekomme ich im mail.info - Log diese Zeile:&lt;br&gt;
+   "couriertcpd: malloc: Input/output error"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich habe die Configs überprüft, Rechte im Dateisystem, alles. Nichts
+gefunden.&lt;/p&gt;
+&lt;p&gt;Schließlich bin ich im &lt;a href="http://www.mailinglistarchive.com/courier-users@lists.sourceforge.net/msg02645.html" title="courier-users Mailinglistenarchiv"&gt;Archiv der courier-users
+Mailingliste&lt;/a&gt;
+auf die
+&lt;a href="http://www.mailinglistarchive.com/courier-users@lists.sourceforge.net/msg02645.html" title="courier-users Mailinglistenarchiv"&gt;Lösung&lt;/a&gt;
+gestoßen:&lt;br&gt;
+Der Courier IMAPd arbeitet Standardmäßig mit dem FAM (File Alteration
+Monitor) zusammen. Scheinbar kommt der hin und wieder mal ins Straucheln
+und sollte in diesem Fall, zusammen mit dem portmap Daemon, neu
+gestartet werden.&lt;/p&gt;
+&lt;p&gt;Jean-Marc Liotier, der diesen Fehler auf der Mailingliste gepostet
+hatte, und auch mein Problem ließen sich jedenfalls so beheben.&lt;/p&gt;
+&lt;p&gt;Schon fies der Fehler, da im Log ja nur der couriertcpd auftaucht,
+woraufhin man ja zunächst mal geneigt ist hier nach dem Fehler zu suchen
+...&lt;/p&gt;</content><category term="courier"></category><category term="couriertcpd"></category><category term="error"></category><category term="input"></category><category term="Linux"></category><category term="malloc"></category><category term="malloc: Input/output error"></category><category term="output"></category></entry><entry><title>"Installed (but unpackaged) file(s) found" bei RPM Systemen</title><link href="https://www.zoosau.de/installed-but-unpackaged-files-found-bei-rpm-systemen.html" rel="alternate"></link><published>2008-09-04T12:26:00+02:00</published><updated>2008-09-04T12:26:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-09-04:/installed-but-unpackaged-files-found-bei-rpm-systemen.html</id><summary type="html">&lt;p&gt;Und wieder etwas gelernt:&lt;/p&gt;
+&lt;p&gt;Ich habe versucht ein Source RPM auf einem unserer Server zu
+installieren. Dieses scheiterte mit folgender Meldung:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;error: Installed (but unpackaged) file(s) found:&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb-3.1.la&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb_cxx-3.1.la&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;RPM build errors:&lt;br&gt;
+Installed (but unpackaged …&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Und wieder etwas gelernt:&lt;/p&gt;
+&lt;p&gt;Ich habe versucht ein Source RPM auf einem unserer Server zu
+installieren. Dieses scheiterte mit folgender Meldung:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;error: Installed (but unpackaged) file(s) found:&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb-3.1.la&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb_cxx-3.1.la&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;RPM build errors:&lt;br&gt;
+Installed (but unpackaged) file(s) found:&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb-3.1.la&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb_cxx-3.1.la&lt;br&gt;
+&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Inzwischen habe ich herausgefunden, das dieses ein
+Sicherheitsmechanismus ist, damit Dateien, die in einem Verzeichnis
+liegen, in die Dateien gleichen Namens aus dem RPM Paket installiert
+werden würden, nicht überschrieben werden.&lt;br&gt;
+Normalerweise lassen sich bei der Installation eines RPM Paketes Dateien
+ja zuvor installierten Paketen zuordnen. Installiert man jedoch nun
+etwas per Hand aus dem Sourcecode, ist es dem RPM System ja nicht
+möglich, diese Dateien einem Programm zuzuordnen. Daher bricht es lieber
+ab.&lt;/p&gt;
+&lt;p&gt;Hat man nun festgestellt, das die angemerkten Dateien überschrieben
+werden können, fügt man den kompletten Pfad mit den Dateinamen der
+&lt;em&gt;Programmname.spec&lt;/em&gt; - Datei hinzu.&lt;br&gt;
+.spec Dateien sind eine Art Bauanleitung, um Sourcecode zu RPM Paketen
+zu verpacken.&lt;br&gt;
+Nachdem die Installation bereits einmal mit der obigen Fehlermeldung
+fehlgeschlagen ist, befindet sich unter &lt;strong&gt;/usr/src/packages/&lt;/strong&gt; das
+entpackte RPM Paket. Unter &lt;strong&gt;SPEC&lt;/strong&gt; steht die .spec Datei, unter
+&lt;strong&gt;BUILD&lt;/strong&gt; die Sourcen, etc.&lt;/p&gt;
+&lt;p&gt;Beim obigen Beispiel editieren wir also die Datei
+&lt;strong&gt;&lt;em&gt;/usr/src/packages/SPECS/db3-cxx.spec&lt;/em&gt;&lt;/strong&gt; .&lt;br&gt;
+Hier suchen wir nach einem Abschnitt, der &lt;strong&gt;%files&lt;/strong&gt; heisst. Darunter
+fügen wir die angemeckerten Dateien ein, also:&lt;/p&gt;
+&lt;p&gt;Vorher:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;%files&lt;br&gt;
+%defattr(-,root,root)&lt;br&gt;
+%{_bindir}/*&lt;br&gt;
+%{_libdir}/*.so&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nachher:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;%files&lt;br&gt;
+%defattr(-,root,root)&lt;br&gt;
+%{_bindir}/*&lt;br&gt;
+%{_libdir}/*.so&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb-3.1.la&lt;br&gt;
+/usr/BerkeleyDB/3.1/lib/libdb_cxx-3.1.la&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nun können wir das ganze nicht einfach erneut über das Source-RPM
+installieren, da unsere Änderungen sonst direkt wieder überschrieben
+würden.&lt;br&gt;
+Stattdessen wechseln wir in das Verzeichnis /usr/src/packages und führen
+folgenden Befehl aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;rpmbuild -ba SPECS/db3-cxx.spec&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="achtung" style="text-align: justify;"&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;bei manchen RPM basierenden Distributionen/-versionen gibt es das
+rpmbuild Programm nicht. Früher wurde der obige Befehl über rpm
+aufgerufen. Probiert in diesem Fall also:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;rpm -ba&lt;/strong&gt; &lt;strong&gt;SPECS/db3-cxx.spec&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hierdurch wird das RPM Binär- und Quellpaket neu gebaut.&lt;br&gt;
+Diese Pakete liegen dann in den Unterverzeichnissen &lt;strong&gt;SRPMS&lt;/strong&gt; und
+&lt;strong&gt;RPMS/&lt;em&gt;architektur&lt;/em&gt;/&lt;/strong&gt; von &lt;strong&gt;/usr/src/packages&lt;/strong&gt; .&lt;/p&gt;
+&lt;p&gt;Diese können nun Problemlos, wie ein offizielles RPM Paket, installiert
+werden:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;rpm -Uvh&lt;/strong&gt; &lt;strong&gt;/usr/src/packages/RPMS/i586/db3-cxx*.rpm&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Installed (but unpackaged) file(s) found"></category><category term="rpm"></category><category term="suse"></category></entry><entry><title>Leere Zeilen entfernen mit grep</title><link href="https://www.zoosau.de/leere-zeilen-entfernen-mit-grep.html" rel="alternate"></link><published>2008-03-05T14:31:00+01:00</published><updated>2008-03-05T14:31:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-03-05:/leere-zeilen-entfernen-mit-grep.html</id><summary type="html">&lt;p&gt;Habe ich mich immer gefragt, aber nie herausgefunden: Wie entfernt man
+eine leere Zeile mit
+&lt;a href="http://de.wikipedia.org/wiki/Grep" title="Wiki Eintrag zu grep"&gt;grep&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Geht ganz einfach:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;grep -v '^$'&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Habe ich mich immer gefragt, aber nie herausgefunden: Wie entfernt man
+eine leere Zeile mit
+&lt;a href="http://de.wikipedia.org/wiki/Grep" title="Wiki Eintrag zu grep"&gt;grep&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Geht ganz einfach:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;grep -v '^$'&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="grep"></category><category term="leere"></category><category term="Linux"></category><category term="zeile"></category></entry><entry><title>Modding der Fritzbox - Teil 1</title><link href="https://www.zoosau.de/modding-der-fritzbox-teil-1.html" rel="alternate"></link><published>2008-02-21T22:14:00+01:00</published><updated>2008-02-21T22:14:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-21:/modding-der-fritzbox-teil-1.html</id><summary type="html">&lt;p&gt;Wie im Bericht zuvor angekündigt, werde ich diese neue Serie starten,
+die eine Art Logbuch zu meinen Erfahrungen beim Modden meiner &lt;a href="http://www.avm.de/de/Service/Service-Portale/Service-Portal/index.php?portal=FRITZ!Box_Fon_WLAN_7050" title="AVM FritzBox Fon WLAN 7050 Homepage"&gt;Fritz Box
+Fon WLAN
+7050&lt;/a&gt;
+werden soll.&lt;/p&gt;
+&lt;p&gt;Jeden kleinen Erfolg, Misserfolg und neue Idee möchte ich hier gerne
+verewigen, um mir eine Referenz zu bieten, und anderen ein leicht …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wie im Bericht zuvor angekündigt, werde ich diese neue Serie starten,
+die eine Art Logbuch zu meinen Erfahrungen beim Modden meiner &lt;a href="http://www.avm.de/de/Service/Service-Portale/Service-Portal/index.php?portal=FRITZ!Box_Fon_WLAN_7050" title="AVM FritzBox Fon WLAN 7050 Homepage"&gt;Fritz Box
+Fon WLAN
+7050&lt;/a&gt;
+werden soll.&lt;/p&gt;
+&lt;p&gt;Jeden kleinen Erfolg, Misserfolg und neue Idee möchte ich hier gerne
+verewigen, um mir eine Referenz zu bieten, und anderen ein leicht
+verständliches Handbuch.&lt;/p&gt;
+&lt;p&gt;Was habe ich bisher gemacht?&lt;/p&gt;
+&lt;p&gt;Ich habe recherchiert.&lt;/p&gt;
+&lt;p&gt;Dabei bin ich auf &lt;a href="http://www.wehavemorefun.de/fritzbox/index.php/Starten_von_telnetd#Fritz.21Box_7050_-_Workaround_Firmware_14.04.30" title="Fritz Box Fon WLAN 7050 Workaround"&gt;diese, bisher hilfreichste
+Quelle&lt;/a&gt;,
+gestossen. Die Seite ist unheimlich schlecht geschrieben. Sehr
+amateurhaft und ich denke, das die wenigsten Autoren volljährig sind.&lt;/p&gt;
+&lt;p&gt;Egal - ich bin auch nicht unbedingt besser!&lt;/p&gt;
+&lt;p&gt;Was konnte ich hieraus lernen?:&lt;/p&gt;
+&lt;p&gt;Meine Fritz Box ist eine kleine Zicke ;) Man kriegt den telnet Server
+nicht wie bei den anderen per Telefoncode gestartet. Offenbar ist da
+erst garkein Daemon drin! Dieser wird beim hochladen einer Modifizierten
+Firmware nachinstalliert.&lt;/p&gt;
+&lt;p&gt;Zunächst einmal stellt man sicher, das man im Besitz des Webpasswortes
+der Box ist. Hierzu meldet man sich am besten direkt einmal an. Im
+lokalen Netzwerk gibt man einfach "&lt;strong&gt;fritz.box", oder die richtige IP&lt;/strong&gt;
+der Box in das Adressfeld des Web-Browsers ein und meldet sich an.&lt;/p&gt;
+&lt;p&gt;Nun sollte sicherheitshalber ein Firmwareupdate der Box vorgenommen
+werden. Die folgenden Schritte setzen vorraus, das man im Fritz Box
+Webinterface die "&lt;em&gt;Einstellungen - System - Ansicht - Expertenansicht
+aktivieren&lt;/em&gt;" - Option aktiviert hat.&lt;/p&gt;
+&lt;p&gt;Ist das der Fall, klickt man sich über "&lt;em&gt;Einstellungen - System -
+Firmware-Update&lt;/em&gt;" zum Dialog "&lt;em&gt;Automatisches Update&lt;/em&gt;". Hier hat man
+nicht viele Möglichkeiten: klickt auf "&lt;em&gt;Neue Firmware suchen&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Wird eine gefunde, lasst sie installieren und startet die Box neu. Ihr
+werden durch alle notwendigen Schritte geleitet.&lt;/p&gt;
+&lt;p&gt;Nachdem nun alles auf dem neuesten Stand ist (dieses Logbuch basiert auf
+Firmware Version &lt;strong&gt;14.04.33&lt;/strong&gt;), geht es nun darum, einen telnet-Server
+auf das Ding zu kriegen.&lt;/p&gt;
+&lt;p&gt;Am besten, ihr ladet euch schonmal den
+&lt;a href="http://www.zoosau.de/software/Internet_und_Netzwerk/putty.exe" title="Putty Telnet/SSH Client für Windows"&gt;Putty&lt;/a&gt;
+runter! (Bei Linux Usern unterstelle ich generell Kenntniss wie sie
+telnet und/oder SSH Sessions öffnen).&lt;/p&gt;
+&lt;p&gt;Nun versucht mal euch auf eure Fritz Box IP per Telnet zu verbinden - Es
+wird nicht klappen.&lt;/p&gt;
+&lt;p&gt;Dieses dient dem Vorher/Nachher - Vergleich :)&lt;/p&gt;
+&lt;p&gt;Nun ladet euch &lt;a href="{filename}images/telefonsparbuch_telnet0430.tar" title="Pseudo Firmware zum starten eines Telnet Servers auf der Fritz Box"&gt;diese Datei
+herunter&lt;/a&gt;
+und speichert sie dort, wo ihr sie gut wieder findet (z.B. Desktop).&lt;/p&gt;
+&lt;p&gt;Hangelt euch nun im Fritz Box Webinterface wieder zu diesem Pfad:
+"&lt;em&gt;Einstellungen - System - Firmware-Update&lt;/em&gt;", wählt aber dieses Mal
+"&lt;em&gt;Firmware-Datei&lt;/em&gt;". Wählt das eben herunter geladene Script aus und
+klickt auf "&lt;em&gt;Update starten&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Es folgt ein Hinweis, das es sich dabei um keine gültige Firmaware Datei
+handelt und das das System dabei ohne Garantieansprüche zerstört werden
+kann.&lt;/p&gt;
+&lt;p&gt;Nun, so ist das nunmal beim basteln ;)&lt;/p&gt;
+&lt;p&gt;Aber ich habe diesen Schritt gewagt und hatte keine Probleme. Achja:
+&lt;strong&gt;Ich hafte selbstverständlich auch für nichts!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ausserdem werdet Ihr fortan mit folgendem Hinweis in eurem Web-Interface
+leben müssen:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/fritz-box-fon-warnung.jpg" title="Screenshot der Warnung nach Update"&gt;&lt;img alt="Screenshot der Warnung nach
+Update" src="{filename}images/fritz-box-fon-warnung.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nachdem das blinken der LED aufgehört hat, probiert es nochmal mit dem
+Putty euch per telnet auf die Box zu schalten.&lt;/p&gt;
+&lt;p&gt;Nun werdet Ihr nach einem Passwort gefragt. Dieses ist dasselbe wie im
+Web Interface.&lt;/p&gt;
+&lt;p&gt;Gut, gut - nun will ich aber nicht, das die ganze Pracht nach dem
+nächsten Stromausfall wieder weg ist - was nun?&lt;/p&gt;
+&lt;p&gt;Also in den einschlägigen Foren stand, das man ein paar Moves machen
+muss, damit der Daemon beim nächsten Start wieder hochkommt.&lt;/p&gt;
+&lt;p&gt;Ich habe mir das Script &lt;em&gt;/var/flash/debug.cfg&lt;/em&gt; im Dateisystem der Fritz
+Box mal angesehen. Für mein Verständniss sieht es es aus, als sei es
+bereits so, das es immer startet.&lt;/p&gt;
+&lt;p&gt;Einziges Problem wäre, wenn /var/flash ein flüchtiger Speicher wäre,
+dessen Inhalt einen Neustart nicht überlebt. Naja, da ich bereits einmal
+den Strom gezogen habe seitdem, denke ich das es kein flüchtiger
+Soeicher ist ;)&lt;/p&gt;
+&lt;p&gt;Ich muss mir das Script im "Image" mal ansehen. Was es genau tut. Ich
+habe was gelesen von, das es ein telnet Daemon Programm aus dem Internet
+herunterläd und dann installiert und startet.&lt;/p&gt;
+&lt;p&gt;Wenn dem so ist, würde ich das lieber gleich mit in das Pseudo Image
+legen, oder zumindest irgendwo, wo ich weiss das nichts mehr verändert
+wird.&lt;/p&gt;
+&lt;p&gt;Zwar scheint alles ganz gut zu funktionieren, ich möchte aber vermeiden,
+das die Seite von der der Daemon herunter geladen wird irgendwann nicht
+mehr erreichbar ist, oder, das (wie evtl. in diesem Fall geschehen, da
+auf einmal keine Vorkehrungen für ein automatisches starten mehr
+vorgenommen müssen) sich der Download-Teil irgendwann ändert, ohne das
+man es merkt und versäumt Dokus anzupassen oder ähnliches.&lt;/p&gt;
+&lt;p&gt;PS: HA! Ich habe &lt;a href="http://www.tecchannel.de/server/extra/432803/index5.html" title="Tecchannel Artikel"&gt;einen
+Artikel&lt;/a&gt;
+gefunden, der teilweise Licht ins Dunkel von /var/flash bringt:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Wechseln Sie mit cd /var/flash zunächst das Verzeichnis. Hier finden Sie alle Konfigurationsdateien der Fritz!Box, die ihren Inhalt auch nach einem Reboot behalten. Mit dem Befehl echo "/usr/sbin/telnetd -l /sbin/ar7login" &amp;gt; /var/flash/debug.cfg schreiben Sie den Start des telnet-Daemons in die debug.cfg und binden ihn so fest in den Bootvorgang der Fritz!Box ein. Kontrollieren Sie den Eintrag mit einem cat debug.cfg . Dann können Sie die Fritz!Box mit /sbin/reboot neu starten, und der telnet-Login sollte anschließend immer noch möglich sein.&lt;/code&gt;&lt;/p&gt;</content><category term="7050"></category><category term="box"></category><category term="fon"></category><category term="fritz"></category><category term="modding"></category><category term="telnet"></category><category term="wlan"></category></entry><entry><title>Ich werd' ISP!</title><link href="https://www.zoosau.de/ich-werd-isp.html" rel="alternate"></link><published>2008-02-21T21:35:00+01:00</published><updated>2008-02-21T21:35:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-21:/ich-werd-isp.html</id><summary type="html">&lt;p&gt;Genau, denn wenn man sich sein eigenes Internet baut, dann muss man
+nicht immer die Seiten gucken die Arcor einem gibt!&lt;/p&gt;
+&lt;p&gt;... naja etwas mehr niveau hat dieser Artikel dann doch ;)&lt;/p&gt;
+&lt;p&gt;Ich bin &lt;a href="http://www.congstar.de/" title="T-Mobile Tochter Congstar"&gt;Congstar&lt;/a&gt;
+Kunde und damit soweit auch ganz zufrieden. Ich wollte keine Verträge
+mehr, wo ich zum Dank blöd …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Genau, denn wenn man sich sein eigenes Internet baut, dann muss man
+nicht immer die Seiten gucken die Arcor einem gibt!&lt;/p&gt;
+&lt;p&gt;... naja etwas mehr niveau hat dieser Artikel dann doch ;)&lt;/p&gt;
+&lt;p&gt;Ich bin &lt;a href="http://www.congstar.de/" title="T-Mobile Tochter Congstar"&gt;Congstar&lt;/a&gt;
+Kunde und damit soweit auch ganz zufrieden. Ich wollte keine Verträge
+mehr, wo ich zum Dank blöd genug gewesen zu sein, mich wieder 2 Jahre an
+einen gleichbleibendem Tarif auf einem Markt sinkender Kosten gebunden
+zu haben, für ein Telefon zweiter Wahl entscheiden darf, das dann "nur
+noch" 10 € (plus die Reingewinne der Grundgebühr über 24 Monate hinweg
+kostet). Daher bin ich zu Congstar gewechselt.&lt;/p&gt;
+&lt;p&gt;Ich weiss: Die haben NICHTS, sind nicht die billigsten, bieten keine
+gescheiten Handys, und, und, und.&lt;/p&gt;
+&lt;p&gt;Aber für mich ist es ideal.&lt;/p&gt;
+&lt;p&gt;Ich habe für 10 € meine Festnetzflat, kann je nach Lebenssituation
+Optionen hinzubuchen oder kündigen, und - mal ehrlich: Wie oft habt ihr
+während einem Eurer Verträge mal mit dem Support telefoniert und wart
+mit deren Aussagen zufrieden?&lt;/p&gt;
+&lt;p&gt;Was schert's mich, da da die T-Mobile Ausschussware der Callagents sitzt
+für die 15 Minuten, die ich durchschnittlich im Jahr mit denen
+telefoniere?&lt;/p&gt;
+&lt;p&gt;Nun bin ich jedoch schon an die Grenzen des Congstar Angebotes gestoßen:
+KEINE DATENFLAT !!! *kreiiiiisch!!*&lt;/p&gt;
+&lt;p&gt;Was mache ich da nur?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Meine Idee©:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ich modde meine &lt;a href="http://www.avm.de/de/Service/Service-Portale/Service-Portal/index.php?portal=FRITZ!Box_Fon_WLAN_7050" title="AVM FritzBox Fon WLAN 7050 Homepage"&gt;Fritz Box Fon WLAN
+7050&lt;/a&gt;
+zum DialIn-Server um! Wie früher, wo man ein Modem hatte, ca. 50 km
+Kabel aus selbst zusammengelöteten Kabelteilenin der Telefondose
+verschwinden liess, Username, Passwort und Telefonnummer des Providers
+brauchte und sich dumm und dusselig bezahlt hat an Minutenpreisen.&lt;/p&gt;
+&lt;p&gt;Nur mit dem Unterschied, das ich dank der DSL Flatrate zuhause, damit
+verbundener ISDN Leitung bei Arcor und modding-fähiger Fritz Box und
+einer Festnetzflat im Handy keinen Cent dazu bezahlen werde! :)&lt;/p&gt;
+&lt;p&gt;Die Theorie ist so:&lt;/p&gt;
+&lt;p&gt;Ich richte mir im Handy eine Modemverbindung ein. Diese ruft auf einer
+meiner ISDN Nummern zuhause an. Nun soll die Fritz Box Anrufe auf dieser
+Nummer entgegen nehmen und Username/Passwort Authentifizierung
+betreiben. Stimmen die Daten, soll sie zwischen der Analogleitung
+zwischen angerufenem Anschluss und anrufendem Handy und der DSL Leitung
+routen.&lt;/p&gt;
+&lt;p&gt;Theoretisch dürfte das ganze so kostenfrei für mich bleiben :)&lt;/p&gt;
+&lt;p&gt;Ich habe mich mit so einer Technik nie beschäftigt. Ich weiss nichtmal,
+ob es dafür gescheite Software gibt, die man realistisch auf der Fritz
+Box laufen lassen kann.&lt;/p&gt;
+&lt;p&gt;Dieses kleine Erfahrungslogbuch wird's zeigen :D&lt;/p&gt;</content><category term="7050"></category><category term="box"></category><category term="einwählen"></category><category term="fon"></category><category term="fritz"></category><category term="fritz box"></category><category term="fritz.box"></category><category term="isp"></category><category term="Linux"></category><category term="modden"></category><category term="modding"></category><category term="routen"></category><category term="wlan"></category></entry></feed>

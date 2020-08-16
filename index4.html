@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+<link rel="canonical" href="https://www.zoosau.de">
+        <meta name="author" content="Marc Richter" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+            <article>
+                <h2><a href="https://www.zoosau.de/einbruch-bei-github-com.html">"Einbruch" bei GitHub.com</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-03-05T22:50:00+01:00"> Mo 05 März 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-technik.html">Job und Beruf, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		576
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+        /
+	<a href="https://www.zoosau.de/tag/github.html">github</a>
+        /
+	<a href="https://www.zoosau.de/tag/homakov.html">Homakov</a>
+        /
+	<a href="https://www.zoosau.de/tag/rails.html">rails</a>
+        /
+	<a href="https://www.zoosau.de/tag/ruby.html">ruby</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Mit einer eher interessanten als gefährlichen Variante eines <a href="http://www.pro-linux.de/news/1/18114/massive-sicherheitsluecke-in-github-geschlossen.html" title="Bericht von Pro-Linux.de über den &quot;Einbruch&quot; bei GitHub">Einbruchs
+in Ihre
+Infrastruktur</a>
+sah sich gestern, am 4. März 2012, der Code Hoster
+<a href="https://github.com/about" title="GitHub">GitHub</a> konfrontiert, als der
+russische Programmierer <a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov">Egor
+Homakov</a>
+diese Präsenz benutzte um auf eine Sicherheitslücke in <a href="http://rubyonrails.org/" title="Homepage des Ruby Web-Framework &quot;Ruby on Rails&quot;">Ruby on
+Rails</a> (kurz:
+Rails), ~~einem~~ <strong>dem</strong> Ruby basierendem Framework für
+Webapplikationen, aufmerksam zu machen. GitHub ist ein sagenhaft
+populärer Hoster von Git-Repositorien, der neben dem reinen Hosting des
+Codes auch ein Wiki, Bugtracker, usw. bietet. Auch <a href="https://github.com/The-Judge" title="Mein GitHub - Profil">ich partizipiere
+darüber an
+Projekten</a> wie z.B.
+"<a href="https://github.com/funtoo/flora" title="Funtoo Flora Overlay auf GitHub">flora</a>".
+Zufällig verwendet GitHub selbst das Rails Framework; ebenso nutzen die
+Rails Entwickler <a href="https://github.com/rails/rails" title="GitHub Repository der Ruby on Rails Quellen">GitHub als Code Hoster der
+Rails-Quellen</a>.
+Ein ideales Ziel also für
+<a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov">Homakov</a> um,
+nach anfänglichen Schwierigkeiten sein Anliegen den Rails Entwicklern
+darzulegen, diese Lücke zu demonstrieren:</p>
+<p>Er nutzte sie erfolgreich aus, verschaffte sich administrativen Zugang
+zum <a href="https://github.com/rails/rails">Rails-Projekt</a>, bewies das er volle
+Admin-Rechte erlangt hatte und beispielsweise Fehlerberichte nach
+Belieben öffnen, schließen und sogar aus der Zukunft schreiben konnte.
+Außerdem fügte er dem Repositorium eine Datei hinzu. Auch das
+vollständige Löschen der gesamten Projekthistorie wäre möglich gewesen.</p>
+<p>GitHub sperrte daraufhin den Account von
+<a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov">Homakov</a>,
+behob die Sicherheitslücke und gab eine
+<a href="https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation" title="Sicherheitswarnung von GitHub nach dem &quot;Angriff&quot; vom 4. März 2012">Sicherheitswarnung</a>
+heraus. Wenig später folgte eine <a href="https://github.com/blog/1069-responsible-disclosure-policy" title="Zweite Ankündigung von GitHub zum &quot;Einbruch&quot; vom 4. März 2012">zweite
+Ankündigung</a>,
+in der man (wohl auch nicht zuletzt aufgrund anhaltender Proteste der
+Community)
+<a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov">Homakov</a>
+weitestgehend rehabilitierte und die Sperrung seines Accounts aufhob.<br>
+Einige  Leute, die nach wie vor keine wirklich schwerwiegenden Probleme
+zu haben scheinen und ansonsten offenbar wenig mit Ihrer Freizeit
+anzufangen wissen, diskutieren immernoch ob
+<a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov">Homakov</a>
+ein "Held" oder ein "Krimineller" ist ... <strong>OMG</strong>!<br>
+<a href="http://homakov.blogspot.com/2012/03/im-disappoint-github.html" title="Egor Homakov's Entschuldigung bei GitHub">Er selbst entschuldigt sich auf seinem Blog für sein
+Vorgehen</a>:</p>
+<blockquote>
+<p>Yes I behaved like a jerk.</p>
+</blockquote>
+<p>GitHub selbst hat alleine dadurch, das sie dem Urheber eines wie auch
+immer beabsichtigten, jedoch dadurch juristisch nicht weniger
+strafbaren, Hackerangriffs bereits am nächsten Tag wieder
+uneingeschränkten Zugriff auf Ihre Systeme gewährten und dem ganzen
+scheinbar auch keine Strafanzeige folgen lassen, seinen guten Willen
+bewiesen.<br>
+Damit sollte doch alles gesagt sein, meine Güte! Beide sind sich einig
+und wieder Freunde :) . Das GitHub erstmal vorsorglich das Einfallstor
+schließt, bis alles geklärt ist, ist doch nur normal! Alles andere wäre
+strafbar fahrlässig.</p>
+<p>Die Rails-Entwickler sind in meinen Augen die, die viel zu wenig tun.
+Sie wollen die Funktionen, die soetwas ermöglicht, auf Produktivsystemen
+künftig <a href="http://news.ycombinator.com/item?id=3664334" title="Rails Funktionen zukünftig standardmäßig abschalten">standardmäßig
+abschalten</a>.
+Mit einem Fix ist "bereits" mit Rails 3 als Plugin zu rechnen ...
+Sicherheit als zukünftige, optionale Alternative ... na super. <strong>Leute,
+das ist armseelig und unterstreicht in meinen Augen das Rails ein
+Framework ist, von dem man tunlichst die Finger lassen sollte!</strong><br>
+Man stelle sich folgendes Gespräch in einem Autohaus vor:</p>
+<p><em>"Chef, Chef! Man kann in unserem neuen Auto Modell 2012 ohne den
+Originalschlüssel die Türen öffnen und losfahren! Ein Sicherheitsexperte
+vom ADAC hat das bereits im Fernsehen demonstriert! Was machen wir??" </em></p>
+<p><em>"Ruhig Blut ... wir bieten mit dem 2013er Modell nächstes Jahr ein
+Bonuspaket an, mit dem man den Wagen dann wirklich abschließen kann ...
+jetzt hauen sie ab und verkaufen erstmal die Hallen leer!"</em></p>
+<p>Da hat jemand offenbar absolut keine Ahnung davon, was sie da anrichten
+und was sie auch nicht zuletzt dem Ruf von Ruby ansich antun. Ein
+Projekt solcher Größe sollte nicht von solch blauäugigen Diletanten
+geführt werden. Dann nimmt man halt viele bestehende Projekte erstmal vm
+Netz - na und ?? Das Fundament muss doch trotzdem frei von solchen
+Kloppern sein; wem das nicht passt soll halt auf ein Update verzichten!
+Und wenn es in der Tat zwei Lager gibt, dann muss man halt forken! Aber
+sowas,  was die jetzt auf die Roadmap gesetzt haben, ist die denkbar
+schlechteste "Lösung".</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=%22Einbruch%22%20bei%20GitHub.com&url=https%3A//www.zoosau.de/einbruch-bei-github-com.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=%22Einbruch%22%20bei%20GitHub.com&amp;body=https%3A//www.zoosau.de/einbruch-bei-github-com.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/tote-symlinks-finden.html">"Tote" Symlinks finden</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-02-16T12:13:00+01:00"> Do 16 Februar 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/linux.html">Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		112
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+        /
+	<a href="https://www.zoosau.de/tag/find.html">find</a>
+        /
+	<a href="https://www.zoosau.de/tag/invalid.html">invalid</a>
+        /
+	<a href="https://www.zoosau.de/tag/kaputt.html">kaputt</a>
+        /
+	<a href="https://www.zoosau.de/tag/symlink.html">symlink</a>
+        /
+	<a href="https://www.zoosau.de/tag/tot.html">tot</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Boah - funktioniert noch alles hier ... krass! Ewig nichts gepostet ...
+;D</p>
+<p>Es kommt auch nur ein Kurztipp. Eigentlich trivial, aber ich kam mit den
+Erklärungen in der Manpage zu "find" gerade nicht zurande, daher notiere
+ich mir die Syntax hier:</p>
+<p>Wenn man auf einem System nach Symlinks suchen möchte, deren Ziel nicht
+existiert, dann geht das wie folgt:</p>
+<blockquote>
+<div class="highlight"><pre><span></span>find -L . -type l
+</pre></div>
+
+
+</blockquote>
+<p>Möchte man stattdessen das nichtexistente Ziel des toten Symlinks
+auflisten um das beispielsweise in Scripten zu verwenden, behelfe ich
+mir derzeit wie folgt:</p>
+<blockquote>
+<div class="highlight"><pre><span></span>ls -ld $(find -L . -type l) | cut -d &#39;&gt;&#39; -f 2 | sed &#39;s#\ ##g&#39;
+</pre></div>
+
+
+</blockquote>
+<p>Funktioniert, geht aber sicher auch noch eleganter. Schreibt doch gerne
+in den Kommentaren wie :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=%22Tote%22%20Symlinks%20finden&url=https%3A//www.zoosau.de/tote-symlinks-finden.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=%22Tote%22%20Symlinks%20finden&amp;body=https%3A//www.zoosau.de/tote-symlinks-finden.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/zweiter-teil-meines-typo3-video-tutorials-ist-online.html">Zweiter Teil meines TYPO3 Video Tutorials ist online!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-01-15T14:38:00+01:00"> So 15 Januar 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html">Homepage, Job und Beruf</a>
+
+
+		<span class="label label-default">Words</span>
+		21
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Yes! :)</p>
+<p>Der Betreff sagt eigentlich alles. Zu finden
+unter <a href="http://www.youtube.com/watch?v=FHuoegfIwqg">http://www.youtube.com/watch?v=FHuoegfIwqg</a> . Über Kommentare und
+konstruktive Kritik würde ich mich wie immer freuen.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Zweiter%20Teil%20meines%20TYPO3%20Video%20Tutorials%20ist%20online%21&url=https%3A//www.zoosau.de/zweiter-teil-meines-typo3-video-tutorials-ist-online.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Zweiter%20Teil%20meines%20TYPO3%20Video%20Tutorials%20ist%20online%21&amp;body=https%3A//www.zoosau.de/zweiter-teil-meines-typo3-video-tutorials-ist-online.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/sabayons-paketmanager-sulfur-entschuldigt-sich-fur-einen-fehler.html">Sabayon's Paketmanager Sulfur entschuldigt sich für einen Fehler</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-01-13T22:52:00+01:00"> Fr 13 Januar 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/fun-linux.html">Fun, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		116
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Na das ist ja mal putzig!</p>
+<p>[caption id="attachment_1096" align="alignright" width="135"
+caption="Logo der Linuxdistribution Sabayon"]<a href="https://www.zoosau.de/images/sabayon-wiki-logo.png"><img alt="Logo der
+Linuxdistribution
+Sabayon" src="https://www.zoosau.de/images/sabayon-wiki-logo.png" title="Logo der Linuxdistribution Sabayon">{.size-full
+.wp-image-1096 width="135"
+height="135"}</a>[/caption]</p>
+<p>Jeder kennt sicher die alltäglichen Fehlermeldungen der diversen
+Programme des Computers und ärgert sich dabei über profane Meldungen wie
+"<em>Ungültiger Verweis 10x78</em>" oder "<em>Fehlerprozess war fehlerhaft (19)</em>",
+mit denen man nicht nur nichts anfangen kann, sondern die einem
+irgendwie oft auch noch das Gefühl geben, man hätte etwas falsch
+gemacht.<br>
+Jetzt habe ich gestern einen Fehler unter
+<a href="http://www.sabayon.org/" title="Homepage der Linuxdistribution Sabayon">Sabayon</a>
+Linux provoziert, indem ich in
+<a href="http://wiki.sabayon.org/index.php?title=Sulfur" title="Link in's Wiki der Linuxdistribution Sabayon zum Thema Sulfur">Sulfur</a>,
+dem GUI des Paketmanagers von Sabayon, während einer Installation auf
+"Abbrechen" geklickt habe. Sieht doch gleich viel freundlicher aus,
+oder?</p>
+<p>[caption id="attachment_1094" align="aligncenter" width="300"
+caption="Sabayon's Paketmanager Sulfur entschuldigt sich für einen
+Fehler"]<a href="https://www.zoosau.de/images/sabayon_sulfur_entschuldigung.png"><img alt="Sabayon's Paketmanager Sulfur entschuldigt sich für einen
+Fehler" src="{filename}images/sabayon_sulfur_entschuldigung-300x225.png" title="Sabayon's Paketmanager Sulfur entschuldigt sich für einen Fehler">{.size-medium
+.wp-image-1094 width="300"
+height="225"}</a>[/caption]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Sabayon%27s%20Paketmanager%20Sulfur%20entschuldigt%20sich%20f%C3%BCr%20einen%20Fehler&url=https%3A//www.zoosau.de/sabayons-paketmanager-sulfur-entschuldigt-sich-fur-einen-fehler.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Sabayon%27s%20Paketmanager%20Sulfur%20entschuldigt%20sich%20f%C3%BCr%20einen%20Fehler&amp;body=https%3A//www.zoosau.de/sabayons-paketmanager-sulfur-entschuldigt-sich-fur-einen-fehler.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/neues_typo3_video_tutorial_gestartet.html">Neues TYPO3 Video Tutorial gestartet</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-01-08T15:34:00+01:00"> So 08 Januar 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/homepage.html">Homepage</a>
+
+
+		<span class="label label-default">Words</span>
+		356
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+        /
+	<a href="https://www.zoosau.de/tag/video-training.html">video training</a>
+        /
+	<a href="https://www.zoosau.de/tag/youtube.html">youtube</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe mir vergangene Woche das aktuelle Video-Training zu TYPO3 vom
+Galileo Computing Verlag namens "<a href="http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-2854" title="Produktseite des TYPO3 4.5 Video Trainings von Galileo Computing">TYPO3 4.5 - Das umfassende
+Training</a>"
+bestellt und erhalten. Da das erste Video-Training zu 4.0 von Thomas
+Kötter ziemlich gut war, dachte ich man könne damit nichts falsch
+machen. TYPO3 4.0 ist vom Handling und daher wo man die einzelnen
+Einstellungen findet nunmal inzwischen eine ganz andere Sache als bei
+TYPO3 4.5. Von daher war es einfach mal Zeit das Wissen und die private
+Bibliothek aufzufrischen. Hinzu kommt noch, das das Werk von Thomas
+Kötter ein "Einstieg in TYPO3" war und mit dem aktuell vorliegendem
+Erzeugnis ein "Umfassendes Training" angeboten wird. "<em>Zwei Fliegen mit
+einer Klappe geschlagen</em>", dachte ich mir also.</p>
+<p>Nun, da ich mir die erste halbe Stunde des neuen Video-Trainings
+angesehen habe, kann ich einfach nicht mehr weiter schauen! Der Inhalt
+mag ja ganz OK sein und auch vieles abdecken und vom Handwerkszeug her
+richtig und OK sein. Aber ich kann dem Sprecher einfach nicht mehr
+länger zuhören! Das ganze ist dermaßen hölzern gesprochen, gedehnt,
+voller Pausen an unpassendsten Stellen, das ich glaube wenn das anders
+gemacht worden wäre, müsste Galileo Computing eine Laufzeit von 8 statt
+12 Stunden auf die Packung drucken.<br>
+Das fand ich sehr schade, da das Material an sich eigentlich ganz gut
+war. Nur was soll ich machen? Lautlos kann man dem ganzen nicht folgen.
+Evtl. empfinde ja auch nur ich das als so störend. Wie auch immer: Ich
+habe das zurück geschickt.</p>
+<p>Jedenfalls hatte ich daher die  Idee, einfach selbst ein freies
+Video-Tutorial auf Youtube anzufangen! Ich bin mir ziemlich sicher, das
+das nicht besser werden wird, zumal mir selbstverständlich dieselben
+Skills von professionellen Sprechern abgehen und die Video- und
+Tonerzeugnisse natürlich nicht professionell aufgenommen und gemastert
+werden, jedoch verlange ich dafür auch keine 40 € !</p>
+<p>Ihr findet das ganze auf <a href="http://www.youtube.com/user/MrMarcJudge" title="Youtube Channel von Marc Richter">meinem Youtube
+Channel</a>.
+Bisher ist da erst ein einziges Intro Video, was eigentlich nicht mehr
+zeigt als mich, der genau diese Punkte so noch einmal erzählt, aber ich
+hoffe das ich da in den kommenden Wochen immer mehr hinzufügen kann.</p>
+<p>Über Kommentare, konstruktive Kritik und Vorschläge würde ich mich
+freuen :)</p>
+<p>[gallery link="file" order="DESC" columns="2"]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Neues%20TYPO3%20Video%20Tutorial%20gestartet&url=https%3A//www.zoosau.de/neues_typo3_video_tutorial_gestartet.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Neues%20TYPO3%20Video%20Tutorial%20gestartet&amp;body=https%3A//www.zoosau.de/neues_typo3_video_tutorial_gestartet.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/spass-mit-google-analytics.html">Spass mit Google Analytics</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-12-06T10:53:00+01:00"> Di 06 Dezember 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/fun.html">Fun</a>
+
+
+		<span class="label label-default">Words</span>
+		42
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/monopoly.html">monopoly</a>
+        /
+	<a href="https://www.zoosau.de/tag/nazi.html">Nazi</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Google Analytics / Adsense ist ja schon eine feine Sache! Aber manchmal
+kommen schon komische Sachen dabei heraus ... wie gestern auf Bild.de !
+:D</p>
+<p>[caption id="attachment_1077" align="aligncenter" width="227"
+caption="Google Analytics - Nazi Monopoly"]<a href="https://www.zoosau.de/images/Nazi_monopoly.png"><img alt="Google Analytics - Nazi
+Monopoly" src="{filename}images/Nazi_monopoly-227x300.png" title="Google Analytics - Nazi Monopoly">{.size-medium
+.wp-image-1077 width="227"
+height="300"}</a>[/caption]</p>
+<p>Einfach ein perfektes Weihnachtsgeschenk ... auch für die Kleinen :D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Spass%20mit%20Google%20Analytics&url=https%3A//www.zoosau.de/spass-mit-google-analytics.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Spass%20mit%20Google%20Analytics&amp;body=https%3A//www.zoosau.de/spass-mit-google-analytics.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/lpic-1-mission-accomplished.html">LPIC-1 : Mission accomplished!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-11-25T00:05:00+01:00"> Fr 25 November 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		599
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Jaaa - was soll ich groß schreiben? Was lange währt wird endlich gut
+vielleicht :)</p>
+<p>[caption id="attachment_1074" align="alignright" width="264"
+caption="LPIC-1 Logo"]<a href="https://www.zoosau.de/images/icon-lpic1.png"><img alt="LPIC-1
+Logo" src="https://www.zoosau.de/images/icon-lpic1.png" title="LPIC-1 Logo">{.size-full
+.wp-image-1074 width="264"
+height="264"}</a>[/caption]</p>
+<p>Nachdem mein Kumpel Alex vor inzwischen fast zwei Jahren mit dem
+<a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1">LPIC-1</a>
+Zertifikat vorgelegt hat, wollte ich eigentlich innerhalb weniger Wochen
+nachziehen. Nur kam dann eines zum anderen. Erst zog die Firma um, dann
+hatte ich alle Hände voll zu tun mit meiner damals neuen Position als
+Abteilungsleiter mit Personalverantwortung, dann ... ach - blah, blah,
+blah. Das Ende vom Lied ist: Ich bin erst am gestrigen Mittwoch endlich
+dazu gekommen meine
+<a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1">LPIC-1</a>
+Prüfung bei "<a href="http://www.thecampus.de" title="Homepage von &quot;The Campus&quot;">The
+Campus</a>" in
+Düsseldorf in der Gladbecker Str 1  zu absolvieren. Ich habe direkt
+beide Prüfungen hintereinander durchgezogen.</p>
+<p>Was soll ich lange drum herum reden: Bestanden! :)</p>
+<p>Ich habe hierzu mit dreien abzurechnen. Fangen wir mit "<a href="http://www.thecampus.de" title="Homepage von &quot;The Campus&quot;">The
+Campus</a>" an.<br>
+Ich habe mich am 9.11.2011 zu beiden Prüfungen am 23.11.2011 um 10.30
+und 12:00 Uhr angemeldet. Am 22.11. um 17:45 Uhr (also: Am Abend zuvor)
+sitze ich mit meinem Chef im Meetingraum in der Firma, da kommt eine
+Kollegin rein und meint <em>"Es hat eine Frau X von The Campus angerufen
+und meinte die Prüfung morgen verschiebt sich auf 12 Uhr.".</em> Wir waren
+eh gerade fertig also rufe ich um 18:00 Uhr, 15 Minuten später, zurück
+um die Dame zu fragen ob sie das richtig findet einem am Abend zuvor
+durch einen dritten ausrichten zu lassen das sich die Prüfung
+verschiebt. Was ist denn wenn ich dann bereits Termine habe? Zudem habe
+ich meine Handynummer und E-Mailadresse bei der Registrierung angegeben,
+da kann man mich doch wenigstens versuchen darüber zu erreichen ehe man
+"Stille Post" spielt.<br>
+Aber scheinbar hat sie unmittelbar nach diesem Anruf das Gebäude
+verlassen - jedenfalls war sie nicht mehr im Hause (Aussage der
+Kollegin, die ich stattdessen erreicht habe).<br>
+Angekommen musste ich erstmal suchen, ob ich richtig bin: Die untere
+Etage des scheinbaren Neubaus steht leer. Schilder gibt es nur sehr
+unzureichend.<br>
+Ich bin also um 12 Uhr da. Leider habe ich eine Wartezeit bis etwa 12:30
+Uhr, da sich die Dame trotz der Verschiebung auf 12 Uhr um knapp eine
+halbe Stunde verspätet.<br>
+Als wir endlich anfangen können, werde ich in einen Raum geführt, in dem
+8 völlig veraltete PCs stehen. Die Dame schaltet mir die Prüfung auf und
+- verlässt den Raum! Alle Prüflinge sind völlig unbeaufsichtigt. Spicken
+wäre nun Tür und Tor geöffnet. Ebenso wird man auf den ausgehändigten
+Regeln darauf hingewiesen, das man sich ausschließlich durch heben einer
+Hand bemerkbar machen soll, wenn man Fragen hat. Der Prüfer kommt dann
+angeblich sofort und hilft. .... wie denn, wenn garkeiner im Raum ist??<br>
+Naja. Nachdem ich die erste Prüfung bestanden hatte, habe ich eine kurze
+Pause gemacht und bin dann die zweite angegangen. Während dieser Prüfung
+wurde in den oberen Etagen pausenlos gehämmert. Wirklich konzentrieren:
+Fehlanzeige. Ich bin nach absolvierter Prüfung zu den Damen gegangen und
+habe gesagt das sowas alles andere als geeignete Prüfungsbedingungen
+sind. Reaktion: "Ja, ich war auch eben schonmal gucken ...". Super!</p>
+<p>Also: Nichts gegen die Damen an sich: Die beiden waren sehr nett! Aber
+es ärgert mich, das man viel Geld dafür bezahlt, das man sich da eine
+Stunde lang an einen PC setzen darf, dabei weder Beaufsichtigt noch
+betreut wird und das man einen Tag vor der Prüfung derart mit
+Orga-Scheiss abgelenkt wird. Zumal die auf der Anmeldung ihrerseits ein
+richtiges Fass aufmachen: "Wer mehr als 15 Minuten später erscheint darf
+nicht mehr teilnehmen!", "Armbanduhr, Portemonaie und Handy müssen
+abgelegt werden!", "Während der Prüfung: Absolute Ruhe!" , und dann
+bietet man einem solche Bedingungen an.</p>
+<p>Naja ...<br>
+Morgen rechne ich mit dem Linux Professional Institute ab! Stay tuned!
+:D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=LPIC-1%20%3A%20Mission%20accomplished%21&url=https%3A//www.zoosau.de/lpic-1-mission-accomplished.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=LPIC-1%20%3A%20Mission%20accomplished%21&amp;body=https%3A//www.zoosau.de/lpic-1-mission-accomplished.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html">Windows XP, Vista und 7 Profile kopieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-10-12T18:27:00+02:00"> Mi 12 Oktober 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-technik.html">Job und Beruf, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		1611
+
+		<span class="label label-default">Read time</span>
+		7 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/7.html">7</a>
+        /
+	<a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+        /
+	<a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+        /
+	<a href="https://www.zoosau.de/tag/profile.html">profile</a>
+        /
+	<a href="https://www.zoosau.de/tag/roaming-profile.html">roaming profile</a>
+        /
+	<a href="https://www.zoosau.de/tag/samba.html">samba</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubernehmen.html">übernehmen</a>
+        /
+	<a href="https://www.zoosau.de/tag/vista.html">vista</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+        /
+	<a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>... ich kann es zwar selbst nicht wirklich glauben, aber ich werde nun
+tatsächlich einen Artikel über Windows und das kopieren / übertragen von
+dessen Profilen schreiben! Ich hoffe der Internet Explorer klettert in
+meinen Zugriffsstatistiken trotzdem nicht auf Platz 1 ;D</p>
+<p>Dieser Artikel entstand, weil ich auf der Arbeit gerade einen neuen PDC
+implementiere und hierfür selber eine Lösung gesucht habe, wie ich die
+bestehenden Profile (lokal und Domänen-Roaming-Profile) dabei möglichst
+nahtlos in die neue Domäne übernehmen kann. Besonders tricky hierbei
+war, das die aktuelle Domäne nicht wirklich fehlerfrei funktioniert und
+nun ein Wildwuchs aus lokalen Profilen (da nicht jede Anmeldung an der
+Domäne funktionierte) und Domänenprofilen besteht und wir nun von
+Roaming Profiles auf lokale Profile wechseln.<br>
+... mal ehrlich: Hat _irgendjemand_ schonmal Roaming Profiles benutzt
+ohne entweder dazu überzugehen den PC nicht mehr abzuschalten
+oder(/und?) Dateien nur noch ausserhalb der eigentlich zum speichern
+vorgesehenen Ordner abzulegen? Wenn ja: Ich hoffe er kriegt seine
+Medizin ;D</p>
+<p>Ich habe nun für alle drei aktuellen Windowsversionen (XP, Vista und 7 -
+Wer noch &lt;=2000 im Unternehmensumfeld einsetzt bekommt hoffentlich
+psychologische Hilfe und vorallem Prügel ;D ... <em>"Das ist das stabilste
+Betriebssystem überhaupt - seit 5 Jahren habe ich keine
+Sicherheitsupdates mehr einspielen müssen!"</em> ... ihr armen, armen irren
+Kacknoob-Möchtegern-Admins ... ) einen mehr oder weniger einheitlichen
+Weg gefunden dieses zu realisieren! Vieles basiert auf <a href="http://www.raygibson.net/kb/profile_migration/" title="Windows Profile Migration KB auf www.raygibson.net">dieser
+(englischsprachigen)
+Anleitung</a>,
+jedoch bevorzuge ich für meine Zwecke eher eine hybride Variante aus
+dieser und <a href="http://www.bluemoonpcrepair.com/wp/?p=39" title="Manual mit Hinweis auf &quot;Windows Enabler&quot; um den &quot;Kopieren&quot; Button in Windows 7 in den Benutzerkonteneinstellungen zu aktivieren - ... bisschen kurz dieser Text oder? Da schreib ich doch nochmal das Alphabet dahinter, um sicher zu gehen, das man den auch garantiert nicht auf einen Blick erfassen kann: : abcdefghijklmnopqrstuvwxyz ;D">einer zweiten
+Methode</a>.<br>
+Keine Sorge, das hier wird eine Schritt-für-Schritt - Anleitung und
+keiner muss sich diese beiden Englischen Artikel durchlesen. Ich erwähne
+diese hier nur, damit ich mich nicht mit fremden Federn schmücke.</p>
+<p>Am Ende dieses Artikels findet Ihr eine chronologische Screenshotreihe,
+welche diese Anleitung verdeutlichen soll.</p>
+<p>Ich gehe im folgenden davon aus, das ein Profil aus einer alten Domäne
+(<strong>MFC2</strong>) für einen identischen Account (<strong>mr</strong>) in einer neuen Domäne
+(<strong>MFC3</strong>) bereitgestellt werden soll. Die Screenshots stammen, sofern
+nicht anders erwähnt, von einem Windows XP. Die Dialoge und die
+Vorgehensweise ist in den unterschiedlichen Windowsversionen jedoch
+nahezu identisch. Daher beschreibe ich auch zunächst einmal das
+grundsätzliche Vorgehen und erwähne hinterher, welcher Punkt unter
+Vista/7 einer kleine Abweichung bedarf.<br>
+Damit man diesem Guide gut folgen kann, sollte man sich die alte und die
+neue SID des zu migrierenden Accounts notieren, ehe man anfängt.
+Passiert das ganze von einem Samba-Server auf einen Samba-Server, ist es
+einfach: Einfach auf beiden DC folgenden Befehl ausführen:</p>
+<blockquote>
+<p>pdbedit -Lv mr | egrep '\^User SID'</p>
+</blockquote>
+<p>Diese Zeichenketten <strong>notiert man sich nun</strong> und nicht vergessen zu
+vermerken, welche die alte und welche die neue ist.</p>
+<p>Ich gehe davon aus, das der User, dessen Profil migriert werden soll,
+sich bereits früher am System angemeldet hat und das gecachedte Profil
+sich somit bereits auf der lokalen Festplatte befindet. Sollte dem nicht
+so sein, weil der PC z.B. gleich mit erneuert werden soll, oder weil man
+diesen Guide erstmal "durchspielen" will, sollte man dieses also
+zunächst tun, damit das Profil auf das System kopiert wird.</p>
+<p>Die folgenden Schritte führt man am besten als ein Domänenadmin aus -
+Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.</p>
+<blockquote>
+<p><strong>NACHTRAG 02.11.2011:</strong> Es ist hierbei sehr wichtig, das der folgende
+Schritt nicht mit dem User gemacht wird, dessen Profil kopiert werden
+soll! Benutzt hierfür einen anderen; der User, dessen Profil kopiert
+werden soll, darf währenddessen nicht eingelogged sein.</p>
+</blockquote>
+<p>Zunächst muss das bisherige Profil des Users kopiert werden.<br>
+Unter <strong>Windows XP</strong> navigiert man dazu nach : <em>Systemsteuerung -&gt;
+System -&gt; Tab: Erweitert -&gt; Benutzerprofile: Einstellungen</em>.<br>
+Unter <strong>Windows Vista und 7</strong> navigiert man dazu nach : <em>Systemsteuerung
+-&gt; Benutzerkonten -&gt; Erweiterte Benutzerprofileinstellungen
+konfigurieren</em>.</p>
+<p>Es öffnet sich jeweils ein Fenster namens "<em>Benutzerprofile</em>" mit einer
+Liste der bestehenden Userprofile. Man wählt hier nun das zu kopierende
+Profil aus; im Beispiel: <strong>MFC2\mr</strong>.<br>
+... nun würde man gerne auf "<em>Kopieren nach</em>" klicken, richtig? Aber
+ratet mal: Dieser Weg war Microsoft zu einfach. Also hat man es einfach
+kurzerhand deaktiviert und verweist stattdessen auf den <a href="http://support.microsoft.com/kb/973289" title="Microsoft KB 973289">KB
+973289</a>.
+Damit nicht genug die Funktion zu deaktivieren: Diese Sadisten grauen
+den nur aus statt zu entfernen, um allen unter die Nase zu reiben "<em>So
+leicht könnt's sein ...</em>". Aber glücklicherweise kommt uns genau diese
+Tatsache nun zu gute:</p>
+<p>Ich weise an dieser Stelle darauf hin, das mir zwar keine Meldung
+bekannt ist, das das folgende Verfahren irgendwo einmal zu einem Problem
+geführt hat. Jedoch handelt es sich nicht um das offizielle Microsoft -
+Vorgehen und jeder handelt dabei auf eigene Gefahr.<br>
+Zunächst läd man das kleine Tool <a href="http://www.zoosau.de/software/windowsenabler.zip" title="Download &quot;Windows Enabler&quot;">"Windows Enabler"
+herunter</a>.
+Es handelt sich dabei um ein kleines Programm, welches nicht installiert
+werden muss. Dieses tut man schließlich auch. <strong>Achtung:</strong> Unter Windows
+7/Vista bitte unbedingt "<em>Ausführen als Administrator</em>" auswählen. In
+der Systemleiste neben der Uhr erscheint daraufhin ein kleines, blaues
+Icon. Klickt man 1x darauf, erscheint "On" darin. Klickt man nun auf die
+ausgegraute "<em>Kopieren nach</em>" Schaltfläche, wird sie verfügbar -&gt;
+Verarscht! ;)</p>
+<p>Wir klicken nun auf die neu verfügbare "<em>Kopieren nach</em>" - Schaltfläche.
+In dem sich daraufhin öffnendem Dialog wählen wir als Ziel "Dokumente
+und Einstellungen\&lt;username&gt;.&lt;neue_domäne&gt;" (im
+Beispiel: "Dokumente und Einstellungen\mr.MFC3"; unter Vista/7:
+"Users"- o. "Benutzer"\&lt;username&gt;.&lt;neue_domäne&gt;). Dieser
+Ordner kann nicht im sich hier öffnendem Dialog angelegt werden, daher
+dieses bitte zuvor selbst im Explorer tun. Bei großen Profilen kann es
+sein, das das Fenster eine zeitlang den Eindruck macht es sei
+abgestürzt; einen Fortschrittsbalken gibt es nicht. Aber das ist glaube
+ich eine Sache, mit der man in einer eigentlich deaktivierten Funktion
+ganz gut leben kann ;)</p>
+<p>Ist dieses abgeschlossen, bringt man den PC in die neue Domäne und
+startet neu. Anschließend meldet man sich am besten als Domänenadmin an
+- Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.<br>
+Man klickt den neuen Profilordner nun mit rechts an und wählt
+"<em>Eigenschaften</em>"; im sich öffnendem Fester wechselt man zum Tab
+"<em>Sicherheit</em>". Man sieht hier nun mindestens eine SID mit einem weißen
+Symbol. Diese User entfernt man zunächst, indem man ihn durch einen
+Klick auswählt und anschließend auf "<em>Entfernen</em>" klickt. Das sind die
+Useraccounts der alten Domäne, die der neue Domänencontroller natürlich
+nicht auflösen kann.<br>
+Der nächste Schritt besteht nun darin, das man dem neuen User rekursiv
+Vollzugriff auf diesen Profilordner gewährt. Hierzu klickt man auf
+"<em>Hinzufügen</em>" und gibt im Feld "<em>Geben Die die zu verwendenden
+Objektnamen ein</em>" den Usernamen ein (Im Beispiel: <strong>mr</strong>). Hierbei ist
+darauf zu achten, das im Feld "<em>Suchpfad</em>" der Name der neuen Domäne
+angezeigt wird. Nach einem Klick auf "<em>OK</em>" taucht der User in der
+Rechteliste auf, sofern er in der neuen Domäne gefunden wird.<br>
+Man wählt diesen Eintrag nun an und setzt danach im Feld
+"<em>Berechtigungen für USERNAME</em>" alle Haken auf "<em>Zulassen</em>".
+Anschließend klickt man auf "<em>Erweitert</em>" und setzt den Haken bei
+"<em>Berechtigungen für alle untergeordneten Objekte durch die angezeigten
+Einträge, sofern anwendbar, ersetzen.</em>". Nun bestätigt man alle Dialoge
+mit "<em>OK</em>". Es kann anschließend zu einer Fehlermeldung kommen, das
+nicht alles richtig gesetzt werden konnte. Das kann man jedoch in der
+Regel ignorieren.</p>
+<p>Als letzten Schritt muss man eine kleine Anpassung in der Registry
+vornehmen. Die Datei "NTUSER.dat" im neuen Profil hat nun zwar bereits
+die passenden Berechtigungen für den neuen User, jedoch hat diese Datei
+in sich auch nocheinmal eine Berechtigungsstruktur, die wir nun setzen.<br>
+Hierzu öffnet man zunächst den Registrierungs-Editor ("<strong>regedit</strong>"
+eingeben unter Start-&gt;Ausführen) und wählt den Schlüssel
+"<em>HKEY_LOCAL_MACHINE</em>" durch anklicken aus. Anschließend klickt man
+auf "<em>Datei</em>" und wählt "<em>Struktur laden ...</em>" aus. Man navigiert nun in
+den neuen Profilordner. Hierin befindet sich eine Datei namens
+"NTUSER.dat". Es kann sein, das sie garnicht oder ohne ".dat" angezeigt
+wird. Das kommt darauf an, ob man in Windows die Anzeige von bekannten
+Dateiendungen und Systemdateien aktiviert hat, oder nicht. Wie auch
+immer: Diese Datei muss nun ausgewählt werden. Anschließend wird man
+aufgefordert, sich einen temporären Namen für diese Struktur
+auszudenken. Das Originaltutorial empfiehlt hier "chickenfucker" -
+tatsächlich sind der Phantasie hier jedoch keine Grenzen gesetzt und hat
+keinerlei Auswirkungen, da es nur temporär benutzt wird ;)<br>
+Die geladene Struktur wird nun mit dem soeben vergebenem Namen unter
+ "<em>HKEY_LOCAL_MACHINE</em>" eingebunden. Man öffnet nun mit einem
+Rechtsklick auf diesen Namen das Kontextmenü und wählt
+"<em>Berechtigungen...</em>". Es öffnet sich nun derselbe Dialog wie wir ihn
+schon vom setzen der Berechtigungen auf den neuen Profilordner her
+kennen. Man setzt nun einfach dieselben Rechte erneut und entfernt die
+Alt-Domain SIDs. Auch hier kann man den Hinweis, das einige Teile nicht
+gesetzt werden konnten, ignorieren.<br>
+<strong>Achtung! Der folgende Schritt ist sehr wichtig:</strong> Ist das ganze
+durchgelaufen, klickt man erneut auf "<em>Datei</em>" und wählt "<em>Struktur
+entfernen ...</em>".</p>
+<p>Das war's! Meldet sich nun der User an, für den wir auf diesem Wege das
+Profil vorbereitet haben, sollte er genau dieselben Einstellungen
+vorfinden, wie er sie auch in der alten Domäne hatte; inklusive
+Hintergrundbild und sogar Anordnung der Desktop-Symbole ;)<br>
+Sollte das nicht der Fall sein, könnte es daran liegen, das Windows
+einen anderen Ordner für das Profil gewählt hat als wir es gedacht
+haben. In freier Wildbahn ist mir so z.B. schon "user.domäne.000"
+begegnet.<br>
+In diesem Fall meldet man sich als Admin an (dieses Mal kann es ruhig
+der lokale Admin sein); <strong>es muss aber unbedingt ein anderer User sein
+als der, dessen Profil man umbiegt! Diesen meldet man vor dem folgendem
+Schritt ab.<br>
+</strong>Man startet nun erneut den Registrierungs-Editor ("<strong>regedit</strong>"
+eingeben unter Start-&gt;Ausführen) und navigiert zur Struktur
+"<em>HKEY_LOCAL_Machine\SOFTWARE\Microsoft\Windows
+NT\CurrentVersion\ProfileList</em>". Darin befinden sich eine Menge
+Unterschlüssel, beginnend mit "<em>S-1-5-21-</em>". Diese Namen stehen für
+SIDs, daher brauchen wir nun die Liste der SIDs vom neuen
+Domänencontroller, die man zu Beginn dieses Artikels auslesen sollte.
+Sucht nach dem Schlüssel, der 1:1 identisch mit der SID des Users auf
+dem Domänencontroller ist und klickt darauf. Darin befindet sich unter
+anderem ein REG_EXPAND_SZ mit dem Pfad zum zu verwendendem
+Domänenprofilcache als Wert. Dieser Wert kann einfach auf den richtigen
+Profilordner geändert werden.<br>
+Nach einem Neustart sollte schließlich das richtige Profil geladen
+werden.</p>
+<p>[gallery link="file"]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%20XP%2C%20Vista%20und%207%20Profile%20kopieren&url=https%3A//www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%20XP%2C%20Vista%20und%207%20Profile%20kopieren&amp;body=https%3A//www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/wers-noch-kennt-d.html">Wer's noch kennt ... ;D</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-09-25T00:20:00+02:00"> So 25 September 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/fun.html">Fun</a>
+
+
+		<span class="label label-default">Words</span>
+		11
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/rl.html">rl</a>
+        /
+	<a href="https://www.zoosau.de/tag/starfox.html">starfox</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>[caption id="attachment_1036" align="aligncenter"
+width="368"]<a href="https://www.zoosau.de/images/picdump-11-09-23-054.jpg"><img alt="Starfox is down
+..." src="https://www.zoosau.de/images/picdump-11-09-23-054.jpg" title="Starfox is down ...">{.size-full
+.wp-image-1036 width="368"
+height="600"}</a>
+Starfox is down ...[/caption]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Wer%27s%20noch%20kennt%20...%20%3BD&url=https%3A//www.zoosau.de/wers-noch-kennt-d.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Wer%27s%20noch%20kennt%20...%20%3BD&amp;body=https%3A//www.zoosau.de/wers-noch-kennt-d.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html">Meine ersten Funtoo ebuilds sind in Flora! :D</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-09-22T01:05:00+02:00"> Do 22 September 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/funtoo-linux.html">Funtoo, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		1239
+
+		<span class="label label-default">Read time</span>
+		5 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/ebuild.html">ebuild</a>
+        /
+	<a href="https://www.zoosau.de/tag/flora.html">flora</a>
+        /
+	<a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Um zu erklären, was das bedeutet, muss ich ganz kurz ausholen...</p>
+<p>Als ich vor vielen Jahren mit Linux angefangen habe, stolperte ich
+ziemlich bald über <a href="http://www.gentoo.org/" title="Homepage von Gentoo Linux">Gentoo
+Linux</a>. Damals
+konnte ich aber weder den Wert dieser Distribution ermessen, noch kam
+ich als absoluter Linuxeinsteiger damit zurecht. Also habe ich sie
+damals recht bald wieder fallen lassen.<br>
+Nachdem ich inzwischen jedoch einige Jahre mit diesem Fachgebiet auf dem
+Buckel habe, keimte vor ein paar Jahren das Interesse an dieser
+Distribution wieder auf. So läuft <a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Blogeintrag wegen des Umbaus der Zoosau auf Gentoo Linux">seit knapp 13 Monaten dieser Server
+auch unter Gentoo
+Linux</a>.<br>
+In dieser Zeit stand ich natürlich auch ab und an mal auf dem Schlauch
+und musste mich, als Google, das <a href="http://forums.gentoo.org" title="Gentoo Foren">Gentoo
+Forum</a> und IRC nicht mehr
+helfen konnten, des <a href="http://bugs.gentoo.org" title="Bugtracker von Gentoo Linux">Gentoo
+Bugtrackers</a>
+bedienen. Und genau hier machte ich Erfahrungen, welche mich
+enttäuschten. Oft, wenn ich auf diesem Wege mit den Gentoo Entwicklern
+in Kontakt treten musste, wurde ich enttäuscht. So sind zwei Bugs, die
+ich <a href="https://bugs.gentoo.org/show_bug.cgi?id=376737" title="Gentoo Bug #376737">vor fast 2
+Monaten</a>
+und <a href="https://bugs.gentoo.org/show_bug.cgi?id=367713" title="Gentoo Bug #367713">über 4
+Monaten</a>
+eingetragen habe, bis heute nicht final bearbeitet und geschlossen
+worden. Den Vogel abgeschossen hat aber der <a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675">Gentoo
+Bug 363675</a>,
+bei dem ich über 1,5 Monate der einzige gewesen bin, der den auch nur
+angesehen hat. Und dabei ging es nicht etwa um irgendeinen
+Schönheitsfehler: Ich konnte den <a href="http://gcc.gnu.org" title="Homepage des GNU C Compilers (gcc)">GNU C Compiler
+(gcc)</a> nahezu
+garnicht mehr benutzen. Das bedeutet im Falle von Gentoo Linux, das man
+nahezu kein Paket mehr installieren kann. Als ob das nicht ärgerlich
+genug wäre: Auch Sicherheitsupdates sind so natürlich nicht mehr
+möglich. Als ich mir nicht mehr zu helfen wusste, habe ich <a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=49245" title="GNU C Compiler Bug #49245">dasselbe
+Problem im Bugtracker vom gcc
+direkt</a>
+eingestellt. Nach sage und schreibe 3 Minuten und 42 Sekunden hat einer
+der dortigen Entwickler mein Problem gelöst!<br>
+Es stellte sich letzten Endes heraus, das es sich um ein lokales Problem
+bei mir gehandelt hatte, jedoch hat sich ja kein Mensch den Bug
+gründlich genug angeschaut um das wissen zu können. Wäre es ein globales
+Problem am gcc gewesen, wäre eine nichtbeachtung eines Bugs in dieser
+Kategorie fatal gewesen!<br>
+Als ich das dann im verlinktem <a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675">Gentoo
+Bug 363675</a> mal
+so angemerkt habe, bekam ich folgende Antwort:</p>
+<blockquote>
+<p><code>{#comment_text_10}
+it's a volunteer system.  if you dont like how it works, then
+step up and help. expecting people to help you isnt how things work.</code></p>
+</blockquote>
+<p>Mit anderen Worten also: Da Gentoo ein System von Freiwilligen ist, darf
+man sich nicht beschweren. Grundsätzlich natürlich richtig. Jedoch zwei
+Punkte dazu (was mich ganz dezent dann auch wieder zum eigentlichen
+Thema zurückführt :D ):</p>
+<ol>
+<li>Wenn ich das selber hätte lösen können, hätte ich wohl kaum einen
+    Bug dazu erstellt.</li>
+<li>Ich <span style="text-decoration: underline;">möchte</span> ja gerne
+    helfen, aber die Einstiegshürde bei Gentoo ist leider sehr hoch!</li>
+</ol>
+<div>
+
+Es haben sich in der jüngsten Vergangenheit mehrere Dinge ereignet bei
+denen ich mich frage, ob die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation")
+den Karren absichtlich an die Wand fahren will. Viele Entwickler
+beschwerten sich in jüngster Vergangenheit darüber, das ihnen vom Gentoo
+Linux Council, den Leitern und Koordinatoren also, völlig hanebüchene
+und fachfremde Vorgaben gemacht werden, wie Software zu entwickeln ist
+und wie die Workflows dazu auszusehen haben.  
+Das kann ich mir gut vorstellen; wie eben beschrieben scheinen die
+Entwickler ja mit den Anfragen völlig überfordert zu sein. ... was ja
+nichts mit Unfähigkeit, sondern mehr mit mangelnder Organisation zu tun
+hat. Umso unverständlicher ist es, das Hilfsangebote am laufendem Band
+ausgeschlagen werden. Das sieht man besonders drastisch am Beispiel von
+[Daniel
+Robbins](http://en.wikipedia.org/wiki/Daniel_Robbins "Wikipedia Eintrag zu Daniel Robbins"):
+
+</div>
+
+<div>
+
+Daniel Robbins hat Gentoo Linux erschaffen. Bevor er im Mai 2005 bei
+Microsoft anfing, gründete er die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation") und
+übergab das Projekt an diese. Die Gründe hierfür waren wohl zu gleichen
+Teilen, das er zum einen fürchtete sein neuer Arbeitgeber Microsoft
+könnte einen negativen Einfluss auf die weitere Entwicklung der
+Distribution haben und zum anderen wollte er mehr Zeit für seine Familie
+haben.
+
+</div>
+
+<div>
+
+Als er dann im Februar 2007 wieder als Entwickler für Gentoo anfing,
+wurden ihm, als geistigem Vater der Distribution, so viele Steine in den
+Weg gelegt, das er bereits einen Monat später seine Arbeit an Gentoo
+Linux wieder einstellte und 2008 schließlich sein aktuelles Projekt
+initialisierte: [Funtoo
+Linux](http://www.funtoo.org/wiki/Welcome "Homepage der Linuxdistribution Funtoo");
+einen Fork von Gentoo Linux.
+
+</div>
+
+<div>
+
+Inzwischen hat Funtoo viele Anhänger und ein sehr fähiges
+Entwicklerteam, an dessen Spitze Daniel Robbins steht, der (ähnlich zu
+Linus Torvalds über den Kernel) als gutmütiger Diktator die
+Marschrichtung der Distribution vorgibt und dessen Entwicklung
+koordiniert.
+
+</div>
+
+<div>
+
+Noch hängen Funtoo und Gentoo zwar eng zusammen, jedoch driften (nicht
+zuletzt wegen größerer Fortschritte bei Funtoo) die beiden immer weiter
+auseinander. Wie das bei einem Fork nunmal so ist.
+
+</div>
+
+<div>
+
+Ich habe mich daher dafür entschieden meine Freizeit und mein Engagement
+lieber in Funtoo Linux zu investieren ehe ich zunächst Monatelang den
+Leuten und Infos von Gentoo Linux hinterherlaufe, nur damit meine
+Beteiligungen dann im Sande verlaufen. Man sehe sich nur einmal den
+[Gentoo Bug
+\#228343](https://bugs.gentoo.org/show_bug.cgi?id=228343 "Gentoo Bug #228343")
+an. Da wird den Entwicklern ein nahezu fertiges
+[TYPO3](http://typo3.org/ "Homepage vom CMS TYPO3") Paket geliefert und
+es kümmert sich einfach keiner drum! Das Paket für TYPO3 Version 4.2.1
+wurde am 19.06.2008 eingereicht. Heute, 3 Jahre und 3 Monate später, hat
+der Bug nach wie vor den Status "CONFIRMED", was in etwa soviel bedeutet
+wie *"zur Kenntnis genommen - weitere Aktionen abwarten, bis wir das
+geprüft haben"*. Ist doch ein Scherz, oder?  
+Wie gesagt: Völlig überlastet und unkoordiniert das Team.
+
+</div>
+
+<div>
+
+Einer der Fortschritte von Funtoo Linux ist, das der Portage Tree, das
+bedeutet: Das Paketverzeichnis mit allen Installationsscripten, nun
+nicht mehr per rsync abgeglichen, sondern in einem git Repository
+gepflegt wird. Das macht das ganze einfacher zu warten, es gibt
+automatisch ein ChangeLog und eine History und es können mehr Personen
+einfacher miteinander an diesem Projekt arbeiten.
+
+</div>
+
+<div>
+
+[Martin "golodhrim"
+Scholz](http://www.funtoo.org/wiki/User:Golodhrim "Funtoo Profil von Martin "golodhrim " Scholz")
+hat am [7. 7. 2011 mit einer super-Idee für eine neue Art des
+Overlays](http://groups.google.com/group/funtoo-dev/browse_thread/thread/c37339e78c641afc "Martin "golodhrim" Scholz Vorschlag für "flora" auf der Funtoo Google Group"),
+mit dem nahezu jedermann zur Entwicklung von Funtoo beitragen kann,
+einen Meilenstein (in meinen Augen) für die Distribution gelegt.
+Inzwischen ist die Idee umgesetzt, das ganze nennt sich
+"[flora](http://www.funtoo.org/wiki/Flora "Funtoo Wikieintrag zu "flora"")"
+und Martin Scholz wurde inzwischen von Daniel Robbins [zum Core Member
+für die Communityentwicklung und speziell zum vorantreiben von flora
+ernannt](http://groups.google.com/group/funtoo-dev/browse_thread/thread/f5b259a0a7be2945 "Daniel Robbins Mail an die Funtoo Mailingliste vom 17.9.").
+
+</div>
+
+<div>
+
+Ich habe mich in den letzten Tagen mit der Funktionsweise und der
+Erstellung von (Ge|Fu)ntoo Paketen (ebuilds) beschäftigt und heute
+[meine erste Version das TYPO3 Paketes an flora
+übermittelt](https://github.com/funtoo/flora/commit/203bde9df309a5c1a13853329e7a01fa1f9190ef "Mein erster flora commit für das TYPO3 Paket in Funtoo").
+Martin Scholz nimmt seine Aufgabe sehr ernst und ist ungeheuer fleissig!
+So hat er auch nur knapp eine Stunde später [meine Änderungen
+unverändert in flora
+übernommen](https://github.com/funtoo/flora/commit/c7d6f68535315365d40ea3705cc4825862abeaeb "Martin Scholz übernimmt mein TYPO3 Paket für Funtoo unverändert in flora").
+
+</div>
+
+<div>
+
+Es ist zwar als PHP Paket nur ein vergleichsweise einfaches Paket, da
+die ganzen Kompilierungsvorgänge und was damit zusammenhängt dabei nicht
+berücksichtigt werden müssen, trotzdem ist es etwas völlig neues für
+mich. Gerade weil das vergleichweise einfach ist, bot es sich als erstes
+Paket besonders an. Ich hoffe, das ich mir dabei keinen groben Schnitzer
+erlaubt habe ... nicht das ich mich bei meinem Gesellenstück gleich vor
+der ganzen Community blamiere ... :D  
+Naja, mehr als stundenlang hin-und-hertesten kann man ja nicht. Und zum
+Glück hat so ein PHP Paket ja in der Regel nicht das Potential
+irgendetwas wichtiges zu zerstören.
+
+</div>
+
+<div>
+
+Ich bin mal gespannt ob, wann und wie das ganze schließlich im Portage
+Tree landet und ob Fehler gefunden werden.
+
+</div>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Meine%20ersten%20Funtoo%20ebuilds%20sind%20in%20Flora%21%20%3AD&url=https%3A//www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Meine%20ersten%20Funtoo%20ebuilds%20sind%20in%20Flora%21%20%3AD&amp;body=https%3A//www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pager">
+                <li class="previous"><a href="https://www.zoosau.de/index3.html">&larr; Newer</a></li>
+                <li class="next"><a
+                        href="https://www.zoosau.de/index5.html">Older &rarr;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2018/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2018 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2017/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2017 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2016/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2016 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2016/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2016 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2014 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2014 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2013 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2013 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2013 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2012 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2012 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2011 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2011 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2011 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2011 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2011 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2011 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2011 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2010 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2010 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2010 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2010 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2009 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2009 (13)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2009 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2009 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2009 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2008 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2008 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2008 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2008 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2008 (11)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2008 (10)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2008 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2008 (16)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2008 (14)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2007/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2007 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2006 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2006 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2006 (7)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

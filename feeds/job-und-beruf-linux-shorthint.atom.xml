@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf, Linux, Shorthint</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf-linux-shorthint.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2016-02-12T17:50:00+01:00</updated><entry><title>Escape character in telnet eintippen</title><link href="https://www.zoosau.de/escape-character-in-telnet-eingeben.html" rel="alternate"></link><published>2016-02-12T17:50:00+01:00</published><updated>2016-02-12T17:50:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2016-02-12:/escape-character-in-telnet-eingeben.html</id><summary type="html">&lt;p&gt;Benutzt man das Programm telnet unter Linux, wird man beispielsweise mit
+folgender Meldung begrüsst:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mr@mr:~$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is &amp;#39;^]&amp;#39;.
+220 mr.localdomain ESMTP Postfix (Ubuntu)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Möchte man diese Verbindung schließen, müsste man den "Escape character"
+( \^] ) eingeben. Nur: Hierbei handelt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Benutzt man das Programm telnet unter Linux, wird man beispielsweise mit
+folgender Meldung begrüsst:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mr@mr:~$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is &amp;#39;^]&amp;#39;.
+220 mr.localdomain ESMTP Postfix (Ubuntu)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Möchte man diese Verbindung schließen, müsste man den "Escape character"
+( \^] ) eingeben. Nur: Hierbei handelt es sich keinesfalls um die
+beiden ASCII-Zeichen "\^" und "]". Bei diesen handelt es sich mehr um
+die Darstellung eine bestimmten Tastenkombination. Das fiese: Oft kommt
+man nichtmal mit dem altbewährten Strg+c aus der Sache raus ...&lt;/p&gt;
+&lt;p&gt;Um diesen Escape character einzugeben verwendet man folgende
+Tastenkombination: &lt;strong&gt;STRG + AltGr + 9&lt;br&gt;
+&lt;/strong&gt;Hinweis: Die "+" Zeichen sollen nicht eingetippt werden, sondern
+anzeigen, das die drei Tasten &lt;span
+style="text-decoration: underline;"&gt;gleichzeitig&lt;/span&gt; gedrückt werden
+müssen.&lt;/p&gt;
+&lt;p&gt;Schon sollte die Konsole sich wieder im telnet-Kommando-Modus befinden.
+Dort kann man mit dem Befehlt "quit" wieder auf die normale Linux-Shell:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mr@mr:~$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is &amp;#39;^]&amp;#39;.
+220 mr.localdomain ESMTP Postfix (Ubuntu)
+^]
+telnet&amp;gt; quit
+Connection closed.
+mr@mr:~$
+&lt;/pre&gt;&lt;/div&gt;</content></entry></feed>

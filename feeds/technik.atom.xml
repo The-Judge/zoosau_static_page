@@ -1,0 +1,1889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2016-03-03T19:13:00+01:00</updated><entry><title>Wordpress Timeout beim Login</title><link href="https://www.zoosau.de/wordpress-timeout-beim-login.html" rel="alternate"></link><published>2016-03-03T19:13:00+01:00</published><updated>2016-03-03T19:13:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2016-03-03:/wordpress-timeout-beim-login.html</id><summary type="html">&lt;p&gt;Wenn man Wordpress in einer Netzwerkstruktur betreibt, in der keine
+Verbindung zu anderen Internetseiten hergestellt werden kann, kommt es
+bei vielen Aktionen zu langen Wartezeiten bis hin zu Timeouts. Im
+extremsten Fall kann das dazu führen, das man sich an seinem eigenen
+Wordpress nicht mehr im Backend einloggen kann.&lt;/p&gt;
+&lt;p&gt;Der …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wenn man Wordpress in einer Netzwerkstruktur betreibt, in der keine
+Verbindung zu anderen Internetseiten hergestellt werden kann, kommt es
+bei vielen Aktionen zu langen Wartezeiten bis hin zu Timeouts. Im
+extremsten Fall kann das dazu führen, das man sich an seinem eigenen
+Wordpress nicht mehr im Backend einloggen kann.&lt;/p&gt;
+&lt;p&gt;Der Grund dafür ist, das gerade beim Login oder allgemein: Beim Zugriff
+auf das Wordpress-Dashboard, normalerweise ziemlich viele Daten von
+externen Ressourcen von Wordpress geladen und verarbeitet werden.
+Nachrichten im "Wordpress-Nachrichten"-Widget, Informationen ob Updates
+für Wordpress oder Plugins existieren, Twitter-Feeds, ... all diese
+Informationen fragt Wordpress bei einem Login im Hintergrund ab und
+bereitet es für die Anzeige im Dashboard auf. Behindert eine Firewall
+oder ähnliches diese Zugriffe, wird für jeden dieser Zugriffe eine
+zeitlang gewartet, ehe für diese Zugriffe ein Timeout erreicht wird. Je
+mehr Ressourcen hierbei geladen werden, desto länger die Gesamtzeit die
+das Dashboard benötigt um sich aufzubauen.&lt;/p&gt;
+&lt;p&gt;In der Regel genügen die Wordpress internen Aktionen ohne weitere
+Plugins um in diesem Fall an die Grenze der definierten PHP
+&lt;a href="http://php.net/manual/de/info.configuration.php#ini.max-execution-time"&gt;max_execution_time()&lt;/a&gt;
+zu geraten. Je nachdem welche Ressourcen im Frontend der Seite verwendet
+werden, kann es auch sein, das sich die Seite bei Euren Besuchern
+hierdurch viel langsamer als gewünscht aufbaut.&lt;/p&gt;
+&lt;h2&gt;Die beste Lösung&lt;/h2&gt;
+&lt;p&gt;Die beste Maßnahme diese Probleme zu umgehen ist meiner Meinung nach
+schlicht und einfach dafür zu sorgen, das Wordpress ungehindert auf
+Ressourcen im Netz zugreifen kann, da sonst wichtige Kerntechniken von
+Wordpress nicht oder nicht optimal funktionieren (Update-Hinweise, laden
+von News, Abfragen von DNS Informationen, ...).&lt;/p&gt;
+&lt;h2&gt;Die zweitbeste Lösung&lt;/h2&gt;
+&lt;p&gt;Sollte es sich, warum auch immer, nicht anders machen lassen als
+Wordpress ohne freien Zugriff auf's Internet zu betreiben, kann man
+diese Zugriffe durch einen Eintrag in der wp-config.php - Datei einfach
+komplett abschalten. Dieses ist in der Regel die bessere Wahl;
+funktionieren die Zugriffe schließlich ohnehin nicht. Nur kommt es
+hierbei dann weder zu Script-Timeouts, noch zu langen Ladezeiten:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;define(&amp;#39;WP_HTTP_BLOCK_EXTERNAL&amp;#39;, true);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Funktioniert der Zugriff auf bestimmte Ressourcen, z.B. weil diese
+Explizit in der Firewall oder einem Proxy freigeschaltet worden sind,
+kann man diese mit einer weiteren Konfigurationsoption von diesem Block
+ausnehmen, so das diese dennoch geladen werden:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;define(&amp;#39;WP_ACCESSIBLE_HOSTS&amp;#39;, &amp;#39;api.twitter.com,wordpress.org,download.wordpress.org&amp;#39;);
+&lt;/pre&gt;&lt;/div&gt;</content><category term="firewall"></category><category term="proxy"></category><category term="timeout"></category><category term="Wordpress"></category></entry><entry><title>Adobe Photoshop unter MacOSX: Fehler A12E1</title><link href="https://www.zoosau.de/adobe-photoshop-unter-macos-fehler-a12e1.html" rel="alternate"></link><published>2014-06-01T09:00:00+02:00</published><updated>2014-06-01T09:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2014-06-01:/adobe-photoshop-unter-macos-fehler-a12e1.html</id><summary type="html">&lt;h1&gt;Das Problem&lt;/h1&gt;
+&lt;p&gt;Vor einiger Zeit sollte ich mal einen neuen Mac Rechner vorbereiten und
+unter (vielem) anderem Adobe Photoshop darauf installieren. Ich habe
+natürlich erstmal alles sauber vorbereitet: Platte formatiert, MacOS
+installiert, Updates eingespielt, User eingerichtet, unzählige kleine
+Programme installiert, ... nach ein paar Stunden war Adobe Photoshop an
+der Reihe …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Das Problem&lt;/h1&gt;
+&lt;p&gt;Vor einiger Zeit sollte ich mal einen neuen Mac Rechner vorbereiten und
+unter (vielem) anderem Adobe Photoshop darauf installieren. Ich habe
+natürlich erstmal alles sauber vorbereitet: Platte formatiert, MacOS
+installiert, Updates eingespielt, User eingerichtet, unzählige kleine
+Programme installiert, ... nach ein paar Stunden war Adobe Photoshop an
+der Reihe. Es begrüßte mich diese nette Anzeige:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/Screen+Shot+2013-08-26+at+9.15.18+AM.png"&gt;&lt;img alt="Screen+Shot+2013-08-26+at+9.15.18+AM" src="https://www.zoosau.de/images/Screen+Shot+2013-08-26+at+9.15.18+AM.png"&gt;{.aligncenter
+.size-full .wp-image-1783 width="450"
+height="201"}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(Zugegeben: Oberflächlich) Im Internet gesucht, am Ende sogar den Adobe
+Support angerufen (schließlich hat man ja für einen Ar*** voll Geld
+diese Software gekauft): Keine Ahnung. Gut angelegtes Geld also ...
+Danke @Adobe!&lt;/p&gt;
+&lt;p&gt;Schließlich wurde ich &lt;a href="http://sumrandomguy.com/blog/detail/a12e1-installing-creative-cloud" title="Solution for Error A12E1 when seting up Adobe Creative Cloud applications"&gt;im Blog eines Users namens "Sum Random
+Guy"&lt;/a&gt;
+fündig und konnte es erst garnicht glauben: Das passiert, scheinbar
+reproduzierbar, wenn man sich beim formatieren der Partitionen auf dem
+Mac für die Case-Sensitive Variante des Dateisystems entscheidet!&lt;br&gt;
+Ich weiß ehrlich gesagt heute noch nicht was ich dabei unglaublicher
+finde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Das die Ar***-teure Betriebssystemplattform MacOS im Jahre 2014
+    immernoch nicht standardmäßig auf ein Case-Sensitive Dateisystem
+    setzt?&lt;/li&gt;
+&lt;li&gt;Das die Ar***-teure Software (CS6 bei Amazon derzeit 1.099,- €)
+    scheinbar ein so lasches Qualitätsmanagement hat, das so ein Problem
+    in einer Kaufversion besteht und nicht behoben wird?&lt;/li&gt;
+&lt;li&gt;Das der Branchenriese Adobe, auf die offizielle Support-Anfrage
+    eines zahlenden Kunden, nicht in der Lage ist auf so etwas
+    hinzuweisen?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Laut &lt;a href="http://sumrandomguy.com/blog/detail/a12e1-installing-creative-cloud" title="Solution for Error A12E1 when seting up Adobe Creative Cloud applications"&gt;zuvor genanntem
+Blogeintrag&lt;/a&gt;
+erstreckt sich der Fehler bis heute auf alle Adobe Creative Cloud
+Anwendungen; nicht nur auf Photoshop.&lt;/p&gt;
+&lt;p&gt;Mein Kommentar zu soetwas:&lt;/p&gt;
+&lt;p&gt;[tube]http://www.youtube.com/watch?v=8k6q3173G2k[/tube]&lt;/p&gt;
+&lt;h1&gt;Die Lösung&lt;/h1&gt;
+&lt;h2&gt;&lt;span style="color: #ff0000;"&gt;Achtung&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Ehe man beginnt einige Hinweise:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bei der hier beschriebenen Methode wird die MacOS Keychain, in der
+    gespeicherte Passworte und ggf. auch Einstellungen mancher Programme
+    gespeichert sind, nicht gesichert! Legt man Wert auf diese Daten
+    sollte man sich im Internet schlau machen wie man diese sichern und
+    übertragen kann.&lt;/li&gt;
+&lt;li&gt;Hat man Dateien auf dem System gespeichert, welche nur existieren
+    weil das Dateisystem Case-Sensitive ist, "gewinnt" eine dieser
+    Dateien, so das anschließend nur noch eine Datei auf dem System
+    verfügbar ist. Zum Beispiel: Existiert eine Datei namens
+    "Foobar.txt" und eine zweite im gleichen Verzeichnis namens
+    "FooBar.txt", wird hinterher nur noch eine davon existieren. Die
+    andere müsste man sich aus dem Backup von SuperDuper! manuell
+    herauskopieren.&lt;br&gt;
+   Das ist genau das Problem mit Case-Insensitive Dateisystemen und wie
+    Ihr seht: Der Ärger geht direkt los ... :P&lt;/li&gt;
+&lt;li&gt;Vorsicht ist besser als Nachsicht: Legt auf jeden Fall ein
+    (besser: zwei) Backups Eures Systems an.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Wie auch immer: Es gibt eine Lösung um nicht das gesamte System
+nocheinmal neu installieren zu müssen. Allerdings muss man auf das
+Case-Sensitive Dateisystem verzichten ... Meine Erfahrung soweit: Das
+führt unter mehreren MacOS Applikationen bis heute zu Irritationen. Und
+egal wie sehr ich mir der Sinnhaftigkeit von Case-Sensitive
+Dateisystemen bewusst bin und es gerne hätte: Unter MacOS, bis heute:
+Besser Finger weg!&lt;/p&gt;
+&lt;p&gt;Zunächst installiert man das Programm
+&lt;a href="http://www.shirt-pocket.com/SuperDuper/superduperdescription.html" title="SuperDuper!"&gt;SuperDuper!&lt;/a&gt;.
+Es ist - für den hierbei benötigten Funktionsumfang - kostenlos, bietet
+in der Vollversion für \$27.95 jedoch zum einen nützliche weitere
+Funktionen. Zum anderen kann man sich ja mal überlegen wie viel Zeit und
+Nerven einen dieses Programm nach erfolgreicher Dateisystemmigration
+gespart hat und das alleine aus Sponsering-Gründen für einen Kauf in
+Erwägung ziehen ...&lt;/p&gt;
+&lt;p&gt;Hat man SuperDuper! also installiert, benötigt man noch eine USB
+Festplatte, welche wenigstens so groß ist wie auf der im Mac eingebauten
+Festplatte an Speicher belegt ist. Am besten gleich zwei; in den
+nächsten Schritten werden sämtliche Daten von der eingebauten Festplatte
+gelöscht. Man kann also garnicht genug Backups haben und es empfiehlt
+sich auf einer Festplatte zunächst ein Time Machine Backup zu erstellen
+und anschließend eines mit SuperDuper!, wie im folgenden gezeigt wird:&lt;/p&gt;
+&lt;p&gt;Als erstes formatiert man die (zweite) USB Festplatte für den Mac.
+Anschließend startet man SuperDuper! und tut folgendes:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1806" align="aligncenter"
+width="621"]&lt;a href="https://www.zoosau.de/images/superduper_1.png"&gt;&lt;img alt="SuperDuper! Schritt 1 von
+3" src="https://www.zoosau.de/images/superduper_1.png"&gt;{.size-full
+.wp-image-1806 width="621"
+height="337"}&lt;/a&gt;
+SuperDuper! Schritt 1 von 3[/caption]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Auswählen der Quelle&lt;br&gt;
+   Hier sollte die Systemfestplatte, die gesichert werden soll,
+    ausgewählt werden.&lt;/li&gt;
+&lt;li&gt;Auswahl des Ziels&lt;br&gt;
+   Hier habe ich, da gerade keine USB Festplatte greifbar war, ein
+    Image als Ziel eingestellt. Für den tatsächlichen Vorgang wird hier
+    jedoch die USB Festplatte als Ziel ausgewählt.&lt;/li&gt;
+&lt;li&gt;Auswahl des Profiles&lt;br&gt;
+   Einfach auf der Voreinstellung "Backup - all files" wie hier gezeigt
+    stehen lassen.&lt;/li&gt;
+&lt;li&gt;Anschließend öffnet man die Optionen&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[caption id="attachment_1808" align="aligncenter"
+width="294"]&lt;a href="https://www.zoosau.de/images/superduper_2.png"&gt;&lt;img alt="SuperDuper! Schritt 2 von
+3" src="{filename}images/superduper_2-294x300.png"&gt;{.wp-image-1808
+.size-medium width="294"
+height="300"}&lt;/a&gt;
+SuperDuper! Schritt 2 von 3[/caption]&lt;/p&gt;
+&lt;p&gt;Hier sind die gezeigten Einstellungen zu übernehmen.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1809" align="aligncenter"
+width="297"]&lt;a href="https://www.zoosau.de/images/superduper_3.png"&gt;&lt;img alt="SuperDuper! Schritt 3 von
+3" src="{filename}images/superduper_3-297x300.png"&gt;{.size-medium
+.wp-image-1809 width="297"
+height="300"}&lt;/a&gt;
+SuperDuper! Schritt 3 von 3[/caption]&lt;/p&gt;
+&lt;p&gt;Unter "Advanced" sollte alles bereits so sein wie hier gezeigt.
+Trotzdem: Sicherheitshalber einmal kontrollieren und ggf. die hier
+gezeigten Einstellungen anwenden.&lt;/p&gt;
+&lt;p&gt;Durch einen Klick auf "OK" kommt man wieder in das Hauptfenster. Durch
+einen Klick auf "Copy Now" startet man den Sicherungsvorgang.&lt;/p&gt;
+&lt;p&gt;Ist dieser abgeschlossen wird das System neu gestartet. Die USB
+Festplatte bleibt dabei angeschlossen. Sobald der Startton ertönt,
+drückt man die Alt-Taste (die zwei komischen Striche) und hält diese
+gedrückt. Es sollte eine Bootauswahl erscheinen, bei der man dann die
+USB Festplatte auswählt. Das System sollte nun wie gewohnt starten;
+tatsächlich tut es das jedoch von der USB Festplatte; geiler Scheiss,
+wa?&lt;/p&gt;
+&lt;p&gt;Hier startet man nun das Festplattendienstprogramm und formatiert die
+eingebaute Systemfestplatte; dieses mal jedoch Case-Insensitive! Achtet
+genau darauf, das Ihr nicht die USB Festplatte ausgewählt habt.&lt;/p&gt;
+&lt;p&gt;Anschließend startet man erneut SuperDuper!, belässt alle Einstellungen
+wie sie sind, vertauscht dieses Mal jedoch Quelle und Ziel, so das von
+der USB Festplatte auf die Systemfestplatte kopiert wird.&lt;/p&gt;
+&lt;p&gt;Sobald dieser Vorgang abgeschlossen ist, sollte sich das System ohne die
+USB Festplatte starten lassen und über ein Case-Insensitives Dateisystem
+verfügen. Ebenso sollte sich jetzt auch die Adobe Creative Suite /
+Creative Cloud Apps installieren lassen.&lt;/p&gt;</content><category term="A12E1"></category><category term="adobe"></category><category term="mac"></category><category term="macos"></category><category term="macosx"></category><category term="mavericks"></category><category term="photoshop"></category></entry><entry><title>VPN as a Service - Der Anonymisierungsanbieter Hide.io</title><link href="https://www.zoosau.de/vpn-as-a-service-der-anonymisierungsanbieter-hide-oi.html" rel="alternate"></link><published>2013-10-16T20:54:00+02:00</published><updated>2013-10-16T20:54:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2013-10-16:/vpn-as-a-service-der-anonymisierungsanbieter-hide-oi.html</id><summary type="html">&lt;p&gt;Es folgt ein Dauerwerbethread ... ;)&lt;/p&gt;
+&lt;p&gt;Aber wer mich und/oder das Blog hier kennt weiß, das ich nicht
+leichtfertig Mist empfehle oder hype. Ich bin wirklich von
+&lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; überzeugt und
+möchte diesem nicht mehr ganz jungem Startup daher gerne zu etwas mehr
+Verbreitung verhelfen. Da sich dieses vor dem Hintergrund …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es folgt ein Dauerwerbethread ... ;)&lt;/p&gt;
+&lt;p&gt;Aber wer mich und/oder das Blog hier kennt weiß, das ich nicht
+leichtfertig Mist empfehle oder hype. Ich bin wirklich von
+&lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; überzeugt und
+möchte diesem nicht mehr ganz jungem Startup daher gerne zu etwas mehr
+Verbreitung verhelfen. Da sich dieses vor dem Hintergrund aktuellen
+Zeitgeschehens
+(Stichworte: &lt;a href="http://www.heise.de/newsticker/meldung/NSA-Ueberwachungsskandal-Von-NSA-GCHQ-BND-PRISM-Tempora-XKeyScore-und-dem-Supergrundrecht-was-bisher-geschah-1958399.html" title="Heise Artikel zum Thema"&gt;NSA-Überwachungsskandal&lt;/a&gt;,
+Edward Snowden, etc.) gerade aktueller den je ist, möchte ich gerne
+meinen kleinen Beitrag leisten.&lt;/p&gt;
+&lt;p&gt;Zunächst: &lt;span style="text-decoration: underline;"&gt;Worum geht es
+überhaupt&lt;/span&gt;?&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1712" align="alignleft" width="150"]&lt;img alt="hide.io
+Logo" src="{filename}images/bg_intro-150x148.png"&gt;{.size-thumbnail
+.wp-image-1712 width="150" height="148"} hide.io Logo[/caption]&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; ist ein
+Dienstleister, der im Kern anbietet einem ein VPN bereitzustellen, mit
+welchem man, mit einer zufällig zur Verfügung gestellten IP,
+anonymisiert im Internet surfen kann, da sie nicht protokollieren
+welchem Kundenaccount zu welchem Zeitpunkt welche IP zugewiesen war.
+Somit kann man frei von der Leber weg, selbst in den krassesten
+Nazi-Foren spamen, Dateien herunterladen oder auch einfach nur, ohne von
+Amazon, Facebook, Google und Co. verfolgt zu werden (sauberen
+Cookiespeicher vorausgesetzt), frei im Netz surfen, ohne von diesen
+nervenden "Wer Axt kaufte, kaufte auch: Leichensack" - Geprösel schier
+in den Wahnsinn getrieben zu werden.&lt;/p&gt;
+&lt;p&gt;Auch Youtube - Videos werden, obwohl sie vom heiligen GEMA-Stuhl in
+Deutschland gesperrt wurden, wie von Zauberhand wieder abrufbar, weil
+man, laut der IP, für Youtube aus Holland, China, oder von
+weiß-der-Geier wo darauf zugreift. Recht praktisch.&lt;/p&gt;
+&lt;p&gt;Eigentlich ist das ganze eine recht einfache Technik, die jemandem in
+meinem Beruf nicht erklärt werden muß. Ich habe mir bei dem ganzen nur
+zwei Fragen gestellt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Seit kurzen werden alle ISP von Gesetzeswegen gezwungen
+    Verbindungsdaten vorzuhalten; Stichwort: Voratsdatenspeicherung. Auf
+    welcher rechtlichen Grundlage darf
+    &lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; überhaupt
+    keine solchen speichern und trotzdem Geschäfte in Deutschland
+    machen?&lt;/li&gt;
+&lt;li&gt;Wer garantiert mir, das nicht doch jemand die Daten abgreift oder
+    diese doch, wie überall sonst auch, protokolliert werden?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Diese habe ich einfach an die Betreiber weiter gegeben und darauf,
+zumindest was Frage #1 betrifft, folgende Antwort erhalten:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Bernd&lt;/strong&gt; (Support Desk)&lt;/p&gt;
+&lt;p&gt;01. Okt 07:34 (CEST)&lt;/p&gt;
+&lt;p&gt;Hallo,&lt;/p&gt;
+&lt;p&gt;wir haben unseren Hauptsitz in Hong Kong, und müssen uns an dortige
+Gesetze halten. Eine Vorratsdatenspeicherung, wie sie versucht wurde
+in Deutschland umzusetzen, gibt es dort nicht. Allerdings besteht in
+Deutschland ebenfalls keine Pflicht Verbindungsdaten zu speichern. Du
+spielst wahrscheinlich auf die Bestandsdatenauskunft an, aber davon
+sind wir nicht betroffen, da wir weder persönliche Daten, noch
+Verbindungsdaten speichern und diese Daten auch nicht zur Abrechnung
+benötigen. Das Problem liegt in Deutschland darin, dass die Daten
+nicht gespeichert werden müssten, aber sobald sie gespeichert werden
+(z.B. bei der Telekom 7 Tage) auch herausgegeben werden müssen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Zu Frage #2 wird man natürlich, außer einem flattert irgendwann doch
+einmal ein Gerichtsbeschluss in den Briefkasten, nie eine ausreichend
+befriedigende Antwort erhalten. Dazu müsste man voll-transparente
+Einsichten in den Vertriebsablauf und das technische Setup des Anbieters
+erlangen, was nie geschehen wird.&lt;/p&gt;
+&lt;p&gt;Aber mal ehrlich: Vor ein paar Jahren wurden Menschen, die das Gefühl
+hatten auf Schritt und Tritt belauscht und überwacht zu werden,
+bestenfalls belächelt. Seit Facebook ist das jedoch schlicht und
+ergreifend Realität; der Anbieter macht ja nichtmal ein Geheimnis
+daraus. Spätestens seit zuvor genanntem Überwachungsskandal ist jedoch
+klar: Das Internet ist nicht mehr was es einmal war und diese Furcht ist
+nicht mehr länger das Produkt eines paranoiden Geistes, sondern einfach
+das das Bewusstsein über die Tatsachen.&lt;br&gt;
+Natürlich weiß ich nicht, ob
+&lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; im Zweifelsfall
+wirklich keine Daten an Strafverfolgungsbehörden und andere weitergibt.
+Jedoch weiß ich, das es erstens auf keinen Fall schadet in Zeiten wie
+diesen mit so einem Verfahren die Nachverfolgbarkeit der eigenen
+Schritte im Internet komplizierter zu verschleiern als normal. Und
+zweitens: Spätestens nach der Gerichtsverhandlung gegen meinen
+ehemaligen Arbeitgeber, die Firma &lt;a href="http://www.kununu.com/de/nrw/duesseldorf/in/marketing-factory-consulting" title="kununu Bewertungsseite zur Firma Marketing Factory Consulting GmbH"&gt;Marketing Factory Consulting GmbH in
+Düsseldorf&lt;/a&gt;,
+welche mich in meiner Funktion als Abteilungsleiter der
+Systemadministration dazu aufgefordert hat, heimlich den Mail- und
+Chatverkehr der eigenen Mitarbeiter mitzuschneiden und einem mir nicht
+weiter kontrollierbarem Personenkreis zum lesen zur Verfügung zu
+stellen, weiß ich, das es auch ganz gehörig darauf ankommt Sachverhalte
+für die Richter schwerer nachvollziehbar zu machen. Der Richter an sich
+ist ein fauler Beamter, dem der tatsächliche Sachverhalt herzlich egal
+ist - wichtig ist nur, das möglichst wenig Papierkram zusammen kommt und
+alles schön undurchschaubar und mit technischem Firlefanz gespickt ist,
+damit er möglichst schnell abschalten und auf ein Papierkriegarmes
+Endergebnis hinarbeiten kann.&lt;br&gt;
+Letzteres ist, sobald der Begriff "VPN" fällt, aufreichend erreicht ;)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1711" align="alignright" width="0"]&lt;a href="https://www.zoosau.de/images/step3.jpg"&gt;&lt;img alt="hide.io
+Schritt 3 in der ausführlichen Bild-für-Bild
+Anleitung" src="{filename}images/step3-150x109.jpg" title="hide.io Schritt 3"&gt;{.wp-image-1711
+width="0"
+height="0"}&lt;/a&gt; hide.io
+Schritt 3 in der ausführlichen Bild-für-Bild Anleitung[/caption]&lt;/p&gt;
+&lt;p&gt;Was &lt;a href="https://www.hide.io/" title="Homepage von hide.io"&gt;hide.io&lt;/a&gt; in meinen
+Augen ebenfalls vorbildlich macht ist die Schritt-für-Schritt gestaltete
+und bebilderte Einrichtung des Dienstes. Man wählt zunächst welches
+Betriebssystem man hat und in welchem Land man angeblich gerne sitzen
+würde und schon wird man mit einer bebilderten Anleitung versorgt, die
+man ohne technisches Know-How zu haben einfach durchklickt. Prima!&lt;/p&gt;
+&lt;p&gt;Also ich bin jetzt Kunde ; das Geld halte ich persönlich für gut
+angelegt! :) Man kann auch kostenlos alles erstmal in ruhe testen ehe
+man sich anmeldet.&lt;br&gt;
+Von mir eine klare Empfehlung!&lt;/p&gt;</content><category term="anonym surfen"></category><category term="hide.io"></category><category term="marketing factory consulting gmbh"></category><category term="mfc"></category><category term="nsa"></category><category term="spionage"></category><category term="vpn"></category></entry><entry><title>Es passiert den besten von uns ...</title><link href="https://www.zoosau.de/es-passiert-den-besten-von-uns.html" rel="alternate"></link><published>2013-09-11T22:25:00+02:00</published><updated>2013-09-11T22:25:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2013-09-11:/es-passiert-den-besten-von-uns.html</id><summary type="html">&lt;p&gt;Ein neues Projekt. Man hat eine super Idee, die man gerne umsetzen
+möchte. Jenseits des normalen Rhythmus hat man neben ausreichend
+Engagement auch endlich mal ein paar Tage Zeit um sich so richtig schön
+zu vergraben und an seiner Idee zu arbeiten. Eine Woche Arbeit; man hat
+ein genaues Bild …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ein neues Projekt. Man hat eine super Idee, die man gerne umsetzen
+möchte. Jenseits des normalen Rhythmus hat man neben ausreichend
+Engagement auch endlich mal ein paar Tage Zeit um sich so richtig schön
+zu vergraben und an seiner Idee zu arbeiten. Eine Woche Arbeit; man hat
+ein genaues Bild von dem im Kopf, was man erreichen will. Bisher sieht
+alles vielversprechend aus: Man hat ein paar neue Dinge gelernt,
+recherchiert, manches auf für einen selbst unüblichem aber erstaunlich
+effektivem Wege gelöst, ... kurz: man ist stolz auf das was man bisher
+erreicht hat. Doch dann, das undenkbare:&lt;/p&gt;
+&lt;h1&gt;Festplatten-Crash!&lt;/h1&gt;
+&lt;p&gt;Kann doch nicht sein: SSD für 300,- € am Start, man nutzt Git, bis
+gestern keine Probleme, alles lief flott und reibungslos. Und von jetzt
+auf gleich - einfach alles weg??&lt;/p&gt;
+&lt;p&gt;Wie &lt;a href="http://article.gmane.org/gmane.linux.kernel/1559486" title="LKML Beitrag von Linus Torvalds wegen seiner defekten SSD"&gt;der jüngste Fall von Linux Kernel Maintainer Linux Torvalds
+zeigt&lt;/a&gt;,
+passiert das selbst den besten von uns ... in diesem Fall ist "nur" ein
+teil der Arbeit eines einzigen Tages verloren gegangen. Jedoch zeigt mir
+das mal wieder: Git alleine ist lediglich ein guter Anfang: Wirklich
+sicher ist erst, was nicht nur commited, sondern auch bereits in ein
+externes Repository gepushed wurde! "Häufig pushen" ist also das neue
+"Häufig speichern".&lt;/p&gt;
+&lt;p&gt;Der Fall zeigt jedoch auch, wie abhängig und wie selbstverständlich wir
+inzwischen eine ausreichend geölten Maschinerie voraussetzen. Früher war
+man bereits froh, wenn man beim erstellen von z.B. einer umfangreichen,
+lokalen Arbeit am PC durch häufiges speichern gegen Stromausfälle,
+Programmabstürze und ähnlichem abgesichert war. Fiel nun die Festplatte
+aus, dann war das zwar ärgerlich wenn unter Umständen die Arbeit von
+einer ganzen Woche (bei vorbildlich gemachten, 1x wöchentlichen
+Backups), wurde jedoch allerseits als höhere Gewallt akzeptiert.&lt;br&gt;
+Heutzutage schlägt ein Fall wie dieser bereits hohe Wellen, nur weil die
+Arbeit von ein paar Stunden verloren gegangen ist!&lt;/p&gt;
+&lt;p&gt;Ich denke mir dabei folgendes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ticken wir eigentlich noch ganz richtig?? Das ist doch nicht mehr
+    verhältnismäßig, solche Erwartungen zu stellen; wo bereits so ein
+    "Furz im Wind aktueller Entwicklung" für manche eine Welt, da:
+    Gestörter Zeitplan zusammenbrechen lässt.&lt;/li&gt;
+&lt;li&gt;Trotzdem: Remote Branches nutzen und häufig pushen! Gibt es eine
+    Policy in einer Firma, welche die Nutzung eigener Branches
+    unterbindet oder reglementiert, hat der Initiator keine Ahnung von
+    Git und man kann den Ball bei einer etwaigen Frage, wie man sowas in
+    Zukunft zu unterbinden gedenkt, selbstbewusst zurückspielen.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Mannometer ... wenn &amp;lt;6 Stunden Arbeit soooo viel Wert sind, müssen
+alle, die sich bereits in einer vergleichbaren Diskussion wiedergefunden
+haben, ihr Gehalt wohl noch einmal neu verhandeln ...&lt;/p&gt;</content></entry><entry><title>2011: 27 Jahre eMail und kein gescheiter Mailclient am Markt</title><link href="https://www.zoosau.de/2011-27-jahre-email-und-kein-gescheiter-mailclient-am-markt.html" rel="alternate"></link><published>2011-07-10T17:34:00+02:00</published><updated>2011-07-10T17:34:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-07-10:/2011-27-jahre-email-und-kein-gescheiter-mailclient-am-markt.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;GNAHR !!&lt;/strong&gt; Das ist genau das richtige Wort für das, was ich gerade
+denke.&lt;/p&gt;
+&lt;p&gt;eMails sind für mich ein sehr, sehr wichtiges Medium geworden. SMS,
+Briefpost, Telefon, Foren, ... all das ist mir nicht so wichtig wie
+eMails. Ich nutze dieses Medium auf der Arbeit und Privat. Auf der
+Arbeit ist es …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;GNAHR !!&lt;/strong&gt; Das ist genau das richtige Wort für das, was ich gerade
+denke.&lt;/p&gt;
+&lt;p&gt;eMails sind für mich ein sehr, sehr wichtiges Medium geworden. SMS,
+Briefpost, Telefon, Foren, ... all das ist mir nicht so wichtig wie
+eMails. Ich nutze dieses Medium auf der Arbeit und Privat. Auf der
+Arbeit ist es ebenso &lt;strong&gt;das&lt;/strong&gt; Medium! Wir interagieren mit Kunden,
+untereinander, koordinieren Kontinentübergreifend anstehende
+Arbeitsschritte und dokumentieren so auch nicht zuletzt den Verlauf,
+sowie das finale Ergebnis, eines Briefings. Ebenso gilt ein per eMail
+empfangenes Kundenbriefing als verbindliche Arbeitsanweisung und sichert
+letztlich auch unsere Arbeit gegen Missverständnisse ab. Schließlich ist
+nichts so einfach archiviert wie eine eMail.&lt;/p&gt;
+&lt;p&gt;Auch privat bringt mich so schnell nichts mehr von meinem IMAP -
+Mailpostfach ab! Früher, mit POP3, hatte ich immer das Problem, das
+entweder mein Postfach bei Web.de oder GMX.de voll war (ja, die hatten
+mal ein 5 MB Limit und ich bin ein alter Sack! ;) ), die Mails, die ich
+brauchte, nunmal leider gerade auf dem anderen PC waren, eine wirkliche
+Ordnerverwaltung fehlt, so das man sich seine astreine
+Verwaltungsstruktur quasi auf jedem Rechner wieder neu anlegen darf,
+etc.&lt;br&gt;
+Das ist mit  IMAP alles problemlos möglich. Man hat seine Ordnerstruktur
+und alle Mails auf einem zentralen IMAP Server liegen und zieht sich
+eigentlich auf Clients immer nur eine Kopie dieses Baumes. Wenn der
+Client mal wegraucht: Egal! Man hat stets alles auf dem zentralen
+Server. Und wer da keine gescheiten Backups hat: Selbst schuld!&lt;/p&gt;
+&lt;p&gt;Naja, wie auch immer: Das Thema dieses Beitrags soll es sein einmal die
+aktuelle Marktsituation und meine persönliche Meinung zu aktuellen
+eMailclients darzustellen.&lt;br&gt;
+In Deutschland wurde &lt;a href="http://de.wikipedia.org/wiki/E-Mail#Geschichte" title="Wiki Eintrag zu eMail"&gt;die erste eMail am 3. August 1984 um 10:14 MEZ in
+Karlsruhe&lt;/a&gt;
+empfangen. In 24 Tagen haben wir in Deutschland also seit 27 Jahren das
+Medium eMail, und nicht einen eMailclient weltweit, der den
+professionellen Ansprüchen gerecht wird, die ich an dieses Medium
+stelle. Ich hatte immer den Thunderbird verwendet. Es gab hiermit jedoch
+ein paar Probleme, weswegen ich mich einfach mal auf die Suche nach
+einer aktuellen Alternative gemacht habe. Ich meine: eMails sind wie
+gesagt das am häufigsten genutzte und wichtigste Medium im Internet. Es
+ist seit fast 27 Jahren im Einsatz, es muss doch also eine nahezu
+erschlagende Auswahl an Top-eMailclients geben! ... Am Arsch! Das
+meiste, was da draußen so verteilt wird ist absolut nicht zu gebrauchen
+- nichtmal für den gelegentlichen Einsatz, wenn man keine &amp;gt;2GB großen
+Mailboxen hat.&lt;/p&gt;
+&lt;p&gt;Für mich sind folgende Funktionen absolut essentiell und unverzichtbar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Unterstützung von IMAP, POP3 und SMTP per verschlüsselter
+    Verbindung (SSL/TLS).&lt;/li&gt;
+&lt;li&gt;Unterstützung von PGP/GPG um Nachrichten zuverlässig verschlüsseln
+    und signieren zu können.&lt;/li&gt;
+&lt;li&gt;Eine sichere Ablage der Daten, um sensible Informationen
+    zu schützen.&lt;/li&gt;
+&lt;li&gt;Es muss für Windows und Linux verfügbar sein.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ich beginne meine Reise am Anfang: Den Problemen, die ich mit
+Thunderbird hatte.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.mozilla.org/de/thunderbird/" title="Homepage des Thunderbird Mailclients"&gt;Thunderbird 3.1&lt;/a&gt; - Der Anfang der Reise&lt;/h2&gt;
+&lt;p&gt;Thunderbird ist eine freie Software aus dem Hause Mozilla. Dem selben
+Verein also, der sich auch für die Entwicklung eines der erfolgreichsten
+Webbrowser der Welt verantwortlich zeigt: Firefox. Es ist deshalb immer
+das Mittel meiner Wahl gewesen, da es einfach tut was es soll: Dem User
+eine zuverlässige und komfortable Schnittstelle für das Medium eMail zur
+Verfügung zu stellen. Ich möchte einfach einmal eine kurze Pro- und
+Kontra-Liste anführen, ehe ich auf die Hauptursachen meiner Suche
+eingehe. Diese basiert auf der Version 3.1:&lt;/p&gt;
+&lt;h3&gt;Pro&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kostenlos für private und kommerzielle Zwecke einsetzbar&lt;/li&gt;
+&lt;li&gt;Gute Unterstützung für POP3, SMTP und IMAP, alle über SSL und TLS
+    abgesicherte Kanäle nutzbar&lt;/li&gt;
+&lt;li&gt;Dank der weiten Verbreitung und aktiven Community sehr gut
+    dokumentiert&lt;/li&gt;
+&lt;li&gt;Übersetzungen in nahezu alle Sprachen vorhanden&lt;/li&gt;
+&lt;li&gt;Sehr gute Suchfunktionen&lt;/li&gt;
+&lt;li&gt;Nahezu alle relevanten Arbeitsplattformen werden unterstützt: Mac,
+    Windows, Linux&lt;/li&gt;
+&lt;li&gt;Sehr umfangreiche Erweiterungsmöglichkeiten durch Extensions und
+    Open Source&lt;/li&gt;
+&lt;li&gt;Sehr gute Implementation von PGP/GPG (Verschlüsselung
+    und Signierung)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Kontra&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sehr großer Nachrichtenindex auf der Festplatte (SQlite Datenbank
+    für schnellere Suchen)&lt;/li&gt;
+&lt;li&gt;Keine Verschlüsselung der auf der Festplatte gespeicherten
+    Nachrichten&lt;/li&gt;
+&lt;li&gt;Unmöglich aufdringlicher und unflexibler Wizard beim anlegen neuer
+    Accounts&lt;/li&gt;
+&lt;li&gt;Keine Möglichkeit Backups der Accounts anzulegen - man muss die
+    lokalen Dateien als ganzes kopieren&lt;/li&gt;
+&lt;li&gt;Umständliches Auslagern von Accountdaten in Verzeichnisse, die nicht
+    in einem Windows Profilordner liegen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Besonders der Wizard am Anfang, wenn man einen neuen Account einrichten
+möchte, sowie die große Datenmenge die dieses Programm erzeugt hat, um
+einen Index der Mails anzulegen, waren die Hauptgründe, weswegen ich
+hiermit nicht mehr zufrieden war.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_961" align="aligncenter" width="300"
+caption="Thunderbird Account Wizard"]&lt;a href="https://www.zoosau.de/images/thunderbird_new_account_wizard.png"&gt;&lt;img alt="Thunderbird Account
+Wizard" src="{filename}images/thunderbird_new_account_wizard-300x202.png" title="Thunderbird Account Wizard"&gt;{.size-medium
+.wp-image-961 width="300"
+height="202"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Der Wizard  öffnet sich seit der Version 3.0 &lt;strong&gt;immer&lt;/strong&gt;, wenn man einen
+neuen Account anlegen möchte. Mir ist keine Methode bekannt, diesen zu
+umgehen. Man &lt;strong&gt;muss&lt;/strong&gt; in diesem ersten Fenster (Screenshot "Thunderbird
+Account Wizard") einen Namen, eine Mailadresse und ein Passwort
+eingeben. Es gibt keinen Weg manuell die bekannten Daten einzugeben.
+Basierend auf diesen Daten hat das Programm nun versucht die zugrunde
+liegenden Einstellungen automatisch zu erkennen. Dieses Verhalten ist
+schlicht und ergreifend dumm! Ich weiß nicht, welcher Vollidiot sich das
+ausgedacht hat. Noch weniger, wieso diese Idee von einer ansonsten sehr
+cleveren Community angenommen wurde. Ich habe folgende Probleme mit
+dieser Technik:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nur basierend auf der eMailadresse können keine komplexen
+    Konfigurationen erkannt werden.&lt;/li&gt;
+&lt;li&gt;In einer nach allen Regeln der Kunst abgesicherten Mailstruktur, wo
+    alles per SSL abgesichert wurde, geht dieses Programm her und
+    schickt erstmal über alle erdenklichen Zugangswege unverschlüsselt
+    meine Daten durch die Gegend, um herauszubekommen, ob das OK ist
+    oder nicht.&lt;/li&gt;
+&lt;li&gt;Oft bieten Anbieter einen Zugang per POP3 und IMAP an. Möchte man
+    nun eines dieser beiden Zugänge nutzen, Thunderbird entscheidet sich
+    bei der Erkennung aber dummerweise für die andere Zugangsart, hat
+    man Pech gehabt! Die Einstellungsdialoge bieten keine Möglichkeit
+    zwischen IMAP und POP3 zu wechseln. Was das Programm also nicht auf
+    anhieb erkennt, kann man nicht nutzen!&lt;br&gt;
+   Die einzige Möglichkeit die ich hier gefunden hatte, ist zwar die
+    richtige eMailadresse, jedoch ein falsches Passwort einzugeben, den
+    Vorgang zu starten und &lt;strong&gt;sofort&lt;/strong&gt; die automatische Erkennung durch
+    einen Klick auf "Stopp" zu unterbrechen. Dann und NUR dann hat man
+    eine Chance, komplett manuell zu konfigurieren.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Besonders letzteres wirkte immer wie ein Admin mit Parkinson. War man zu
+langsam, riskierte man, das Thunderbird "rät" was man will. Und das
+endete meistens in komplettem
+&lt;a href="http://en.wiktionary.org/wiki/FUBAR" title="Wiki beschreibung zu Foo / FUBAR"&gt;Foo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ein weiteres Ärgernis war (und ist) das die SQlite Datenbank, welche
+Thunderbird anlegt um Nachrichten zu indizieren und besser  durchsuchen
+zu können, kontinuierlich wächst. Mein IMAP Postfach auf dem Server ist
+z.B. derzeit 2,1 GB groß. Ich sammle diese Nachrichten seit ca. 5 Jahren
+- wieso löschen? Betreibe ich mein Thunderbird für etwa 2 Jahre, kann
+man davon ausgehen, das diese Datenbank (zusätzlich zu den optional
+heruntergeladenen Mails) auch ca. 1 GB groß wird.&lt;br&gt;
+Zusammen mit der beschriebenen Eigenschaft, das sich Daten nur schlecht
+verschieben lassen und Thunderbird standardmäßig seine Daten in
+Profilordnern ablegt, welche bei "&lt;a href="http://wiki.samba.org/index.php/Samba_&amp;amp;_Windows_Profiles#Roaming_Profiles" title="Samba Erklärung zu &amp;quot;Roaming Profiles&amp;quot;"&gt;Roaming
+Profiles&lt;/a&gt;"
+dann natürlich sehr viel Datentransfer verursachen, ist das ein sehr
+nerviges Verhalten.&lt;/p&gt;
+&lt;p&gt;Diese Probleme sind alle kein Weltuntergang, jedoch allemal Grund genug,
+sich einmal nach Alternativen umzusehen.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://userbase.kde.org/KMail" title="Homepage zu KMail"&gt;KMail (Version: Aktuell in KDE 4.6 enthaltene)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Bei KMail handelt es sich um den kostenlosen eMailclient einer ganzen
+PIM Suite (Kalender, Adressbuch, TimeTracker, etc.) vom KDE Team. KDE
+ist eigentlich eine Desktopumgebung für Linux, &lt;a href="http://windows.kde.org/" title="KDE für Windows"&gt;hat aber inzwischen auch
+einige Tools nach Windows
+portiert&lt;/a&gt;, wodurch dieses
+Programm in diesem Test mit einbezogen wurde. Ich hatte es früher schon
+einmal verwendet, hatte jedoch mit andauernden Programmabstürzen zu
+kämpfen, da
+&lt;a href="http://userbase.kde.org/Akonadi/de" title="Erklärung was Akonadi ist"&gt;Akonadi&lt;/a&gt;
+damals noch nicht sauber integriert war.&lt;/p&gt;
+&lt;p&gt;Bei KMail handelt es sich in der Tat um einen super eMailclient! Er kann
+viel, lässt sich sehr detailiert konfigurieren, ... sehr schön!&lt;br&gt;
+Was mir jedoch garnicht gefallen hat ist, das die Windowsvariante nicht
+wirklich gut in Windows integriert ist. Systemaufrufe, wie etwa ein
+Klick auf einen Hyperlink, halten sich nicht an die Systemvorgabe des
+Betriebssystems. Zudem ist das Programm unter Windows sehr träge. Es ist
+allerdings bereits unter Linux nicht gerade schnell. Zudem hatte ich
+auch in dieser Version häufig mit Abstürzen zu kämpfen. Außerdem hat das
+Programm keine Möglichkeit eMails bei IMAP lokal zu speichern, wodurch
+er bei jedem Ordnerwechsel erst einmal den kompletten Verzeichnisinhalt
+abholen musste. Das bremst einen nicht nur ungeheuer aus, sondern macht
+es einem auch unmöglich nach eMails zu suchen.&lt;/p&gt;
+&lt;p&gt;Sehr schade eigentlich, da das Programm ansonsten wirklich sehr
+überzeugend ist! GnuPG wird super unterstützt, das Interface ist nahezu
+ungeschlagen gut konfigurierbar, Nachrichtentemplates lassen sich gut
+definieren, ...&lt;/p&gt;
+&lt;p&gt;Was dieses Programm leider auch nicht bietet ist eine Verschlüsselung
+der Daten auf der Festplatte.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.ritlabs.com/de/products/thebat/" title="Homepage vom TheBat! eMailclient"&gt;TheBat! v5.0.18 Professional Edition&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Bei TheBat! handelt es sich um ein kommerzielles Programm der Firma
+Ritlabs. Man kann für 30 Tage eine &lt;a href="http://www.ritlabs.com/de/products/thebat/difference/" title="Vergleich der TheBat! Home- und Professional Versionen"&gt;Home- oder Professional
+Variante&lt;/a&gt;
+des Programms kostenlos testen. Hierbei ist man in der Funktion nicht
+eingeschränkt.&lt;br&gt;
+Da dieses Programm auf den ersten Blick einen sehr guten Eindruck
+machte, habe ich es mir sogar in der Professional Version gekauft, denn
+nur mit dieser erhält man die Funktion der verschlüsselten Dateiablage.&lt;/p&gt;
+&lt;p&gt;Inzwischen ärgere ich mich jedoch um das schöne Geld, denn das Programm
+ist an allen Ecken und Enden verseucht mit Bugs! Einstellungen werden
+nicht übernommen, Beschriftungen ragen in Eingabefelder hinein und
+überlagern sie, Fortschrittsdialoge werden nicht hochgezählt (32
+Sekunden * 500 = 10 Sekunden - klar, oder?), es kommen Warnungen für
+SSL Zertifikate, das der Aussteller unbekannt sei, was ja soweit richtig
+ist. Es gibt auch einen Button, dieses Zertifikat dennoch dauerhaft zu
+akzeptieren, dieser ist jedoch nicht klickbar. Dann speichert das
+Programm vertrauenswürdige Zertifikate noch im Adressbuch (!),
+akzeptiert sie anschließend jedoch trotzdem nicht, etc.&lt;/p&gt;
+&lt;p&gt;Selbst wenn man mit allen diesen Fehlern leben könnte, mit einem kann
+ich ganz und garnicht leben: Das Programm aktualisiert bei jeder
+Postfachaktualisierung über IMAP, trotz lokal gespeicherter Mails,
+unheimlich lange sämtliche Ordner! Das dauert locker mal 10 Minuten.
+Wenn man gerade eine Mail versenden möchte (was vorkommen soll), so muss
+diese trotz der Einstellungsmöglichkeit, parallel zu versenden und zu
+empfangen, warten, bis alles fertig abgeholt worden ist. Das ist einfach
+nicht hinnehmbar!&lt;/p&gt;
+&lt;p&gt;Ritlabs machen sich durch diese miese Qualität selbst das Geschäft
+kaputt, denn ansonsten kann das Programm durchaus punkten! Es hat ein
+sehr angenehmes Interface, herausragende Filter- und
+Konfigurationsmöglichkeiten, die Funktionen zur Dialogverfolgung (wie
+sie ab Version 5.0 auch in Thunderbird enthalten sind) sind prima und es
+gibt durchaus einen gewissen Fankreis, der TheBat! noch aus den
+glorreichen Tagen kennt (oder nur POP3 verwendet). Auch ich habe TheBat!
+damals, als ich mit Computern und dem Internet anfing, als
+Standardclient benutzt (Thunderbird gab es da noch garnicht und alles
+war besser als Outlook!).&lt;/p&gt;
+&lt;p&gt;Ich muss leider sagen, das sich das Programm in einem katastrophalen
+Zustand befindet! Ich könnte mir aufgrund der vielen, vielen Fehler
+durchaus vorstellen, das sollte jemand deswegen einmal vor Gericht
+ziehen, Ritlabs der Vertrieb in der derzeitigen Form untersagt wird, da
+es sich nicht um ein funktionales Produkt handelt. Sehr, sehr schade ...&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.opera.com/mail/" title="Homepage des Mailclients von Opera"&gt;Opera Mail aus Opera Next v12.00&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Getestet wurde hier Opera Next - eine Art unstable Version des bekannten
+Opera Webbrowsers. Opera Next verfolgt da einen ähnlichen Ansatz wie
+Google mit seinem Chrome Browser, der sich fortlaufend selbst
+aktualisiert, nur nennen sie diese Variante halt "Next" und stehen dazu,
+das auf diesem Wege gelegentliches, unstabiles Verhalten nicht
+auszuschließen ist.&lt;br&gt;
+Das Mail-Modul ist jedoch nahezu unverändert auch im herkömmlichen Opera
+Browser integriert.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_964" align="aligncenter" width="300"
+caption="Fensteransicht von Opera Next im eMailmodul"]&lt;a href="https://www.zoosau.de/images/opera-next-mail.png"&gt;&lt;img alt="Fensteransicht
+von Opera Next im
+eMailmodul" src="{filename}images/opera-next-mail-300x168.png" title="Fensteransicht von Opera Next im eMailmodul"&gt;{.size-medium
+.wp-image-964 width="300"
+height="168"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Das Mailprogramm geht in vielerlei Hinsicht neue Wege. So zeigt es nur
+"optional" die komplette IMAP Ordnerstruktur an (unten im Bild). Der als
+Hauptweg konzipierte Weg funktioniert über die Haupt-Favoriten Ordner
+wie Eingang, dem virtuellen Ordner "Ungelesen", usw. im oberen Teil der
+linken Leiste. Das kommt einem zunächst einmal sehr komisch vor, geht
+aber erstaunlich gut von der Hand und ist wirklich praktisch. Negativ
+fiel hier lediglich auf, das es nicht möglich ist eMails aus diesen
+Ordnern direkt in die IMAP Struktur (unterer Teil der linken Leiste) zu
+verschieben. Dazu muss man leider nach wie vor die INBOX der kompletten
+Ordnerstruktur aufrufen.&lt;/p&gt;
+&lt;p&gt;Auch geht Opera Mail her und versucht aus allen heruntergeladenen Mails
+einen Verlauf zu erzeugen, wobei es erstaunlich gut erkennt, wenn es
+sich um eine Mailingliste handelt. Diese zeigt es dann ebenfalls als
+einzelne Kategorien in der linken Leiste an. Leider funktioniert die
+Erkennung  hier recht ungenau und die erkannten Mailinglistennamen
+lassen sich nicht umbenennen. Daher habe ich z.B. gerade 8
+Mailinglisten, die alle "Gentoo Linux mail" heißen. Dahinter verbergen
+sich jedoch unterschiedliche Gentoo Mailinglisten.&lt;/p&gt;
+&lt;p&gt;Unterhalb jeder Nachricht hat Opera Mail ein so genanntes
+Schnellantwort-Feld. Dieses Tut genau was es soll: Man tippt hier nur
+etwas wie "Ist OK" oder so ein und klickt auf "Schnellantwort". Die Mail
+wird dann derart spartanisch, ohne große Anrede und Co. abgeschickt.
+Ebenfalls recht praktisch.&lt;/p&gt;
+&lt;p&gt;PGP/GPG wird leider noch garnicht unterstützt.&lt;/p&gt;
+&lt;p&gt;Alles in allem ein recht gelungener Mailclient.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.pmail.com/" title="Homepage von Pegasus Mail"&gt;Pegasus Mail 4.6 &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ich beschreibe meine Erfahrungen auf einem Windows 7 64 Bit System:&lt;/p&gt;
+&lt;p&gt;Hmm ... geht schonmal komisch los: Man muss das Programm unter Windows 7
+in einen Ordner installieren, der nicht in einem durch die in Windows
+eingebauten  Zugriffsbeschränkungen (z.B.: "C:\Program Files")
+"geschützt" wird. Anderenfalls stürzt das Programm nach dem
+Account-Wizard umgehend ohne weitere Meldung ab. Ich habe mich also für
+C:\PMAIL entschieden. Das hinterlässt schonmal einen schlechten
+Eindruck: Würde jedes Programm dieses Verhalten an den Tag legen, wäre
+es unmöglich auf einem Computer Ordnung zu halten.&lt;/p&gt;
+&lt;p&gt;Ich starte das Programm und ... es stürzt ab. Ich starte es nochmals -
+es bleibt an. Im Posteingang des Programms liegt zu Beginn eine
+Begrüßungsmail des Herstellers. Im Vorschaubereich des Programms findet
+sich folgender Text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Die Vorschauansicht wurde deaktiviert, weil Pegasus Mail beim letzten&lt;br&gt;
+Start unerwartet beendet wurde.&lt;/p&gt;
+&lt;p&gt;Wenn eine solche unerwartete Programmbeendigung durch den Inhalt der&lt;br&gt;
+ersten Nachricht in einem Ordner verursacht wird (was manchmal bei&lt;br&gt;
+Nachrichten auftreten kann, die nicht dem HTML-Standard entsprechen),&lt;br&gt;
+lässt sich Pegasus Mail nicht mehr korrekt starten, weil die
+betreffende&lt;br&gt;
+fehlerhafte Nachricht bei jedem Start von Pegasus Mail erneut
+bearbeitet&lt;br&gt;
+wird und dann einen Absturz von Pegasus Mail verursacht. Aus diesem&lt;br&gt;
+Grund hat das Programm die Vorschauansicht automatisch abgeschaltet.&lt;/p&gt;
+&lt;p&gt;Um den Vorschaumodus wieder einzuschalten, rufen Sie die Option&lt;br&gt;
+"Vorschauansicht" im Menü "Ordner" auf.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Scheint also schonmal öfter vorzukommen. Ziemlich peinlich, das so auch
+gleich eingestanden wird, das die selbsterstellte Begrüßungsmail
+offenbar nicht selbst gesetzten Standards entspricht. Ich aktiviere die
+Vorschauansicht wieder, klicke auf die vom Hersteller bereitgestellte
+(!) Mail und ... es stürzt wieder ab.&lt;br&gt;
+An dieser Stelle breche ich den Test dieses Programms ab, da ein
+Programmabsturz, hervorgerufen durch minimale Unstimmigkeiten im Inhalt
+einer eMail, nichts ist, was ich im professionellem Betrieb einer
+Software gebrauchen kann. Da interessieren mich ehrlich gesagt &lt;a href="http://www.pmail.com/overviews/ovw_winpmail.htm" title="Featurebeschreibung von Pegasus Mail"&gt;die
+restlichen Features, wie sie vollmundig auf der Homepage des Projektes
+angepriesen
+werden&lt;/a&gt;,
+herzlich wenig.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.mulberrymail.com/" title="Homepage des Mulberry eMailclients"&gt;Mulberry 4.0.9a1 &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Das Programm suggeriert anhand seiner umfangreichen
+Einstellungsmöglichkeiten zunächst einmal sehr viele Möglichkeiten.
+Leider sieht das Interface so aus:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_963" align="aligncenter" width="300"
+caption="Defektes Mulberry Interface"]&lt;a href="https://www.zoosau.de/images/mulberry_defective_interface.png"&gt;&lt;img alt="Defektes Mulberry
+Interface" src="{filename}images/mulberry_defective_interface-300x151.png" title="Defektes Mulberry Interface"&gt;{.size-medium
+.wp-image-963 width="300"
+height="151"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Es werden keine Scrollbalken dargestellt, so das viele Elemente einfach
+in einem nicht angezeigten Bereich des Fensters liegen, das kleine weiße
+Dreieck unter der Mailliste ist die angezeigte Nachricht, welches sich
+weder komplett öffnen, noch größer ziehen lässt, etc. Das ganze ist so
+natürlich nicht zu gebrauchen. Daher breche ich den Test des Programms
+an dieser Stelle ab.&lt;/p&gt;
+&lt;h2&gt;Alle anderen ...&lt;/h2&gt;
+&lt;p&gt;... sehen sowas von lieblos und hingeklatscht aus, das ich diese erst
+garnicht in die engere Auswahl genommen habe, geschweige denn
+installiert. Bleibt nur zu sagen: Outlook ist kein eMailprogramm! Es ist
+ein Tool für Hacker, welches Ihnen erlaubt schnell und einfach Ihr
+Botnetz zu erweitern! Daher schaue ich mir den Mist hier erst garnicht
+an!&lt;/p&gt;
+&lt;h2&gt;Fazit&lt;/h2&gt;
+&lt;p&gt;And the winner is ... &lt;strong&gt;Thunderbird&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;Trotz aller Widrigkeiten stellt das freie eMailprogramm aus dem Hause
+Mozilla trotzdem noch das beste eMailprogramm am Markt dar. Es mag seine
+Ecken, Kanten und Unschönheiten haben, jedoch wenn man einmal den
+Schmerz des aktuellen Marktangebotes gekostet hat, fühlt sich die
+reumütige Rückkehr fast wie eine Erlösung an und einstige "Must have" -
+Anforderungen werden gerne zu "Nice to have" Punkten herabgestuft,
+solange die Basics funktionieren und einem das Programm ohne größere
+Behinderungen ermöglicht das Medium eMail einfach zu benutzen ist alles
+zu verschmerzen.&lt;br&gt;
+Ebenso ist das Programm ja gerade in einer neuen Major-Version, der
+Version 5.0, erschienen. Augenscheinlich hat sich nicht so viel geändert
+- der blöde Wizard ist immernoch da. Es wurden ein paar Knöpfe
+umarrangiert und der Nachrichten- und Gesprächsverlauf scheint in dieser
+Version auch wichtiger zu sein als vorher. Trotzdem können Mails nach
+wie vor nicht lokal auf der Festplatte verschlüsselt werden und es würde
+mich überraschen, wenn die Indexierungsdatenbank nun kleiner geworden
+wäre.&lt;/p&gt;
+&lt;p&gt;Ich bin bei meiner Recherche auf diverse Clients gestoßen, die einfach
+garnicht funktionieren. Und zwar nicht irgendwie versteckt in
+irgendwelchen Unterfunktionen, oder nur, wenn eine handvoll Einflüsse
+zusammenkommen, sondern bereits bei den absoluten Basics! Es ist mir
+absolut unverständlich, wie ein Entwickler oder eine -gruppe so etwas
+zum Download bereitstellen kann. Mir wäre es gehörig peinlich mein
+Mailprogramm vollmundig als Topp-Software anzupreisen und den willigen
+User bereits bei einer Installation, welche nur die Vorauswahlen des
+Installers bestätigt, mit einem unbenutzbarem Interface und
+Programmabstürzen zu konfrontieren. Testen die Ihre eigene Software
+nicht? Nichtmal ob die Installation und ein reiner Start anschließend
+funktioniert? Es kann nur so sein, denn was die Jungs von Mulberry und
+Pegasus da abliefern ist ein Armutszeugnis.&lt;br&gt;
+Besonders schlimm finde ich, das auch das einzige kommerzielle Produkt
+im Test, TheBat! von Ritlabs, so arge Fehlfunktionen aufweist, das ich
+nur jedem davon abraten kann für so einen Müll Geld auszugeben. Wenn
+Open Source Projekte schlechte Arbeit abliefern: OK. Schließlich machen
+die das alles ehrenamtlich und den einzigen den sie damit Schaden sind
+sie selbst, weil Ihr Ruf als ernstzunehmender Programmierer darunter
+ziemlich leiden dürfte. Was Ritlabs da betreiben ist jedoch in meinen
+Augen nichts anderes als Betrug, bei dem arglose Kunden mit nicht
+funktionaler Software über's Ohr gehauen werden.&lt;/p&gt;
+&lt;p&gt;Ich werde wohl erstmal bei Thunderbird bleiben und kann, nach diesen
+Erfahrungen, jedem nur raten dasselbe zu tun.&lt;/p&gt;</content><category term="client"></category><category term="e-mail"></category><category term="email"></category><category term="imap"></category><category term="mailclient"></category><category term="mulberry"></category><category term="opera"></category><category term="pegasus"></category><category term="pop3"></category><category term="test"></category><category term="thebat!"></category><category term="thunderbird"></category><category term="vergleich"></category></entry><entry><title>Google Chrome NICHT im Windowsprofil installieren</title><link href="https://www.zoosau.de/google-chrome-nicht-im-windowsprofil-installieren.html" rel="alternate"></link><published>2010-10-28T00:45:00+02:00</published><updated>2010-10-28T00:45:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-10-28:/google-chrome-nicht-im-windowsprofil-installieren.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;... boah - so lange nichts geschrieben ... peinlich! Egal, einfach ran
+an den Speck ;)&lt;/p&gt;
+&lt;p&gt;Ich habe letztens erst eine interessante Entdeckung gemacht: Der Google
+Chrome - Browser installiert sich unter Windows standardmäßig in jedes
+einzelne Userprofil, statt einmalig global in den Programme - Ordner!
+Das bedeutet, das jeder User des PC rund …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;... boah - so lange nichts geschrieben ... peinlich! Egal, einfach ran
+an den Speck ;)&lt;/p&gt;
+&lt;p&gt;Ich habe letztens erst eine interessante Entdeckung gemacht: Der Google
+Chrome - Browser installiert sich unter Windows standardmäßig in jedes
+einzelne Userprofil, statt einmalig global in den Programme - Ordner!
+Das bedeutet, das jeder User des PC rund 250 MB Speicherplatz nur für
+diesen Browser verschwendet. Das hört sich in der heutigen Zeit zwar
+wenig an, jedoch wird das ganze spätestens dann brisant, wenn der PC
+Teil einer Domäne ist und Roaming Profiles verwendet werden. Nicht nur
+das so 250 MB teuren Serverspeichers verschwendet werden (mal ganz
+abgesehen von dem ganzen unnützen Overhead für Backups und ähnliches),
+sondern es verlängert die Zeit zum ab- und anmelden enorm, ebenso, wie
+das gesamte Netzwerk mit diesem unnützen Traffic belastet wird.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_826" align="alignleft" width="300"
+caption="Speicherverbrauch des Google Chrome Browsers im
+Userprofil"]&lt;a href="https://www.zoosau.de/images/google_chrome_speicherverbrauch.png"&gt;&lt;img alt="Speicherverbrauch des Google Chrome Browsers im
+Userprofil" src="{filename}images/google_chrome_speicherverbrauch-300x162.png" title="Speicherverbrauch des Google Chrome Browsers im Userprofil"&gt;{.size-medium
+.wp-image-826 width="300"
+height="162"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Seltsamerweise bekommt man auf so ziemlich jedem Wege nur diesen blöden
+Installer, der das ganze auf diese Art und Weise installiert. Umgehen
+kann man das ganze nur mit einem Trick: Man läd stattdessen die so
+genannte "Enterprise Edition" herunter, die als MSI - Paket angeboten
+wird und einem die Wahl über den Installationsort lässt. &lt;a href="http://www.google.com/chrome/eula.html?msi=true" title="Google Chrome Enterprise Edition"&gt;Diese kann
+hier kostenlos heruntergeladen
+werden.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spart Speicherplatz und Euer Admin wird es Euch danken ;)&lt;/p&gt;</content></entry><entry><title>Wordpress und Plugins automatisch aktualisieren ohne den FTP-Dialog</title><link href="https://www.zoosau.de/wordpress-und-plugins-automatisch-aktualisieren-ohne-den-ftp-dialog.html" rel="alternate"></link><published>2010-08-23T11:20:00+02:00</published><updated>2010-08-23T11:20:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-08-23:/wordpress-und-plugins-automatisch-aktualisieren-ohne-den-ftp-dialog.html</id><summary type="html">&lt;p&gt;Ich dachte lange Zeit das Verhalten von Wordpress, nach einem Klick auf
+"&lt;strong&gt;automatisch aktualisieren&lt;/strong&gt;" (&lt;em&gt;Siehe Bild 1 - "automatisch
+aktualisieren ohne korrekte Rechte&lt;/em&gt;") einen Dialog einzublenden, in dem
+man FTP-Zugangsdaten eingeben muss um das zuvor am PC heruntergeladene
+ZIP-Archiv mit der neuen Pluginversion auf seinen Server hochzuladen
+(&lt;em&gt;Siehe Bild 2 - "FTP-Abfragemaske …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich dachte lange Zeit das Verhalten von Wordpress, nach einem Klick auf
+"&lt;strong&gt;automatisch aktualisieren&lt;/strong&gt;" (&lt;em&gt;Siehe Bild 1 - "automatisch
+aktualisieren ohne korrekte Rechte&lt;/em&gt;") einen Dialog einzublenden, in dem
+man FTP-Zugangsdaten eingeben muss um das zuvor am PC heruntergeladene
+ZIP-Archiv mit der neuen Pluginversion auf seinen Server hochzuladen
+(&lt;em&gt;Siehe Bild 2 - "FTP-Abfragemaske"&lt;/em&gt;), seie der Standard und die einzige
+Methode, die diese Funktion anbietet, um ein Plugin auf eine neue
+Version zu aktualisieren. War für mich natürlich extrem blöd, da ich gar
+keinen FTP Dienst hier auf meinem Server benötige. Was ich hoch- und
+herunterladen möchte, transferiere ich per SCP. Ein Einfallstor weniger,
+deutlich sicherer da von Haus aus verschlüsselt und solche Features wie
+Up-/Downloadquota benötige ich ohnehin nicht.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_782" align="aligncenter" width="289"
+caption="automatisch aktualisieren ohne korrekte Rechte"]&lt;a href="https://www.zoosau.de/images/20100823-Plugin-update.png"&gt;&lt;img alt="automatisch
+aktualisieren ohne korrekte
+Rechte" src="{filename}images/20100823-Plugin-update-289x300.png" title="automatisch aktualisieren ohne korrekte Rechte"&gt;{.size-medium
+.wp-image-782 width="289"
+height="300"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_783" align="aligncenter" width="289"
+caption="FTP-Abfragemaske"]&lt;a href="https://www.zoosau.de/images/20100823-FTP-Zugangsdatenmaske-in-WP.png"&gt;&lt;img alt="FTP-Abfragemaske" src="{filename}images/20100823-FTP-Zugangsdatenmaske-in-WP-289x300.png" title="FTP-Abfragemaske"&gt;{.size-medium
+.wp-image-783 width="289"
+height="300"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Das dieses die einzige Methode ist ist jedoch garnicht der Fall! Ja,
+nicht einmal um die Standardvariante handelt es sich; das ganze ist
+schon eine Fallback-Funktion. Hat man sein WordPress richtig
+konfiguriert, wird man garnicht nach FTP Zugangsdaten gefragt, sondern
+Wordpress läd die Datei selbstständig von der Wordpress-Seite des
+Plugins herunter, deaktiviert es, überschreibt die alte Version mit der
+neuen und aktiviert diese anschließend wieder. Es hält sich somit an
+seine eigenen Empfehlungen und könnte komfortabler nicht sein.&lt;/p&gt;
+&lt;p&gt;Warum klappt es jedoch bei so vielen nicht und wieso können einem auf
+Nachfrage die meisten Experten nichtmal sagen warum beim einen das
+Autoupdate und beim anderen die FTP-Datenabfrage kommt? Die Antwort auf
+die zweite Frage habe ich selber nicht parat, aber die Antwort auf die
+erste versuche ich im folgendem zu geben und versuche das ganze so
+leicht verständlich wie möglich zu halten.&lt;/p&gt;
+&lt;p&gt;Der Webserver ist an sich auch nur ein Programm, welches als ein
+bestimmter User läuft. Der Webserver darf also auch immer nur auf genau
+die Ressourcen zugreifen (und mit den entsprechenden Rechten), wie es
+ein User auf der Shell, der als dieser User angemeldet ist, auch dürfte.
+Als welcher User/Gruppe der Webserver laufen soll, legt man
+beispielsweise beim Apache mit den Optionen "&lt;strong&gt;User&lt;/strong&gt;" und "&lt;strong&gt;Group&lt;/strong&gt;"
+fest. Im folgenden gehe ich exemplarisch davon aus, das es sich hierbei
+bei beidem um "apache2" handelt.&lt;br&gt;
+Dementsprechend muss ein Verzeichnis in dem der Webserver Dateien
+ablegen, verändern oder entfernen soll, auch mit den entsprechenden
+Rechten für diesen User versehen werden. Für Wordpress' Plugins wäre
+dieses das Verzeichnis "&lt;strong&gt;wp-content/plugins/&lt;/strong&gt;". Selbstverständlich
+muss der User apache2 in diesem, sowie dessen Unterverzeichnisse für
+Dateien mindestens 644 und für Verzeichnisse mindestens 755 Rechte
+haben. Selbiges gilt jedoch natürlich für alle anderen Verzeichnisse, in
+denen der Webserver Daten ändern können muss, wie "wp-content/themes"
+oder "wp-content/uploads" gleichermaßen.&lt;br&gt;
+Jedoch war dieses immer schon so bei mir, und dennoch habe ich den zuvor
+genannten FTP-Datenabfrage - Dialog erhalten.&lt;/p&gt;
+&lt;p&gt;Der Knackpunkt ist, das die Datei "&lt;strong&gt;wp-admin/update.php&lt;/strong&gt;" dem User
+&lt;strong&gt;gehören&lt;/strong&gt; muss, als der der Webserver läuft. Es genügt nicht das
+dieser User einfach sämtliche benötigten Rechte auf diese Datei haben
+muss, sie muss ihm tatsächlich gehören! Einen durch Berechtigungen
+gerechtfertigten Grund hierfür gibt es nicht, die Routine ist
+schlichtweg so programmiert. Selbstverständlich könnte man dieses Stück
+Code verändern, nur muss man das dann nach jedem Core - Update
+wiederholen. Grundsätzlich lässt man von sowas die Finger!&lt;/p&gt;
+&lt;p&gt;Ist also beides gegeben, passende lese-/schreibrechte in den genannten
+Verzeichnissen, sowie das Eigentumsrecht auf die Datei
+"&lt;strong&gt;wp-admin/update.php&lt;/strong&gt;", funktioniert es auch mit dem auto-Update!&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_784" align="aligncenter" width="289"
+caption="Funktionierendes Wordpress
+Plugin-Auto-Update"]&lt;a href="https://www.zoosau.de/images/20100823-Plugin-auto-update.png"&gt;&lt;img alt="Funktionierendes Wordpress
+Plugin-Auto-Update" src="{filename}images/20100823-Plugin-auto-update-289x300.png" title="Funktionierendes Wordpress Plugin-Auto-Update"&gt;{.size-medium
+.wp-image-784 width="289"
+height="300"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Vielen Dank an dieser Stelle an &lt;a href="http://weblog.ononlinework.de/uber-stefan-david/" title="Über Stefan David"&gt;Stefan
+David&lt;/a&gt;,
+der auf seinem
+&lt;a href="http://weblog.ononlinework.de/webwelt/das-automatische-update-von-wordpress/" title="Das automatische Update von WordPress"&gt;Blog-Beitrag&lt;/a&gt;
+nach Monaten als einziger in der Lage war, dieses Phänomen mal
+aufzudröseln! :)&lt;/p&gt;</content><category term="automatisches update"></category><category term="ftp"></category><category term="plugins"></category><category term="Wordpress"></category></entry><entry><title>Heartbeat und das Ressource-Script "Filesystem" (FATAL: Module scsi_hostadapter not found.)</title><link href="https://www.zoosau.de/heartbeat-und-das-ressource-script-filesystem-fatal-module-scsi_hostadapter-not-found.html" rel="alternate"></link><published>2010-08-11T21:18:00+02:00</published><updated>2010-08-11T21:18:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-08-11:/heartbeat-und-das-ressource-script-filesystem-fatal-module-scsi_hostadapter-not-found.html</id><summary type="html">&lt;p&gt;ALTA !!!&lt;/p&gt;
+&lt;p&gt;Der neue Server ist up und ich entjungfere ihn mal direkt mit einem
+"LECK MICH AM ARSCH - WARUM???" - Blogeintrag.&lt;/p&gt;
+&lt;p&gt;Ich sitze auf der Arbeit, richte, wie ich es sicher schon dutzende Male
+gemacht habe, ein Heartbeat mit DRBD ein und sehe (erstmals unter Lucid
+Lynx) folgendes beim starten einer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;ALTA !!!&lt;/p&gt;
+&lt;p&gt;Der neue Server ist up und ich entjungfere ihn mal direkt mit einem
+"LECK MICH AM ARSCH - WARUM???" - Blogeintrag.&lt;/p&gt;
+&lt;p&gt;Ich sitze auf der Arbeit, richte, wie ich es sicher schon dutzende Male
+gemacht habe, ein Heartbeat mit DRBD ein und sehe (erstmals unter Lucid
+Lynx) folgendes beim starten einer Filesystem-Ressource im Log:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;...&lt;br&gt;
+ResourceManager[8524]:  2010/08/11_20:39:08 info: Running
+/etc/ha.d/resource.d/Filesystem /dev/drbd1 /server/data/nfs reiserfs
+defaults,acl,rw start&lt;br&gt;
+Filesystem[8840]:       2010/08/11_20:39:08 INFO: Running start for
+/dev/drbd1 on /server/data/nfs&lt;br&gt;
+FATAL: Module scsi_hostadapter not found.&lt;br&gt;
+...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Worauf lässt es sich zurückführen? Man lese und staune:&lt;/p&gt;
+&lt;p&gt;Zitat aus Datei "/usr/lib/ocf/resource.d/heartbeat/Filesystem", Zeilen
+404 bis 408:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if [ "X\${HOSTOS}" != "XOpenBSD" ];then&lt;br&gt;
+# Insert SCSI module&lt;br&gt;
+# TODO: This probably should go away. Why should the filesystem&lt;br&gt;
+# RA magically load a kernel module?&lt;br&gt;
+\$MODPROBE scsi_hostadapter &amp;gt;/dev/null&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, Masterfrage: Was passiert, wenn ein Kernel das Modul
+scsi_hostadapter nicht oder nicht als Modul kompiliert hat (so wie es,
+nebenbei bemerkt, beim Standardkernel von Lucid Lynx (2.6.32-24-server)
+der Fall ist)? Riiiiiiiiiiiiichtig: Hier wird ein Exitcode ungleich 0
+generiert, und Heartbeat denkt die ganze Aktion ist fehlgeschlagen.&lt;/p&gt;
+&lt;p&gt;Das ganze lässt sich also durch auskommentieren der Zeile 408
+("\$MODPROBE scsi_hostadapter &amp;gt;/dev/null") beheben.&lt;/p&gt;
+&lt;p&gt;12.08.2010 - UPDATE: Scheinbar hatte ich das gestern fehlinterpretiert.
+Es wird zwar die "&lt;em&gt;FATAL: Module scsi_hostadapter not found.&lt;/em&gt;" -
+Meldung ausgegeben, jedoch hat dieses doch keine Auswirkungen auf den
+Errorcode des gesamten Scriptes. Dann lag das gestern an was anderes ...
+gnaaaahr :D&lt;/p&gt;</content><category term="FATAL"></category><category term="heartbeat"></category><category term="lucid lynx"></category><category term="scsi_hostadapter"></category><category term="ubuntu"></category></entry><entry><title>Deutsche Rechtschreibprüfung für Thunderbird 3.0.*</title><link href="https://www.zoosau.de/deutsche-rechtschreibprufung-fur-thunderbird-3-0.html" rel="alternate"></link><published>2010-03-26T12:42:00+01:00</published><updated>2010-03-26T12:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-03-26:/deutsche-rechtschreibprufung-fur-thunderbird-3-0.html</id><summary type="html">&lt;p&gt;HA! Endlich was cooles herausgefunden!&lt;/p&gt;
+&lt;p&gt;Seit langem ärgere ich mich, das die deutsche Rechtschreibprüfung für
+den Thunderbird Mailclient nur für Versionen bis 2.0.0.* funktioniert,
+obwohl der Thunderbird 3.0 ja nun schon Monatelang veröffentlicht ist.
+Heute habe ich durch &lt;a href="http://kb.mozillazine.org/Editing_an_add-on_to_change_its_compatibility" title="Change a Thunderbird Extension's compatibility"&gt;diesen
+Eintrag&lt;/a&gt;
+eine Lösung hierzu gefunden!&lt;/p&gt;
+&lt;p&gt;Diese *.xpi - Pakte …&lt;/p&gt;</summary><content type="html">&lt;p&gt;HA! Endlich was cooles herausgefunden!&lt;/p&gt;
+&lt;p&gt;Seit langem ärgere ich mich, das die deutsche Rechtschreibprüfung für
+den Thunderbird Mailclient nur für Versionen bis 2.0.0.* funktioniert,
+obwohl der Thunderbird 3.0 ja nun schon Monatelang veröffentlicht ist.
+Heute habe ich durch &lt;a href="http://kb.mozillazine.org/Editing_an_add-on_to_change_its_compatibility" title="Change a Thunderbird Extension's compatibility"&gt;diesen
+Eintrag&lt;/a&gt;
+eine Lösung hierzu gefunden!&lt;/p&gt;
+&lt;p&gt;Diese *.xpi - Pakte sind simple, umbenannte ZIP - Archive. Sie lassen
+sich einfach entpacken. Anschließend kann man einfach mit einem
+Texteditor die Tags
+"&lt;strong&gt;&amp;lt;em:maxVersion&amp;gt;2.0.0.*&amp;lt;/em:maxVersion&amp;gt;&lt;/strong&gt;" in der Datei
+&lt;strong&gt;install.rdf&lt;/strong&gt; in 3.0.* abändern. Anschließend erstellt man nur wieder
+ein ZIP Archiv aus den Daten die vorher auch in dem Archiv gewesen sind
+und benennt es wieder in *.xpi um.&lt;/p&gt;
+&lt;p&gt;Fertig! :)&lt;/p&gt;
+&lt;p&gt;&lt;a href="{filename}images/wortliste_von_http___tkltrans.sf.net__alte_und_neue_deutsche_rechtschreibung_-20100326-fx+tb+sm.xpi"&gt;Ich habe das Paket für die alte und neue deutsche Rechtschreibung
+schonmal hier vorbereitet. Ihr könnt es gerne herunterladen und
+installieren.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hinweis:&lt;/strong&gt; Da Thunderbird und Firefox dummerweise dieselbe
+Dateierweiterung für Ihre Extensions nutzen, versucht der Firefox die
+Rechtschreib-Extension bei einem Linksklick auf den obigen Link zu
+installieren. Bitte klickt daher mit rechts darauf und wählt "&lt;strong&gt;Ziel
+speichern unter ...&lt;/strong&gt;". Anschließend könnt ihr die Extension dann &lt;a href="http://kb.mozillazine.org/Extensions_%28Thunderbird%29#Installation" title="Anleitung wie man Extensions im Thunderbird installiert"&gt;im
+Thunderbird wie gehabt
+installieren&lt;/a&gt;.&lt;/p&gt;</content><category term="3"></category><category term="deutsche rechtschreibung"></category><category term="thunderbird"></category><category term="version"></category></entry><entry><title>Sehr interessanter Artikel über den sogenannten "Evil Maid" Angriff, angewand auf TrueCrypt</title><link href="https://www.zoosau.de/sehr-interessanter-artikel-uber-den-sogenannten-evil-maid-angriff-angewand-auf-truecrypt.html" rel="alternate"></link><published>2009-12-06T01:31:00+01:00</published><updated>2009-12-06T01:31:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-12-06:/sehr-interessanter-artikel-uber-den-sogenannten-evil-maid-angriff-angewand-auf-truecrypt.html</id><summary type="html">&lt;p&gt;Normalerweise bin ich so der Typ, der wenn ein Artikel im Internet mehr
+als 20 Zeilen hat, nur die Schlagworte überspringt und auf diesen ersten
+Blick sieht das es sich um einen Artikel mit schon 100 mal gelesenem
+Lari-Fahri - Inhalt handelt und das ganze wieder schließt. Es existieren
+leider viel …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Normalerweise bin ich so der Typ, der wenn ein Artikel im Internet mehr
+als 20 Zeilen hat, nur die Schlagworte überspringt und auf diesen ersten
+Blick sieht das es sich um einen Artikel mit schon 100 mal gelesenem
+Lari-Fahri - Inhalt handelt und das ganze wieder schließt. Es existieren
+leider viel zu viele solcher Artikel, deren Autoren eindeutig die
+Fachkompetenz fehlt, das angeschnittene Thema zu behandeln oder die das
+ganze einfach wahnsinnig langweilig und unnötig ausufernd präsentieren.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_569" align="aligncenter" width="200"
+caption="Evil Maid / Böses Zimmermädchen"]&lt;img alt="Evil Maid / Böses
+Zimmermädchen" src="https://www.zoosau.de/images/evil-maid.jpg" title="Evil Maid"&gt;{.size-full
+.wp-image-569 width="200" height="130"}[/caption]&lt;/p&gt;
+&lt;p&gt;Heute bin ich aber auf einen Artikel gestoßen, der mich sehr lange an
+den Bildschirm gefesselt hat, da sowohl der Inhalt sehr interessant ist,
+wie auch die Präsentation, die durchgeführte Recherche zu dem Thema und
+die Beschränkung auf relevante, interessante Fakten mich ungeheuer
+angesprochen haben. Die Rede ist von diesem Artikel: &lt;a href="http://theinvisiblethings.blogspot.com/2009/10/evil-maid-goes-after-truecrypt.html" title="Ein sehr interessanter Artikel über den &amp;quot;Evil Maid&amp;quot; Angriff auf TrueCrypt."&gt;Evil Maid goes
+after
+TrueCrypt!&lt;/a&gt;,
+ein Blogeintrag von &lt;a href="http://www.blogger.com/profile/07657268181166351141" title="Blogger Profil von Joanna Rutkowska"&gt;Joanna
+Rutkowska&lt;/a&gt;.
+Es geht darin um die Demonstration eines Angriffes auf Computersysteme,
+welche mit TrueCrypt verschlüsselte Festplatten verwenden. Hierbei
+beschränkt sich Frau Rutkowska nicht bloß auf die bloße Beschreibung der
+theoretischen Möglichkeit einer solchen Attacke, sondern stellt neben
+einem konkretem, funktionierendem Exploit per Mini-Linux auf einem
+bootbaren USB-Stick und einem völlig realistischem Szenario die Frage,
+wie sicher die derzeitigen Verschlüsselungsverfahren wie TrueCrypt und
+BitLocker eigentlich sind. Hierzu hat die Firma, die sie scheinbar
+mitgegründet hat und bei der sie beschäftigt ist, &lt;a href="http://invisiblethingslab.com/"&gt;Invisible Things
+Lab&lt;/a&gt;, ein eigenes Mini-Linux für USB
+Sticks entwickelt und in diesem Artikel bereitgestellt, sowie einen
+Exploit für den "Evil Maid" - Angriff programmiert, welcher im Pre-Boot
+- TrueCrypt - Passwortpromt das eingegebene Passwort abfängt und
+aufzeichnet, um bei einem zweiten Besuch des "Bösen Zimmermädchens" aus
+dem Bootsektor der Partition ausgelesen werden zu können. Außerdem gibt
+sie Tipps wie man sich vor solchen Angriffen schützen kann und
+beschreibt dabei einen recht simplen, aber sehr genialen Einfall, den
+sie bei Invisible Things Lab offenbar selber einsetzen: Sie booten
+wiederum von einem USB Stick, welcher von dem Bootsektor, sowie der
+/boot - Partition einen Checksummenhash berechnet und auf eben diesem
+Stick speichert. Wenn man nun beispielsweise nach einem langen Tag
+wieder auf sein Hotelzimmer kommt, in dem ja die ganze Zeit über das
+(vermeintlich geschützte) Notebook stand, wird zunächst von diesem Stick
+gebootet und die Checksumme verglichen. So kann man sich sicher sein,
+das keiner am Bootsektor und der /boot- Partition herumgepfuscht hat (es
+sei denn natürlich er konnte auch irgendwie an den (hoffentlich)
+mitgeführten Stick kommen und die Checksumme verändern).&lt;/p&gt;
+&lt;p&gt;Das ist alles zwar ziemlich paranoid und im alltäglichen Leben wird wohl
+kaum einer diesen Aufwand betreiben um die theoretische Möglichkeit
+einer Manipulation auszuschließen, aber ich finde das ein sehr
+interessantes Thema und vor allem: Ein hochgradig professionell
+aufgemachter und recherchierter Artikel! Ich kann jedem nur ans Herz
+legen sich den mal zur Gemüte zu führen! :) Ich jedenfalls werde diesen
+Blog ab jetzt fest abonieren.&lt;/p&gt;
+&lt;p&gt;Der "Evil Maid" - Angriff heißt übrigens so, da er ein Szenario
+beschreibt, in dem es einem Zimmermädchen, welches ja in der Regel
+Zugang zu einem verschlossenem Hotelzimmer hat, möglich ist binnen
+weniger Minuten ohne großes technisches Know-How eine Manipulation an
+einem Computersystem vorzunehmen, ohne das der Betroffene dieses
+bemerkt. Sehr cool und lohnenswert mal darüber nachzudenken ;)&lt;/p&gt;</content><category term="angriff"></category><category term="eveil maid"></category><category term="invisible things lab"></category><category term="joanna rutkowska"></category><category term="truecrypt"></category></entry><entry><title>TrueCrypt unter Windows7 RC verwenden</title><link href="https://www.zoosau.de/truecrypt-unter-windows7-rc-verwende.html" rel="alternate"></link><published>2009-12-06T00:56:00+01:00</published><updated>2009-12-06T00:56:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-12-06:/truecrypt-unter-windows7-rc-verwende.html</id><summary type="html">&lt;p&gt;Ich benutze
+&lt;a href="http://www.truecrypt.org/" title="Homepage von TrueCrypt"&gt;TrueCrypt&lt;/a&gt; zur
+Verschlüsselung meiner sensiblen Daten. Gerade in Zeiten von
+&lt;a href="http://www.dropbox.com/" title="Homepage von Dropbox"&gt;Dropbox&lt;/a&gt; möchte man
+nicht seine wichtigen Dokumente einfach so überall hochladen, da man nie
+so genau weiß was genau mit den Daten geschieht und wer sie einsehen
+kann.&lt;/p&gt;
+&lt;p&gt;Unter der noch kostenlos nutzbaren Windows7 RC (Release Candidate /
+Beta …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich benutze
+&lt;a href="http://www.truecrypt.org/" title="Homepage von TrueCrypt"&gt;TrueCrypt&lt;/a&gt; zur
+Verschlüsselung meiner sensiblen Daten. Gerade in Zeiten von
+&lt;a href="http://www.dropbox.com/" title="Homepage von Dropbox"&gt;Dropbox&lt;/a&gt; möchte man
+nicht seine wichtigen Dokumente einfach so überall hochladen, da man nie
+so genau weiß was genau mit den Daten geschieht und wer sie einsehen
+kann.&lt;/p&gt;
+&lt;p&gt;Unter der noch kostenlos nutzbaren Windows7 RC (Release Candidate /
+Beta) Version, öffnet sich jedoch statt des Programmes oder der
+Installationsroutine nur das abgebildete Fenster.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_558" align="alignright" width="150"
+caption="TrueCrypt 6.3a Windows7 RC Fehlermeldung"]&lt;a href="https://www.zoosau.de/images/truecrypt_win7rc_fehler.png"&gt;&lt;img alt="TrueCrypt 6.3a
+Windows7 RC
+Fehlermeldung" src="{filename}images/truecrypt_win7rc_fehler-150x52.png" title="TrueCrypt 6.3a Windows7 RC Fehlermeldung"&gt;{.size-thumbnail
+.wp-image-558 width="150"
+height="52"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Es gibt jedoch einen recht simplen Trick, wie sich das ganze trotzdem
+unter Windows7 RC betreiben lässt: Man verwendet einfach den Windows
+Vista Kompatibilitätsmodus! :) Im folgenden beschreibe ich wie das geht.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Als erstes öffnet man mit einem Rechtsklick auf die
+    Installationsdatei von TrueCrypt 6.3a und einem anschließendem Klick
+    auf &lt;strong&gt;Eigenschaften&lt;/strong&gt; das Eigenschaften-Menü der Datei.&lt;/li&gt;
+&lt;li&gt;Anschließend wechselt man zum Reiter &lt;strong&gt;Kompatibilität&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Dort stellt man nun den Kompatibilitätsmodus auf &lt;strong&gt;Windows Vista
+    (Service Pack 2)&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Sollte der Bereich ausgegraut dargestellt werden und somit nicht
+    veränderbar sein, klickt man stattdessen auf &lt;strong&gt;Einstellungen für
+    alle Benutzer ändern&lt;/strong&gt;. Hier öffnet sich dann ein identischer
+    Dialog, in dem die Einstellung verfügbar sein sollte.&lt;/li&gt;
+&lt;li&gt;Das Programm kann nun wie gewohnt installiert werden.
+    [caption id="attachment_559" align="alignright" width="117"
+    caption="Abbildung des Kompatibilitätsmenüs für TrueCrypt 6.3a unter
+    Windows7 RC verändern"]&lt;a href="https://www.zoosau.de/images/truecrypt_kompatibilitaetsmodus_fuer_win7rc.png"&gt;&lt;img alt="Abbildung des Kompatibilitätsmenüs für
+    TrueCrypt 6.3a unter Windows7 RC
+    verändern" src="{filename}images/truecrypt_kompatibilitaetsmodus_fuer_win7rc-117x150.png" title="Kompatibilitätsmodus für TrueCrypt 6.3a unter Windows7 RC verändern"&gt;{.size-thumbnail
+    .wp-image-559 width="117"
+    height="150"}&lt;/a&gt;[/caption]&lt;/li&gt;
+&lt;li&gt;Nach erfolgter Installation wechselt man ins
+    Installationsverzeichnis von TrueCrypt.&lt;/li&gt;
+&lt;li&gt;Hier müssen die Punkte 1-4 für jede Datei wiederholt werden, die auf
+    &lt;strong&gt;.exe&lt;/strong&gt; enden. Das sollten eigentlich zwei Stück sein: &lt;strong&gt;TrueCrypt
+    Format.exe&lt;/strong&gt; und &lt;strong&gt;TrueCrypt.exe&lt;/strong&gt; .&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nun kann man TrueCrypt problemlos verwenden. Allerdings habe ich noch
+nicht getestet, ob man auch das "Pre-Boot" - System bei verschlüsselter
+Systempartition auf diese Art und weise problemlos mit Windows7 RC
+verwenden kann. Ausserdem geschieht die Anwendung dieser Tipps auf
+eigene Gefahr! &lt;strong&gt;Ich übernehme keine Haftung!&lt;/strong&gt;&lt;/p&gt;</content><category term="beta"></category><category term="error"></category><category term="rc"></category><category term="stable"></category><category term="truecrypt"></category><category term="windows 7"></category></entry><entry><title>Sicherheitsabfrage der Benutzerkontensteuerung unter Windows Vista und 7 abstellen</title><link href="https://www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html" rel="alternate"></link><published>2009-12-05T23:38:00+01:00</published><updated>2009-12-05T23:38:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-12-05:/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html</id><summary type="html">&lt;p&gt;Die Benutzerkontensteuerung, auch als "User Account Control" (UAC)
+bekannt, ist eine Technik und Sicherheitsinfrastruktur, die seit Windows
+Vista von Microsoft verwendet wird, um die Sicherheit des
+Betriebssystems zu erhöhen. Meistens äußert sich dieses dadurch, das man
+das hier aufgeführte Fenster angezeigt bekommt, sobald man ein Programm
+starten möchte:&lt;/p&gt;
+&lt;p&gt;[caption id …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Die Benutzerkontensteuerung, auch als "User Account Control" (UAC)
+bekannt, ist eine Technik und Sicherheitsinfrastruktur, die seit Windows
+Vista von Microsoft verwendet wird, um die Sicherheit des
+Betriebssystems zu erhöhen. Meistens äußert sich dieses dadurch, das man
+das hier aufgeführte Fenster angezeigt bekommt, sobald man ein Programm
+starten möchte:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_542" align="alignleft" width="150"
+caption="UAC Warnhinweis beim starten des Firefox Webbrowsers"]&lt;a href="https://www.zoosau.de/images/firefox_uac_warnung.png"&gt;&lt;img alt="UAC
+Warnhinweis beim starten des Firefox
+Webbrowsers" src="{filename}images/firefox_uac_warnung-150x91.png" title="UAC Warnhinweis beim starten des Firefox Webbrowsers"&gt;{.size-thumbnail
+.wp-image-542 width="150"
+height="91"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Ich hatte bei mir den Fall, das seitdem ich Windows 7 einsetze, der
+Firefox &lt;span style="text-decoration: underline;"&gt;immer&lt;/span&gt; mit
+diesem Fenster startete. Kein Weltuntergang, aber allemal nervig.
+Abstellen, bzw. die UAC - Stufe senken wollte ich jedoch nicht. An sich
+finde ich das eine nicht unbedingt verkehrte Funktion. Gerade in diesem
+Fall, wie sich gleich zeigen wird.&lt;/p&gt;
+&lt;p&gt;Ich hatte bis eben keine Ahnung, wieso dieses Fenster immer und immer
+wieder kam. Es gibt ja auch keinen Hacken, mit dem man ein bestimmtes
+Programm von diesem Test ausnehmen kann oder ähnliches.&lt;br&gt;
+Jetzt weiß ich aber, wie man das ganze loswird! Der Firefox installiert
+sich scheinbar mit der Voreinstellung immer mit administrativen Rechten
+gestartet zu werden. Ein Verhalten, das eigentlich gerade bei Browsern
+aus Sicherheitssicht nicht gerade wünschenwert ist. Man wird dieses
+Fenster mit ein paar kleinen Klicks ganz einfach los:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Rechtsklick auf die Firefox - Verknüpfung oder die ausführbare Datei
+    des Firefox im Installationsordner.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eigenschaften&lt;/strong&gt; anklicken.&lt;/li&gt;
+&lt;li&gt;Zum Reiter &lt;strong&gt;Kompatibilität&lt;/strong&gt; wechseln.&lt;/li&gt;
+&lt;li&gt;Ganz unten findet man den Bereich &lt;strong&gt;Berechtigungsstufe&lt;/strong&gt;. Der Haken
+    bei &lt;strong&gt;Programm als Administrator ausführen&lt;/strong&gt; muss entfernt werden.
+    Sollte dieser Bereich ausgegraut dargestellt werden und somit nicht
+    verfügbar sein, kann man auf den darunterliegenden Button
+    &lt;strong&gt;Einstellungen für alle Benutzer ändern&lt;/strong&gt; klicken. Es öffnet sich
+    nun erneut ein Dialogfeld, in dem das Feld &lt;strong&gt;Programm als
+    Administrator ausführen&lt;/strong&gt; verfügbar sein sollte.
+    [caption id="attachment_543" align="alignright" width="106"
+    caption="Kompatibilitäts-einstellungen unter Windows
+    7"]&lt;a href="https://www.zoosau.de/images/firefox_admin_remove.png"&gt;&lt;img alt="Kompatibilitätseinstellungen unter Windows
+    7" src="{filename}images/firefox_admin_remove-106x150.png" title="Kompatibilitätseinstellungen unter Windows 7"&gt;{.size-thumbnail
+    .wp-image-543 width="106"
+    height="150"}&lt;/a&gt;[/caption]&lt;/li&gt;
+&lt;li&gt;Schließt man die Dialogfelder mit einem Klick auf &lt;strong&gt;OK&lt;/strong&gt; sollte die
+    UAC Meldung nicht mehr erscheinen.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Gerade bei Browsern sollte man nicht dauerhaft mit administrativen
+Rechten arbeiten. Dieses macht es den Betreibern von Malware-Sites nur
+noch einfacher Einfluß auf das System zu nehmen.&lt;br&gt;
+In Ausnahmefällen, wo administrative Rechte benötigt werden um
+beispielsweise ein Plugin oder ähnliches Systemweit zu installieren,
+kann man das entsprechende Programm mit einem Rechtsklick und dem
+Kontextmenüpunkt &lt;strong&gt;Als Administrator ausführen&lt;/strong&gt; jederzeit manuell mit
+administrativen Rechten starten.&lt;/p&gt;
+&lt;p&gt;Ich entschuldige mich hiermit dafür so einen n00b - Tipp in mein Blog zu
+schreiben. Ich habe diese Meldung aber zugegebener Maßen nun monatelang
+nicht weggekriegt, da ich überhaupt nicht wusste, das diese mit der
+Berechtigungsstufe zusammen hängt. Ich war vielmehr davon ausgegangen,
+das im System ein mangelhaftes Zertifikat der Mozilla Corp. vorliegt
+oder ähnliches. So simpel hatte ich garnicht gedacht und war bis jetzt
+zu faul das zu google'n ;D&lt;/p&gt;</content><category term="7"></category><category term="abstellen"></category><category term="Benutzerkontensteuerung"></category><category term="seven"></category><category term="uac"></category><category term="user account control"></category><category term="vista"></category><category term="warnhinweis"></category><category term="windows"></category></entry><entry><title>Bing in AWstats als Suchmaschiene eintragen</title><link href="https://www.zoosau.de/bing-in-awstats-als-suchmaschiene-eintragen.html" rel="alternate"></link><published>2009-08-23T12:13:00+02:00</published><updated>2009-08-23T12:13:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-08-23:/bing-in-awstats-als-suchmaschiene-eintragen.html</id><summary type="html">&lt;p&gt;Wer sich seit dem erscheinen von Microsoft's Suchmaschine Bing mal seine
+mir AWstats erzeugten Statistiken angesehen hat, wird festgestellt
+haben, das Zugriffe, die von Bing her auf die eigene Seite gefunden
+haben, unter "&lt;em&gt;Links von einer externen Seite (keine Suchmaschinen)&lt;/em&gt;"
+auftauchen statt unter "&lt;em&gt;Links von einer Internet-Suchmaschine&lt;/em&gt;".&lt;br&gt;
+Ich habe eine …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wer sich seit dem erscheinen von Microsoft's Suchmaschine Bing mal seine
+mir AWstats erzeugten Statistiken angesehen hat, wird festgestellt
+haben, das Zugriffe, die von Bing her auf die eigene Seite gefunden
+haben, unter "&lt;em&gt;Links von einer externen Seite (keine Suchmaschinen)&lt;/em&gt;"
+auftauchen statt unter "&lt;em&gt;Links von einer Internet-Suchmaschine&lt;/em&gt;".&lt;br&gt;
+Ich habe eine &lt;a href="{filename}images/20090820_awstats6.9_bing_patch.patch" title="AWstats Patch"&gt;Patch für AWstats
+6.9&lt;/a&gt;
+geschrieben, mit dem AWstats Bing ordnungsgemäß als Suchmaschine
+erkennt. Ihr könnt diesen &lt;a href="{filename}images/20090820_awstats6.9_bing_patch.patch" title="AWstats Patch"&gt;hier
+herunterladen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_452" align="alignleft" width="300"
+caption="Bing in AWstats als Suchmaschine"]&lt;a href="https://www.zoosau.de/images/Bing-in-AWstats-als-Suchmaschine.png"&gt;&lt;img alt="Bing in AWstats als
+Suchmaschine" src="{filename}images/Bing-in-AWstats-als-Suchmaschine-300x122.png" title="Bing in AWstats als Suchmaschine"&gt;{.size-medium
+.wp-image-452 width="300"
+height="122"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Auf diesem Screenshot kann man "beide" Situationen erkennen: Vor und
+nach dem Patch. Ohne den Patch, sieht das ganze so aus, wie im unteren,
+roten Kreis: Bing wird nicht als Suchmaschine angezeigt. Erst seitdem
+der Patch angewand wurde, wird sie als Suchmaschine aufgelistet (oberer,
+roter Kreis).&lt;/p&gt;
+&lt;p&gt;Das hier beide aufgelistet werde liegt daran, das die Änderung erst für
+neu ausgewertete Tage greift. AWstats berechnet Standardmäßig ja nur
+Tage, für die es in der History-Datei noch keine Werte vorliegen hat. Da
+es mich nicht weiter stört, das der "Branchenriese" Bing in meinen
+privaten Stats falsch angezeigt wird, berechne ich deswegen den Monat
+nicht nach ;)&lt;/p&gt;
+&lt;p&gt;Den Patch wendet man wie folgt an: Zunächst speichert man die Datei in
+einem beliebigen Verzeichnis unter einem beliebigen Namen. In diesem
+Beispiel nehme ich mal "&lt;em&gt;/tmp/bing.patch&lt;/em&gt;" . Dann wechselt man in das
+Verzeichnis "&lt;em&gt;wwwroot/cgi-bin/lib&lt;/em&gt;", unterhalb des Verzeichnisses, in
+dem man AWstats gespeichert hat. Hier legt man besser zunächst eine
+Sicherheitskopie der Datei "&lt;em&gt;search_engines.pm&lt;/em&gt;" an. Anschließend führt
+man dann wie folgt "patch" aus:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;patch -p0 &amp;lt; /tmp/bing.patch&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Kommt hierbei keine Fehlermeldung, sollte alles geklappt haben.&lt;/p&gt;</content><category term="awstats"></category><category term="bing"></category><category term="patch"></category><category term="suchmaschine"></category></entry><entry><title>Index Datenbank des Courier-IMAPd neu erstellen</title><link href="https://www.zoosau.de/index-datenbank-des-courier-imapd-neu-erstellen.html" rel="alternate"></link><published>2008-12-04T20:15:00+01:00</published><updated>2008-12-04T20:15:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-12-04:/index-datenbank-des-courier-imapd-neu-erstellen.html</id><summary type="html">&lt;p&gt;Ich hatte die letzten 2 Tage ein merkwürdiges Problem: Ich habe ein
+Maildir-Postfach auf meinem Server, in dem alle durch SpamAssassin als
+Spam klassifizierten Mails aller anderen Postfächer des Systems abgelegt
+werden. Das stammt noch aus der Implementierungsphase von SpamAssassin,
+da ich mir Anfangs nicht sicher war, ob nicht doch …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich hatte die letzten 2 Tage ein merkwürdiges Problem: Ich habe ein
+Maildir-Postfach auf meinem Server, in dem alle durch SpamAssassin als
+Spam klassifizierten Mails aller anderen Postfächer des Systems abgelegt
+werden. Das stammt noch aus der Implementierungsphase von SpamAssassin,
+da ich mir Anfangs nicht sicher war, ob nicht doch einiges an HAM (Kein
+Spam) fälschlicherweise als SPAM erkannt werden wird.&lt;br&gt;
+Da ich nun mehrere Monate nicht mehr da hineingeschaut habe, haben sich
+ca. 27.000 Spam-Mails in der INBOX befunden. Egal mit welchem
+IMAP-Client ich versucht habe diese zu löschen, sie haben sich entweder
+selbst aufgehängt oder die IMAP-Verbindung wurde vom IMAP-Server
+zurückgesetzt. Probiert habe ich es mit den Clients KMail, Squirrelmail,
+RoundCube Webmail, Thunderbird (Windows und Linux). Als Ergebnis hatte
+ich, das manche Clients in der INBOX nach wie vor etwas um 26.000 Mails
+anzeigten, andere zeigten nur ca. 27 in der INBOX, dafür aber 26.000 im
+TRASH (Papierkorb). Ich konnte den Papierkorb nicht leeren, da auch hier
+diese Timeouts auftraten.&lt;br&gt;
+Durch diese uneinigkeit der Clients in welchem Verzeichnis welche Anzahl
+an Mails liegt, habe ich vermutet, das bei einem der Client-Abstürze die
+IMAP Datenbank des Courier-IMAPd beschädigt wurde. Ich finde es zwar
+merkwürdig, das dieser so etwas nicht abfangen kann, da ihm ja quasi nur
+IMAP Befehle von den Clients übergeben werden, jedoch war es so.&lt;/p&gt;
+&lt;p&gt;Ich konnte dieses Problem lösen, indem ich einfach die IMAP Datenbanken
+des Courier-IMAPd neu aufgebaut habe. Dieses geht wie folgt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stoppen des courier-imapd durch "&lt;strong&gt;/etc/init.d/courier-imap stop&lt;/strong&gt;"&lt;/li&gt;
+&lt;li&gt;Anwenden von "&lt;strong&gt;for db in `find /home/user/.maildir -name
+    courierimapuiddb` ; do mv -fv "\$db" "\$db"_backup ; done&lt;/strong&gt;".&lt;br&gt;
+   Hierdurch werden alle Dateien namens &lt;strong&gt;courierimapuiddb&lt;/strong&gt; unterhalb
+    von &lt;strong&gt;/home/user/.maildir&lt;/strong&gt; in &lt;strong&gt;courierimapuiddb_backup&lt;/strong&gt;
+    umbenannt (Der Pfad zum richtigen Maildir muss natürlich
+    angepasst werden!). Diese Dateien werden von Courier-IMAP
+    automatisch neu angelegt, wenn auf das jeweilige Verzeichnis
+    zugegriffen wird, also keine Sorge.&lt;/li&gt;
+&lt;li&gt;Starten des courier-imapd durch "&lt;strong&gt;/etc/init.d/courier-imap start&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Wenn man nun wieder auf die jeweiligen IMAP Verzeichnisse zugreift, baut
+der Courier-IMAPd die Datenbanken neu auf und es werden die richtigen
+Mails des Ordners angezeigt.&lt;/p&gt;
+&lt;p&gt;Wenn alles gut gegangen ist, kann man die &lt;strong&gt;courierimapuiddb_backup&lt;/strong&gt; -
+Dateien aus Schritt 2 getrost löschen: "&lt;strong&gt;find /home/user/.maildir -name
+courierimapuiddb_backup -exec rm -fv {} \;&lt;/strong&gt;"&lt;/p&gt;
+&lt;p&gt;Ich hoffe das dieser Tipp dem einen oder anderem helfen kann.&lt;br&gt;
+Wie immer freue ich mich sehr über Feedback! :)&lt;/p&gt;</content><category term="aufbauen"></category><category term="courier"></category><category term="courier-imap"></category><category term="courier-imapd"></category><category term="database"></category><category term="datenbank"></category><category term="erstellen"></category><category term="imap"></category><category term="imapd"></category><category term="index"></category><category term="neu"></category><category term="viele mails"></category><category term="zugriff"></category></entry><entry><title>Fenster schliessen mit FireGestures</title><link href="https://www.zoosau.de/fenster-schliessen-mit-firegestures.html" rel="alternate"></link><published>2008-07-07T11:36:00+02:00</published><updated>2008-07-07T11:36:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-07-07:/fenster-schliessen-mit-firegestures.html</id><summary type="html">&lt;p&gt;In &lt;a href="http://www.zoosau.de/technik/meine-liebsten-firefox-extensions-ii" title="Meine liebsten Firefox Extensions II"&gt;einem früheren
+Blogeintrag&lt;/a&gt;
+habe ich geschrieben, das ich aus Gründen der Firefox 3 Kompatibilität,
+sowie der einfacheren Benutzbarkeit (für meine Zwecke) inzwischen als
+Mausgesten-Erkennungstool
+&lt;a href="https://addons.mozilla.org/de/firefox/addon/6366" title="Mozilla AddOn Firegestures"&gt;FireGestures&lt;/a&gt;
+besser finde als
+&lt;a href="https://addons.mozilla.org/de/firefox/addon/39" title="Mozilla AddOn Mousegestures"&gt;MouseGestures&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Die Extension MouseGestures bringt ein Feature mit, an das ich mich
+inzwischen ziemlich gewöhnt habe und das ich auch nicht …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="http://www.zoosau.de/technik/meine-liebsten-firefox-extensions-ii" title="Meine liebsten Firefox Extensions II"&gt;einem früheren
+Blogeintrag&lt;/a&gt;
+habe ich geschrieben, das ich aus Gründen der Firefox 3 Kompatibilität,
+sowie der einfacheren Benutzbarkeit (für meine Zwecke) inzwischen als
+Mausgesten-Erkennungstool
+&lt;a href="https://addons.mozilla.org/de/firefox/addon/6366" title="Mozilla AddOn Firegestures"&gt;FireGestures&lt;/a&gt;
+besser finde als
+&lt;a href="https://addons.mozilla.org/de/firefox/addon/39" title="Mozilla AddOn Mousegestures"&gt;MouseGestures&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Die Extension MouseGestures bringt ein Feature mit, an das ich mich
+inzwischen ziemlich gewöhnt habe und das ich auch nicht missen möchte:
+Sie schliesst den aktuellen Tab auch, wenn es der letzte im aktuellen
+Fenster ist. In diesem Fall schliesst die damit verknüpfte Geste den
+Browser.&lt;br&gt;
+FireGestures hingegen schliesst jedoch nur die aktuelle Seite, sofern es
+sich um einen Tab handelt. "Fenster schliessen" ist eine eigene Geste.
+Definiert man jedoch diese, so kann man keine einzelnen Tabs mehr
+schliessen, da diese Geste dann das ganze Fenster schliesst.&lt;/p&gt;
+&lt;p&gt;Es gibt jedoch eine einfache Möglichkeit, das MouseGestures Verhalten
+für diesen Fall auch in FireGestures herzustellen:&lt;/p&gt;
+&lt;p&gt;FireGestures lässt sich durch Skripte erweitern. Diese schreibt man
+entweder selbst, oder schaut was man auf der &lt;a href="http://www.xuldev.org/firegestures/getscripts.php" title="Homepage der Firefox Extension FireGestures"&gt;Homepage der
+Extension&lt;/a&gt;
+so findet.&lt;br&gt;
+Für den von mir beschriebenen Fall gibt es ein einfaches Script:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;BrowserCloseTabOrWindow();
+if (gBrowser.mTabs.length == 1 &amp;amp;&amp;amp; gBrowser.currentURI.spec == &amp;quot;about:blank&amp;quot;)
+FireGestures._performAction(event, &amp;quot;cmd_closeWindow&amp;quot;);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;p&gt;Dieses Script kann man nun einfach in den FireGestures Einstellungen
+hinzufügen, und mit einer Geste belegen.&lt;/p&gt;</content><category term="extension"></category><category term="fenster"></category><category term="firefox"></category><category term="firegestures"></category><category term="gesten"></category><category term="gestures"></category><category term="maus"></category><category term="mouse"></category><category term="mousegestures"></category><category term="schliessen"></category><category term="tab"></category></entry><entry><title>Meine liebsten Firefox Extensions II</title><link href="https://www.zoosau.de/meine-liebsten-firefox-extensions-ii.html" rel="alternate"></link><published>2008-06-18T13:25:00+02:00</published><updated>2008-06-18T13:25:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-06-18:/meine-liebsten-firefox-extensions-ii.html</id><summary type="html">&lt;p&gt;Mein &lt;a href="http://www.zoosau.de/technik/meine-liebsten-firefox-extensions" title="Meine liebsten Firefox Extensions"&gt;letzter Blogartikel zu diesem
+Thema&lt;/a&gt;
+ist nun schon etwas her. Zumal ging es damals um Extensions, die
+kompatibel zum Firefox 2 sind.&lt;/p&gt;
+&lt;p&gt;Seit heute habe ich den Firefox 3 installiert und zumindest 2 meiner
+Lieblingsextensions sind (noch) nicht kompatibel zu dieser Version.&lt;br&gt;
+Es handelt sich dabei um die für …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Mein &lt;a href="http://www.zoosau.de/technik/meine-liebsten-firefox-extensions" title="Meine liebsten Firefox Extensions"&gt;letzter Blogartikel zu diesem
+Thema&lt;/a&gt;
+ist nun schon etwas her. Zumal ging es damals um Extensions, die
+kompatibel zum Firefox 2 sind.&lt;/p&gt;
+&lt;p&gt;Seit heute habe ich den Firefox 3 installiert und zumindest 2 meiner
+Lieblingsextensions sind (noch) nicht kompatibel zu dieser Version.&lt;br&gt;
+Es handelt sich dabei um die für mich sehr wichtige Extension &lt;a href="https://addons.mozilla.org/de/firefox/addon/39" title="Homepage der Mouse Gestures"&gt;Mouse
+Gestures&lt;/a&gt;
+und das optische Schmankerl
+&lt;a href="https://addons.mozilla.org/de/firefox/addon/1523" title="Homepage der PageStyle2Tab"&gt;PageStyle2Tab&lt;/a&gt;.
+Zumindest für die Mausgesten habe ich einen mehr als vollwertigen Ersatz
+gefunden; PageStyle2Tab funktioniert leider nicht. Naja: Ich lasse es
+mal installiert. Firefox merkt ja selbst wenn es updates gibt und bis
+dahin bleibt es eh deaktiviert.&lt;/p&gt;
+&lt;p&gt;Als Ersatz für die Mouse Gestures habe ich die Extension
+&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/6366" title="Homepage der Mouse Gestures"&gt;FireGestures&lt;/a&gt;
+gefunden. Diese erfüllt exakt denselben Zweck, das Look&amp;amp;Feel ist
+identisch und die Einrichtung der Gesten finde ich komfortabler, da man
+mehrere markieren, und löschen kann. Bei MouseGestures war das eine
+Anwähl, Löschen, anwähl, löschen ... Tirade, da viele Gesten
+vordefiniert waren.&lt;br&gt;
+Ausserdem ist diese Extension kompatibel zum Firefox 3.&lt;/p&gt;
+&lt;p&gt;Bei dieser Suche nach kompatiblen Alternativen sind mir zwei weitere,
+sehr interessante Extensions aufgefallen, die ich vom ersten Moment an
+liebe:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/590" title="Homepage der Extension ShowIP"&gt;&lt;span
+style="text-decoration: underline;"&gt;&lt;strong&gt;ShowIP&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diese Extensions zeigt ein dezentes Feld im rechten Abschnitt der
+Statuszeile des Browsers an, in dem die IP der aktuell besuchten Seite
+steht.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/4882" title="Homepage der Extension TabScope"&gt;&lt;span
+style="text-decoration: underline;"&gt;&lt;strong&gt;TabScope&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diese Extension zeigt einen verkleinerten Screenshot der Seite, die sich
+auf dem jeweiligem Tab befindet, wenn man mit dem Mauszeiger über einen
+Tab fährt.&lt;br&gt;
+So muss man sich nicht immer durchklicken, sondern sieht direkt was sich
+auf dem jeweiligem Tab befindet.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://addons.mozilla.org/de/firefox/addon/6366" title="Homepage der Fire Gestures"&gt;&lt;span
+style="text-decoration: underline;"&gt;&lt;strong&gt;FireGestures&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diese Extension habe ich ja vorhin schon beschrieben. Topp! :D&lt;/p&gt;</content><category term="extensions"></category><category term="firefox"></category><category term="firegestures"></category><category term="kompatibel"></category><category term="mausgesten"></category><category term="mouse gestures"></category><category term="showip"></category><category term="tabscope"></category><category term="test"></category><category term="vorschau"></category></entry><entry><title>Automatisches einrücken im Editor vim</title><link href="https://www.zoosau.de/automatisches-einrucken-im-editor-vim.html" rel="alternate"></link><published>2008-06-12T22:27:00+02:00</published><updated>2008-06-12T22:27:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-06-12:/automatisches-einrucken-im-editor-vim.html</id><summary type="html">&lt;p&gt;Der besonders unter Linux sehr weit verbreitete Texteditor vim bringt in
+der Standardkonfiguration eine Eigenschaft mit sich, die mich persönlich
+mehr stört als nutzt:&lt;/p&gt;
+&lt;p&gt;Die Option &lt;strong&gt;autoindent&lt;/strong&gt;.&lt;br&gt;
+Diese sorgt dafür, das eine Einrückung am Anfang einer Zeile, durch
+Leerzeichen oder Tabs in der folgenden Zeile, nach drücken der Enter
+Taste …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Der besonders unter Linux sehr weit verbreitete Texteditor vim bringt in
+der Standardkonfiguration eine Eigenschaft mit sich, die mich persönlich
+mehr stört als nutzt:&lt;/p&gt;
+&lt;p&gt;Die Option &lt;strong&gt;autoindent&lt;/strong&gt;.&lt;br&gt;
+Diese sorgt dafür, das eine Einrückung am Anfang einer Zeile, durch
+Leerzeichen oder Tabs in der folgenden Zeile, nach drücken der Enter
+Taste, ebenfalls eingerückt wird.&lt;br&gt;
+Das klingt zunächst mal sehr praktisch, da man so sehr einfach eine
+Formatierung beibehalten kann. Sehr nervig wird sie jedoch, wenn man mit
+Einrückungen versehene Textteile per Copy&amp;amp;Paste im vim einfügt. Es
+werden dann nämlich, zusätzlich zu den Einrückungen im kopierten Text,
+vom vim Einrückungen der vorigen Zeile eingefügt.&lt;/p&gt;
+&lt;p&gt;Das sieht dann sehr unordentlich aus und man muß alles manuell wieder
+entfernen.&lt;/p&gt;
+&lt;p&gt;Daher stelle ich diese meistens lieber ab.&lt;/p&gt;
+&lt;p&gt;Das geht entweder, indem man die Einstellung in der Konfigurationsdatei
+des Editors setzt (unter Debian &lt;strong&gt;&lt;em&gt;/etc/vim/vimrc&lt;/em&gt;&lt;/strong&gt;) oder im Editor
+selbst.&lt;/p&gt;
+&lt;p&gt;In der Konfigurationsdatei fügt man einfach folgende Zeile ein:&lt;/p&gt;
+&lt;p&gt;set noautoindent&lt;/p&gt;
+&lt;p&gt;Im Editor selbst muss man sich im Kommandomodus befinden. Die
+Einstellung setzt man durch:&lt;/p&gt;
+&lt;p&gt;:set noautoindent&lt;/p&gt;
+&lt;p&gt;Setzt man sie im Editor selbst, wird die Einstellung jedoch nicht
+gespeichert und gilt nur für die aktuell ausgeführte Editorinstanz.&lt;/p&gt;
+&lt;p&gt;Gefunden habe ich diesen Hinweis auf &lt;a href="http://www.kempgen.net/misc/vim-autoindent-off.html" title="Homepage von Philipp Kempgen"&gt;dieser
+Seite&lt;/a&gt;.&lt;/p&gt;</content><category term="abschalten"></category><category term="abstellen"></category><category term="ausschalten"></category><category term="deaktivieren"></category><category term="einrückungen"></category><category term="leerzeichen"></category><category term="Linux"></category><category term="tabs"></category><category term="vim"></category><category term="Zeilenumbruch"></category></entry><entry><title>SonyEricsson Techniker-Menü</title><link href="https://www.zoosau.de/sonyericsson-techniker-menu.html" rel="alternate"></link><published>2008-06-04T15:08:00+02:00</published><updated>2008-06-04T15:08:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-06-04:/sonyericsson-techniker-menu.html</id><summary type="html">&lt;p&gt;Seit Zeiten des T610 von SonyEricsson gibt es ein "verstecktes"
+Techniker-Menü. In diesem Menü kann man diverse Tests durchführen, wie
+z.B. einschalten der LED, testen des Bildschrimes oder der Tasten, etc.&lt;/p&gt;
+&lt;p&gt;Warum SonyEricsson das versteckt und nicht in das normale Menü
+integriert ist mir unverständlich. Verstellen kann man da …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Seit Zeiten des T610 von SonyEricsson gibt es ein "verstecktes"
+Techniker-Menü. In diesem Menü kann man diverse Tests durchführen, wie
+z.B. einschalten der LED, testen des Bildschrimes oder der Tasten, etc.&lt;/p&gt;
+&lt;p&gt;Warum SonyEricsson das versteckt und nicht in das normale Menü
+integriert ist mir unverständlich. Verstellen kann man da nichts,
+sondern nur testen.&lt;/p&gt;
+&lt;p&gt;Naja, wie auch immer:&lt;/p&gt;
+&lt;p&gt;Auf meinem K770i funktioniert nach wie vor dieselbe Tastenkombination:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;"rechts"&lt;/strong&gt;, &lt;strong&gt;*&lt;/strong&gt;, &lt;strong&gt;"links"&lt;/strong&gt;, &lt;strong&gt;"links"&lt;/strong&gt;, &lt;strong&gt;*&lt;/strong&gt;, &lt;strong&gt;"links"&lt;/strong&gt;,
+&lt;strong&gt;*&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Bei wem natürlich gerade eine dieser Tasten defekt ist, hat schlechte
+Karten. Jedoch wird der/diejenige bei einem so offensichtlichem Defekt
+auch dieses Testmenü nicht mehr brauchen ;)&lt;/p&gt;</content><category term="k770i"></category><category term="service menü"></category><category term="sony ericsson"></category><category term="t610"></category><category term="techniker menü"></category><category term="tests"></category></entry><entry><title>T-Mobile / Congstar MMS- und Interneteinstellungen</title><link href="https://www.zoosau.de/t-mobile-congstar-mms-und-interneteinstellungen.html" rel="alternate"></link><published>2008-06-04T13:10:00+02:00</published><updated>2008-06-04T13:10:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-06-04:/t-mobile-congstar-mms-und-interneteinstellungen.html</id><summary type="html">&lt;p&gt;Ich suche jedes Mal von neuem, daher dieses Mal endlich ein Blogbeitrag
+dazu:&lt;/p&gt;
+&lt;p&gt;Ich bin &lt;a href="http://www.congstar.de" title="Congstar Homepage"&gt;Congstar&lt;/a&gt;-Kunde.
+Congstar ist nichts anderes als eine Telekom/T-Mobile Tochter. Somit
+sind alle WAP, Internet, MMS, etc - Einstellungen dieselben wie bei
+T-Mobile Verträgen auch.&lt;/p&gt;
+&lt;p&gt;Es gibt da eine sehr bequeme Möglichkeit sein Handy für …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich suche jedes Mal von neuem, daher dieses Mal endlich ein Blogbeitrag
+dazu:&lt;/p&gt;
+&lt;p&gt;Ich bin &lt;a href="http://www.congstar.de" title="Congstar Homepage"&gt;Congstar&lt;/a&gt;-Kunde.
+Congstar ist nichts anderes als eine Telekom/T-Mobile Tochter. Somit
+sind alle WAP, Internet, MMS, etc - Einstellungen dieselben wie bei
+T-Mobile Verträgen auch.&lt;/p&gt;
+&lt;p&gt;Es gibt da eine sehr bequeme Möglichkeit sein Handy für den passenden
+Zugriff auf diese Zugänge einzurichten: Eine Konfigurations-SMS! Man
+kann sich eine SMS mit den richtigen Einstellungen zuschicken lassen und
+muss dann nur noch auf seinem Handy bestätigen, das diese übernommen
+werden sollen.&lt;/p&gt;
+&lt;p&gt;Für Congstar/T-Mobile findet man die &lt;a href="https://www.csp.t-mobile.net/rdm/?pt=TMDEUP" title="T-Mobile Konfigurationsassistent per SMS"&gt;Webseite zum anfordern der SMS
+hier&lt;/a&gt;.&lt;/p&gt;</content><category term="congstar"></category><category term="handy"></category><category term="internet"></category><category term="konfiguration"></category><category term="mms"></category><category term="sms"></category><category term="t-mobile"></category></entry><entry><title>wserving.exe , afinding.exe , perfs.exe</title><link href="https://www.zoosau.de/wservingexe-afindingexe-perfsexe.html" rel="alternate"></link><published>2008-05-18T14:53:00+02:00</published><updated>2008-05-18T14:53:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-18:/wservingexe-afindingexe-perfsexe.html</id><summary type="html">&lt;p&gt;Im Internet steht ja sonst alles, nur zu diesen Prozessen konnte ich
+nichts eindeutiges finden, ausser, das manche Virenscanner offenbar
+darauf anschlagen.&lt;/p&gt;
+&lt;p&gt;Also wollte ich sie entfernen. Krieg's bis jetzt aber nicht sauber hin.
+Ich habe mir zunächst mehrere Non-Install-Virenscanner/Spywarescanner
+herunter geladen wie &lt;a href="http://portableapps.com/apps/utilities/clamwin_portable" title="Portable ClamAV"&gt;Portable
+ClamAV&lt;/a&gt;,
+&lt;a href="http://lavasoft.com/products/ad_aware_free.php" title="AdAware"&gt;AdAware&lt;/a&gt; (Ja,
+muss installiert …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Im Internet steht ja sonst alles, nur zu diesen Prozessen konnte ich
+nichts eindeutiges finden, ausser, das manche Virenscanner offenbar
+darauf anschlagen.&lt;/p&gt;
+&lt;p&gt;Also wollte ich sie entfernen. Krieg's bis jetzt aber nicht sauber hin.
+Ich habe mir zunächst mehrere Non-Install-Virenscanner/Spywarescanner
+herunter geladen wie &lt;a href="http://portableapps.com/apps/utilities/clamwin_portable" title="Portable ClamAV"&gt;Portable
+ClamAV&lt;/a&gt;,
+&lt;a href="http://lavasoft.com/products/ad_aware_free.php" title="AdAware"&gt;AdAware&lt;/a&gt; (Ja,
+muss installiert werden), eScan, McAfee Stinger,
+&lt;a href="http://vba32.de/" title="VBA32"&gt;vba32&lt;/a&gt; . ClamAV hat zwar bei afinding.exe und
+wserving.exe angeschlagen und diese auch entfernt, jedoch bei perfs.exe
+schlug nur eScan an. Und der ist so blöd drauf, das er sagt "Entfernen
+tue ich den aber nur, wenn Du mich kaufst, Ätsch!".&lt;/p&gt;
+&lt;p&gt;Sehe ich nicht ein. Also versuche ich dem Teil jetzt noch mit freien
+Tools beizukommen.&lt;/p&gt;
+&lt;p&gt;[CUT]&lt;/p&gt;
+&lt;p&gt;.. so - ich bin nun durch.&lt;/p&gt;
+&lt;p&gt;Fazit: Keiner der Non-Install Tools und auch nicht AdAware haben die
+Threads auch nur erkannt; vom entfernen garnicht zu reden. Nur ClamAV
+hat zumindest wserving.exe und afinding.exe erkannt und gelöscht. Beim
+nächsten Systemstart waren sie aber wieder aktiv.&lt;/p&gt;
+&lt;p&gt;Also griff ich zum altbewährten &lt;a href="http://www.free-av.de" title="Avira Free AV"&gt;Avira
+FreeAv&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dieser hat nun alle Teile erkannt, in seine Quarantaine verschoben und
+sie tauchten auch nach einem Neustart des Systems nicht mehr auf. So
+ist's schön! :)&lt;/p&gt;</content><category term="AdAware"></category><category term="afinding.exe"></category><category term="eScan"></category><category term="kostenlose scanner"></category><category term="McAfee Stinger"></category><category term="perfs.exe"></category><category term="Portable ClamAV"></category><category term="vba32"></category><category term="wserving.exe"></category></entry><entry><title>Entfernen von Diensten unter Windows XP</title><link href="https://www.zoosau.de/entfernen-von-diensten-unter-windows-xp.html" rel="alternate"></link><published>2008-05-18T11:07:00+02:00</published><updated>2008-05-18T11:07:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-18:/entfernen-von-diensten-unter-windows-xp.html</id><summary type="html">&lt;p&gt;Wie komme ich dazu einen Dienst entfernen zu wollen? Der wird doch
+regulär mit deinstalliert.&lt;/p&gt;
+&lt;p&gt;Stimmt - ich habe es aber irgendwie geschafft mir gleich drei Trojaner
+einzufangen. Schliesslich war ich so schlau zu denken, das man sich
+regulär keine Viren mehr einfängt, wenn man nicht gerade camsoftware.exe
+von "PinkGirly79 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wie komme ich dazu einen Dienst entfernen zu wollen? Der wird doch
+regulär mit deinstalliert.&lt;/p&gt;
+&lt;p&gt;Stimmt - ich habe es aber irgendwie geschafft mir gleich drei Trojaner
+einzufangen. Schliesslich war ich so schlau zu denken, das man sich
+regulär keine Viren mehr einfängt, wenn man nicht gerade camsoftware.exe
+von "PinkGirly79" - Nicks von irgendwelchen fremden ICQ Kontakten
+ausführt oder so.&lt;/p&gt;
+&lt;p&gt;Tja, was soll ich sagen: Falsch ;)&lt;/p&gt;
+&lt;p&gt;Nun habe ich gleich drei Dienste in der Liste: WServing , AFinding und
+Perfmons . Es handelt sich dabei um .exe s unter Windows/System32 namens
+afinding.exe , wserving.exe und perfs.exe . Sie stehen in der Regel auch
+im Task Manager als laufender Prozess. AdAware findet sie nicht. Mehrere
+Virenscanner auch nicht. Kaspersky aber z.B. schlägt an.&lt;/p&gt;
+&lt;p&gt;Ich wollte zumindest diese Dienste austragen, in der Hoffnung, dann
+starten sie nicht mehr.&lt;/p&gt;
+&lt;p&gt;Hierzu gibt es 2 schnelle Möglichkeiten:&lt;/p&gt;
+&lt;p&gt;Befehl &lt;strong&gt;sc&lt;/strong&gt; ausführen - dadurch kommt bereits eine schön ausführliche
+Liste an Kommandozeilenoptionen. Oder &lt;a href="http://support.microsoft.com/kb/927229" title="Windows KB Artikel zur Resource Kit Familie"&gt;Herunterladen der Resource - Kit
+Option
+&lt;strong&gt;delsrv&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</content><category term="dienste"></category><category term="entfernen"></category><category term="löschen"></category><category term="windows"></category></entry><entry><title>Neue MySQL "moves"</title><link href="https://www.zoosau.de/neue-mysql-moves.html" rel="alternate"></link><published>2008-04-02T12:23:00+02:00</published><updated>2008-04-02T12:23:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-02:/neue-mysql-moves.html</id><summary type="html">&lt;p&gt;Ich habe heute gleich drei neue MySQL Kniffe gelernt!&lt;/p&gt;
+&lt;p&gt;Die sind zwar sicher fast jedem, der sich oberflächlich mit MySQL
+beschäftigt hat klar, aber ich kannte sie zuvor nicht. Dabei sind sie
+seeeehr hilfreich bei meiner täglichen Arbeit.&lt;/p&gt;
+&lt;h2&gt;Auszugebende Felder auswählen&lt;/h2&gt;
+&lt;p&gt;Will man nur ein paar Felder einer Datenbanktabelle ausgegeben …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe heute gleich drei neue MySQL Kniffe gelernt!&lt;/p&gt;
+&lt;p&gt;Die sind zwar sicher fast jedem, der sich oberflächlich mit MySQL
+beschäftigt hat klar, aber ich kannte sie zuvor nicht. Dabei sind sie
+seeeehr hilfreich bei meiner täglichen Arbeit.&lt;/p&gt;
+&lt;h2&gt;Auszugebende Felder auswählen&lt;/h2&gt;
+&lt;p&gt;Will man nur ein paar Felder einer Datenbanktabelle ausgegeben bekommen,
+oder in einer bestimmten Reihenfolge, so kann man das mit folgendem
+select Befehl tun:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;select feld1,feld4,feld3 from datenbank.tabelle;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;oder, für einen speziellen Datensatz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;select feld1,feld4,feld3 from datenbank.tabelle where feld1='wert';&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Hashes erzeugen&lt;/h2&gt;
+&lt;p&gt;Man kann MySQL direkt anweisen, aus einem String einen Hash zu erzeugen.
+Hat man z.B. keine Ahnung, mit welchem Algorithmus (MD5,SHA,Crypt, ...)
+eine Applikation ein Passwort in einer Datenbank abgelegt hat, kann man
+das wie folgt herausfinden:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Anzeigen des Hash - z.B.  "select User,Host,Password from
+    mysql.user where User='root';"&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generieren eines Hashes per "select
+    PASSWORD('DasPasswortDesUsers');"&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ist der Hash gleich dem im Feld&lt;/strong&gt; &lt;strong&gt;Password aus dem ersten
+    Befehl, hat man den Algorithmus.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Es gibt auch noch die Hashfunktionen MD5, SHA, etc. Diese generiert man
+dann per &lt;strong&gt;MD5('pass');&lt;/strong&gt;, &lt;strong&gt;SHA('pass);&lt;/strong&gt;, usw.&lt;/p&gt;
+&lt;h2&gt;Änderung der Passwortgenerierung zwischen den MySQL Versionen&lt;/h2&gt;
+&lt;p&gt;Zunächst sollte man sich mal &lt;a href="http://dev.mysql.com/doc/refman/5.1/de/password-hashing.html" title="MySQL Manual zu Password Hashing"&gt;diesen
+Artikel&lt;/a&gt;
+durchlesen.&lt;/p&gt;
+&lt;p&gt;Mit MySQL 4.1 wurde eine neue Methode zur Passwortgenerierung
+eingeführt.&lt;/p&gt;
+&lt;p&gt;Hat man noch Datenbanken aus früheren Versionen, kann man diesen Hash
+mit der MySQL Funktion &lt;strong&gt;OLD_PASSWORD&lt;/strong&gt; (wie in Tipp 2 dieses Artikels
+beschrieben) generieren.&lt;/p&gt;</content><category term="auszugebende Felder auswählen"></category><category term="migration"></category><category term="mysql"></category><category term="passwort generieren"></category></entry><entry><title>Modding der Fritzbox - Teil 3</title><link href="https://www.zoosau.de/modding-der-fritzbox-teil-3.html" rel="alternate"></link><published>2008-03-04T10:00:00+01:00</published><updated>2008-03-04T10:00:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-03-04:/modding-der-fritzbox-teil-3.html</id><summary type="html">&lt;p&gt;So, heute möchte ich gerne einen &lt;a href="http://de.wikipedia.org/wiki/Secure_Shell" title="Wiki Eintrag zu SSH"&gt;SSH
+Server&lt;/a&gt;
+auf die Fritzbox bringen, da mich der Telnetzugang dann doch ziemlich
+nervt.&lt;/p&gt;
+&lt;p&gt;Es wird, wie immer, die Variante gewählt, den Server beim booten der Box
+aus dem Web nachzuladen.&lt;/p&gt;
+&lt;p&gt;Ich richte mich hierbei weitestgehend nach &lt;a href="http://www.ip-phone-forum.de/showthread.php?t=79500" title="IP-Phone-Forum Anleitung für SSH"&gt;diesem
+Tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Es wird also der Dropbear …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, heute möchte ich gerne einen &lt;a href="http://de.wikipedia.org/wiki/Secure_Shell" title="Wiki Eintrag zu SSH"&gt;SSH
+Server&lt;/a&gt;
+auf die Fritzbox bringen, da mich der Telnetzugang dann doch ziemlich
+nervt.&lt;/p&gt;
+&lt;p&gt;Es wird, wie immer, die Variante gewählt, den Server beim booten der Box
+aus dem Web nachzuladen.&lt;/p&gt;
+&lt;p&gt;Ich richte mich hierbei weitestgehend nach &lt;a href="http://www.ip-phone-forum.de/showthread.php?t=79500" title="IP-Phone-Forum Anleitung für SSH"&gt;diesem
+Tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Es wird also der Dropbear SSH Server verwendet. Diesen habe ich &lt;a href="http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/dropbear" title="Binärer Dropbear SSH Server für die Fritzbox"&gt;hier
+fertig kompiliert
+abgelegt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ich erweitere das Script /var/flash/debug.cfg aus &lt;a href="http://www.zoosau.de/technik/modding-der-fritzbox-teil-2" title="Teil 2 der Reihe "&gt;Teil 2 der
+Reihe&lt;/a&gt;
+um ein paar Zeilen. Ausserdem ändere ich die Form ein wenig:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;#!/bin/sh&lt;br&gt;
+APPDIR="/var/tmp/runtimeapps"&lt;br&gt;
+mkdir \$APPDIR&lt;br&gt;
+echo "ww:x:0:0:root:/:/bin/sh" &amp;gt;&amp;gt; /var/tmp/passwd&lt;br&gt;
+echo "ww:PASSWORTHASH:12332:0:99999:7:::" &amp;gt;&amp;gt; /var/tmp/shadow&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&amp;gt;&amp;gt;TELNET&lt;br&gt;
+if [ "\$(busybox | grep -c telnetd,)" = "1" ];then&lt;br&gt;
+/bin/busybox telnetd -l /sbin/ar7login&lt;br&gt;
+else&lt;br&gt;
+{&lt;br&gt;
+while !(ping -c 1 www.zoosau.de); do sleep 5; done&lt;br&gt;
+wget -qO \$APPDIR/utelnetd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/utelnetd&lt;br&gt;
+chmod +x \$APPDIR/utelnetd&lt;br&gt;
+\$APPDIR/utelnetd -d -l /sbin/ar7login&lt;br&gt;
+} &amp;amp;&lt;br&gt;
+fi&lt;br&gt;
+#&amp;lt;&amp;lt;TELNET&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&amp;gt;&amp;gt;FTP&lt;br&gt;
+cd \$APPDIR&lt;br&gt;
+while !(ping -c 1 www.zoosau.de); do sleep 5; done&lt;br&gt;
+wget -qO \$APPDIR/bftpd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd&lt;br&gt;
+wget -qO \$APPDIR/bftpd.conf
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd.conf&lt;br&gt;
+chmod +x \$APPDIR/bftpd&lt;br&gt;
+./bftpd -d -c \$APPDIR/bftpd.conf&lt;br&gt;
+#&amp;lt;&amp;lt;FTP&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&amp;gt;&amp;gt;SSH&lt;br&gt;
+cd \$APPDIR&lt;br&gt;
+while !(ping -c 1 www.zoosau.de); do sleep 5; done&lt;br&gt;
+wget -qO \$APPDIR/dropbear
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/dropbear&lt;br&gt;
+wget -qO \$APPDIR/busybox
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/busybox_uudecode&lt;br&gt;
+chmod +x \$APPDIR/dropbear&lt;br&gt;
+chmod +x \$APPDIR/busybox&lt;br&gt;
+ln -s \$APPDIR/dropbear dropbearkey&lt;br&gt;
+ln -s \$APPDIR/busybox \$APPDIR/uudecode&lt;br&gt;
+ln -s \$APPDIR/busybox \$APPDIR/uuencode&lt;br&gt;
+\$APPDIR/dropbearkey -t rsa -f \$APPDIR/dropbear_rsa_host_key&lt;br&gt;
+\$APPDIR/dropbearkey -t dss -f \$APPDIR/dropbear_dss_host_key&lt;br&gt;
+\$APPDIR/dropbear -p 22 -r \$APPDIR/dropbear_rsa_host_key -d
+\$APPDIR/dropbear_dss_host_key&lt;br&gt;
+#&amp;lt;&amp;lt;SSH&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dadurch wird zwar jedes Mal ein anderer Hostkey erzeugt, aber diesen im
+Webspace ablegen ist auch uncool.&lt;/p&gt;
+&lt;p&gt;Daher sollte man, nachdem die Box erfolgreich neu gestartet wurde, das
+debug.cfg Script so abändern, das immer dieselben Keys geschrieben
+werden.&lt;/p&gt;
+&lt;p&gt;Die so modifizierte Datei schieben wir nun per FTP wieder auf die
+Fritzbox nach &lt;em&gt;/var/tmp/debug.cfg&lt;/em&gt; . Anschliessend fügen wir diese durch
+&lt;strong&gt;&lt;em&gt;cp /var/tmp/debug.cfg /var/flash/debug.cfg&lt;/em&gt;&lt;/strong&gt; wieder in den
+resistenten Flashspeicher ein.&lt;/p&gt;
+&lt;p&gt;Ich verzichte hierbei darauf die Box im Internet zugänglich zu machen,
+da ich das garnicht will. Wer möchte, kann sich aber den &lt;a href="http://www.ip-phone-forum.de/showthread.php?t=79500" title="IP-Phone-Forum Anleitung für SSH"&gt;IP-Phone-Forum
+Beitrag
+dazu&lt;/a&gt;
+reinziehen, da steht beschrieben wie das geht.&lt;/p&gt;
+&lt;p&gt;Nachdem die Box also mit SSH nun erfolgreich gestartet wurde, und die
+DSA/RSA Hostkeys erzeugt wurden, stellen wir sicher, das auch immer
+dieselben geladen werden. Sonst ist SSH Quatsch.&lt;/p&gt;
+&lt;p&gt;Zunächst holen wir uns die debug.cfg wieder auf den Rechner, um sie
+besser bearbeiten zu können. Dasselbe tun wir mit den Keys:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;cat /var/flash/debug.cfg &amp;gt; /var/tmp/debug.cfg&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;cat /var/tmp/runtimeapp/dropbear_rsa_host_key &amp;gt;&lt;/em&gt;
+&lt;em&gt;/var/tmp/dropbear_rsa_host_key&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;cat /var/tmp/runtimeapp/dropbear_dss_host_key&lt;/em&gt; &lt;em&gt;&amp;gt;&lt;/em&gt;
+&lt;em&gt;/var/tmp/dropbear_dss_host_key&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Die Keys müssen wir zuvor in ASCII umformatieren:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;cd /var/tmp/runtimeapp&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;chmod 600&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;dropbear_rsa_host_key&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;chmod 600&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;dropbear_dss_host_key&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;./uuencode&lt;/em&gt; &lt;em&gt;dropbear_rsa_host_key&lt;/em&gt;
+*dropbear_rsa_host_key.ascii &amp;gt;&lt;/strong&gt;*
+&lt;strong&gt;&lt;em&gt;dropbear_rsa_host_key.ascii&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;./uuencode&lt;/em&gt; &lt;em&gt;dropbear_dss_host_key&lt;/em&gt;
+*dropbear_dss_host_key.ascii &amp;gt;&lt;/strong&gt;*
+&lt;strong&gt;&lt;em&gt;dropbear_dss_host_key.ascii&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Diese drei Dateien (debug.cfg und *.ascii) ziehen wir nun per FTP auf
+den Rechner und öffnen sie im Editor.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nehmt einen Editor der die UNIX Zeilenumbrüche beherrscht (NICHT
+Notepad!). Zum Beispiel den &lt;a href="http://www.crimsoneditor.com/" title="Homepage des Crimson Editor"&gt;Crimson
+Editor&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Zunächst entfernen wir in der debug.cfg die drei Zeilen, die zur
+Generierung der Keys dienen. Am besten kommentiert man sie mit # aus,
+falls man die Keys doch mal wechseln möchte.&lt;/p&gt;
+&lt;p&gt;Stattdessen tragen wir folgendes ein:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;\$APPDIR/uudecode -o \$APPDIR/dropbear_rsa_host_key &amp;lt;&amp;lt;\EOP&lt;br&gt;
+INHALT DER DATEI dropbear_rsa_host_key.ascii&lt;br&gt;
+EOP&lt;br&gt;
+\$APPDIR/uudecode -o \$APPDIR/dropbear_dss_host_key &amp;lt;&amp;lt;\EOP&lt;br&gt;
+INHALT DER DATEI dropbear_dss_host_key.ascii&lt;br&gt;
+EOP&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dadurch wird immer wieder derselbe Key verwendet.&lt;/p&gt;</content><category term="box"></category><category term="dropbear"></category><category term="fritz"></category><category term="fritz.box"></category><category term="ssh"></category></entry><entry><title>Modding der Fritzbox - Teil 2</title><link href="https://www.zoosau.de/modding-der-fritzbox-teil-2.html" rel="alternate"></link><published>2008-03-03T22:01:00+01:00</published><updated>2008-03-03T22:01:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-03-03:/modding-der-fritzbox-teil-2.html</id><summary type="html">&lt;p&gt;Im ersten Teil meines Fritzbox - Modding Tagebuches habe ich,
+referenzierend auf weitere Web-Quellen, erklärt, wie ich einen &lt;a href="http://de.wikipedia.org/wiki/Telnet" title="Wiki Eintrag zu Telnet"&gt;Telnet
+Server&lt;/a&gt;
+auf der Fritzbox installiert habe.&lt;/p&gt;
+&lt;p&gt;Heute möchte ich das gerne um einen &lt;a href="http://de.wikipedia.org/wiki/File_Transfer_Protocol" title="Wiki EIntrag zu FTP"&gt;&lt;strong&gt;FTP
+Server&lt;/strong&gt;&lt;/a&gt;
+erweitern, da dieses den Austausch von Daten stark erleichtert.&lt;/p&gt;
+&lt;p&gt;Der Schritt, den Telnetserver zu installieren, scheint in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Im ersten Teil meines Fritzbox - Modding Tagebuches habe ich,
+referenzierend auf weitere Web-Quellen, erklärt, wie ich einen &lt;a href="http://de.wikipedia.org/wiki/Telnet" title="Wiki Eintrag zu Telnet"&gt;Telnet
+Server&lt;/a&gt;
+auf der Fritzbox installiert habe.&lt;/p&gt;
+&lt;p&gt;Heute möchte ich das gerne um einen &lt;a href="http://de.wikipedia.org/wiki/File_Transfer_Protocol" title="Wiki EIntrag zu FTP"&gt;&lt;strong&gt;FTP
+Server&lt;/strong&gt;&lt;/a&gt;
+erweitern, da dieses den Austausch von Daten stark erleichtert.&lt;/p&gt;
+&lt;p&gt;Der Schritt, den Telnetserver zu installieren, scheint in nahezu allen
+anderen Tutorials die Grundvoraussetzung zu sein. So auch für dieses:
+Wer einen FTP Server haben will, braucht an dieser Stelle bereits einen
+Zugang zur Fritzbox per Telnet.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Wie werden Configdateien auf der Fritzbox editiert?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Meistens werden Erweiterungen aufgrund des relativ kleinen, fixen
+Speichers, der einen Neustart der Box übersteht, beim booten der Box aus
+dem Internet gezogen. Dadurch muss der Speicher nur für ein Shellscript
+reichen.&lt;/p&gt;
+&lt;p&gt;Der Arbeitsspeicher der Box ist reichlich bemessen. Ich meine gelesen zu
+haben das dieser 32 MB groß ist.&lt;/p&gt;
+&lt;p&gt;Die am meisten editierte Datei auf der Fritzbox ist &lt;em&gt;&lt;span
+id="intelliTXT" name="intelliTxt"&gt;&lt;code&gt;/var/flash/debug.cfg&lt;/code&gt;&lt;/span&gt;&lt;/em&gt;, da
+diese durch andere Fritzbox-eigenen Mechanismen nicht beeinträchtigt
+wird. Man könnte fast meinen sie sei für User-Modifikationen gemacht ;)&lt;/p&gt;
+&lt;p&gt;Diese Datei kann nicht direkt per FTP oder einem Editor bearbeitet
+werden. Wer genau wissen will warum, der lese bitte
+&lt;a href="http://www.tecchannel.de/server/extra/432803/index11.html" title="TecChannel Beitrag"&gt;hier&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Daher muss man die Datei zunächst in den Temporären RAM-Speicher
+"kopieren". Das geht wie folgt:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;span id="intelliTXT"
+name="intelliTxt"&gt;&lt;code&gt;cat /var/flash/debug.cfg  &amp;gt; /var/tmp/debug.cfg&lt;/code&gt;&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So werden die verteilten Stücke der Datei in eine "echte" Textdatei in
+/var/tmp/ (RAMdrive der Fritzbox) zusammengefügt.&lt;/p&gt;
+&lt;p&gt;Diese Datei kann man nun editieren.&lt;/p&gt;
+&lt;p&gt;Die bearbeitete Datei kann man wiederum ganz normal kopieren:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;span id="intelliTXT"
+name="intelliTxt"&gt;&lt;code&gt;cp /var/tmp/debug.cfg /var/flash/debug.cfg&lt;/code&gt;&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Meine Datei sieht nach der Installation des Telnet Servers wie folgt
+aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;#!/bin/sh&lt;br&gt;
+#&amp;gt;&amp;gt;TELNET&lt;br&gt;
+if [ "\$(busybox | grep -c ' telnetd,')" = "1" ];then&lt;br&gt;
+/bin/busybox telnetd -l /sbin/ar7login&lt;br&gt;
+else&lt;br&gt;
+{&lt;br&gt;
+while !(ping -c 1 lcr.telefonsparbuch.de); do sleep 5; done&lt;br&gt;
+wget -qO /var/utelnetd
+http://lcr.telefonsparbuch.de/software/fritzbox/utelnetd&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;# Ohne Kennwort-Abfrage&lt;br&gt;
+# echo "root::0:0:root:/var/tmp:/bin/sh" &amp;gt; /etc/passwd&lt;br&gt;
+# chmod +x /var/utelnetd&lt;br&gt;
+# /var/utelnetd -d -l /bin/sh&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;# Mit Kennwort-Abfrage&lt;br&gt;
+chmod +x /var/utelnetd&lt;br&gt;
+/var/utelnetd -d -l /sbin/ar7login&lt;br&gt;
+} &amp;amp;&lt;br&gt;
+fi&lt;br&gt;
+#&amp;lt;&amp;lt;TELNET&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich beginne an dieser Stelle mit der Einrichtung des FTP Servers, da ich
+keine Lust habe diese Datei rein mit cat - Befehlen zu editieren...&lt;/p&gt;
+&lt;p&gt;Dazu ersetze ich den obigen Dateiinhalt durch den folgenden:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;#!/bin/sh&lt;br&gt;
+#&amp;gt;&amp;gt;TELNET&lt;br&gt;
+if [ "\$(busybox | grep -c telnetd,)" = "1" ];then&lt;br&gt;
+/bin/busybox telnetd -l /sbin/ar7login&lt;br&gt;
+else&lt;br&gt;
+{&lt;br&gt;
+while !(ping -c 1 www.zoosau.de); do sleep 5; done&lt;br&gt;
+wget -qO /var/utelnetd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/utelnetd&lt;br&gt;
+chmod +x /var/utelnetd&lt;br&gt;
+/var/utelnetd -d -l /sbin/ar7login&lt;br&gt;
+} &amp;amp;&lt;br&gt;
+fi&lt;br&gt;
+#&amp;lt;&amp;lt;TELNET&lt;br&gt;
+#&amp;gt;&amp;gt;FTP&lt;br&gt;
+cd /var/tmp&lt;br&gt;
+while !(ping -c 1 www.zoosau.de); do sleep 5; done&lt;br&gt;
+wget -qO /var/tmp/bftpd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd&lt;br&gt;
+wget -qO /var/tmp/bftpd.conf
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd.conf&lt;br&gt;
+chmod +x /var/tmp/bftpd&lt;br&gt;
+./bftpd -d -c /var/tmp/bftpd.conf&lt;br&gt;
+#&amp;lt;&amp;lt;FTP&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;echo "ww:PASSWORTHASH:0:0:root:/:null" &amp;gt;&amp;gt; /var/tmp/passwd&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;PASSWORTHASH&lt;/em&gt; kann man unter Linux mit dem tool htpasswd hervorragend
+erzeugen:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;htpasswd -n username&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nach einem Fritzbox - Neustart sollte ich mich sowohl per Telnet wie
+auch FTP anmelden können ... siehe da: Es geht! :)&lt;/p&gt;</content><category term="box"></category><category term="fritz"></category><category term="fritz.box"></category><category term="ftp"></category><category term="telnet"></category></entry><entry><title>Meine liebsten Firefox Extensions</title><link href="https://www.zoosau.de/meine-liebsten-firefox-extensions.html" rel="alternate"></link><published>2008-03-02T18:32:00+01:00</published><updated>2008-03-02T18:32:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-03-02:/meine-liebsten-firefox-extensions.html</id><summary type="html">&lt;p&gt;Jedes Mal, wenn ich mir ein System neu installiere, suche ich mir
+mühselig in meinem Kopf wieder meine Standard Plugins für den Firefox
+zusammen.&lt;/p&gt;
+&lt;p&gt;Hier erstelle ich mal eine Linksammlung, damit ich demnächst alles an
+einem Ort verlinkt habe. Evtl. interessieren den einen oder anderen ja
+auch ein paar davon …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Jedes Mal, wenn ich mir ein System neu installiere, suche ich mir
+mühselig in meinem Kopf wieder meine Standard Plugins für den Firefox
+zusammen.&lt;/p&gt;
+&lt;p&gt;Hier erstelle ich mal eine Linksammlung, damit ich demnächst alles an
+einem Ort verlinkt habe. Evtl. interessieren den einen oder anderen ja
+auch ein paar davon.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="scrapbook"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/427" title="Firefox Homepage der Extension"&gt;ScrapBook&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mit ScrapBook kann man schnell und ziemlich einfach eine im Browser
+angezeigte Seite "wie sie ist" auf der Festplatte abspeichern. Praktisch
+um sie offline nochmal ansehen zu können oder wenn gerade kein Drucker
+verfügbar ist.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="flashgot"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/220" title="Firefox Homepage der Extension"&gt;FlashGot&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Bietet einem ein erweitertes Kontextmenü um Downloadlinks an seinen
+Downloadmanager zusenden. Man kann auch mehrere Links auf einmal
+verarbeiten lassen und vieles mehr.&lt;br&gt;
+Interessant in diesem Zusammenhang auch der Downloadmanager
+&lt;a href="http://www.flashget.com/en/download.htm" title="FlashGet Homepage"&gt;FlashGet&lt;/a&gt;
+für Windows.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="live-http-headers"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/3829" title="Firefox Homepage der Extension"&gt;Live HTTP Headers&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Eher interessant für Webserver Administratoren: Hiermit kann man die
+Kommunikation zwischen dem Webbrowser und dem Webserver beobachten. Man
+kann sehen wie die Anforderung die gesendet wird genau aussieht und wie
+der Webserver antwortet, etc. Auch Umleitungen und ähnliches erkennt man
+so sehr gut.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="mouse-gestures"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/39" title="Firefox Homepage der Extension"&gt;Mouse Gestures&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Man kann so Mausbewegungen einer bestimmten Aktion zuordnen. Z.B.
+"Rechte Maustaste + Maus nach links" = Zurück, "Rechte Maustaste + hoch"
+= Neuer Tab, etc. Ich benutze nur 4 : Hoch, runter, links und rechts für
+Neuer Tab, Tab schliessen, zurück und vor. Wer mag, kann sich gerne
+&lt;a href="{filename}images/mousegestures.rdf" title="Einstellungen meiner Gestures"&gt;diese
+Datei&lt;/a&gt;
+in den Profilordner des Firefox kopieren und hat genau diese Funktionen.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="pagestyle2tab"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1523" title="Firefox Homepage der Extension"&gt;PageStyle2Tab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Lässt den Firefox ein wenig schöner aussehen, indem die Tabs der Seiten
+den selben Stil bekommen, wie der Seitenhintergrund.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="session-manager"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/2324" title="Firefox Homepage der Extension"&gt;Session Manager&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Hiermit kann man sich beliebig viele Unterfenster als Profile speichern.
+Wenn man z.B. jeden morgen eh dieselben Seiten aufruft (News,
+Daily-Comic, Sonstwas ...) muss man nur das jeweile Profil laden und
+alle Fenster werden geöffnet.&lt;br&gt;
+Ausserdem fängt das Plugin ziemlich zuverlässig Abstürze ab, so das man
+bei einem Neustart des Browsers das zuletzt gecrashte Fenster wieder
+herstellen lassen kann.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="web-developer"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/60" title="Firefox Homepage der Extension"&gt;Web Developer&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Zeigt eine sehr Hilfreiche Toolleiste unterhalb der Links an, mit denen
+man praktische Einstellungen sehr schnell einsehen und verändern kann
+wie z.B. den Cache deaktivieren, Stylesheet ändern, usw.&lt;/p&gt;
+&lt;h2 class="addon-feature-name" id="typo3-workbench"&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/5528" title="Firefox Homepage der Extension"&gt;TYPO3 Workbench&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dieses Plugin ist nur was für Leute, die mit Typo3 arbeiten. Es bietet
+schnellen Zugriff auf das Backend, eine Suche für das Extension
+Repository und vieles mehr.&lt;/p&gt;
+&lt;p&gt;Ich hoffe diese Empfehlungen helfen dem einen oder anderem :)&lt;/p&gt;</content><category term="downloadmanager"></category><category term="extensions"></category><category term="firefox"></category><category term="firefox absturz"></category><category term="http header"></category><category term="mausgesten"></category><category term="mouse gestures"></category><category term="plugins"></category><category term="session manager"></category><category term="session saver"></category><category term="toolleiste"></category><category term="typo3"></category><category term="web developer"></category><category term="web development"></category><category term="Workbench"></category></entry><entry><title>Windows 2000 Tab Completion aktivieren</title><link href="https://www.zoosau.de/windows-2000-tab-completion-aktivieren.html" rel="alternate"></link><published>2008-02-27T12:30:00+01:00</published><updated>2008-02-27T12:30:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-27:/windows-2000-tab-completion-aktivieren.html</id><summary type="html">&lt;p&gt;Wieder einmal so eine Sache, die ich 1000x gemacht und wieder
+recherchieren muss: Wie aktiviert man unter Windows2000 TabCompletion
+für die Kommandozeile (cmd)? Unter WindowsXP ist dieses Standardmäßig
+aktiviert.&lt;/p&gt;
+&lt;p&gt;Tab Completion ist ein Mechanismus, der es erlaubt halb geschriebene
+Datei- und/oder Verzeichnisnamen automatisch vervollständigen zu lassen,
+sofern er eindeutig …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wieder einmal so eine Sache, die ich 1000x gemacht und wieder
+recherchieren muss: Wie aktiviert man unter Windows2000 TabCompletion
+für die Kommandozeile (cmd)? Unter WindowsXP ist dieses Standardmäßig
+aktiviert.&lt;/p&gt;
+&lt;p&gt;Tab Completion ist ein Mechanismus, der es erlaubt halb geschriebene
+Datei- und/oder Verzeichnisnamen automatisch vervollständigen zu lassen,
+sofern er eindeutig ist. Zwei Beispiele:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;&amp;gt; dir Ordner1_cooler_Name Ordner2_cooler_Ordner&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Wenn man nun "&lt;strong&gt;&lt;em&gt;Ordner&lt;/em&gt;&lt;/strong&gt;" tippt und dann die Tab Completion - Taste,
+geht der Mechanismus alle möglichen Treffer die mit "&lt;strong&gt;&lt;em&gt;Ordner&lt;/em&gt;&lt;/strong&gt;"
+beginnen durch. Also: Zunächst &lt;strong&gt;&lt;code&gt;Ordner1_cooler_Name&lt;/code&gt;&lt;/strong&gt;, dann
+&lt;strong&gt;&lt;code&gt;Ordner2_cooler_Ordner&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Tippt man jedoch direkt &lt;strong&gt;&lt;code&gt;Ordner1&lt;/code&gt;&lt;/strong&gt; und drückt dann die Tab Completion
+- Taste, ist nur ein Treffer möglich und der mechanismus vervollständigt
+direkt zu &lt;strong&gt;&lt;code&gt;Ordner1_cooler_Name&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Man kann grundsätzlich jede Taste mit der Tab Completion - Funktion
+belegen. Hierzu muss man den ASCII - Code einer Taste kennen. Als
+quasi-Standard hat sich die TAB-Taste durchgesetzt. Der ASCII Code
+hierfür ist &lt;code&gt;9&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Man aktiviert diese Funktion in der Registry. Unversierte Nutzer sollten
+lieber &lt;a href="{filename}images/tab_completion.reg" title="Tab_Completion Windows2000 .reg"&gt;diese .reg Datei
+herunterladen&lt;/a&gt;
+und durch einen Doppelklick in die Registry laden.&lt;/p&gt;
+&lt;p&gt;Zu Fuss funktioniert das wie folgt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Regedit öffnen (&lt;strong&gt;&lt;em&gt;Start-&amp;gt;Ausführen-&amp;gt;regedit
+    eingeben-&amp;gt;OK&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Wechsel zum Stamm &lt;strong&gt;&lt;em&gt;HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Command
+    Processor&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Doppelklick auf den DWORT-Schlüssel &lt;strong&gt;&lt;em&gt;CompletionChar&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Als Wert &lt;strong&gt;&lt;em&gt;9&lt;/em&gt;&lt;/strong&gt; eintragen. Alles andere lassen wie es ist und OK
+    klicken&lt;/li&gt;
+&lt;li&gt;Doppelklick auf den DWORT-Schlüssel &lt;strong&gt;&lt;em&gt;PathCompletionChar&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Als Wert &lt;strong&gt;&lt;em&gt;9&lt;/em&gt;&lt;/strong&gt; eintragen. Alles andere lassen wie es ist und OK
+    klicken&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fertig :)&lt;/p&gt;
+&lt;p&gt;Spätestens nach einem Neustart sollte Tab Completion bei allen Usern
+funktionieren.&lt;/p&gt;
+&lt;p&gt;Wer diese Änderung nicht Systemweit, sondern nur für den aktuell
+angemeldeten User setzen will, ersetzt im beschriebenem Verfahren
+&lt;strong&gt;&lt;em&gt;HKEY_LOCAL_MACHINE&lt;/em&gt;&lt;/strong&gt; durch &lt;strong&gt;&lt;em&gt;HKEY_CURRENT_USER&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;</content><category term="2000"></category><category term="auto vervollständigen"></category><category term="command processor"></category><category term="completion"></category><category term="regedit"></category><category term="tab"></category><category term="windows"></category></entry><entry><title>Neues Fork des Thunderbird Mailclients "Spicebird"</title><link href="https://www.zoosau.de/neues-fork-des-thunderbird-mailclients-spicebird.html" rel="alternate"></link><published>2008-01-21T12:00:00+01:00</published><updated>2008-01-21T12:00:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-21:/neues-fork-des-thunderbird-mailclients-spicebird.html</id><summary type="html">&lt;p&gt;Ich rege mich seit Monaten über den immer instabiler werdenden
+Thunderbird unter Linux auf. Er vergisst manchmal Filter zu verarbeiten,
+sendet teilweise unsinnige IMAP Befehle, etc.&lt;/p&gt;
+&lt;p&gt;Nun lässt &lt;a href="http://www.pro-linux.de" title="Homepage von Pro-Linux"&gt;Pro-Linux&lt;/a&gt;
+&lt;a href="http://www.pro-linux.de/news/2008/12215.html" title="Meldung von Pro-linux zum Spicebird"&gt;verlauten&lt;/a&gt;,
+das es eine Softwareschmiede (Synovel) gibt, welche den Sourcecode des
+Thunderbirds nutz, um einen Open-Source-Groupware-Client daraus hervor
+zu bringen.&lt;/p&gt;
+&lt;p&gt;Es …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich rege mich seit Monaten über den immer instabiler werdenden
+Thunderbird unter Linux auf. Er vergisst manchmal Filter zu verarbeiten,
+sendet teilweise unsinnige IMAP Befehle, etc.&lt;/p&gt;
+&lt;p&gt;Nun lässt &lt;a href="http://www.pro-linux.de" title="Homepage von Pro-Linux"&gt;Pro-Linux&lt;/a&gt;
+&lt;a href="http://www.pro-linux.de/news/2008/12215.html" title="Meldung von Pro-linux zum Spicebird"&gt;verlauten&lt;/a&gt;,
+das es eine Softwareschmiede (Synovel) gibt, welche den Sourcecode des
+Thunderbirds nutz, um einen Open-Source-Groupware-Client daraus hervor
+zu bringen.&lt;/p&gt;
+&lt;p&gt;Es soll bereits in der jetzigen Beta Version 0.4
+(&lt;a href="http://www.spicebird.com/en-US/Release" title="Ankündigung der Beta 0.4 des Spicebird"&gt;Ankündigung&lt;/a&gt;)
+sehr angenehm zu nutzen sein. Da ich sehr wechselwillig bin, werde ich
+ab heute diesen Client mal verwenden und auf Herz und Nieren testen.&lt;/p&gt;
+&lt;p&gt;Ich melde mich dann hier mit Feedback zurück :)&lt;/p&gt;</content></entry><entry><title>Abkürzungen (GT, GTS, GTX, ...) bei NVidia</title><link href="https://www.zoosau.de/abkurzungen-gt-gts-gtx-bei-nvidia.html" rel="alternate"></link><published>2008-01-16T10:49:00+01:00</published><updated>2008-01-16T10:49:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-16:/abkurzungen-gt-gts-gtx-bei-nvidia.html</id><summary type="html">&lt;p&gt;Ich habe mich das schon X Mal gefragt. Und jedes Mal, wenn ich dann
+meine Internetrecherche starte, was denn wohl diese Abkürzungen bei
+&lt;a href="http://www.nvidia.de/" title="Homepage von NVidia"&gt;NVidia&lt;/a&gt; Grafikkarten zu
+bedeuten haben mögen, brauche ich ewig um es herauszufinden.&lt;/p&gt;
+&lt;p&gt;Daher also mal wieder absolut geeigneter Stoff für mein Blog :)&lt;/p&gt;
+&lt;p&gt;Hier eine Übersicht:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GS&lt;/strong&gt; - Sehr …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Ich habe mich das schon X Mal gefragt. Und jedes Mal, wenn ich dann
+meine Internetrecherche starte, was denn wohl diese Abkürzungen bei
+&lt;a href="http://www.nvidia.de/" title="Homepage von NVidia"&gt;NVidia&lt;/a&gt; Grafikkarten zu
+bedeuten haben mögen, brauche ich ewig um es herauszufinden.&lt;/p&gt;
+&lt;p&gt;Daher also mal wieder absolut geeigneter Stoff für mein Blog :)&lt;/p&gt;
+&lt;p&gt;Hier eine Übersicht:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GS&lt;/strong&gt; - Sehr schwache Version (nur im Low-End-Segment)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GT&lt;/strong&gt; - Budgetversion.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GTS&lt;/strong&gt; - Leistungsfähigere Version; im Mainstream-Segment die
+    leistungsfähigste Version&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GTX&lt;/strong&gt; - Sehr starke Version (nur im High-End-Segment)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ultra&lt;/strong&gt; - Leistungsstärkstes Modell (nur im High-End-Segment)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Einen &lt;a href="http://de.wikipedia.org/wiki/Geforce_8#Namensgebung" title="Wiki Eintrag zu NVidia GeForce 8 Grafikkarten"&gt;Wiki
+Eintrag&lt;/a&gt;
+gibt es hierzu auch.&lt;/p&gt;</content><category term="chipsatz"></category><category term="geforce"></category><category term="grafikchip"></category><category term="grafikkarten"></category><category term="gs"></category><category term="gt"></category><category term="gts"></category><category term="gtx"></category><category term="nvidia"></category><category term="ultra"></category></entry><entry><title>Windows 2000 Bootmanager wiederherstellen</title><link href="https://www.zoosau.de/windows-2000-bootmanager-wiederherstellen.html" rel="alternate"></link><published>2008-01-11T14:45:00+01:00</published><updated>2008-01-11T14:45:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-11:/windows-2000-bootmanager-wiederherstellen.html</id><summary type="html">&lt;p&gt;Nachdem ich vor kurzem einen kurzen Artikel zum Thema &lt;a href="http://www.zoosau.de/technik/windows-xp-bootmanager-wiederherstellen" title="Windows XP Bootmanager wiederherstellen"&gt;Windows XP
+Bootmanager
+wiederherstellen&lt;/a&gt;
+geschrieben habe, hatte ich heute das zweifelhafte Vergnügen dieses auch
+bei einem Windows 2000 System zu versuchen.&lt;/p&gt;
+&lt;p&gt;Das Vorgehen hierbei unterscheidet sich nur geringfügig von dem bei
+Windows XP, daher seht mir bitte die grosszügige Verwendung von …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Nachdem ich vor kurzem einen kurzen Artikel zum Thema &lt;a href="http://www.zoosau.de/technik/windows-xp-bootmanager-wiederherstellen" title="Windows XP Bootmanager wiederherstellen"&gt;Windows XP
+Bootmanager
+wiederherstellen&lt;/a&gt;
+geschrieben habe, hatte ich heute das zweifelhafte Vergnügen dieses auch
+bei einem Windows 2000 System zu versuchen.&lt;/p&gt;
+&lt;p&gt;Das Vorgehen hierbei unterscheidet sich nur geringfügig von dem bei
+Windows XP, daher seht mir bitte die grosszügige Verwendung von
+&lt;a href="http://de.wikipedia.org/wiki/Copy_&amp;amp;_Paste" title="Wiki Eintrag zu "&gt;Copy&amp;amp;Paste&lt;/a&gt;
+nach :)&lt;/p&gt;
+&lt;p&gt;Damit es funktioniert sind folgende Schritte zu erledigen:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Von der Windows 2000 Installations CD booten.&lt;/li&gt;
+&lt;li&gt;Wiederherstellungskonsole starten (R drücken). Sollte das Setup
+    diese Option nicht anbieten, liegt bereits mehr im argen als die
+    Wiederherstellungskonsole wieder hinbiegen kann. Da ggf. nochmal
+    genauer prüfen ob die Partition auch Bootable geflagged ist,
+    oder ähnliches.&lt;/li&gt;
+&lt;li&gt;Nachdem man sich in die richtige XP Installation eingelogged hat,
+    führt man zunächst den Befehl &lt;strong&gt;&lt;em&gt;fixmbr&lt;/em&gt;* &lt;/strong&gt;laufwerk:*** aus. In
+    meinem Beispiel ist es c: .&lt;/li&gt;
+&lt;li&gt;Anschliessend wird &lt;strong&gt;&lt;em&gt;fixboot laufwerk:&lt;/em&gt;&lt;/strong&gt; ausgeführt.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das sollte es gewesen sein. Das System sollte nun wieder starten.&lt;/p&gt;</content><category term="2000"></category><category term="boot.ini"></category><category term="bootmanager"></category><category term="ntldr"></category><category term="wiederherstellungskonsole"></category><category term="windows"></category></entry><entry><title>Windows XP Bootmanager wiederherstellen</title><link href="https://www.zoosau.de/windows-xp-bootmanager-wiederherstellen.html" rel="alternate"></link><published>2008-01-02T13:43:00+01:00</published><updated>2008-01-02T13:43:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-02:/windows-xp-bootmanager-wiederherstellen.html</id><summary type="html">&lt;p&gt;Ha! :D&lt;/p&gt;
+&lt;p&gt;Schon x Mal gebraucht, versucht und als es dann beim ersten Mal nicht
+geklappt hat: Anders gelöst. Die Wiederherstellung des Windows XP
+Bootmanagers.&lt;/p&gt;
+&lt;p&gt;Damit es funktioniert sind folgende Schritte zu erledigen:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Von der Windows XP Installations CD booten.&lt;/li&gt;
+&lt;li&gt;Wiederherstellungskonsole starten (R drücken). Sollte das Setup
+    diese Option nicht …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Ha! :D&lt;/p&gt;
+&lt;p&gt;Schon x Mal gebraucht, versucht und als es dann beim ersten Mal nicht
+geklappt hat: Anders gelöst. Die Wiederherstellung des Windows XP
+Bootmanagers.&lt;/p&gt;
+&lt;p&gt;Damit es funktioniert sind folgende Schritte zu erledigen:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Von der Windows XP Installations CD booten.&lt;/li&gt;
+&lt;li&gt;Wiederherstellungskonsole starten (R drücken). Sollte das Setup
+    diese Option nicht anbieten, liegt bereits mehr im argen als die
+    Wiederherstellungskonsole wieder hinbiegen kann. Da ggf. nochmal
+    genauer prüfen ob die Partition auch Bootable geflagged ist,
+    oder ähnliches.&lt;/li&gt;
+&lt;li&gt;Nachdem man sich in die richtige XP Installation eingelogged hat,
+    führt man zunächst den Befehl &lt;strong&gt;&lt;em&gt;fixboot laufwerk:&lt;/em&gt;&lt;/strong&gt; aus. In meinem
+    Beispiel ist es &lt;strong&gt;&lt;em&gt;c:&lt;/em&gt;&lt;/strong&gt; .&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;map&lt;/em&gt;&lt;/strong&gt; aufrufen. Hierbei brauchen wir die Ausgabe für den Pfad
+    des Systemlaufwerkes, der hinter dem Laufwerksbuchstaben steht. In
+    meinem &lt;strong&gt;&lt;em&gt;c:&lt;/em&gt;&lt;/strong&gt; - Beispiel lautet dieser
+    &lt;strong&gt;&lt;em&gt;\Device\Harddisk0\Partition1&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Jetzt wird der Befehl fixboot mit dem Pfad aus Schritt 4
+    erneut aufgerufen. Um genau zu sein 2x; einmal mit dem vollständigen
+    Pfad und einmal ohne die Angabe der Partition (Also: erst &lt;strong&gt;&lt;em&gt;fixboot
+    \Device\Harddisk0\Partition1&lt;/em&gt;&lt;/strong&gt; und anschliessend &lt;strong&gt;&lt;em&gt;fixboot&lt;/em&gt;&lt;/strong&gt;
+    &lt;strong&gt;&lt;em&gt;\Device\Harddisk0&lt;/em&gt;&lt;/strong&gt;). Ich weiss nicht genau welcher dieser
+    drei Aufrufe zum Erfolg geführt hat - aber da es Windows ist, ist
+    mir das nicht wichtig genug um das weiter zu verfolgen. Das Programm
+    Warnt bei den Pfadaufrufen davor das es sich um ein fehlerhaftes
+    Device handeln könnte. Das kann man ignorieren.&lt;/li&gt;
+&lt;li&gt;Nun wird das Programm &lt;strong&gt;&lt;em&gt;bootcfg /rebuild&lt;/em&gt;&lt;/strong&gt; aufgerufen. Es sollte
+    mindestens die eine Systempartition finden und der
+    Bootkonfiguration hinzufügen. Hier kann man irgend einen Namen
+    vergeben - das kann man in der boot.ini hinterher noch ändern. Als
+    Optionen muss man nichts angeben. Auch das kann man noch hinterher
+    in derselben Datei ändern.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das sollte es gewesen sein. Das System sollte nun wieder starten.&lt;/p&gt;
+&lt;p&gt;Ich bin mir bewusst das dieses "Manual" nicht 100%ig und unprofessionell
+ist. Mir reichts aber, es ist mein Blog und Windows interessiert mich
+nicht genug um mich da weiter mit zu beschäftigen ;)&lt;/p&gt;
+&lt;p&gt;Wer mag: &lt;a href="http://support.microsoft.com/default.aspx?scid=kb;de;314058%20" title="Microsoft Knowledgebase Artikel KB314058"&gt;M\$
+KB314058&lt;/a&gt;&lt;/p&gt;</content><category term="boot.ini"></category><category term="bootmanager"></category><category term="wiederherstellungskonsole"></category><category term="windows"></category><category term="xp"></category></entry></feed>

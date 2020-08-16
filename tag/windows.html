@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>windows - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="windows" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Tags">Tags</a></li>
+        <li class="active">windows</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html">Windows XP, Vista und 7 Profile kopieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-10-12T18:27:00+02:00"> Mi 12 Oktober 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-technik.html">Job und Beruf, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		1611
+
+		<span class="label label-default">Read time</span>
+		7 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/7.html">7</a>
+        /
+	<a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+        /
+	<a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+        /
+	<a href="https://www.zoosau.de/tag/profile.html">profile</a>
+        /
+	<a href="https://www.zoosau.de/tag/roaming-profile.html">roaming profile</a>
+        /
+	<a href="https://www.zoosau.de/tag/samba.html">samba</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubernehmen.html">übernehmen</a>
+        /
+	<a href="https://www.zoosau.de/tag/vista.html">vista</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+        /
+	<a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>... ich kann es zwar selbst nicht wirklich glauben, aber ich werde nun
+tatsächlich einen Artikel über Windows und das kopieren / übertragen von
+dessen Profilen schreiben! Ich hoffe der Internet Explorer klettert in
+meinen Zugriffsstatistiken trotzdem nicht auf Platz 1 ;D</p>
+<p>Dieser Artikel entstand, weil ich auf der Arbeit gerade einen neuen PDC
+implementiere und hierfür selber eine Lösung gesucht habe, wie ich die
+bestehenden Profile (lokal und Domänen-Roaming-Profile) dabei möglichst
+nahtlos in die neue Domäne übernehmen kann. Besonders tricky hierbei
+war, das die aktuelle Domäne nicht wirklich fehlerfrei funktioniert und
+nun ein Wildwuchs aus lokalen Profilen (da nicht jede Anmeldung an der
+Domäne funktionierte) und Domänenprofilen besteht und wir nun von
+Roaming Profiles auf lokale Profile wechseln.<br>
+... mal ehrlich: Hat _irgendjemand_ schonmal Roaming Profiles benutzt
+ohne entweder dazu überzugehen den PC nicht mehr abzuschalten
+oder(/und?) Dateien nur noch ausserhalb der eigentlich zum speichern
+vorgesehenen Ordner abzulegen? Wenn ja: Ich hoffe er kriegt seine
+Medizin ;D</p>
+<p>Ich habe nun für alle drei aktuellen Windowsversionen (XP, Vista und 7 -
+Wer noch &lt;=2000 im Unternehmensumfeld einsetzt bekommt hoffentlich
+psychologische Hilfe und vorallem Prügel ;D ... <em>"Das ist das stabilste
+Betriebssystem überhaupt - seit 5 Jahren habe ich keine
+Sicherheitsupdates mehr einspielen müssen!"</em> ... ihr armen, armen irren
+Kacknoob-Möchtegern-Admins ... ) einen mehr oder weniger einheitlichen
+Weg gefunden dieses zu realisieren! Vieles basiert auf <a href="http://www.raygibson.net/kb/profile_migration/" title="Windows Profile Migration KB auf www.raygibson.net">dieser
+(englischsprachigen)
+Anleitung</a>,
+jedoch bevorzuge ich für meine Zwecke eher eine hybride Variante aus
+dieser und <a href="http://www.bluemoonpcrepair.com/wp/?p=39" title="Manual mit Hinweis auf &quot;Windows Enabler&quot; um den &quot;Kopieren&quot; Button in Windows 7 in den Benutzerkonteneinstellungen zu aktivieren - ... bisschen kurz dieser Text oder? Da schreib ich doch nochmal das Alphabet dahinter, um sicher zu gehen, das man den auch garantiert nicht auf einen Blick erfassen kann: : abcdefghijklmnopqrstuvwxyz ;D">einer zweiten
+Methode</a>.<br>
+Keine Sorge, das hier wird eine Schritt-für-Schritt - Anleitung und
+keiner muss sich diese beiden Englischen Artikel durchlesen. Ich erwähne
+diese hier nur, damit ich mich nicht mit fremden Federn schmücke.</p>
+<p>Am Ende dieses Artikels findet Ihr eine chronologische Screenshotreihe,
+welche diese Anleitung verdeutlichen soll.</p>
+<p>Ich gehe im folgenden davon aus, das ein Profil aus einer alten Domäne
+(<strong>MFC2</strong>) für einen identischen Account (<strong>mr</strong>) in einer neuen Domäne
+(<strong>MFC3</strong>) bereitgestellt werden soll. Die Screenshots stammen, sofern
+nicht anders erwähnt, von einem Windows XP. Die Dialoge und die
+Vorgehensweise ist in den unterschiedlichen Windowsversionen jedoch
+nahezu identisch. Daher beschreibe ich auch zunächst einmal das
+grundsätzliche Vorgehen und erwähne hinterher, welcher Punkt unter
+Vista/7 einer kleine Abweichung bedarf.<br>
+Damit man diesem Guide gut folgen kann, sollte man sich die alte und die
+neue SID des zu migrierenden Accounts notieren, ehe man anfängt.
+Passiert das ganze von einem Samba-Server auf einen Samba-Server, ist es
+einfach: Einfach auf beiden DC folgenden Befehl ausführen:</p>
+<blockquote>
+<p>pdbedit -Lv mr | egrep '\^User SID'</p>
+</blockquote>
+<p>Diese Zeichenketten <strong>notiert man sich nun</strong> und nicht vergessen zu
+vermerken, welche die alte und welche die neue ist.</p>
+<p>Ich gehe davon aus, das der User, dessen Profil migriert werden soll,
+sich bereits früher am System angemeldet hat und das gecachedte Profil
+sich somit bereits auf der lokalen Festplatte befindet. Sollte dem nicht
+so sein, weil der PC z.B. gleich mit erneuert werden soll, oder weil man
+diesen Guide erstmal "durchspielen" will, sollte man dieses also
+zunächst tun, damit das Profil auf das System kopiert wird.</p>
+<p>Die folgenden Schritte führt man am besten als ein Domänenadmin aus -
+Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.</p>
+<blockquote>
+<p><strong>NACHTRAG 02.11.2011:</strong> Es ist hierbei sehr wichtig, das der folgende
+Schritt nicht mit dem User gemacht wird, dessen Profil kopiert werden
+soll! Benutzt hierfür einen anderen; der User, dessen Profil kopiert
+werden soll, darf währenddessen nicht eingelogged sein.</p>
+</blockquote>
+<p>Zunächst muss das bisherige Profil des Users kopiert werden.<br>
+Unter <strong>Windows XP</strong> navigiert man dazu nach : <em>Systemsteuerung -&gt;
+System -&gt; Tab: Erweitert -&gt; Benutzerprofile: Einstellungen</em>.<br>
+Unter <strong>Windows Vista und 7</strong> navigiert man dazu nach : <em>Systemsteuerung
+-&gt; Benutzerkonten -&gt; Erweiterte Benutzerprofileinstellungen
+konfigurieren</em>.</p>
+<p>Es öffnet sich jeweils ein Fenster namens "<em>Benutzerprofile</em>" mit einer
+Liste der bestehenden Userprofile. Man wählt hier nun das zu kopierende
+Profil aus; im Beispiel: <strong>MFC2\mr</strong>.<br>
+... nun würde man gerne auf "<em>Kopieren nach</em>" klicken, richtig? Aber
+ratet mal: Dieser Weg war Microsoft zu einfach. Also hat man es einfach
+kurzerhand deaktiviert und verweist stattdessen auf den <a href="http://support.microsoft.com/kb/973289" title="Microsoft KB 973289">KB
+973289</a>.
+Damit nicht genug die Funktion zu deaktivieren: Diese Sadisten grauen
+den nur aus statt zu entfernen, um allen unter die Nase zu reiben "<em>So
+leicht könnt's sein ...</em>". Aber glücklicherweise kommt uns genau diese
+Tatsache nun zu gute:</p>
+<p>Ich weise an dieser Stelle darauf hin, das mir zwar keine Meldung
+bekannt ist, das das folgende Verfahren irgendwo einmal zu einem Problem
+geführt hat. Jedoch handelt es sich nicht um das offizielle Microsoft -
+Vorgehen und jeder handelt dabei auf eigene Gefahr.<br>
+Zunächst läd man das kleine Tool <a href="http://www.zoosau.de/software/windowsenabler.zip" title="Download &quot;Windows Enabler&quot;">"Windows Enabler"
+herunter</a>.
+Es handelt sich dabei um ein kleines Programm, welches nicht installiert
+werden muss. Dieses tut man schließlich auch. <strong>Achtung:</strong> Unter Windows
+7/Vista bitte unbedingt "<em>Ausführen als Administrator</em>" auswählen. In
+der Systemleiste neben der Uhr erscheint daraufhin ein kleines, blaues
+Icon. Klickt man 1x darauf, erscheint "On" darin. Klickt man nun auf die
+ausgegraute "<em>Kopieren nach</em>" Schaltfläche, wird sie verfügbar -&gt;
+Verarscht! ;)</p>
+<p>Wir klicken nun auf die neu verfügbare "<em>Kopieren nach</em>" - Schaltfläche.
+In dem sich daraufhin öffnendem Dialog wählen wir als Ziel "Dokumente
+und Einstellungen\&lt;username&gt;.&lt;neue_domäne&gt;" (im
+Beispiel: "Dokumente und Einstellungen\mr.MFC3"; unter Vista/7:
+"Users"- o. "Benutzer"\&lt;username&gt;.&lt;neue_domäne&gt;). Dieser
+Ordner kann nicht im sich hier öffnendem Dialog angelegt werden, daher
+dieses bitte zuvor selbst im Explorer tun. Bei großen Profilen kann es
+sein, das das Fenster eine zeitlang den Eindruck macht es sei
+abgestürzt; einen Fortschrittsbalken gibt es nicht. Aber das ist glaube
+ich eine Sache, mit der man in einer eigentlich deaktivierten Funktion
+ganz gut leben kann ;)</p>
+<p>Ist dieses abgeschlossen, bringt man den PC in die neue Domäne und
+startet neu. Anschließend meldet man sich am besten als Domänenadmin an
+- Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.<br>
+Man klickt den neuen Profilordner nun mit rechts an und wählt
+"<em>Eigenschaften</em>"; im sich öffnendem Fester wechselt man zum Tab
+"<em>Sicherheit</em>". Man sieht hier nun mindestens eine SID mit einem weißen
+Symbol. Diese User entfernt man zunächst, indem man ihn durch einen
+Klick auswählt und anschließend auf "<em>Entfernen</em>" klickt. Das sind die
+Useraccounts der alten Domäne, die der neue Domänencontroller natürlich
+nicht auflösen kann.<br>
+Der nächste Schritt besteht nun darin, das man dem neuen User rekursiv
+Vollzugriff auf diesen Profilordner gewährt. Hierzu klickt man auf
+"<em>Hinzufügen</em>" und gibt im Feld "<em>Geben Die die zu verwendenden
+Objektnamen ein</em>" den Usernamen ein (Im Beispiel: <strong>mr</strong>). Hierbei ist
+darauf zu achten, das im Feld "<em>Suchpfad</em>" der Name der neuen Domäne
+angezeigt wird. Nach einem Klick auf "<em>OK</em>" taucht der User in der
+Rechteliste auf, sofern er in der neuen Domäne gefunden wird.<br>
+Man wählt diesen Eintrag nun an und setzt danach im Feld
+"<em>Berechtigungen für USERNAME</em>" alle Haken auf "<em>Zulassen</em>".
+Anschließend klickt man auf "<em>Erweitert</em>" und setzt den Haken bei
+"<em>Berechtigungen für alle untergeordneten Objekte durch die angezeigten
+Einträge, sofern anwendbar, ersetzen.</em>". Nun bestätigt man alle Dialoge
+mit "<em>OK</em>". Es kann anschließend zu einer Fehlermeldung kommen, das
+nicht alles richtig gesetzt werden konnte. Das kann man jedoch in der
+Regel ignorieren.</p>
+<p>Als letzten Schritt muss man eine kleine Anpassung in der Registry
+vornehmen. Die Datei "NTUSER.dat" im neuen Profil hat nun zwar bereits
+die passenden Berechtigungen für den neuen User, jedoch hat diese Datei
+in sich auch nocheinmal eine Berechtigungsstruktur, die wir nun setzen.<br>
+Hierzu öffnet man zunächst den Registrierungs-Editor ("<strong>regedit</strong>"
+eingeben unter Start-&gt;Ausführen) und wählt den Schlüssel
+"<em>HKEY_LOCAL_MACHINE</em>" durch anklicken aus. Anschließend klickt man
+auf "<em>Datei</em>" und wählt "<em>Struktur laden ...</em>" aus. Man navigiert nun in
+den neuen Profilordner. Hierin befindet sich eine Datei namens
+"NTUSER.dat". Es kann sein, das sie garnicht oder ohne ".dat" angezeigt
+wird. Das kommt darauf an, ob man in Windows die Anzeige von bekannten
+Dateiendungen und Systemdateien aktiviert hat, oder nicht. Wie auch
+immer: Diese Datei muss nun ausgewählt werden. Anschließend wird man
+aufgefordert, sich einen temporären Namen für diese Struktur
+auszudenken. Das Originaltutorial empfiehlt hier "chickenfucker" -
+tatsächlich sind der Phantasie hier jedoch keine Grenzen gesetzt und hat
+keinerlei Auswirkungen, da es nur temporär benutzt wird ;)<br>
+Die geladene Struktur wird nun mit dem soeben vergebenem Namen unter
+ "<em>HKEY_LOCAL_MACHINE</em>" eingebunden. Man öffnet nun mit einem
+Rechtsklick auf diesen Namen das Kontextmenü und wählt
+"<em>Berechtigungen...</em>". Es öffnet sich nun derselbe Dialog wie wir ihn
+schon vom setzen der Berechtigungen auf den neuen Profilordner her
+kennen. Man setzt nun einfach dieselben Rechte erneut und entfernt die
+Alt-Domain SIDs. Auch hier kann man den Hinweis, das einige Teile nicht
+gesetzt werden konnten, ignorieren.<br>
+<strong>Achtung! Der folgende Schritt ist sehr wichtig:</strong> Ist das ganze
+durchgelaufen, klickt man erneut auf "<em>Datei</em>" und wählt "<em>Struktur
+entfernen ...</em>".</p>
+<p>Das war's! Meldet sich nun der User an, für den wir auf diesem Wege das
+Profil vorbereitet haben, sollte er genau dieselben Einstellungen
+vorfinden, wie er sie auch in der alten Domäne hatte; inklusive
+Hintergrundbild und sogar Anordnung der Desktop-Symbole ;)<br>
+Sollte das nicht der Fall sein, könnte es daran liegen, das Windows
+einen anderen Ordner für das Profil gewählt hat als wir es gedacht
+haben. In freier Wildbahn ist mir so z.B. schon "user.domäne.000"
+begegnet.<br>
+In diesem Fall meldet man sich als Admin an (dieses Mal kann es ruhig
+der lokale Admin sein); <strong>es muss aber unbedingt ein anderer User sein
+als der, dessen Profil man umbiegt! Diesen meldet man vor dem folgendem
+Schritt ab.<br>
+</strong>Man startet nun erneut den Registrierungs-Editor ("<strong>regedit</strong>"
+eingeben unter Start-&gt;Ausführen) und navigiert zur Struktur
+"<em>HKEY_LOCAL_Machine\SOFTWARE\Microsoft\Windows
+NT\CurrentVersion\ProfileList</em>". Darin befinden sich eine Menge
+Unterschlüssel, beginnend mit "<em>S-1-5-21-</em>". Diese Namen stehen für
+SIDs, daher brauchen wir nun die Liste der SIDs vom neuen
+Domänencontroller, die man zu Beginn dieses Artikels auslesen sollte.
+Sucht nach dem Schlüssel, der 1:1 identisch mit der SID des Users auf
+dem Domänencontroller ist und klickt darauf. Darin befindet sich unter
+anderem ein REG_EXPAND_SZ mit dem Pfad zum zu verwendendem
+Domänenprofilcache als Wert. Dieser Wert kann einfach auf den richtigen
+Profilordner geändert werden.<br>
+Nach einem Neustart sollte schließlich das richtige Profil geladen
+werden.</p>
+<p>[gallery link="file"]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%20XP%2C%20Vista%20und%207%20Profile%20kopieren&url=https%3A//www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%20XP%2C%20Vista%20und%207%20Profile%20kopieren&amp;body=https%3A//www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/meine-aktuellen-bemuhungen-in-sachen-it.html">Meine aktuellen Bemühungen in Sachen IT</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-05-18T22:40:00+02:00"> Mi 18 Mai 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html">Job und Beruf, Linux, Musik</a>
+
+
+		<span class="label label-default">Words</span>
+		849
+
+		<span class="label label-default">Read time</span>
+		4 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/eclipse.html">eclipse</a>
+        /
+	<a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+        /
+	<a href="https://www.zoosau.de/tag/php.html">php</a>
+        /
+	<a href="https://www.zoosau.de/tag/samba.html">samba</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich komme zur Zeit nicht wirklich zum bloggen. Zum einen passiert﻿﻿﻿﻿﻿
+(für den Rest der Welt) ﻿﻿﻿﻿﻿nur uninteressanter Scheiss bei mir. Privat
+geht es zwar gerade hoch her - aber "Mann" wird ja auch erwachsen.
+Bedeutet: Ich werde in Zukunft etwas weniger private Details hier
+posten. Was geht es Google und Co. an, das ich ... was weiss ich: Gerade
+lieber Gemüse esse als Pizza, viel oder wenig Sport treibe, oder mein
+Schiss gerade eher einem Fragezeichen oder einem Hakenkreuz ähnelt?
+Genau: Garnichts ! :)</p>
+<p>Vielmehr wende ich mich gerade wieder verstärkt dem Know-How meines
+ewigen Steckenpferdes rund um den PC und verstärkt Linux und verwandten
+Techniken zu.<br>
+Was sind "verwandte Linuxtechniken"? Ich würde, nach jüngsten
+Erfahrungen, sagen: Alles, was zukunftsweisend  und in irgendeiner Weise
+kreativ ist und mit IT zu tun hat ist heutzutage eine verwandte
+Linuxtechnik.</p>
+<p>Ich möchte an dieser Stelle gerne zwei Beispiele aus meiner aktuellen
+Arbeitswoche heranziehen:</p>
+<p>1) PHP</p>
+<p>Wie alt ist PHP inzwischen? Ich meine nicht so direkt die Sprache,
+sondern vielmehr: Wie lange ist PHP denn inzwischen bitte <strong>die</strong>
+Programmiersprache im Internet und der modernen IT? Ich komme zwar noch
+aus der "Windows for Workgroups" - Ära, aber selbst mir fällt es schwer,
+mich heute noch an eine Zeit ohne dynamische Webseiten, wo man
+schlichtweg der King war, wenn man ein DataBecker HTML4 Buch grob
+angelesen hatte, zurück zu erinnern. Inzwischen wird wohl keiner, der
+sich ernsthaft mit Webseiten und Trends im Web auseinander setzt
+bestreiten, das ohne PHP und die unaufhaltsame Verbreitung von
+OpenSource-Giganten wie Apache HTTPd und Linux das Web heute ein anderes
+(und ich behaupte: Schlechteres!) Web wäre. Schaut Euch nur mal die
+Alternativen an: ISS, Windows Server, Microsoft Silverlight, ... wer
+will denn auch nur eines davon haben bitte?? Das finden ausschließlich
+solche Idioten gut, die kognitiv nicht in der Lage sind
+Lizenzbedingungen zu lesen und zu verstehen. Da fallen "Argumente" wie</p>
+<blockquote>
+<p>"<em>das kostet doch sooo viel Geld, da wollen Sie mir doch wohl nicht
+erzählen, das diese kostenlose Freeware legal dasselbe leistet!?</em>"</p>
+</blockquote>
+<p>Ich werde das nie vergessen: Dieser Satz fiel in meiner Berufsausbildung
+wirklich! Und zwar von meinem damaligen, technischen Ausbildungsbetreuer
+bei
+<a href="http://www.computacenter.de/" title="Homepage von Computacenter">Computacenter</a>.
+"Freeware". Das muss man sich mal vorstellen ... OpenSource und GPL -
+völlige Fremdworte.<br>
+Ich fürchte diese geistige Haltung ist nach wie vor weit verbreitet -
+zum Glück sterben diese Idioten aber immer mehr aus. Das ganze kann, in
+meinen Augen, garnicht schnell genug gehen.</p>
+<p>Wie auch immer: Ich wollte heute für ein Plugin für
+<a href="http://www.eclipse.org" title="Homepage der freien IDE Eclipse">Eclipse</a> auf
+einer Windowsmaschine PHP 5.3.x installieren. Fertig - das ist die
+vollständige Anforderung! Zunächst einmal muss man dabei, meiner Meinung
+nach, den simplen Weg dahin nachvollziehen. Ich lade ausdrücklich jeden
+Leser ein, den folgenden Weg nachzuvollziehen: Ladet Euch alleine mal
+ein PHP 5.3 für Windows herunter.<br>
+Man geht zunächst auf die Homepage von PHP unter
+<a href="http://www.php.net" title="Homepage von PHP">www.php.net</a> . Hier findet man
+sofort den Link "download" oben auf der Homepage. Dann kann man sich
+primär PHP 5.3 oder die ältere, abgekündigte Version 5.2 herunterladen.
+Die primäre Wahl stellt sich hier in einem GZip oder BZip2 Archiv dar -
+ohne Diskussion: Sourcecode geht hier ab! ... als dritte Option wird nun
+auch noch eine fast abseits stehende Option angeboten: ﻿﻿﻿﻿﻿"<em>For the
+Windows binaries and installer, see http://windows.php.net/download/.</em>".
+Wirkt ein wenig wie "<em>Ach ja, wir haben da auch noch ein behindertes
+Kind ...</em>" im Kinderheim.<br>
+Aber - wenn der ganze Kram, egal wie uninovativ diese statisch gelinkte
+Binär-Scheisse auch sein mag, dann wenigstens funktionieren würde. TUT
+ES ABER NICHT!!! Macht Euch mal den Spass: Ladet den PHP Installer für
+Windows herunter, startet nur die php.exe - was passiert? Der Mist
+stürzt ab, weil ihm DLL Dateien fehlen! Man darf nun wiederum hoffend,
+das diese Projekte DLLs anbieten, diese ganzen Abhängigkeiten erstmal
+erfüllen, bis mein eine lauffähige PHP Installation zu Wege bringt.</p>
+<p>Mal ehrlich: Fühlt sich das an wie das Jahr 2011? DIE Top-Webtechnik,
+nicht nativ verfügbar. Wie kann jemand, der ernstzunehmend PHP
+entwickelt, heute zutage noch Windows einsetzen?<br>
+Es gibt, als PHP Entwickler-Workstation, heutzutage kein einziges
+Argument mehr für Windows!!!!!!! Beweißt mir gerne das Gegenteil!</p>
+<p>2) Samba</p>
+<p>Warum gibt es Samba? Nur, weil diese ganzen alteingesessenen (böse
+Zungen würden sagen: festgefahrenen) Anwender weiterhin auf ihrem "<em>Ich
+bin zwar zu faul mich in etwas anderes als Windows einzuarbeiten und
+selbst da zu blöd für Admin-Rechte, will aber trotzdem auf alles und
+jeden Zugriff haben</em>" - Standpunkten bestehen! 90% meines aktuellen
+Rechte-Chaos-Alltages gehen aktuell dafür drauf, Probleme zu beheben,
+die es nicht geben würde, wenn Microsoft langsam mal im Jahre 2011
+ankommen und sich dem Markttrend gemäß entwickeln würde! Die Jungs
+kriegen es sogar hin, mit Ihrem Officepaket Dateien über Samba Rechte zu
+verpassen, die eigentlich unmöglich sind. Stichwort: "<em>Ich möchte gerne,
+das ich auf die Datei, die ich gerade abspeichere, weder Lese- noch
+Schreibrechte habe</em>".</p>
+<p>Ich migriere gerade den aktuellen Samba-PDC in unserer Firma von Version
+2.5.x auf 3.5.8 . Die Userdaten migrieren: Kein Problem! Reines
+Datei-kopieren. Was passiert aber, sobald sich ein User unter einem
+Windows ab Vista (getestet: Windows Vista, 7, Server 2008 R2) anmeldet?
+Sofortige Wiederabmeldung, ohne Fehlermeldung. Super!!</p>
+<p>Ich sage Euch: Wenn Spiele und Branchenriesen wie Adobe Photoshop /
+Dreamweaver sauber unter Linux laufen würden, hätte ich diesen Krampf
+schon vor Jahren auch privat von meiner Hardware verbannt :P</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Meine%20aktuellen%20Bem%C3%BChungen%20in%20Sachen%20IT&url=https%3A//www.zoosau.de/meine-aktuellen-bemuhungen-in-sachen-it.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Meine%20aktuellen%20Bem%C3%BChungen%20in%20Sachen%20IT&amp;body=https%3A//www.zoosau.de/meine-aktuellen-bemuhungen-in-sachen-it.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html">Sicherheitsabfrage der Benutzerkontensteuerung unter Windows Vista und 7 abstellen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-12-05T23:38:00+01:00"> Sa 05 Dezember 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		434
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/7.html">7</a>
+        /
+	<a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+        /
+	<a href="https://www.zoosau.de/tag/benutzerkontensteuerung.html">Benutzerkontensteuerung</a>
+        /
+	<a href="https://www.zoosau.de/tag/seven.html">seven</a>
+        /
+	<a href="https://www.zoosau.de/tag/uac.html">uac</a>
+        /
+	<a href="https://www.zoosau.de/tag/user-account-control.html">user account control</a>
+        /
+	<a href="https://www.zoosau.de/tag/vista.html">vista</a>
+        /
+	<a href="https://www.zoosau.de/tag/warnhinweis.html">warnhinweis</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Die Benutzerkontensteuerung, auch als "User Account Control" (UAC)
+bekannt, ist eine Technik und Sicherheitsinfrastruktur, die seit Windows
+Vista von Microsoft verwendet wird, um die Sicherheit des
+Betriebssystems zu erhöhen. Meistens äußert sich dieses dadurch, das man
+das hier aufgeführte Fenster angezeigt bekommt, sobald man ein Programm
+starten möchte:</p>
+<p>[caption id="attachment_542" align="alignleft" width="150"
+caption="UAC Warnhinweis beim starten des Firefox Webbrowsers"]<a href="https://www.zoosau.de/images/firefox_uac_warnung.png"><img alt="UAC
+Warnhinweis beim starten des Firefox
+Webbrowsers" src="{filename}images/firefox_uac_warnung-150x91.png" title="UAC Warnhinweis beim starten des Firefox Webbrowsers">{.size-thumbnail
+.wp-image-542 width="150"
+height="91"}</a>[/caption]</p>
+<p>Ich hatte bei mir den Fall, das seitdem ich Windows 7 einsetze, der
+Firefox <span style="text-decoration: underline;">immer</span> mit
+diesem Fenster startete. Kein Weltuntergang, aber allemal nervig.
+Abstellen, bzw. die UAC - Stufe senken wollte ich jedoch nicht. An sich
+finde ich das eine nicht unbedingt verkehrte Funktion. Gerade in diesem
+Fall, wie sich gleich zeigen wird.</p>
+<p>Ich hatte bis eben keine Ahnung, wieso dieses Fenster immer und immer
+wieder kam. Es gibt ja auch keinen Hacken, mit dem man ein bestimmtes
+Programm von diesem Test ausnehmen kann oder ähnliches.<br>
+Jetzt weiß ich aber, wie man das ganze loswird! Der Firefox installiert
+sich scheinbar mit der Voreinstellung immer mit administrativen Rechten
+gestartet zu werden. Ein Verhalten, das eigentlich gerade bei Browsern
+aus Sicherheitssicht nicht gerade wünschenwert ist. Man wird dieses
+Fenster mit ein paar kleinen Klicks ganz einfach los:</p>
+<ol>
+<li>Rechtsklick auf die Firefox - Verknüpfung oder die ausführbare Datei
+    des Firefox im Installationsordner.</li>
+<li><strong>Eigenschaften</strong> anklicken.</li>
+<li>Zum Reiter <strong>Kompatibilität</strong> wechseln.</li>
+<li>Ganz unten findet man den Bereich <strong>Berechtigungsstufe</strong>. Der Haken
+    bei <strong>Programm als Administrator ausführen</strong> muss entfernt werden.
+    Sollte dieser Bereich ausgegraut dargestellt werden und somit nicht
+    verfügbar sein, kann man auf den darunterliegenden Button
+    <strong>Einstellungen für alle Benutzer ändern</strong> klicken. Es öffnet sich
+    nun erneut ein Dialogfeld, in dem das Feld <strong>Programm als
+    Administrator ausführen</strong> verfügbar sein sollte.
+    [caption id="attachment_543" align="alignright" width="106"
+    caption="Kompatibilitäts-einstellungen unter Windows
+    7"]<a href="https://www.zoosau.de/images/firefox_admin_remove.png"><img alt="Kompatibilitätseinstellungen unter Windows
+    7" src="{filename}images/firefox_admin_remove-106x150.png" title="Kompatibilitätseinstellungen unter Windows 7">{.size-thumbnail
+    .wp-image-543 width="106"
+    height="150"}</a>[/caption]</li>
+<li>Schließt man die Dialogfelder mit einem Klick auf <strong>OK</strong> sollte die
+    UAC Meldung nicht mehr erscheinen.</li>
+</ol>
+<p>Gerade bei Browsern sollte man nicht dauerhaft mit administrativen
+Rechten arbeiten. Dieses macht es den Betreibern von Malware-Sites nur
+noch einfacher Einfluß auf das System zu nehmen.<br>
+In Ausnahmefällen, wo administrative Rechte benötigt werden um
+beispielsweise ein Plugin oder ähnliches Systemweit zu installieren,
+kann man das entsprechende Programm mit einem Rechtsklick und dem
+Kontextmenüpunkt <strong>Als Administrator ausführen</strong> jederzeit manuell mit
+administrativen Rechten starten.</p>
+<p>Ich entschuldige mich hiermit dafür so einen n00b - Tipp in mein Blog zu
+schreiben. Ich habe diese Meldung aber zugegebener Maßen nun monatelang
+nicht weggekriegt, da ich überhaupt nicht wusste, das diese mit der
+Berechtigungsstufe zusammen hängt. Ich war vielmehr davon ausgegangen,
+das im System ein mangelhaftes Zertifikat der Mozilla Corp. vorliegt
+oder ähnliches. So simpel hatte ich garnicht gedacht und war bis jetzt
+zu faul das zu google'n ;D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Sicherheitsabfrage%20der%20Benutzerkontensteuerung%20unter%20Windows%20Vista%20und%207%20abstellen&url=https%3A//www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Sicherheitsabfrage%20der%20Benutzerkontensteuerung%20unter%20Windows%20Vista%20und%207%20abstellen&amp;body=https%3A//www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/entfernen-von-diensten-unter-windows-xp.html">Entfernen von Diensten unter Windows XP</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-05-18T11:07:00+02:00"> So 18 Mai 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		155
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/dienste.html">dienste</a>
+        /
+	<a href="https://www.zoosau.de/tag/entfernen.html">entfernen</a>
+        /
+	<a href="https://www.zoosau.de/tag/loschen.html">löschen</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Wie komme ich dazu einen Dienst entfernen zu wollen? Der wird doch
+regulär mit deinstalliert.</p>
+<p>Stimmt - ich habe es aber irgendwie geschafft mir gleich drei Trojaner
+einzufangen. Schliesslich war ich so schlau zu denken, das man sich
+regulär keine Viren mehr einfängt, wenn man nicht gerade camsoftware.exe
+von "PinkGirly79" - Nicks von irgendwelchen fremden ICQ Kontakten
+ausführt oder so.</p>
+<p>Tja, was soll ich sagen: Falsch ;)</p>
+<p>Nun habe ich gleich drei Dienste in der Liste: WServing , AFinding und
+Perfmons . Es handelt sich dabei um .exe s unter Windows/System32 namens
+afinding.exe , wserving.exe und perfs.exe . Sie stehen in der Regel auch
+im Task Manager als laufender Prozess. AdAware findet sie nicht. Mehrere
+Virenscanner auch nicht. Kaspersky aber z.B. schlägt an.</p>
+<p>Ich wollte zumindest diese Dienste austragen, in der Hoffnung, dann
+starten sie nicht mehr.</p>
+<p>Hierzu gibt es 2 schnelle Möglichkeiten:</p>
+<p>Befehl <strong>sc</strong> ausführen - dadurch kommt bereits eine schön ausführliche
+Liste an Kommandozeilenoptionen. Oder <a href="http://support.microsoft.com/kb/927229" title="Windows KB Artikel zur Resource Kit Familie">Herunterladen der Resource - Kit
+Option
+<strong>delsrv</strong></a>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Entfernen%20von%20Diensten%20unter%20Windows%20XP&url=https%3A//www.zoosau.de/entfernen-von-diensten-unter-windows-xp.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Entfernen%20von%20Diensten%20unter%20Windows%20XP&amp;body=https%3A//www.zoosau.de/entfernen-von-diensten-unter-windows-xp.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-2000-tab-completion-aktivieren.html">Windows 2000 Tab Completion aktivieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-02-27T12:30:00+01:00"> Mi 27 Februar 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		247
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/2000.html">2000</a>
+        /
+	<a href="https://www.zoosau.de/tag/auto-vervollstandigen.html">auto vervollständigen</a>
+        /
+	<a href="https://www.zoosau.de/tag/command-processor.html">command processor</a>
+        /
+	<a href="https://www.zoosau.de/tag/completion.html">completion</a>
+        /
+	<a href="https://www.zoosau.de/tag/regedit.html">regedit</a>
+        /
+	<a href="https://www.zoosau.de/tag/tab.html">tab</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Wieder einmal so eine Sache, die ich 1000x gemacht und wieder
+recherchieren muss: Wie aktiviert man unter Windows2000 TabCompletion
+für die Kommandozeile (cmd)? Unter WindowsXP ist dieses Standardmäßig
+aktiviert.</p>
+<p>Tab Completion ist ein Mechanismus, der es erlaubt halb geschriebene
+Datei- und/oder Verzeichnisnamen automatisch vervollständigen zu lassen,
+sofern er eindeutig ist. Zwei Beispiele:</p>
+<blockquote>
+<p><strong><code>&gt; dir Ordner1_cooler_Name Ordner2_cooler_Ordner</code></strong></p>
+</blockquote>
+<p>Wenn man nun "<strong><em>Ordner</em></strong>" tippt und dann die Tab Completion - Taste,
+geht der Mechanismus alle möglichen Treffer die mit "<strong><em>Ordner</em></strong>"
+beginnen durch. Also: Zunächst <strong><code>Ordner1_cooler_Name</code></strong>, dann
+<strong><code>Ordner2_cooler_Ordner</code></strong>.</p>
+<p>Tippt man jedoch direkt <strong><code>Ordner1</code></strong> und drückt dann die Tab Completion
+- Taste, ist nur ein Treffer möglich und der mechanismus vervollständigt
+direkt zu <strong><code>Ordner1_cooler_Name</code></strong>.</p>
+<p>Man kann grundsätzlich jede Taste mit der Tab Completion - Funktion
+belegen. Hierzu muss man den ASCII - Code einer Taste kennen. Als
+quasi-Standard hat sich die TAB-Taste durchgesetzt. Der ASCII Code
+hierfür ist <code>9</code></p>
+<p>Man aktiviert diese Funktion in der Registry. Unversierte Nutzer sollten
+lieber <a href="{filename}images/tab_completion.reg" title="Tab_Completion Windows2000 .reg">diese .reg Datei
+herunterladen</a>
+und durch einen Doppelklick in die Registry laden.</p>
+<p>Zu Fuss funktioniert das wie folgt:</p>
+<ol>
+<li>Regedit öffnen (<strong><em>Start-&gt;Ausführen-&gt;regedit
+    eingeben-&gt;OK</em></strong>)</li>
+<li>Wechsel zum Stamm <strong><em>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Command
+    Processor</em></strong></li>
+<li>Doppelklick auf den DWORT-Schlüssel <strong><em>CompletionChar</em></strong></li>
+<li>Als Wert <strong><em>9</em></strong> eintragen. Alles andere lassen wie es ist und OK
+    klicken</li>
+<li>Doppelklick auf den DWORT-Schlüssel <strong><em>PathCompletionChar</em></strong></li>
+<li>Als Wert <strong><em>9</em></strong> eintragen. Alles andere lassen wie es ist und OK
+    klicken</li>
+</ol>
+<p>Fertig :)</p>
+<p>Spätestens nach einem Neustart sollte Tab Completion bei allen Usern
+funktionieren.</p>
+<p>Wer diese Änderung nicht Systemweit, sondern nur für den aktuell
+angemeldeten User setzen will, ersetzt im beschriebenem Verfahren
+<strong><em>HKEY_LOCAL_MACHINE</em></strong> durch <strong><em>HKEY_CURRENT_USER</em></strong>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%202000%20Tab%20Completion%20aktivieren&url=https%3A//www.zoosau.de/windows-2000-tab-completion-aktivieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%202000%20Tab%20Completion%20aktivieren&amp;body=https%3A//www.zoosau.de/windows-2000-tab-completion-aktivieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-ist-musikalisch.html">Windows ist musikalisch</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-02-19T13:26:00+01:00"> Di 19 Februar 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/musik.html">Musik</a>
+
+
+		<span class="label label-default">Words</span>
+		45
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+        /
+	<a href="https://www.zoosau.de/tag/song.html">song</a>
+        /
+	<a href="https://www.zoosau.de/tag/sounds.html">sounds</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows-ist-musikalisch.html">windows ist musikalisch</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Wer kennt sie nicht: Diese 1000 x abgenudelten Windows Sounds für nahezu
+jede Aktion, beim booten, bei jedem Hinweisfenster, und, und, und.</p>
+<p>Ich denke mal fast jedem kommen sie bereits zu den Ohren raus. Aber nur,
+weil ihr damit nichts vernünftiges anfangt! ;D</p>
+<p>[flashvideo filename=wp-content/uploads/windows-xp-98-music.flv /]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%20ist%20musikalisch&url=https%3A//www.zoosau.de/windows-ist-musikalisch.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%20ist%20musikalisch&amp;body=https%3A//www.zoosau.de/windows-ist-musikalisch.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-2000-bootmanager-wiederherstellen.html">Windows 2000 Bootmanager wiederherstellen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-01-11T14:45:00+01:00"> Fr 11 Januar 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		143
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/2000.html">2000</a>
+        /
+	<a href="https://www.zoosau.de/tag/bootini.html">boot.ini</a>
+        /
+	<a href="https://www.zoosau.de/tag/bootmanager.html">bootmanager</a>
+        /
+	<a href="https://www.zoosau.de/tag/ntldr.html">ntldr</a>
+        /
+	<a href="https://www.zoosau.de/tag/wiederherstellungskonsole.html">wiederherstellungskonsole</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Nachdem ich vor kurzem einen kurzen Artikel zum Thema <a href="http://www.zoosau.de/technik/windows-xp-bootmanager-wiederherstellen" title="Windows XP Bootmanager wiederherstellen">Windows XP
+Bootmanager
+wiederherstellen</a>
+geschrieben habe, hatte ich heute das zweifelhafte Vergnügen dieses auch
+bei einem Windows 2000 System zu versuchen.</p>
+<p>Das Vorgehen hierbei unterscheidet sich nur geringfügig von dem bei
+Windows XP, daher seht mir bitte die grosszügige Verwendung von
+<a href="http://de.wikipedia.org/wiki/Copy_&amp;_Paste" title="Wiki Eintrag zu ">Copy&amp;Paste</a>
+nach :)</p>
+<p>Damit es funktioniert sind folgende Schritte zu erledigen:</p>
+<ol>
+<li>Von der Windows 2000 Installations CD booten.</li>
+<li>Wiederherstellungskonsole starten (R drücken). Sollte das Setup
+    diese Option nicht anbieten, liegt bereits mehr im argen als die
+    Wiederherstellungskonsole wieder hinbiegen kann. Da ggf. nochmal
+    genauer prüfen ob die Partition auch Bootable geflagged ist,
+    oder ähnliches.</li>
+<li>Nachdem man sich in die richtige XP Installation eingelogged hat,
+    führt man zunächst den Befehl <strong><em>fixmbr</em>* </strong>laufwerk:*** aus. In
+    meinem Beispiel ist es c: .</li>
+<li>Anschliessend wird <strong><em>fixboot laufwerk:</em></strong> ausgeführt.</li>
+</ol>
+<p>Das sollte es gewesen sein. Das System sollte nun wieder starten.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%202000%20Bootmanager%20wiederherstellen&url=https%3A//www.zoosau.de/windows-2000-bootmanager-wiederherstellen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%202000%20Bootmanager%20wiederherstellen&amp;body=https%3A//www.zoosau.de/windows-2000-bootmanager-wiederherstellen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/windows-xp-bootmanager-wiederherstellen.html">Windows XP Bootmanager wiederherstellen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-01-02T13:43:00+01:00"> Mi 02 Januar 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		307
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/bootini.html">boot.ini</a>
+        /
+	<a href="https://www.zoosau.de/tag/bootmanager.html">bootmanager</a>
+        /
+	<a href="https://www.zoosau.de/tag/wiederherstellungskonsole.html">wiederherstellungskonsole</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+        /
+	<a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ha! :D</p>
+<p>Schon x Mal gebraucht, versucht und als es dann beim ersten Mal nicht
+geklappt hat: Anders gelöst. Die Wiederherstellung des Windows XP
+Bootmanagers.</p>
+<p>Damit es funktioniert sind folgende Schritte zu erledigen:</p>
+<ol>
+<li>Von der Windows XP Installations CD booten.</li>
+<li>Wiederherstellungskonsole starten (R drücken). Sollte das Setup
+    diese Option nicht anbieten, liegt bereits mehr im argen als die
+    Wiederherstellungskonsole wieder hinbiegen kann. Da ggf. nochmal
+    genauer prüfen ob die Partition auch Bootable geflagged ist,
+    oder ähnliches.</li>
+<li>Nachdem man sich in die richtige XP Installation eingelogged hat,
+    führt man zunächst den Befehl <strong><em>fixboot laufwerk:</em></strong> aus. In meinem
+    Beispiel ist es <strong><em>c:</em></strong> .</li>
+<li><strong><em>map</em></strong> aufrufen. Hierbei brauchen wir die Ausgabe für den Pfad
+    des Systemlaufwerkes, der hinter dem Laufwerksbuchstaben steht. In
+    meinem <strong><em>c:</em></strong> - Beispiel lautet dieser
+    <strong><em>\Device\Harddisk0\Partition1</em></strong></li>
+<li>Jetzt wird der Befehl fixboot mit dem Pfad aus Schritt 4
+    erneut aufgerufen. Um genau zu sein 2x; einmal mit dem vollständigen
+    Pfad und einmal ohne die Angabe der Partition (Also: erst <strong><em>fixboot
+    \Device\Harddisk0\Partition1</em></strong> und anschliessend <strong><em>fixboot</em></strong>
+    <strong><em>\Device\Harddisk0</em></strong>). Ich weiss nicht genau welcher dieser
+    drei Aufrufe zum Erfolg geführt hat - aber da es Windows ist, ist
+    mir das nicht wichtig genug um das weiter zu verfolgen. Das Programm
+    Warnt bei den Pfadaufrufen davor das es sich um ein fehlerhaftes
+    Device handeln könnte. Das kann man ignorieren.</li>
+<li>Nun wird das Programm <strong><em>bootcfg /rebuild</em></strong> aufgerufen. Es sollte
+    mindestens die eine Systempartition finden und der
+    Bootkonfiguration hinzufügen. Hier kann man irgend einen Namen
+    vergeben - das kann man in der boot.ini hinterher noch ändern. Als
+    Optionen muss man nichts angeben. Auch das kann man noch hinterher
+    in derselben Datei ändern.</li>
+</ol>
+<p>Das sollte es gewesen sein. Das System sollte nun wieder starten.</p>
+<p>Ich bin mir bewusst das dieses "Manual" nicht 100%ig und unprofessionell
+ist. Mir reichts aber, es ist mein Blog und Windows interessiert mich
+nicht genug um mich da weiter mit zu beschäftigen ;)</p>
+<p>Wer mag: <a href="http://support.microsoft.com/default.aspx?scid=kb;de;314058%20" title="Microsoft Knowledgebase Artikel KB314058">M\$
+KB314058</a></p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Windows%20XP%20Bootmanager%20wiederherstellen&url=https%3A//www.zoosau.de/windows-xp-bootmanager-wiederherstellen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Windows%20XP%20Bootmanager%20wiederherstellen&amp;body=https%3A//www.zoosau.de/windows-xp-bootmanager-wiederherstellen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2008 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2008 (2)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2011 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

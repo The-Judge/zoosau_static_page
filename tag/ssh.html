@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>ssh - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="ssh" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Tags">Tags</a></li>
+        <li class="active">ssh</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/openssh-und-die-nervigen-known_hosts.html">SSH - REMOTE HOST IDENTIFICATION HAS CHANGED</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-09T13:30:00+01:00"> Mo 09 November 2015</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		437
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/known_hosts.html">known_hosts</a>
+        /
+	<a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+        /
+	<a href="https://www.zoosau.de/tag/warning-remote-host-identification-has-changed.html">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Jedes Mal, wenn ich mir ein neues Linux-System einrichte, muss ich erst
+nochmal schnell Googlen oder die Manpage wälzen; daher notiere ich es
+mir hier jetzt endlich mal:</p>
+<p>Es gibt ein Sicherheitsfeature bei openSSH, welches einen warnt wenn man
+sich zu einem Host/einer IP verbinden möchte und sich die ID des Zieles
+seit dem letzten Mal verändert hat. Das macht zwar durchaus Sinn und ich
+finde das generell eine gute Sache. Aber es kann wirklich sehr nerven,
+besonders wenn man mit DHCP arbeitet und die Zielrechner dauernd Ihre IP
+durchtauschen, man mit virtuellen Maschinen arbeitet und diese nur kurz
+benutzt werden oder häufig per SSH auf Live-CD-Systeme konnektiert.</p>
+<p>Normalerweise muss man die entsprechende Zeile in der Datei
+<strong>~/.ssh/known_hosts</strong> die angemeckerte Zeile löschen; z.B. bei:</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">ssh</span> <span class="n">user</span><span class="mf">@192.168.1.12</span>
+<span class="p">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<span class="p">@</span> <span class="nl">WARNING</span><span class="p">:</span> <span class="n">REMOTE</span> <span class="n">HOST</span> <span class="n">IDENTIFICATION</span> <span class="n">HAS</span> <span class="n">CHANGED</span><span class="o">!</span> <span class="p">@</span>
+<span class="p">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<span class="n">IT</span> <span class="n">IS</span> <span class="n">POSSIBLE</span> <span class="n">THAT</span> <span class="n">SOMEONE</span> <span class="n">IS</span> <span class="n">DOING</span> <span class="n">SOMETHING</span> <span class="n">NASTY</span><span class="o">!</span>
+<span class="n">Someone</span> <span class="n">could</span> <span class="n">be</span> <span class="n">eavesdropping</span> <span class="n">on</span> <span class="n">you</span> <span class="n">right</span> <span class="n">now</span> <span class="p">(</span><span class="n">man</span><span class="o">-</span><span class="k">in</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">middle</span> <span class="n">attack</span><span class="p">)</span><span class="o">!</span>
+<span class="n">It</span> <span class="n">is</span> <span class="n">also</span> <span class="n">possible</span> <span class="n">that</span> <span class="n">the</span> <span class="n">RSA</span> <span class="n">host</span> <span class="n">key</span> <span class="n">has</span> <span class="n">just</span> <span class="n">been</span> <span class="n">changed</span><span class="p">.</span>
+<span class="n">The</span> <span class="n">fingerprint</span> <span class="k">for</span> <span class="n">the</span> <span class="n">RSA</span> <span class="n">key</span> <span class="n">sent</span> <span class="n">by</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">host</span> <span class="n">is</span>
+<span class="mi">39</span><span class="o">:</span><span class="nl">b3</span><span class="p">:</span><span class="mi">72</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mi">53</span><span class="o">:</span><span class="nl">f7</span><span class="p">:</span><span class="mi">17</span><span class="o">:</span><span class="nl">eb</span><span class="p">:</span><span class="nl">aa</span><span class="p">:</span><span class="mi">8</span><span class="nl">c</span><span class="p">:</span><span class="nl">ed</span><span class="p">:</span><span class="mi">70</span><span class="o">:</span><span class="nl">db</span><span class="p">:</span><span class="mi">77</span><span class="o">:</span><span class="mi">8</span><span class="nl">b</span><span class="p">:</span><span class="n">e9</span><span class="p">.</span>
+<span class="n">Please</span> <span class="n">contact</span> <span class="n">your</span> <span class="n">system</span> <span class="n">administrator</span><span class="p">.</span>
+<span class="n">Add</span> <span class="n">correct</span> <span class="n">host</span> <span class="n">key</span> <span class="k">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">known_hosts</span> <span class="n">to</span> <span class="n">get</span> <span class="n">rid</span> <span class="n">of</span> <span class="n">this</span> <span class="n">message</span><span class="p">.</span>
+<span class="n">Offending</span> <span class="n">key</span> <span class="k">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="nl">known_hosts</span><span class="p">:</span><span class="mi">3</span>
+<span class="n">RSA</span> <span class="n">host</span> <span class="n">key</span> <span class="k">for</span> <span class="mf">192.168.1.12</span> <span class="n">has</span> <span class="n">changed</span> <span class="n">and</span> <span class="n">you</span> <span class="n">have</span> <span class="n">requested</span> <span class="n">strict</span> <span class="n">checking</span><span class="p">.</span>
+<span class="n">Host</span> <span class="n">key</span> <span class="n">verification</span> <span class="n">failed</span><span class="p">.</span><span class="err">$</span>
+</pre></div>
+
+
+<p>müsste man die Zeile 3 entfernen.</p>
+<p>Hierzu muss man etwas wie</p>
+<div class="highlight"><pre><span></span>sed -i 3d ~/.ssh/known_hosts
+</pre></div>
+
+
+<p>losjagen oder die Datei in einem Editor von Hand bereinigen. Wie schon
+gesagt: Auf Dauer sehr nervig!</p>
+<p>Wenn einem das nur vereinzelt passiert, kann man sich mit
+Kommandozeilenoptionen helfen:</p>
+<div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">o</span> <span class="n">UserKnownHostsFile</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">StrictHostKeyChecking</span><span class="o">=</span><span class="n">no</span> <span class="n">user</span><span class="mf">@192.168.1.12</span>
+</pre></div>
+
+
+<p>ist jedoch schon eine
+recht sportliche Aufgabe sich das a) zu merken und b) jedes Mal
+wegzutippen.</p>
+<p>Wem das permanent passiert, kann dieses Verhalten dauerhaft einstellen.
+Und zwar sowohl global wie auch userbasiert. In beiden Fällen müssen die
+beiden o.g. Optionen in die passende Config-Datei eingetragen werden:</p>
+<div class="highlight"><pre><span></span>UserKnownHostsFile=/dev/null  
+StrictHostKeyChecking=no
+</pre></div>
+
+
+<p>Um diese Einstellung global zu setzen (nicht empfohlen), trägt man diese
+Optionen in die Datei "<strong>/etc/ssh/ssh_config</strong>" ein.</p>
+<p>Um diese Einstellung nur für einen bestimmten User zu setzen, trägt man
+diese Optionen in die Datei "~<strong>/.ssh/config</strong>" ein.</p>
+<p>Das ganze hebelt natürlich den als Sicherheitsmaßnahme gegen
+"Man-in-the-middle" - Attacken gemeinten Schutz vor diesem Angriffstyp
+aus. Um das ganze wenigstens etwas sicherer zu machen, kann man auch nur
+einzelne Hosts und Hostbereiche derart von dieser Regel ausnehmen. Die
+Beispielhafte Syntax dazu lautet dann:</p>
+<div class="highlight"><pre><span></span>Host 192.168.1.*
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+</pre></div>
+
+
+<p>Möchte man dieses immer und für alle Verbindungen deaktivieren, lässt
+man die "<strong><em>Host</em></strong>" - Zeile einfach weg.</p>
+<p>Aber Achtung: Bitte nur anwenden wenn Ihr wisst was Ihr tut! Das ganze
+hebelt, wie gesagt, einen sinnvollen Schutz des SSH Systems aus.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=SSH%20-%20REMOTE%20HOST%20IDENTIFICATION%20HAS%20CHANGED&url=https%3A//www.zoosau.de/openssh-und-die-nervigen-known_hosts.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=SSH%20-%20REMOTE%20HOST%20IDENTIFICATION%20HAS%20CHANGED&amp;body=https%3A//www.zoosau.de/openssh-und-die-nervigen-known_hosts.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/modding-der-fritzbox-teil-3.html">Modding der Fritzbox - Teil 3</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-03-04T10:00:00+01:00"> Di 04 März 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		495
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/box.html">box</a>
+        /
+	<a href="https://www.zoosau.de/tag/dropbear.html">dropbear</a>
+        /
+	<a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+        /
+	<a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+        /
+	<a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>So, heute möchte ich gerne einen <a href="http://de.wikipedia.org/wiki/Secure_Shell" title="Wiki Eintrag zu SSH">SSH
+Server</a>
+auf die Fritzbox bringen, da mich der Telnetzugang dann doch ziemlich
+nervt.</p>
+<p>Es wird, wie immer, die Variante gewählt, den Server beim booten der Box
+aus dem Web nachzuladen.</p>
+<p>Ich richte mich hierbei weitestgehend nach <a href="http://www.ip-phone-forum.de/showthread.php?t=79500" title="IP-Phone-Forum Anleitung für SSH">diesem
+Tutorial</a>.</p>
+<p>Es wird also der Dropbear SSH Server verwendet. Diesen habe ich <a href="http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/dropbear" title="Binärer Dropbear SSH Server für die Fritzbox">hier
+fertig kompiliert
+abgelegt</a>.</p>
+<p>Ich erweitere das Script /var/flash/debug.cfg aus <a href="http://www.zoosau.de/technik/modding-der-fritzbox-teil-2" title="Teil 2 der Reihe ">Teil 2 der
+Reihe</a>
+um ein paar Zeilen. Ausserdem ändere ich die Form ein wenig:</p>
+<blockquote>
+<p><em>#!/bin/sh<br>
+APPDIR="/var/tmp/runtimeapps"<br>
+mkdir \$APPDIR<br>
+echo "ww:x:0:0:root:/:/bin/sh" &gt;&gt; /var/tmp/passwd<br>
+echo "ww:PASSWORTHASH:12332:0:99999:7:::" &gt;&gt; /var/tmp/shadow</em></p>
+<p><em>#&gt;&gt;TELNET<br>
+if [ "\$(busybox | grep -c telnetd,)" = "1" ];then<br>
+/bin/busybox telnetd -l /sbin/ar7login<br>
+else<br>
+{<br>
+while !(ping -c 1 www.zoosau.de); do sleep 5; done<br>
+wget -qO \$APPDIR/utelnetd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/utelnetd<br>
+chmod +x \$APPDIR/utelnetd<br>
+\$APPDIR/utelnetd -d -l /sbin/ar7login<br>
+} &amp;<br>
+fi<br>
+#&lt;&lt;TELNET</em></p>
+<p><em>#&gt;&gt;FTP<br>
+cd \$APPDIR<br>
+while !(ping -c 1 www.zoosau.de); do sleep 5; done<br>
+wget -qO \$APPDIR/bftpd
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd<br>
+wget -qO \$APPDIR/bftpd.conf
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/bftpd.conf<br>
+chmod +x \$APPDIR/bftpd<br>
+./bftpd -d -c \$APPDIR/bftpd.conf<br>
+#&lt;&lt;FTP</em></p>
+<p><em>#&gt;&gt;SSH<br>
+cd \$APPDIR<br>
+while !(ping -c 1 www.zoosau.de); do sleep 5; done<br>
+wget -qO \$APPDIR/dropbear
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/dropbear<br>
+wget -qO \$APPDIR/busybox
+http://www.zoosau.de/software/Internet_und_Netzwerk/fritz.box/busybox_uudecode<br>
+chmod +x \$APPDIR/dropbear<br>
+chmod +x \$APPDIR/busybox<br>
+ln -s \$APPDIR/dropbear dropbearkey<br>
+ln -s \$APPDIR/busybox \$APPDIR/uudecode<br>
+ln -s \$APPDIR/busybox \$APPDIR/uuencode<br>
+\$APPDIR/dropbearkey -t rsa -f \$APPDIR/dropbear_rsa_host_key<br>
+\$APPDIR/dropbearkey -t dss -f \$APPDIR/dropbear_dss_host_key<br>
+\$APPDIR/dropbear -p 22 -r \$APPDIR/dropbear_rsa_host_key -d
+\$APPDIR/dropbear_dss_host_key<br>
+#&lt;&lt;SSH</em></p>
+</blockquote>
+<p>Dadurch wird zwar jedes Mal ein anderer Hostkey erzeugt, aber diesen im
+Webspace ablegen ist auch uncool.</p>
+<p>Daher sollte man, nachdem die Box erfolgreich neu gestartet wurde, das
+debug.cfg Script so abändern, das immer dieselben Keys geschrieben
+werden.</p>
+<p>Die so modifizierte Datei schieben wir nun per FTP wieder auf die
+Fritzbox nach <em>/var/tmp/debug.cfg</em> . Anschliessend fügen wir diese durch
+<strong><em>cp /var/tmp/debug.cfg /var/flash/debug.cfg</em></strong> wieder in den
+resistenten Flashspeicher ein.</p>
+<p>Ich verzichte hierbei darauf die Box im Internet zugänglich zu machen,
+da ich das garnicht will. Wer möchte, kann sich aber den <a href="http://www.ip-phone-forum.de/showthread.php?t=79500" title="IP-Phone-Forum Anleitung für SSH">IP-Phone-Forum
+Beitrag
+dazu</a>
+reinziehen, da steht beschrieben wie das geht.</p>
+<p>Nachdem die Box also mit SSH nun erfolgreich gestartet wurde, und die
+DSA/RSA Hostkeys erzeugt wurden, stellen wir sicher, das auch immer
+dieselben geladen werden. Sonst ist SSH Quatsch.</p>
+<p>Zunächst holen wir uns die debug.cfg wieder auf den Rechner, um sie
+besser bearbeiten zu können. Dasselbe tun wir mit den Keys:</p>
+<blockquote>
+<p><em>cat /var/flash/debug.cfg &gt; /var/tmp/debug.cfg</em></p>
+<p><em>cat /var/tmp/runtimeapp/dropbear_rsa_host_key &gt;</em>
+<em>/var/tmp/dropbear_rsa_host_key</em></p>
+<p><em>cat /var/tmp/runtimeapp/dropbear_dss_host_key</em> <em>&gt;</em>
+<em>/var/tmp/dropbear_dss_host_key</em></p>
+</blockquote>
+<p>Die Keys müssen wir zuvor in ASCII umformatieren:</p>
+<blockquote>
+<p><strong><em>cd /var/tmp/runtimeapp</em></strong></p>
+<p><strong><em>chmod 600</em></strong> <strong><em>dropbear_rsa_host_key</em></strong></p>
+<p><strong><em>chmod 600</em></strong> <strong><em>dropbear_dss_host_key</em></strong></p>
+<p><strong><em>./uuencode</em> <em>dropbear_rsa_host_key</em>
+*dropbear_rsa_host_key.ascii &gt;</strong>*
+<strong><em>dropbear_rsa_host_key.ascii</em></strong></p>
+<p><strong><em>./uuencode</em> <em>dropbear_dss_host_key</em>
+*dropbear_dss_host_key.ascii &gt;</strong>*
+<strong><em>dropbear_dss_host_key.ascii</em></strong></p>
+</blockquote>
+<p>Diese drei Dateien (debug.cfg und *.ascii) ziehen wir nun per FTP auf
+den Rechner und öffnen sie im Editor.</p>
+<p><strong>ACHTUNG:</strong></p>
+<p>Nehmt einen Editor der die UNIX Zeilenumbrüche beherrscht (NICHT
+Notepad!). Zum Beispiel den <a href="http://www.crimsoneditor.com/" title="Homepage des Crimson Editor">Crimson
+Editor</a>.</p>
+<p>Zunächst entfernen wir in der debug.cfg die drei Zeilen, die zur
+Generierung der Keys dienen. Am besten kommentiert man sie mit # aus,
+falls man die Keys doch mal wechseln möchte.</p>
+<p>Stattdessen tragen wir folgendes ein:</p>
+<blockquote>
+<p><em>\$APPDIR/uudecode -o \$APPDIR/dropbear_rsa_host_key &lt;&lt;\EOP<br>
+INHALT DER DATEI dropbear_rsa_host_key.ascii<br>
+EOP<br>
+\$APPDIR/uudecode -o \$APPDIR/dropbear_dss_host_key &lt;&lt;\EOP<br>
+INHALT DER DATEI dropbear_dss_host_key.ascii<br>
+EOP</em></p>
+</blockquote>
+<p>Dadurch wird immer wieder derselbe Key verwendet.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Modding%20der%20Fritzbox%20-%20Teil%203&url=https%3A//www.zoosau.de/modding-der-fritzbox-teil-3.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Modding%20der%20Fritzbox%20-%20Teil%203&amp;body=https%3A//www.zoosau.de/modding-der-fritzbox-teil-3.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2008 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

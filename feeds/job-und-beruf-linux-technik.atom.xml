@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf, Linux, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf-linux-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2011-03-13T14:25:00+01:00</updated><entry><title>Wiederherstellen von MySQL Zugängen</title><link href="https://www.zoosau.de/wiederherstellen-von-mysql-zugaengen.html" rel="alternate"></link><published>2011-03-13T14:25:00+01:00</published><updated>2011-03-13T14:25:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-03-13:/wiederherstellen-von-mysql-zugaengen.html</id><summary type="html">&lt;p&gt;Es folgt ein recht alter Hut. Mir ist nur gerade mal aufgefallen, das
+ich den folgenden Weg MySQL Zugänge anzulegen, wenn man die Zugangsdaten
+eines MySQL Servers vergessen oder versehentlich gelöscht hat, noch nie
+hier niedergeschrieben habe.&lt;/p&gt;
+&lt;p&gt;Es geht im großenn und ganzen darum, das man zunächst den MySQL Daemon …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es folgt ein recht alter Hut. Mir ist nur gerade mal aufgefallen, das
+ich den folgenden Weg MySQL Zugänge anzulegen, wenn man die Zugangsdaten
+eines MySQL Servers vergessen oder versehentlich gelöscht hat, noch nie
+hier niedergeschrieben habe.&lt;/p&gt;
+&lt;p&gt;Es geht im großenn und ganzen darum, das man zunächst den MySQL Daemon
+beendet, ohne Zugangstabellen zu laden wieder startet, den gewünschten
+Zugang anlegt und nach einem Neustart des Daemons, dieses Mal mit
+Zugangstabellen, diesen User dann für die weiteren Schritte verwenden
+kann.&lt;/p&gt;
+&lt;p&gt;Zunächst ein kurzer Sicherheitshinweis: Für die folgenden Schritte
+empfiehlt es sich den MySQL Daemon nur von localhost/127.0.0.1
+erreichbar zu machen, da für einen kurzen Zeitraum jedermann ohne
+Passwort administrativ auf den Server connecten kann. Um ganz sicher zu
+gehen, kann man auch noch einen anderen Port wählen um lokalen
+Schabernack zu unterbinden.&lt;/p&gt;
+&lt;p&gt;Das Vorgehen ist wie folgt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Beenden des MySQL Daemons&lt;/li&gt;
+&lt;li&gt;Starten des MySQL Daemons ohne Zugriffstabellen:&lt;br&gt;
+   ﻿&lt;strong&gt;&lt;em&gt;mysqld_safe --skip-grant-tables &amp;amp;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Nun kann sich root ohne Passwort in die Datenbank "mysql"
+    einloggen:&lt;br&gt;
+&lt;strong&gt;&lt;em&gt;mysql -uroot mysql&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Passwort neu setzen:&lt;br&gt;
+&lt;strong&gt;&lt;em&gt;UPDATE user SET password=PASSWORD("abcd") WHERE user="root";&lt;br&gt;
+&lt;/em&gt;&lt;/strong&gt;Das neue Passwort wäre nun "abcd". Es kann natürlich gesetzt
+    werden wie immer es sein soll.&lt;/li&gt;
+&lt;li&gt;(Optional) Zugriffsrechte neu einlesen:&lt;br&gt;
+&lt;strong&gt;&lt;em&gt;FLUSH PRIVILEGES;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Da man sich immernoch ohne Passwort einloggen kann, sind alle mysql
+    Prozesse zu beenden; &lt;strong&gt;notfalls&lt;/strong&gt; zu killen (nur, wenn das init
+    Script es per "stop" nicht schafft alles was MySQL ist zu beenden).
+    Besonders gilt das für die &lt;strong&gt;mysql_safe&lt;/strong&gt; Instanz (prüfen ob noch
+    was läuft per "&lt;strong&gt;&lt;em&gt;ps waux | grep -i mysql&lt;/em&gt;&lt;/strong&gt;").&lt;/li&gt;
+&lt;li&gt;Abschliessend MySQL wieder ganz normal starten.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Man hat so das Passwort des Users "root" wieder auf den in Punkt 4
+verwendeten Wert gesetzt. Da dieses ja _der_ administrative User ist,
+können alle weiteren Korrekturen im ganz normalen, sicherem MySQL
+Kontext behoben werden.&lt;br&gt;
+Wenn man einen anderen User als "root" für seine administrativen
+Arbeiten verwendet, muss man selbstverständlich diesen in Punkt 3 und 4
+statt "root" verwenden.&lt;/p&gt;</content><category term="mysql"></category><category term="passwort"></category><category term="passwort zurücksetzen"></category><category term="reset password"></category></entry><entry><title>MySQL Fehler unter Ubuntu "'Can't create table '/tmp/#sql7c49_2f_0' (errno: -1)' on query."</title><link href="https://www.zoosau.de/mysql-fehler-ubuntu-cant-create-table-tmp-errno-1.html" rel="alternate"></link><published>2010-01-28T13:42:00+01:00</published><updated>2010-01-28T13:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-01-28:/mysql-fehler-ubuntu-cant-create-table-tmp-errno-1.html</id><summary type="html">&lt;p&gt;Ich hatte heute auf einem MySQL Slave Server den folgenden Fehler bei
+der Replikation von einem Master MySQL Server:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mysql&amp;gt; show slave status\G;&lt;br&gt;
+*************************** 1. row
+***************************&lt;br&gt;
+Slave_IO_State: Waiting for master to send event&lt;br&gt;
+Master_Host: www.xxx.yyy.zzz&lt;br&gt;
+Master_User: replication&lt;br&gt;
+Master_Port: 3306&lt;br&gt;
+Connect_Retry: 60&lt;br&gt;
+Master_Log_File: db.002174&lt;br&gt;
+Read_Master_Log_Pos: 342719703&lt;br&gt;
+Relay_Log_File …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Ich hatte heute auf einem MySQL Slave Server den folgenden Fehler bei
+der Replikation von einem Master MySQL Server:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mysql&amp;gt; show slave status\G;&lt;br&gt;
+*************************** 1. row
+***************************&lt;br&gt;
+Slave_IO_State: Waiting for master to send event&lt;br&gt;
+Master_Host: www.xxx.yyy.zzz&lt;br&gt;
+Master_User: replication&lt;br&gt;
+Master_Port: 3306&lt;br&gt;
+Connect_Retry: 60&lt;br&gt;
+Master_Log_File: db.002174&lt;br&gt;
+Read_Master_Log_Pos: 342719703&lt;br&gt;
+Relay_Log_File: mysqld-relay-bin.000003&lt;br&gt;
+Relay_Log_Pos: 6458545&lt;br&gt;
+Relay_Master_Log_File: db.002170&lt;br&gt;
+Slave_IO_Running: Yes&lt;br&gt;
+Slave_SQL_Running: No&lt;br&gt;
+Replicate_Do_DB:&lt;br&gt;
+Replicate_Ignore_DB:&lt;br&gt;
+Replicate_Do_Table:&lt;br&gt;
+Replicate_Ignore_Table:&lt;br&gt;
+Replicate_Wild_Do_Table:&lt;br&gt;
+Replicate_Wild_Ignore_Table:&lt;br&gt;
+Last_Errno: 1005&lt;br&gt;
+&lt;span style="color: #ff0000;"&gt;&lt;strong&gt;Last_Error: Error 'Can't create table
+'/tmp/#sql7c49_2f_0' (errno: -1)' on query. Default database:
+'live'. Query: 'create temporary table tmp_gen_table like
+tmp_to_gen_neu'&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+Skip_Counter: 0&lt;br&gt;
+Exec_Master_Log_Pos: 620120976&lt;br&gt;
+Relay_Log_Space: 4109869668&lt;br&gt;
+Until_Condition: None&lt;br&gt;
+Until_Log_File:&lt;br&gt;
+Until_Log_Pos: 0&lt;br&gt;
+Master_SSL_Allowed: No&lt;br&gt;
+Master_SSL_CA_File:&lt;br&gt;
+Master_SSL_CA_Path:&lt;br&gt;
+Master_SSL_Cert:&lt;br&gt;
+Master_SSL_Cipher:&lt;br&gt;
+Master_SSL_Key:&lt;br&gt;
+Seconds_Behind_Master: NULL&lt;br&gt;
+1 row in set (0.09 sec)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich musste recht lange suchen. Die o.g. Datei
+(&lt;strong&gt;/tmp/#sql7c49_2f_0.ibd&lt;/strong&gt;) wurde zwar von mysql:mysql angelegt,
+jedoch war sie 0 byte groß. Im MySQL - Log fand ich nur den o.g. Fehler
+wieder. Also schaute ich im syslog und wurde fündig:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Jan 28 12:55:22 db kernel: [495131.291630]
+audit(1264679722.493:141): type=1503 operation="file_lock"
+requested_mask="wk::" denied_mask="k::"
+name="/tmp/#sql7c49_2f_0.ibd" pid=7924 profile="/usr/sbin/mysqld"
+namespace="default"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das kenne ich inzwischen: Eine Zeile mit so komischen
+"&lt;strong&gt;&lt;em&gt;requested_mask="wk::"&lt;/em&gt;&lt;/strong&gt;" - Rechten kommt meistens, wenn eine
+Applikation an apparmor scheitert. Ich habe also der Datei
+&lt;strong&gt;/etc/apparmor.d/usr.sbin.mysqld&lt;/strong&gt; die folgenden Zeilen hinzugefügt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/usr/sbin/mysqld {&lt;br&gt;
+...&lt;br&gt;
+/tmp/ r,&lt;br&gt;
+/tmp/** rwk,&lt;br&gt;
+}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Schon geht's!&lt;br&gt;
+Ich fand es sehr überraschend, das das &lt;strong&gt;/tmp&lt;/strong&gt; - Verzeichnis (in meinem
+Oldschool-Linux-Hinterkopf immer als das "jeder darf - Verzeichnis"
+abgelegt) ebenfalls einer eigenen Zeile in der apparmor-Konfiguration
+bedarf. Noch verwunderlicher finde ich, das dieses unter Ubuntu (8.04 -
+Hardy Heron) nicht standardmäßig dort aufgenommen wurde. Immerhin ist
+&lt;strong&gt;tmpdir=/tmp&lt;/strong&gt; die Standardeinstellung unter dieser Ubuntu-Version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;br&gt;
+&lt;/strong&gt;&lt;/p&gt;</content><category term="can't create table '/tmp/"></category><category term="errno: -1"></category><category term="Linux"></category><category term="mysql"></category><category term="on query"></category><category term="ubuntu"></category></entry><entry><title>USB Transfer unter Suse Linux suuuuper langsam ...</title><link href="https://www.zoosau.de/usb-transfer-unter-suse-linux-suuuuper-langsam.html" rel="alternate"></link><published>2008-11-05T21:54:00+01:00</published><updated>2008-11-05T21:54:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-11-05:/usb-transfer-unter-suse-linux-suuuuper-langsam.html</id><summary type="html">&lt;p&gt;Ich hatte heute den Fall auf der Arbeit, das ich auf eine an einem
+unserer Suse Linux Server angeschlossene USB 2.0 Festplatte mehrere
+Gibibyte an Daten kopieren musste.&lt;/p&gt;
+&lt;p&gt;Das dauerte .... und dauerte .... schliesslich fiel mir auf, das die
+Daten mit nur 160 KB/s kopiert wurden. Das kam mir …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich hatte heute den Fall auf der Arbeit, das ich auf eine an einem
+unserer Suse Linux Server angeschlossene USB 2.0 Festplatte mehrere
+Gibibyte an Daten kopieren musste.&lt;/p&gt;
+&lt;p&gt;Das dauerte .... und dauerte .... schliesslich fiel mir auf, das die
+Daten mit nur 160 KB/s kopiert wurden. Das kam mir komisch vor,
+schliesslich sollten die Datenraten von USB 2.0 doch deutlich höher
+liegen. In &lt;a href="http://de.wikipedia.org/wiki/Universal_Serial_Bus#Datenraten" title="Datenraten von USB 2.0 - Wiki Artikel"&gt;diesem
+Wiki-Artikel&lt;/a&gt;
+fand ich schliesslich heraus, das es (laut Spezifikation) 480 Mbit/s
+hätten sein sollen; also ca. 60 MebiByte pro Sekunde.&lt;br&gt;
+Das hat mich dann schon sehr gewundert, schliesslich ist das nur ca.
+1/384tel Bruchteil der Transferkapazität des Buses.&lt;/p&gt;
+&lt;p&gt;Eine erste Recherche heute auf der Arbeit förderte &lt;a href="http://www.linuxquestions.org/questions/linux-hardware-18/usb-2.0-slow-write-but-fast-read-solution-yet-500937/" title="Foreneintrag auf www.linuxquestions.org"&gt;diesen
+Foreneintrag&lt;/a&gt;
+von Dezember 2007 zu Tage, in dem der Hinweis gegeben wird, das dieses
+Problem verschwindet, wenn die mount-Option "sync" weggelassen wird. Als
+ich es ebenfalls probiert habe ohne "sync" zu mounten, war es auch
+schlagartig schneller.&lt;/p&gt;
+&lt;p&gt;Inzwischen habe ich etwas genauer nachrecherchiert:&lt;br&gt;
+Bei dem ganzen handelt es sich um einen zumindest bei Novell (Suse)
+bekannten Bug (siehe &lt;a href="https://bugzilla.novell.com/show_bug.cgi?id=105871" title="Novel Bugzilla Database Bug #105871"&gt;Novell Bugzilla Database
+#105871&lt;/a&gt;).
+Ob er nun nur bei Suse Linux auftritt oder ob es ein genereller Linux
+Bug ist, das weiss ich nicht. Und ehrlich gesagt bin ich jetzt auch zu
+faul den ganzen Bug zu lesen. Wer mag, kann das gerne nachholen.&lt;/p&gt;
+&lt;p&gt;Unter'm Strich bleibt zumindest für Suse Linux in der Version 10.x
+folgende Lösung: USB Laufwerke nicht mit der mountoption "sync"
+mounten!&lt;br&gt;
+(Ob andere Suse Linux Versionen oder gar andere Distributionen betroffen
+sind weiss ich nicht; einfach ausprobieren!).&lt;/p&gt;
+&lt;p&gt;Für per "subfs" gemountete Dateisysteme gibt es einen weiterführenden
+Workarround um sicher zu stellen, das diese Dateisysteme &lt;span
+style="text-decoration: underline;"&gt;nicht&lt;/span&gt; mit "sync" gemounted
+werden:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;mkdir -p /usr/share/hal/fdi/policy/95userpolicy&lt;/li&gt;
+&lt;li&gt;Eine Datei namens "nosync.fdi" darin erzeugen (&lt;em&gt;vi
+    /usr/share/hal/fdi/policy/95userpolicy/nosync.fdi&lt;/em&gt;) und darin
+    folgenden Inhalt anlegen:&lt;br&gt;
+   &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;&lt;br&gt;
+   &amp;lt;deviceinfo version="0.2"&amp;gt;&lt;br&gt;
+   &amp;lt;device&amp;gt;&lt;br&gt;
+   &amp;lt;!-- disable sync for mount --&amp;gt;&lt;br&gt;
+   &amp;lt;match key="block.is_volume" bool="true"&amp;gt;&lt;br&gt;
+   &amp;lt;match key="volume.fsusage" string="filesystem"&amp;gt;&lt;br&gt;
+   &amp;lt;match key="volume.uuid" string="==UUID=="&amp;gt;&lt;br&gt;
+   &amp;lt;merge key="volume.policy.mount_option.sync"&lt;br&gt;
+   type="bool"&amp;gt;false&amp;lt;/merge&amp;gt;&lt;br&gt;
+   &amp;lt;/match&amp;gt;&lt;br&gt;
+   &amp;lt;/match&amp;gt;&lt;br&gt;
+   &amp;lt;/match&amp;gt;&lt;br&gt;
+   &amp;lt;/device&amp;gt;&lt;br&gt;
+   &amp;lt;/deviceinfo&amp;gt;&lt;/li&gt;
+&lt;li&gt;Ausführen von "&lt;em&gt;lshal&lt;/em&gt;". Die Passage im unter Punkt 2. aufgeführten
+    Text die hier temporär mit "==UUID==" befüllt ist, mit der Ausgabe
+    dieses Befehls ersetzen.&lt;/li&gt;
+&lt;li&gt;HAL Daemon neu starten (&lt;em&gt;rhal restart&lt;/em&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ich hoffe dieses hilft einigen von Euch :)&lt;/p&gt;
+&lt;p&gt;Wie immer würde ich mich freuen, wenn ihr einen kurzen Kommentar
+eintragen würdet!&lt;/p&gt;
+&lt;p&gt;Achja, wie immer der Hinweis: Wer sich über diese "merkwürdigen"
+Bezeichnungen wie "MebiByte", GibiByte", etc. wundert, dem sein &lt;a href="http://www.zoosau.de/technik/die-zoosau-und-binarprafixe" title="Artikel zum Thema &amp;quot;Binärpräfixe&amp;quot; auf http://www.zoosau.de"&gt;mein
+Artikel über
+Binärpräfixe&lt;/a&gt;
+als Lektüre ans Herz gelegt :)&lt;/p&gt;</content><category term="kopieren"></category><category term="langsam"></category><category term="Linux"></category><category term="novell"></category><category term="suse"></category><category term="transfer"></category><category term="usb"></category></entry><entry><title>Gesucht wird: fastlogres</title><link href="https://www.zoosau.de/gesucht-wird-fastlogres.html" rel="alternate"></link><published>2008-09-04T10:48:00+02:00</published><updated>2008-09-04T10:48:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-09-04:/gesucht-wird-fastlogres.html</id><summary type="html">&lt;p&gt;Sowas habe ich echt noch nicht erlebt:&lt;/p&gt;
+&lt;p&gt;Auf unserem Server für Webseiten-Statistiken liegt ein Programm namens
+"fastlogres" im Ordner /usr/bin . Es handelt sich dabei um ein SUSE
+Linux System. Ein "rpm -qal | grep fastlogres" zeigt mir, das das
+Programm aus keinem RPM Paket stammt.&lt;br&gt;
+Normalerweise legen wir selbst kompilierte …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sowas habe ich echt noch nicht erlebt:&lt;/p&gt;
+&lt;p&gt;Auf unserem Server für Webseiten-Statistiken liegt ein Programm namens
+"fastlogres" im Ordner /usr/bin . Es handelt sich dabei um ein SUSE
+Linux System. Ein "rpm -qal | grep fastlogres" zeigt mir, das das
+Programm aus keinem RPM Paket stammt.&lt;br&gt;
+Normalerweise legen wir selbst kompilierte Sourcen in einem bestimmten
+Unterverzeichnis ab, für genau so einen Fall. Jedoch ist das in diesem
+Fall nicht passiert.&lt;/p&gt;
+&lt;p&gt;Eine Suchmaschienen-Recherche bringt mir leider keinen Erfolg. In keiner
+einzigen (!) Suchmaschiene finde ich etwas, das auf dieses Programm
+hinweist.&lt;/p&gt;
+&lt;p&gt;Es gibt leider keinen Switch bei dem Programm und keine Manpage, in der
+eine URL steht. Es gibt lediglich den switch -v zur Ausgabe der Version.
+Und diese Ausgabe lautet lediglich:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;fastlogres 0.2.0&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das Programm löst IPs aus Apache Logfiles zu DNS Namen auf. Dieses tut
+es deutlich schneller als es der in AWstats eingebaute DNS Resolve
+Mechanismus tut. Ein Referenzlogfile eines Monats von einer unserer
+Seiten wird von AWstats in 57 minuten und 39 Sekunden ausgewertet. Dem
+gegenüber steht fastlogres mit nur 25 minuten und 53 Sekunden; also mehr
+als doppelt so schnell!&lt;/p&gt;
+&lt;p&gt;Genau das ist mein Ziel: Diesen Flaschenhals etwas zu "dehnen".&lt;/p&gt;
+&lt;p&gt;Bevor ich dieses Programm gefunden habe, bin ich auf "adnslogres", als
+Teil der &lt;a href="http://www.chiark.greenend.org.uk/~ian/adns/" title="GNU adns"&gt;GNU adns
+Bibliothek&lt;/a&gt;
+aufmerksam geworden. Diese benötigt für dasselbe Logfile&lt;/p&gt;
+&lt;p&gt;Daher: Bis jetzt ist fastlogres mit abstand das schnellste Programm!&lt;/p&gt;
+&lt;p&gt;Nur finde ich es nirgendwo im Netz :(&lt;br&gt;
+Es kann doch nicht sein, das auf unserem Server ein Programm läuft und
+derart super funktioniert, ohne das man im Internet auch nur einen
+Hinweis darauf findet.&lt;/p&gt;
+&lt;p&gt;Wenn jemand dieses Tool kennt, wäre ich höchst dankbar, wenn er mir hier
+einen Hinweis geben könnte.&lt;/p&gt;
+&lt;p&gt;Auch Alternativen, die die beschriebene Aufgabe erfüllen können, sind
+sehr gerne gesehen! :)&lt;/p&gt;</content><category term="Apache"></category><category term="dns"></category><category term="fastlogres"></category><category term="log"></category><category term="resolve"></category></entry><entry><title>mod_auth_mysql für apache2.2.x kompilieren</title><link href="https://www.zoosau.de/mod_auth_mysql-fur-apache22x-kompilieren.html" rel="alternate"></link><published>2008-05-19T15:26:00+02:00</published><updated>2008-05-19T15:26:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-19:/mod_auth_mysql-fur-apache22x-kompilieren.html</id><summary type="html">&lt;p&gt;Mal wieder: Wir brauchen
+&lt;a href="http://sourceforge.net/projects/modauthmysql/" title="Projektseite von mod_auth_mysql"&gt;mod_auth_mysql&lt;/a&gt;
+, haben den apache2.2.8 auf dem Server laufen, und kriegen diesen tollen
+Fehler:&lt;/p&gt;
+&lt;p&gt;# /server/service/www/apache2/bin/apxs -c -L/usr/lib/mysql
+-I/usr/include/mysql -lmysqlclient -lm -lz mod_auth_mysql.c&lt;br&gt;
+/server/service/www/apache2/build/libtool --silent --mode=compile gcc
+-prefer-pic …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Mal wieder: Wir brauchen
+&lt;a href="http://sourceforge.net/projects/modauthmysql/" title="Projektseite von mod_auth_mysql"&gt;mod_auth_mysql&lt;/a&gt;
+, haben den apache2.2.8 auf dem Server laufen, und kriegen diesen tollen
+Fehler:&lt;/p&gt;
+&lt;p&gt;# /server/service/www/apache2/bin/apxs -c -L/usr/lib/mysql
+-I/usr/include/mysql -lmysqlclient -lm -lz mod_auth_mysql.c&lt;br&gt;
+/server/service/www/apache2/build/libtool --silent --mode=compile gcc
+-prefer-pic -DLINUX=2 -D_REENTRANT -D_GNU_SOURCE -g -O2 -pthread
+-I/server/service/www/apache2/include
+-I/server/service/www/apache2/include
+-I/server/service/www/apache2/include -I/usr/include/mysql -c -o
+mod_auth_mysql.lo mod_auth_mysql.c &amp;amp;&amp;amp; touch mod_auth_mysql.slo&lt;br&gt;
+mod_auth_mysql.c:591: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:591: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:591: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:591: error: (near initialization for
+‘mysql_auth_cmds[0].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:595: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:595: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:595: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:595: error: (near initialization for
+‘mysql_auth_cmds[1].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:599: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:599: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:599: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:599: error: (near initialization for
+‘mysql_auth_cmds[2].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:603: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:603: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:603: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:603: error: (near initialization for
+‘mysql_auth_cmds[3].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:607: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:607: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:607: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:607: error: (near initialization for
+‘mysql_auth_cmds[4].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:611: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:611: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:611: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:611: error: (near initialization for
+‘mysql_auth_cmds[5].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:615: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:615: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:615: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:615: error: (near initialization for
+‘mysql_auth_cmds[6].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:619: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:619: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:619: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:619: error: (near initialization for
+‘mysql_auth_cmds[7].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:623: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:623: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:623: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:623: error: (near initialization for
+‘mysql_auth_cmds[8].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:627: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:627: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:627: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:627: error: (near initialization for
+‘mysql_auth_cmds[9].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:631: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:631: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:631: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:631: error: (near initialization for
+‘mysql_auth_cmds[10].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:635: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:635: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:635: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:635: error: (near initialization for
+‘mysql_auth_cmds[11].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:639: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:639: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:639: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:639: error: (near initialization for
+‘mysql_auth_cmds[12].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:643: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:643: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:643: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:643: error: (near initialization for
+‘mysql_auth_cmds[13].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:651: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:651: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:651: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:651: error: (near initialization for
+‘mysql_auth_cmds[14].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:655: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:655: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:655: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:655: error: (near initialization for
+‘mysql_auth_cmds[15].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:659: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:659: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:659: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:659: error: (near initialization for
+‘mysql_auth_cmds[16].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:663: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:663: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:663: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:663: error: (near initialization for
+‘mysql_auth_cmds[17].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:667: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:667: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:667: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:667: error: (near initialization for
+‘mysql_auth_cmds[18].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c:671: error: expected expression before
+‘mysql_auth_config_rec’&lt;br&gt;
+mod_auth_mysql.c:671: warning: cast to pointer from integer of
+different size&lt;br&gt;
+mod_auth_mysql.c:671: error: initializer element is not constant&lt;br&gt;
+mod_auth_mysql.c:671: error: (near initialization for
+‘mysql_auth_cmds[19].cmd_data’)&lt;br&gt;
+mod_auth_mysql.c: In function ‘format_request’:&lt;br&gt;
+mod_auth_mysql.c:947: warning: pointer/integer type mismatch in
+conditional expression&lt;br&gt;
+apxs:Error: Command failed with rc=65536&lt;/p&gt;
+&lt;p&gt;Woran liegt's? Zunächst: Keine Ahnung.&lt;/p&gt;
+&lt;p&gt;Irgendwann findet man aber raus, das man &lt;a href="{filename}images/mod_auth_mysql-300-apache-22.patch" title="mod_auth_mysql Patch für Apache2.2.x"&gt;diesen
+Patch&lt;/a&gt;
+anwenden muss. Dann geht's problemlos.&lt;/p&gt;
+&lt;p&gt;Das geht wie folgt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Am besten das mod_auth_mysql - Quellenverzeichnis nochmal löschen
+    und das TAR neu entpacken.&lt;/li&gt;
+&lt;li&gt;Wechsel in das Quellenverzeichnis &lt;em&gt;mod_auth_mysql-3.0.0.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Ausführen von "&lt;strong&gt;patch &amp;lt;
+    ../mod_auth_mysql-3.0.0-apache-2.2.patch&lt;/strong&gt;" (ich gehe davon aus,
+    das der Patch ein Verzeichnis höher liegt; sonst bitte
+    entsprechend anpassen).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das sollte es gewesen sein. Als Resultat bekommt man:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;patching file mod_auth_mysql.c&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Anschließend sollte sich das Modul wie beschrieben per &lt;strong&gt;apxs&lt;/strong&gt;
+kompilieren lassen.&lt;/p&gt;</content><category term="apache2"></category><category term="fehler"></category><category term="mod_auth_mysql"></category></entry><entry><title>mod_auth_mysql Problem bei Migration von apache1 zu apache2</title><link href="https://www.zoosau.de/mod_auth_mysql-problem-bei-migration-von-apache1-zu-apache2.html" rel="alternate"></link><published>2008-04-02T11:57:00+02:00</published><updated>2008-04-02T11:57:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-02:/mod_auth_mysql-problem-bei-migration-von-apache1-zu-apache2.html</id><summary type="html">&lt;p&gt;Neeeee - was ärgert mich sowas:&lt;/p&gt;
+&lt;p&gt;Ich bin seit 2 Stunden dran um einen Fehler bei der mod_auth_mysql
+Authentifikation des Apache2 Webservers zu finden, und die einzige
+Webresource in der ich fündig werde (nach 2 Stunden, wohlgemerkt) ist
+ein &lt;a href="http://blog.techfusion.it/2007/06/04/libapache2-mod-auth-9bad-file-descriptor-could-not-open-password-file-null/" title="Link direkt zum Beitrag des basagten Blogs"&gt;italienisches
+Privatblog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ich hatte das Problem, das nach der Umstellung nur noch …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Neeeee - was ärgert mich sowas:&lt;/p&gt;
+&lt;p&gt;Ich bin seit 2 Stunden dran um einen Fehler bei der mod_auth_mysql
+Authentifikation des Apache2 Webservers zu finden, und die einzige
+Webresource in der ich fündig werde (nach 2 Stunden, wohlgemerkt) ist
+ein &lt;a href="http://blog.techfusion.it/2007/06/04/libapache2-mod-auth-9bad-file-descriptor-could-not-open-password-file-null/" title="Link direkt zum Beitrag des basagten Blogs"&gt;italienisches
+Privatblog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ich hatte das Problem, das nach der Umstellung nur noch folgender Fehler
+in Logfile geschrieben wurde:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;(9)Bad file descriptor: Could not open password file: (null)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mich hatte es zwar schon stutzig gemacht, das da etwas von einer
+Passwort &lt;strong&gt;Datei&lt;/strong&gt; stand, aber kapiert habe ich es soweit erstmal nicht,
+da ich nicht wusste ob die MySQL Tabelle evtl. aus Sicht des Servers
+tatsächlich eine Art "Passwortdatei" ist.&lt;/p&gt;
+&lt;p&gt;Auf jeden Fall lag es letzten endes daran, das Apache2 authz_user
+standardmäßig aktiviert, was der Apache1 nicht tut. Also erwartet er
+auch die Übergabe einer Passwortdatei. Diese war nicht definiert, also
+spuckt er die obige Fehlermeldung aus.&lt;/p&gt;
+&lt;p&gt;Behoben werden kann es ganz einfach, indem in der Apache2 Server-Config
+(httpd.conf, .htaccess, etc.) die folgende Einstellung gesetzt wird:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AuthBasicAuthoritative Off&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Das war's! :)&lt;/p&gt;
+&lt;p&gt;(01.09.2008)&lt;br&gt;
+&lt;strong&gt;PS:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nach der oben beschriebenen Methode kann man sich zwar wieder über
+niedriger priorisierte Authentifikationsmodule wie z.B. mod_auth_mysql
+anmelden, es erscheint im error-log jedoch nach wie vor die Meldung&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;(9)Bad file descriptor: Could not open * file: (null)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dieses kann man beheben, indem man zusätzlich zu
+"&lt;strong&gt;AuthBasicAuthoritative Off"&lt;/strong&gt; die folgenden zwei Einstellungen setzt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;AuthUserFile /dev/null&lt;br&gt;
+AuthGroupFile /dev/null&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;War mir irgendwie erst heute aufgefallen, das das nach wie vor
+geschrieben wird ... \~:)&lt;/p&gt;</content><category term="(9)"></category><category term="Apache"></category><category term="apache1"></category><category term="apache2"></category><category term="bad file descriptor"></category><category term="could not open password file"></category><category term="migration"></category><category term="mod_auth_mysql"></category><category term="Webserver"></category></entry><entry><title>Wie man unter Linux einen Samba Server zum Domänenmitglied macht</title><link href="https://www.zoosau.de/wie-man-unter-linux-einen-samba-server-zum-domanenmitglied-macht.html" rel="alternate"></link><published>2008-01-11T15:37:00+01:00</published><updated>2008-01-11T15:37:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-11:/wie-man-unter-linux-einen-samba-server-zum-domanenmitglied-macht.html</id><summary type="html">&lt;p&gt;Ich habe nun fast einen monat herumprobiert, ehe ich aufgegeben habe und
+alle Samba Datenbanken wieder gelöscht habe um von vorne anfangen zu
+können. Was immer ich beim ersten Durchlauf falsch gemacht habe: Nun
+habe ich diesen Schritt offenbar weggelassen :)&lt;/p&gt;
+&lt;p&gt;Damit auch andere von meinen Erfahrungen profitieren können, schreibe
+ich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe nun fast einen monat herumprobiert, ehe ich aufgegeben habe und
+alle Samba Datenbanken wieder gelöscht habe um von vorne anfangen zu
+können. Was immer ich beim ersten Durchlauf falsch gemacht habe: Nun
+habe ich diesen Schritt offenbar weggelassen :)&lt;/p&gt;
+&lt;p&gt;Damit auch andere von meinen Erfahrungen profitieren können, schreibe
+ich mein Vorgehen hier auf:&lt;/p&gt;
+&lt;p&gt;Eine kurze Übersicht über die Namen der Rechner und der User vorweg:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;linhir: Domänenmitgliedsserver, der User die sich verbinden wollen
+    am PDC anfragen soll&lt;/li&gt;
+&lt;li&gt;mrdomtest: User, der auf einefreigegebene Ressource auf linhir
+    zugreifen können soll&lt;/li&gt;
+&lt;li&gt;mordor: Der NetBIOS Name des PDC&lt;/li&gt;
+&lt;li&gt;MFC: Name der Testdomäne&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich bin dabei nach der &lt;a href="http://us4.samba.org/samba/docs/man/Samba-HOWTO-Collection/domain-member.html" title="Offizielle Dokumentation der Samba Foundation, Chapter 6. Domain Membership"&gt;offiziellen Dokumentation der Samba
+Foundation&lt;/a&gt;
+vorgegangen. Jedoch habe ich vorher ein paar weitere Schritte gemacht um
+sicher zu stellen, das mir kein Fehlerhafter Datenbankeintrag den Erfolg
+verwehrt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Samba Server auf dem Mitgliedsserver beendet (Daemons smb,
+    nmb, winbind)&lt;/li&gt;
+&lt;li&gt;Alle Dateien die dem Schema *.tdb entsprechen im Verzeichnis
+    /etc/samba/ und /var/lib/samba/, sowie in deren
+    Unterverzeichnissen, gelöscht.&lt;/li&gt;
+&lt;li&gt;Den Useraccount linhir\$ auf dem PDC aus der Unix
+    Benutzerdatenbank (passwd/shadow/group) entfernt (&lt;strong&gt;&lt;em&gt;userdel -r
+    linhir\$&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Maschienenaccount von linhir (&lt;strong&gt;&lt;em&gt;linhir\$&lt;/em&gt;&lt;/strong&gt;) aus der Samba
+    Nutzerdatenbank des PDCs entfernt (&lt;strong&gt;&lt;em&gt;pdbedit -x -u linhir\$&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nun sollte alles wieder auf Ausgangsposition sein.Hier meine smb.conf
+des Domänenmitgliedservers linhir:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[global]&lt;br&gt;
+workgroup = mfc&lt;br&gt;
+security = domain&lt;br&gt;
+password server = mordor&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;netbios name = linhir&lt;br&gt;
+server string = MFC Fileserver (%h) running Samba version %v&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;passdb backend = tdbsam&lt;br&gt;
+unix extensions = no&lt;br&gt;
+encrypt passwords = yes&lt;br&gt;
+wins server = mordor&lt;br&gt;
+name resolve order = wins lmhosts host bcast&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;log file = /server/logs/smb/samba/%m.log&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[jukebox]&lt;br&gt;
+comment = jukebox&lt;br&gt;
+path = /server/data/samba/jukebox&lt;br&gt;
+valid users = MFC\mrdomtest&lt;br&gt;
+create mask = 0664&lt;br&gt;
+directory mask = 0775&lt;br&gt;
+browseable = yes&lt;br&gt;
+read only = no&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So, wenn ich nichts vergessen habe ist das System nun wieder "nackt".&lt;/p&gt;
+&lt;p&gt;Der Vollständigkeit halber hier auch nochmal meine PDC Konfiguration
+(&lt;strong&gt;mordor&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[global]&lt;br&gt;
+workgroup = mfc&lt;br&gt;
+netbios name = mordor&lt;br&gt;
+server string = MFC PDC (%h) running Samba version %v&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;logon script = netlogon.cmd&lt;br&gt;
+logon path = \\%h\profiles\%U\%a.msprofile&lt;br&gt;
+logon home = \\%h\%u&lt;br&gt;
+logon drive = Z:&lt;br&gt;
+domain logons = Yes&lt;br&gt;
+os level = 190&lt;br&gt;
+preferred master = Yes&lt;br&gt;
+domain master = Yes&lt;br&gt;
+local master = Yes&lt;br&gt;
+wins support = Yes&lt;br&gt;
+passdb backend = tdbsam&lt;br&gt;
+unix extensions = no&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;security = user&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;encrypt passwords = yes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;name resolve order = lmhosts host wins bcast&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;time server = Yes&lt;br&gt;
+log file = /server/logs/smb/samba/%m.log&lt;br&gt;
+log level = 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;add user script = /usr/sbin/useradd -c "Samba Useraccount (auto - add
+user script)" -g samba -s /bin/false "%u"&lt;br&gt;
+add machine script = /usr/sbin/useradd -c "Samba Maschinenenaccount
+(auto - add machine script)" -g machines -s /bin/false "%u"&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;delete user script = /usr/sbin/userdel "%u"&lt;br&gt;
+add group script = /usr/sbin/groupadd "%g"&lt;br&gt;
+delete group script = /usr/sbin/groupdel "%g"&lt;br&gt;
+add user to group script = /usr/sbin/groupmod -A "%u" "%g"&lt;br&gt;
+delete user from group script = /usr/sbin/groupmod -R "%u" "%g"&lt;br&gt;
+set primary group script = /usr/sbin/usermod -g "%g" "%u"&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[homes]&lt;br&gt;
+comment = Home Directory von %u&lt;br&gt;
+valid users = %S, %D%w%S&lt;br&gt;
+browseable = No&lt;br&gt;
+read only = No&lt;br&gt;
+inherit acls = Yes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[netlogon]&lt;br&gt;
+path = /server/service/smb/samba/netlogon/&lt;br&gt;
+read only = yes&lt;br&gt;
+browseable = no&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[profiles]&lt;br&gt;
+comment = Network Profiles Service&lt;br&gt;
+path = /server/data/smb/samba/ntprofile/&lt;br&gt;
+read only = no&lt;br&gt;
+browseable = no&lt;br&gt;
+create mask = 0660&lt;br&gt;
+directory mask = 0770&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ab hier folge ich also der o.g. Doku der &lt;a href="http://www.samba.org" title="Homepage der Samba Foundation"&gt;Samba
+Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wie ihr anhand der "&lt;strong&gt;&lt;em&gt;add user|machine script&lt;/em&gt;&lt;/strong&gt;"e sehen könnt,
+verwende ich die Methode "On-the-Fly Creation of Machine Trust
+Accounts", wie sie in der Doku genannt wird.&lt;/p&gt;
+&lt;p&gt;Weiter steht darin in kürze, das man auf dem Domänenmitgliedsserver nur
+folgende Werte ändern braucht:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;security = domain&lt;br&gt;
+workgroup = %DOMAINNAME&lt;br&gt;
+password server = %PDC_NETBIOS_NAME&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ich setze "&lt;strong&gt;&lt;em&gt;password server = mordor&lt;/em&gt;&lt;/strong&gt;", um den Wildcard - zweifel zu
+beseitigen (Ob der Server das richtig auflösen kann, etc).&lt;/p&gt;
+&lt;p&gt;Ich starte nun Samba (&lt;strong&gt;&lt;em&gt;smb und nmb&lt;/em&gt;&lt;/strong&gt;) auf &lt;strong&gt;&lt;em&gt;linhir&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Die *.tdb Datenbankdateien wurden wieder angelegt, was richtig ist.&lt;/p&gt;
+&lt;p&gt;Die Doku fährt nun wie folgt fort:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;net rpc join -S DOMPDC -UAdministrator%password&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Auf meine Domäne umgeschlagen entspricht das:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;net rpc join -S mordor -U root&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Also gebe ich folgendes auf der Shell ein und erhalte folgende Ausgabe:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;linhir:/etc/samba # net rpc join -S mordor -U root&lt;br&gt;
+Password:&lt;br&gt;
+Joined domain MFC.&lt;br&gt;
+linhir:/etc/samba #&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hat also alles geklappt.&lt;br&gt;
+Der User wurde auf mordor auch gescheit in die passwd, samba Datenbank,
+usw eingetragen.&lt;/p&gt;
+&lt;p&gt;Nächstes laut Doku: Samba Daemon&lt;strong&gt;s&lt;/strong&gt; neu starten. OK, also auf linhir
+&lt;strong&gt;UND&lt;/strong&gt; mordor &lt;strong&gt;nmb und smb&lt;/strong&gt; neu starten.&lt;/p&gt;
+&lt;p&gt;Done :)&lt;/p&gt;
+&lt;p&gt;Nun folgt auch der Hinweis weswegen ich der Meinung bin ich brauche
+einen Winbind daemon:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Please refer to &lt;a href="http://us4.samba.org/samba/docs/man/Samba-HOWTO-Collection/winbind.html" title="Samba Foundation Dokumentation, Winbind: Use of Domain Accounts"&gt;Winbind: Use of Domain
+Accounts&lt;/a&gt;,
+for information on a system to automatically assign UNIX UIDs and GIDs
+to Windows NT domain users and groups.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Aber OK - bleiben wir zunächst bei der Handarbeit.&lt;br&gt;
+Zumal der Punkt "Sharing User ID Mappings between Samba Domain Members"
+mal wieder nur eine Methode per LDAP berücksichtigt..&lt;/p&gt;
+&lt;p&gt;Das wär's dann auch. Mehr ist laut diesem hochoffiziellen Guide nicht zu
+tun.&lt;br&gt;
+Ausser dieses hier:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Currently, domain security in Samba does not free you from having to
+create local UNIX users to represent the users attaching to your server.
+This means that if domain user DOM\fred attaches to your domain
+security Samba server, there needs to be a local UNIX user fred to
+represent that user in the UNIX file system.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mein Testuser heisst "&lt;strong&gt;mrdomtest&lt;/strong&gt;". Das sich dieser User am PDC
+authentifizieren kann, teste ich zunächst indem ich einen zur selben
+Domäne hinzugefügten Windows XP Professional Rechner nehme und mich dort
+als "&lt;strong&gt;mrdomtest&lt;/strong&gt;" anmelde ... Klappt!&lt;/p&gt;
+&lt;p&gt;Jetzt ändere ich den Punkt "&lt;strong&gt;&lt;em&gt;valid users&lt;/em&gt;&lt;/strong&gt;" des shares
+"&lt;strong&gt;&lt;em&gt;jukebox&lt;/em&gt;&lt;/strong&gt;" auf &lt;strong&gt;linhir&lt;/strong&gt; wie im Howto als Beispiel für fred
+angegeben: &lt;strong&gt;&lt;em&gt;MFC\mrdomtest&lt;/em&gt;&lt;/strong&gt; .&lt;/p&gt;
+&lt;p&gt;Damit Samba auch auf den gleich heissenden Unix User im Filesystem
+referieren kann, checke ich ab das es auch diesen gibt, sowie das es
+keinen solchen in der Samba Datenbank gibt:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;linhir:/etc/samba # grep mrdomtest /etc/passwd&lt;br&gt;
+mrdomtest:x:9031:100::/home/mrdomtest:/bin/false&lt;br&gt;
+linhir:/etc/samba # pdbedit -L&lt;br&gt;
+linhir:/etc/samba #&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nun teste ich mich mit dem Windows XP Domänenrechner mit eingeloggedem
+User &lt;strong&gt;mrdomtest&lt;/strong&gt; auf das Share "&lt;strong&gt;jukebox&lt;/strong&gt;" des Servers "&lt;strong&gt;linhir&lt;/strong&gt;"
+zu verbinden: Klappt!&lt;/p&gt;
+&lt;p&gt;Der User "&lt;strong&gt;mrdomtest&lt;/strong&gt;" ist laut Ausgabe des Befehls "&lt;strong&gt;&lt;em&gt;pdbedit -L&lt;/em&gt;&lt;/strong&gt;"
+auf &lt;strong&gt;linhir&lt;/strong&gt; nach wie vor nicht in der Samba Userdatenbank zu finden.
+Also hat alles funktioniert :)&lt;/p&gt;
+&lt;p&gt;Ich hoffe dieser Beitrag ist dem einen oder anderem eine kleine Hilfe.&lt;/p&gt;
+&lt;p&gt;Ich freue mich stets über Feedback :)&lt;/p&gt;</content><category term="dateifreigabe"></category><category term="domäne"></category><category term="pdc"></category><category term="samba"></category><category term="smb"></category></entry></feed>

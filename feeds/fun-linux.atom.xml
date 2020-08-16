@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Fun, Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/fun-linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-01-13T22:52:00+01:00</updated><entry><title>Sabayon's Paketmanager Sulfur entschuldigt sich für einen Fehler</title><link href="https://www.zoosau.de/sabayons-paketmanager-sulfur-entschuldigt-sich-fur-einen-fehler.html" rel="alternate"></link><published>2012-01-13T22:52:00+01:00</published><updated>2012-01-13T22:52:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-01-13:/sabayons-paketmanager-sulfur-entschuldigt-sich-fur-einen-fehler.html</id><summary type="html">&lt;p&gt;Na das ist ja mal putzig!&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1096" align="alignright" width="135"
+caption="Logo der Linuxdistribution Sabayon"]&lt;a href="https://www.zoosau.de/images/sabayon-wiki-logo.png"&gt;&lt;img alt="Logo der
+Linuxdistribution
+Sabayon" src="https://www.zoosau.de/images/sabayon-wiki-logo.png" title="Logo der Linuxdistribution Sabayon"&gt;{.size-full
+.wp-image-1096 width="135"
+height="135"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Jeder kennt sicher die alltäglichen Fehlermeldungen der diversen
+Programme des Computers und ärgert sich dabei über profane Meldungen wie
+"&lt;em&gt;Ungültiger Verweis 10x78&lt;/em&gt;" oder "&lt;em&gt;Fehlerprozess war …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Na das ist ja mal putzig!&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1096" align="alignright" width="135"
+caption="Logo der Linuxdistribution Sabayon"]&lt;a href="https://www.zoosau.de/images/sabayon-wiki-logo.png"&gt;&lt;img alt="Logo der
+Linuxdistribution
+Sabayon" src="https://www.zoosau.de/images/sabayon-wiki-logo.png" title="Logo der Linuxdistribution Sabayon"&gt;{.size-full
+.wp-image-1096 width="135"
+height="135"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Jeder kennt sicher die alltäglichen Fehlermeldungen der diversen
+Programme des Computers und ärgert sich dabei über profane Meldungen wie
+"&lt;em&gt;Ungültiger Verweis 10x78&lt;/em&gt;" oder "&lt;em&gt;Fehlerprozess war fehlerhaft (19)&lt;/em&gt;",
+mit denen man nicht nur nichts anfangen kann, sondern die einem
+irgendwie oft auch noch das Gefühl geben, man hätte etwas falsch
+gemacht.&lt;br&gt;
+Jetzt habe ich gestern einen Fehler unter
+&lt;a href="http://www.sabayon.org/" title="Homepage der Linuxdistribution Sabayon"&gt;Sabayon&lt;/a&gt;
+Linux provoziert, indem ich in
+&lt;a href="http://wiki.sabayon.org/index.php?title=Sulfur" title="Link in's Wiki der Linuxdistribution Sabayon zum Thema Sulfur"&gt;Sulfur&lt;/a&gt;,
+dem GUI des Paketmanagers von Sabayon, während einer Installation auf
+"Abbrechen" geklickt habe. Sieht doch gleich viel freundlicher aus,
+oder?&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1094" align="aligncenter" width="300"
+caption="Sabayon's Paketmanager Sulfur entschuldigt sich für einen
+Fehler"]&lt;a href="https://www.zoosau.de/images/sabayon_sulfur_entschuldigung.png"&gt;&lt;img alt="Sabayon's Paketmanager Sulfur entschuldigt sich für einen
+Fehler" src="{filename}images/sabayon_sulfur_entschuldigung-300x225.png" title="Sabayon's Paketmanager Sulfur entschuldigt sich für einen Fehler"&gt;{.size-medium
+.wp-image-1094 width="300"
+height="225"}&lt;/a&gt;[/caption]&lt;/p&gt;</content></entry></feed>

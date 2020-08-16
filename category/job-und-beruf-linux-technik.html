@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Job und Beruf, Linux, Technik - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="Job und Beruf, Linux, Technik" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+        <link href="https://www.zoosau.de/feeds/job-und-beruf-linux-technik.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog Job und Beruf, Linux, Technik ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Marc Richter's Weblog Categories">Categories</a></li>
+        <li class="active">Job und Beruf, Linux, Technik</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/wiederherstellen-von-mysql-zugaengen.html">Wiederherstellen von MySQL Zugängen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-03-13T14:25:00+01:00"> So 13 März 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		311
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+        /
+	<a href="https://www.zoosau.de/tag/passwort.html">passwort</a>
+        /
+	<a href="https://www.zoosau.de/tag/passwort-zurucksetzen.html">passwort zurücksetzen</a>
+        /
+	<a href="https://www.zoosau.de/tag/reset-password.html">reset password</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Es folgt ein recht alter Hut. Mir ist nur gerade mal aufgefallen, das
+ich den folgenden Weg MySQL Zugänge anzulegen, wenn man die Zugangsdaten
+eines MySQL Servers vergessen oder versehentlich gelöscht hat, noch nie
+hier niedergeschrieben habe.</p>
+<p>Es geht im großenn und ganzen darum, das man zunächst den MySQL Daemon
+beendet, ohne Zugangstabellen zu laden wieder startet, den gewünschten
+Zugang anlegt und nach einem Neustart des Daemons, dieses Mal mit
+Zugangstabellen, diesen User dann für die weiteren Schritte verwenden
+kann.</p>
+<p>Zunächst ein kurzer Sicherheitshinweis: Für die folgenden Schritte
+empfiehlt es sich den MySQL Daemon nur von localhost/127.0.0.1
+erreichbar zu machen, da für einen kurzen Zeitraum jedermann ohne
+Passwort administrativ auf den Server connecten kann. Um ganz sicher zu
+gehen, kann man auch noch einen anderen Port wählen um lokalen
+Schabernack zu unterbinden.</p>
+<p>Das Vorgehen ist wie folgt:</p>
+<ol>
+<li>Beenden des MySQL Daemons</li>
+<li>Starten des MySQL Daemons ohne Zugriffstabellen:<br>
+   ﻿<strong><em>mysqld_safe --skip-grant-tables &amp;</em></strong></li>
+<li>Nun kann sich root ohne Passwort in die Datenbank "mysql"
+    einloggen:<br>
+<strong><em>mysql -uroot mysql</em></strong></li>
+<li>Passwort neu setzen:<br>
+<strong><em>UPDATE user SET password=PASSWORD("abcd") WHERE user="root";<br>
+</em></strong>Das neue Passwort wäre nun "abcd". Es kann natürlich gesetzt
+    werden wie immer es sein soll.</li>
+<li>(Optional) Zugriffsrechte neu einlesen:<br>
+<strong><em>FLUSH PRIVILEGES;</em></strong></li>
+<li>Da man sich immernoch ohne Passwort einloggen kann, sind alle mysql
+    Prozesse zu beenden; <strong>notfalls</strong> zu killen (nur, wenn das init
+    Script es per "stop" nicht schafft alles was MySQL ist zu beenden).
+    Besonders gilt das für die <strong>mysql_safe</strong> Instanz (prüfen ob noch
+    was läuft per "<strong><em>ps waux | grep -i mysql</em></strong>").</li>
+<li>Abschliessend MySQL wieder ganz normal starten.</li>
+</ol>
+<p>Man hat so das Passwort des Users "root" wieder auf den in Punkt 4
+verwendeten Wert gesetzt. Da dieses ja _der_ administrative User ist,
+können alle weiteren Korrekturen im ganz normalen, sicherem MySQL
+Kontext behoben werden.<br>
+Wenn man einen anderen User als "root" für seine administrativen
+Arbeiten verwendet, muss man selbstverständlich diesen in Punkt 3 und 4
+statt "root" verwenden.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Wiederherstellen%20von%20MySQL%20Zug%C3%A4ngen&url=https%3A//www.zoosau.de/wiederherstellen-von-mysql-zugaengen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Wiederherstellen%20von%20MySQL%20Zug%C3%A4ngen&amp;body=https%3A//www.zoosau.de/wiederherstellen-von-mysql-zugaengen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/mysql-fehler-ubuntu-cant-create-table-tmp-errno-1.html">MySQL Fehler unter Ubuntu "'Can't create table '/tmp/#sql7c49_2f_0' (errno: -1)' on query."</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-01-28T13:42:00+01:00"> Do 28 Januar 2010</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		248
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/cant-create-table-tmp.html">can't create table '/tmp/</a>
+        /
+	<a href="https://www.zoosau.de/tag/errno-1.html">errno: -1</a>
+        /
+	<a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+        /
+	<a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+        /
+	<a href="https://www.zoosau.de/tag/on-query.html">on query</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich hatte heute auf einem MySQL Slave Server den folgenden Fehler bei
+der Replikation von einem Master MySQL Server:</p>
+<blockquote>
+<p>mysql&gt; show slave status\G;<br>
+*************************** 1. row
+***************************<br>
+Slave_IO_State: Waiting for master to send event<br>
+Master_Host: www.xxx.yyy.zzz<br>
+Master_User: replication<br>
+Master_Port: 3306<br>
+Connect_Retry: 60<br>
+Master_Log_File: db.002174<br>
+Read_Master_Log_Pos: 342719703<br>
+Relay_Log_File: mysqld-relay-bin.000003<br>
+Relay_Log_Pos: 6458545<br>
+Relay_Master_Log_File: db.002170<br>
+Slave_IO_Running: Yes<br>
+Slave_SQL_Running: No<br>
+Replicate_Do_DB:<br>
+Replicate_Ignore_DB:<br>
+Replicate_Do_Table:<br>
+Replicate_Ignore_Table:<br>
+Replicate_Wild_Do_Table:<br>
+Replicate_Wild_Ignore_Table:<br>
+Last_Errno: 1005<br>
+<span style="color: #ff0000;"><strong>Last_Error: Error 'Can't create table
+'/tmp/#sql7c49_2f_0' (errno: -1)' on query. Default database:
+'live'. Query: 'create temporary table tmp_gen_table like
+tmp_to_gen_neu'</strong></span><br>
+Skip_Counter: 0<br>
+Exec_Master_Log_Pos: 620120976<br>
+Relay_Log_Space: 4109869668<br>
+Until_Condition: None<br>
+Until_Log_File:<br>
+Until_Log_Pos: 0<br>
+Master_SSL_Allowed: No<br>
+Master_SSL_CA_File:<br>
+Master_SSL_CA_Path:<br>
+Master_SSL_Cert:<br>
+Master_SSL_Cipher:<br>
+Master_SSL_Key:<br>
+Seconds_Behind_Master: NULL<br>
+1 row in set (0.09 sec)</p>
+</blockquote>
+<p>Ich musste recht lange suchen. Die o.g. Datei
+(<strong>/tmp/#sql7c49_2f_0.ibd</strong>) wurde zwar von mysql:mysql angelegt,
+jedoch war sie 0 byte groß. Im MySQL - Log fand ich nur den o.g. Fehler
+wieder. Also schaute ich im syslog und wurde fündig:</p>
+<blockquote>
+<p>Jan 28 12:55:22 db kernel: [495131.291630]
+audit(1264679722.493:141): type=1503 operation="file_lock"
+requested_mask="wk::" denied_mask="k::"
+name="/tmp/#sql7c49_2f_0.ibd" pid=7924 profile="/usr/sbin/mysqld"
+namespace="default"</p>
+</blockquote>
+<p>Das kenne ich inzwischen: Eine Zeile mit so komischen
+"<strong><em>requested_mask="wk::"</em></strong>" - Rechten kommt meistens, wenn eine
+Applikation an apparmor scheitert. Ich habe also der Datei
+<strong>/etc/apparmor.d/usr.sbin.mysqld</strong> die folgenden Zeilen hinzugefügt:</p>
+<blockquote>
+<p>/usr/sbin/mysqld {<br>
+...<br>
+/tmp/ r,<br>
+/tmp/** rwk,<br>
+}</p>
+</blockquote>
+<p>Schon geht's!<br>
+Ich fand es sehr überraschend, das das <strong>/tmp</strong> - Verzeichnis (in meinem
+Oldschool-Linux-Hinterkopf immer als das "jeder darf - Verzeichnis"
+abgelegt) ebenfalls einer eigenen Zeile in der apparmor-Konfiguration
+bedarf. Noch verwunderlicher finde ich, das dieses unter Ubuntu (8.04 -
+Hardy Heron) nicht standardmäßig dort aufgenommen wurde. Immerhin ist
+<strong>tmpdir=/tmp</strong> die Standardeinstellung unter dieser Ubuntu-Version.</p>
+<p><strong><br>
+</strong></p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=MySQL%20Fehler%20unter%20Ubuntu%20%22%27Can%27t%20create%20table%20%27/tmp/%23sql7c49_2f_0%27%20%28errno%3A%20-1%29%27%20on%20query.%22&url=https%3A//www.zoosau.de/mysql-fehler-ubuntu-cant-create-table-tmp-errno-1.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=MySQL%20Fehler%20unter%20Ubuntu%20%22%27Can%27t%20create%20table%20%27/tmp/%23sql7c49_2f_0%27%20%28errno%3A%20-1%29%27%20on%20query.%22&amp;body=https%3A//www.zoosau.de/mysql-fehler-ubuntu-cant-create-table-tmp-errno-1.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/usb-transfer-unter-suse-linux-suuuuper-langsam.html">USB Transfer unter Suse Linux suuuuper langsam ...</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-11-05T21:54:00+01:00"> Mi 05 November 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		393
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+        /
+	<a href="https://www.zoosau.de/tag/langsam.html">langsam</a>
+        /
+	<a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+        /
+	<a href="https://www.zoosau.de/tag/novell.html">novell</a>
+        /
+	<a href="https://www.zoosau.de/tag/suse.html">suse</a>
+        /
+	<a href="https://www.zoosau.de/tag/transfer.html">transfer</a>
+        /
+	<a href="https://www.zoosau.de/tag/usb.html">usb</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich hatte heute den Fall auf der Arbeit, das ich auf eine an einem
+unserer Suse Linux Server angeschlossene USB 2.0 Festplatte mehrere
+Gibibyte an Daten kopieren musste.</p>
+<p>Das dauerte .... und dauerte .... schliesslich fiel mir auf, das die
+Daten mit nur 160 KB/s kopiert wurden. Das kam mir komisch vor,
+schliesslich sollten die Datenraten von USB 2.0 doch deutlich höher
+liegen. In <a href="http://de.wikipedia.org/wiki/Universal_Serial_Bus#Datenraten" title="Datenraten von USB 2.0 - Wiki Artikel">diesem
+Wiki-Artikel</a>
+fand ich schliesslich heraus, das es (laut Spezifikation) 480 Mbit/s
+hätten sein sollen; also ca. 60 MebiByte pro Sekunde.<br>
+Das hat mich dann schon sehr gewundert, schliesslich ist das nur ca.
+1/384tel Bruchteil der Transferkapazität des Buses.</p>
+<p>Eine erste Recherche heute auf der Arbeit förderte <a href="http://www.linuxquestions.org/questions/linux-hardware-18/usb-2.0-slow-write-but-fast-read-solution-yet-500937/" title="Foreneintrag auf www.linuxquestions.org">diesen
+Foreneintrag</a>
+von Dezember 2007 zu Tage, in dem der Hinweis gegeben wird, das dieses
+Problem verschwindet, wenn die mount-Option "sync" weggelassen wird. Als
+ich es ebenfalls probiert habe ohne "sync" zu mounten, war es auch
+schlagartig schneller.</p>
+<p>Inzwischen habe ich etwas genauer nachrecherchiert:<br>
+Bei dem ganzen handelt es sich um einen zumindest bei Novell (Suse)
+bekannten Bug (siehe <a href="https://bugzilla.novell.com/show_bug.cgi?id=105871" title="Novel Bugzilla Database Bug #105871">Novell Bugzilla Database
+#105871</a>).
+Ob er nun nur bei Suse Linux auftritt oder ob es ein genereller Linux
+Bug ist, das weiss ich nicht. Und ehrlich gesagt bin ich jetzt auch zu
+faul den ganzen Bug zu lesen. Wer mag, kann das gerne nachholen.</p>
+<p>Unter'm Strich bleibt zumindest für Suse Linux in der Version 10.x
+folgende Lösung: USB Laufwerke nicht mit der mountoption "sync"
+mounten!<br>
+(Ob andere Suse Linux Versionen oder gar andere Distributionen betroffen
+sind weiss ich nicht; einfach ausprobieren!).</p>
+<p>Für per "subfs" gemountete Dateisysteme gibt es einen weiterführenden
+Workarround um sicher zu stellen, das diese Dateisysteme <span
+style="text-decoration: underline;">nicht</span> mit "sync" gemounted
+werden:</p>
+<ol>
+<li>mkdir -p /usr/share/hal/fdi/policy/95userpolicy</li>
+<li>Eine Datei namens "nosync.fdi" darin erzeugen (<em>vi
+    /usr/share/hal/fdi/policy/95userpolicy/nosync.fdi</em>) und darin
+    folgenden Inhalt anlegen:<br>
+   &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+   &lt;deviceinfo version="0.2"&gt;<br>
+   &lt;device&gt;<br>
+   &lt;!-- disable sync for mount --&gt;<br>
+   &lt;match key="block.is_volume" bool="true"&gt;<br>
+   &lt;match key="volume.fsusage" string="filesystem"&gt;<br>
+   &lt;match key="volume.uuid" string="==UUID=="&gt;<br>
+   &lt;merge key="volume.policy.mount_option.sync"<br>
+   type="bool"&gt;false&lt;/merge&gt;<br>
+   &lt;/match&gt;<br>
+   &lt;/match&gt;<br>
+   &lt;/match&gt;<br>
+   &lt;/device&gt;<br>
+   &lt;/deviceinfo&gt;</li>
+<li>Ausführen von "<em>lshal</em>". Die Passage im unter Punkt 2. aufgeführten
+    Text die hier temporär mit "==UUID==" befüllt ist, mit der Ausgabe
+    dieses Befehls ersetzen.</li>
+<li>HAL Daemon neu starten (<em>rhal restart</em>)</li>
+</ol>
+<p>Ich hoffe dieses hilft einigen von Euch :)</p>
+<p>Wie immer würde ich mich freuen, wenn ihr einen kurzen Kommentar
+eintragen würdet!</p>
+<p>Achja, wie immer der Hinweis: Wer sich über diese "merkwürdigen"
+Bezeichnungen wie "MebiByte", GibiByte", etc. wundert, dem sein <a href="http://www.zoosau.de/technik/die-zoosau-und-binarprafixe" title="Artikel zum Thema &quot;Binärpräfixe&quot; auf http://www.zoosau.de">mein
+Artikel über
+Binärpräfixe</a>
+als Lektüre ans Herz gelegt :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=USB%20Transfer%20unter%20Suse%20Linux%20suuuuper%20langsam%20...&url=https%3A//www.zoosau.de/usb-transfer-unter-suse-linux-suuuuper-langsam.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=USB%20Transfer%20unter%20Suse%20Linux%20suuuuper%20langsam%20...&amp;body=https%3A//www.zoosau.de/usb-transfer-unter-suse-linux-suuuuper-langsam.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/gesucht-wird-fastlogres.html">Gesucht wird: fastlogres</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-09-04T10:48:00+02:00"> Do 04 September 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		287
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+        /
+	<a href="https://www.zoosau.de/tag/dns.html">dns</a>
+        /
+	<a href="https://www.zoosau.de/tag/fastlogres.html">fastlogres</a>
+        /
+	<a href="https://www.zoosau.de/tag/log.html">log</a>
+        /
+	<a href="https://www.zoosau.de/tag/resolve.html">resolve</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Sowas habe ich echt noch nicht erlebt:</p>
+<p>Auf unserem Server für Webseiten-Statistiken liegt ein Programm namens
+"fastlogres" im Ordner /usr/bin . Es handelt sich dabei um ein SUSE
+Linux System. Ein "rpm -qal | grep fastlogres" zeigt mir, das das
+Programm aus keinem RPM Paket stammt.<br>
+Normalerweise legen wir selbst kompilierte Sourcen in einem bestimmten
+Unterverzeichnis ab, für genau so einen Fall. Jedoch ist das in diesem
+Fall nicht passiert.</p>
+<p>Eine Suchmaschienen-Recherche bringt mir leider keinen Erfolg. In keiner
+einzigen (!) Suchmaschiene finde ich etwas, das auf dieses Programm
+hinweist.</p>
+<p>Es gibt leider keinen Switch bei dem Programm und keine Manpage, in der
+eine URL steht. Es gibt lediglich den switch -v zur Ausgabe der Version.
+Und diese Ausgabe lautet lediglich:</p>
+<blockquote>
+<p><em>fastlogres 0.2.0</em></p>
+</blockquote>
+<p>Das Programm löst IPs aus Apache Logfiles zu DNS Namen auf. Dieses tut
+es deutlich schneller als es der in AWstats eingebaute DNS Resolve
+Mechanismus tut. Ein Referenzlogfile eines Monats von einer unserer
+Seiten wird von AWstats in 57 minuten und 39 Sekunden ausgewertet. Dem
+gegenüber steht fastlogres mit nur 25 minuten und 53 Sekunden; also mehr
+als doppelt so schnell!</p>
+<p>Genau das ist mein Ziel: Diesen Flaschenhals etwas zu "dehnen".</p>
+<p>Bevor ich dieses Programm gefunden habe, bin ich auf "adnslogres", als
+Teil der <a href="http://www.chiark.greenend.org.uk/~ian/adns/" title="GNU adns">GNU adns
+Bibliothek</a>
+aufmerksam geworden. Diese benötigt für dasselbe Logfile</p>
+<p>Daher: Bis jetzt ist fastlogres mit abstand das schnellste Programm!</p>
+<p>Nur finde ich es nirgendwo im Netz :(<br>
+Es kann doch nicht sein, das auf unserem Server ein Programm läuft und
+derart super funktioniert, ohne das man im Internet auch nur einen
+Hinweis darauf findet.</p>
+<p>Wenn jemand dieses Tool kennt, wäre ich höchst dankbar, wenn er mir hier
+einen Hinweis geben könnte.</p>
+<p>Auch Alternativen, die die beschriebene Aufgabe erfüllen können, sind
+sehr gerne gesehen! :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Gesucht%20wird%3A%20fastlogres&url=https%3A//www.zoosau.de/gesucht-wird-fastlogres.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Gesucht%20wird%3A%20fastlogres&amp;body=https%3A//www.zoosau.de/gesucht-wird-fastlogres.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/mod_auth_mysql-fur-apache22x-kompilieren.html">mod_auth_mysql für apache2.2.x kompilieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-05-19T15:26:00+02:00"> Mo 19 Mai 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		726
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/apache2.html">apache2</a>
+        /
+	<a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+        /
+	<a href="https://www.zoosau.de/tag/mod_auth_mysql.html">mod_auth_mysql</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Mal wieder: Wir brauchen
+<a href="http://sourceforge.net/projects/modauthmysql/" title="Projektseite von mod_auth_mysql">mod_auth_mysql</a>
+, haben den apache2.2.8 auf dem Server laufen, und kriegen diesen tollen
+Fehler:</p>
+<p># /server/service/www/apache2/bin/apxs -c -L/usr/lib/mysql
+-I/usr/include/mysql -lmysqlclient -lm -lz mod_auth_mysql.c<br>
+/server/service/www/apache2/build/libtool --silent --mode=compile gcc
+-prefer-pic -DLINUX=2 -D_REENTRANT -D_GNU_SOURCE -g -O2 -pthread
+-I/server/service/www/apache2/include
+-I/server/service/www/apache2/include
+-I/server/service/www/apache2/include -I/usr/include/mysql -c -o
+mod_auth_mysql.lo mod_auth_mysql.c &amp;&amp; touch mod_auth_mysql.slo<br>
+mod_auth_mysql.c:591: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:591: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:591: error: initializer element is not constant<br>
+mod_auth_mysql.c:591: error: (near initialization for
+‘mysql_auth_cmds[0].cmd_data’)<br>
+mod_auth_mysql.c:595: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:595: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:595: error: initializer element is not constant<br>
+mod_auth_mysql.c:595: error: (near initialization for
+‘mysql_auth_cmds[1].cmd_data’)<br>
+mod_auth_mysql.c:599: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:599: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:599: error: initializer element is not constant<br>
+mod_auth_mysql.c:599: error: (near initialization for
+‘mysql_auth_cmds[2].cmd_data’)<br>
+mod_auth_mysql.c:603: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:603: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:603: error: initializer element is not constant<br>
+mod_auth_mysql.c:603: error: (near initialization for
+‘mysql_auth_cmds[3].cmd_data’)<br>
+mod_auth_mysql.c:607: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:607: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:607: error: initializer element is not constant<br>
+mod_auth_mysql.c:607: error: (near initialization for
+‘mysql_auth_cmds[4].cmd_data’)<br>
+mod_auth_mysql.c:611: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:611: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:611: error: initializer element is not constant<br>
+mod_auth_mysql.c:611: error: (near initialization for
+‘mysql_auth_cmds[5].cmd_data’)<br>
+mod_auth_mysql.c:615: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:615: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:615: error: initializer element is not constant<br>
+mod_auth_mysql.c:615: error: (near initialization for
+‘mysql_auth_cmds[6].cmd_data’)<br>
+mod_auth_mysql.c:619: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:619: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:619: error: initializer element is not constant<br>
+mod_auth_mysql.c:619: error: (near initialization for
+‘mysql_auth_cmds[7].cmd_data’)<br>
+mod_auth_mysql.c:623: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:623: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:623: error: initializer element is not constant<br>
+mod_auth_mysql.c:623: error: (near initialization for
+‘mysql_auth_cmds[8].cmd_data’)<br>
+mod_auth_mysql.c:627: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:627: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:627: error: initializer element is not constant<br>
+mod_auth_mysql.c:627: error: (near initialization for
+‘mysql_auth_cmds[9].cmd_data’)<br>
+mod_auth_mysql.c:631: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:631: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:631: error: initializer element is not constant<br>
+mod_auth_mysql.c:631: error: (near initialization for
+‘mysql_auth_cmds[10].cmd_data’)<br>
+mod_auth_mysql.c:635: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:635: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:635: error: initializer element is not constant<br>
+mod_auth_mysql.c:635: error: (near initialization for
+‘mysql_auth_cmds[11].cmd_data’)<br>
+mod_auth_mysql.c:639: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:639: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:639: error: initializer element is not constant<br>
+mod_auth_mysql.c:639: error: (near initialization for
+‘mysql_auth_cmds[12].cmd_data’)<br>
+mod_auth_mysql.c:643: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:643: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:643: error: initializer element is not constant<br>
+mod_auth_mysql.c:643: error: (near initialization for
+‘mysql_auth_cmds[13].cmd_data’)<br>
+mod_auth_mysql.c:651: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:651: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:651: error: initializer element is not constant<br>
+mod_auth_mysql.c:651: error: (near initialization for
+‘mysql_auth_cmds[14].cmd_data’)<br>
+mod_auth_mysql.c:655: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:655: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:655: error: initializer element is not constant<br>
+mod_auth_mysql.c:655: error: (near initialization for
+‘mysql_auth_cmds[15].cmd_data’)<br>
+mod_auth_mysql.c:659: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:659: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:659: error: initializer element is not constant<br>
+mod_auth_mysql.c:659: error: (near initialization for
+‘mysql_auth_cmds[16].cmd_data’)<br>
+mod_auth_mysql.c:663: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:663: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:663: error: initializer element is not constant<br>
+mod_auth_mysql.c:663: error: (near initialization for
+‘mysql_auth_cmds[17].cmd_data’)<br>
+mod_auth_mysql.c:667: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:667: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:667: error: initializer element is not constant<br>
+mod_auth_mysql.c:667: error: (near initialization for
+‘mysql_auth_cmds[18].cmd_data’)<br>
+mod_auth_mysql.c:671: error: expected expression before
+‘mysql_auth_config_rec’<br>
+mod_auth_mysql.c:671: warning: cast to pointer from integer of
+different size<br>
+mod_auth_mysql.c:671: error: initializer element is not constant<br>
+mod_auth_mysql.c:671: error: (near initialization for
+‘mysql_auth_cmds[19].cmd_data’)<br>
+mod_auth_mysql.c: In function ‘format_request’:<br>
+mod_auth_mysql.c:947: warning: pointer/integer type mismatch in
+conditional expression<br>
+apxs:Error: Command failed with rc=65536</p>
+<p>Woran liegt's? Zunächst: Keine Ahnung.</p>
+<p>Irgendwann findet man aber raus, das man <a href="{filename}images/mod_auth_mysql-300-apache-22.patch" title="mod_auth_mysql Patch für Apache2.2.x">diesen
+Patch</a>
+anwenden muss. Dann geht's problemlos.</p>
+<p>Das geht wie folgt:</p>
+<ol>
+<li>Am besten das mod_auth_mysql - Quellenverzeichnis nochmal löschen
+    und das TAR neu entpacken.</li>
+<li>Wechsel in das Quellenverzeichnis <em>mod_auth_mysql-3.0.0.</em></li>
+<li>Ausführen von "<strong>patch &lt;
+    ../mod_auth_mysql-3.0.0-apache-2.2.patch</strong>" (ich gehe davon aus,
+    das der Patch ein Verzeichnis höher liegt; sonst bitte
+    entsprechend anpassen).</li>
+</ol>
+<p>Das sollte es gewesen sein. Als Resultat bekommt man:</p>
+<p><strong><em>patching file mod_auth_mysql.c</em></strong></p>
+<p>Anschließend sollte sich das Modul wie beschrieben per <strong>apxs</strong>
+kompilieren lassen.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=mod_auth_mysql%20f%C3%BCr%20apache2.2.x%20kompilieren&url=https%3A//www.zoosau.de/mod_auth_mysql-fur-apache22x-kompilieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=mod_auth_mysql%20f%C3%BCr%20apache2.2.x%20kompilieren&amp;body=https%3A//www.zoosau.de/mod_auth_mysql-fur-apache22x-kompilieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/mod_auth_mysql-problem-bei-migration-von-apache1-zu-apache2.html">mod_auth_mysql Problem bei Migration von apache1 zu apache2</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-04-02T11:57:00+02:00"> Mi 02 April 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		236
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/9.html">(9)</a>
+        /
+	<a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+        /
+	<a href="https://www.zoosau.de/tag/apache1.html">apache1</a>
+        /
+	<a href="https://www.zoosau.de/tag/apache2.html">apache2</a>
+        /
+	<a href="https://www.zoosau.de/tag/bad-file-descriptor.html">bad file descriptor</a>
+        /
+	<a href="https://www.zoosau.de/tag/could-not-open-password-file.html">could not open password file</a>
+        /
+	<a href="https://www.zoosau.de/tag/migration.html">migration</a>
+        /
+	<a href="https://www.zoosau.de/tag/mod_auth_mysql.html">mod_auth_mysql</a>
+        /
+	<a href="https://www.zoosau.de/tag/webserver.html">Webserver</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Neeeee - was ärgert mich sowas:</p>
+<p>Ich bin seit 2 Stunden dran um einen Fehler bei der mod_auth_mysql
+Authentifikation des Apache2 Webservers zu finden, und die einzige
+Webresource in der ich fündig werde (nach 2 Stunden, wohlgemerkt) ist
+ein <a href="http://blog.techfusion.it/2007/06/04/libapache2-mod-auth-9bad-file-descriptor-could-not-open-password-file-null/" title="Link direkt zum Beitrag des basagten Blogs">italienisches
+Privatblog</a>.</p>
+<p>Ich hatte das Problem, das nach der Umstellung nur noch folgender Fehler
+in Logfile geschrieben wurde:</p>
+<p><strong><em>(9)Bad file descriptor: Could not open password file: (null)</em></strong></p>
+<p>Mich hatte es zwar schon stutzig gemacht, das da etwas von einer
+Passwort <strong>Datei</strong> stand, aber kapiert habe ich es soweit erstmal nicht,
+da ich nicht wusste ob die MySQL Tabelle evtl. aus Sicht des Servers
+tatsächlich eine Art "Passwortdatei" ist.</p>
+<p>Auf jeden Fall lag es letzten endes daran, das Apache2 authz_user
+standardmäßig aktiviert, was der Apache1 nicht tut. Also erwartet er
+auch die Übergabe einer Passwortdatei. Diese war nicht definiert, also
+spuckt er die obige Fehlermeldung aus.</p>
+<p>Behoben werden kann es ganz einfach, indem in der Apache2 Server-Config
+(httpd.conf, .htaccess, etc.) die folgende Einstellung gesetzt wird:</p>
+<p><strong>AuthBasicAuthoritative Off</strong></p>
+<p>Das war's! :)</p>
+<p>(01.09.2008)<br>
+<strong>PS:</strong></p>
+<p>Nach der oben beschriebenen Methode kann man sich zwar wieder über
+niedriger priorisierte Authentifikationsmodule wie z.B. mod_auth_mysql
+anmelden, es erscheint im error-log jedoch nach wie vor die Meldung</p>
+<blockquote>
+<p><strong><em>(9)Bad file descriptor: Could not open * file: (null)</em></strong></p>
+</blockquote>
+<p>Dieses kann man beheben, indem man zusätzlich zu
+"<strong>AuthBasicAuthoritative Off"</strong> die folgenden zwei Einstellungen setzt:</p>
+<blockquote>
+<p><strong>AuthUserFile /dev/null<br>
+AuthGroupFile /dev/null</strong></p>
+</blockquote>
+<p>War mir irgendwie erst heute aufgefallen, das das nach wie vor
+geschrieben wird ... \~:)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=mod_auth_mysql%20Problem%20bei%20Migration%20von%20apache1%20zu%20apache2&url=https%3A//www.zoosau.de/mod_auth_mysql-problem-bei-migration-von-apache1-zu-apache2.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=mod_auth_mysql%20Problem%20bei%20Migration%20von%20apache1%20zu%20apache2&amp;body=https%3A//www.zoosau.de/mod_auth_mysql-problem-bei-migration-von-apache1-zu-apache2.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/wie-man-unter-linux-einen-samba-server-zum-domanenmitglied-macht.html">Wie man unter Linux einen Samba Server zum Domänenmitglied macht</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-01-11T15:37:00+01:00"> Fr 11 Januar 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html">Job und Beruf, Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		959
+
+		<span class="label label-default">Read time</span>
+		4 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/dateifreigabe.html">dateifreigabe</a>
+        /
+	<a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+        /
+	<a href="https://www.zoosau.de/tag/pdc.html">pdc</a>
+        /
+	<a href="https://www.zoosau.de/tag/samba.html">samba</a>
+        /
+	<a href="https://www.zoosau.de/tag/smb.html">smb</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe nun fast einen monat herumprobiert, ehe ich aufgegeben habe und
+alle Samba Datenbanken wieder gelöscht habe um von vorne anfangen zu
+können. Was immer ich beim ersten Durchlauf falsch gemacht habe: Nun
+habe ich diesen Schritt offenbar weggelassen :)</p>
+<p>Damit auch andere von meinen Erfahrungen profitieren können, schreibe
+ich mein Vorgehen hier auf:</p>
+<p>Eine kurze Übersicht über die Namen der Rechner und der User vorweg:</p>
+<ul>
+<li>linhir: Domänenmitgliedsserver, der User die sich verbinden wollen
+    am PDC anfragen soll</li>
+<li>mrdomtest: User, der auf einefreigegebene Ressource auf linhir
+    zugreifen können soll</li>
+<li>mordor: Der NetBIOS Name des PDC</li>
+<li>MFC: Name der Testdomäne</li>
+</ul>
+<p>Ich bin dabei nach der <a href="http://us4.samba.org/samba/docs/man/Samba-HOWTO-Collection/domain-member.html" title="Offizielle Dokumentation der Samba Foundation, Chapter 6. Domain Membership">offiziellen Dokumentation der Samba
+Foundation</a>
+vorgegangen. Jedoch habe ich vorher ein paar weitere Schritte gemacht um
+sicher zu stellen, das mir kein Fehlerhafter Datenbankeintrag den Erfolg
+verwehrt:</p>
+<ol>
+<li>Samba Server auf dem Mitgliedsserver beendet (Daemons smb,
+    nmb, winbind)</li>
+<li>Alle Dateien die dem Schema *.tdb entsprechen im Verzeichnis
+    /etc/samba/ und /var/lib/samba/, sowie in deren
+    Unterverzeichnissen, gelöscht.</li>
+<li>Den Useraccount linhir\$ auf dem PDC aus der Unix
+    Benutzerdatenbank (passwd/shadow/group) entfernt (<strong><em>userdel -r
+    linhir\$</em></strong>)</li>
+<li>Maschienenaccount von linhir (<strong><em>linhir\$</em></strong>) aus der Samba
+    Nutzerdatenbank des PDCs entfernt (<strong><em>pdbedit -x -u linhir\$</em></strong>)</li>
+</ol>
+<p>Nun sollte alles wieder auf Ausgangsposition sein.Hier meine smb.conf
+des Domänenmitgliedservers linhir:</p>
+<p><strong>[global]<br>
+workgroup = mfc<br>
+security = domain<br>
+password server = mordor</strong></p>
+<p><strong>netbios name = linhir<br>
+server string = MFC Fileserver (%h) running Samba version %v</strong></p>
+<p><strong>passdb backend = tdbsam<br>
+unix extensions = no<br>
+encrypt passwords = yes<br>
+wins server = mordor<br>
+name resolve order = wins lmhosts host bcast</strong></p>
+<p><strong>log file = /server/logs/smb/samba/%m.log</strong></p>
+<p><strong>[jukebox]<br>
+comment = jukebox<br>
+path = /server/data/samba/jukebox<br>
+valid users = MFC\mrdomtest<br>
+create mask = 0664<br>
+directory mask = 0775<br>
+browseable = yes<br>
+read only = no</strong></p>
+<p>So, wenn ich nichts vergessen habe ist das System nun wieder "nackt".</p>
+<p>Der Vollständigkeit halber hier auch nochmal meine PDC Konfiguration
+(<strong>mordor</strong>)</p>
+<p><strong>[global]<br>
+workgroup = mfc<br>
+netbios name = mordor<br>
+server string = MFC PDC (%h) running Samba version %v</strong></p>
+<p><strong>logon script = netlogon.cmd<br>
+logon path = \\%h\profiles\%U\%a.msprofile<br>
+logon home = \\%h\%u<br>
+logon drive = Z:<br>
+domain logons = Yes<br>
+os level = 190<br>
+preferred master = Yes<br>
+domain master = Yes<br>
+local master = Yes<br>
+wins support = Yes<br>
+passdb backend = tdbsam<br>
+unix extensions = no</strong></p>
+<p><strong>security = user</strong></p>
+<p><strong>encrypt passwords = yes</strong></p>
+<p><strong>name resolve order = lmhosts host wins bcast</strong></p>
+<p><strong>time server = Yes<br>
+log file = /server/logs/smb/samba/%m.log<br>
+log level = 1</strong></p>
+<p><strong>add user script = /usr/sbin/useradd -c "Samba Useraccount (auto - add
+user script)" -g samba -s /bin/false "%u"<br>
+add machine script = /usr/sbin/useradd -c "Samba Maschinenenaccount
+(auto - add machine script)" -g machines -s /bin/false "%u"</strong></p>
+<p><strong>delete user script = /usr/sbin/userdel "%u"<br>
+add group script = /usr/sbin/groupadd "%g"<br>
+delete group script = /usr/sbin/groupdel "%g"<br>
+add user to group script = /usr/sbin/groupmod -A "%u" "%g"<br>
+delete user from group script = /usr/sbin/groupmod -R "%u" "%g"<br>
+set primary group script = /usr/sbin/usermod -g "%g" "%u"</strong></p>
+<p><strong>[homes]<br>
+comment = Home Directory von %u<br>
+valid users = %S, %D%w%S<br>
+browseable = No<br>
+read only = No<br>
+inherit acls = Yes</strong></p>
+<p><strong>[netlogon]<br>
+path = /server/service/smb/samba/netlogon/<br>
+read only = yes<br>
+browseable = no</strong></p>
+<p><strong>[profiles]<br>
+comment = Network Profiles Service<br>
+path = /server/data/smb/samba/ntprofile/<br>
+read only = no<br>
+browseable = no<br>
+create mask = 0660<br>
+directory mask = 0770</strong></p>
+<p>Ab hier folge ich also der o.g. Doku der <a href="http://www.samba.org" title="Homepage der Samba Foundation">Samba
+Foundation</a>.</p>
+<p>Wie ihr anhand der "<strong><em>add user|machine script</em></strong>"e sehen könnt,
+verwende ich die Methode "On-the-Fly Creation of Machine Trust
+Accounts", wie sie in der Doku genannt wird.</p>
+<p>Weiter steht darin in kürze, das man auf dem Domänenmitgliedsserver nur
+folgende Werte ändern braucht:</p>
+<p><strong>security = domain<br>
+workgroup = %DOMAINNAME<br>
+password server = %PDC_NETBIOS_NAME</strong></p>
+<p>Ich setze "<strong><em>password server = mordor</em></strong>", um den Wildcard - zweifel zu
+beseitigen (Ob der Server das richtig auflösen kann, etc).</p>
+<p>Ich starte nun Samba (<strong><em>smb und nmb</em></strong>) auf <strong><em>linhir</em></strong>.</p>
+<p>Die *.tdb Datenbankdateien wurden wieder angelegt, was richtig ist.</p>
+<p>Die Doku fährt nun wie folgt fort:</p>
+<p><strong>net rpc join -S DOMPDC -UAdministrator%password</strong></p>
+<p>Auf meine Domäne umgeschlagen entspricht das:</p>
+<p><strong>net rpc join -S mordor -U root</strong></p>
+<p>Also gebe ich folgendes auf der Shell ein und erhalte folgende Ausgabe:</p>
+<p><strong>linhir:/etc/samba # net rpc join -S mordor -U root<br>
+Password:<br>
+Joined domain MFC.<br>
+linhir:/etc/samba #</strong></p>
+<p>Hat also alles geklappt.<br>
+Der User wurde auf mordor auch gescheit in die passwd, samba Datenbank,
+usw eingetragen.</p>
+<p>Nächstes laut Doku: Samba Daemon<strong>s</strong> neu starten. OK, also auf linhir
+<strong>UND</strong> mordor <strong>nmb und smb</strong> neu starten.</p>
+<p>Done :)</p>
+<p>Nun folgt auch der Hinweis weswegen ich der Meinung bin ich brauche
+einen Winbind daemon:</p>
+<p><strong><em>Please refer to <a href="http://us4.samba.org/samba/docs/man/Samba-HOWTO-Collection/winbind.html" title="Samba Foundation Dokumentation, Winbind: Use of Domain Accounts">Winbind: Use of Domain
+Accounts</a>,
+for information on a system to automatically assign UNIX UIDs and GIDs
+to Windows NT domain users and groups.</em></strong></p>
+<p>Aber OK - bleiben wir zunächst bei der Handarbeit.<br>
+Zumal der Punkt "Sharing User ID Mappings between Samba Domain Members"
+mal wieder nur eine Methode per LDAP berücksichtigt..</p>
+<p>Das wär's dann auch. Mehr ist laut diesem hochoffiziellen Guide nicht zu
+tun.<br>
+Ausser dieses hier:</p>
+<p><strong><em>Currently, domain security in Samba does not free you from having to
+create local UNIX users to represent the users attaching to your server.
+This means that if domain user DOM\fred attaches to your domain
+security Samba server, there needs to be a local UNIX user fred to
+represent that user in the UNIX file system.</em></strong></p>
+<p>Mein Testuser heisst "<strong>mrdomtest</strong>". Das sich dieser User am PDC
+authentifizieren kann, teste ich zunächst indem ich einen zur selben
+Domäne hinzugefügten Windows XP Professional Rechner nehme und mich dort
+als "<strong>mrdomtest</strong>" anmelde ... Klappt!</p>
+<p>Jetzt ändere ich den Punkt "<strong><em>valid users</em></strong>" des shares
+"<strong><em>jukebox</em></strong>" auf <strong>linhir</strong> wie im Howto als Beispiel für fred
+angegeben: <strong><em>MFC\mrdomtest</em></strong> .</p>
+<p>Damit Samba auch auf den gleich heissenden Unix User im Filesystem
+referieren kann, checke ich ab das es auch diesen gibt, sowie das es
+keinen solchen in der Samba Datenbank gibt:</p>
+<p><strong>linhir:/etc/samba # grep mrdomtest /etc/passwd<br>
+mrdomtest:x:9031:100::/home/mrdomtest:/bin/false<br>
+linhir:/etc/samba # pdbedit -L<br>
+linhir:/etc/samba #</strong></p>
+<p>Nun teste ich mich mit dem Windows XP Domänenrechner mit eingeloggedem
+User <strong>mrdomtest</strong> auf das Share "<strong>jukebox</strong>" des Servers "<strong>linhir</strong>"
+zu verbinden: Klappt!</p>
+<p>Der User "<strong>mrdomtest</strong>" ist laut Ausgabe des Befehls "<strong><em>pdbedit -L</em></strong>"
+auf <strong>linhir</strong> nach wie vor nicht in der Samba Userdatenbank zu finden.
+Also hat alles funktioniert :)</p>
+<p>Ich hoffe dieser Beitrag ist dem einen oder anderem eine kleine Hilfe.</p>
+<p>Ich freue mich stets über Feedback :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Wie%20man%20unter%20Linux%20einen%20Samba%20Server%20zum%20Dom%C3%A4nenmitglied%20macht&url=https%3A//www.zoosau.de/wie-man-unter-linux-einen-samba-server-zum-domanenmitglied-macht.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Wie%20man%20unter%20Linux%20einen%20Samba%20Server%20zum%20Dom%C3%A4nenmitglied%20macht&amp;body=https%3A//www.zoosau.de/wie-man-unter-linux-einen-samba-server-zum-domanenmitglied-macht.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2008 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2011 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

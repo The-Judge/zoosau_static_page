@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+<link rel="canonical" href="https://www.zoosau.de">
+        <meta name="author" content="Marc Richter" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+            <article>
+                <h2><a href="https://www.zoosau.de/einschalten-eines-korrekten-seitenverhaltnisses-fur-bilder-in-wordpress.html">Einschalten eines korrekten Seitenverhältnisses für Bilder in WordPress</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-12-06T00:15:00+01:00"> So 06 Dezember 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/homepage-technik.html">Homepage, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		248
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/aspect-ratio.html">aspect ratio</a>
+        /
+	<a href="https://www.zoosau.de/tag/seitenverhalltnis.html">seitenverhälltnis</a>
+        /
+	<a href="https://www.zoosau.de/tag/seitenverhaltnis.html">seitenverhältnis</a>
+        /
+	<a href="https://www.zoosau.de/tag/thumbnails.html">thumbnails</a>
+        /
+	<a href="https://www.zoosau.de/tag/vorschaubilder.html">vorschaubilder</a>
+        /
+	<a href="https://www.zoosau.de/tag/wordpress.html">Wordpress</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Mich hat es immer schon gestört, das WordPress die Thumbnails
+(Vorschaubilder) für Bilder aus der Mediathek immer quadratisch erzeugt,
+völlig unabhängig vom Seitenverhältnis der hochgeladenen Grafik. Das
+sieht dann immer in etwa so aus:</p>
+<p><img alt="Beauty and the Beast Tour 2009" src="https://www.zoosau.de/images/beauty_and_the_beast_tour_2009.jpg" title="Beispiel für abgeschnittene Seiten beim proportionalem Seitenverhältnis: Banner der 'Beauty and the Beast Tour 2009'"></p>
+<p>Wenn ihr auf das Bild klickt, öffnet es sich in groß und mit einem
+rechteckigen Seitenverhältnis. Das Vorschaubild ist jedoch an den Seiten
+abgeschnitten mit den Maßen 150x150 Pixeln.</p>
+<p>Das finde ich sehr ärgerlich!<br>
+Doch jetzt habe ich endlich herausgefunden, wie man das ändert! :D</p>
+<ol>
+<li>Klickt im WordPress Backend auf <strong>Einstellungen</strong> (bzw.
+    <strong>Settings</strong>, wenn ihr ein englisches Backend habt).</li>
+<li>Dort öffnet sich dann eine Liste mit WordPress-internen
+    Standardmenüpunkten, sowie weiterer Menüpunkte, die ggf. durch
+    installierte Plugins dort eingefügt wurden. Klickt dann auf
+    <strong>Mediathek</strong> (<strong>media settings</strong> im englischen).</li>
+<li>Hier findet ihr nun eine Selectbox mit der Beschriftung <strong>Beschneide
+    die Thumbnails in die richtige Größe (Thumbnails sind
+    normalerweise proportional)</strong> (bzw. <strong>Crop thumbnail to exact
+    dimensions (normally thumbnails are proportional)</strong> im englischen).
+    Deaktiviert sie, damit zukünftig erstellte Thumbnails mit einem
+    korrektem Seitenverhältnis erzeugt werden.
+<img alt="Option um in WordPress das festgelegte, proportionale Seitenverhältnis abzustellen" src="https://www.zoosau.de/images/wordpress_prop_seitenverhaeltnis_aufheben.png" title="Option um in WordPress das festgelegte, proportionale Seitenverhältnis abzustellen"></li>
+</ol>
+<p>Ein Hinweis noch: Nicht wundern, wenn die alten Thumbnails nun noch alle
+proportional, also: quadratisch sind. Thumbnails werden einmalig beim
+hochladen eines Bildes erzeugt und werden dann gespeichert. Um also alle
+Thumbnails zu korrigieren wäre es nötig alle Bilder aus der Mediathek
+noch einmal zu löschen, erneut hochzuladen und alle bisherigen Artikel
+zu überarbeiten (außer, es gibt ein Plugin, welches ich noch nicht
+kenne)!<br>
+Aus genau diesem Grund habe ich mich auch dagegen entschieden und
+belasse die alten Beiträge so wie sie sind.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Einschalten%20eines%20korrekten%20Seitenverh%C3%A4ltnisses%20f%C3%BCr%20Bilder%20in%20WordPress&url=https%3A//www.zoosau.de/einschalten-eines-korrekten-seitenverhaltnisses-fur-bilder-in-wordpress.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Einschalten%20eines%20korrekten%20Seitenverh%C3%A4ltnisses%20f%C3%BCr%20Bilder%20in%20WordPress&amp;body=https%3A//www.zoosau.de/einschalten-eines-korrekten-seitenverhaltnisses-fur-bilder-in-wordpress.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html">Sicherheitsabfrage der Benutzerkontensteuerung unter Windows Vista und 7 abstellen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-12-05T23:38:00+01:00"> Sa 05 Dezember 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		434
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/7.html">7</a>
+        /
+	<a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+        /
+	<a href="https://www.zoosau.de/tag/benutzerkontensteuerung.html">Benutzerkontensteuerung</a>
+        /
+	<a href="https://www.zoosau.de/tag/seven.html">seven</a>
+        /
+	<a href="https://www.zoosau.de/tag/uac.html">uac</a>
+        /
+	<a href="https://www.zoosau.de/tag/user-account-control.html">user account control</a>
+        /
+	<a href="https://www.zoosau.de/tag/vista.html">vista</a>
+        /
+	<a href="https://www.zoosau.de/tag/warnhinweis.html">warnhinweis</a>
+        /
+	<a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Die Benutzerkontensteuerung, auch als "User Account Control" (UAC)
+bekannt, ist eine Technik und Sicherheitsinfrastruktur, die seit Windows
+Vista von Microsoft verwendet wird, um die Sicherheit des
+Betriebssystems zu erhöhen. Meistens äußert sich dieses dadurch, das man
+das hier aufgeführte Fenster angezeigt bekommt, sobald man ein Programm
+starten möchte:</p>
+<p>[caption id="attachment_542" align="alignleft" width="150"
+caption="UAC Warnhinweis beim starten des Firefox Webbrowsers"]<a href="https://www.zoosau.de/images/firefox_uac_warnung.png"><img alt="UAC
+Warnhinweis beim starten des Firefox
+Webbrowsers" src="{filename}images/firefox_uac_warnung-150x91.png" title="UAC Warnhinweis beim starten des Firefox Webbrowsers">{.size-thumbnail
+.wp-image-542 width="150"
+height="91"}</a>[/caption]</p>
+<p>Ich hatte bei mir den Fall, das seitdem ich Windows 7 einsetze, der
+Firefox <span style="text-decoration: underline;">immer</span> mit
+diesem Fenster startete. Kein Weltuntergang, aber allemal nervig.
+Abstellen, bzw. die UAC - Stufe senken wollte ich jedoch nicht. An sich
+finde ich das eine nicht unbedingt verkehrte Funktion. Gerade in diesem
+Fall, wie sich gleich zeigen wird.</p>
+<p>Ich hatte bis eben keine Ahnung, wieso dieses Fenster immer und immer
+wieder kam. Es gibt ja auch keinen Hacken, mit dem man ein bestimmtes
+Programm von diesem Test ausnehmen kann oder ähnliches.<br>
+Jetzt weiß ich aber, wie man das ganze loswird! Der Firefox installiert
+sich scheinbar mit der Voreinstellung immer mit administrativen Rechten
+gestartet zu werden. Ein Verhalten, das eigentlich gerade bei Browsern
+aus Sicherheitssicht nicht gerade wünschenwert ist. Man wird dieses
+Fenster mit ein paar kleinen Klicks ganz einfach los:</p>
+<ol>
+<li>Rechtsklick auf die Firefox - Verknüpfung oder die ausführbare Datei
+    des Firefox im Installationsordner.</li>
+<li><strong>Eigenschaften</strong> anklicken.</li>
+<li>Zum Reiter <strong>Kompatibilität</strong> wechseln.</li>
+<li>Ganz unten findet man den Bereich <strong>Berechtigungsstufe</strong>. Der Haken
+    bei <strong>Programm als Administrator ausführen</strong> muss entfernt werden.
+    Sollte dieser Bereich ausgegraut dargestellt werden und somit nicht
+    verfügbar sein, kann man auf den darunterliegenden Button
+    <strong>Einstellungen für alle Benutzer ändern</strong> klicken. Es öffnet sich
+    nun erneut ein Dialogfeld, in dem das Feld <strong>Programm als
+    Administrator ausführen</strong> verfügbar sein sollte.
+    [caption id="attachment_543" align="alignright" width="106"
+    caption="Kompatibilitäts-einstellungen unter Windows
+    7"]<a href="https://www.zoosau.de/images/firefox_admin_remove.png"><img alt="Kompatibilitätseinstellungen unter Windows
+    7" src="{filename}images/firefox_admin_remove-106x150.png" title="Kompatibilitätseinstellungen unter Windows 7">{.size-thumbnail
+    .wp-image-543 width="106"
+    height="150"}</a>[/caption]</li>
+<li>Schließt man die Dialogfelder mit einem Klick auf <strong>OK</strong> sollte die
+    UAC Meldung nicht mehr erscheinen.</li>
+</ol>
+<p>Gerade bei Browsern sollte man nicht dauerhaft mit administrativen
+Rechten arbeiten. Dieses macht es den Betreibern von Malware-Sites nur
+noch einfacher Einfluß auf das System zu nehmen.<br>
+In Ausnahmefällen, wo administrative Rechte benötigt werden um
+beispielsweise ein Plugin oder ähnliches Systemweit zu installieren,
+kann man das entsprechende Programm mit einem Rechtsklick und dem
+Kontextmenüpunkt <strong>Als Administrator ausführen</strong> jederzeit manuell mit
+administrativen Rechten starten.</p>
+<p>Ich entschuldige mich hiermit dafür so einen n00b - Tipp in mein Blog zu
+schreiben. Ich habe diese Meldung aber zugegebener Maßen nun monatelang
+nicht weggekriegt, da ich überhaupt nicht wusste, das diese mit der
+Berechtigungsstufe zusammen hängt. Ich war vielmehr davon ausgegangen,
+das im System ein mangelhaftes Zertifikat der Mozilla Corp. vorliegt
+oder ähnliches. So simpel hatte ich garnicht gedacht und war bis jetzt
+zu faul das zu google'n ;D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Sicherheitsabfrage%20der%20Benutzerkontensteuerung%20unter%20Windows%20Vista%20und%207%20abstellen&url=https%3A//www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Sicherheitsabfrage%20der%20Benutzerkontensteuerung%20unter%20Windows%20Vista%20und%207%20abstellen&amp;body=https%3A//www.zoosau.de/sicherheitsabfrage-der-benutzerkontensteuerung-unter-windows-vista-und-7-abstellen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/mein-treffen-mit-morten-veland.html">Mein Treffen mit Morten Veland</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-25T02:39:00+01:00"> Mi 25 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/musik-privates-leben.html">Musik, Privates Leben</a>
+
+
+		<span class="label label-default">Words</span>
+		1199
+
+		<span class="label label-default">Read time</span>
+		5 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+        /
+	<a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+        /
+	<a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich komme gerade vom "<a href="http://www.myspace.com/beautyandthebeastfest" title="MySpace Seite zur &quot;The Beauty and the Beast Tour 2009&quot;">The Beauty and the Beast – Tour
+2009</a>"
+- Konzert in Köln. Ich war da mit meinem Arbeitskollegen David. Es wurde
+kurzfristig von der "<a href="http://www.livemusichall.de/" title="HP Live Music Hall">Live Music
+Hall</a>" ins
+"<a href="http://www.underground-cologne.de/" title="HP des &quot;Underground&quot; in Köln">Underground</a>"
+verlegt. Ein recht kleiner Laden, der vielleicht zu 2/3 gefüllt war und
+von der Aufmachung her ziemlich an einen Punk oder Linken – Schuppen
+erinnerte (was völlig wertungsfrei sein soll).</p>
+<p><a href="http://www.zoosau.de/leben/ich-bin-zu-blod-um-zu-einem-sirenia-konzert-zu-gehen" title="Mein Artikel über das anstehende Sirenia Konzert">Wie ich hier die Tage schon
+schrieb</a>,
+galt es vorher noch das NAS in der <a href="http://www.marketing-factory.de/" title="Homepage der Marketing Factory Consulting GmbH">Marketing
+Factory</a>
+zu migrieren. Dieses startete zeitgleich mit dem Konzert um 19.00 Uhr.
+Das wir eine oder zwei Bands verpassen werden, war uns leider schon
+vorher klar. Leider hat das Samba – System aber obendrein noch
+herumgezickt, was uns eine weitere halbe Stunde gekostet hat. Außerdem
+gab es einen weiteren Zwischenfall abseits dieser Migration, der
+ebenfalls sofortiges Handeln erforderte und uns weitere Zeit gekostet
+hat. Hierdurch kamen wir erst um 22.10 Uhr am
+"<a href="http://www.underground-cologne.de/" title="HP des &quot;Underground&quot; in Köln">Underground</a>"
+an.</p>
+<p>Wir haben gerade noch den letzten Song von
+"<a href="http://www.atrocity.de/" title="Homepage der Band &quot;Atrocity&quot;">Atrocity</a>"
+mitbekommen, dann kam auch schon der "Hauptevent" (aus den Augen des
+Veranstalters: "<a href="http://www.leaveseyes.de/" title="Homepage der Band &quot;Leaves Eyes&quot;">Leaves
+Eyes</a>").
+Wir waren eigentlich in erster Linie wegen
+"<a href="http://www.mortenveland.com/sirenia/" title="Homepage der Band &quot;Sirenia&quot;">Sirenia</a>"
+dort. Die haben wir aber leider, ebenso wie ihre Label – Kollegen
+"<a href="http://www.elis.li/" title="Homepage der Band &quot;Elis&quot;">Elis</a>" und "<a href="http://www.streamofpassion.com/" title="Homepage der Band &quot;Stream of Passion&quot;">Stream of
+Passion</a>",
+verpasst. Das hat mich schon sehr enttäuscht – aber ich war ja selber
+Schuld.</p>
+<p>Direkt als wir dort ankamen, lief <a href="http://en.wikipedia.org/wiki/Morten_Veland" title="Wikipedia Eintrag zu &quot;Morten Veland&quot;">Morten
+Veland</a>
+an uns vorbei und verschwand in einer dieser "Staff only" - Türen.
+<a href="http://en.wikipedia.org/wiki/Morten_Veland" title="Wiki Beitrag über Morten Veland">Morten
+Veland</a>
+ist in meinen Augen einer, wenn nicht  <strong>der</strong> beste , aktive Musiker
+der Welt und ich war eigentlich wegen seiner Werke überhaupt erst auf
+diesem Konzert. Da dachte ich mir schon <em>"Sauber – der steigt jetzt in
+den Bus und Du Depp hast Deine einzige Chance auf ein Autogramm
+verpasst"</em>.<br>
+Ich bin ja, was sowas angeht, eher der schüchterne Typ. Ich fühl mich
+halt doof dabei, als erwachsener Mann von 27 einen anderen Typen
+anzusprechen und ihn um ein Foto oder ein Autogramm zu bitten. Wir waren
+zwar in Köln, aber deswegen muss man sich ja nicht wie ein schwuler
+geben ;D Hört sich hart und abwertend an, aber … ach: Ihr wisst doch wie
+ich das meine: Ein Kerl kommt sich nunmal blöde dabei vor, wenn er zu
+einem anderen wildfremden Typen gehen soll und dem ein Gespräch in mega
+– schlechtem Englisch aufzwingen soll. Zumindest geht mir das so. Zumal
+waren wir auch gerade erst angekommen und mental noch halb auf der
+Arbeit. So noch garnicht in Party – Laune und Feeling.</p>
+<p>Wie auch immer: Kurz nach dieser beinahe – Begegnung spielten auch schon
+"<a href="http://www.leaveseyes.de/" title="Homepage der Band &quot;Leaves Eyes&quot;">Leaves
+Eyes</a>" auf.
+Wir sind also rein und haben uns die Show angesehen. Die ganze Show war
+halt schwerpunktmäßig auf weiblichen, melodischen Klang ausgelegt. Eine
+Richtung, in die vieeeel zu viele Bands in letzter Zeit abdriften. OK,
+der Markt scheint offenbar da zu sein. Aber das ganze hört sich einfach
+nur … <em>gleich</em> an. Ich bin da klanglich stark übersättigt und auch
+grundsätzlich nicht so der Fan davon. Leider geht ja auch
+"<a href="http://www.mortenveland.com/sirenia/" title="Homepage der Band &quot;Sirenia&quot;">Sirenia</a>"
+mit dem letzten Album stark in diese Richtung. Auf der neuen Scheibe,
+"<strong>The 13^th^ Floor</strong>" sind kaum noch
+<a href="http://de.wikipedia.org/wiki/Gutturaler_Gesang#Growling" title="Wikipedia Eintrag zu &quot;Gutturaler Gesang - Growling&quot;">Growls</a>
+zu hören. Nur noch Chöre und dieses immer gleiche, weibliche Lala, das
+man von so vielen Bands schon kennt und kaum mehr hören kann. Sowas
+sollte in meinen Augen nur ein Element unter vielen sein, um die
+Grundmusik zu verfeinern und zu untermalen. Keinesfalls sollte es das
+Hauptmerkmal sein.</p>
+<p>Aber gut – schlecht waren sie ja nicht. <a href="http://www.atrocity.de/templates/index.php?lang_id=1&amp;showid=6&amp;katid=0" title="Alexander Krull">Alexander
+Krull</a>
+ist ein super Anheizer, sehr sympathisch und versteht es Stimmung zu
+machen. Die kam bei diesem Publikum nur nicht so wirklich auf –
+eigentlich hätte man Sitzplätze verkaufen müssen. Die haben kaum
+mitgemacht. Bei uns hatten sie es aufgrund einer Party-Affineren
+Grundeinstellung zwar leichter, aber zwei Personen rocken kein Haus. Und
+uns fehlte obendrein ja die Anlaufzeit der vier Vorbands. "<a href="http://www.leaveseyes.de/" title="Homepage der Band &quot;Leaves Eyes&quot;">Leaves
+Eyes</a>"
+hatten obendrein sogar noch den Gast-Bassisten von "<a href="http://www.blind-guardian.de" title="Homepage der Band &quot;Blind Guardian&quot;">Blind
+Guardian</a>",
+Oliver Holzwarth, dabei. Aber so wirklich ging da nichts ab (was meiner
+Meinung nach nicht an der Band gelegen hat).</p>
+<p>Nachdem "<a href="http://www.leaveseyes.de/" title="Homepage der Band &quot;Leaves Eyes&quot;">Leaves
+Eyes</a>" die
+Bühne verlassen hatten, kam <a href="http://en.wikipedia.org/wiki/Morten_Veland" title="Wiki Beitrag über Morten Veland">Morten
+Veland</a>
+aus einem der Räume. Ich war erst Baff – ich dachte ernsthaft die seien
+schon abgefahren und längst im Bus oder Hotel am knacken. Dieses Mal war
+ich spontaner und sprach ihn kurzerhand an. In dem wohl schlechtesten
+Englisch was er sich jemals antun musste, lief der Dialog wohl in etwa
+so ab (seine Antworten gebe ich natürlich in demselben, mir eigenen
+schlechtem Englisch wieder ;D ):</p>
+<blockquote>
+<p><em>„Hey, Mr. Veland! Do you have a minute or two? I'd like to ask you a
+favor!“</em></p>
+<p><em>„Sure, what can I do for you?“</em></p>
+<p><em>„We came here very late because we had to work until nine or half
+past nine, so we arrived at 22.10 here. You allready had finished
+then, and we only heard „Leaves Eyes“. To make this evening not
+completely senseless for us, would you give me an autogramm onto a
+record I've brought with me this evening?“</em></p>
+<p><em>„Yeah sure, I'd be happy to do that! Go and get your record.“</em></p>
+<p><em>„But, I don't know if that's OK: It's a „Tristania“ Record and
+your're here with Sirenia. Is it OK?“</em></p>
+<p><strong>Hier lachte er und guckte sich kurz um.</strong></p>
+<p><em>„Yeah sure that's OK. Go and get the record, I'll wait here for
+you.“</em></p>
+<p>In diesem Moment, ich war schon halb unterwegs, fiel David ein, das er
+uns doch auch zusammen fotografieren könnte. Ich fragte Morten ob das
+OK wäre, und er hat's gerne gemacht. Die Fotos mit mir und Morten
+Veland findet ihr in diesen Beitrag eingebettet.</p>
+<p>Ich rannte dann los, holte einen Kuli und die „Widow's Weeds“ von
+<a href="http://www.tristania.com/" title="Homepage der Band &quot;Tristania&quot;">Tristania</a>
+und rannte zurück zu Morten. Dort angekommen:</p>
+<p><em>„I'm sorry, I don't have a better pen than this stupid biro. You
+don't have a better one with you, do you?“</em></p>
+<p><strong>Sucht kurz in seinen Taschen</strong></p>
+<p><em>„No, I'm sorry. I don't have one, too.“</em></p>
+<p><em>„OK, then use the biro please. I'm sorry.“</em></p>
+</blockquote>
+<p>Das fotografierte und signierte Cover werde ich die die Tage noch
+nachliefern.</p>
+<p>Ich rechne es ihm hoch an, das er sich, obwohl er sicher selbst völlig
+kaputt war, sich die Zeit für sowas nimmt. Und ich bin sehr stolz darauf
+über meinen Schatten gesprungen zu sein! Sollte er das jemals lesen
+(oder sich auch nur einen Tag später an den kleinen dicken, schlecht
+Englisch sprechenden Typen erinnern): <strong>Vielen Dank, Morten // Thank you
+very much, Morten!!</strong> :)</p>
+<p>[caption id="attachment_529" align="alignleft" width="150"
+caption="Ich und Morten Veland"]<a href="https://www.zoosau.de/images/ich_und_morten_veland.jpg"><img alt="Ich und Morten
+Veland" src="{filename}images/ich_und_morten_veland-150x150.jpg" title="Ich und Morten Veland">{.size-thumbnail
+.wp-image-529 width="150"
+height="150"}</a>[/caption]</p>
+<p>[caption id="attachment_528" align="alignright" width="150"
+caption="David und Morten Veland"]<a href="https://www.zoosau.de/images/david_und_morten.jpg"><img alt="David und Morten
+Veland" src="{filename}images/david_und_morten-150x150.jpg" title="David und Morten Veland">{.size-thumbnail
+.wp-image-528 width="150"
+height="150"}</a>[/caption]</p>
+<p>Achja, ich sagte ihm dann noch:</p>
+<blockquote>
+<p><em>„I'm looking forward to the first CD of your new Project „Mortemia“!
+I swear, I'll be one of the first ones who buyes the first record!“</em></p>
+<p><em>„Oh, that's great to hear! It's allready finished and recorded and
+will be released and in stores in February.“</em></p>
+<p><em>„What? So soon? Great! I only heard about that you've founded a new
+Band yesterday, and today you tell me it's allready finished! Great!
+Thank you again for the photos and the autogram!“</em></p>
+</blockquote>
+<p>Tja, was soll ich sagen? Ich freue mich sehr auf dieses Album und bin
+sehr gespannt!!!</p>
+<p>So schade es auch ist, das wir Sirenia verpasst haben, so sehr hat mich
+dieses Erlebnis dafür entschädigt und war die Karten allemal wert! :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Mein%20Treffen%20mit%20Morten%20Veland&url=https%3A//www.zoosau.de/mein-treffen-mit-morten-veland.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Mein%20Treffen%20mit%20Morten%20Veland&amp;body=https%3A//www.zoosau.de/mein-treffen-mit-morten-veland.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/ich-bin-zu-blod-um-zu-einem-sirenia-konzert-zu-gehen.html">Ich bin zu blöd um zu einem Sirenia-Konzert zu gehen!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-20T22:47:00+01:00"> Fr 20 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html">Fun, Musik, Privates Leben</a>
+
+
+		<span class="label label-default">Words</span>
+		347
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/konzert.html">konzert</a>
+        /
+	<a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+        /
+	<a href="https://www.zoosau.de/tag/the-beauty-and-the-beast-tour.html">the beauty and the beast tour</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe am 17.11. ja geschrieben, wie ich um wenige Stunden ein Sirenia
+Konzert in Essen verpasst habe.</p>
+<p>[caption id="attachment_516" align="alignright" width="150"
+caption="The Beauty and the Beast Tour 2009 - Flyer"]<a href="https://www.zoosau.de/images/beauty-and-the-beast-festival-tour-2009-flyer.jpg"><img alt="The Beauty and
+the Beast Tour 2009 -
+Flyer" src="{filename}images/beauty-and-the-beast-festival-tour-2009-flyer-150x150.jpg" title="beauty-and-the-beast-festival-tour-2009-flyer">{.size-thumbnail
+.wp-image-516 width="150"
+height="150"}</a>[/caption]</p>
+<p>Nun habe ich nicht aufgeben wollen und heute Mittag Karten für die "The
+Beauty and the Beast Tour 2009" bei Evendim bestellt, wo Sirenia mit von
+der Partie sein werden. Keine 15 Minuten nachdem ich die Karten bestellt
+habe, wechselte der Verfügbarkeits-Status bei Evendim auf rot; Rien ne
+va plus.</p>
+<p>[caption id="attachment_519" align="alignnone" width="150"
+caption="Reservierungsstatus zur "The Beauty and the Beast Tour
+2009""]<a href="https://www.zoosau.de/images/eventim_beauty_and_the_beast_tour_2009.jpg"><img alt="Reservierungsstatus zur &quot;The Beauty and the Beast Tour
+2009&quot;" src="{filename}images/eventim_beauty_and_the_beast_tour_2009-150x150.jpg" title="eventim_beauty_and_the_beast_tour_2009">{.size-thumbnail
+.wp-image-519 width="150"
+height="150"}</a>[/caption]</p>
+<p>Kurzes Zitat aus meiner Mailbestätigung:</p>
+<blockquote>
+<p>Date: Fri, 20 Nov 2009 14:01:06 +0100 (CET)<br>
+Subject: eventim.de - Versandbenachrichtigung - Ihre Bestellung Nr.
+371139180<br>
+Guten Tag Marc Richter,</p>
+<p>vielen Dank für Ihren Einkauf vom 20.11.09 bei eventim.de. Ihre
+Bestellung haben wir wie folgt erhalten und werden sie umgehend
+bearbeiten.</p>
+<hr>
+<p>The Beauty &amp; Beast Festival Tour feat. Leaves' Eyes, Atrocity, Sirenia</p>
+<p>Datum / Zeit:            Di, 24.11.2009 19:00 Uhr<br>
+Ort:                     Live Music Hall / KÖLN</p>
+<hr>
+<p>2 Ticket(s) x 28,10 EUR</p>
+<p>[...]</p>
+<p>=====================================================<br>
+DIES IST EINE AUTOMATISCHE NACHRICHT<br>
+BITTE ANTWORTEN SIE NICHT AUF DIESE MAIL, DA WIR KEINE NACHRICHTEN<br>
+UNTER DIESER ADRESSE EMPFANGEN KÖNNEN. VIELEN DANK.<br>
+=====================================================</p>
+<p>Vielen Dank Marc Richter, für Ihren Einkauf bei eventim.de.</p>
+<p>Wir haben heute Ihre Bestellung Nr. 371139180 per DHL Postexpress als
+Expressbrief mit der Sendungs-Nr. 00328341610002807355 an Sie
+versandt.</p>
+</blockquote>
+<p>Eigentlich sollte man jetzt denken "Hey WOW! So viel Glück gehabt - das
+sollte ja was werden!" ... Tja, wenn ich nicht verpeilt hätte, das wir
+an dem Tag um 19:00 Uhr in meiner Firma in Düsseldorf das alte NAS durch
+ein neues ersetzen. Sprich: Wir fangen um 19:00 Uhr in Düsseldorf
+zeitgleich mit den Bands in Köln an! Selbst wenn wir da nach einer
+Stunde fertig sein sollten, was eigentlich nur machbar ist wenn weder
+Zeit verplempert wird noch irgendetwas schief läuft, bin ich frühestens
+um 21 Uhr vor Ort. Ich hoffe einfach mal, das ich Sirenia noch
+miterleben werde.</p>
+<p>Selbst Schuld, aber trotzdem super ärgerlich!! :(<br>
+Ich hoffe, das Sirenia erst recht spät auftreten.</p>
+<p>[caption id="attachment_515" align="aligncenter" width="450"
+caption="Beauty and the Beast Tour 2009"]<a href="https://www.zoosau.de/images/beauty_and_the_beast_tour_2009.jpg"><img alt="Beauty and the Beast Tour
+2009" src="https://www.zoosau.de/images/beauty_and_the_beast_tour_2009.jpg" title="Beauty and the Beast Tour 2009">{.size-full
+.wp-image-515 width="450"
+height="238"}</a>[/caption]</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Ich%20bin%20zu%20bl%C3%B6d%20um%20zu%20einem%20Sirenia-Konzert%20zu%20gehen%21&url=https%3A//www.zoosau.de/ich-bin-zu-blod-um-zu-einem-sirenia-konzert-zu-gehen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Ich%20bin%20zu%20bl%C3%B6d%20um%20zu%20einem%20Sirenia-Konzert%20zu%20gehen%21&amp;body=https%3A//www.zoosau.de/ich-bin-zu-blod-um-zu-einem-sirenia-konzert-zu-gehen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/sirenia-im-turok.html">Sirenia im Turok!!!!!!!!!!!!!!!!!!!!!!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-17T22:53:00+01:00"> Di 17 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/musik.html">Musik</a>
+
+
+		<span class="label label-default">Words</span>
+		170
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/band.html">Band</a>
+        /
+	<a href="https://www.zoosau.de/tag/live.html">live</a>
+        /
+	<a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+        /
+	<a href="https://www.zoosau.de/tag/tristania.html">tristania</a>
+        /
+	<a href="https://www.zoosau.de/tag/turok.html">turok</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich mache mir gerade ernsthafte Sorgen um meinen Mageninhalt: Gerade
+fange ich wieder verstärkt an
+"<a href="http://www.tristania.com/" title="Homepage von Trsiatnia">Tristania</a>" zu
+hören. Ich finde die Band einfach nur schweinegeil! Deren Gründer und
+offenbar damals weitestgehend alleine verantwortlicher für Komposition,
+Text und allgemeine Planung war der (inzwischen) Ex-Headmann <a href="http://en.wikipedia.org/wiki/Morten_Veland" title="Wiki Beitrag über Morten Veland">Morten
+Veland</a>.</p>
+<p>Dieser hat nach einem offenbar eher unschönen Bruch mit der Band,
+bedingt durch "zwei Mitglieder der Band" Tristania verlassen und die
+Band "<a href="http://www.sirenia.no/" title="Homepage von Sirenia">Sirenia</a>"
+gegründet. Deren Debüt "At Sixes and Sevens" war 2002 bereits ein echtes
+Brett und schlug sowohl beim Publikum wie auch bei der Presse ein wie
+eine Bombe! Ich persönlich halte es auch für wahnsinnig gute Musik, die
+endlich die Brücke zu den ersten beiden Tristania - Alben und einer
+gelungenen Fortsetzung schlägt.</p>
+<p>Ich surfe gerade so auf den diversen Homepages herum und WAS GEHT
+??????? Da tritt doch glatt <span
+style="text-decoration: underline;">heute</span> Sirenia im
+<a href="http://www.turock.de/" title="Homepage des Turok in Essen">Turok</a> in Essen
+auf! IM <a href="http://www.turock.de/" title="Homepage des Turok in Essen">TUROK</a>!!!
+Das ist keine halbe Stunde von hier weg! Beginnt 19.30 Uhr und ich Depp
+lese das um 22.30 Uhr! So ein Scheiss!! :(</p>
+<p>Wäre gerne da gewesen ...</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Sirenia%20im%20Turok%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21&url=https%3A//www.zoosau.de/sirenia-im-turok.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Sirenia%20im%20Turok%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21%21&amp;body=https%3A//www.zoosau.de/sirenia-im-turok.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/neue-kategorie-gagfah.html">Neue Kategorie "GAGFAH"</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-17T22:03:00+01:00"> Di 17 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/gagfah.html">GAGFAH</a>
+
+
+		<span class="label label-default">Words</span>
+		270
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+        /
+	<a href="https://www.zoosau.de/tag/mangel.html">mängel</a>
+        /
+	<a href="https://www.zoosau.de/tag/miete.html">miete</a>
+        /
+	<a href="https://www.zoosau.de/tag/rechtsstreit.html">rechtsstreit</a>
+        /
+	<a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe am 5.11.2009 ein Einschreiben an die
+<a href="http://www.gagfah.de/" title="Homepage der GAGFAH">GAGFAH</a>, meine Vermieter,
+geschrieben. Wer regelmäßig in meinem Blog ließt (oder die Suche benutzt
+;) ) wird schon den einen oder anderen Beitrag von mir über diese Firma
+gelesen haben. Eigentlich ist die Wohnung super! Die Gegend auch. Auch
+der Hausmeister ist sehr nett und tüchtig! Nur leider gibt es nach wie
+vor einige Restmängel an dieser Wohnung, die seit meinem Einzug vor
+einem halben Jahr behoben werden sollten. Bisher ist jedoch noch nichts
+passiert.<br>
+Ich hatte vor ein paar Monaten schonmal Ärger mit dieser Firma, da auch
+hier sowohl nicht auf Briefe (nichtmal Einschreiben!) schriftlich
+geantwortet wurde, sondern auch eine Zahlung weit über 200,- € über
+Monate herausgezögert wurde.</p>
+<p>Auch eine Antwort auf dieses (Ein-)Schreiben lässt ja nun bereits seit
+wenigstens 10 Tagen auf sich warten. Noch ist zwar alles im grünen
+Bereich, nur irgendwie habe ich das Gefühl das bis zu meiner zeitlichen
+Antwortfrist Ende Dezember auch (wieder) nicht viel passieren wird.
+Daher gehe ich zur Zeit davon aus, das es zumindest zu einer
+Mietminderung und evtl. sogar einem Rechtsstreit kommen wird.</p>
+<p>Um diesen wohl auch für andere Leute interessanten Ablauf eines
+Mietstreites direkt von Anfang an zu dokumentieren, habe ich mich
+entschlossen hier nicht nur alles lückenlos zu dokumentieren, sondern
+das ganze auch unter einer leicht zu durchstöbernden Kategorie namens
+"GAGFAH" zu sammeln. Ich habe die relevanten Beiträge der Vergangenheit
+schon nachgepflegt.</p>
+<p>Ob das hier Rufmord ist? Nö! Schließlich werde ich auch objektiv und
+nachweisbar positive Ereignisse in Verbindung mit der GAGFAH
+dokumentieren. Ob es hiervon welche geben wird, liegt bei der GAGFAH
+selber ;)</p>
+<p>Ich bin selbst gespannt wohin das führt!</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Neue%20Kategorie%20%22GAGFAH%22&url=https%3A//www.zoosau.de/neue-kategorie-gagfah.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Neue%20Kategorie%20%22GAGFAH%22&amp;body=https%3A//www.zoosau.de/neue-kategorie-gagfah.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/postgres-datenbankbackups-per-script-erstellen.html">Postgres Datenbankbackups per Script erstellen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-16T00:40:00+01:00"> Mo 16 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/linux-technik.html">Linux, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		244
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/backup.html">backup</a>
+        /
+	<a href="https://www.zoosau.de/tag/kommandozeile.html">kommandozeile</a>
+        /
+	<a href="https://www.zoosau.de/tag/phpbb2.html">phpbb2</a>
+        /
+	<a href="https://www.zoosau.de/tag/postgres.html">postgres</a>
+        /
+	<a href="https://www.zoosau.de/tag/postgresql.html">postgresql</a>
+        /
+	<a href="https://www.zoosau.de/tag/script.html">script</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe damals, als ich noch 0 Ahnung von Datenbanken hatte, mit
+<a href="http://www.postgresql.org/" title="Homepage von PostgreSQL">PostgreSQL</a>
+angefangen. Ich dachte in der Tat, das
+<a href="http://www.mysql.com/" title="Homepage von MySQL">MySQL</a> ja eine kommerzielle
+Anwendung ist und es ja daher jederzeit vorbei sein kann mit der freien
+Verfügbarkeit. Da ich eh keine Ahnung hatte, und PostgreSQL im Community
+- Mund sehr viel mehr können sollte als MySQL, hatte ich mich dafür
+entschieden.</p>
+<p>Inzwischen kenne ich mich wenigstens etwas mit MySQL und dessen
+Administration aus und habe das zu meiner Standard-Datenbank gemacht.
+Von PostgreSQL komme ich wegen eines
+<a href="http://www.phpbb.com/" title="Homepage des phpBB2 Projektes">phpBB2</a> - Forums
+aber nicht mehr los - also habe ich mich auf die Suche nach einer
+Möglickeit gemacht, auch PostgreSQL Datenbanken automatisiert per Script
+Backupen zu können. Standardmäßig hat das Kommandozeilenprogramm
+"pg_dump" keinen Parameter für das Passwort wie "mysql" und
+"mysqldump".</p>
+<p>Es gibt dennoch einen ähnlich unsicheren Trick, wie man das ganze auf
+der Shell automatisieren kann: Die Umgebungsvariablen "PGUSER" und
+"PGPASSWORD". Über die beiden folgenden Methoden kann damit die
+Authentifikation an der Postgres Datenbank durchgeführt werden:</p>
+<blockquote>
+<p>export PGUSER="postgres_user"<br>
+export PGPASSWORD="Passwort"<br>
+pg_dump -f /DB.pgsqldump -F c -C -D -h localhost DB</p>
+<p>oder alles in einer Zeile:</p>
+<p>PGUSER="postgres_user" PGPASSWORD="Passwort" pg_dump -f
+/DB.pgsqldump -F c -C -D -h localhost DB</p>
+</blockquote>
+<p>Ich denke ich muss nicht erwähnen das dieses sehr unsicher ist. Während
+die Variablen gesetzt sind kann sie theoretisch fast jeder auf dem
+System auslesen. Daher sollte als Mindestsicherheitsmaßnahme unmittelbar
+nach dem dumpen der Inhalt der Variablen durch "unset PGUSER ; unset
+PGPASSWORD" wieder gelöscht werden. Aber es ist immerhin eine Möglickeit
+:)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Postgres%20Datenbankbackups%20per%20Script%20erstellen&url=https%3A//www.zoosau.de/postgres-datenbankbackups-per-script-erstellen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Postgres%20Datenbankbackups%20per%20Script%20erstellen&amp;body=https%3A//www.zoosau.de/postgres-datenbankbackups-per-script-erstellen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/neue-armbanduhr.html">Neue Armbanduhr</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-14T12:58:00+01:00"> Sa 14 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/privates-leben.html">Privates Leben</a>
+
+
+		<span class="label label-default">Words</span>
+		166
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe mir mal was gegönnt und mir eine neue Armbanduhr gekauft. So
+Sachen wie "Höhenmesser" und so einen Schnickschnack brauche ich
+garnicht. Die meisten Uhren werden durch sowas nur mehrere hunderter
+teurer und sind super dick.<br>
+Was ich cool finde ist, wenn die Uhr nicht geöffnet werden muss um eine
+Batterie zu wechseln. Da habe ich nur jedes Mal Angst, das dabei das
+Dichtungsgummi beschädigt wird und die Uhr nicht mehr dicht ist. Auch
+etwas, das mir für's tauchen (wenn ich das nochmal machen werde) recht
+wichtig ist: Die Uhr muss gescheit wasserdicht sein.<br>
+Und sie muss natürlich schick aussehen! :)</p>
+<p>Lange Rede, kurzer Sinn: Die hier ist es geworden:</p>
+<p>[caption id="attachment_498" align="alignnone" width="150"
+caption="Casio GW-2500BD-1AER"]<a href="https://www.zoosau.de/images/GW-2500BD-1AER_2.jpg"><img alt="Casio
+GW-2500BD-1AER" src="{filename}images/GW-2500BD-1AER_2-150x150.jpg" title="Casio GW-2500BD-1AER">{.size-thumbnail
+.wp-image-498 width="150"
+height="150"}</a>[/caption]</p>
+<p>Sie läd sich selbst mit Solarzellen im Display auf und muss daher nie
+geöffnet werden. Außerdem finde ich, das sie schick aussieht und somit
+bin ich glücklich :D</p>
+<p>Nur an das Armbanduhr tragen muss ich mich noch gewöhnen.</p>
+<p>Mehr zu den Features der Uhr findet ihr
+<a href="http://www.casio-europe.com/de/watch/gshock/gw-2500bd-1aer/">hier</a>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Neue%20Armbanduhr&url=https%3A//www.zoosau.de/neue-armbanduhr.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Neue%20Armbanduhr&amp;body=https%3A//www.zoosau.de/neue-armbanduhr.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/neues-layout.html">Neues Layout</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-13T00:43:00+01:00"> Fr 13 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/privates-leben.html">Privates Leben</a>
+
+
+		<span class="label label-default">Words</span>
+		104
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/layout.html">layout</a>
+        /
+	<a href="https://www.zoosau.de/tag/theme.html">theme</a>
+        /
+	<a href="https://www.zoosau.de/tag/wordpress.html">Wordpress</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Tja - es ist wohl nur schwer zu übersehen: Ich habe ein neues Layout!
+:)<br>
+Dieses Mal habe ich es selbst erstellt - das bisherige war mir einfach
+zu unpassend. Es sah nett aus - mehr aber auch nicht. Nicht wirklich
+stilvoll, nicht wirklich passend zu mir und meiner Seite. Keine
+Individualität.</p>
+<p>Das jetzige ist völlig auf meinem Mist gewachsen. Ich bin ziemlich
+zufrieden damit.</p>
+<p>Es gibt eine handvoll Dinge, die sind noch verbesserungswürdig. Zum
+Beispiel möchte ich eine rein deutsche Seite haben. Die Flags "Older
+Entries" und so unten auf der Seite werden noch ersetzt.</p>
+<p>Ich würde mich über Feedback freuen! :)</p>
+<p>PS: Sprache ist schon erledigt ;D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Neues%20Layout&url=https%3A//www.zoosau.de/neues-layout.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Neues%20Layout&amp;body=https%3A//www.zoosau.de/neues-layout.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/finanzsoftware-starmoney-in-version-6-0-fur-lau.html">Finanzsoftware "StarMoney" in Version 6.0 für lau</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-10T15:03:00+01:00"> Di 10 November 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/privates-leben.html">Privates Leben</a>
+
+
+		<span class="label label-default">Words</span>
+		123
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/download.html">download</a>
+        /
+	<a href="https://www.zoosau.de/tag/finanzsoftware.html">finanzsoftware</a>
+        /
+	<a href="https://www.zoosau.de/tag/freeware.html">freeware</a>
+        /
+	<a href="https://www.zoosau.de/tag/gnucash.html">gnucash</a>
+        /
+	<a href="https://www.zoosau.de/tag/hbci.html">hbci</a>
+        /
+	<a href="https://www.zoosau.de/tag/homebanking.html">homebanking</a>
+        /
+	<a href="https://www.zoosau.de/tag/internetbanking.html">internetbanking</a>
+        /
+	<a href="https://www.zoosau.de/tag/kostenlos.html">kostenlos</a>
+        /
+	<a href="https://www.zoosau.de/tag/software.html">software</a>
+        /
+	<a href="https://www.zoosau.de/tag/starmoney.html">starmoney</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe die Tage mal nach einer gescheiten
+Internetbanking/Finanzsoftware gesucht. Hierbei wollte ich eigentlich
+zunächst "<a href="http://www.gnucash.org/">GNUCash</a>" nehmen, da es kostenlos
+und für Windows wie Linux verfügbar ist.<br>
+Dann bin ich jedoch darüber gestolpert, das der "Quasi- Standard"
+StarMoney in Version 6.0 zur Zeit kostenlos vom Hersteller verteilt
+wird. Ich hatte hiermit irgendwie das bessere Gefühl, da diese Software
+ja für "User" gedacht ist und somit wenig KnowHow erfordert. Und ich
+habe was HBCI und Konsorten angeht zur Zeit weder Zeit noch Lust mich da
+einzuarbeiten.</p>
+<p><a href="https://services.starfinanz.de/dist/smoney_m_18__0000000727_x_.exe">Herunterladen kann man die Software für Windows
+hier</a>.</p>
+<p><a href="http://www.starmoney.de/index.php?id=mactest">MacOS User können eine geeignete Version hier
+herunterladen</a>.</p>
+<p>Was man dann noch benötigt ist eine Seriennummer, welche man nach einer
+<a href="http://www.starmoney.de/?sm6_chip">Registrierung</a> per eMail zugeschickt
+bekommt. <a href="http://www.starmoney.de/?sm6_chip">Registrieren kann man sich
+hier</a>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Finanzsoftware%20%22StarMoney%22%20in%20Version%206.0%20f%C3%BCr%20lau&url=https%3A//www.zoosau.de/finanzsoftware-starmoney-in-version-6-0-fur-lau.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Finanzsoftware%20%22StarMoney%22%20in%20Version%206.0%20f%C3%BCr%20lau&amp;body=https%3A//www.zoosau.de/finanzsoftware-starmoney-in-version-6-0-fur-lau.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pager">
+                <li class="previous"><a href="https://www.zoosau.de/index10.html">&larr; Newer</a></li>
+                <li class="next"><a
+                        href="https://www.zoosau.de/index12.html">Older &rarr;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2018/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2018 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2017/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2017 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2016/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2016 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2016/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2016 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2014 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2014 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2013 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2013 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2013 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2012 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2012 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2011 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2011 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2011 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2011 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2011 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2011 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2011 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2010 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2010 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2010 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2010 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2009 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2009 (13)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2009 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2009 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2009 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2009 (6)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2008 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2008 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2008 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2008 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2008 (5)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2008 (11)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2008 (10)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2008 (8)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2008 (16)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2008 (14)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2007/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2007 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2006 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2006 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2006/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2006 (7)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

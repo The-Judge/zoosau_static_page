@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Job und Beruf, Linux - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="Job und Beruf, Linux" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+        <link href="https://www.zoosau.de/feeds/job-und-beruf-linux.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog Job und Beruf, Linux ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Marc Richter's Weblog Categories">Categories</a></li>
+        <li class="active">Job und Beruf, Linux</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/openssh-und-die-nervigen-known_hosts.html">SSH - REMOTE HOST IDENTIFICATION HAS CHANGED</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-09T13:30:00+01:00"> Mo 09 November 2015</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		437
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/known_hosts.html">known_hosts</a>
+        /
+	<a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+        /
+	<a href="https://www.zoosau.de/tag/warning-remote-host-identification-has-changed.html">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Jedes Mal, wenn ich mir ein neues Linux-System einrichte, muss ich erst
+nochmal schnell Googlen oder die Manpage wälzen; daher notiere ich es
+mir hier jetzt endlich mal:</p>
+<p>Es gibt ein Sicherheitsfeature bei openSSH, welches einen warnt wenn man
+sich zu einem Host/einer IP verbinden möchte und sich die ID des Zieles
+seit dem letzten Mal verändert hat. Das macht zwar durchaus Sinn und ich
+finde das generell eine gute Sache. Aber es kann wirklich sehr nerven,
+besonders wenn man mit DHCP arbeitet und die Zielrechner dauernd Ihre IP
+durchtauschen, man mit virtuellen Maschinen arbeitet und diese nur kurz
+benutzt werden oder häufig per SSH auf Live-CD-Systeme konnektiert.</p>
+<p>Normalerweise muss man die entsprechende Zeile in der Datei
+<strong>~/.ssh/known_hosts</strong> die angemeckerte Zeile löschen; z.B. bei:</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">ssh</span> <span class="n">user</span><span class="mf">@192.168.1.12</span>
+<span class="p">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<span class="p">@</span> <span class="nl">WARNING</span><span class="p">:</span> <span class="n">REMOTE</span> <span class="n">HOST</span> <span class="n">IDENTIFICATION</span> <span class="n">HAS</span> <span class="n">CHANGED</span><span class="o">!</span> <span class="p">@</span>
+<span class="p">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<span class="n">IT</span> <span class="n">IS</span> <span class="n">POSSIBLE</span> <span class="n">THAT</span> <span class="n">SOMEONE</span> <span class="n">IS</span> <span class="n">DOING</span> <span class="n">SOMETHING</span> <span class="n">NASTY</span><span class="o">!</span>
+<span class="n">Someone</span> <span class="n">could</span> <span class="n">be</span> <span class="n">eavesdropping</span> <span class="n">on</span> <span class="n">you</span> <span class="n">right</span> <span class="n">now</span> <span class="p">(</span><span class="n">man</span><span class="o">-</span><span class="k">in</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">middle</span> <span class="n">attack</span><span class="p">)</span><span class="o">!</span>
+<span class="n">It</span> <span class="n">is</span> <span class="n">also</span> <span class="n">possible</span> <span class="n">that</span> <span class="n">the</span> <span class="n">RSA</span> <span class="n">host</span> <span class="n">key</span> <span class="n">has</span> <span class="n">just</span> <span class="n">been</span> <span class="n">changed</span><span class="p">.</span>
+<span class="n">The</span> <span class="n">fingerprint</span> <span class="k">for</span> <span class="n">the</span> <span class="n">RSA</span> <span class="n">key</span> <span class="n">sent</span> <span class="n">by</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">host</span> <span class="n">is</span>
+<span class="mi">39</span><span class="o">:</span><span class="nl">b3</span><span class="p">:</span><span class="mi">72</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mi">53</span><span class="o">:</span><span class="nl">f7</span><span class="p">:</span><span class="mi">17</span><span class="o">:</span><span class="nl">eb</span><span class="p">:</span><span class="nl">aa</span><span class="p">:</span><span class="mi">8</span><span class="nl">c</span><span class="p">:</span><span class="nl">ed</span><span class="p">:</span><span class="mi">70</span><span class="o">:</span><span class="nl">db</span><span class="p">:</span><span class="mi">77</span><span class="o">:</span><span class="mi">8</span><span class="nl">b</span><span class="p">:</span><span class="n">e9</span><span class="p">.</span>
+<span class="n">Please</span> <span class="n">contact</span> <span class="n">your</span> <span class="n">system</span> <span class="n">administrator</span><span class="p">.</span>
+<span class="n">Add</span> <span class="n">correct</span> <span class="n">host</span> <span class="n">key</span> <span class="k">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">known_hosts</span> <span class="n">to</span> <span class="n">get</span> <span class="n">rid</span> <span class="n">of</span> <span class="n">this</span> <span class="n">message</span><span class="p">.</span>
+<span class="n">Offending</span> <span class="n">key</span> <span class="k">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="nl">known_hosts</span><span class="p">:</span><span class="mi">3</span>
+<span class="n">RSA</span> <span class="n">host</span> <span class="n">key</span> <span class="k">for</span> <span class="mf">192.168.1.12</span> <span class="n">has</span> <span class="n">changed</span> <span class="n">and</span> <span class="n">you</span> <span class="n">have</span> <span class="n">requested</span> <span class="n">strict</span> <span class="n">checking</span><span class="p">.</span>
+<span class="n">Host</span> <span class="n">key</span> <span class="n">verification</span> <span class="n">failed</span><span class="p">.</span><span class="err">$</span>
+</pre></div>
+
+
+<p>müsste man die Zeile 3 entfernen.</p>
+<p>Hierzu muss man etwas wie</p>
+<div class="highlight"><pre><span></span>sed -i 3d ~/.ssh/known_hosts
+</pre></div>
+
+
+<p>losjagen oder die Datei in einem Editor von Hand bereinigen. Wie schon
+gesagt: Auf Dauer sehr nervig!</p>
+<p>Wenn einem das nur vereinzelt passiert, kann man sich mit
+Kommandozeilenoptionen helfen:</p>
+<div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">o</span> <span class="n">UserKnownHostsFile</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">StrictHostKeyChecking</span><span class="o">=</span><span class="n">no</span> <span class="n">user</span><span class="mf">@192.168.1.12</span>
+</pre></div>
+
+
+<p>ist jedoch schon eine
+recht sportliche Aufgabe sich das a) zu merken und b) jedes Mal
+wegzutippen.</p>
+<p>Wem das permanent passiert, kann dieses Verhalten dauerhaft einstellen.
+Und zwar sowohl global wie auch userbasiert. In beiden Fällen müssen die
+beiden o.g. Optionen in die passende Config-Datei eingetragen werden:</p>
+<div class="highlight"><pre><span></span>UserKnownHostsFile=/dev/null  
+StrictHostKeyChecking=no
+</pre></div>
+
+
+<p>Um diese Einstellung global zu setzen (nicht empfohlen), trägt man diese
+Optionen in die Datei "<strong>/etc/ssh/ssh_config</strong>" ein.</p>
+<p>Um diese Einstellung nur für einen bestimmten User zu setzen, trägt man
+diese Optionen in die Datei "~<strong>/.ssh/config</strong>" ein.</p>
+<p>Das ganze hebelt natürlich den als Sicherheitsmaßnahme gegen
+"Man-in-the-middle" - Attacken gemeinten Schutz vor diesem Angriffstyp
+aus. Um das ganze wenigstens etwas sicherer zu machen, kann man auch nur
+einzelne Hosts und Hostbereiche derart von dieser Regel ausnehmen. Die
+Beispielhafte Syntax dazu lautet dann:</p>
+<div class="highlight"><pre><span></span>Host 192.168.1.*
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+</pre></div>
+
+
+<p>Möchte man dieses immer und für alle Verbindungen deaktivieren, lässt
+man die "<strong><em>Host</em></strong>" - Zeile einfach weg.</p>
+<p>Aber Achtung: Bitte nur anwenden wenn Ihr wisst was Ihr tut! Das ganze
+hebelt, wie gesagt, einen sinnvollen Schutz des SSH Systems aus.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=SSH%20-%20REMOTE%20HOST%20IDENTIFICATION%20HAS%20CHANGED&url=https%3A//www.zoosau.de/openssh-und-die-nervigen-known_hosts.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=SSH%20-%20REMOTE%20HOST%20IDENTIFICATION%20HAS%20CHANGED&amp;body=https%3A//www.zoosau.de/openssh-und-die-nervigen-known_hosts.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/owncloud-fehler-unter-kde-owncloud-wird-fuer-eine-funktionierende-taskleiste-benoetigt.html">ownCloud Fehler unter KDE: "ownCloud wird für eine funktionierende Taskleiste benötigt"</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-14T19:47:00+02:00"> Di 14 Juli 2015</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		201
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+        /
+	<a href="https://www.zoosau.de/tag/kde.html">kde</a>
+        /
+	<a href="https://www.zoosau.de/tag/owncloud.html">owncloud</a>
+        /
+	<a href="https://www.zoosau.de/tag/owncloud-wird-fur-eine-funktionierende-taskleiste-benotigt.html">ownCloud wird für eine funktionierende Taskleiste benötigt</a>
+        /
+	<a href="https://www.zoosau.de/tag/plasma.html">plasma</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Auf einem meiner Rechner läuft ein kubuntu 15.04. In dessen Repo
+befindet sich die Version 1.7.0\~beta1+really1.6.4+dfsg-1 des Paketes
+owncloud-client. Installiert man dieses, bekommt man unter KDE Plasma
+beim Anmelden folgende Fehlermeldung angezeigt:</p>
+<p>"ownCloud wird für eine funktionierende Taskleiste benötigt. Falls Sie
+XFCE einsetzen, dann folgen Sie bitte diesen Anweisungen. Anderenfalls
+installieren Sie bitte eine Taskleisten-Anwendung wie 'trayer' und
+versuchen Sie es erneut."</p>
+<p>[caption id="attachment_1906" align="aligncenter"
+width="525"]<a href="https://www.zoosau.de/images/ee7c67be-3779-11e4-95be-cafef1b82431.png"><img alt="Fehlermeldung der Repo-Version von owncloud unter Ubuntu
+15.04: &quot;ownCloud wird für eine funktionierende Taskleiste
+benötigt.&quot;" src="https://www.zoosau.de/images/ee7c67be-3779-11e4-95be-cafef1b82431.png">{.size-full
+.wp-image-1906 width="525"
+height="238"}</a>
+Fehlermeldung der Repo-Version von owncloud unter Ubuntu 15.04:
+"ownCloud wird für eine funktionierende Taskleiste
+benötigt."[/caption]</p>
+<p>Hierbei handelt es sich offenbar um einen Übersetzungsfehler, welcher in
+aktuellen Versionen bereits behoben ist:
+<a href="https://github.com/owncloud/client/issues/2180">https://github.com/owncloud/client/issues/2180</a></p>
+<p>Dennoch: Auch mit einer korrekten Fehlermeldung bleibt es dabei: Diese
+Version spuckt einen Fehler aus.</p>
+<p>Abhilfe kann man schaffen, indem man den <a href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&amp;package=owncloud-client">Anweisungen auf der
+ownCloud-Homepage</a>
+folgt um den aktuellen Desktopclient für Ubuntu zu installieren. Ein
+laufender ownCloud Client sollte zuvor beendet werden. Das Paket
+owncloud-client muss zuvor nicht deinstalliert werden, da es durch die
+folgenden Schritte aktualisiert wird:</p>
+<div class="highlight"><pre><span></span>sudo sh -c &quot;echo &#39;deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/xUbuntu_15.04/ /&#39; &gt;&gt; /etc/apt/sources.list.d/owncloud-client.list&quot;
+wget -O - http://download.opensuse.org/repositories/isv:ownCloud:desktop/xUbuntu_15.04/Release.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install owncloud-client
+</pre></div>
+
+
+<p>Anschließend befindet sich die aktuelle Version des ownCloud Clients
+(derzeit 1.8.3) auf dem System und die Fehlermeldung sollte der
+Vergangenheit angehören.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=ownCloud%20Fehler%20unter%20KDE%3A%20%22ownCloud%20wird%20f%C3%BCr%20eine%20funktionierende%20Taskleiste%20ben%C3%B6tigt%22&url=https%3A//www.zoosau.de/owncloud-fehler-unter-kde-owncloud-wird-fuer-eine-funktionierende-taskleiste-benoetigt.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=ownCloud%20Fehler%20unter%20KDE%3A%20%22ownCloud%20wird%20f%C3%BCr%20eine%20funktionierende%20Taskleiste%20ben%C3%B6tigt%22&amp;body=https%3A//www.zoosau.de/owncloud-fehler-unter-kde-owncloud-wird-fuer-eine-funktionierende-taskleiste-benoetigt.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/kurztipp-galileo-buch-shell-programmierung-kostenlos-als-openbook.html">Kurztipp: Galileo Buch "Shell Programmierung" kostenlos als OpenBook</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-17T20:05:00+01:00"> Mo 17 Dezember 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		117
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/buch.html">buch</a>
+        /
+	<a href="https://www.zoosau.de/tag/galileo.html">galileo</a>
+        /
+	<a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+        /
+	<a href="https://www.zoosau.de/tag/programmierung.html">programmierung</a>
+        /
+	<a href="https://www.zoosau.de/tag/shell.html">shell</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich habe hier das Buch
+"<a href="http://www.galileocomputing.de/1007?GPP=opsh" title="Shell-Programmierung -  ISBN 978-3-89842-683-1">Shell-Programmierung</a>"
+(ISBN: 978-3-8362-1157-4) von Jürgen Wolf im Original im Hardcover
+liegen; ein rund 800 Seiten starker Trümmer randvoll mit praktischen
+Tipps, Anwendungsbeispielen und nachvollziehbaren Erklärungen rund um
+die Programmierung in den verbreitetsten Linux-Shells. Das Buch ist
+super! Ich schaue regelmäßig rein und finde nach wie vor immer wieder
+etwas neues. Besonders als Referenz finde ich es einsame spitze!</p>
+<p>Da sich nun leider nach mehreren Jahren der regelmäßigen Benutzung die
+Bindung mancher Seiten in den wohlverdienten Ruhestand verabschieden,
+wollte ich eben mal schauen ob man das nicht zufällig als digitale Kopie
+erstehen kann.<br>
+Tatsächlich: Kann man! Und zwar inzwischen kostenlos als <a href="http://www.galileocomputing.de/katalog/openbook/?GPP=opsh" title="Galileo Computing - OpenBook">Galileo
+OpenBook</a>!</p>
+<p>Ich kann nur jedem an diesem Thema interessiertem empfehlen:
+<a href="http://openbook.galileocomputing.de/shell_programmierung/" title="Shell-Programmierung als Galileo OpenBook">Downloaden</a>!</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Kurztipp%3A%20Galileo%20Buch%20%22Shell%20Programmierung%22%20kostenlos%20als%20OpenBook&url=https%3A//www.zoosau.de/kurztipp-galileo-buch-shell-programmierung-kostenlos-als-openbook.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Kurztipp%3A%20Galileo%20Buch%20%22Shell%20Programmierung%22%20kostenlos%20als%20OpenBook&amp;body=https%3A//www.zoosau.de/kurztipp-galileo-buch-shell-programmierung-kostenlos-als-openbook.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/lpic-1-mission-accomplished.html">LPIC-1 : Mission accomplished!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-11-25T00:05:00+01:00"> Fr 25 November 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		599
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Jaaa - was soll ich groß schreiben? Was lange währt wird endlich gut
+vielleicht :)</p>
+<p>[caption id="attachment_1074" align="alignright" width="264"
+caption="LPIC-1 Logo"]<a href="https://www.zoosau.de/images/icon-lpic1.png"><img alt="LPIC-1
+Logo" src="https://www.zoosau.de/images/icon-lpic1.png" title="LPIC-1 Logo">{.size-full
+.wp-image-1074 width="264"
+height="264"}</a>[/caption]</p>
+<p>Nachdem mein Kumpel Alex vor inzwischen fast zwei Jahren mit dem
+<a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1">LPIC-1</a>
+Zertifikat vorgelegt hat, wollte ich eigentlich innerhalb weniger Wochen
+nachziehen. Nur kam dann eines zum anderen. Erst zog die Firma um, dann
+hatte ich alle Hände voll zu tun mit meiner damals neuen Position als
+Abteilungsleiter mit Personalverantwortung, dann ... ach - blah, blah,
+blah. Das Ende vom Lied ist: Ich bin erst am gestrigen Mittwoch endlich
+dazu gekommen meine
+<a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1">LPIC-1</a>
+Prüfung bei "<a href="http://www.thecampus.de" title="Homepage von &quot;The Campus&quot;">The
+Campus</a>" in
+Düsseldorf in der Gladbecker Str 1  zu absolvieren. Ich habe direkt
+beide Prüfungen hintereinander durchgezogen.</p>
+<p>Was soll ich lange drum herum reden: Bestanden! :)</p>
+<p>Ich habe hierzu mit dreien abzurechnen. Fangen wir mit "<a href="http://www.thecampus.de" title="Homepage von &quot;The Campus&quot;">The
+Campus</a>" an.<br>
+Ich habe mich am 9.11.2011 zu beiden Prüfungen am 23.11.2011 um 10.30
+und 12:00 Uhr angemeldet. Am 22.11. um 17:45 Uhr (also: Am Abend zuvor)
+sitze ich mit meinem Chef im Meetingraum in der Firma, da kommt eine
+Kollegin rein und meint <em>"Es hat eine Frau X von The Campus angerufen
+und meinte die Prüfung morgen verschiebt sich auf 12 Uhr.".</em> Wir waren
+eh gerade fertig also rufe ich um 18:00 Uhr, 15 Minuten später, zurück
+um die Dame zu fragen ob sie das richtig findet einem am Abend zuvor
+durch einen dritten ausrichten zu lassen das sich die Prüfung
+verschiebt. Was ist denn wenn ich dann bereits Termine habe? Zudem habe
+ich meine Handynummer und E-Mailadresse bei der Registrierung angegeben,
+da kann man mich doch wenigstens versuchen darüber zu erreichen ehe man
+"Stille Post" spielt.<br>
+Aber scheinbar hat sie unmittelbar nach diesem Anruf das Gebäude
+verlassen - jedenfalls war sie nicht mehr im Hause (Aussage der
+Kollegin, die ich stattdessen erreicht habe).<br>
+Angekommen musste ich erstmal suchen, ob ich richtig bin: Die untere
+Etage des scheinbaren Neubaus steht leer. Schilder gibt es nur sehr
+unzureichend.<br>
+Ich bin also um 12 Uhr da. Leider habe ich eine Wartezeit bis etwa 12:30
+Uhr, da sich die Dame trotz der Verschiebung auf 12 Uhr um knapp eine
+halbe Stunde verspätet.<br>
+Als wir endlich anfangen können, werde ich in einen Raum geführt, in dem
+8 völlig veraltete PCs stehen. Die Dame schaltet mir die Prüfung auf und
+- verlässt den Raum! Alle Prüflinge sind völlig unbeaufsichtigt. Spicken
+wäre nun Tür und Tor geöffnet. Ebenso wird man auf den ausgehändigten
+Regeln darauf hingewiesen, das man sich ausschließlich durch heben einer
+Hand bemerkbar machen soll, wenn man Fragen hat. Der Prüfer kommt dann
+angeblich sofort und hilft. .... wie denn, wenn garkeiner im Raum ist??<br>
+Naja. Nachdem ich die erste Prüfung bestanden hatte, habe ich eine kurze
+Pause gemacht und bin dann die zweite angegangen. Während dieser Prüfung
+wurde in den oberen Etagen pausenlos gehämmert. Wirklich konzentrieren:
+Fehlanzeige. Ich bin nach absolvierter Prüfung zu den Damen gegangen und
+habe gesagt das sowas alles andere als geeignete Prüfungsbedingungen
+sind. Reaktion: "Ja, ich war auch eben schonmal gucken ...". Super!</p>
+<p>Also: Nichts gegen die Damen an sich: Die beiden waren sehr nett! Aber
+es ärgert mich, das man viel Geld dafür bezahlt, das man sich da eine
+Stunde lang an einen PC setzen darf, dabei weder Beaufsichtigt noch
+betreut wird und das man einen Tag vor der Prüfung derart mit
+Orga-Scheiss abgelenkt wird. Zumal die auf der Anmeldung ihrerseits ein
+richtiges Fass aufmachen: "Wer mehr als 15 Minuten später erscheint darf
+nicht mehr teilnehmen!", "Armbanduhr, Portemonaie und Handy müssen
+abgelegt werden!", "Während der Prüfung: Absolute Ruhe!" , und dann
+bietet man einem solche Bedingungen an.</p>
+<p>Naja ...<br>
+Morgen rechne ich mit dem Linux Professional Institute ab! Stay tuned!
+:D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=LPIC-1%20%3A%20Mission%20accomplished%21&url=https%3A//www.zoosau.de/lpic-1-mission-accomplished.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=LPIC-1%20%3A%20Mission%20accomplished%21&amp;body=https%3A//www.zoosau.de/lpic-1-mission-accomplished.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/fehlende-libraries-bei-vmware-server-installation-unter-ubuntu-auf-einem-x86_64-system.html">Fehlende Libraries bei VMware Server Installation unter Ubuntu auf einem x86_64 System</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-06-23T17:12:00+02:00"> Di 23 Juni 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		138
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/libraries.html">libraries</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+        /
+	<a href="https://www.zoosau.de/tag/vm.html">vm</a>
+        /
+	<a href="https://www.zoosau.de/tag/vmware.html">vmware</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hallo zusammen; kurzer HowTo-Flash:</p>
+<p>Ich hatte eben Probleme den VMware Server unter einem Ubuntu x86_64
+System zu installieren. Meine Bildschirmausgabe sah wie folgt aus:</p>
+<blockquote>
+<p><strong>The correct version of one or more libraries needed to run VMware
+Server may be missing. This is the output of ldd /usr/bin/vmware:<br>
+linux-gate.so.1 =&gt; (0xffffe000)<br>
+libm.so.6 =&gt; /lib32/libm.so.6 (0xf7f93000)<br>
+libdl.so.2 =&gt; /lib32/libdl.so.2 (0xf7f8f000)<br>
+libpthread.so.0 =&gt; /lib32/libpthread.so.0 (0xf7f76000)<br>
+libX11.so.6 =&gt; not found<br>
+libXtst.so.6 =&gt; not found<br>
+libXext.so.6 =&gt; not found<br>
+libXt.so.6 =&gt; not found<br>
+libICE.so.6 =&gt; not found<br>
+libSM.so.6 =&gt; not found<br>
+libXrender.so.1 =&gt; not found<br>
+libz.so.1 =&gt; /usr/lib32/libz.so.1 (0xf7f60000)<br>
+libc.so.6 =&gt; /lib32/libc.so.6 (0xf7e16000)<br>
+/lib/ld-linux.so.2 (0xf7fc6000)<br>
+</strong></p>
+<p><strong>This program cannot tell for sure, but you may need to upgrade libc5
+to glibc<br>
+before you can run VMware Server.</strong></p>
+</blockquote>
+<p><a href="http://www.jameslittle.me.uk/installing-vmware-on-ubuntu-gutsy/">Auf dieser
+Seite</a>
+habe ich die Lösung gefunden:</p>
+<p>Man muss das Paket "<strong>ia32-libs</strong>" nachinstallieren. Nun klappt alles :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Fehlende%20Libraries%20bei%20VMware%20Server%20Installation%20unter%20Ubuntu%20auf%20einem%20x86_64%20System&url=https%3A//www.zoosau.de/fehlende-libraries-bei-vmware-server-installation-unter-ubuntu-auf-einem-x86_64-system.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Fehlende%20Libraries%20bei%20VMware%20Server%20Installation%20unter%20Ubuntu%20auf%20einem%20x86_64%20System&amp;body=https%3A//www.zoosau.de/fehlende-libraries-bei-vmware-server-installation-unter-ubuntu-auf-einem-x86_64-system.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/http_host-mit-mod_rewrite-verandern.html">HTTP_HOST mit mod_rewrite verändern</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-04-30T18:45:00+02:00"> Do 30 April 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		510
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+        /
+	<a href="https://www.zoosau.de/tag/http_host-manipulieren.html">http_host manipulieren</a>
+        /
+	<a href="https://www.zoosau.de/tag/mod_rewrite.html">mod_rewrite</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich möchte heute einen mod_rewrite - Move veröffentlichen, den ich so
+im Internet (als ich ihn selber brauchte ... *gnaaahr* .. ;) ) nicht
+gefunden habe.</p>
+<p>Erstmal: Worum geht's?<br>
+Ich hatte auf der Arbeit folgende Aufgabe: Einer unserer Kunden hat
+mehrere Domains. Unter jeder dieser Domains gibt es einen DNS-Eintrag
+für jeden Server des Kunden. Zum Beispiel: server1.domain1.de ,
+server1.domain2.de , ... etc. In  Einträgen mit gleichem Servernamen
+(server1) ist immer dieselbe IP hinterlegt.</p>
+<p>Nun tauchten teilweise doppelte Einträge bei Suchmaschinen auf, wodurch
+das Ranking negativ beeinflusst wird. Es gab zum Beispiel diese beiden
+(fiktiven) Hits auf denselben Suchausdruck:
+<strong>http://server1.domain1.de/gartenzubehoer.html</strong>
+und <strong>http://server1.domain2.de/gartenzubehoer.html</strong>. Das ist natürlich
+eher nicht erwünscht.</p>
+<p>Die Aufgabe bestand nun also aus 3 Punkten:</p>
+<ol>
+<li>Es sollen alle Anfragen von allen Domains auf eine einzige
+    Hauptdomain mit einem RedirectPermanent (301) umgeleitet werden.</li>
+<li>Es muss erreicht werden, das der Subdomain - Teil (server1) mit
+    übernommen wird und der Hauptdomain vorangestellt wird.</li>
+<li>Der URI-Teil nach dem Hostteil (/gartenzubehoer.html) muss in der
+    neuen URI auch wieder angehangen werden.</li>
+</ol>
+<p>Nun bietet mod_rewrite es in RewriteRule - Anweisung aber irgendwie nur
+an, den Teil nach dem Hostteil zu verändern/zu übernehmen. Somit hätte
+ich nur die Möglichkeit auf einen einzigen Server umzuleiten.<br>
+Es gibt auch die RewriteCond - Anweisung. Hiermit kann man auch die
+Variable HTTP_HOST auf bestimmte Inhalte hin überprüfen, jedoch nicht
+verändern.</p>
+<p>Wie bekommt man es nun hin die Anfrage wie beschrieben zu manipulieren?</p>
+<p>Lösung: Man kann mit einem regulären Ausdruck Werte aus der RewriteCond
+- Anweisung in der RewriteRule - Anweisung wiederverwerten!<br>
+Es folgt das Beispiel für die beschriebene Anforderung:</p>
+<blockquote>
+<p><strong>RewriteEngine On<br>
+RewriteCond %{HTTP_HOST} \^(.*)\.domain.\.de\$ [NC]<br>
+RewriteRule \^(.*)\$ http://%1\.domain1\.de\$1 [R=301,L]</strong></p>
+</blockquote>
+<p>Das wars! Das fiese: RewriteCond Speichert seine Pattern in Variablen,
+die mit %N angesprochen werden und RewriteRule in Variablen, die mit \$N
+angesprochen werden! Mit diesem Wissen ist es eigentlich schon wieder
+ein Kinderspiel, wie man sieht.</p>
+<p>Ich gehe die Zeilen schnell (!) durch:</p>
+<p>Zeile 1: Aktiviert nur das mod_rewrite .</p>
+<p>Zeile 2: RewriteCond ist eigentlich dazu da, um einen Request vor der
+Umformung zunächst mal durch verschiedene Prüfungen gehen zu lassen. Nur
+wenn alle RewriteCond Tests erfolgreich waren, wird die Manipulation
+durch RewriteRule vorgenommen. Hier dient uns die Anweisung jedoch dazu
+den HTTP_HOST auszulesen und in der Variable %1 zu speichern. Dieses
+wird durch die () erreicht (Siehe: Reguläre Ausdrücke). Die Option
+[NC] steht für "not casesensitive" und bewirkt, das es egal ist, ob
+jemand eine beliebige Kombination aus Groß- und Kleinschreibung in der
+URL verwendet.</p>
+<p>Zeile 3: RewriteRule definiert nun wie genau die Anfrage manipuliert
+werden soll. der zweite Teil nimmt sich einfach alle Zeichen, die hinter
+dem Hostteil kommen und speichert sie in der Variablen \$1. Anschließend
+wird das Ziel definiert. Hier werden beide Variablen, %1 und \$1, wieder
+verwertet. Die Optionen [R=301,L] besagen nun, das es sich um eine
+Umleitung (<strong>R</strong>edirect) des Types 301 (permanent) handelt, und das
+dieses die letzte Regel sein soll, die angewendet wird (L).</p>
+<p>Das ganze hat mich über 2 Stunden gekostet. Hab offenbar immer wieder
+übersehen, das es sich um zwei unterschiedliche Variablenregister bei %N
+und \$N handelt.<br>
+Ich hoffe das dieses jemandem diese Zeit spart ;)</p>
+<p>Wie immer freue ich mich sehr über ein kurzes Feedback in Form eines
+Kommentars :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=HTTP_HOST%20mit%20mod_rewrite%20ver%C3%A4ndern&url=https%3A//www.zoosau.de/http_host-mit-mod_rewrite-verandern.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=HTTP_HOST%20mit%20mod_rewrite%20ver%C3%A4ndern&amp;body=https%3A//www.zoosau.de/http_host-mit-mod_rewrite-verandern.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/syntax-highlighting-im-vim-aktivieren.html">Syntax Highlighting im vim aktivieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-01-29T11:42:00+01:00"> Do 29 Januar 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		142
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/debian.html">debian</a>
+        /
+	<a href="https://www.zoosau.de/tag/syntax-highlighting.html">syntax highlighting</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+        /
+	<a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Nur ein schneller Tipp für zwischendurch.</p>
+<p>Unter Debian und Debian-artigen Linux Distributionen ist das <a href="http://de.wikipedia.org/wiki/Syntaxhervorhebung" title="Wiki Eintrag zu &quot;Syntax Highlighting&quot;">Syntax
+Highlighting</a>
+standardmäßig deaktiviert. Ist auch gut so für ein Serverbetriebssystem,
+da manche KVM Displays auf Farben nicht so gut zu sprechen sind.<br>
+Meistens ist dieses jedoch ein Feature, das einen ungemein bei der
+Arbeit unterstützt.</p>
+<p>In <a href="http://simplesnip.com/helmi/vim-syntax-highlighting-aktivieren.html" title="SimpleSnip Blog">diesem
+Blog</a>,
+der leider nur von registrierten Usern Kommentare akzeptiert ( was mir
+aber zu umständlich ist ;) ), habe ich schnell gefunden, wie man es
+aktiviert:</p>
+<p>Einfach in die Datei "<strong><em>/etc/vim/vimrc</em></strong>" die Option "<strong>syntax on</strong>"
+setzen. Bei Debian und Ubuntu existiert der Eintrag bereits, ist jedoch
+durch doppelte Anführungszeichen auskommentiert.<br>
+Das war's schon! :) Beim nächsten Start von vim ist das <a href="http://de.wikipedia.org/wiki/Syntaxhervorhebung" title="Wiki Eintrag zu &quot;Syntax Highlighting&quot;">Syntax
+Highlighting</a>
+aktiviert.</p>
+<p>Achtung: Auf diesem Wege gillt es global für alle User!<br>
+Userspezifisch kann man dasselbe erreichen, indem man stattdessen die
+Datei "<strong><em>.vimrc</em></strong>" im jeweiligen Home-Dir des Users wie oben
+beschrieben editiert.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Syntax%20Highlighting%20im%20vim%20aktivieren&url=https%3A//www.zoosau.de/syntax-highlighting-im-vim-aktivieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Syntax%20Highlighting%20im%20vim%20aktivieren&amp;body=https%3A//www.zoosau.de/syntax-highlighting-im-vim-aktivieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/fastlogres-gefunden.html">fastlogres gefunden!</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-09-04T16:02:00+02:00"> Do 04 September 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		190
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/fastlogres.html">fastlogres</a>
+        /
+	<a href="https://www.zoosau.de/tag/fastlogresolve.html">fastlogresolve</a>
+        /
+	<a href="https://www.zoosau.de/tag/jan-wedekind.html">jan wedekind</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Es ist echt unglaublich!<br>
+Man sucht stundenlang, und findet NICHTS!</p>
+<p>Dann schreibt man irgend eine Mail/ICQ Nachricht, oder einen Blogeintrag
+und kaum ist das raus: SCHWUPPS - gefunden!<br>
+So sollte ich das immer machen .... in diesem Sinne: Wer hat meine
+5.000,- € gesehen??? ;)</p>
+<p>Spass beiseite: Ich habe doch noch in den Tiefen unserer Dateisysteme
+zwei Archive gefunden.<br>
+Eines, mit der Binären Version von fastlogres 0.2.0 für i386er Systeme,
+und den Quellcode zu fastlogres 0.2.1 .</p>
+<p>In letzterem findet sich auch ein sehr ordentlich gepflegtes README,
+welches Aufschluss auf den Autor gibt. Es handelt sich dabei um einen
+"Jan Wedekind". Seine Homepage ist laut README <a href="http://www.wede.de">http://www.wede.de</a> und
+fastlogres soll dort unter <a href="http://www.wede.de/sw/fastlogres/">http://www.wede.de/sw/fastlogres/</a> zu finden
+sein.<br>
+Leider ist das nicht der Fall, und die Seite gibt es nicht mehr.<br>
+Eine Suche nach "Jan Wedekind" brachte ein paar Blogs hervor, jedoch
+keine neue Homepage.</p>
+<p>Was soll's? Mach ich halt den Mirror:</p>
+<p>Binär:</p>
+<ul>
+<li><a href="http://www.zoosau.de/software/fastlogres/fastlogres-0.2.0-i386-linux.tgz" title="fastlogres Version 0.2.0 für i386 Systeme">fastlogres-0.2.0-i386-linux.tgz</a></li>
+</ul>
+<p>Quelltext:</p>
+<ul>
+<li><a href="http://www.zoosau.de/software/fastlogres/fastlogres-0.2.1.tgz" title="fastlogres Version 0.2.1 Quellcode">fastlogres-0.2.1.tgz</a></li>
+</ul>
+<p>Das ganze steht zum Glück unter GPLv2 :)</p>
+<p><em><span style="text-decoration: underline;">20080904 - 22:32 CET<br>
+</span></em>PS:</p>
+<p>Dank Sven's Link (siehe Kommentare) konnte ich die alte Webseite wieder
+herstellen. ... was heisst "wieder herstellen"? - Ich konnte sie
+herunterladen ;)<br>
+<a href="http://www.zoosau.de/software/fastlogres/" title="Die archivierte Seite von Jan Wedekind's fastlogres">Ihr findet die ganze Seite nun
+hier.</a></p>
+<p>Danke @ Sven! :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=fastlogres%20gefunden%21&url=https%3A//www.zoosau.de/fastlogres-gefunden.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=fastlogres%20gefunden%21&amp;body=https%3A//www.zoosau.de/fastlogres-gefunden.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/vmware-unter-ubuntu-zum-laufen-bringen.html">VMware unter (*)ubuntu zum laufen bringen</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-07-15T15:12:00+02:00"> Di 15 Juli 2008</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/job-und-beruf-linux.html">Job und Beruf, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		244
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/console.html">console</a>
+        /
+	<a href="https://www.zoosau.de/tag/gcc.html">gcc</a>
+        /
+	<a href="https://www.zoosau.de/tag/konsole.html">konsole</a>
+        /
+	<a href="https://www.zoosau.de/tag/libgcc_sso1.html">libgcc_s.so.1</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+        /
+	<a href="https://www.zoosau.de/tag/vmware.html">vmware</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hallo zusammen!</p>
+<p>Ich habe ja länger nichts geschrieben. Aufgrund der heutigen Aktion mit
+VMware unter Linux sehe ich mich dazu aber fast gezwungen. Das ist mal
+wieder _so_ schwachsinnig und typisch VMware, das muss einfach
+festgehalten werden:</p>
+<p>Was ich schon kenne im Zusammenhand mit VMware Server unter Linux ans
+laufen bringen ist, das man irgendwie immer erst einen Kernel
+kompilieren muss, da die mit der Distribution mitgelieferte GCC Version
+in aller Regel eine andere ist, als die, mit der der ebenfalls
+mitgelieferte Kernel kompiliert wurde.</p>
+<p>Zumindest war das unter meinem Debian System so.<br>
+Nun habe ich jedoch ein (k)ubuntu auf meinem Laptop und bekomme nach der
+Installation von VMware Server, beim starten der VMware Konsole diesen
+Block an Fehlermeldungen:</p>
+<p>/usr/local/lib/vmware/bin/vmware:<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/local/lib/libstdc++.so.6)<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/local/lib/libstdc++.so.6)<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)<br>
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/lib/libstdc++.so.6)</p>
+<p>Ich denke mir schon so .oO( <em>... oh <span
+style="text-decoration: underline;">NO!</span> Nicht schon wieder Kernel
+backen!</em> ). Ist aber auch garnicht nötig gewesen! :)</p>
+<p>Auf <a href="http://www.it-sreimers.de/linux-vmware-server-console-ubuntu-probleme.html" title="IT-Service Sebastian Reimers">dieser
+Seite</a>
+fand ich die Lösung. Sie liest sich erstmal so "... alles klar ...
+lösche ich mal ein paar Libraries ... dadurch wird's <span
+style="text-decoration: underline;">bestimmt</span> besser
+..."&lt;/ironie&gt;. Aber: Das klappt wirklich!</p>
+<p>Man muss nur die Datei <strong><em>lib/libgcc_s.so.1/libgcc_s.so.1</em></strong> (im
+Unterverzeichnis, wo man den VMware Server installiert hat. Bei mir
+z.B.: <strong><em>/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1</em></strong> )
+entfernen, bzw. umbenennen. Anschliessend startet VMware ohne Probleme
+... kurios! :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=VMware%20unter%20%28%2A%29ubuntu%20zum%20laufen%20bringen&url=https%3A//www.zoosau.de/vmware-unter-ubuntu-zum-laufen-bringen.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=VMware%20unter%20%28%2A%29ubuntu%20zum%20laufen%20bringen&amp;body=https%3A//www.zoosau.de/vmware-unter-ubuntu-zum-laufen-bringen.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2015/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2015 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2008 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

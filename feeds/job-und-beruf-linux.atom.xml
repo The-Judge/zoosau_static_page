@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf, Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf-linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2015-11-09T13:30:00+01:00</updated><entry><title>SSH - REMOTE HOST IDENTIFICATION HAS CHANGED</title><link href="https://www.zoosau.de/openssh-und-die-nervigen-known_hosts.html" rel="alternate"></link><published>2015-11-09T13:30:00+01:00</published><updated>2015-11-09T13:30:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2015-11-09:/openssh-und-die-nervigen-known_hosts.html</id><summary type="html">&lt;p&gt;Jedes Mal, wenn ich mir ein neues Linux-System einrichte, muss ich erst
+nochmal schnell Googlen oder die Manpage wälzen; daher notiere ich es
+mir hier jetzt endlich mal:&lt;/p&gt;
+&lt;p&gt;Es gibt ein Sicherheitsfeature bei openSSH, welches einen warnt wenn man
+sich zu einem Host/einer IP verbinden möchte und sich die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Jedes Mal, wenn ich mir ein neues Linux-System einrichte, muss ich erst
+nochmal schnell Googlen oder die Manpage wälzen; daher notiere ich es
+mir hier jetzt endlich mal:&lt;/p&gt;
+&lt;p&gt;Es gibt ein Sicherheitsfeature bei openSSH, welches einen warnt wenn man
+sich zu einem Host/einer IP verbinden möchte und sich die ID des Zieles
+seit dem letzten Mal verändert hat. Das macht zwar durchaus Sinn und ich
+finde das generell eine gute Sache. Aber es kann wirklich sehr nerven,
+besonders wenn man mit DHCP arbeitet und die Zielrechner dauernd Ihre IP
+durchtauschen, man mit virtuellen Maschinen arbeitet und diese nur kurz
+benutzt werden oder häufig per SSH auf Live-CD-Systeme konnektiert.&lt;/p&gt;
+&lt;p&gt;Normalerweise muss man die entsprechende Zeile in der Datei
+&lt;strong&gt;~/.ssh/known_hosts&lt;/strong&gt; die angemeckerte Zeile löschen; z.B. bei:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.12&lt;/span&gt;
+&lt;span class="p"&gt;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&lt;/span&gt;
+&lt;span class="p"&gt;@&lt;/span&gt; &lt;span class="nl"&gt;WARNING&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;REMOTE&lt;/span&gt; &lt;span class="n"&gt;HOST&lt;/span&gt; &lt;span class="n"&gt;IDENTIFICATION&lt;/span&gt; &lt;span class="n"&gt;HAS&lt;/span&gt; &lt;span class="n"&gt;CHANGED&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;
+&lt;span class="p"&gt;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&lt;/span&gt;
+&lt;span class="n"&gt;IT&lt;/span&gt; &lt;span class="n"&gt;IS&lt;/span&gt; &lt;span class="n"&gt;POSSIBLE&lt;/span&gt; &lt;span class="n"&gt;THAT&lt;/span&gt; &lt;span class="n"&gt;SOMEONE&lt;/span&gt; &lt;span class="n"&gt;IS&lt;/span&gt; &lt;span class="n"&gt;DOING&lt;/span&gt; &lt;span class="n"&gt;SOMETHING&lt;/span&gt; &lt;span class="n"&gt;NASTY&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;span class="n"&gt;Someone&lt;/span&gt; &lt;span class="n"&gt;could&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;eavesdropping&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;man&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;middle&lt;/span&gt; &lt;span class="n"&gt;attack&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;span class="n"&gt;It&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;also&lt;/span&gt; &lt;span class="n"&gt;possible&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;RSA&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;just&lt;/span&gt; &lt;span class="n"&gt;been&lt;/span&gt; &lt;span class="n"&gt;changed&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;fingerprint&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;RSA&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;remote&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt;
+&lt;span class="mi"&gt;39&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;b3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;72&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mo"&gt;04&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;f7&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;eb&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;aa&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="nl"&gt;c&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;ed&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nl"&gt;db&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;77&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="nl"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;e9&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Please&lt;/span&gt; &lt;span class="n"&gt;contact&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="n"&gt;administrator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Add&lt;/span&gt; &lt;span class="n"&gt;correct&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;known_hosts&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;rid&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Offending&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;known_hosts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;RSA&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="mf"&gt;192.168.1.12&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;changed&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;have&lt;/span&gt; &lt;span class="n"&gt;requested&lt;/span&gt; &lt;span class="n"&gt;strict&lt;/span&gt; &lt;span class="n"&gt;checking&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Host&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;verification&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;müsste man die Zeile 3 entfernen.&lt;/p&gt;
+&lt;p&gt;Hierzu muss man etwas wie&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed -i 3d ~/.ssh/known_hosts
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;losjagen oder die Datei in einem Editor von Hand bereinigen. Wie schon
+gesagt: Auf Dauer sehr nervig!&lt;/p&gt;
+&lt;p&gt;Wenn einem das nur vereinzelt passiert, kann man sich mit
+Kommandozeilenoptionen helfen:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="n"&gt;UserKnownHostsFile&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;null&lt;/span&gt; \
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="n"&gt;StrictHostKeyChecking&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.12&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ist jedoch schon eine
+recht sportliche Aufgabe sich das a) zu merken und b) jedes Mal
+wegzutippen.&lt;/p&gt;
+&lt;p&gt;Wem das permanent passiert, kann dieses Verhalten dauerhaft einstellen.
+Und zwar sowohl global wie auch userbasiert. In beiden Fällen müssen die
+beiden o.g. Optionen in die passende Config-Datei eingetragen werden:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;UserKnownHostsFile=/dev/null  
+StrictHostKeyChecking=no
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Um diese Einstellung global zu setzen (nicht empfohlen), trägt man diese
+Optionen in die Datei "&lt;strong&gt;/etc/ssh/ssh_config&lt;/strong&gt;" ein.&lt;/p&gt;
+&lt;p&gt;Um diese Einstellung nur für einen bestimmten User zu setzen, trägt man
+diese Optionen in die Datei "~&lt;strong&gt;/.ssh/config&lt;/strong&gt;" ein.&lt;/p&gt;
+&lt;p&gt;Das ganze hebelt natürlich den als Sicherheitsmaßnahme gegen
+"Man-in-the-middle" - Attacken gemeinten Schutz vor diesem Angriffstyp
+aus. Um das ganze wenigstens etwas sicherer zu machen, kann man auch nur
+einzelne Hosts und Hostbereiche derart von dieser Regel ausnehmen. Die
+Beispielhafte Syntax dazu lautet dann:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host 192.168.1.*
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Möchte man dieses immer und für alle Verbindungen deaktivieren, lässt
+man die "&lt;strong&gt;&lt;em&gt;Host&lt;/em&gt;&lt;/strong&gt;" - Zeile einfach weg.&lt;/p&gt;
+&lt;p&gt;Aber Achtung: Bitte nur anwenden wenn Ihr wisst was Ihr tut! Das ganze
+hebelt, wie gesagt, einen sinnvollen Schutz des SSH Systems aus.&lt;/p&gt;</content><category term="known_hosts"></category><category term="ssh"></category><category term="WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED"></category></entry><entry><title>ownCloud Fehler unter KDE: "ownCloud wird für eine funktionierende Taskleiste benötigt"</title><link href="https://www.zoosau.de/owncloud-fehler-unter-kde-owncloud-wird-fuer-eine-funktionierende-taskleiste-benoetigt.html" rel="alternate"></link><published>2015-07-14T19:47:00+02:00</published><updated>2015-07-14T19:47:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2015-07-14:/owncloud-fehler-unter-kde-owncloud-wird-fuer-eine-funktionierende-taskleiste-benoetigt.html</id><summary type="html">&lt;p&gt;Auf einem meiner Rechner läuft ein kubuntu 15.04. In dessen Repo
+befindet sich die Version 1.7.0\~beta1+really1.6.4+dfsg-1 des Paketes
+owncloud-client. Installiert man dieses, bekommt man unter KDE Plasma
+beim Anmelden folgende Fehlermeldung angezeigt:&lt;/p&gt;
+&lt;p&gt;"ownCloud wird für eine funktionierende Taskleiste benötigt. Falls Sie
+XFCE …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Auf einem meiner Rechner läuft ein kubuntu 15.04. In dessen Repo
+befindet sich die Version 1.7.0\~beta1+really1.6.4+dfsg-1 des Paketes
+owncloud-client. Installiert man dieses, bekommt man unter KDE Plasma
+beim Anmelden folgende Fehlermeldung angezeigt:&lt;/p&gt;
+&lt;p&gt;"ownCloud wird für eine funktionierende Taskleiste benötigt. Falls Sie
+XFCE einsetzen, dann folgen Sie bitte diesen Anweisungen. Anderenfalls
+installieren Sie bitte eine Taskleisten-Anwendung wie 'trayer' und
+versuchen Sie es erneut."&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1906" align="aligncenter"
+width="525"]&lt;a href="https://www.zoosau.de/images/ee7c67be-3779-11e4-95be-cafef1b82431.png"&gt;&lt;img alt="Fehlermeldung der Repo-Version von owncloud unter Ubuntu
+15.04: &amp;quot;ownCloud wird für eine funktionierende Taskleiste
+benötigt.&amp;quot;" src="https://www.zoosau.de/images/ee7c67be-3779-11e4-95be-cafef1b82431.png"&gt;{.size-full
+.wp-image-1906 width="525"
+height="238"}&lt;/a&gt;
+Fehlermeldung der Repo-Version von owncloud unter Ubuntu 15.04:
+"ownCloud wird für eine funktionierende Taskleiste
+benötigt."[/caption]&lt;/p&gt;
+&lt;p&gt;Hierbei handelt es sich offenbar um einen Übersetzungsfehler, welcher in
+aktuellen Versionen bereits behoben ist:
+&lt;a href="https://github.com/owncloud/client/issues/2180"&gt;https://github.com/owncloud/client/issues/2180&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dennoch: Auch mit einer korrekten Fehlermeldung bleibt es dabei: Diese
+Version spuckt einen Fehler aus.&lt;/p&gt;
+&lt;p&gt;Abhilfe kann man schaffen, indem man den &lt;a href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&amp;amp;package=owncloud-client"&gt;Anweisungen auf der
+ownCloud-Homepage&lt;/a&gt;
+folgt um den aktuellen Desktopclient für Ubuntu zu installieren. Ein
+laufender ownCloud Client sollte zuvor beendet werden. Das Paket
+owncloud-client muss zuvor nicht deinstalliert werden, da es durch die
+folgenden Schritte aktualisiert wird:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sh -c &amp;quot;echo &amp;#39;deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/xUbuntu_15.04/ /&amp;#39; &amp;gt;&amp;gt; /etc/apt/sources.list.d/owncloud-client.list&amp;quot;
+wget -O - http://download.opensuse.org/repositories/isv:ownCloud:desktop/xUbuntu_15.04/Release.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install owncloud-client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Anschließend befindet sich die aktuelle Version des ownCloud Clients
+(derzeit 1.8.3) auf dem System und die Fehlermeldung sollte der
+Vergangenheit angehören.&lt;/p&gt;</content><category term="fehler"></category><category term="kde"></category><category term="owncloud"></category><category term="ownCloud wird für eine funktionierende Taskleiste benötigt"></category><category term="plasma"></category></entry><entry><title>Kurztipp: Galileo Buch "Shell Programmierung" kostenlos als OpenBook</title><link href="https://www.zoosau.de/kurztipp-galileo-buch-shell-programmierung-kostenlos-als-openbook.html" rel="alternate"></link><published>2012-12-17T20:05:00+01:00</published><updated>2012-12-17T20:05:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-12-17:/kurztipp-galileo-buch-shell-programmierung-kostenlos-als-openbook.html</id><summary type="html">&lt;p&gt;Ich habe hier das Buch
+"&lt;a href="http://www.galileocomputing.de/1007?GPP=opsh" title="Shell-Programmierung -  ISBN 978-3-89842-683-1"&gt;Shell-Programmierung&lt;/a&gt;"
+(ISBN: 978-3-8362-1157-4) von Jürgen Wolf im Original im Hardcover
+liegen; ein rund 800 Seiten starker Trümmer randvoll mit praktischen
+Tipps, Anwendungsbeispielen und nachvollziehbaren Erklärungen rund um
+die Programmierung in den verbreitetsten Linux-Shells. Das Buch ist
+super! Ich schaue regelmäßig rein und finde nach wie …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe hier das Buch
+"&lt;a href="http://www.galileocomputing.de/1007?GPP=opsh" title="Shell-Programmierung -  ISBN 978-3-89842-683-1"&gt;Shell-Programmierung&lt;/a&gt;"
+(ISBN: 978-3-8362-1157-4) von Jürgen Wolf im Original im Hardcover
+liegen; ein rund 800 Seiten starker Trümmer randvoll mit praktischen
+Tipps, Anwendungsbeispielen und nachvollziehbaren Erklärungen rund um
+die Programmierung in den verbreitetsten Linux-Shells. Das Buch ist
+super! Ich schaue regelmäßig rein und finde nach wie vor immer wieder
+etwas neues. Besonders als Referenz finde ich es einsame spitze!&lt;/p&gt;
+&lt;p&gt;Da sich nun leider nach mehreren Jahren der regelmäßigen Benutzung die
+Bindung mancher Seiten in den wohlverdienten Ruhestand verabschieden,
+wollte ich eben mal schauen ob man das nicht zufällig als digitale Kopie
+erstehen kann.&lt;br&gt;
+Tatsächlich: Kann man! Und zwar inzwischen kostenlos als &lt;a href="http://www.galileocomputing.de/katalog/openbook/?GPP=opsh" title="Galileo Computing - OpenBook"&gt;Galileo
+OpenBook&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Ich kann nur jedem an diesem Thema interessiertem empfehlen:
+&lt;a href="http://openbook.galileocomputing.de/shell_programmierung/" title="Shell-Programmierung als Galileo OpenBook"&gt;Downloaden&lt;/a&gt;!&lt;/p&gt;</content><category term="buch"></category><category term="galileo"></category><category term="Linux"></category><category term="programmierung"></category><category term="shell"></category></entry><entry><title>LPIC-1 : Mission accomplished!</title><link href="https://www.zoosau.de/lpic-1-mission-accomplished.html" rel="alternate"></link><published>2011-11-25T00:05:00+01:00</published><updated>2011-11-25T00:05:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-11-25:/lpic-1-mission-accomplished.html</id><summary type="html">&lt;p&gt;Jaaa - was soll ich groß schreiben? Was lange währt wird endlich gut
+vielleicht :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1074" align="alignright" width="264"
+caption="LPIC-1 Logo"]&lt;a href="https://www.zoosau.de/images/icon-lpic1.png"&gt;&lt;img alt="LPIC-1
+Logo" src="https://www.zoosau.de/images/icon-lpic1.png" title="LPIC-1 Logo"&gt;{.size-full
+.wp-image-1074 width="264"
+height="264"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Nachdem mein Kumpel Alex vor inzwischen fast zwei Jahren mit dem
+&lt;a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1"&gt;LPIC-1&lt;/a&gt;
+Zertifikat vorgelegt hat, wollte ich eigentlich innerhalb weniger …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Jaaa - was soll ich groß schreiben? Was lange währt wird endlich gut
+vielleicht :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1074" align="alignright" width="264"
+caption="LPIC-1 Logo"]&lt;a href="https://www.zoosau.de/images/icon-lpic1.png"&gt;&lt;img alt="LPIC-1
+Logo" src="https://www.zoosau.de/images/icon-lpic1.png" title="LPIC-1 Logo"&gt;{.size-full
+.wp-image-1074 width="264"
+height="264"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Nachdem mein Kumpel Alex vor inzwischen fast zwei Jahren mit dem
+&lt;a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1"&gt;LPIC-1&lt;/a&gt;
+Zertifikat vorgelegt hat, wollte ich eigentlich innerhalb weniger Wochen
+nachziehen. Nur kam dann eines zum anderen. Erst zog die Firma um, dann
+hatte ich alle Hände voll zu tun mit meiner damals neuen Position als
+Abteilungsleiter mit Personalverantwortung, dann ... ach - blah, blah,
+blah. Das Ende vom Lied ist: Ich bin erst am gestrigen Mittwoch endlich
+dazu gekommen meine
+&lt;a href="http://www.lpi.org/linux-certifications/programs/lpic-1" title="Linux Professional Institute Certification - Level 1"&gt;LPIC-1&lt;/a&gt;
+Prüfung bei "&lt;a href="http://www.thecampus.de" title="Homepage von &amp;quot;The Campus&amp;quot;"&gt;The
+Campus&lt;/a&gt;" in
+Düsseldorf in der Gladbecker Str 1  zu absolvieren. Ich habe direkt
+beide Prüfungen hintereinander durchgezogen.&lt;/p&gt;
+&lt;p&gt;Was soll ich lange drum herum reden: Bestanden! :)&lt;/p&gt;
+&lt;p&gt;Ich habe hierzu mit dreien abzurechnen. Fangen wir mit "&lt;a href="http://www.thecampus.de" title="Homepage von &amp;quot;The Campus&amp;quot;"&gt;The
+Campus&lt;/a&gt;" an.&lt;br&gt;
+Ich habe mich am 9.11.2011 zu beiden Prüfungen am 23.11.2011 um 10.30
+und 12:00 Uhr angemeldet. Am 22.11. um 17:45 Uhr (also: Am Abend zuvor)
+sitze ich mit meinem Chef im Meetingraum in der Firma, da kommt eine
+Kollegin rein und meint &lt;em&gt;"Es hat eine Frau X von The Campus angerufen
+und meinte die Prüfung morgen verschiebt sich auf 12 Uhr.".&lt;/em&gt; Wir waren
+eh gerade fertig also rufe ich um 18:00 Uhr, 15 Minuten später, zurück
+um die Dame zu fragen ob sie das richtig findet einem am Abend zuvor
+durch einen dritten ausrichten zu lassen das sich die Prüfung
+verschiebt. Was ist denn wenn ich dann bereits Termine habe? Zudem habe
+ich meine Handynummer und E-Mailadresse bei der Registrierung angegeben,
+da kann man mich doch wenigstens versuchen darüber zu erreichen ehe man
+"Stille Post" spielt.&lt;br&gt;
+Aber scheinbar hat sie unmittelbar nach diesem Anruf das Gebäude
+verlassen - jedenfalls war sie nicht mehr im Hause (Aussage der
+Kollegin, die ich stattdessen erreicht habe).&lt;br&gt;
+Angekommen musste ich erstmal suchen, ob ich richtig bin: Die untere
+Etage des scheinbaren Neubaus steht leer. Schilder gibt es nur sehr
+unzureichend.&lt;br&gt;
+Ich bin also um 12 Uhr da. Leider habe ich eine Wartezeit bis etwa 12:30
+Uhr, da sich die Dame trotz der Verschiebung auf 12 Uhr um knapp eine
+halbe Stunde verspätet.&lt;br&gt;
+Als wir endlich anfangen können, werde ich in einen Raum geführt, in dem
+8 völlig veraltete PCs stehen. Die Dame schaltet mir die Prüfung auf und
+- verlässt den Raum! Alle Prüflinge sind völlig unbeaufsichtigt. Spicken
+wäre nun Tür und Tor geöffnet. Ebenso wird man auf den ausgehändigten
+Regeln darauf hingewiesen, das man sich ausschließlich durch heben einer
+Hand bemerkbar machen soll, wenn man Fragen hat. Der Prüfer kommt dann
+angeblich sofort und hilft. .... wie denn, wenn garkeiner im Raum ist??&lt;br&gt;
+Naja. Nachdem ich die erste Prüfung bestanden hatte, habe ich eine kurze
+Pause gemacht und bin dann die zweite angegangen. Während dieser Prüfung
+wurde in den oberen Etagen pausenlos gehämmert. Wirklich konzentrieren:
+Fehlanzeige. Ich bin nach absolvierter Prüfung zu den Damen gegangen und
+habe gesagt das sowas alles andere als geeignete Prüfungsbedingungen
+sind. Reaktion: "Ja, ich war auch eben schonmal gucken ...". Super!&lt;/p&gt;
+&lt;p&gt;Also: Nichts gegen die Damen an sich: Die beiden waren sehr nett! Aber
+es ärgert mich, das man viel Geld dafür bezahlt, das man sich da eine
+Stunde lang an einen PC setzen darf, dabei weder Beaufsichtigt noch
+betreut wird und das man einen Tag vor der Prüfung derart mit
+Orga-Scheiss abgelenkt wird. Zumal die auf der Anmeldung ihrerseits ein
+richtiges Fass aufmachen: "Wer mehr als 15 Minuten später erscheint darf
+nicht mehr teilnehmen!", "Armbanduhr, Portemonaie und Handy müssen
+abgelegt werden!", "Während der Prüfung: Absolute Ruhe!" , und dann
+bietet man einem solche Bedingungen an.&lt;/p&gt;
+&lt;p&gt;Naja ...&lt;br&gt;
+Morgen rechne ich mit dem Linux Professional Institute ab! Stay tuned!
+:D&lt;/p&gt;</content></entry><entry><title>Fehlende Libraries bei VMware Server Installation unter Ubuntu auf einem x86_64 System</title><link href="https://www.zoosau.de/fehlende-libraries-bei-vmware-server-installation-unter-ubuntu-auf-einem-x86_64-system.html" rel="alternate"></link><published>2009-06-23T17:12:00+02:00</published><updated>2009-06-23T17:12:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-06-23:/fehlende-libraries-bei-vmware-server-installation-unter-ubuntu-auf-einem-x86_64-system.html</id><summary type="html">&lt;p&gt;Hallo zusammen; kurzer HowTo-Flash:&lt;/p&gt;
+&lt;p&gt;Ich hatte eben Probleme den VMware Server unter einem Ubuntu x86_64
+System zu installieren. Meine Bildschirmausgabe sah wie folgt aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The correct version of one or more libraries needed to run VMware
+Server may be missing. This is the output of ldd /usr/bin/vmware:&lt;br&gt;
+linux-gate …&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen; kurzer HowTo-Flash:&lt;/p&gt;
+&lt;p&gt;Ich hatte eben Probleme den VMware Server unter einem Ubuntu x86_64
+System zu installieren. Meine Bildschirmausgabe sah wie folgt aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The correct version of one or more libraries needed to run VMware
+Server may be missing. This is the output of ldd /usr/bin/vmware:&lt;br&gt;
+linux-gate.so.1 =&amp;gt; (0xffffe000)&lt;br&gt;
+libm.so.6 =&amp;gt; /lib32/libm.so.6 (0xf7f93000)&lt;br&gt;
+libdl.so.2 =&amp;gt; /lib32/libdl.so.2 (0xf7f8f000)&lt;br&gt;
+libpthread.so.0 =&amp;gt; /lib32/libpthread.so.0 (0xf7f76000)&lt;br&gt;
+libX11.so.6 =&amp;gt; not found&lt;br&gt;
+libXtst.so.6 =&amp;gt; not found&lt;br&gt;
+libXext.so.6 =&amp;gt; not found&lt;br&gt;
+libXt.so.6 =&amp;gt; not found&lt;br&gt;
+libICE.so.6 =&amp;gt; not found&lt;br&gt;
+libSM.so.6 =&amp;gt; not found&lt;br&gt;
+libXrender.so.1 =&amp;gt; not found&lt;br&gt;
+libz.so.1 =&amp;gt; /usr/lib32/libz.so.1 (0xf7f60000)&lt;br&gt;
+libc.so.6 =&amp;gt; /lib32/libc.so.6 (0xf7e16000)&lt;br&gt;
+/lib/ld-linux.so.2 (0xf7fc6000)&lt;br&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This program cannot tell for sure, but you may need to upgrade libc5
+to glibc&lt;br&gt;
+before you can run VMware Server.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://www.jameslittle.me.uk/installing-vmware-on-ubuntu-gutsy/"&gt;Auf dieser
+Seite&lt;/a&gt;
+habe ich die Lösung gefunden:&lt;/p&gt;
+&lt;p&gt;Man muss das Paket "&lt;strong&gt;ia32-libs&lt;/strong&gt;" nachinstallieren. Nun klappt alles :)&lt;/p&gt;</content><category term="libraries"></category><category term="ubuntu"></category><category term="vm"></category><category term="vmware"></category></entry><entry><title>HTTP_HOST mit mod_rewrite verändern</title><link href="https://www.zoosau.de/http_host-mit-mod_rewrite-verandern.html" rel="alternate"></link><published>2009-04-30T18:45:00+02:00</published><updated>2009-04-30T18:45:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-04-30:/http_host-mit-mod_rewrite-verandern.html</id><summary type="html">&lt;p&gt;Ich möchte heute einen mod_rewrite - Move veröffentlichen, den ich so
+im Internet (als ich ihn selber brauchte ... *gnaaahr* .. ;) ) nicht
+gefunden habe.&lt;/p&gt;
+&lt;p&gt;Erstmal: Worum geht's?&lt;br&gt;
+Ich hatte auf der Arbeit folgende Aufgabe: Einer unserer Kunden hat
+mehrere Domains. Unter jeder dieser Domains gibt es einen DNS-Eintrag
+für jeden Server des Kunden …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich möchte heute einen mod_rewrite - Move veröffentlichen, den ich so
+im Internet (als ich ihn selber brauchte ... *gnaaahr* .. ;) ) nicht
+gefunden habe.&lt;/p&gt;
+&lt;p&gt;Erstmal: Worum geht's?&lt;br&gt;
+Ich hatte auf der Arbeit folgende Aufgabe: Einer unserer Kunden hat
+mehrere Domains. Unter jeder dieser Domains gibt es einen DNS-Eintrag
+für jeden Server des Kunden. Zum Beispiel: server1.domain1.de ,
+server1.domain2.de , ... etc. In  Einträgen mit gleichem Servernamen
+(server1) ist immer dieselbe IP hinterlegt.&lt;/p&gt;
+&lt;p&gt;Nun tauchten teilweise doppelte Einträge bei Suchmaschinen auf, wodurch
+das Ranking negativ beeinflusst wird. Es gab zum Beispiel diese beiden
+(fiktiven) Hits auf denselben Suchausdruck:
+&lt;strong&gt;http://server1.domain1.de/gartenzubehoer.html&lt;/strong&gt;
+und &lt;strong&gt;http://server1.domain2.de/gartenzubehoer.html&lt;/strong&gt;. Das ist natürlich
+eher nicht erwünscht.&lt;/p&gt;
+&lt;p&gt;Die Aufgabe bestand nun also aus 3 Punkten:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Es sollen alle Anfragen von allen Domains auf eine einzige
+    Hauptdomain mit einem RedirectPermanent (301) umgeleitet werden.&lt;/li&gt;
+&lt;li&gt;Es muss erreicht werden, das der Subdomain - Teil (server1) mit
+    übernommen wird und der Hauptdomain vorangestellt wird.&lt;/li&gt;
+&lt;li&gt;Der URI-Teil nach dem Hostteil (/gartenzubehoer.html) muss in der
+    neuen URI auch wieder angehangen werden.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nun bietet mod_rewrite es in RewriteRule - Anweisung aber irgendwie nur
+an, den Teil nach dem Hostteil zu verändern/zu übernehmen. Somit hätte
+ich nur die Möglichkeit auf einen einzigen Server umzuleiten.&lt;br&gt;
+Es gibt auch die RewriteCond - Anweisung. Hiermit kann man auch die
+Variable HTTP_HOST auf bestimmte Inhalte hin überprüfen, jedoch nicht
+verändern.&lt;/p&gt;
+&lt;p&gt;Wie bekommt man es nun hin die Anfrage wie beschrieben zu manipulieren?&lt;/p&gt;
+&lt;p&gt;Lösung: Man kann mit einem regulären Ausdruck Werte aus der RewriteCond
+- Anweisung in der RewriteRule - Anweisung wiederverwerten!&lt;br&gt;
+Es folgt das Beispiel für die beschriebene Anforderung:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;RewriteEngine On&lt;br&gt;
+RewriteCond %{HTTP_HOST} \^(.*)\.domain.\.de\$ [NC]&lt;br&gt;
+RewriteRule \^(.*)\$ http://%1\.domain1\.de\$1 [R=301,L]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das wars! Das fiese: RewriteCond Speichert seine Pattern in Variablen,
+die mit %N angesprochen werden und RewriteRule in Variablen, die mit \$N
+angesprochen werden! Mit diesem Wissen ist es eigentlich schon wieder
+ein Kinderspiel, wie man sieht.&lt;/p&gt;
+&lt;p&gt;Ich gehe die Zeilen schnell (!) durch:&lt;/p&gt;
+&lt;p&gt;Zeile 1: Aktiviert nur das mod_rewrite .&lt;/p&gt;
+&lt;p&gt;Zeile 2: RewriteCond ist eigentlich dazu da, um einen Request vor der
+Umformung zunächst mal durch verschiedene Prüfungen gehen zu lassen. Nur
+wenn alle RewriteCond Tests erfolgreich waren, wird die Manipulation
+durch RewriteRule vorgenommen. Hier dient uns die Anweisung jedoch dazu
+den HTTP_HOST auszulesen und in der Variable %1 zu speichern. Dieses
+wird durch die () erreicht (Siehe: Reguläre Ausdrücke). Die Option
+[NC] steht für "not casesensitive" und bewirkt, das es egal ist, ob
+jemand eine beliebige Kombination aus Groß- und Kleinschreibung in der
+URL verwendet.&lt;/p&gt;
+&lt;p&gt;Zeile 3: RewriteRule definiert nun wie genau die Anfrage manipuliert
+werden soll. der zweite Teil nimmt sich einfach alle Zeichen, die hinter
+dem Hostteil kommen und speichert sie in der Variablen \$1. Anschließend
+wird das Ziel definiert. Hier werden beide Variablen, %1 und \$1, wieder
+verwertet. Die Optionen [R=301,L] besagen nun, das es sich um eine
+Umleitung (&lt;strong&gt;R&lt;/strong&gt;edirect) des Types 301 (permanent) handelt, und das
+dieses die letzte Regel sein soll, die angewendet wird (L).&lt;/p&gt;
+&lt;p&gt;Das ganze hat mich über 2 Stunden gekostet. Hab offenbar immer wieder
+übersehen, das es sich um zwei unterschiedliche Variablenregister bei %N
+und \$N handelt.&lt;br&gt;
+Ich hoffe das dieses jemandem diese Zeit spart ;)&lt;/p&gt;
+&lt;p&gt;Wie immer freue ich mich sehr über ein kurzes Feedback in Form eines
+Kommentars :)&lt;/p&gt;</content><category term="Apache"></category><category term="http_host manipulieren"></category><category term="mod_rewrite"></category></entry><entry><title>Syntax Highlighting im vim aktivieren</title><link href="https://www.zoosau.de/syntax-highlighting-im-vim-aktivieren.html" rel="alternate"></link><published>2009-01-29T11:42:00+01:00</published><updated>2009-01-29T11:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-01-29:/syntax-highlighting-im-vim-aktivieren.html</id><summary type="html">&lt;p&gt;Nur ein schneller Tipp für zwischendurch.&lt;/p&gt;
+&lt;p&gt;Unter Debian und Debian-artigen Linux Distributionen ist das &lt;a href="http://de.wikipedia.org/wiki/Syntaxhervorhebung" title="Wiki Eintrag zu &amp;quot;Syntax Highlighting&amp;quot;"&gt;Syntax
+Highlighting&lt;/a&gt;
+standardmäßig deaktiviert. Ist auch gut so für ein Serverbetriebssystem,
+da manche KVM Displays auf Farben nicht so gut zu sprechen sind.&lt;br&gt;
+Meistens ist dieses jedoch ein Feature, das einen ungemein bei der
+Arbeit unterstützt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Nur ein schneller Tipp für zwischendurch.&lt;/p&gt;
+&lt;p&gt;Unter Debian und Debian-artigen Linux Distributionen ist das &lt;a href="http://de.wikipedia.org/wiki/Syntaxhervorhebung" title="Wiki Eintrag zu &amp;quot;Syntax Highlighting&amp;quot;"&gt;Syntax
+Highlighting&lt;/a&gt;
+standardmäßig deaktiviert. Ist auch gut so für ein Serverbetriebssystem,
+da manche KVM Displays auf Farben nicht so gut zu sprechen sind.&lt;br&gt;
+Meistens ist dieses jedoch ein Feature, das einen ungemein bei der
+Arbeit unterstützt.&lt;/p&gt;
+&lt;p&gt;In &lt;a href="http://simplesnip.com/helmi/vim-syntax-highlighting-aktivieren.html" title="SimpleSnip Blog"&gt;diesem
+Blog&lt;/a&gt;,
+der leider nur von registrierten Usern Kommentare akzeptiert ( was mir
+aber zu umständlich ist ;) ), habe ich schnell gefunden, wie man es
+aktiviert:&lt;/p&gt;
+&lt;p&gt;Einfach in die Datei "&lt;strong&gt;&lt;em&gt;/etc/vim/vimrc&lt;/em&gt;&lt;/strong&gt;" die Option "&lt;strong&gt;syntax on&lt;/strong&gt;"
+setzen. Bei Debian und Ubuntu existiert der Eintrag bereits, ist jedoch
+durch doppelte Anführungszeichen auskommentiert.&lt;br&gt;
+Das war's schon! :) Beim nächsten Start von vim ist das &lt;a href="http://de.wikipedia.org/wiki/Syntaxhervorhebung" title="Wiki Eintrag zu &amp;quot;Syntax Highlighting&amp;quot;"&gt;Syntax
+Highlighting&lt;/a&gt;
+aktiviert.&lt;/p&gt;
+&lt;p&gt;Achtung: Auf diesem Wege gillt es global für alle User!&lt;br&gt;
+Userspezifisch kann man dasselbe erreichen, indem man stattdessen die
+Datei "&lt;strong&gt;&lt;em&gt;.vimrc&lt;/em&gt;&lt;/strong&gt;" im jeweiligen Home-Dir des Users wie oben
+beschrieben editiert.&lt;/p&gt;</content><category term="debian"></category><category term="syntax highlighting"></category><category term="ubuntu"></category><category term="vim"></category></entry><entry><title>fastlogres gefunden!</title><link href="https://www.zoosau.de/fastlogres-gefunden.html" rel="alternate"></link><published>2008-09-04T16:02:00+02:00</published><updated>2008-09-04T16:02:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-09-04:/fastlogres-gefunden.html</id><summary type="html">&lt;p&gt;Es ist echt unglaublich!&lt;br&gt;
+Man sucht stundenlang, und findet NICHTS!&lt;/p&gt;
+&lt;p&gt;Dann schreibt man irgend eine Mail/ICQ Nachricht, oder einen Blogeintrag
+und kaum ist das raus: SCHWUPPS - gefunden!&lt;br&gt;
+So sollte ich das immer machen .... in diesem Sinne: Wer hat meine
+5.000,- € gesehen??? ;)&lt;/p&gt;
+&lt;p&gt;Spass beiseite: Ich habe doch noch in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es ist echt unglaublich!&lt;br&gt;
+Man sucht stundenlang, und findet NICHTS!&lt;/p&gt;
+&lt;p&gt;Dann schreibt man irgend eine Mail/ICQ Nachricht, oder einen Blogeintrag
+und kaum ist das raus: SCHWUPPS - gefunden!&lt;br&gt;
+So sollte ich das immer machen .... in diesem Sinne: Wer hat meine
+5.000,- € gesehen??? ;)&lt;/p&gt;
+&lt;p&gt;Spass beiseite: Ich habe doch noch in den Tiefen unserer Dateisysteme
+zwei Archive gefunden.&lt;br&gt;
+Eines, mit der Binären Version von fastlogres 0.2.0 für i386er Systeme,
+und den Quellcode zu fastlogres 0.2.1 .&lt;/p&gt;
+&lt;p&gt;In letzterem findet sich auch ein sehr ordentlich gepflegtes README,
+welches Aufschluss auf den Autor gibt. Es handelt sich dabei um einen
+"Jan Wedekind". Seine Homepage ist laut README &lt;a href="http://www.wede.de"&gt;http://www.wede.de&lt;/a&gt; und
+fastlogres soll dort unter &lt;a href="http://www.wede.de/sw/fastlogres/"&gt;http://www.wede.de/sw/fastlogres/&lt;/a&gt; zu finden
+sein.&lt;br&gt;
+Leider ist das nicht der Fall, und die Seite gibt es nicht mehr.&lt;br&gt;
+Eine Suche nach "Jan Wedekind" brachte ein paar Blogs hervor, jedoch
+keine neue Homepage.&lt;/p&gt;
+&lt;p&gt;Was soll's? Mach ich halt den Mirror:&lt;/p&gt;
+&lt;p&gt;Binär:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.zoosau.de/software/fastlogres/fastlogres-0.2.0-i386-linux.tgz" title="fastlogres Version 0.2.0 für i386 Systeme"&gt;fastlogres-0.2.0-i386-linux.tgz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quelltext:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.zoosau.de/software/fastlogres/fastlogres-0.2.1.tgz" title="fastlogres Version 0.2.1 Quellcode"&gt;fastlogres-0.2.1.tgz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Das ganze steht zum Glück unter GPLv2 :)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;span style="text-decoration: underline;"&gt;20080904 - 22:32 CET&lt;br&gt;
+&lt;/span&gt;&lt;/em&gt;PS:&lt;/p&gt;
+&lt;p&gt;Dank Sven's Link (siehe Kommentare) konnte ich die alte Webseite wieder
+herstellen. ... was heisst "wieder herstellen"? - Ich konnte sie
+herunterladen ;)&lt;br&gt;
+&lt;a href="http://www.zoosau.de/software/fastlogres/" title="Die archivierte Seite von Jan Wedekind's fastlogres"&gt;Ihr findet die ganze Seite nun
+hier.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Danke @ Sven! :)&lt;/p&gt;</content><category term="fastlogres"></category><category term="fastlogresolve"></category><category term="jan wedekind"></category></entry><entry><title>VMware unter (*)ubuntu zum laufen bringen</title><link href="https://www.zoosau.de/vmware-unter-ubuntu-zum-laufen-bringen.html" rel="alternate"></link><published>2008-07-15T15:12:00+02:00</published><updated>2008-07-15T15:12:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-07-15:/vmware-unter-ubuntu-zum-laufen-bringen.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich habe ja länger nichts geschrieben. Aufgrund der heutigen Aktion mit
+VMware unter Linux sehe ich mich dazu aber fast gezwungen. Das ist mal
+wieder _so_ schwachsinnig und typisch VMware, das muss einfach
+festgehalten werden:&lt;/p&gt;
+&lt;p&gt;Was ich schon kenne im Zusammenhand mit VMware Server unter Linux ans
+laufen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich habe ja länger nichts geschrieben. Aufgrund der heutigen Aktion mit
+VMware unter Linux sehe ich mich dazu aber fast gezwungen. Das ist mal
+wieder _so_ schwachsinnig und typisch VMware, das muss einfach
+festgehalten werden:&lt;/p&gt;
+&lt;p&gt;Was ich schon kenne im Zusammenhand mit VMware Server unter Linux ans
+laufen bringen ist, das man irgendwie immer erst einen Kernel
+kompilieren muss, da die mit der Distribution mitgelieferte GCC Version
+in aller Regel eine andere ist, als die, mit der der ebenfalls
+mitgelieferte Kernel kompiliert wurde.&lt;/p&gt;
+&lt;p&gt;Zumindest war das unter meinem Debian System so.&lt;br&gt;
+Nun habe ich jedoch ein (k)ubuntu auf meinem Laptop und bekomme nach der
+Installation von VMware Server, beim starten der VMware Konsole diesen
+Block an Fehlermeldungen:&lt;/p&gt;
+&lt;p&gt;/usr/local/lib/vmware/bin/vmware:&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/local/lib/libstdc++.so.6)&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/local/lib/libstdc++.so.6)&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_3.4' not found (required by /usr/lib/libcairo.so.2)&lt;br&gt;
+/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1: version
+`GCC_4.2.0' not found (required by /usr/lib/libstdc++.so.6)&lt;/p&gt;
+&lt;p&gt;Ich denke mir schon so .oO( &lt;em&gt;... oh &lt;span
+style="text-decoration: underline;"&gt;NO!&lt;/span&gt; Nicht schon wieder Kernel
+backen!&lt;/em&gt; ). Ist aber auch garnicht nötig gewesen! :)&lt;/p&gt;
+&lt;p&gt;Auf &lt;a href="http://www.it-sreimers.de/linux-vmware-server-console-ubuntu-probleme.html" title="IT-Service Sebastian Reimers"&gt;dieser
+Seite&lt;/a&gt;
+fand ich die Lösung. Sie liest sich erstmal so "... alles klar ...
+lösche ich mal ein paar Libraries ... dadurch wird's &lt;span
+style="text-decoration: underline;"&gt;bestimmt&lt;/span&gt; besser
+..."&amp;lt;/ironie&amp;gt;. Aber: Das klappt wirklich!&lt;/p&gt;
+&lt;p&gt;Man muss nur die Datei &lt;strong&gt;&lt;em&gt;lib/libgcc_s.so.1/libgcc_s.so.1&lt;/em&gt;&lt;/strong&gt; (im
+Unterverzeichnis, wo man den VMware Server installiert hat. Bei mir
+z.B.: &lt;strong&gt;&lt;em&gt;/usr/local/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1&lt;/em&gt;&lt;/strong&gt; )
+entfernen, bzw. umbenennen. Anschliessend startet VMware ohne Probleme
+... kurios! :)&lt;/p&gt;</content><category term="console"></category><category term="gcc"></category><category term="konsole"></category><category term="libgcc_s.so.1"></category><category term="ubuntu"></category><category term="vmware"></category></entry></feed>

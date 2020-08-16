@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-06-21T21:20:00+02:00</updated><entry><title>Puppet Agent setzt Dateirechte neu (und Grund)</title><link href="https://www.zoosau.de/puppet-agent-setzt-dateirechte-neu-und-grund.html" rel="alternate"></link><published>2012-06-21T21:20:00+02:00</published><updated>2012-06-21T21:20:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-06-21:/puppet-agent-setzt-dateirechte-neu-und-grund.html</id><summary type="html">&lt;p&gt;Ich beschäftige mich derzeit wieder massiv mit
+&lt;a href="http://puppetlabs.com/" title="Homepage von Puppetlabs"&gt;Puppet&lt;/a&gt;. Heute wollte
+ich den in Ruby und den Puppetmaster eingebauten Webserver
+"&lt;a href="http://de.wikipedia.org/wiki/WEBrick" title="Wiki Eintrag zu &amp;quot;WEBrick&amp;quot;"&gt;WEBrick&lt;/a&gt;"
+durch den Apache ersetzen. Das klappte auch alles ganz toll, nur leider
+beschwerte sich das &lt;a href="http://www.modrails.com/" title="Passenger Homepage"&gt;Passenger -
+Modul&lt;/a&gt; nach jedem Lauf
+des lokalen Puppet Agents darüber, das es das SSL Zertifikat …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich beschäftige mich derzeit wieder massiv mit
+&lt;a href="http://puppetlabs.com/" title="Homepage von Puppetlabs"&gt;Puppet&lt;/a&gt;. Heute wollte
+ich den in Ruby und den Puppetmaster eingebauten Webserver
+"&lt;a href="http://de.wikipedia.org/wiki/WEBrick" title="Wiki Eintrag zu &amp;quot;WEBrick&amp;quot;"&gt;WEBrick&lt;/a&gt;"
+durch den Apache ersetzen. Das klappte auch alles ganz toll, nur leider
+beschwerte sich das &lt;a href="http://www.modrails.com/" title="Passenger Homepage"&gt;Passenger -
+Modul&lt;/a&gt; nach jedem Lauf
+des lokalen Puppet Agents darüber, das es das SSL Zertifikat unter
+&lt;code&gt;/var/lib/puppet/ssl/private_keys/&lt;/code&gt; nicht mehr zugreifen kann. Und in
+der Tat: Ich habe folgendes in dieser Reihenfolge gemacht:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;den Apache beendet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chown puppet:puppet /var/lib/puppet/ssl/private_keys/servername.pem&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chmod 640 /var/lib/puppet/ssl/private_keys/servername.pem&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;den Apache gestartet&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prüft man nun die Berechtigungen auf
+&lt;code&gt;/var/lib/puppet/ssl/private_keys/servername.pem&lt;/code&gt; ist alles prima; auch
+die Puppet Agents können auf den Apache zugreifen und alles klappt!&lt;/p&gt;
+&lt;p&gt;Sobald man aber auf dem Puppetmaster - Server den Puppet Agent auch nur
+einmal startet , gehört das Zertifikat wieder &lt;code&gt;root:puppet&lt;/code&gt; und hat den
+Modus &lt;code&gt;600&lt;/code&gt;! Lässt man den Puppet Agent mit &lt;code&gt;--debug&lt;/code&gt; laufen, gibt
+dieser das auch ganz offen zu:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;debug: /File[/var/lib/puppet/ssl/certs/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/certs] debug: /File[/var/lib/puppet/ssl/public_keys/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/public_keys] debug: /File[/var/lib/puppet/ssl/private_keys/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/private_keys] debug: /File[/var/lib/puppet/ssl/private_keys/servername.pem]/owner: owner changed 'puppet' to 'root' debug: /File[/var/lib/puppet/ssl/private_keys/servername.pem]/mode: mode changed '0640' to '0600' debug: /File[/var/lib/puppet/ssl/public_keys/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/public_keys] debug: /File[/var/lib/puppet/ssl/certs/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/certs] debug: /File[/var/lib/puppet/ssl/private_keys/servername.pem]: Autorequiring File[/var/lib/puppet/ssl/private_keys]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Zum Glück kann man dieses aber mit der weniger populären
+Konfigurationsoption "&lt;code&gt;manage_internal_file_permissions&lt;/code&gt;" in der
+Datei &lt;code&gt;/etc/puppet/puppet.conf&lt;/code&gt; verhindern:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;[agent] ... manage_internal_file_permissions = false ...&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Eigentlich sehr naheliegend, aber ich habe irgendwie nicht die richtigen
+Buzzwords gehabt und die Recherche hat mich 1,5 Stunden gekostet ... :P&lt;/p&gt;</content><category term="cert"></category><category term="certificate"></category><category term="chmod"></category><category term="chown"></category><category term="passenger"></category><category term="pem"></category><category term="private_keys"></category><category term="puppet"></category><category term="zertifikat"></category></entry></feed>

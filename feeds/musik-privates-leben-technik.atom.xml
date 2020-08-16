@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Musik, Privates Leben, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/musik-privates-leben-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2011-02-15T02:13:00+01:00</updated><entry><title>GuitarPro6 unter (Gentoo) Linux</title><link href="https://www.zoosau.de/guitarpro6-unter-gentoo-linux.html" rel="alternate"></link><published>2011-02-15T02:13:00+01:00</published><updated>2011-02-15T02:13:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-15:/guitarpro6-unter-gentoo-linux.html</id><summary type="html">&lt;p&gt;Whooooho!&lt;/p&gt;
+&lt;p&gt;Ich habe eben herausgefunden wie man problemlos und nativ (ohne
+&lt;a href="http://www.winehq.org/announce/1.2.2" title="Homepage des Wine Emulators"&gt;wine&lt;/a&gt;
+o.ä.)
+&lt;a href="http://www.guitar-pro.com/en/index.php?pg=product" title="Produkthomepage von GuitarPro6"&gt;GuitarPro6&lt;/a&gt;
+unter Linux zum laufen bringt! Zwar spezialisiere ich mich hier auf
+&lt;a href="http://www.gentoo.org" title="Homepage des Gentoo Linux Projektes"&gt;Gentoo
+Linux&lt;/a&gt;, die
+beschriebenen Schritte sollten aber adäquat auf allen Distributionen
+funktionieren.&lt;/p&gt;
+&lt;p&gt;Zunächst einmal läd man sich die Linuxversion von GuitarPro6 herunter.
+Diese liegt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Whooooho!&lt;/p&gt;
+&lt;p&gt;Ich habe eben herausgefunden wie man problemlos und nativ (ohne
+&lt;a href="http://www.winehq.org/announce/1.2.2" title="Homepage des Wine Emulators"&gt;wine&lt;/a&gt;
+o.ä.)
+&lt;a href="http://www.guitar-pro.com/en/index.php?pg=product" title="Produkthomepage von GuitarPro6"&gt;GuitarPro6&lt;/a&gt;
+unter Linux zum laufen bringt! Zwar spezialisiere ich mich hier auf
+&lt;a href="http://www.gentoo.org" title="Homepage des Gentoo Linux Projektes"&gt;Gentoo
+Linux&lt;/a&gt;, die
+beschriebenen Schritte sollten aber adäquat auf allen Distributionen
+funktionieren.&lt;/p&gt;
+&lt;p&gt;Zunächst einmal läd man sich die Linuxversion von GuitarPro6 herunter.
+Diese liegt als .deb Paket für &lt;a href="http://www.ubuntu.com/" title="Homepage der Ubuntu Linux Distribution"&gt;Ubuntu
+Linux&lt;/a&gt;
+vor. Um die Daten daraus zu entpacken, verwendet man am besten das
+Programm "ar":&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mr@mrvaio \~/Downloads \$ ar x GuitarPro6-rev9063.deb&lt;br&gt;
+mr@mrvaio \~/Downloads \$ ls -l&lt;br&gt;
+insgesamt 84816&lt;br&gt;
+-rw-r--r-- 1 mr users 43419258 15. Feb 01:31 GuitarPro6-rev9063.deb&lt;br&gt;
+-rw-r--r-- 1 mr users    34121 15. Feb 01:33 control.tar.gz&lt;br&gt;
+-rw-r--r-- 1 mr users 43384944 15. Feb 01:33  data.tar.gz&lt;br&gt;
+-rw-r--r-- 1 mr users        4 15. Feb 01:33 debian-binary&lt;br&gt;
+mr@mrvaio \~/Downloads \$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das tar.gz Archiv data.tar.gz entpackt man ganz einfach wie gehabt; das
+Archiv control.tar.gz, sowie die anderen Dateien werden nicht benötigt.
+Wir erhalten dadurch einmal die Symbole für "/usr/local/share/pixmaps"
+und das .desktop - File für "/usr/local/share/applications", sowie die
+eigentlichen Programmdateien. Man verschiebt einfach alles, was sich im
+entpackten Verzeichnis "usr/share" befindet einfach nach
+"/usr/local/share", sowie den Ordner GuitarPro6 aus "opt" nach "/opt".&lt;/p&gt;
+&lt;p&gt;Damit sind wir eigentlich schon fertig! Man muss nur eine handvoll Dinge
+bei der Benutzung beachten.&lt;/p&gt;
+&lt;p&gt;So muss man das Programm beispielsweise aus dem Verzeichnis
+"/opt/GuitarPro6" heraus starten, sonst findet es seine benötigten
+Dateien nicht:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mr@mrvaio \~/Downloads \$ cd /opt/GuitarPro6&lt;br&gt;
+mr@mrvaio /opt/GuitarPro6 \$ ./GuitarPro &amp;amp;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Guitar Pro bringt zudem Qt Libraries in einer anderen Version mit als
+sie bei den meisten aktuellen Distributionen beiliegt. Man erhält beim
+Start von GuitarPro6 daher folgende Fehlermeldung:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mr@mrvaio /opt/GuitarPro6 \$ ./GuitarPro&lt;br&gt;
+Cannot mix incompatible Qt libraries&lt;br&gt;
+Abgebrochen&lt;br&gt;
+mr@mrvaio /opt/GuitarPro6 \$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dieses lässt sich leicht beheben: Alle Dateien, welche auf *Qt*.*
+passen, aus dem Verzeichnis "/opt/GuitarPro6" löschen.&lt;br&gt;
+Es erscheint dann beim starten zwar nach wie vor eine Fehlermeldung, das
+GuitarPro6 gegen eine andere Qt Version kompiliert wurde, jedoch kann
+man diese mit einem Klick auf "OK" gefahrlos schließen.&lt;br&gt;
+Anschließend muss man seinen Lizenzschlüssel eingeben. Der Haken, das
+man das gerne für alle User freischalten möchte, hat bei mir weder als
+unprivilegierter User, noch als root geklappt. Für beide musste ich
+einmal meinen Lizenzkey eingeben.&lt;/p&gt;
+&lt;p&gt;Was leider auch noch nicht funktioniert, ist das starten des Updaters
+aus dem Hilfemenü von GuitarPro6 heraus. Klickt man dieses an, passiert
+erstmal garnichts.&lt;br&gt;
+Man kann den Updater jedoch trotzdem verwenden, indem man die folgenden
+Schritte befolgt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Wenn der X Server als User läuft, "root" zunächst eine Berechtigung
+    hierfür einräumen, indem man als der User folgendes ausführt: "xhost
+    +root"&lt;/li&gt;
+&lt;li&gt;In einer Konsole "root" werden&lt;/li&gt;
+&lt;li&gt;cd /opt/GuitarPro6&lt;/li&gt;
+&lt;li&gt;./GPUpdater&lt;/li&gt;
+&lt;li&gt;./temp.GPUpdater&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Der Updater sollte nun anfangen die Updates herunter zu laden. Das kann
+eine Weile dauern; bei mir waren es ca. 2 GB, da er auch noch die ganzen
+Soundbänke mit herunter läd.&lt;/p&gt;
+&lt;p&gt;Offiziell ist Ubuntu Linux das einzige unterstützte Linux und manches
+funktioniert, wie beschrieben, auf anderen noch nicht ganz rund. Man
+muss den Jungs von &lt;a href="http://www.guitar-pro.com/en/index.php?pg=about" title="About Page der Arobas Music Homepage"&gt;Arobas
+Music&lt;/a&gt;
+daher dennoch großen Respekt zollen! Zum einen hat jede Firma, die mit
+Ihren Produkten den Schritt zur Linuxunterstützung meinen Respekt
+verdient, da diese wunderbare Plattform leider trotz riesiger und stetig
+wachsender Verbreitung (gerade unter den kreativen Menschen) von den
+meisten Herstellern nach wie vor gemieden zu werden scheint. Zudem, wenn
+man bedenkt, das dieses das erste Release ist, welches sie für Linux
+rausbringen, muss ich sagen das schon erstaunlich viel funktioniert! Da
+kann man es verschmerzen, das derzeit nur eine Distribution &lt;span
+style="text-decoration: underline;"&gt;offiziell&lt;/span&gt; unterstützt wird
+und es bei anderen derzeit noch kleinere Fehler gibt. Im normalen
+Betrieb konnte ich noch keinerlei Fehler feststellen. Verwendet man ein
+anderes Linux als empfohlen, muss man diese Abstriche halt hinnehmen.&lt;/p&gt;
+&lt;p&gt;Mein Fazit: Daumen hoch und weiter so! :)&lt;/p&gt;</content><category term="arobas music"></category><category term="Cannot mix incompatible Qt libraries"></category><category term="gentoo"></category><category term="guitar pro"></category><category term="guitarpro"></category><category term="guitarpro6"></category><category term="Linux"></category></entry></feed>

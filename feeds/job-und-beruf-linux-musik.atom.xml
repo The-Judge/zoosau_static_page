@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf, Linux, Musik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf-linux-musik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2011-05-18T22:40:00+02:00</updated><entry><title>Meine aktuellen Bemühungen in Sachen IT</title><link href="https://www.zoosau.de/meine-aktuellen-bemuhungen-in-sachen-it.html" rel="alternate"></link><published>2011-05-18T22:40:00+02:00</published><updated>2011-05-18T22:40:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-05-18:/meine-aktuellen-bemuhungen-in-sachen-it.html</id><summary type="html">&lt;p&gt;Ich komme zur Zeit nicht wirklich zum bloggen. Zum einen passiert﻿﻿﻿﻿﻿
+(für den Rest der Welt) ﻿﻿﻿﻿﻿nur uninteressanter Scheiss bei mir. Privat
+geht es zwar gerade hoch her - aber "Mann" wird ja auch erwachsen.
+Bedeutet: Ich werde in Zukunft etwas weniger private Details hier
+posten. Was geht es Google und …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich komme zur Zeit nicht wirklich zum bloggen. Zum einen passiert﻿﻿﻿﻿﻿
+(für den Rest der Welt) ﻿﻿﻿﻿﻿nur uninteressanter Scheiss bei mir. Privat
+geht es zwar gerade hoch her - aber "Mann" wird ja auch erwachsen.
+Bedeutet: Ich werde in Zukunft etwas weniger private Details hier
+posten. Was geht es Google und Co. an, das ich ... was weiss ich: Gerade
+lieber Gemüse esse als Pizza, viel oder wenig Sport treibe, oder mein
+Schiss gerade eher einem Fragezeichen oder einem Hakenkreuz ähnelt?
+Genau: Garnichts ! :)&lt;/p&gt;
+&lt;p&gt;Vielmehr wende ich mich gerade wieder verstärkt dem Know-How meines
+ewigen Steckenpferdes rund um den PC und verstärkt Linux und verwandten
+Techniken zu.&lt;br&gt;
+Was sind "verwandte Linuxtechniken"? Ich würde, nach jüngsten
+Erfahrungen, sagen: Alles, was zukunftsweisend  und in irgendeiner Weise
+kreativ ist und mit IT zu tun hat ist heutzutage eine verwandte
+Linuxtechnik.&lt;/p&gt;
+&lt;p&gt;Ich möchte an dieser Stelle gerne zwei Beispiele aus meiner aktuellen
+Arbeitswoche heranziehen:&lt;/p&gt;
+&lt;p&gt;1) PHP&lt;/p&gt;
+&lt;p&gt;Wie alt ist PHP inzwischen? Ich meine nicht so direkt die Sprache,
+sondern vielmehr: Wie lange ist PHP denn inzwischen bitte &lt;strong&gt;die&lt;/strong&gt;
+Programmiersprache im Internet und der modernen IT? Ich komme zwar noch
+aus der "Windows for Workgroups" - Ära, aber selbst mir fällt es schwer,
+mich heute noch an eine Zeit ohne dynamische Webseiten, wo man
+schlichtweg der King war, wenn man ein DataBecker HTML4 Buch grob
+angelesen hatte, zurück zu erinnern. Inzwischen wird wohl keiner, der
+sich ernsthaft mit Webseiten und Trends im Web auseinander setzt
+bestreiten, das ohne PHP und die unaufhaltsame Verbreitung von
+OpenSource-Giganten wie Apache HTTPd und Linux das Web heute ein anderes
+(und ich behaupte: Schlechteres!) Web wäre. Schaut Euch nur mal die
+Alternativen an: ISS, Windows Server, Microsoft Silverlight, ... wer
+will denn auch nur eines davon haben bitte?? Das finden ausschließlich
+solche Idioten gut, die kognitiv nicht in der Lage sind
+Lizenzbedingungen zu lesen und zu verstehen. Da fallen "Argumente" wie&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"&lt;em&gt;das kostet doch sooo viel Geld, da wollen Sie mir doch wohl nicht
+erzählen, das diese kostenlose Freeware legal dasselbe leistet!?&lt;/em&gt;"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich werde das nie vergessen: Dieser Satz fiel in meiner Berufsausbildung
+wirklich! Und zwar von meinem damaligen, technischen Ausbildungsbetreuer
+bei
+&lt;a href="http://www.computacenter.de/" title="Homepage von Computacenter"&gt;Computacenter&lt;/a&gt;.
+"Freeware". Das muss man sich mal vorstellen ... OpenSource und GPL -
+völlige Fremdworte.&lt;br&gt;
+Ich fürchte diese geistige Haltung ist nach wie vor weit verbreitet -
+zum Glück sterben diese Idioten aber immer mehr aus. Das ganze kann, in
+meinen Augen, garnicht schnell genug gehen.&lt;/p&gt;
+&lt;p&gt;Wie auch immer: Ich wollte heute für ein Plugin für
+&lt;a href="http://www.eclipse.org" title="Homepage der freien IDE Eclipse"&gt;Eclipse&lt;/a&gt; auf
+einer Windowsmaschine PHP 5.3.x installieren. Fertig - das ist die
+vollständige Anforderung! Zunächst einmal muss man dabei, meiner Meinung
+nach, den simplen Weg dahin nachvollziehen. Ich lade ausdrücklich jeden
+Leser ein, den folgenden Weg nachzuvollziehen: Ladet Euch alleine mal
+ein PHP 5.3 für Windows herunter.&lt;br&gt;
+Man geht zunächst auf die Homepage von PHP unter
+&lt;a href="http://www.php.net" title="Homepage von PHP"&gt;www.php.net&lt;/a&gt; . Hier findet man
+sofort den Link "download" oben auf der Homepage. Dann kann man sich
+primär PHP 5.3 oder die ältere, abgekündigte Version 5.2 herunterladen.
+Die primäre Wahl stellt sich hier in einem GZip oder BZip2 Archiv dar -
+ohne Diskussion: Sourcecode geht hier ab! ... als dritte Option wird nun
+auch noch eine fast abseits stehende Option angeboten: ﻿﻿﻿﻿﻿"&lt;em&gt;For the
+Windows binaries and installer, see http://windows.php.net/download/.&lt;/em&gt;".
+Wirkt ein wenig wie "&lt;em&gt;Ach ja, wir haben da auch noch ein behindertes
+Kind ...&lt;/em&gt;" im Kinderheim.&lt;br&gt;
+Aber - wenn der ganze Kram, egal wie uninovativ diese statisch gelinkte
+Binär-Scheisse auch sein mag, dann wenigstens funktionieren würde. TUT
+ES ABER NICHT!!! Macht Euch mal den Spass: Ladet den PHP Installer für
+Windows herunter, startet nur die php.exe - was passiert? Der Mist
+stürzt ab, weil ihm DLL Dateien fehlen! Man darf nun wiederum hoffend,
+das diese Projekte DLLs anbieten, diese ganzen Abhängigkeiten erstmal
+erfüllen, bis mein eine lauffähige PHP Installation zu Wege bringt.&lt;/p&gt;
+&lt;p&gt;Mal ehrlich: Fühlt sich das an wie das Jahr 2011? DIE Top-Webtechnik,
+nicht nativ verfügbar. Wie kann jemand, der ernstzunehmend PHP
+entwickelt, heute zutage noch Windows einsetzen?&lt;br&gt;
+Es gibt, als PHP Entwickler-Workstation, heutzutage kein einziges
+Argument mehr für Windows!!!!!!! Beweißt mir gerne das Gegenteil!&lt;/p&gt;
+&lt;p&gt;2) Samba&lt;/p&gt;
+&lt;p&gt;Warum gibt es Samba? Nur, weil diese ganzen alteingesessenen (böse
+Zungen würden sagen: festgefahrenen) Anwender weiterhin auf ihrem "&lt;em&gt;Ich
+bin zwar zu faul mich in etwas anderes als Windows einzuarbeiten und
+selbst da zu blöd für Admin-Rechte, will aber trotzdem auf alles und
+jeden Zugriff haben&lt;/em&gt;" - Standpunkten bestehen! 90% meines aktuellen
+Rechte-Chaos-Alltages gehen aktuell dafür drauf, Probleme zu beheben,
+die es nicht geben würde, wenn Microsoft langsam mal im Jahre 2011
+ankommen und sich dem Markttrend gemäß entwickeln würde! Die Jungs
+kriegen es sogar hin, mit Ihrem Officepaket Dateien über Samba Rechte zu
+verpassen, die eigentlich unmöglich sind. Stichwort: "&lt;em&gt;Ich möchte gerne,
+das ich auf die Datei, die ich gerade abspeichere, weder Lese- noch
+Schreibrechte habe&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Ich migriere gerade den aktuellen Samba-PDC in unserer Firma von Version
+2.5.x auf 3.5.8 . Die Userdaten migrieren: Kein Problem! Reines
+Datei-kopieren. Was passiert aber, sobald sich ein User unter einem
+Windows ab Vista (getestet: Windows Vista, 7, Server 2008 R2) anmeldet?
+Sofortige Wiederabmeldung, ohne Fehlermeldung. Super!!&lt;/p&gt;
+&lt;p&gt;Ich sage Euch: Wenn Spiele und Branchenriesen wie Adobe Photoshop /
+Dreamweaver sauber unter Linux laufen würden, hätte ich diesen Krampf
+schon vor Jahren auch privat von meiner Hardware verbannt :P&lt;/p&gt;</content><category term="eclipse"></category><category term="Linux"></category><category term="php"></category><category term="samba"></category><category term="windows"></category></entry></feed>

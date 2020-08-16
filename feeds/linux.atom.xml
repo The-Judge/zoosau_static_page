@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-02-16T12:13:00+01:00</updated><entry><title>"Tote" Symlinks finden</title><link href="https://www.zoosau.de/tote-symlinks-finden.html" rel="alternate"></link><published>2012-02-16T12:13:00+01:00</published><updated>2012-02-16T12:13:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-02-16:/tote-symlinks-finden.html</id><summary type="html">&lt;p&gt;Boah - funktioniert noch alles hier ... krass! Ewig nichts gepostet ...
+;D&lt;/p&gt;
+&lt;p&gt;Es kommt auch nur ein Kurztipp. Eigentlich trivial, aber ich kam mit den
+Erklärungen in der Manpage zu "find" gerade nicht zurande, daher notiere
+ich mir die Syntax hier:&lt;/p&gt;
+&lt;p&gt;Wenn man auf einem System nach Symlinks suchen möchte, deren Ziel …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Boah - funktioniert noch alles hier ... krass! Ewig nichts gepostet ...
+;D&lt;/p&gt;
+&lt;p&gt;Es kommt auch nur ein Kurztipp. Eigentlich trivial, aber ich kam mit den
+Erklärungen in der Manpage zu "find" gerade nicht zurande, daher notiere
+ich mir die Syntax hier:&lt;/p&gt;
+&lt;p&gt;Wenn man auf einem System nach Symlinks suchen möchte, deren Ziel nicht
+existiert, dann geht das wie folgt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find -L . -type l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;p&gt;Möchte man stattdessen das nichtexistente Ziel des toten Symlinks
+auflisten um das beispielsweise in Scripten zu verwenden, behelfe ich
+mir derzeit wie folgt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -ld $(find -L . -type l) | cut -d &amp;#39;&amp;gt;&amp;#39; -f 2 | sed &amp;#39;s#\ ##g&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;p&gt;Funktioniert, geht aber sicher auch noch eleganter. Schreibt doch gerne
+in den Kommentaren wie :)&lt;/p&gt;</content><category term="defekt"></category><category term="find"></category><category term="invalid"></category><category term="kaputt"></category><category term="symlink"></category><category term="tot"></category></entry><entry><title>Kopieren einer ACL unter Linux</title><link href="https://www.zoosau.de/kopieren-einer-acl-unter-linux.html" rel="alternate"></link><published>2011-06-19T09:54:00+02:00</published><updated>2011-06-19T09:54:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-06-19:/kopieren-einer-acl-unter-linux.html</id><summary type="html">&lt;p&gt;Nur schnell ein QuickTipp, ehe ich das wieder mal Google, nur um dann
+hinterher zu merken, das es als Beispiel in der Manpage zu setfacl steht
+...&lt;/p&gt;
+&lt;p&gt;Wenn man eine ACL unter Linux von einer Datei/Verzeichnis auf ein/-e
+andere/-s kopieren möchte, reicht, egal wie kompliziert und Umfangreich
+diese …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Nur schnell ein QuickTipp, ehe ich das wieder mal Google, nur um dann
+hinterher zu merken, das es als Beispiel in der Manpage zu setfacl steht
+...&lt;/p&gt;
+&lt;p&gt;Wenn man eine ACL unter Linux von einer Datei/Verzeichnis auf ein/-e
+andere/-s kopieren möchte, reicht, egal wie kompliziert und Umfangreich
+diese ist, folgender Befehl aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;getfacl  \~mr/acltemplate | setfacl --set-file=-  \~mr/acldestination&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="acl"></category><category term="copy"></category><category term="getfacl"></category><category term="klonen"></category><category term="kopieren"></category><category term="posix"></category><category term="setfacl"></category></entry></feed>

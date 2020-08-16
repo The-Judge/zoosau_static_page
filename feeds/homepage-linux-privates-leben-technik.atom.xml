@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Linux, Privates Leben, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-linux-privates-leben-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-05-02T01:31:00+02:00</updated><entry><title>Vergleich Strato Dedicated Power-Server MR gegen netcup vServer Uranus</title><link href="https://www.zoosau.de/vergleich-strato-dedicated-power-server-mr-gegen-netcup-vserver-uranus.html" rel="alternate"></link><published>2012-05-02T01:31:00+02:00</published><updated>2012-05-02T01:31:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-05-02:/vergleich-strato-dedicated-power-server-mr-gegen-netcup-vserver-uranus.html</id><summary type="html">&lt;p&gt;Jaaaa - also ich betreibe ja seit einigen Jahren diesen Server. Seit dem
+letzten &lt;a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Serverumzug"&gt;Umzug im August
+2010&lt;/a&gt;
+läuft er unter einem bei Strato angemietetem "Dedicated Power-Server MR
+(v5.4)". Dabei handelt es sich um "echte" Hardware, nicht um ein
+virtualisiertes System. Schon länger reicht dieses recht spartanisch
+ausgestattete System nicht …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Jaaaa - also ich betreibe ja seit einigen Jahren diesen Server. Seit dem
+letzten &lt;a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Serverumzug"&gt;Umzug im August
+2010&lt;/a&gt;
+läuft er unter einem bei Strato angemietetem "Dedicated Power-Server MR
+(v5.4)". Dabei handelt es sich um "echte" Hardware, nicht um ein
+virtualisiertes System. Schon länger reicht dieses recht spartanisch
+ausgestattete System nicht mehr wirklich für die Anforderungen. Aktuell
+laufen 8 nicht ganz inaktive Homepages auf der Maschine (keine
+statischen HTML Dateien: PHP Scriptseiten wie WordPress, TYPO3, phpBB
+Foren, etc.), er ist Mailserver für etwa 9 Domains (samt Spamfilter),
+berechnet Statistiken, das System selbst (Gentoo Linux -&amp;gt; Software
+wird kompiliert) will auch gewartet werden, ...&lt;/p&gt;
+&lt;p&gt;Kurz: Das Teil hat einiges zu tun! Dabei war nichtmal unbedingt der
+Prozessor das Problem, sondern RAM und Storage. Das ganze System ist
+recht betagt, wie wir gleich noch sehen werden. Neben diesen Diensten
+mit 1 GB RAM auch noch gescheit einen MySQL Server darauf zu betreiben
+"geht" technisch zwar, macht aber nicht wirklich Spass.&lt;br&gt;
+Es musste also ein zweiter Server als MySQL Host her. Seitdem laufen
+diese Seiten auf 2 Servern. Seitdem denke ich jedoch auch, das der
+Basis-Server nicht mehr wirklich rentabel funktioniert. Also habe ich
+mal die Fühler nach günstigeren Angeboten ausgestreckt. Kriterien waren
+dabei:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Speicherplatz mindestens 50 GB ( \~ 30 aktuell verwendet )&lt;/li&gt;
+&lt;li&gt;Möglichkeit ein
+    &lt;a href="http://www.gentoo.org" title="Homepage von Gentoo Linux"&gt;Gentoo&lt;/a&gt; /
+    &lt;a href="http://www.funtoo.org" title="Homepage von Funtoo Linux"&gt;Funtoo&lt;/a&gt; auf dem
+    System installieren zu können&lt;/li&gt;
+&lt;li&gt;CPU und RAM mehr / schneller als aktuell&lt;/li&gt;
+&lt;li&gt;Preis sollte geringer sein als aktuell&lt;/li&gt;
+&lt;li&gt;Keine Mindestvertragslaufzeit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ob das ganze virtuell oder physikalisch ist, ist mir dabei erstmal egal.&lt;/p&gt;
+&lt;p&gt;Ich bin also letztendlich auf die vServer der Firma
+&lt;a href="http://www.netcup.de/" title="Homepage der Firma netcup"&gt;netcup&lt;/a&gt; aufmerksam
+geworden.
+&lt;a href="https://www.server4you.de/vserver/" title="Server4You vServer Angebote"&gt;Server4You&lt;/a&gt;,
+&lt;a href="http://www.jiffybox.de" title="Homepage des &amp;quot;JiffyBox&amp;quot; Angebotes von Domain Factory"&gt;Domain
+Factory&lt;/a&gt;
+und (wieder) &lt;a href="http://www.strato.de/" title="Homepage von Strato"&gt;Strato&lt;/a&gt; haben
+zwar auch atraktive Angebote, jedoch schneiden sie (für meine
+Anforderungen) leider "schlechter"* ab als netcup:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;*:&lt;br&gt;
+Kurzes Vorwort zu "schlechter": Um fair zu bleiben: Ich habe hier nur
+reine Zahlen aus den Angeboten verglichen. Ich habe mich nicht in
+jedem Angebot eingelogged und die Performance so detailiert verglichen
+wie zwischen netcup und Strato. Jedoch: Wenn die Anbieter die absolute
+Performance Ihrer Produkte in's Feld führen möchten, sollten Sie diese
+Zahlen mit in die Angebote aufnehmen.&lt;br&gt;
+PS: @Alle Hoster: Sollte irgendwer daran interessiert sein, das ich
+deren Angebot hier kostenlos Re-Evaluiere: Über mein
+&lt;a href="http://www.zoosau.de/kontakt-2" title="Mailformular"&gt;Mailformular&lt;/a&gt; könne
+Sie mir gerne unverbindliche Probezugänge zu Ihren Produkten mit der
+Bitte um Tests zukommen lassen ;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Strato&lt;/strong&gt;&lt;br&gt;
+   Das Angebot für "Dedicated Server" ist zwar nach wie vor nahezu
+    ungeschlagen gut was das Preis-/Leistungsverhältnis angeht (
+    &lt;a href="http://www.strato-pro.de/root_server/dedicated_server/linux.html?sc=1900800204" title="Strato Angebot HighQ-Server XS"&gt;HighQ-Server
+    XS&lt;/a&gt;
+    ist sehr cool! ), jedoch hat man hier leider ( selbst als
+    Stammkunde ) wenigstens 6 Monate Mindestvertragslaufzeit. Ebenso
+    muss man 29,- € für die Grundeinrichtung bezahlen. Beides etwas, was
+    ich nicht mehr möchte.&lt;br&gt;
+   Die vServer von Strato können (mich) da jedoch schon weniger
+    überzeugen: Die Preise beginnen (mit powerServer A) bei 7,90 / Monat
+    (was OK, aber mehr ist als bei netcup), der RAM beträgt nur 512 MB
+    (statt 1 GB bei der Konkurenz), der Speicherplatz beträgt nur 25 GB
+    (ebenfalls Markt-Schlusslicht), ... nichts für mich.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Domain Factory / JiffyBox&lt;/strong&gt;&lt;br&gt;
+   Domain Factory hat mit seinem "JiffyBox" getauften vServer Angebot
+    schon eine coole Sache am Start: Man meldet sich an und bezahlt
+    erstmal nichts. Man kann in Minuten neue (v-)Server hochfahren,
+    herunterfahren, einfrieren, löschen, klonen, ... sehr cool! Man
+    bezahlt dann nur für die Nutzung der tatsächlich
+    genutzten Maschinen. Allerdings: Will man diese dauerhaft betreiben
+    wird's verhätnismäßig teuer: Selbst das günstigste Angebot kostet
+    dann rund 14,90 € / Monat (0,02 ct pro Stunde * 744 Stunden
+    pro Monat). Das ist für temporäre Präsenzen OK, aber auf Dauer gibt
+    es günstigere Alternativen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server4You&lt;/strong&gt;&lt;br&gt;
+   Für meine Anforderungen: Einfach zu teuer! 8,85 € / Monat für einen
+    vServer mit 25 GB Storage: netcup ist auch hier wieder günstiger.
+    Allerdings: Man kann deren Produkte unverbindlich 4 Tage lang testen
+    und herausfinden, ob sie passen oder nicht. Allerdings scheidet das
+    Angebot für mich wegen des Storage-/Preisverhältnisses aus.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;netcup&lt;/strong&gt;&lt;br&gt;
+   Ich habe mich für das Angebot &lt;a href="http://www.netcup.de/bestellen/produkt.php?produkt=279" title="netcup vS Uranus light"&gt;vS Uranus
+    &lt;em&gt;light&lt;/em&gt;&lt;/a&gt; entschieden.
+    Das ganze hat eigentlich alles was ich brauche, ist mit 6,99 € /
+    Monat sehr günstig und deckt alle zuvor genannten Kriterien ab.
+    Details folgen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Was bei netcup sehr cool ist: Man kann das Angebot in Ruhe unter die
+Lupe nehmen (da monatlich kündbar). Ebenso hat man alle Zeit der Welt
+für eine Migration, da man für \~ 7 € / Monat ruhig mal einen bis zwei
+Monate diese Server parallel betreiben kann.&lt;/p&gt;
+&lt;p&gt;Für mich ist jetzt natürlich wichtig, das ich das, was bereits auf
+diesem Server besteht und läuft, übernehmen kann und dabei nichts
+merkbar langsamer wird. Also habe ich einmal einen Benchmark der beiden
+Systeme in den für mich relevanten Bereichen durchgeführt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Storage-Performance&lt;/li&gt;
+&lt;li&gt;RAM-Performance&lt;/li&gt;
+&lt;li&gt;CPU-Performance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Um dieses zu messen, habe ich auf dem aktuellen Server alle Dienste
+beendet (was die Downtime zwischen 15 und 23 Uhr am 01.04.2012 erklärt)
+und auf diesem wie dem netcup-System die folgenden Tests durchgeführt:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://sysbench.sourceforge.net/" title="sysbench Homepage"&gt;sysbench&lt;/a&gt; RAM&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sysbench.sourceforge.net/" title="sysbench Homepage"&gt;sysbench&lt;/a&gt; CPU&lt;/li&gt;
+&lt;li&gt;dd&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.coker.com.au/bonnie++/" title="Homepage von bonnie++"&gt;bonnie++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;kompilieren von gcc-4.5.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Im folgenden die Ergebnisse.&lt;br&gt;
+Zunächst einmal ein reiner Listenleistung-Vergleich:&lt;/p&gt;
+&lt;p&gt;Strato&lt;/p&gt;
+&lt;p&gt;netcup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RAM&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Typ&lt;/p&gt;
+&lt;p&gt;DDR2 133&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Unbekannt&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Menge&lt;/p&gt;
+&lt;p&gt;1 GB&lt;/p&gt;
+&lt;p&gt;1 GB&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HDD&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Typ&lt;/p&gt;
+&lt;p&gt;Hitachi HDT725025VLA380&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Unbekannt&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Größe&lt;/p&gt;
+&lt;p&gt;250 GB&lt;/p&gt;
+&lt;p&gt;80 GB&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CPU&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Typ&lt;/p&gt;
+&lt;p&gt;AMD Opteron 1210 HE&lt;/p&gt;
+&lt;p&gt;Intel Xeon CPU E5620&lt;/p&gt;
+&lt;p&gt;Anzahl&lt;/p&gt;
+&lt;p&gt;1x2 Cores (2)&lt;/p&gt;
+&lt;p&gt;4x4 Cores (16)&lt;/p&gt;
+&lt;p&gt;Geschwindigkeit (Liste)&lt;/p&gt;
+&lt;p&gt;1,8 GHz&lt;/p&gt;
+&lt;p&gt;2,5 GHz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Preis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;29,90 €&lt;/p&gt;
+&lt;p&gt;6,99 €&lt;/p&gt;
+&lt;p&gt;HDD ist zwar bei netcup deutlich kleiner als beim aktuellen
+Stratovertrag, aber für meine Anforderungen ausreichend.&lt;br&gt;
+Alles andere sieht laut Liste deutlich besser aus. OK, fairer weise muss
+man sagen, das das aktuelle Strato Angebot besser ist (&lt;a href="http://www.strato-pro.de/root_server/dedicated_server/linux.html?sc=1900800204" title="Strato Angebot HighQ-Server XS"&gt;HighQ-Server
+XS&lt;/a&gt;),
+aber für mich halt nicht so leicht zu wechseln wie zu netcup. Weder kann
+ich so lange günstig parallel fahren wie bei netcup, noch sehe ich die
+Notwendigkeit weiterhin monatlich fast 30 € zu bezahlen, wo es rund 7 €
+auch tun. So viel ist "Platz nach oben" nun im privatem Sektor auch
+wieder nicht wert.&lt;/p&gt;
+&lt;p&gt;Kommen wir zu den Messergebnissen:&lt;/p&gt;
+&lt;p&gt;Als Messgrundlage dienen dd
+, &lt;a href="http://www.coker.com.au/bonnie++/" title="Homepage von bonnie++"&gt;bonnie++&lt;/a&gt;
+(v1.96) und
+&lt;a href="http://sysbench.sourceforge.net/" title="sysbench Homepage"&gt;sysbench&lt;/a&gt;
+(v0.4.10).&lt;/p&gt;
+&lt;p&gt;Die ausgeführten Kommandos lauten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sysbench --test=memory --memory-scope=\$scope
+    --memory-oper=\$operation --memory-access-mode=\$accessmode run&lt;/li&gt;
+&lt;li&gt;sysbench --test=cpu --num-threads=\$numthreads --cpu-max-prime=20000
+    run&lt;/li&gt;
+&lt;li&gt;dd if=/dev/urandom of=benchfile bs=1024K count=1024&lt;/li&gt;
+&lt;li&gt;bonnie++ -u root | bon_csv2html&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Die mit "\$"-vorangestellten Werte zu sysbench findet man in folgender
+Tabelle nebst Ergebnissen:&lt;/p&gt;
+&lt;p&gt;Strato&lt;/p&gt;
+&lt;p&gt;netcup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sysbench - RAM&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\$scope=global, \$operation=read, \$accessmode=seq&lt;/p&gt;
+&lt;p&gt;839.4359s&lt;/p&gt;
+&lt;p&gt;36.9148s&lt;/p&gt;
+&lt;p&gt;\$scope=global, \$operation=read, \$accessmode=rnd&lt;/p&gt;
+&lt;p&gt;839.9471s&lt;/p&gt;
+&lt;p&gt;39.1572s&lt;/p&gt;
+&lt;p&gt;\$scope=global, \$operation=write, \$accessmode=seq&lt;/p&gt;
+&lt;p&gt;869.6518s&lt;/p&gt;
+&lt;p&gt;66.8758s&lt;/p&gt;
+&lt;p&gt;\$scope=global, \$operation=write, \$accessmode=rnd&lt;/p&gt;
+&lt;p&gt;848.0943s&lt;/p&gt;
+&lt;p&gt;41.8068s&lt;/p&gt;
+&lt;p&gt;\$scope=local, \$operation=read, \$accessmode=seq&lt;/p&gt;
+&lt;p&gt;837.1526s&lt;/p&gt;
+&lt;p&gt;37.4726s&lt;/p&gt;
+&lt;p&gt;\$scope=local, \$operation=read, \$accessmode=rnd&lt;/p&gt;
+&lt;p&gt;849.7811s&lt;/p&gt;
+&lt;p&gt;38.9301s&lt;/p&gt;
+&lt;p&gt;\$scope=local, \$operation=write, \$accessmode=seq&lt;/p&gt;
+&lt;p&gt;877.9626s&lt;/p&gt;
+&lt;p&gt;67.3201s&lt;/p&gt;
+&lt;p&gt;\$scope=local, \$operation=write, \$accessmode=rnd&lt;/p&gt;
+&lt;p&gt;852.2366s&lt;/p&gt;
+&lt;p&gt;40.9074s&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sysbench - CPU&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\$numthreads=2&lt;/p&gt;
+&lt;p&gt;60.5573s&lt;/p&gt;
+&lt;p&gt;20.1742s&lt;/p&gt;
+&lt;p&gt;\$numthreads=16&lt;/p&gt;
+&lt;p&gt;n/a&lt;/p&gt;
+&lt;p&gt;4.2365s&lt;/p&gt;
+&lt;p&gt;Wir sehen also schonmal zum Thema CPU und RAM: Das netcup vServer -
+System hat hier klar die Nase vorn! Der RAM ist rund 20x schneller als
+der des Strato-Systems und die CPU ist bei der Berechnung von Primzahlen
+bei "nur" 2 von 16 möglichen, parallelen Threads ebenfalls etwa 3x
+schneller. Gesteht man der Primzahlenberechnung die zur Verfügung
+stehenden 16 parallelen Threads zu, ist sie beim netcup-System gar ca.
+15x schneller.&lt;/p&gt;
+&lt;p&gt;Im Bereich RAM und CPU also klarer Sieger: netcup vServer!&lt;/p&gt;
+&lt;p&gt;Schaut man sich an wie lange es dauert eine 1GB große Datei wegschreiben
+zu lassen gewinnt hingegen klar das Strato-System:&lt;/p&gt;
+&lt;p&gt;Strato&lt;/p&gt;
+&lt;p&gt;netcup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;dd - Benchmark&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;dd if=/dev/urandom of=benchfile bs=1024K count=1024&lt;/p&gt;
+&lt;p&gt;140 Sekunden&lt;/p&gt;
+&lt;p&gt;245 Sekunden&lt;/p&gt;
+&lt;p&gt;Der dd-Test zeigt eine Schreibperformance beim Strato-System, die rund
+1,75x so schnell ist wie die des netcup vServers. Klar, das ist ein sehr
+realitätsferner Test, aber es folgt noch ein Test mit bonnie++, welcher
+diesen Eindruck unterstreicht:&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;strong&gt;Version 1.96&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Output&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Input&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Random&lt;br&gt;
+Seeks&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Create&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Random Create&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Size&lt;/p&gt;
+&lt;p&gt;Per Char&lt;/p&gt;
+&lt;p&gt;Block&lt;/p&gt;
+&lt;p&gt;Rewrite&lt;/p&gt;
+&lt;p&gt;Per Char&lt;/p&gt;
+&lt;p&gt;Block&lt;/p&gt;
+&lt;p&gt;Num Files&lt;/p&gt;
+&lt;p&gt;Create&lt;/p&gt;
+&lt;p&gt;Read&lt;/p&gt;
+&lt;p&gt;Delete&lt;/p&gt;
+&lt;p&gt;Create&lt;/p&gt;
+&lt;p&gt;Read&lt;/p&gt;
+&lt;p&gt;Delete&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;netcup vServer&lt;br&gt;
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;2G&lt;/p&gt;
+&lt;p&gt;559&lt;/p&gt;
+&lt;p&gt;95&lt;/p&gt;
+&lt;p&gt;118663&lt;/p&gt;
+&lt;p&gt;23&lt;/p&gt;
+&lt;p&gt;130356&lt;/p&gt;
+&lt;p&gt;15&lt;/p&gt;
+&lt;p&gt;2958&lt;/p&gt;
+&lt;p&gt;97&lt;/p&gt;
+&lt;p&gt;3083240&lt;/p&gt;
+&lt;p&gt;98&lt;/p&gt;
+&lt;p&gt;11990&lt;/p&gt;
+&lt;p&gt;168&lt;/p&gt;
+&lt;p&gt;16&lt;/p&gt;
+&lt;p&gt;86&lt;/p&gt;
+&lt;p&gt;0&lt;/p&gt;
+&lt;p&gt;+++++&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;p&gt;92&lt;/p&gt;
+&lt;p&gt;0&lt;/p&gt;
+&lt;p&gt;1986&lt;/p&gt;
+&lt;p&gt;15&lt;/p&gt;
+&lt;p&gt;+++++&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;p&gt;8211&lt;/p&gt;
+&lt;p&gt;58&lt;/p&gt;
+&lt;p&gt;Latency&lt;/p&gt;
+&lt;p&gt;33601us&lt;/p&gt;
+&lt;p&gt;6533us&lt;/p&gt;
+&lt;p&gt;14883us&lt;/p&gt;
+&lt;p&gt;15201us&lt;/p&gt;
+&lt;p&gt;3187us&lt;/p&gt;
+&lt;p&gt;5198us&lt;/p&gt;
+&lt;p&gt;Latency&lt;/p&gt;
+&lt;p&gt;14321us&lt;/p&gt;
+&lt;p&gt;915us&lt;/p&gt;
+&lt;p&gt;73617us&lt;/p&gt;
+&lt;p&gt;1517ms&lt;/p&gt;
+&lt;p&gt;1302us&lt;/p&gt;
+&lt;p&gt;26563us&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;strong&gt;Version 1.96&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Output&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Input&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Random&lt;br&gt;
+Seeks&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Sequential Create&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: x-small;"&gt;&lt;strong&gt;Random Create&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Size&lt;/p&gt;
+&lt;p&gt;Per Char&lt;/p&gt;
+&lt;p&gt;Block&lt;/p&gt;
+&lt;p&gt;Rewrite&lt;/p&gt;
+&lt;p&gt;Per Char&lt;/p&gt;
+&lt;p&gt;Block&lt;/p&gt;
+&lt;p&gt;Num Files&lt;/p&gt;
+&lt;p&gt;Create&lt;/p&gt;
+&lt;p&gt;Read&lt;/p&gt;
+&lt;p&gt;Delete&lt;/p&gt;
+&lt;p&gt;Create&lt;/p&gt;
+&lt;p&gt;Read&lt;/p&gt;
+&lt;p&gt;Delete&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;K/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;/sec&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;% CPU&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;Strato Server&lt;br&gt;
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;2G&lt;/p&gt;
+&lt;p&gt;276&lt;/p&gt;
+&lt;p&gt;99&lt;/p&gt;
+&lt;p&gt;50075&lt;/p&gt;
+&lt;p&gt;20&lt;/p&gt;
+&lt;p&gt;31729&lt;/p&gt;
+&lt;p&gt;14&lt;/p&gt;
+&lt;p&gt;1207&lt;/p&gt;
+&lt;p&gt;98&lt;/p&gt;
+&lt;p&gt;73802&lt;/p&gt;
+&lt;p&gt;15&lt;/p&gt;
+&lt;p&gt;411.0&lt;/p&gt;
+&lt;p&gt;10&lt;/p&gt;
+&lt;p&gt;16&lt;/p&gt;
+&lt;p&gt;16859&lt;/p&gt;
+&lt;p&gt;66&lt;/p&gt;
+&lt;p&gt;+++++&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;p&gt;23837&lt;/p&gt;
+&lt;p&gt;73&lt;/p&gt;
+&lt;p&gt;18097&lt;/p&gt;
+&lt;p&gt;75&lt;/p&gt;
+&lt;p&gt;+++++&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;p&gt;23827&lt;/p&gt;
+&lt;p&gt;73&lt;/p&gt;
+&lt;p&gt;Latency&lt;/p&gt;
+&lt;p&gt;50975us&lt;/p&gt;
+&lt;p&gt;1783ms&lt;/p&gt;
+&lt;p&gt;968ms&lt;/p&gt;
+&lt;p&gt;20773us&lt;/p&gt;
+&lt;p&gt;44806us&lt;/p&gt;
+&lt;p&gt;375ms&lt;/p&gt;
+&lt;p&gt;Latency&lt;/p&gt;
+&lt;p&gt;11620us&lt;/p&gt;
+&lt;p&gt;2495us&lt;/p&gt;
+&lt;p&gt;2336us&lt;/p&gt;
+&lt;p&gt;307us&lt;/p&gt;
+&lt;p&gt;27us&lt;/p&gt;
+&lt;p&gt;356us&lt;/p&gt;
+&lt;p&gt;In puncto Storage hat also sowohl in Größe wie in Geschwindigkeit das
+(nicht-virtuelle) Strato-System klar die Nase vorn.&lt;/p&gt;
+&lt;p&gt;Wie sieht das ganze bei einem etwas realitätsnäherem Test aus? Zum
+Vergleich habe ich einmal den &lt;a href="http://gcc.gnu.org/" title="Homepage des Gnu C Compilers"&gt;Gnu C Compiler
+(gcc)&lt;/a&gt; in Version
+4.5.3 auf beiden Systemen kompiliert. Hier die Ergebnisse:&lt;/p&gt;
+&lt;p&gt;Strato&lt;/p&gt;
+&lt;p&gt;netcup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gnu C Compiler Kompilierung - Benchmark&lt;br&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Kompileren (emerge =sys-devel/gcc-4.5.3)&lt;/p&gt;
+&lt;p&gt;57m57.791s&lt;/p&gt;
+&lt;p&gt;24m55.387s&lt;/p&gt;
+&lt;p&gt;Ergo: Das netcup System ist hierbei gut doppelt so schnell.&lt;/p&gt;
+&lt;p&gt;Da das Ganze ja nun doch recht I/O - lastig werden wird, bin ich mir
+noch nicht ganz sicher ob das wirklich die richtige Entscheidung ist,
+das bestehende System gegen dieses netcup vServer System zu ersetzen.
+Wir werden sehen.&lt;/p&gt;
+&lt;p&gt;Soweit zumindest schonmal meine Analyse :)&lt;/p&gt;
+&lt;p&gt;Wie immer bin ich für Kritik offen und dankbar.&lt;/p&gt;</content><category term="benchmark"></category><category term="bonnie++"></category><category term="Domain Factory"></category><category term="JiffyBox"></category><category term="netcup"></category><category term="performance"></category><category term="server4you"></category><category term="strato"></category><category term="vergleich"></category></entry><entry><title>Never change a running system ...</title><link href="https://www.zoosau.de/never-change-a-running-system.html" rel="alternate"></link><published>2008-02-03T04:19:00+01:00</published><updated>2008-02-03T04:19:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-03:/never-change-a-running-system.html</id><summary type="html">&lt;p&gt;... erst recht nicht, indem man sich blind auf den Skill anderer
+verlässt. Und schonmal GARNICHT auf Produktivsystemen! :(&lt;/p&gt;
+&lt;p&gt;Alles Dinge, die ich eigentlich wissen sollte - dennoch hielt ich es
+vorgestern für eine total gute Idee
+&lt;a href="http://de.wikipedia.org/wiki/Dpkg" title="Debians Paketmanager - Wiki-Eintrag"&gt;dpkg&lt;/a&gt;
+über einen "apt-get dist-upgrade" - Befehl die Anweisung zu geben nun
+vollständig von etch auf lenny …&lt;/p&gt;</summary><content type="html">&lt;p&gt;... erst recht nicht, indem man sich blind auf den Skill anderer
+verlässt. Und schonmal GARNICHT auf Produktivsystemen! :(&lt;/p&gt;
+&lt;p&gt;Alles Dinge, die ich eigentlich wissen sollte - dennoch hielt ich es
+vorgestern für eine total gute Idee
+&lt;a href="http://de.wikipedia.org/wiki/Dpkg" title="Debians Paketmanager - Wiki-Eintrag"&gt;dpkg&lt;/a&gt;
+über einen "apt-get dist-upgrade" - Befehl die Anweisung zu geben nun
+vollständig von etch auf lenny Upzugraden. Natürlich ohne das zuvor auf
+einem gespiegeltem Testsystem zu testen. Diese tolle Idee hatte nun fast
+2 Tage off zur Folge, da es natürlich nicht reibungslos geklappt hat.&lt;/p&gt;
+&lt;p&gt;Warum auch immer: Anschliessend hat Apache meine Konfig nicht mehr
+gefressen, das System hatte keine route mehr gesetzt, usw. Ich konnte
+die route auch manuell setzen; dann kam ich zwar wieder von mir aus
+(Arcor Dial-In) per SSH auf das System, jedoch hatte ich keine route zu
+einem benachbartem Server (ebenfalls ein Strato-Host). So sehr ich auch
+herumprobiert habe, ich erreichte das System nicht.&lt;/p&gt;
+&lt;p&gt;Ich habe die 7 GB Daten des Systems also die letzten 2 Tage komplett
+über's Netz weggesichert und anschliessend das System neu installiert.&lt;/p&gt;
+&lt;p&gt;Ich denke weitestgehend läuft nun wieder alles.&lt;/p&gt;
+&lt;p&gt;Aber gut - es bringt mir die alte Weisheit "Never change a running
+System" (Ändere nie ein laufendes System) wieder ins Gedächtnis. Lieber
+privat als auf der Arbeit bei einem Kunden-Liveserver :)&lt;/p&gt;
+&lt;p&gt;An dieser Stelle nochmal: Sorry für alle Server-mitnutzer; war mein
+Fehler.&lt;/p&gt;</content><category term="debian"></category><category term="Linux"></category><category term="server"></category><category term="strato"></category></entry></feed>

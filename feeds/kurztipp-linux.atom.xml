@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Kurztipp, Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/kurztipp-linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2014-10-14T19:23:00+02:00</updated><entry><title>Kurztipp: RPM Variablen aus z.B. Source-RPMs auflösen</title><link href="https://www.zoosau.de/kurztipp-rpm-variablen-aus-z-b-source-rpms-aufloesen.html" rel="alternate"></link><published>2014-10-14T19:23:00+02:00</published><updated>2014-10-14T19:23:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2014-10-14:/kurztipp-rpm-variablen-aus-z-b-source-rpms-aufloesen.html</id><summary type="html">&lt;p&gt;Wir hatten im Rahmen der jüngst in der Bash bekannt gewordenen
+Sicherheitslücken die zweifelhafte Ehre, für nicht länger supportete
+SuSE Linux Systeme diese aus den Source-RPMs neu zu kompilieren. Dabei
+fielen uns in der darin enthaltenen .spec - Datei komische Variablen wie
+&lt;code&gt;%{_mandir}&lt;/code&gt; oder &lt;code&gt;%{_libdir}&lt;/code&gt; auf, die wir nicht zuordnen konnten …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wir hatten im Rahmen der jüngst in der Bash bekannt gewordenen
+Sicherheitslücken die zweifelhafte Ehre, für nicht länger supportete
+SuSE Linux Systeme diese aus den Source-RPMs neu zu kompilieren. Dabei
+fielen uns in der darin enthaltenen .spec - Datei komische Variablen wie
+&lt;code&gt;%{_mandir}&lt;/code&gt; oder &lt;code&gt;%{_libdir}&lt;/code&gt; auf, die wir nicht zuordnen konnten. Ein
+Auszug:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./configure --build=%{_target_cpu}-suse-linux \ --prefix=/usr \ --with-curses \ --mandir=%{_mandir} \ --infodir=%{_infodir} \ --libdir=%{_libdir}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Dieses sind RPM interne Variablen, welche mit folgendem
+Aufruf ausgegeben werden können:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rpm --eval '%_libdir' rpm --eval '%_mandir' ...&lt;/code&gt;&lt;/p&gt;</content><category term="%_libdir"></category><category term="source-rpm"></category><category term="src-rpm"></category><category term="srpm"></category></entry><entry><title>Kurztipp: Could not chdir to /var/spool/fcron: Permission denied</title><link href="https://www.zoosau.de/kurztipp-could-not-chdir-to-varspoolfcron-permission-denied.html" rel="alternate"></link><published>2013-10-07T07:43:00+02:00</published><updated>2013-10-07T07:43:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2013-10-07:/kurztipp-could-not-chdir-to-varspoolfcron-permission-denied.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Could not chdir to /var/spool/fcron: Permission denied
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Diese Meldung bekam ich nach einem Update auf meinem Raspberry Pi unter
+ArchLinux jedes Mal, wenn ich mit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#&amp;gt; fcrontab -e
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;die root-Crontab aufrufen wollte.&lt;/p&gt;
+&lt;p&gt;Die Lösung ist total einfach: Selbst als User root muss man Mitglied der
+Gruppe fcron sein; schon …&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Could not chdir to /var/spool/fcron: Permission denied
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Diese Meldung bekam ich nach einem Update auf meinem Raspberry Pi unter
+ArchLinux jedes Mal, wenn ich mit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#&amp;gt; fcrontab -e
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;die root-Crontab aufrufen wollte.&lt;/p&gt;
+&lt;p&gt;Die Lösung ist total einfach: Selbst als User root muss man Mitglied der
+Gruppe fcron sein; schon geht's! Aus- und wieder einloggen nicht
+vergessen! ;)&lt;/p&gt;</content><category term="cron"></category><category term="crontab"></category><category term="fcron"></category><category term="fcrontap"></category><category term="kurztipp"></category><category term="permission denied"></category></entry></feed>

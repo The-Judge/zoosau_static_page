@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-03-12T08:15:00+01:00</updated><entry><title>TYPO3 Video Tutorial Teil 3 ist online!</title><link href="https://www.zoosau.de/typo3-video-tutorial-teil-3-ist-online.html" rel="alternate"></link><published>2012-03-12T08:15:00+01:00</published><updated>2012-03-12T08:15:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-03-12:/typo3-video-tutorial-teil-3-ist-online.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.youtube.com/watch?v=V8CrJbb_YuU" title="TYPO3 Video Tutorial Teil 3"&gt;Yaaaay - Teil 3 meines Video Tutorials zu TYPO3 ist online! Schaut's
+euch an
+:)&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.youtube.com/watch?v=V8CrJbb_YuU" title="TYPO3 Video Tutorial Teil 3"&gt;Yaaaay - Teil 3 meines Video Tutorials zu TYPO3 ist online! Schaut's
+euch an
+:)&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Einschalten eines korrekten Seitenverhältnisses für Bilder in WordPress</title><link href="https://www.zoosau.de/einschalten-eines-korrekten-seitenverhaltnisses-fur-bilder-in-wordpress.html" rel="alternate"></link><published>2009-12-06T00:15:00+01:00</published><updated>2009-12-06T00:15:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-12-06:/einschalten-eines-korrekten-seitenverhaltnisses-fur-bilder-in-wordpress.html</id><summary type="html">&lt;p&gt;Mich hat es immer schon gestört, das WordPress die Thumbnails
+(Vorschaubilder) für Bilder aus der Mediathek immer quadratisch erzeugt,
+völlig unabhängig vom Seitenverhältnis der hochgeladenen Grafik. Das
+sieht dann immer in etwa so aus:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Beauty and the Beast Tour 2009" src="https://www.zoosau.de/images/beauty_and_the_beast_tour_2009.jpg" title="Beispiel für abgeschnittene Seiten beim proportionalem Seitenverhältnis: Banner der 'Beauty and the Beast Tour 2009'"&gt;&lt;/p&gt;
+&lt;p&gt;Wenn ihr auf das Bild klickt, öffnet es sich in groß und mit einem
+rechteckigen Seitenverhältnis …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Mich hat es immer schon gestört, das WordPress die Thumbnails
+(Vorschaubilder) für Bilder aus der Mediathek immer quadratisch erzeugt,
+völlig unabhängig vom Seitenverhältnis der hochgeladenen Grafik. Das
+sieht dann immer in etwa so aus:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Beauty and the Beast Tour 2009" src="https://www.zoosau.de/images/beauty_and_the_beast_tour_2009.jpg" title="Beispiel für abgeschnittene Seiten beim proportionalem Seitenverhältnis: Banner der 'Beauty and the Beast Tour 2009'"&gt;&lt;/p&gt;
+&lt;p&gt;Wenn ihr auf das Bild klickt, öffnet es sich in groß und mit einem
+rechteckigen Seitenverhältnis. Das Vorschaubild ist jedoch an den Seiten
+abgeschnitten mit den Maßen 150x150 Pixeln.&lt;/p&gt;
+&lt;p&gt;Das finde ich sehr ärgerlich!&lt;br&gt;
+Doch jetzt habe ich endlich herausgefunden, wie man das ändert! :D&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Klickt im WordPress Backend auf &lt;strong&gt;Einstellungen&lt;/strong&gt; (bzw.
+    &lt;strong&gt;Settings&lt;/strong&gt;, wenn ihr ein englisches Backend habt).&lt;/li&gt;
+&lt;li&gt;Dort öffnet sich dann eine Liste mit WordPress-internen
+    Standardmenüpunkten, sowie weiterer Menüpunkte, die ggf. durch
+    installierte Plugins dort eingefügt wurden. Klickt dann auf
+    &lt;strong&gt;Mediathek&lt;/strong&gt; (&lt;strong&gt;media settings&lt;/strong&gt; im englischen).&lt;/li&gt;
+&lt;li&gt;Hier findet ihr nun eine Selectbox mit der Beschriftung &lt;strong&gt;Beschneide
+    die Thumbnails in die richtige Größe (Thumbnails sind
+    normalerweise proportional)&lt;/strong&gt; (bzw. &lt;strong&gt;Crop thumbnail to exact
+    dimensions (normally thumbnails are proportional)&lt;/strong&gt; im englischen).
+    Deaktiviert sie, damit zukünftig erstellte Thumbnails mit einem
+    korrektem Seitenverhältnis erzeugt werden.
+&lt;img alt="Option um in WordPress das festgelegte, proportionale Seitenverhältnis abzustellen" src="https://www.zoosau.de/images/wordpress_prop_seitenverhaeltnis_aufheben.png" title="Option um in WordPress das festgelegte, proportionale Seitenverhältnis abzustellen"&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ein Hinweis noch: Nicht wundern, wenn die alten Thumbnails nun noch alle
+proportional, also: quadratisch sind. Thumbnails werden einmalig beim
+hochladen eines Bildes erzeugt und werden dann gespeichert. Um also alle
+Thumbnails zu korrigieren wäre es nötig alle Bilder aus der Mediathek
+noch einmal zu löschen, erneut hochzuladen und alle bisherigen Artikel
+zu überarbeiten (außer, es gibt ein Plugin, welches ich noch nicht
+kenne)!&lt;br&gt;
+Aus genau diesem Grund habe ich mich auch dagegen entschieden und
+belasse die alten Beiträge so wie sie sind.&lt;/p&gt;</content><category term="aspect ratio"></category><category term="seitenverhälltnis"></category><category term="seitenverhältnis"></category><category term="thumbnails"></category><category term="vorschaubilder"></category><category term="Wordpress"></category></entry><entry><title>Woopra taugt nichts</title><link href="https://www.zoosau.de/woopra-taugt-nichts.html" rel="alternate"></link><published>2009-11-08T14:12:00+01:00</published><updated>2009-11-08T14:12:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-08:/woopra-taugt-nichts.html</id><summary type="html">&lt;p&gt;Ich interessiere mich ja auch, nicht gerade zuletzt des Berufes wegen,
+auch für Statistiken und andere Hilfsmittel zur Analyse von Webseiten.
+Neben den Google-Adsense Bannern, mit denen ich hoffe irgendwann man
+wenigstens ein wenig Geld durch diese Homepage hereinzubekommen, laufen
+auf diesem Blog einige JavaScripte, die mir statistische Daten meiner …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich interessiere mich ja auch, nicht gerade zuletzt des Berufes wegen,
+auch für Statistiken und andere Hilfsmittel zur Analyse von Webseiten.
+Neben den Google-Adsense Bannern, mit denen ich hoffe irgendwann man
+wenigstens ein wenig Geld durch diese Homepage hereinzubekommen, laufen
+auf diesem Blog einige JavaScripte, die mir statistische Daten meiner
+Besucher sammeln. Bei wem JavaScript aktiviert und in seinen Rechten
+nicht sonderlich eingeschränkt ist (ich rede immernoch vom JavaScript ;)
+),  von dem erhalte ich einen Einblick in z.B. ob Flash, Java, etc.
+vorhanden ist, welche Bildschirmauflösung benutzt wird, und so weiter.&lt;br&gt;
+Außerdem wird ein weiteres JavaScript von Google Analytics ausgeführt,
+das ähnliche Daten erhebt und mir statistisch auswertet.&lt;/p&gt;
+&lt;p&gt;Ich bin vor ein paar Wochen über den noch in der Vorbereitung
+befindlichen Dienst "&lt;a href="http://www.woopra.com/"&gt;Woopra&lt;/a&gt;" gestolpert. Die
+Screenshots sahen gut aus. Ein Wordpress Plugin hat es mir leicht
+gemacht diesen Dienst zu testen. Nachdem ich nun ein paar Wochen lang
+immer mal wieder versucht habe, auch nur annähernd einen Nutzen aus
+diesem Dienst zu ziehen, gebe ich nun auf. Mein Feedback ist
+ernüchternd: Das JavaScript, welches zum ansehen der Auswertungen
+ausgeführt werden muss, funktionierte bei mir unter kaum einem Browser.
+Lediglich der Internet Explorer konnte wenigstens einige der Seiten
+aufrufen. Diese bieten jedoch viel weniger Informationen als ein
+simples, frei verfügbares &lt;a href="http://awstats.sourceforge.net/"&gt;AWstats&lt;/a&gt;. Es
+mag sein, das die kostenpflichtige Version (die trotz der
+haarsträubenden, dilettantischen technischen Umsetzung der Seite bereits
+verfügbar ist) hier mehr bietet. Dieses kann und will ich jedoch
+garnicht erst beurteilen, da die freie Version eines solchen Dienstes in
+meinen Augen Aushängeschild für die Qualität des ganzen sein sollte, da
+man sonst die Katze im Sack kauft und erst hinterher erfahren kann, das
+das ein Griff ins Klo war.&lt;/p&gt;
+&lt;p&gt;Mein Tipp: Finger weg und spart Euch die Zeit.&lt;/p&gt;</content><category term="woopra"></category></entry><entry><title>Der ganz normale SSL - Wahnsinn</title><link href="https://www.zoosau.de/der-ganz-normale-ssl-wahnsinn.html" rel="alternate"></link><published>2009-10-11T17:45:00+02:00</published><updated>2009-10-11T17:45:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-10-11:/der-ganz-normale-ssl-wahnsinn.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Heute möchte ich etwas über die Gelddruckerei SSL - Zertifikate
+schreiben.&lt;/p&gt;
+&lt;p&gt;SSL ist eine Methode zur Verschlüsselung der Übertragung beim Aufruf
+einer Internetseite. Stark vereinfacht funktioniert das Verfahren wie
+folgt:&lt;br&gt;
+Eine im Betriebssystem / im Browser hinterlegte SSL -
+Zertifizierungsstelle signiert ein digitales Zertifikat eines
+Antragsstellers mit der eigenen Signatur, nachdem …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Heute möchte ich etwas über die Gelddruckerei SSL - Zertifikate
+schreiben.&lt;/p&gt;
+&lt;p&gt;SSL ist eine Methode zur Verschlüsselung der Übertragung beim Aufruf
+einer Internetseite. Stark vereinfacht funktioniert das Verfahren wie
+folgt:&lt;br&gt;
+Eine im Betriebssystem / im Browser hinterlegte SSL -
+Zertifizierungsstelle signiert ein digitales Zertifikat eines
+Antragsstellers mit der eigenen Signatur, nachdem diese die Identität
+und die Berechtigung des Antragsstellers, für eine bestimmte
+Internetadresse ein SSL Zertifikate anfordern zu dürfen, überprüft hat.
+Somit soll zum einen die Verbindung verschlüsselt werden und zum anderen
+sichergestellt werden, das nicht jeder Kinz und Kunz sein eigenes
+Zertifikat für eine bestimmte Domain einfach so auf einem eigenem
+Webserver installiert und somit, nach erfolgreichem Hijacking einer
+Domain, dem Besucher vorgaukeln zu können er könne seine privaten Daten
+ungefährdet in jedes Formular dort eingeben.&lt;/p&gt;
+&lt;p&gt;Solche Zertifizierungsstellen nehmen richtig viel Geld dafür, eine ca.
+300 - 1000 KB große Datei minimal zu verändern; der Zeitaufwand hierfür
+beträgt ca. 5 Sekunden. Was man so teuer bezahlt (das günstigste mir
+bekannte Zertifikat kostet mit 1 Jahr Gültigkeit 190 €!!) ist der
+administrative Aufwand, wirklich zu prüfen, um wen es sich beim
+Antragssteller handelt. Bei den teureren Zertifikaten (ab ca. 350 €)
+beschränkt sich diese Prüfung darauf, den beim Antrag angegebenen Namen
+mit dem Namen aus der *NIC - Whois Datenbank zu vergleichen (z.B. für
+Deutschland/.de - Domains: DeNIC) und das Zertifikat nur an
+eMailadressen die auf @beantragterDomain.de enden zuzustellen.&lt;/p&gt;
+&lt;p&gt;Das ist nicht gerade ein Aufwand, der in meinen Augen den Preis von 350
+€ rechtfertigt! Das ganze läßt sich dann auch noch weiterspinnen; bei
+GeoTrust bezahlt man für das Rundum-Valide-Sorglos - Paket pro Jahr
+995€! ... spinnen die?&lt;/p&gt;
+&lt;p&gt;Als Privatanwender, der einfach so mal seine private, nicht kommerzielle
+Webseite absichern will, ist das natürlich alles andere als vertretbar.
+Somit hat man eigentlich nur die Möglichkeit auf eine Absicherung durch
+SSL zu verzichten, oder sein eigenes Zertifikat zu erstellen. Letzteres
+wird aber in der Regel von allen Browsern als ungültig eingestuft, da
+der öffentliche Schlüssel dieser eigenen Zertifizierungsstelle natürlich
+ebenso erstmal als nicht vertrauenswürdig eingestuft wird.&lt;/p&gt;
+&lt;p&gt;Seit kurzem gibt es auch Business - taugliche Alternativen zu den ...
+ich nenne sie mal "großen", TrustCenter und GeoTrust:
+&lt;a href="http://www.comodo.com" title="Comodo"&gt;Comodo&lt;/a&gt;! Die &lt;a href="http://www.psw.net/ssl-zertifikate.cfm" title="SSL Zertifikatangebot von PSW"&gt;PSW
+Group&lt;/a&gt;
+verkauft seit einiger Zeit Zertifikate von Comodo, die an sich dasselbe
+leisten wie die teureren Alternativen, jedoch zu einem Bruchteil der
+Preise! Ein Standard 1-Jahres-SSL Zertifikat kostet derzeit z.B. 15,- €
+. Ein 3-Jahres-Zertifikat 39,- € und ein 3-Jahres-Wildcard SSL
+Zertifikat "nur" 549,- €. Zum Vergleich:&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;             &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;GeoTrust&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;htt&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Thawte&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;VeriSign&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;htt&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;PSW&lt;/span&gt;
+             &lt;span class="nl"&gt;p&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//www.geotru //www.thawte.d p://www.verisi Group](http://&lt;/span&gt;
+             &lt;span class="n"&gt;st&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;de&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;SSL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;digitale&lt;/span&gt; &lt;span class="n"&gt;gn&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;de&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;buy&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;www&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;psw&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ss&lt;/span&gt;
+             &lt;span class="n"&gt;compare&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ce&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zertifikate&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;certificat&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zertifikate&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+             &lt;span class="n"&gt;rtificates&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;htm&lt;/span&gt; &lt;span class="n"&gt;sl123&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ht&lt;/span&gt; &lt;span class="n"&gt;es&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;secure&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;site&lt;/span&gt; &lt;span class="n"&gt;cfm&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Homepage &lt;/span&gt;
+             &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Homepage vo ml &amp;quot;&lt;/span&gt;&lt;span class="n"&gt;Homepage&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;services&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;inde&lt;/span&gt; &lt;span class="n"&gt;von&lt;/span&gt; &lt;span class="n"&gt;PSW&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Zert&lt;/span&gt;
+             &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;GeoTrust&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;Thawte&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SSL&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Homepa ifikatsübersic&lt;/span&gt;
+             &lt;span class="n"&gt;SL&lt;/span&gt; &lt;span class="err"&gt;Ü&lt;/span&gt;&lt;span class="n"&gt;bersicht&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="mi"&gt;123&lt;/span&gt; &lt;span class="n"&gt;Zertifikat&lt;/span&gt; &lt;span class="n"&gt;ge&lt;/span&gt; &lt;span class="n"&gt;von&lt;/span&gt; &lt;span class="n"&gt;VeriSig&lt;/span&gt; &lt;span class="n"&gt;ht&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;)&lt;/span&gt;
+             &lt;span class="s"&gt;&amp;quot;)             sübersicht)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Zertifikat&lt;/span&gt; 
+                                           &lt;span class="n"&gt;sübersicht&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;1 Jahr         189,- €        101,30 €       349,- €        15,- €
+  Standardzertif (&lt;a href="h ([SSL123](http ([Secure       ([Lite](http:/
+  ikat           ttp://www.geot ://www.thawte. Site](http://w /www.psw.net/s
+                 rust.com/ssl/c de/SSL-digital ww.verisign.de sl-zertifikate
+                 ompare-ssl-cer e-zertifikate/ /ssl/buy-ssl-c .cfm &amp;quot;PSW Zert
+                 tificates.html ssl123/index.h ertificates/se ifikatsübersic
+                  &amp;quot;GeoTrust SSL tml &amp;quot;Thawte SS cure-site-ssl- ht&amp;quot;)"&gt;QuickSSL®&lt;/a&gt;
+                  Preisübersich L123"))        certificates/i 
+                 t"))                          ndex.html "Ver 
+                                               iSign Secure S 
+                                               ite"))         &lt;/p&gt;
+&lt;p&gt;3 Jahre        2488,- €\      - Nur          - Nicht        549,- €
+  Wildcard       ([True         auf&lt;a href="h verfügbar-     ([Wildcard
+  Zertifikat     BusinessID     ttp://www.thaw                Lite](http://w
+                 Wildcard](http te.de/ssl-digi                ww.psw.net/ssl
+                 s://products.g tal-certificat                -zertifikate.c
+                 eotrust.com/or es/wildcardssl                fm &amp;quot;PSW Zertif
+                 ders/truebiz_w /index.html &amp;quot;Ü                ikatsübersicht
+                 ildcard.do &amp;quot;Ge ber Thawte Wil                &amp;quot;)"&gt;Anfrage&lt;/a&gt;
+                 oTrust True Bu dcard Zertifik              &lt;br&gt;
+                 sinessID Wildc ate")                       &lt;br&gt;
+                 ard Bestellfor -                           &lt;br&gt;
+                 mular mit Prei                             &lt;br&gt;
+                 sübersicht"))                                &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Alle Preise wurden der Einfachheit halber in € umgerechnet. Stand
+dieser Informationen ist der 11.10.2009 - 16:50 Uhr.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ich arbeite nun schon länger mit den PSW Zertifikaten und konnte bisher
+noch keinerlei Probleme damit feststellen. Wie auch - die anderen
+Aussteller kochen auch nur mit Wasser und erfinden die SSL Technik nicht
+neu. Im Gegenteil: Meine Erfahrung ist die, das GeoTrust und VeriSign
+unheimlich unflexibel und Kundenunfreundlich sind. Mehrere Bestellungen
+musste ich wieder stornieren, weil diese Anbieter sich als unfähig
+erwiesen haben, trotz eindeutiger Identitäts- und Vollmachtsnachweisen
+so etwas simples wie die Empfängermailadresse für das Zertifikat
+anzupassen.&lt;/p&gt;
+&lt;p&gt;Über den Kundenservice von PSW kann ich bisher nur gutes berichten. Der
+Support ist lösungsorientiert und freundlich, und bisher konnten alle
+Fragen die ich stellte nach kürzester Zeit beantwortet werden.&lt;/p&gt;
+&lt;p&gt;Doch auch 15,- € sind für viele Privatleute (mich eingeschlossen) zu
+teuer. Schließlich will ich damit kein Geld machen und einen Shop oder
+ähnliches absichern, sondern lediglich den Backendzugang zu meinem
+&lt;a href="http://de.wikipedia.org/wiki/Content-Management-System" title="Wiki Eintrag zu CMS"&gt;CMS&lt;/a&gt;
+und den Zugang zu einer handvoll Webapplikationen wie einem WebMailer
+und einer Kalenderapplikation.&lt;/p&gt;
+&lt;p&gt;Seit kurzem gibt es auch hierfür eine super Alternative! Wie diesem
+&lt;a href="http://www.heise.de/newsticker/meldung/Internet-Explorer-unterstuetzt-kostenlose-Zertifikate-797833.html" title="Heise Newsartikel über kostenlose SSL Zertifikate im IE"&gt;Heise -
+Artikel&lt;/a&gt;
+zu entnehmen ist, gibt es schon seit längerem mehrere SSL Anbieter, die
+kostenlose Standard-SSL Zertifikate ausstellen. Bisher war das jedoch
+nicht wirklich eine Alternative, da die Integration dieser Zertifikate
+an der verbohrten Rückständigkeit des Internet Explorers gescheitert
+wäre, der bisher diesen Anbieter nicht als vertrauenswürdige
+Zertifizierungsstelle in seinen Listen hatte. Doch nun ist es mit dem
+neuen IE8 möglich ein solches Zertifikat zu verwenden und somit auch für
+privatleute interessant.&lt;/p&gt;
+&lt;p&gt;Unter &lt;a href="http://www.startssl.com/" title="StartSSL"&gt;http://www.startssl.com&lt;/a&gt;
+kann sich nun jeder anmelden und die kostenlosen "StartSSL Free"
+Zertifikate beantragen.&lt;/p&gt;
+&lt;p&gt;Ich verwende es für die oben genannten Dienste und es funktioniert
+problemlos; im Firefox schon lange, doch im IE8 nun (endlich) auch ;)&lt;/p&gt;</content><category term="kostenlos"></category><category term="ssl"></category><category term="startssl"></category></entry><entry><title>Die Zoosau und Binärpräfixe</title><link href="https://www.zoosau.de/die-zoosau-und-binarprafixe.html" rel="alternate"></link><published>2008-11-05T22:35:00+01:00</published><updated>2008-11-05T22:35:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-11-05:/die-zoosau-und-binarprafixe.html</id><summary type="html">&lt;p&gt;... MebiByte, ... KibiByte, ... TebiByte, ... was soll das alles?? Hat
+der Typ den garkeine Ahnung? Weiss der nicht was ein MegaByte oder ein
+KiloByte ist?&lt;/p&gt;
+&lt;p&gt;Doch! Und wenn ihr Euch diese Frage auch stellt beim betrachten einiger
+meiner Beiträge auf dieser Homepage, dann hat dieser Typ offenbar sogar
+mehr davon als ihr …&lt;/p&gt;</summary><content type="html">&lt;p&gt;... MebiByte, ... KibiByte, ... TebiByte, ... was soll das alles?? Hat
+der Typ den garkeine Ahnung? Weiss der nicht was ein MegaByte oder ein
+KiloByte ist?&lt;/p&gt;
+&lt;p&gt;Doch! Und wenn ihr Euch diese Frage auch stellt beim betrachten einiger
+meiner Beiträge auf dieser Homepage, dann hat dieser Typ offenbar sogar
+mehr davon als ihr selbst :)&lt;/p&gt;
+&lt;p&gt;Es handelt sich hierbei um sogenannte Binärpräfixe.&lt;/p&gt;
+&lt;p&gt;Erstmalig davon gelesen habe ich selbst bei den Recherchen zu meiner
+neuen, privaten Spielehardware in der &lt;a href="http://www.pcgameshardware.de" title="Homepage der PC Games Hardware"&gt;PC Games
+Hardware&lt;/a&gt;.
+Auch hier musste die Redaktion zunächst Aufklärungs- und Pioniersarbeit
+leisten: In nahezu jeder Ausgabe steht anfangs eine kleine Kolumne
+darüber, warum diese zunächst seltsam anmutenden Bezeichner, anstelle
+der alt eingesessenen Bezeichnungen wie MegaByte oder KiloByte verwendet
+werden.&lt;br&gt;
+(Als kleiner Quellennachweis: Ich berufe mich bei dieser Aussage
+(wenigstens) Auf "&lt;a href="http://www.pcgameshardware.de" title="Homepage der PC Games Hardware"&gt;PCGames
+Hardware&lt;/a&gt;",
+Ausgabe 06/2008).&lt;br&gt;
+Dort heisst es:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PCGH verwendet bei Angaben von Datenmengen korrekte, weltweit
+standardisierte Bezeichnungen - Binärpräfixe. Demnach ist ein Kilobyte
+gleich 1.000 Byte, während 1.024 Byte als ein Kibibyte (kurz: KiB oder
+KiByte) bezeichnet werden. Entsprechende Bezeichnungen gibt es auch
+für größere Datenmengen: Ein Mebibyte (MiByte) entspricht 1.024
+KiByte, ein Gibibyte (GiByte) 1.024 MiByte und so weiter. Diese
+"binären" Größen ersetzen oder ergänzen die dezimalen Angaben; die
+Kapazität von festplatten geben wir in beiden EInheiten an, eine
+Terabyte-Platte bietet also 1.000 GByte/932 GiByte. Näheres finden Sie
+im PDF-Artikel "Das Kibibyte kommt" auf unserer Heft-DVD. (hs)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nun, diesen PDF Artikel werde ich hier nicht zur Verfügung stellen, da
+ich keine Lust auf eine Klage des Verlages habe.&lt;br&gt;
+Genauso gut (oder besser?) tut es jedoch auch ein &lt;a href="http://de.wikipedia.org/wiki/Bin%C3%A4rpr%C3%A4fix" title="Wikipedia-Artikel zum Thema &amp;quot;Binärpräfix&amp;quot;"&gt;Wikipedia-Artikel zum
+Thema
+"Binärpräfix"&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Das PCGH Statement hat es schon ganz gut zusammengefasst: Binärpräfixe
+legen den alten Streit bei, ob eine Festplatte oder DVD nun die volle
+Kapazität bietet, oder ob die offizielle Angabe der Speicherkapazität
+Betrug ist.&lt;br&gt;
+Mathematisch stehen die Einheiten "Kilo", "Mega" oder "Giga" für runde
+1000er ( ... ,1000000er, 1000000000er, ... ). Demnach sind ja auch z.B.
+1000 gramm 1 Kilo (und nicht etwa 1024 gramm).&lt;br&gt;
+IT-Technisch gesehen, lassen sich jedoch immer nur Einheiten eines
+vielfachen von 8 ansteuern. Somit sind 8 Bit = 1 Byte. 1.024 Byte sind
+nun ein Kilobyte, 1.024 Kilobyte ein Megabyte, etc.&lt;/p&gt;
+&lt;p&gt;Somit gesehen haben beide Seiten Recht, nur folgen sie jeweils einem
+anderen Argumentationsweg.&lt;br&gt;
+In der Praxis stellen diese Probleme sich oft so dar, das Kunden, die
+mit den Hintergründen dieser Einheiten nicht ganz so vertraut sind, sich
+betrogen fühlen; zeigt doch die neue "1 Terrabyte" grosse Festplatte
+unter Windows nur noch 932 Gigabyte an, statt der erwarteten 1.000
+Gigabyte.&lt;br&gt;
+Das kommt daher, das die Festplattenhersteller die Angabe zur Kapazität
+natürlich so umrechnen, wie es sich am besten verkaufen lässt: Ein
+"1-Terrabyte-Datenwunder" verkauft sich sicher besser als eine 932
+Gigabyte grosse Festplatte.&lt;br&gt;
+Das Betriebssystem seinerseits rechnet aber nunmal binär, was eine
+Kapazitätsangabe von "nur" 932 Gigabyte zur Folge hat.&lt;/p&gt;
+&lt;p&gt;Dank der Binärpräfixe lassen sich diese Unklarheiten ganz einfach
+konkretisieren:&lt;br&gt;
+Spricht man von IT-Technischen Größen, ist in der Regel von
+Binärpräfixen, also: Gibi, Mebi, etc. -Byte die Rede.&lt;br&gt;
+Spricht man von ganz normalen Größen, wie z.B. der Anzahl an Dateien in
+einem Ordner, dann sollte diese Angabe weiterhin mit Kilo, Mega, etc.
+gemacht werden.&lt;/p&gt;
+&lt;p&gt;Klar: Das wird sich höchstwahrscheinlich nie wirklich bei allen
+durchsetzen. Besonders wenn man bedenkt, das im Jahre 2008 immer noch
+Sätze mit "&lt;em&gt;Ich hab 25 € bezahlt - das sind FÜNFZICH MAAAAK!&lt;/em&gt;" zur
+Darlegung mancher Sachverhalte herangezogen werden. Jedoch: Ich lebe im
+guten Wissen es richtig zu machen und einer muss ja schliesslich mal
+anfangen :)&lt;/p&gt;
+&lt;p&gt;Daher werde ich mich bemühen auf meiner Seite stets die richtige Einheit
+zu nennen.&lt;/p&gt;</content><category term="binärpräfix"></category><category term="gibibyte"></category><category term="mebibyte"></category><category term="pcgh"></category></entry><entry><title>Ey alter: Warum ist deine HP so hässlich, Lan?</title><link href="https://www.zoosau.de/ey-alter-warum-ist-deine-hp-so-hasslich-lan.html" rel="alternate"></link><published>2008-07-30T18:00:00+02:00</published><updated>2008-07-30T18:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-07-30:/ey-alter-warum-ist-deine-hp-so-hasslich-lan.html</id><summary type="html">&lt;p&gt;Yoyoyoy, endlich mal wieder ein Update ;)&lt;/p&gt;
+&lt;p&gt;In letzter Zeit habe ich kaum noch Zeit etwas in mein Blog zu schreiben.
+Auch jetzt gerade ringe ich mir die Zeit ab, mal wieder was für's Blog
+zu tun.&lt;br&gt;
+Wer hier schonmal war, bzw. dieses Blog öfter besucht, wird feststellen,
+das es anders …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yoyoyoy, endlich mal wieder ein Update ;)&lt;/p&gt;
+&lt;p&gt;In letzter Zeit habe ich kaum noch Zeit etwas in mein Blog zu schreiben.
+Auch jetzt gerade ringe ich mir die Zeit ab, mal wieder was für's Blog
+zu tun.&lt;br&gt;
+Wer hier schonmal war, bzw. dieses Blog öfter besucht, wird feststellen,
+das es anders aussieht als sonst. Bisher hatte ich einen feschen
+schwarz/grau/blau - Look. Dieses Layout war jedoch so hoffnungslos
+verscriptet und mit Goodies, wie transparenten Feldern, starrem
+Hintergrundbild, etc. so rechenlastig, das ich selbst meine Seite häufig
+per Linux-Browser garnicht ansehen konnte. Bzw.: Es trat dieser bekannte
+Effekt auf, das man einmal das Mausrad dreht, und dann eine Minute lang
+dabei zusehen darf, wie der Bildschirm immer mal wieder ein Stückchen
+weiter nach unten springt.&lt;br&gt;
+&lt;a href="https://bugzilla.mozilla.org/show_bug.cgi?id=410480" title="Bug 410480 bei mozilla"&gt;Hierzu habe ich vor Urzeiten auch mal einen Bug beim Mozilla - Bugzilla
+geschrieben.&lt;/a&gt;
+Dieser wurde jedoch als Duplikat markiert und in dem "echten" Bug geht
+es seit Ewigkeiten nicht weiter. Die einen schieben's auf Grafiktreiber,
+dann wieder welche auf die Rendering Engine unter Linux, ... aber
+wirklich einen Plan was da abgeht hat niemand.&lt;/p&gt;
+&lt;p&gt;Das war jedoch nicht alles. Auch der Server hatte offenbar mit
+irgendeinem Element dieser Seite so viel zu tun, das ich oft
+nachvollziehen konnte, das beim öffnen der Startseite eine Apache -
+Instanz die CPU Last auf nahezu 100% anhob.&lt;br&gt;
+Zudem konnte ich selbst RSS Feeds nicht immer abholen.&lt;br&gt;
+Witziger weise konnten die anderen Applikationen wie die Site
+&lt;a href="http://www.leliel.info" title="Homepage von Lena Hecht"&gt;www.leliel.info&lt;/a&gt; oder
+auch nur der WebMailer (ebenfalls über
+&lt;a href="http://www.zoosau.de" title="Homepage von Whitewolf Fox"&gt;www.zoosau.de&lt;/a&gt;
+erreichbar) weiterhin aufgerufen werden. Der Server war also nicht
+"platt", sondern hatte lediglich Probleme beim Rendern der Seite. Dabei
+läuft auf der Zoosau schon ein
+&lt;a href="http://eaccelerator.net/" title="Homepage des eAccelerator"&gt;eAccelerator&lt;/a&gt; der
+die PHP Scripte vorkompiliert.&lt;/p&gt;
+&lt;p&gt;Naja, wie auch immer: Das schreiben der Beiträge machte so nicht
+wirklich Spass. Daher war meine Motivation dazu auch eher dürftig.&lt;br&gt;
+Ich habe nun das Standard-Layout für die deutsche WordPress -
+Distribution wieder geladen. Das ist zwar langweilig, und viele meiner
+eigenen Erweiterungen betten sich mehr schlecht als recht in dieses
+Layout ein, aber wenigstens ist die Seite erreichbar.&lt;/p&gt;
+&lt;p&gt;Ich möchte das ganze demnächst auf
+&lt;a href="http://typo3.org/" title="Homepage von TYPO3"&gt;TYPO3&lt;/a&gt; umziehen. Dieses System
+bietet alles, was mich an WordPress massivst gestört hat:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Es ist gescheit Dokumentiert&lt;/li&gt;
+&lt;li&gt;Es gibt eine gescheite Community, die mehr als Flickwerk zur Lösung
+    anzubieten hat&lt;/li&gt;
+&lt;li&gt;Das BackEnd ist höchstfunktional und sehr Browserkompatibel&lt;/li&gt;
+&lt;li&gt;Die Dateiverwaltung ist sehr zugänglich&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der Nachteil ist jedoch, das das kein System ist, das man sich "mal
+eben" so zusammenklicken kann wie es bei WordPress der Fall ist. Als
+allererste Hürde sehe ich als n00b schonmal, das man überhaupt erst
+garnicht damit anfangen kann sich mit dem System vertraut zu machen, da,
+ehe man kein Template zur Ausgabe der Inhalte definiert hat, überhaupt
+nichts angezeigt bekommt!&lt;br&gt;
+Inzwischen weiss ich, warum dem so ist und wie man dieses ändern kann.
+Ich denke jedoch, das ich bei meiner eigenen Recherche zu CMS TYPO3
+direkt wieder verworfen hätte, da ich es als unpraktisch angesehen
+hätte.&lt;br&gt;
+Durch meine Arbeit ist mir dieses System jedoch ans Herz gewachsen und
+ich beginne die Vorteile eines solch professionellen CMS zu schätzen.&lt;/p&gt;
+&lt;p&gt;Wie gesagt: Ich weiss noch nicht wann, aber hier steht demnächst mal ein
+Relaunch an. Dann habe ich endlich mal eine echte Homepage und kein
+reines Blog mehr, das sich als solche tarnt ;)&lt;/p&gt;</content><category term="Blog"></category><category term="bugzilla"></category><category term="cms"></category><category term="fehler"></category><category term="firefox"></category><category term="typo3"></category><category term="Wordpress"></category></entry><entry><title>Schützen von phpBB2 Foren vor Spamusern</title><link href="https://www.zoosau.de/schutzen-von-phpbb2-foren-vor-spamusern.html" rel="alternate"></link><published>2008-05-15T23:17:00+02:00</published><updated>2008-05-15T23:17:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-15:/schutzen-von-phpbb2-foren-vor-spamusern.html</id><summary type="html">&lt;p&gt;Als wir auf &lt;a href="http://www.bardor.de" title="Forum von Bardor"&gt;www.bardor.de&lt;/a&gt; die
+Forensoftware &lt;a href="http://www.phpbb.de/" title="phpBB Seite (deutsch)"&gt;phpBB2&lt;/a&gt;
+installiert hatten, dauerte es keinen Tag, da hatten wir bereits 10 User
+im Forum. Diese User hatten keine Beiträge geschrieben oder sinnvolle
+Daten im Profil hinterlegt. Es waren dort lediglich Verweise auf Porno
+Seiten.&lt;/p&gt;
+&lt;p&gt;Pro Tag kamen ca. 10 weitere hinzu …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Als wir auf &lt;a href="http://www.bardor.de" title="Forum von Bardor"&gt;www.bardor.de&lt;/a&gt; die
+Forensoftware &lt;a href="http://www.phpbb.de/" title="phpBB Seite (deutsch)"&gt;phpBB2&lt;/a&gt;
+installiert hatten, dauerte es keinen Tag, da hatten wir bereits 10 User
+im Forum. Diese User hatten keine Beiträge geschrieben oder sinnvolle
+Daten im Profil hinterlegt. Es waren dort lediglich Verweise auf Porno
+Seiten.&lt;/p&gt;
+&lt;p&gt;Pro Tag kamen ca. 10 weitere hinzu - Trotz Captcha Bildern!&lt;/p&gt;
+&lt;p&gt;Wirkungsvoll fernhalten konnten wir diese Register - Bots erst durch die
+Implementation des nachfolgend beschriebenen Mods. Dadurch wird ein
+Registrierungslink durch einen Hash ergänzt, den diese Bots irgendwie
+nicht packen.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;##############################################################&lt;br&gt;
+## MOD Title: Unique Registration Hash&lt;br&gt;
+## MOD Author: pentapenguin &amp;lt; n/a &amp;gt; (Jeremy Conley)
+http://www.pentapenguin.com&lt;br&gt;
+## MOD Description: This MOD changes the "agreed=true" part of the
+registration&lt;br&gt;
+## form to a unique identifier to help stop spam bots from
+registering.&lt;br&gt;
+##&lt;br&gt;
+## MOD Version: 0.1.0&lt;br&gt;
+##&lt;br&gt;
+## Installation Level: Easy&lt;br&gt;
+## Installation Time: 5 Minutes&lt;br&gt;
+## Files To Edit: 1&lt;br&gt;
+## includes/usercp_register.php&lt;br&gt;
+##&lt;br&gt;
+## Included Files: N/A&lt;br&gt;
+## License: http://opensource.org/licenses/gpl-license.php GNU General
+Public License v2&lt;br&gt;
+##############################################################&lt;br&gt;
+## For security purposes, please check: http://www.phpbb.com/mods/&lt;br&gt;
+## for the latest version of this MOD. Although MODs are checked&lt;br&gt;
+## before being allowed in the MODs Database there is no guarantee&lt;br&gt;
+## that there are no security problems within the MOD. No support&lt;br&gt;
+## will be given for MODs not found within the MODs Database which&lt;br&gt;
+## can be found at http://www.phpbb.com/mods/&lt;br&gt;
+##############################################################&lt;br&gt;
+## Author Notes:&lt;br&gt;
+##&lt;br&gt;
+## Support for this MOD may be found at http://www.pentapenguin.com&lt;br&gt;
+## This MOD is EasyMOD friendly!
+(http://area51.phpbb.com/phpBB/viewforum.php?f=17)&lt;br&gt;
+##&lt;br&gt;
+##############################################################&lt;br&gt;
+## MOD History:&lt;br&gt;
+##&lt;br&gt;
+## 2006-08-19 - Version 0.1.0&lt;br&gt;
+## - Initial release&lt;br&gt;
+##&lt;br&gt;
+##############################################################&lt;br&gt;
+## Before Adding This MOD To Your Forum, You Should Back Up All Files
+Related To This MOD&lt;br&gt;
+##############################################################&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ OPEN ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+includes/usercp_register.php&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+\$unhtml_specialchars_replace = array('&amp;gt;', '&amp;lt;', '"', '&amp;amp;');&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ AFTER, ADD ]------------------------------------------&lt;br&gt;
+#&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;// Begin Unique Registration Hash MOD by pentapenguin
+(http://www.pentapenguin.com)&lt;br&gt;
+\$registration_hash = md5(\$userdata['session_ip'] .
+\$userdata['session_id']);&lt;br&gt;
+// End Unique Registration Hash MOD by pentapenguin&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+global \$userdata, \$template, \$lang&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+\$phpEx&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE AFTER, ADD
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+, \$registration_hash&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+"U_AGREE_OVER13" =&amp;gt; append_sid("profile.\$phpEx&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+agreed=true&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE REPLACE WITH
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+agreed=\$registration_hash&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+"U_AGREE_UNDER13" =&amp;gt; append_sid("profile.\$phpEx&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+agreed=true&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE REPLACE WITH
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+agreed=\$registration_hash&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+if ( \$mode == 'register' &amp;amp;&amp;amp; !isset(\$HTTP_POST_VARS['agreed']) &amp;amp;&amp;amp;
+!isset(\$HTTP_GET_VARS['agreed']) )&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+!isset(\$HTTP_POST_VARS['agreed']) &amp;amp;&amp;amp;
+!isset(\$HTTP_GET_VARS['agreed'])&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE REPLACE WITH
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+\$HTTP_POST_VARS['agreed'] != \$registration_hash &amp;amp;&amp;amp;
+\$HTTP_GET_VARS['agreed'] != \$registration_hash&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+\$s_hidden_fields = '&amp;lt;input type="hidden"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE FIND ]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+name="agreed" value="true"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ IN-LINE REPLACE WITH
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+name="agreed" value="' . \$registration_hash . '"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;#&lt;br&gt;
+#-----[ SAVE/CLOSE ALL FILES
+]------------------------------------------&lt;br&gt;
+#&lt;br&gt;
+# EoM&lt;/em&gt;&lt;/p&gt;</content><category term="forum"></category><category term="phpbb"></category><category term="spam"></category><category term="spamuser"></category><category term="user"></category></entry><entry><title>Wenn Seiten permanent Umziehen</title><link href="https://www.zoosau.de/wenn-seiten-permanent-umziehen.html" rel="alternate"></link><published>2007-12-28T17:29:00+01:00</published><updated>2007-12-28T17:29:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2007-12-28:/wenn-seiten-permanent-umziehen.html</id><summary type="html">&lt;p&gt;Ha, da haben wir den ersten Fall, der es in meinen Augen würdig ist zu
+dokumentieren! :)&lt;/p&gt;
+&lt;p&gt;Bevor
+&lt;a href="http://www.tittentiere.de/home.html" title="Link auf Caps Homepage"&gt;Cap&lt;/a&gt; und
+ich diesen jetzigen Server für unsere Domains zoosau.de und
+tittentiere.de hatten, und Cap seine damalige Seite auf einem anderen
+Server gehostet hatte, fand ich es eine gute Idee die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ha, da haben wir den ersten Fall, der es in meinen Augen würdig ist zu
+dokumentieren! :)&lt;/p&gt;
+&lt;p&gt;Bevor
+&lt;a href="http://www.tittentiere.de/home.html" title="Link auf Caps Homepage"&gt;Cap&lt;/a&gt; und
+ich diesen jetzigen Server für unsere Domains zoosau.de und
+tittentiere.de hatten, und Cap seine damalige Seite auf einem anderen
+Server gehostet hatte, fand ich es eine gute Idee die Benutzerverwaltung
+seines Member Bereiches auf meinem Server laufen zu lassen, da ich nur
+da ausreichende Möglichkeiten hatte, die CGI Scripte abzulegen,
+auszuführen und die dazu notwendigen Servereinstellungen vorzunehmen.&lt;/p&gt;
+&lt;p&gt;Ich benutze dazu das
+&lt;a href="http://www.zoosau.de/manual/mod/mod_userdir.html" title="Apache Manual Eintrag zu mod_userdir"&gt;mod_userdir&lt;/a&gt;
+des &lt;a href="http://httpd.apache.org/" title="Homepage des Apache Webservers"&gt;Apache
+Webservers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hierdurch refferenzieren immer noch ziemlich viele Links und Seiten auf
+die URL
+&lt;a href="http://www.zoosau.de/~cap" title="Alter Memberbereich Link"&gt;http://www.zoosau.de/\~cap/&lt;/a&gt;.
+Das verfälschte bis jetzt immer die Statistiken, da Hits, die eigentlich
+für Cap waren, unter meiner Zoosau verarbeitet wurden.&lt;/p&gt;
+&lt;p&gt;Hierfür gibt es eine Funktion "Redirect Permanent" im Apache Modul
+mod_userdir.&lt;/p&gt;
+&lt;p&gt;Folgende zwei Einträge in der Konfiguration der Domain zoosau.de auf dem
+Webserver helfen hier weiter:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RedirectPermanent /~cap http://www.tittentiere.de/ RedirectPermanent /~ww  http://www.zoosau.de/&lt;/code&gt;&lt;/p&gt;</content><category term="Apache"></category><category term="redirect"></category><category term="Webserver"></category></entry></feed>

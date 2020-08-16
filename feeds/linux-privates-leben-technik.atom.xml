@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Linux, Privates Leben, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/linux-privates-leben-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2011-03-02T01:42:00+01:00</updated><entry><title>Einen eigenen Mozilla Weave/Sync-Server (unter Gentoo) betreiben</title><link href="https://www.zoosau.de/einen-eigenen-mozilla-weave-sync-server-betreiben.html" rel="alternate"></link><published>2011-03-02T01:42:00+01:00</published><updated>2011-03-02T01:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-03-02:/einen-eigenen-mozilla-weave-sync-server-betreiben.html</id><summary type="html">&lt;p&gt;[caption id="attachment_874" align="alignright" width="150"
+caption="Logo der Firefox - Sync - Erweiterung"]&lt;img alt="Logo der Firefox -
+Sync -
+Erweiterung" src="{filename}images/sync-header-150x150.png" title="Logo der Firefox - Sync - Erweiterung"&gt;{.size-thumbnail
+.wp-image-874 width="150" height="150"}[/caption]&lt;/p&gt;
+&lt;p&gt;Yeah - Heute möchte ich Euch mal allen eine kleine Einführung in die
+Firefox-Extension (... was ist eigentlich ein "Plugin", was ein "Add-on"
+und was eine "Extension"?? O.O - Hab ich noch …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[caption id="attachment_874" align="alignright" width="150"
+caption="Logo der Firefox - Sync - Erweiterung"]&lt;img alt="Logo der Firefox -
+Sync -
+Erweiterung" src="{filename}images/sync-header-150x150.png" title="Logo der Firefox - Sync - Erweiterung"&gt;{.size-thumbnail
+.wp-image-874 width="150" height="150"}[/caption]&lt;/p&gt;
+&lt;p&gt;Yeah - Heute möchte ich Euch mal allen eine kleine Einführung in die
+Firefox-Extension (... was ist eigentlich ein "Plugin", was ein "Add-on"
+und was eine "Extension"?? O.O - Hab ich noch nie gerallt ;D )
+&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-sync/" title="Extension/Plugin/Addon Seite der Firefoxerweiterung &amp;quot;Sync&amp;quot;"&gt;&lt;strong&gt;"Sync"&lt;/strong&gt;&lt;/a&gt;
+(früher: "Weave") geben.&lt;/p&gt;
+&lt;p&gt;Vielleicht kennt Ihr das: Ihr seid an einem neuen Rechner, startet Euren
+Firefox und merkt, wie sehr Ihr Euch eigentlich schon an Eure "Personas"
+(Theme), Bookmarks, History, Passwort- und Formularvervollständigung,
+etc. gewöhnt habt. Oder Ihr habt mehrere Rechner und irgendwie überall
+andere Bookmarks, das Kennwort, was Ihr gerade braucht, habt Ihr
+ausgerechnet auf dem System, vor dem Ihr gerade sitzt, noch nie
+eingegeben, und so weiter ...&lt;/p&gt;
+&lt;h2&gt;Genau hier schafft "Sync" Abhilfe:&lt;/h2&gt;
+&lt;p&gt;Es wird einfach auf allen Systemen als Firefox-Erweiterung installiert
+und kümmert sich im Hintergrund darum jegliche Daten, die sonst nur
+lokal gespeichert werden würden, auf einen Server hochzuladen. Alle
+Firefox...e synchronisieren sich dann stets mit den in diesem Profil
+gespeicherten Daten und ... was soll ich sagen: Ihr wollt das einfach
+nicht mehr missen! :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Standardmäßig&lt;/strong&gt; legt man sich bei Mozilla einen Weave-/Sync-Account an
+und konfiguriert seine Sync-Einstellungen hierfür; die Extension
+unterstützt einen mit passenden "Account Anlegen" / "Bestehenden Account
+verwenden" - Buttons.&lt;br&gt;
+Man wird hier - man kennt es - zunächst nach einem Usernamen und einem
+Passwort gefragt; im weiteren Verlauf des Setups zudem nach einem
+weiteren Passwort, welches zur Verschlüsselung der Daten auf den Mozilla
+- Servern dient. Diese Verschlüsselung soll diese doch schon &lt;span
+style="text-decoration: underline;"&gt;sehr&lt;/span&gt; sensiblen Daten bei
+einer Kompromittierung der Mozilla Server schützen. Hier wird empfohlen
+ein anderes Passwort als das für den Account selbst zu verwenden. Klar -
+dieser Empfehlung nicht zu folgen wäre auch schon sehr dumm!&lt;/p&gt;
+&lt;p&gt;Ich selbst habe diese Methode lange Zeit verwendet (nur für private und
+nicht so sensible Daten, versteht sich!!). Mit jedem weiteren Passwort,
+welches in diesen Speicher wanderte, fühlte ich mich jedoch mehr und
+mehr verunsichert. Immerhin&lt;/p&gt;
+&lt;p&gt;sendet man hier Zugangsdaten zu wer-weiss-was für Systeme an einen
+Server, zu welchem man keinerlei Ahnung hat wer da eine Möglichkeit hat
+diese Daten einzusehen; ich muss zugeben nicht wirklich viel über die
+internen Strukturen der Mozilla Foundation zu wissen. Wenn diese Server
+gar irgendwann einmal von dritten kompromittiert werden (was dem besten
+Admin passieren kann), hat man spätestens dann ein wirklich
+ausgewachsenes Problem.&lt;/p&gt;
+&lt;p&gt;Heute wurde mir dieses unangenehme Gefühl zu belastend und ich habe mich
+einmal nach Alternativen umgesehen. Und Tatsache: Man kann, wie es sich
+für ein anständiges, freies System gehört, diese Serverkomponente auch
+auf seiner eigenen Infrastruktur betreiben! :)&lt;/p&gt;
+&lt;h2&gt;Voraussetzungen schaffen&lt;/h2&gt;
+&lt;p&gt;Damit dieses ganze System funktioniert, muss neben dem obligatorischem
+Apache Webserver auch ein PHP 5 mit den Modulen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;json&lt;/li&gt;
+&lt;li&gt;mbstring&lt;/li&gt;
+&lt;li&gt;SQLite ( &lt;strong&gt;3!&lt;/strong&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;installiert sein. Das ist eigentlich schon alles, was &lt;span
+style="text-decoration: underline;"&gt;zwingend&lt;/span&gt; vorhanden sein
+muss.&lt;br&gt;
+Idealerweise sollte man sich jedoch darüber bewusst sein, das hier
+hochsensible Daten durch's Internet geschickt werden und sowohl
+&lt;strong&gt;OpenSSL&lt;/strong&gt;, wie auch ein &lt;strong&gt;passendes SSL Zertifikat&lt;/strong&gt; im Apache
+einrichten. Wer meint er braucht das nicht: Ihr könnt mir Eure Logins
+auch vertrauensvoll direkt an mailYYYY@marc-richter.info mailen, ohne
+Euch hier die Mühe zu machen ... ;)&lt;/p&gt;
+&lt;h3&gt;Achtung:&lt;/h3&gt;
+&lt;p&gt;Unter &lt;a href="http://www.gentoo.org" title="Homepage von Gentoo Linux"&gt;Gentoo Linux&lt;/a&gt;
+war es zwingend erforderlich, das "dev-lang/php" mit dem USE-Flag
+"sqlite3" kompiliert wurde; "sqlite" allein genügte hier nicht, was mich
+bereits Stunden gekostet hat ... :P&lt;br&gt;
+Ich denke, dieses gilt es in ähnlicher Form auch unter anderen
+Distributionen zu beachten. Zu erkennen ist das fehlen oder das
+vorhandensein der Erweiterung in einer falschen Version daran, das nach
+dem Weave - Passwortdialog nur eine Meldung &lt;strong&gt;"Database unavailable"&lt;/strong&gt;
+ausgegeben wird.&lt;/p&gt;
+&lt;h2&gt;Einrichtung des "Weave Minimal Servers"&lt;/h2&gt;
+&lt;p&gt;Das Setup des "vollen" Servers ist im &lt;a href="https://wiki.mozilla.org/Labs/Weave/Sync/1.0/Setup" title="Anleitung für das Setup des &amp;quot;Full&amp;quot; Mozilla Sync Servers"&gt;Wiki des Mozilla Projektes
+dokumentiert&lt;/a&gt;.
+Beschrieben; allerdings wird direkt im er&lt;/p&gt;
+&lt;p&gt;sten Satz darauf hingewiesen, das wohl für die meisten Setups der
+"Minimal Server", einer alternativen Implementierung des ganzen von
+"tobyelliott", besser geeignet ist:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;It is strongly recommended that you use the [&lt;a href="http://tobyelliott.wordpress.com/2009/09/11/weave-minimal-server"&gt;Weave Minimal
+Server&lt;/a&gt;]
+rather than a full install.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich kann zum "Full Server" nichts sagen - ich habe diesen "Minimal
+Server" installiert! :) Das schafft mir schon ein deutlich besseres
+Gefühl, das ganze irgendwo liegen zu haben wo (unter normalen Umständen)
+nur ich drankomme. Vor einer Kompromittierung bin ich natürlich so auch
+nicht gefeit. Ich denke jedoch das ich mit meinem Server ein deutlich
+weniger lohnendes Ziel bin als die Mozilla - Systeme. Zumal ein
+Angreifer ja zunächst garnicht weiß wohin er sich auf so einem System
+wenden soll und was so alles auf dem Server liegt.&lt;br&gt;
+Wie auch immer: Es stellt in meinen Augen, aus meiner Sicht, eine
+deutlich bessere Lösung dar. Wenn sich jemand mit dem ganzen Kram nicht
+auskennt und somit viel wahrscheinlicher "Besuch" zu erwarten hat als
+ich, der ist bestimmt mit der bei Mozilla gehosteten Lösung besser
+bedient (oder es ganz sein zu lassen - was &lt;span
+style="text-decoration: underline;"&gt;immer&lt;/span&gt; am sichersten ist ;) ).
+Ich möchte hier keinen dazu ermuntern seine privaten Daten quasi in eine
+Art Selbstbedienungstheke zu legen ;)&lt;/p&gt;
+&lt;p&gt;Eine Installation ist ganz einfach und ist in der Datei "README" im
+tar.gz - Archiv zum "Minimal Weave Server" beschrieben. Dennoch gibt es
+ein paar Stolperfallen, welche ich hier einmal Punkt für Punkt
+durchgehen möchte.&lt;/p&gt;
+&lt;p&gt;Das ich hier das "Minimal Weave Server" - tar.gz - Archiv von der
+&lt;a href="http://tobyelliott.wordpress.com/2009/09/11/weave-minimal-server/" title="tobyelliot's WordPress Seite zum &amp;quot;Weave Minimal Server&amp;quot;"&gt;Originalseite&lt;/a&gt;
+zum Download anbiete, soll kein "mit fremden Federn schmücken" sein! Ich
+weise hier noch einmal ausdrücklich darauf hin, das die gesamte Arbeit,
+sowie also auch die Blumen und das Lob hierfür der Arbeit von
+"tobyelliott" zu verdanken ist!&lt;br&gt;
+Ich stelle die nur zusätzlich hier zur Verfügung, damit die
+Originalseite nicht irgendwann verschwindet oder der Link verwaist:&lt;/p&gt;
+&lt;p&gt;Eine Installation ist ganz einfach und ist in der Datei "README" im
+tar.gz - Archiv zum "Minimal Weave Server" beschrieben. Dennoch gibt es
+ein paar Stolperfallen, welche ich hier einmal Punkt für Punkt
+durchgehen möchte.&lt;/p&gt;
+&lt;p&gt;Das ich hier das "Minimal Weave Server" - tar.gz - Archiv von der
+&lt;a href="http://tobyelliott.wordpress.com/2009/09/11/weave-minimal-server/" title="tobyelliot's WordPress Seite zum &amp;quot;Weave Minimal Server&amp;quot;"&gt;Originalseite&lt;/a&gt;
+zum Download anbiete, soll kein "mit frem&lt;/p&gt;
+&lt;p&gt;den Federn schmücken" sein! Ich weise hier noch einmal ausdrücklich
+darauf hin, das die gesamte Arbeit, sowie also auch die Blumen und das
+Lob hierfür der Arbeit von "tobyelliott" zu verdanken ist!&lt;br&gt;
+Ich stelle die nur zusätzlich hier zur Verfügung, damit die
+Originalseite nicht irgendwann verschwindet oder der Link verwaist:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="{filename}images/weave_minimal.tgz" title="Download des &amp;quot;Weave Minimal Server&amp;quot; von zoosau.de"&gt;Download des "Minimal Weave Server" - tar.gz -
+Archives&lt;/a&gt;&lt;br&gt;
+&lt;/strong&gt;(MD5 Checksumme: 5c1837c2690ddbb4a5b4c0860d5791e2)&lt;/p&gt;
+&lt;p&gt;In dem Archiv befinden sich 4 .php - Dateien. Diese müssen uns nicht
+weiter interessieren. Später wird lediglich das Script "create_user"
+interessant. Die Dateien müssen nur für den Apache-User lesbar gemacht
+werden und in einem dem Apache-Server zugänglichem Verzeichnis abgelegt
+werden; das Standardsetup geht davon aus, das die Daten aus Sicht des
+Webservers unter /weave/ erreichbar sind. Theoretisch sollte aber auch
+jeder andere Ort OK sein. Das Verzeichnis selbst muss (zumindest bis die
+SQLite - Datenbank angelegt ist) für den Apache schreibbar sein.&lt;/p&gt;
+&lt;p&gt;Meine Konfiguration, die ich zusätzlich in meine vhost-Datei eintragen
+musste, lautet exemplarisch wie folgt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Alias /weave   
+"/home/marc/public_html/zoosau.de/weave_minimal/index.php"&lt;/p&gt;
+&lt;p&gt;&amp;lt;Directory /home/marc/public_html/zoosau.de/weave_minimal/&amp;gt;&lt;br&gt;
+Options -Indexes FollowSymLinks MultiViews&lt;br&gt;
+AllowOverride All&lt;br&gt;
+Order allow,deny&lt;br&gt;
+allow from all&lt;/p&gt;
+&lt;p&gt;&amp;lt;/Directory&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das hier scheinbar ein &lt;strong&gt;Verzeichnis&lt;/strong&gt; ("/weave") &lt;strong&gt;auf eine Datei&lt;/strong&gt;
+("/home/marc/public_html/zoosau.de/weave_minimal/index.php") zeigt,
+ist &lt;span style="text-decoration: underline;"&gt;kein&lt;/span&gt; Fehler,
+sondern absolut gewollt!&lt;br&gt;
+Das ganze ist natürlich im Kontext meiner SSL - Konfiguration definiert.&lt;/p&gt;
+&lt;p&gt;So, nun legt man zunächst die SQLite Datenbank an. Dieses geschieht
+zunächst auf ungewöhnliche Art und Weise: Man ruft in seinem Browser die
+folgende URL auf:&lt;/p&gt;
+&lt;p&gt;https://www.zoosau.de/weave/1.0/blah/info/collection&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;"www.zoosau.de" ersetzt Ihr dabei natürlich durch Eure Domain/IP.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Wie genau sich dieser Pfad hinter dem "/weave" zusammensetzt, habe ich
+nun nicht weiter recherchiert - interessiert mich ehrlich gesagt auch
+nicht ;) Das Setup ist so simpel und funktioniert tadellos - da muss ich
+nicht alles so genau wissen. Wer gerne mehr wissen will (oder weiß?) der
+kann gerne Google verwenden, oder Tipps und Hinweise als Kommentar an
+diesen Beitrag anfügen; würde mich freuen!&lt;/p&gt;
+&lt;p&gt;Es sollte nun eine Passwortabfrage kommen - Die Ausgabe der Webseite
+lautet schlicht: "Weave". Hier kann man sich mit irgendetwas (die README
+spricht von Username: "blah", Passwort: "garbage"; das sollte aber
+völlig egal sein) anmelden; das Resultat sollte eine weitere Abfrage
+sein. Diese kann man schließlich abbrechen; Ziel war es lediglich, das
+hierdurch die SQLite Datenbank "weave_db" im Weave - Verzeichnis
+angelegt wird.&lt;/p&gt;
+&lt;p&gt;Nun können wir uns einen ersten User anlegen: Auf der Shell im
+Weave-Verzeichnis führt man dazu folgendes aus:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;php create_user&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nun wird man mit selbsterklärenden Dialogen konfrontiert:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;#&amp;gt; php create_user&lt;/p&gt;
+&lt;p&gt;(c)reate, (d)elete or change (p)assword: c&lt;br&gt;
+Please enter username: marcrichter&lt;br&gt;
+Please enter password: Mein super-geheimes Passwort&lt;br&gt;
+marcrichter created&lt;br&gt;
+#&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Anschließend ist der neue Server umgehend einsatzbereit.&lt;/p&gt;
+&lt;h2&gt;Einrichten des Firefox&lt;/h2&gt;
+&lt;p&gt;Zunächst muss natürlich die
+&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-sync/" title="Firefox-Erweiterung &amp;quot;Sync&amp;quot;"&gt;Firefox-Erweiterung&lt;/a&gt;
+installiert werden. Wie das geht spare ich mir an dieser Stelle zu
+beschreiben, da sich dieses Wissen jeder eigeninitiativ aneignen kann.&lt;/p&gt;
+&lt;p&gt;Nach einem Neustart des Browsers kann man unter "Extras &amp;gt;&amp;gt; Sync
+&amp;gt;&amp;gt; Einstellungen" die Extension konfigurieren. Diese Einrichtung
+möchte ich mit einer Bilderstrecke begleiten:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_877" align="aligncenter" width="300"
+caption="Schritt 1 der Firefox Sync-Installation"]&lt;a href="https://www.zoosau.de/images/01-Weave_Startfenster.png"&gt;&lt;img alt="Schritt 1 der
+Firefox
+Sync-Installation" src="{filename}images/01-Weave_Startfenster-300x237.png" title="Schritt 1 der Firefox Sync-Installation"&gt;{.size-medium
+.wp-image-877 width="300"
+height="237"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Man wird zunächst mit einem Begrüßungsdialog empfangen. Hier wählen wir
+die Option "I Have a Firefox-Sync Account".&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_880" align="aligncenter" width="300"
+caption="Schritt 2 der Firefox Sync-Installation"]&lt;a href="https://www.zoosau.de/images/02-Weave_Logindialog.png"&gt;&lt;img alt="Schritt 2 der
+Firefox
+Sync-Installation" src="{filename}images/02-Weave_Logindialog-300x237.png" title="Schritt 2 der Firefox Sync-Installation"&gt;{.size-medium
+.wp-image-880 width="300"
+height="237"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Im folgendem Dialog stellen wir die Standardvorgabe auf "Eigenen Server
+verwenden" um. Die möglichen Eingabeoptionen erweitern sich anschließend
+um das Feld "Server-URL".&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_881" align="aligncenter" width="300"
+caption="Schritt 3 der Firefox Sync-Installation"]&lt;a href="https://www.zoosau.de/images/03-Weave_Eingabe_der_Logindaten.png"&gt;&lt;img alt="Schritt 3 der
+Firefox
+Sync-Installation" src="{filename}images/03-Weave_Eingabe_der_Logindaten-300x237.png" title="Schritt 3 der Firefox Sync-Installation"&gt;{.size-medium
+.wp-image-881 width="300"
+height="237"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Hier geben wir nun folgendes ein:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Server-URL:&lt;/strong&gt; https://www.zoosau.de/weave/&lt;br&gt;
+   (auch hier gilt wieder: Ersetzt "www.zoosau.de" durch
+    Eure Domain/IP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User Name:&lt;/strong&gt; Den Usernamen, den Ihr beim Script "create_user"
+    angegeben habt.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Passwort:&lt;/strong&gt; Das Passwort, welches Ihr beim Script "create_user"
+    angegeben habt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[caption id="attachment_882" align="aligncenter" width="300"
+caption="Schritt 4 der Firefox Sync-Installation"]&lt;a href="https://www.zoosau.de/images/04-Weave_Eingabe_des_Sync_Keys.png"&gt;&lt;img alt="Schritt 4 der
+Firefox
+Sync-Installation" src="{filename}images/04-Weave_Eingabe_des_Sync_Keys-300x237.png" title="Schritt 4 der Firefox Sync-Installation"&gt;{.size-medium
+.wp-image-882 width="300"
+height="237"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Hier gebt Ihr nun letztendlich den Sync-Key ein, welcher für die
+Verschlüsselung der Daten verwendet werden soll. Wie zuvor bereits
+erwähnt empfiehlt es sich hier &lt;span
+style="text-decoration: underline;"&gt;dringend&lt;/span&gt; ein anderes Kennwort
+als das Login-Passwort zu verwenden, auch wenn dieses nicht zwingen
+vorgeschrieben wird.&lt;br&gt;
+Welche Daten übertragen werden sollen (wenn Ihr z.B. die Passworte von
+der Synchronisation ausschließen wollt), könnt Ihr dieses in diesem
+letzten Dialogfenster links unten über den Button "Sync-Options"
+einstellen.&lt;/p&gt;
+&lt;p&gt;Das war's schon! :) Wenn alles geklappt hat, sollte sich das kleine
+"Sync" - Symbol unten rechts in der Statuszeile des Firefox nun drehen
+und somit anzeigen, das Eure bisher in diesem Browser gespeicherten
+Daten in Euren Account hochgeladen werden.&lt;/p&gt;
+&lt;p&gt;So, ich hoffe Ihr fandet dieses Tutorial hilfreich und verständlich! Wie
+immer würde ich mich über Feedback freuen :)&lt;/p&gt;</content><category term="firefox"></category><category term="gentoo"></category><category term="mozilla"></category><category term="server"></category><category term="sync"></category><category term="synchronisieren"></category><category term="weave"></category></entry></feed>

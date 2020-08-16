@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Kurztipp, Privates Leben, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/kurztipp-privates-leben-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2014-07-06T21:25:00+02:00</updated><entry><title>Endlich gelöst: Schwammiges Bild auf meinem Samsung HDTV von PC über HDMI</title><link href="https://www.zoosau.de/endlich-geloest-schwammiges-bild-auf-meinem-samsung-hdtv-von-pc-ueber-hdmi.html" rel="alternate"></link><published>2014-07-06T21:25:00+02:00</published><updated>2014-07-06T21:25:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2014-07-06:/endlich-geloest-schwammiges-bild-auf-meinem-samsung-hdtv-von-pc-ueber-hdmi.html</id><summary type="html">&lt;p&gt;Manchmal hat man es im Alltag mit Dingen zu tun, da steht man selbst
+wenn man es Live vor sich sieht fassungs- und sprachlos davor und fragt
+sich ... eigentlich garnichts mehr. Für manche Dinge gibt es einfach
+keine Worte; man sucht sie trotzdem, weil man es nicht einfach so stehen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Manchmal hat man es im Alltag mit Dingen zu tun, da steht man selbst
+wenn man es Live vor sich sieht fassungs- und sprachlos davor und fragt
+sich ... eigentlich garnichts mehr. Für manche Dinge gibt es einfach
+keine Worte; man sucht sie trotzdem, weil man es nicht einfach so stehen
+lassen KANN.&lt;br&gt;
+So mir gerade wieder geschehen; meine Hilflosigkeit ein geeignetes Wort
+dafür zu finden, möchte ich verarbeiten, indem ich hier berichte was
+geschehen ist und trage die Hoffnung, das es jemand anderem den gleichen
+Ärger ersparen möge.&lt;/p&gt;
+&lt;h2&gt;Worum geht es?&lt;/h2&gt;
+&lt;p&gt;Ich habe ein recht modernes Wohnzimmer; unter anderem mit einem
+&lt;a href="http://www.samsung.com/de/consumer/tv-audio-video/television/led-tv/UE55ES8090SXZG" title="Samsung 55&amp;quot; LED TV ES8090 Produktseite"&gt;55 Zoll Samsung ES8090 LED
+TV&lt;/a&gt;,
+einem PC mit einer &lt;a href="https://www.asus.com/de/Graphics_Cards/HD7950DC23GD5V2/specifications/" title="HD7950-DC2-3GD5-V2 Spezifikationen"&gt;ASUS HD7950-DC2-3GD5-V2 (AMD Radeon HD 7950 mit
+3GB GDDR5)&lt;/a&gt; Grafikkarte und einem
+&lt;a href="http://de.yamaha.com/de/products/audio-visual/av-receivers-amps/rx-v373_g/?mode=model" title="Yamaha RX-V373 Produktseite"&gt;Yamaha RX-V373
+Soundsystem&lt;/a&gt;.
+Mein PC ist per HDMI an dem Yamaha angeschlossen. Dieser wiederum führt
+mit einem HDMI Kabel zum Fernseher.&lt;/p&gt;
+&lt;p&gt;Diese Kombination hatte ich auch &lt;span
+style="text-decoration: underline;"&gt;genau so&lt;/span&gt; schonmal im Betrieb
+und konnte mich störungsfrei eines gestochen scharfen Bildes erfreuen.&lt;/p&gt;
+&lt;p&gt;Nach meinem Umzug habe ich das ganze auch wieder aufgebaut und hatte
+seitdem ein grottenschlechtes Bild!&lt;br&gt;
+Es war unscharf, man musste mit einem so genannten "Underscan" im
+Grafikkartentreiber arbeiten, da das Bild sonst an den Rändern
+abgeschnitten war, Schriften sahen so aus als habe man eine falsche
+Bildschirmauflösung eingestellt, Farben waren leicht verfälscht, etc.
+Ich habe das einmal versucht per Foto zu erfassen; Screenshot geht
+leider nicht da, soviel nehme ich einmal vorweg: Am PC liegt es nicht.
+Daher ist das ganze leider etwas unschärfer geworden als es
+tatsächlich in der "guten" Einstellung ist. Auf dem folgendem Bild sieht
+man eventuell etwas besser was ich meine:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1816" align="aligncenter" width="598"]&lt;a href="https://www.zoosau.de/images/Samsung_Unscharf.jpg"&gt;&lt;img alt="Im
+Vergleich: Links feine Grafik und korrekt skalierte Schrift ; Rechts
+rauschige Grafik und interpolierte
+Schrift" src="{filename}images/Samsung_Unscharf-1024x617.jpg"&gt;{.size-large
+.wp-image-1816 width="598"
+height="360"}&lt;/a&gt;
+Im Vergleich: Links (die Unschärfe kommt von einer schlechten
+Einstellung des Fotoapperates) feine Grafik und korrekt skalierte
+Schrift ; Rechts rauschige Grafik und interpolierte Schrift[/caption]&lt;/p&gt;
+&lt;p&gt;Das ganze war sehr, sehr frustrierend, da ich wusste, das es schonmal
+ging, keine Ahnung hatte was ich verändert habe und bis heute im
+Internet auch nicht fündig wurde. Ich hatte alles probiert:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Treiber Update&lt;/li&gt;
+&lt;li&gt;Treiber DOWNgrade&lt;/li&gt;
+&lt;li&gt;Umstellungen im Treiber&lt;/li&gt;
+&lt;li&gt;Kompletten Kabelsatz ausgetauscht&lt;/li&gt;
+&lt;li&gt;Sämtliche Einstellungskombinationen zwischen Grafikkarte und
+    Fernseher&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich fand einfach keine Lösung und musste bis heute diese ärgerlichen
+Einbußen in meiner mehrere tausend Euro teuren Anlage in Kauf nehmen.&lt;/p&gt;
+&lt;h2&gt;Die Lösung&lt;/h2&gt;
+&lt;p&gt;Ich weiß wie sich das folgende ließt und offen gestanden war meine erste
+Reaktion, als ich das in einem Forum gelesen habe auch "&lt;em&gt;Jaja ... erzähl
+du mal du Kacknoob ...&lt;/em&gt;" aber ich war inzwischen so verzweifelt, das ich
+es einfach mal ausprobiert habe. Und siehe da: Die Scheisse geht!!&lt;/p&gt;
+&lt;p&gt;Der Fernseher hat mehrere HDMI Eingänge. Welchen man da verwendet
+spielt meines Wissens nach keine Rolle; der Vollständigkeit halber aber:
+mein Eingang ist der Anschluss "&lt;em&gt;HDMI IN 2 (ARC)&lt;/em&gt;". Auf meiner
+Fernbedienung gibt es eine Taste zur Wahl der Eingangsquelle (&lt;em&gt;SOURCE&lt;/em&gt;).
+Drückt man diese, erscheint das Menü "&lt;em&gt;Quelle&lt;/em&gt;" in welchem man z.B.
+zwischen den HDMI Eingängen, den eingebauten Recievern, etc. umschalten
+kann. Hier wählt man nun den Anschluss auf dem das PC Signal eingeht mit
+dem Cursor an (ohne es zu bestätigen). Anschließend drückt dann die
+Taste "&lt;em&gt;TOOLS&lt;/em&gt;" um die kontextspezifische Funktion "&lt;em&gt;Extras&lt;/em&gt;" dieses
+Menüs auszuwählen. Der erste Punkt des dadurch erscheinenden Menüs
+lautet "&lt;em&gt;Name bearb.&lt;/em&gt;". Diesen wählt man aus.&lt;br&gt;
+Bei mir stand dieser, da mein Yamaha AV-Receiver dort direkt
+angeschlossen war, auf "&lt;em&gt;AV-Receiver&lt;/em&gt;". Man kann hier ja auch neue Namen
+in die Liste eintragen, von daher kommt sicher niemand auf die Idee, das
+sich hier hinter bildspezifische Einstellungen verbergen könnten. Auch
+heißt das Menü ja "&lt;em&gt;Name bearbeiten&lt;/em&gt;", nicht "&lt;em&gt;Eingangstyp wählen&lt;/em&gt;" oder
+ähnliches. Stellt man dieses jedoch auf die werkseitig vorhandene
+Beschriftung "&lt;em&gt;PC&lt;/em&gt;", hat man sofort ein gestochen scharfes Bild!&lt;/p&gt;
+&lt;p&gt;Unfassbar finde ich sowas ... Ich hatte, um ehrlich zu sein, die
+Grafikkarte und einen ggf. aktuelleren Treiber in Verdacht. Allerdings
+ist das AMD Treiber - Team (diesesmal) scheinbar unschuldig!&lt;br&gt;
+Gefunden habe ich diese Lösung im computerbase.de - Forum, wo der
+User &lt;a href="http://www.computerbase.de/forum/member.php?u=293330" title="Profil des Forenusers Neon1111 bei computerbase.de"&gt;Neon1111&lt;/a&gt;,
+dankenswerter Weise, &lt;a href="http://www.computerbase.de/forum/showthread.php?t=894633&amp;amp;p=9851162#post9851162" title="Link zum erlösenden Posting"&gt;diese Lösung beschrieben
+hat&lt;/a&gt;.
+An dieser Stelle nochmal ein riesengroßes Dankeschön von mir!!&lt;/p&gt;
+&lt;p&gt;Ich hoffe dieses erlöst den einen oder anderen Leidensgenossen von
+seiner Qual.&lt;/p&gt;</content><category term="Computer"></category><category term="es8090"></category><category term="grafik"></category><category term="grafikkarte"></category><category term="hdmi"></category><category term="pc"></category><category term="samsung"></category><category term="schwammig"></category><category term="unscharf"></category><category term="verwaschen"></category></entry></feed>

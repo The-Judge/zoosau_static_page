@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Technik - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="Technik" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+        <link href="https://www.zoosau.de/feeds/technik.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog Technik ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Marc Richter's Weblog Categories">Categories</a></li>
+        <li class="active">Technik</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/wordpress-timeout-beim-login.html">Wordpress Timeout beim Login</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-03-03T19:13:00+01:00"> Do 03 März 2016</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		350
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/firewall.html">firewall</a>
+        /
+	<a href="https://www.zoosau.de/tag/proxy.html">proxy</a>
+        /
+	<a href="https://www.zoosau.de/tag/timeout.html">timeout</a>
+        /
+	<a href="https://www.zoosau.de/tag/wordpress.html">Wordpress</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Wenn man Wordpress in einer Netzwerkstruktur betreibt, in der keine
+Verbindung zu anderen Internetseiten hergestellt werden kann, kommt es
+bei vielen Aktionen zu langen Wartezeiten bis hin zu Timeouts. Im
+extremsten Fall kann das dazu führen, das man sich an seinem eigenen
+Wordpress nicht mehr im Backend einloggen kann.</p>
+<p>Der Grund dafür ist, das gerade beim Login oder allgemein: Beim Zugriff
+auf das Wordpress-Dashboard, normalerweise ziemlich viele Daten von
+externen Ressourcen von Wordpress geladen und verarbeitet werden.
+Nachrichten im "Wordpress-Nachrichten"-Widget, Informationen ob Updates
+für Wordpress oder Plugins existieren, Twitter-Feeds, ... all diese
+Informationen fragt Wordpress bei einem Login im Hintergrund ab und
+bereitet es für die Anzeige im Dashboard auf. Behindert eine Firewall
+oder ähnliches diese Zugriffe, wird für jeden dieser Zugriffe eine
+zeitlang gewartet, ehe für diese Zugriffe ein Timeout erreicht wird. Je
+mehr Ressourcen hierbei geladen werden, desto länger die Gesamtzeit die
+das Dashboard benötigt um sich aufzubauen.</p>
+<p>In der Regel genügen die Wordpress internen Aktionen ohne weitere
+Plugins um in diesem Fall an die Grenze der definierten PHP
+<a href="http://php.net/manual/de/info.configuration.php#ini.max-execution-time">max_execution_time()</a>
+zu geraten. Je nachdem welche Ressourcen im Frontend der Seite verwendet
+werden, kann es auch sein, das sich die Seite bei Euren Besuchern
+hierdurch viel langsamer als gewünscht aufbaut.</p>
+<h2>Die beste Lösung</h2>
+<p>Die beste Maßnahme diese Probleme zu umgehen ist meiner Meinung nach
+schlicht und einfach dafür zu sorgen, das Wordpress ungehindert auf
+Ressourcen im Netz zugreifen kann, da sonst wichtige Kerntechniken von
+Wordpress nicht oder nicht optimal funktionieren (Update-Hinweise, laden
+von News, Abfragen von DNS Informationen, ...).</p>
+<h2>Die zweitbeste Lösung</h2>
+<p>Sollte es sich, warum auch immer, nicht anders machen lassen als
+Wordpress ohne freien Zugriff auf's Internet zu betreiben, kann man
+diese Zugriffe durch einen Eintrag in der wp-config.php - Datei einfach
+komplett abschalten. Dieses ist in der Regel die bessere Wahl;
+funktionieren die Zugriffe schließlich ohnehin nicht. Nur kommt es
+hierbei dann weder zu Script-Timeouts, noch zu langen Ladezeiten:</p>
+<div class="highlight"><pre><span></span>define(&#39;WP_HTTP_BLOCK_EXTERNAL&#39;, true);
+</pre></div>
+
+
+<p>Funktioniert der Zugriff auf bestimmte Ressourcen, z.B. weil diese
+Explizit in der Firewall oder einem Proxy freigeschaltet worden sind,
+kann man diese mit einer weiteren Konfigurationsoption von diesem Block
+ausnehmen, so das diese dennoch geladen werden:</p>
+<div class="highlight"><pre><span></span>define(&#39;WP_ACCESSIBLE_HOSTS&#39;, &#39;api.twitter.com,wordpress.org,download.wordpress.org&#39;);
+</pre></div>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Wordpress%20Timeout%20beim%20Login&url=https%3A//www.zoosau.de/wordpress-timeout-beim-login.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Wordpress%20Timeout%20beim%20Login&amp;body=https%3A//www.zoosau.de/wordpress-timeout-beim-login.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/adobe-photoshop-unter-macos-fehler-a12e1.html">Adobe Photoshop unter MacOSX: Fehler A12E1</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-01T09:00:00+02:00"> So 01 Juni 2014</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		896
+
+		<span class="label label-default">Read time</span>
+		4 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/a12e1.html">A12E1</a>
+        /
+	<a href="https://www.zoosau.de/tag/adobe.html">adobe</a>
+        /
+	<a href="https://www.zoosau.de/tag/mac.html">mac</a>
+        /
+	<a href="https://www.zoosau.de/tag/macos.html">macos</a>
+        /
+	<a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+        /
+	<a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+        /
+	<a href="https://www.zoosau.de/tag/photoshop.html">photoshop</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h1>Das Problem</h1>
+<p>Vor einiger Zeit sollte ich mal einen neuen Mac Rechner vorbereiten und
+unter (vielem) anderem Adobe Photoshop darauf installieren. Ich habe
+natürlich erstmal alles sauber vorbereitet: Platte formatiert, MacOS
+installiert, Updates eingespielt, User eingerichtet, unzählige kleine
+Programme installiert, ... nach ein paar Stunden war Adobe Photoshop an
+der Reihe. Es begrüßte mich diese nette Anzeige:</p>
+<p><a href="https://www.zoosau.de/images/Screen+Shot+2013-08-26+at+9.15.18+AM.png"><img alt="Screen+Shot+2013-08-26+at+9.15.18+AM" src="https://www.zoosau.de/images/Screen+Shot+2013-08-26+at+9.15.18+AM.png">{.aligncenter
+.size-full .wp-image-1783 width="450"
+height="201"}</a></p>
+<p>(Zugegeben: Oberflächlich) Im Internet gesucht, am Ende sogar den Adobe
+Support angerufen (schließlich hat man ja für einen Ar*** voll Geld
+diese Software gekauft): Keine Ahnung. Gut angelegtes Geld also ...
+Danke @Adobe!</p>
+<p>Schließlich wurde ich <a href="http://sumrandomguy.com/blog/detail/a12e1-installing-creative-cloud" title="Solution for Error A12E1 when seting up Adobe Creative Cloud applications">im Blog eines Users namens "Sum Random
+Guy"</a>
+fündig und konnte es erst garnicht glauben: Das passiert, scheinbar
+reproduzierbar, wenn man sich beim formatieren der Partitionen auf dem
+Mac für die Case-Sensitive Variante des Dateisystems entscheidet!<br>
+Ich weiß ehrlich gesagt heute noch nicht was ich dabei unglaublicher
+finde:</p>
+<ul>
+<li>Das die Ar***-teure Betriebssystemplattform MacOS im Jahre 2014
+    immernoch nicht standardmäßig auf ein Case-Sensitive Dateisystem
+    setzt?</li>
+<li>Das die Ar***-teure Software (CS6 bei Amazon derzeit 1.099,- €)
+    scheinbar ein so lasches Qualitätsmanagement hat, das so ein Problem
+    in einer Kaufversion besteht und nicht behoben wird?</li>
+<li>Das der Branchenriese Adobe, auf die offizielle Support-Anfrage
+    eines zahlenden Kunden, nicht in der Lage ist auf so etwas
+    hinzuweisen?</li>
+</ul>
+<p>Laut <a href="http://sumrandomguy.com/blog/detail/a12e1-installing-creative-cloud" title="Solution for Error A12E1 when seting up Adobe Creative Cloud applications">zuvor genanntem
+Blogeintrag</a>
+erstreckt sich der Fehler bis heute auf alle Adobe Creative Cloud
+Anwendungen; nicht nur auf Photoshop.</p>
+<p>Mein Kommentar zu soetwas:</p>
+<p>[tube]http://www.youtube.com/watch?v=8k6q3173G2k[/tube]</p>
+<h1>Die Lösung</h1>
+<h2><span style="color: #ff0000;">Achtung</span></h2>
+<p>Ehe man beginnt einige Hinweise:</p>
+<ol>
+<li>Bei der hier beschriebenen Methode wird die MacOS Keychain, in der
+    gespeicherte Passworte und ggf. auch Einstellungen mancher Programme
+    gespeichert sind, nicht gesichert! Legt man Wert auf diese Daten
+    sollte man sich im Internet schlau machen wie man diese sichern und
+    übertragen kann.</li>
+<li>Hat man Dateien auf dem System gespeichert, welche nur existieren
+    weil das Dateisystem Case-Sensitive ist, "gewinnt" eine dieser
+    Dateien, so das anschließend nur noch eine Datei auf dem System
+    verfügbar ist. Zum Beispiel: Existiert eine Datei namens
+    "Foobar.txt" und eine zweite im gleichen Verzeichnis namens
+    "FooBar.txt", wird hinterher nur noch eine davon existieren. Die
+    andere müsste man sich aus dem Backup von SuperDuper! manuell
+    herauskopieren.<br>
+   Das ist genau das Problem mit Case-Insensitive Dateisystemen und wie
+    Ihr seht: Der Ärger geht direkt los ... :P</li>
+<li>Vorsicht ist besser als Nachsicht: Legt auf jeden Fall ein
+    (besser: zwei) Backups Eures Systems an.</li>
+</ol>
+<p>Wie auch immer: Es gibt eine Lösung um nicht das gesamte System
+nocheinmal neu installieren zu müssen. Allerdings muss man auf das
+Case-Sensitive Dateisystem verzichten ... Meine Erfahrung soweit: Das
+führt unter mehreren MacOS Applikationen bis heute zu Irritationen. Und
+egal wie sehr ich mir der Sinnhaftigkeit von Case-Sensitive
+Dateisystemen bewusst bin und es gerne hätte: Unter MacOS, bis heute:
+Besser Finger weg!</p>
+<p>Zunächst installiert man das Programm
+<a href="http://www.shirt-pocket.com/SuperDuper/superduperdescription.html" title="SuperDuper!">SuperDuper!</a>.
+Es ist - für den hierbei benötigten Funktionsumfang - kostenlos, bietet
+in der Vollversion für \$27.95 jedoch zum einen nützliche weitere
+Funktionen. Zum anderen kann man sich ja mal überlegen wie viel Zeit und
+Nerven einen dieses Programm nach erfolgreicher Dateisystemmigration
+gespart hat und das alleine aus Sponsering-Gründen für einen Kauf in
+Erwägung ziehen ...</p>
+<p>Hat man SuperDuper! also installiert, benötigt man noch eine USB
+Festplatte, welche wenigstens so groß ist wie auf der im Mac eingebauten
+Festplatte an Speicher belegt ist. Am besten gleich zwei; in den
+nächsten Schritten werden sämtliche Daten von der eingebauten Festplatte
+gelöscht. Man kann also garnicht genug Backups haben und es empfiehlt
+sich auf einer Festplatte zunächst ein Time Machine Backup zu erstellen
+und anschließend eines mit SuperDuper!, wie im folgenden gezeigt wird:</p>
+<p>Als erstes formatiert man die (zweite) USB Festplatte für den Mac.
+Anschließend startet man SuperDuper! und tut folgendes:</p>
+<p>[caption id="attachment_1806" align="aligncenter"
+width="621"]<a href="https://www.zoosau.de/images/superduper_1.png"><img alt="SuperDuper! Schritt 1 von
+3" src="https://www.zoosau.de/images/superduper_1.png">{.size-full
+.wp-image-1806 width="621"
+height="337"}</a>
+SuperDuper! Schritt 1 von 3[/caption]</p>
+<ol>
+<li>Auswählen der Quelle<br>
+   Hier sollte die Systemfestplatte, die gesichert werden soll,
+    ausgewählt werden.</li>
+<li>Auswahl des Ziels<br>
+   Hier habe ich, da gerade keine USB Festplatte greifbar war, ein
+    Image als Ziel eingestellt. Für den tatsächlichen Vorgang wird hier
+    jedoch die USB Festplatte als Ziel ausgewählt.</li>
+<li>Auswahl des Profiles<br>
+   Einfach auf der Voreinstellung "Backup - all files" wie hier gezeigt
+    stehen lassen.</li>
+<li>Anschließend öffnet man die Optionen</li>
+</ol>
+<p>[caption id="attachment_1808" align="aligncenter"
+width="294"]<a href="https://www.zoosau.de/images/superduper_2.png"><img alt="SuperDuper! Schritt 2 von
+3" src="{filename}images/superduper_2-294x300.png">{.wp-image-1808
+.size-medium width="294"
+height="300"}</a>
+SuperDuper! Schritt 2 von 3[/caption]</p>
+<p>Hier sind die gezeigten Einstellungen zu übernehmen.</p>
+<p>[caption id="attachment_1809" align="aligncenter"
+width="297"]<a href="https://www.zoosau.de/images/superduper_3.png"><img alt="SuperDuper! Schritt 3 von
+3" src="{filename}images/superduper_3-297x300.png">{.size-medium
+.wp-image-1809 width="297"
+height="300"}</a>
+SuperDuper! Schritt 3 von 3[/caption]</p>
+<p>Unter "Advanced" sollte alles bereits so sein wie hier gezeigt.
+Trotzdem: Sicherheitshalber einmal kontrollieren und ggf. die hier
+gezeigten Einstellungen anwenden.</p>
+<p>Durch einen Klick auf "OK" kommt man wieder in das Hauptfenster. Durch
+einen Klick auf "Copy Now" startet man den Sicherungsvorgang.</p>
+<p>Ist dieser abgeschlossen wird das System neu gestartet. Die USB
+Festplatte bleibt dabei angeschlossen. Sobald der Startton ertönt,
+drückt man die Alt-Taste (die zwei komischen Striche) und hält diese
+gedrückt. Es sollte eine Bootauswahl erscheinen, bei der man dann die
+USB Festplatte auswählt. Das System sollte nun wie gewohnt starten;
+tatsächlich tut es das jedoch von der USB Festplatte; geiler Scheiss,
+wa?</p>
+<p>Hier startet man nun das Festplattendienstprogramm und formatiert die
+eingebaute Systemfestplatte; dieses mal jedoch Case-Insensitive! Achtet
+genau darauf, das Ihr nicht die USB Festplatte ausgewählt habt.</p>
+<p>Anschließend startet man erneut SuperDuper!, belässt alle Einstellungen
+wie sie sind, vertauscht dieses Mal jedoch Quelle und Ziel, so das von
+der USB Festplatte auf die Systemfestplatte kopiert wird.</p>
+<p>Sobald dieser Vorgang abgeschlossen ist, sollte sich das System ohne die
+USB Festplatte starten lassen und über ein Case-Insensitives Dateisystem
+verfügen. Ebenso sollte sich jetzt auch die Adobe Creative Suite /
+Creative Cloud Apps installieren lassen.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Adobe%20Photoshop%20unter%20MacOSX%3A%20Fehler%20A12E1&url=https%3A//www.zoosau.de/adobe-photoshop-unter-macos-fehler-a12e1.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Adobe%20Photoshop%20unter%20MacOSX%3A%20Fehler%20A12E1&amp;body=https%3A//www.zoosau.de/adobe-photoshop-unter-macos-fehler-a12e1.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/vpn-as-a-service-der-anonymisierungsanbieter-hide-oi.html">VPN as a Service - Der Anonymisierungsanbieter Hide.io</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-16T20:54:00+02:00"> Mi 16 Oktober 2013</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		794
+
+		<span class="label label-default">Read time</span>
+		4 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/anonym-surfen.html">anonym surfen</a>
+        /
+	<a href="https://www.zoosau.de/tag/hideio.html">hide.io</a>
+        /
+	<a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+        /
+	<a href="https://www.zoosau.de/tag/mfc.html">mfc</a>
+        /
+	<a href="https://www.zoosau.de/tag/nsa.html">nsa</a>
+        /
+	<a href="https://www.zoosau.de/tag/spionage.html">spionage</a>
+        /
+	<a href="https://www.zoosau.de/tag/vpn.html">vpn</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Es folgt ein Dauerwerbethread ... ;)</p>
+<p>Aber wer mich und/oder das Blog hier kennt weiß, das ich nicht
+leichtfertig Mist empfehle oder hype. Ich bin wirklich von
+<a href="https://www.hide.io/" title="Homepage von hide.io">hide.io</a> überzeugt und
+möchte diesem nicht mehr ganz jungem Startup daher gerne zu etwas mehr
+Verbreitung verhelfen. Da sich dieses vor dem Hintergrund aktuellen
+Zeitgeschehens
+(Stichworte: <a href="http://www.heise.de/newsticker/meldung/NSA-Ueberwachungsskandal-Von-NSA-GCHQ-BND-PRISM-Tempora-XKeyScore-und-dem-Supergrundrecht-was-bisher-geschah-1958399.html" title="Heise Artikel zum Thema">NSA-Überwachungsskandal</a>,
+Edward Snowden, etc.) gerade aktueller den je ist, möchte ich gerne
+meinen kleinen Beitrag leisten.</p>
+<p>Zunächst: <span style="text-decoration: underline;">Worum geht es
+überhaupt</span>?</p>
+<p>[caption id="attachment_1712" align="alignleft" width="150"]<img alt="hide.io
+Logo" src="{filename}images/bg_intro-150x148.png">{.size-thumbnail
+.wp-image-1712 width="150" height="148"} hide.io Logo[/caption]</p>
+<p><a href="https://www.hide.io/" title="Homepage von hide.io">hide.io</a> ist ein
+Dienstleister, der im Kern anbietet einem ein VPN bereitzustellen, mit
+welchem man, mit einer zufällig zur Verfügung gestellten IP,
+anonymisiert im Internet surfen kann, da sie nicht protokollieren
+welchem Kundenaccount zu welchem Zeitpunkt welche IP zugewiesen war.
+Somit kann man frei von der Leber weg, selbst in den krassesten
+Nazi-Foren spamen, Dateien herunterladen oder auch einfach nur, ohne von
+Amazon, Facebook, Google und Co. verfolgt zu werden (sauberen
+Cookiespeicher vorausgesetzt), frei im Netz surfen, ohne von diesen
+nervenden "Wer Axt kaufte, kaufte auch: Leichensack" - Geprösel schier
+in den Wahnsinn getrieben zu werden.</p>
+<p>Auch Youtube - Videos werden, obwohl sie vom heiligen GEMA-Stuhl in
+Deutschland gesperrt wurden, wie von Zauberhand wieder abrufbar, weil
+man, laut der IP, für Youtube aus Holland, China, oder von
+weiß-der-Geier wo darauf zugreift. Recht praktisch.</p>
+<p>Eigentlich ist das ganze eine recht einfache Technik, die jemandem in
+meinem Beruf nicht erklärt werden muß. Ich habe mir bei dem ganzen nur
+zwei Fragen gestellt:</p>
+<ol>
+<li>Seit kurzen werden alle ISP von Gesetzeswegen gezwungen
+    Verbindungsdaten vorzuhalten; Stichwort: Voratsdatenspeicherung. Auf
+    welcher rechtlichen Grundlage darf
+    <a href="https://www.hide.io/" title="Homepage von hide.io">hide.io</a> überhaupt
+    keine solchen speichern und trotzdem Geschäfte in Deutschland
+    machen?</li>
+<li>Wer garantiert mir, das nicht doch jemand die Daten abgreift oder
+    diese doch, wie überall sonst auch, protokolliert werden?</li>
+</ol>
+<p>Diese habe ich einfach an die Betreiber weiter gegeben und darauf,
+zumindest was Frage #1 betrifft, folgende Antwort erhalten:</p>
+<blockquote>
+<p><strong>Bernd</strong> (Support Desk)</p>
+<p>01. Okt 07:34 (CEST)</p>
+<p>Hallo,</p>
+<p>wir haben unseren Hauptsitz in Hong Kong, und müssen uns an dortige
+Gesetze halten. Eine Vorratsdatenspeicherung, wie sie versucht wurde
+in Deutschland umzusetzen, gibt es dort nicht. Allerdings besteht in
+Deutschland ebenfalls keine Pflicht Verbindungsdaten zu speichern. Du
+spielst wahrscheinlich auf die Bestandsdatenauskunft an, aber davon
+sind wir nicht betroffen, da wir weder persönliche Daten, noch
+Verbindungsdaten speichern und diese Daten auch nicht zur Abrechnung
+benötigen. Das Problem liegt in Deutschland darin, dass die Daten
+nicht gespeichert werden müssten, aber sobald sie gespeichert werden
+(z.B. bei der Telekom 7 Tage) auch herausgegeben werden müssen.</p>
+</blockquote>
+<p>Zu Frage #2 wird man natürlich, außer einem flattert irgendwann doch
+einmal ein Gerichtsbeschluss in den Briefkasten, nie eine ausreichend
+befriedigende Antwort erhalten. Dazu müsste man voll-transparente
+Einsichten in den Vertriebsablauf und das technische Setup des Anbieters
+erlangen, was nie geschehen wird.</p>
+<p>Aber mal ehrlich: Vor ein paar Jahren wurden Menschen, die das Gefühl
+hatten auf Schritt und Tritt belauscht und überwacht zu werden,
+bestenfalls belächelt. Seit Facebook ist das jedoch schlicht und
+ergreifend Realität; der Anbieter macht ja nichtmal ein Geheimnis
+daraus. Spätestens seit zuvor genanntem Überwachungsskandal ist jedoch
+klar: Das Internet ist nicht mehr was es einmal war und diese Furcht ist
+nicht mehr länger das Produkt eines paranoiden Geistes, sondern einfach
+das das Bewusstsein über die Tatsachen.<br>
+Natürlich weiß ich nicht, ob
+<a href="https://www.hide.io/" title="Homepage von hide.io">hide.io</a> im Zweifelsfall
+wirklich keine Daten an Strafverfolgungsbehörden und andere weitergibt.
+Jedoch weiß ich, das es erstens auf keinen Fall schadet in Zeiten wie
+diesen mit so einem Verfahren die Nachverfolgbarkeit der eigenen
+Schritte im Internet komplizierter zu verschleiern als normal. Und
+zweitens: Spätestens nach der Gerichtsverhandlung gegen meinen
+ehemaligen Arbeitgeber, die Firma <a href="http://www.kununu.com/de/nrw/duesseldorf/in/marketing-factory-consulting" title="kununu Bewertungsseite zur Firma Marketing Factory Consulting GmbH">Marketing Factory Consulting GmbH in
+Düsseldorf</a>,
+welche mich in meiner Funktion als Abteilungsleiter der
+Systemadministration dazu aufgefordert hat, heimlich den Mail- und
+Chatverkehr der eigenen Mitarbeiter mitzuschneiden und einem mir nicht
+weiter kontrollierbarem Personenkreis zum lesen zur Verfügung zu
+stellen, weiß ich, das es auch ganz gehörig darauf ankommt Sachverhalte
+für die Richter schwerer nachvollziehbar zu machen. Der Richter an sich
+ist ein fauler Beamter, dem der tatsächliche Sachverhalt herzlich egal
+ist - wichtig ist nur, das möglichst wenig Papierkram zusammen kommt und
+alles schön undurchschaubar und mit technischem Firlefanz gespickt ist,
+damit er möglichst schnell abschalten und auf ein Papierkriegarmes
+Endergebnis hinarbeiten kann.<br>
+Letzteres ist, sobald der Begriff "VPN" fällt, aufreichend erreicht ;)</p>
+<p>[caption id="attachment_1711" align="alignright" width="0"]<a href="https://www.zoosau.de/images/step3.jpg"><img alt="hide.io
+Schritt 3 in der ausführlichen Bild-für-Bild
+Anleitung" src="{filename}images/step3-150x109.jpg" title="hide.io Schritt 3">{.wp-image-1711
+width="0"
+height="0"}</a> hide.io
+Schritt 3 in der ausführlichen Bild-für-Bild Anleitung[/caption]</p>
+<p>Was <a href="https://www.hide.io/" title="Homepage von hide.io">hide.io</a> in meinen
+Augen ebenfalls vorbildlich macht ist die Schritt-für-Schritt gestaltete
+und bebilderte Einrichtung des Dienstes. Man wählt zunächst welches
+Betriebssystem man hat und in welchem Land man angeblich gerne sitzen
+würde und schon wird man mit einer bebilderten Anleitung versorgt, die
+man ohne technisches Know-How zu haben einfach durchklickt. Prima!</p>
+<p>Also ich bin jetzt Kunde ; das Geld halte ich persönlich für gut
+angelegt! :) Man kann auch kostenlos alles erstmal in ruhe testen ehe
+man sich anmeldet.<br>
+Von mir eine klare Empfehlung!</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=VPN%20as%20a%20Service%20-%20Der%20Anonymisierungsanbieter%20Hide.io&url=https%3A//www.zoosau.de/vpn-as-a-service-der-anonymisierungsanbieter-hide-oi.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=VPN%20as%20a%20Service%20-%20Der%20Anonymisierungsanbieter%20Hide.io&amp;body=https%3A//www.zoosau.de/vpn-as-a-service-der-anonymisierungsanbieter-hide-oi.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/es-passiert-den-besten-von-uns.html">Es passiert den besten von uns ...</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-09-11T22:25:00+02:00"> Mi 11 September 2013</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		408
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ein neues Projekt. Man hat eine super Idee, die man gerne umsetzen
+möchte. Jenseits des normalen Rhythmus hat man neben ausreichend
+Engagement auch endlich mal ein paar Tage Zeit um sich so richtig schön
+zu vergraben und an seiner Idee zu arbeiten. Eine Woche Arbeit; man hat
+ein genaues Bild von dem im Kopf, was man erreichen will. Bisher sieht
+alles vielversprechend aus: Man hat ein paar neue Dinge gelernt,
+recherchiert, manches auf für einen selbst unüblichem aber erstaunlich
+effektivem Wege gelöst, ... kurz: man ist stolz auf das was man bisher
+erreicht hat. Doch dann, das undenkbare:</p>
+<h1>Festplatten-Crash!</h1>
+<p>Kann doch nicht sein: SSD für 300,- € am Start, man nutzt Git, bis
+gestern keine Probleme, alles lief flott und reibungslos. Und von jetzt
+auf gleich - einfach alles weg??</p>
+<p>Wie <a href="http://article.gmane.org/gmane.linux.kernel/1559486" title="LKML Beitrag von Linus Torvalds wegen seiner defekten SSD">der jüngste Fall von Linux Kernel Maintainer Linux Torvalds
+zeigt</a>,
+passiert das selbst den besten von uns ... in diesem Fall ist "nur" ein
+teil der Arbeit eines einzigen Tages verloren gegangen. Jedoch zeigt mir
+das mal wieder: Git alleine ist lediglich ein guter Anfang: Wirklich
+sicher ist erst, was nicht nur commited, sondern auch bereits in ein
+externes Repository gepushed wurde! "Häufig pushen" ist also das neue
+"Häufig speichern".</p>
+<p>Der Fall zeigt jedoch auch, wie abhängig und wie selbstverständlich wir
+inzwischen eine ausreichend geölten Maschinerie voraussetzen. Früher war
+man bereits froh, wenn man beim erstellen von z.B. einer umfangreichen,
+lokalen Arbeit am PC durch häufiges speichern gegen Stromausfälle,
+Programmabstürze und ähnlichem abgesichert war. Fiel nun die Festplatte
+aus, dann war das zwar ärgerlich wenn unter Umständen die Arbeit von
+einer ganzen Woche (bei vorbildlich gemachten, 1x wöchentlichen
+Backups), wurde jedoch allerseits als höhere Gewallt akzeptiert.<br>
+Heutzutage schlägt ein Fall wie dieser bereits hohe Wellen, nur weil die
+Arbeit von ein paar Stunden verloren gegangen ist!</p>
+<p>Ich denke mir dabei folgendes:</p>
+<ol>
+<li>Ticken wir eigentlich noch ganz richtig?? Das ist doch nicht mehr
+    verhältnismäßig, solche Erwartungen zu stellen; wo bereits so ein
+    "Furz im Wind aktueller Entwicklung" für manche eine Welt, da:
+    Gestörter Zeitplan zusammenbrechen lässt.</li>
+<li>Trotzdem: Remote Branches nutzen und häufig pushen! Gibt es eine
+    Policy in einer Firma, welche die Nutzung eigener Branches
+    unterbindet oder reglementiert, hat der Initiator keine Ahnung von
+    Git und man kann den Ball bei einer etwaigen Frage, wie man sowas in
+    Zukunft zu unterbinden gedenkt, selbstbewusst zurückspielen.</li>
+</ol>
+<p>Mannometer ... wenn &lt;6 Stunden Arbeit soooo viel Wert sind, müssen
+alle, die sich bereits in einer vergleichbaren Diskussion wiedergefunden
+haben, ihr Gehalt wohl noch einmal neu verhandeln ...</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Es%20passiert%20den%20besten%20von%20uns%20...&url=https%3A//www.zoosau.de/es-passiert-den-besten-von-uns.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Es%20passiert%20den%20besten%20von%20uns%20...&amp;body=https%3A//www.zoosau.de/es-passiert-den-besten-von-uns.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/2011-27-jahre-email-und-kein-gescheiter-mailclient-am-markt.html">2011: 27 Jahre eMail und kein gescheiter Mailclient am Markt</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-07-10T17:34:00+02:00"> So 10 Juli 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		2905
+
+		<span class="label label-default">Read time</span>
+		12 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/client.html">client</a>
+        /
+	<a href="https://www.zoosau.de/tag/e-mail.html">e-mail</a>
+        /
+	<a href="https://www.zoosau.de/tag/email.html">email</a>
+        /
+	<a href="https://www.zoosau.de/tag/imap.html">imap</a>
+        /
+	<a href="https://www.zoosau.de/tag/mailclient.html">mailclient</a>
+        /
+	<a href="https://www.zoosau.de/tag/mulberry.html">mulberry</a>
+        /
+	<a href="https://www.zoosau.de/tag/opera.html">opera</a>
+        /
+	<a href="https://www.zoosau.de/tag/pegasus.html">pegasus</a>
+        /
+	<a href="https://www.zoosau.de/tag/pop3.html">pop3</a>
+        /
+	<a href="https://www.zoosau.de/tag/test.html">test</a>
+        /
+	<a href="https://www.zoosau.de/tag/thebat.html">thebat!</a>
+        /
+	<a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+        /
+	<a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><strong>GNAHR !!</strong> Das ist genau das richtige Wort für das, was ich gerade
+denke.</p>
+<p>eMails sind für mich ein sehr, sehr wichtiges Medium geworden. SMS,
+Briefpost, Telefon, Foren, ... all das ist mir nicht so wichtig wie
+eMails. Ich nutze dieses Medium auf der Arbeit und Privat. Auf der
+Arbeit ist es ebenso <strong>das</strong> Medium! Wir interagieren mit Kunden,
+untereinander, koordinieren Kontinentübergreifend anstehende
+Arbeitsschritte und dokumentieren so auch nicht zuletzt den Verlauf,
+sowie das finale Ergebnis, eines Briefings. Ebenso gilt ein per eMail
+empfangenes Kundenbriefing als verbindliche Arbeitsanweisung und sichert
+letztlich auch unsere Arbeit gegen Missverständnisse ab. Schließlich ist
+nichts so einfach archiviert wie eine eMail.</p>
+<p>Auch privat bringt mich so schnell nichts mehr von meinem IMAP -
+Mailpostfach ab! Früher, mit POP3, hatte ich immer das Problem, das
+entweder mein Postfach bei Web.de oder GMX.de voll war (ja, die hatten
+mal ein 5 MB Limit und ich bin ein alter Sack! ;) ), die Mails, die ich
+brauchte, nunmal leider gerade auf dem anderen PC waren, eine wirkliche
+Ordnerverwaltung fehlt, so das man sich seine astreine
+Verwaltungsstruktur quasi auf jedem Rechner wieder neu anlegen darf,
+etc.<br>
+Das ist mit  IMAP alles problemlos möglich. Man hat seine Ordnerstruktur
+und alle Mails auf einem zentralen IMAP Server liegen und zieht sich
+eigentlich auf Clients immer nur eine Kopie dieses Baumes. Wenn der
+Client mal wegraucht: Egal! Man hat stets alles auf dem zentralen
+Server. Und wer da keine gescheiten Backups hat: Selbst schuld!</p>
+<p>Naja, wie auch immer: Das Thema dieses Beitrags soll es sein einmal die
+aktuelle Marktsituation und meine persönliche Meinung zu aktuellen
+eMailclients darzustellen.<br>
+In Deutschland wurde <a href="http://de.wikipedia.org/wiki/E-Mail#Geschichte" title="Wiki Eintrag zu eMail">die erste eMail am 3. August 1984 um 10:14 MEZ in
+Karlsruhe</a>
+empfangen. In 24 Tagen haben wir in Deutschland also seit 27 Jahren das
+Medium eMail, und nicht einen eMailclient weltweit, der den
+professionellen Ansprüchen gerecht wird, die ich an dieses Medium
+stelle. Ich hatte immer den Thunderbird verwendet. Es gab hiermit jedoch
+ein paar Probleme, weswegen ich mich einfach mal auf die Suche nach
+einer aktuellen Alternative gemacht habe. Ich meine: eMails sind wie
+gesagt das am häufigsten genutzte und wichtigste Medium im Internet. Es
+ist seit fast 27 Jahren im Einsatz, es muss doch also eine nahezu
+erschlagende Auswahl an Top-eMailclients geben! ... Am Arsch! Das
+meiste, was da draußen so verteilt wird ist absolut nicht zu gebrauchen
+- nichtmal für den gelegentlichen Einsatz, wenn man keine &gt;2GB großen
+Mailboxen hat.</p>
+<p>Für mich sind folgende Funktionen absolut essentiell und unverzichtbar:</p>
+<ol>
+<li>Unterstützung von IMAP, POP3 und SMTP per verschlüsselter
+    Verbindung (SSL/TLS).</li>
+<li>Unterstützung von PGP/GPG um Nachrichten zuverlässig verschlüsseln
+    und signieren zu können.</li>
+<li>Eine sichere Ablage der Daten, um sensible Informationen
+    zu schützen.</li>
+<li>Es muss für Windows und Linux verfügbar sein.</li>
+</ol>
+<p>Ich beginne meine Reise am Anfang: Den Problemen, die ich mit
+Thunderbird hatte.</p>
+<h2><a href="http://www.mozilla.org/de/thunderbird/" title="Homepage des Thunderbird Mailclients">Thunderbird 3.1</a> - Der Anfang der Reise</h2>
+<p>Thunderbird ist eine freie Software aus dem Hause Mozilla. Dem selben
+Verein also, der sich auch für die Entwicklung eines der erfolgreichsten
+Webbrowser der Welt verantwortlich zeigt: Firefox. Es ist deshalb immer
+das Mittel meiner Wahl gewesen, da es einfach tut was es soll: Dem User
+eine zuverlässige und komfortable Schnittstelle für das Medium eMail zur
+Verfügung zu stellen. Ich möchte einfach einmal eine kurze Pro- und
+Kontra-Liste anführen, ehe ich auf die Hauptursachen meiner Suche
+eingehe. Diese basiert auf der Version 3.1:</p>
+<h3>Pro</h3>
+<ul>
+<li>Kostenlos für private und kommerzielle Zwecke einsetzbar</li>
+<li>Gute Unterstützung für POP3, SMTP und IMAP, alle über SSL und TLS
+    abgesicherte Kanäle nutzbar</li>
+<li>Dank der weiten Verbreitung und aktiven Community sehr gut
+    dokumentiert</li>
+<li>Übersetzungen in nahezu alle Sprachen vorhanden</li>
+<li>Sehr gute Suchfunktionen</li>
+<li>Nahezu alle relevanten Arbeitsplattformen werden unterstützt: Mac,
+    Windows, Linux</li>
+<li>Sehr umfangreiche Erweiterungsmöglichkeiten durch Extensions und
+    Open Source</li>
+<li>Sehr gute Implementation von PGP/GPG (Verschlüsselung
+    und Signierung)</li>
+</ul>
+<h3>Kontra</h3>
+<ul>
+<li>Sehr großer Nachrichtenindex auf der Festplatte (SQlite Datenbank
+    für schnellere Suchen)</li>
+<li>Keine Verschlüsselung der auf der Festplatte gespeicherten
+    Nachrichten</li>
+<li>Unmöglich aufdringlicher und unflexibler Wizard beim anlegen neuer
+    Accounts</li>
+<li>Keine Möglichkeit Backups der Accounts anzulegen - man muss die
+    lokalen Dateien als ganzes kopieren</li>
+<li>Umständliches Auslagern von Accountdaten in Verzeichnisse, die nicht
+    in einem Windows Profilordner liegen</li>
+</ul>
+<p>Besonders der Wizard am Anfang, wenn man einen neuen Account einrichten
+möchte, sowie die große Datenmenge die dieses Programm erzeugt hat, um
+einen Index der Mails anzulegen, waren die Hauptgründe, weswegen ich
+hiermit nicht mehr zufrieden war.</p>
+<p>[caption id="attachment_961" align="aligncenter" width="300"
+caption="Thunderbird Account Wizard"]<a href="https://www.zoosau.de/images/thunderbird_new_account_wizard.png"><img alt="Thunderbird Account
+Wizard" src="{filename}images/thunderbird_new_account_wizard-300x202.png" title="Thunderbird Account Wizard">{.size-medium
+.wp-image-961 width="300"
+height="202"}</a>[/caption]</p>
+<p>Der Wizard  öffnet sich seit der Version 3.0 <strong>immer</strong>, wenn man einen
+neuen Account anlegen möchte. Mir ist keine Methode bekannt, diesen zu
+umgehen. Man <strong>muss</strong> in diesem ersten Fenster (Screenshot "Thunderbird
+Account Wizard") einen Namen, eine Mailadresse und ein Passwort
+eingeben. Es gibt keinen Weg manuell die bekannten Daten einzugeben.
+Basierend auf diesen Daten hat das Programm nun versucht die zugrunde
+liegenden Einstellungen automatisch zu erkennen. Dieses Verhalten ist
+schlicht und ergreifend dumm! Ich weiß nicht, welcher Vollidiot sich das
+ausgedacht hat. Noch weniger, wieso diese Idee von einer ansonsten sehr
+cleveren Community angenommen wurde. Ich habe folgende Probleme mit
+dieser Technik:</p>
+<ul>
+<li>Nur basierend auf der eMailadresse können keine komplexen
+    Konfigurationen erkannt werden.</li>
+<li>In einer nach allen Regeln der Kunst abgesicherten Mailstruktur, wo
+    alles per SSL abgesichert wurde, geht dieses Programm her und
+    schickt erstmal über alle erdenklichen Zugangswege unverschlüsselt
+    meine Daten durch die Gegend, um herauszubekommen, ob das OK ist
+    oder nicht.</li>
+<li>Oft bieten Anbieter einen Zugang per POP3 und IMAP an. Möchte man
+    nun eines dieser beiden Zugänge nutzen, Thunderbird entscheidet sich
+    bei der Erkennung aber dummerweise für die andere Zugangsart, hat
+    man Pech gehabt! Die Einstellungsdialoge bieten keine Möglichkeit
+    zwischen IMAP und POP3 zu wechseln. Was das Programm also nicht auf
+    anhieb erkennt, kann man nicht nutzen!<br>
+   Die einzige Möglichkeit die ich hier gefunden hatte, ist zwar die
+    richtige eMailadresse, jedoch ein falsches Passwort einzugeben, den
+    Vorgang zu starten und <strong>sofort</strong> die automatische Erkennung durch
+    einen Klick auf "Stopp" zu unterbrechen. Dann und NUR dann hat man
+    eine Chance, komplett manuell zu konfigurieren.</li>
+</ul>
+<p>Besonders letzteres wirkte immer wie ein Admin mit Parkinson. War man zu
+langsam, riskierte man, das Thunderbird "rät" was man will. Und das
+endete meistens in komplettem
+<a href="http://en.wiktionary.org/wiki/FUBAR" title="Wiki beschreibung zu Foo / FUBAR">Foo</a>.</p>
+<p>Ein weiteres Ärgernis war (und ist) das die SQlite Datenbank, welche
+Thunderbird anlegt um Nachrichten zu indizieren und besser  durchsuchen
+zu können, kontinuierlich wächst. Mein IMAP Postfach auf dem Server ist
+z.B. derzeit 2,1 GB groß. Ich sammle diese Nachrichten seit ca. 5 Jahren
+- wieso löschen? Betreibe ich mein Thunderbird für etwa 2 Jahre, kann
+man davon ausgehen, das diese Datenbank (zusätzlich zu den optional
+heruntergeladenen Mails) auch ca. 1 GB groß wird.<br>
+Zusammen mit der beschriebenen Eigenschaft, das sich Daten nur schlecht
+verschieben lassen und Thunderbird standardmäßig seine Daten in
+Profilordnern ablegt, welche bei "<a href="http://wiki.samba.org/index.php/Samba_&amp;_Windows_Profiles#Roaming_Profiles" title="Samba Erklärung zu &quot;Roaming Profiles&quot;">Roaming
+Profiles</a>"
+dann natürlich sehr viel Datentransfer verursachen, ist das ein sehr
+nerviges Verhalten.</p>
+<p>Diese Probleme sind alle kein Weltuntergang, jedoch allemal Grund genug,
+sich einmal nach Alternativen umzusehen.</p>
+<h2><a href="http://userbase.kde.org/KMail" title="Homepage zu KMail">KMail (Version: Aktuell in KDE 4.6 enthaltene)</a></h2>
+<p>Bei KMail handelt es sich um den kostenlosen eMailclient einer ganzen
+PIM Suite (Kalender, Adressbuch, TimeTracker, etc.) vom KDE Team. KDE
+ist eigentlich eine Desktopumgebung für Linux, <a href="http://windows.kde.org/" title="KDE für Windows">hat aber inzwischen auch
+einige Tools nach Windows
+portiert</a>, wodurch dieses
+Programm in diesem Test mit einbezogen wurde. Ich hatte es früher schon
+einmal verwendet, hatte jedoch mit andauernden Programmabstürzen zu
+kämpfen, da
+<a href="http://userbase.kde.org/Akonadi/de" title="Erklärung was Akonadi ist">Akonadi</a>
+damals noch nicht sauber integriert war.</p>
+<p>Bei KMail handelt es sich in der Tat um einen super eMailclient! Er kann
+viel, lässt sich sehr detailiert konfigurieren, ... sehr schön!<br>
+Was mir jedoch garnicht gefallen hat ist, das die Windowsvariante nicht
+wirklich gut in Windows integriert ist. Systemaufrufe, wie etwa ein
+Klick auf einen Hyperlink, halten sich nicht an die Systemvorgabe des
+Betriebssystems. Zudem ist das Programm unter Windows sehr träge. Es ist
+allerdings bereits unter Linux nicht gerade schnell. Zudem hatte ich
+auch in dieser Version häufig mit Abstürzen zu kämpfen. Außerdem hat das
+Programm keine Möglichkeit eMails bei IMAP lokal zu speichern, wodurch
+er bei jedem Ordnerwechsel erst einmal den kompletten Verzeichnisinhalt
+abholen musste. Das bremst einen nicht nur ungeheuer aus, sondern macht
+es einem auch unmöglich nach eMails zu suchen.</p>
+<p>Sehr schade eigentlich, da das Programm ansonsten wirklich sehr
+überzeugend ist! GnuPG wird super unterstützt, das Interface ist nahezu
+ungeschlagen gut konfigurierbar, Nachrichtentemplates lassen sich gut
+definieren, ...</p>
+<p>Was dieses Programm leider auch nicht bietet ist eine Verschlüsselung
+der Daten auf der Festplatte.</p>
+<h2><a href="http://www.ritlabs.com/de/products/thebat/" title="Homepage vom TheBat! eMailclient">TheBat! v5.0.18 Professional Edition</a></h2>
+<p>Bei TheBat! handelt es sich um ein kommerzielles Programm der Firma
+Ritlabs. Man kann für 30 Tage eine <a href="http://www.ritlabs.com/de/products/thebat/difference/" title="Vergleich der TheBat! Home- und Professional Versionen">Home- oder Professional
+Variante</a>
+des Programms kostenlos testen. Hierbei ist man in der Funktion nicht
+eingeschränkt.<br>
+Da dieses Programm auf den ersten Blick einen sehr guten Eindruck
+machte, habe ich es mir sogar in der Professional Version gekauft, denn
+nur mit dieser erhält man die Funktion der verschlüsselten Dateiablage.</p>
+<p>Inzwischen ärgere ich mich jedoch um das schöne Geld, denn das Programm
+ist an allen Ecken und Enden verseucht mit Bugs! Einstellungen werden
+nicht übernommen, Beschriftungen ragen in Eingabefelder hinein und
+überlagern sie, Fortschrittsdialoge werden nicht hochgezählt (32
+Sekunden * 500 = 10 Sekunden - klar, oder?), es kommen Warnungen für
+SSL Zertifikate, das der Aussteller unbekannt sei, was ja soweit richtig
+ist. Es gibt auch einen Button, dieses Zertifikat dennoch dauerhaft zu
+akzeptieren, dieser ist jedoch nicht klickbar. Dann speichert das
+Programm vertrauenswürdige Zertifikate noch im Adressbuch (!),
+akzeptiert sie anschließend jedoch trotzdem nicht, etc.</p>
+<p>Selbst wenn man mit allen diesen Fehlern leben könnte, mit einem kann
+ich ganz und garnicht leben: Das Programm aktualisiert bei jeder
+Postfachaktualisierung über IMAP, trotz lokal gespeicherter Mails,
+unheimlich lange sämtliche Ordner! Das dauert locker mal 10 Minuten.
+Wenn man gerade eine Mail versenden möchte (was vorkommen soll), so muss
+diese trotz der Einstellungsmöglichkeit, parallel zu versenden und zu
+empfangen, warten, bis alles fertig abgeholt worden ist. Das ist einfach
+nicht hinnehmbar!</p>
+<p>Ritlabs machen sich durch diese miese Qualität selbst das Geschäft
+kaputt, denn ansonsten kann das Programm durchaus punkten! Es hat ein
+sehr angenehmes Interface, herausragende Filter- und
+Konfigurationsmöglichkeiten, die Funktionen zur Dialogverfolgung (wie
+sie ab Version 5.0 auch in Thunderbird enthalten sind) sind prima und es
+gibt durchaus einen gewissen Fankreis, der TheBat! noch aus den
+glorreichen Tagen kennt (oder nur POP3 verwendet). Auch ich habe TheBat!
+damals, als ich mit Computern und dem Internet anfing, als
+Standardclient benutzt (Thunderbird gab es da noch garnicht und alles
+war besser als Outlook!).</p>
+<p>Ich muss leider sagen, das sich das Programm in einem katastrophalen
+Zustand befindet! Ich könnte mir aufgrund der vielen, vielen Fehler
+durchaus vorstellen, das sollte jemand deswegen einmal vor Gericht
+ziehen, Ritlabs der Vertrieb in der derzeitigen Form untersagt wird, da
+es sich nicht um ein funktionales Produkt handelt. Sehr, sehr schade ...</p>
+<h2><a href="http://www.opera.com/mail/" title="Homepage des Mailclients von Opera">Opera Mail aus Opera Next v12.00</a></h2>
+<p>Getestet wurde hier Opera Next - eine Art unstable Version des bekannten
+Opera Webbrowsers. Opera Next verfolgt da einen ähnlichen Ansatz wie
+Google mit seinem Chrome Browser, der sich fortlaufend selbst
+aktualisiert, nur nennen sie diese Variante halt "Next" und stehen dazu,
+das auf diesem Wege gelegentliches, unstabiles Verhalten nicht
+auszuschließen ist.<br>
+Das Mail-Modul ist jedoch nahezu unverändert auch im herkömmlichen Opera
+Browser integriert.</p>
+<p>[caption id="attachment_964" align="aligncenter" width="300"
+caption="Fensteransicht von Opera Next im eMailmodul"]<a href="https://www.zoosau.de/images/opera-next-mail.png"><img alt="Fensteransicht
+von Opera Next im
+eMailmodul" src="{filename}images/opera-next-mail-300x168.png" title="Fensteransicht von Opera Next im eMailmodul">{.size-medium
+.wp-image-964 width="300"
+height="168"}</a>[/caption]</p>
+<p>Das Mailprogramm geht in vielerlei Hinsicht neue Wege. So zeigt es nur
+"optional" die komplette IMAP Ordnerstruktur an (unten im Bild). Der als
+Hauptweg konzipierte Weg funktioniert über die Haupt-Favoriten Ordner
+wie Eingang, dem virtuellen Ordner "Ungelesen", usw. im oberen Teil der
+linken Leiste. Das kommt einem zunächst einmal sehr komisch vor, geht
+aber erstaunlich gut von der Hand und ist wirklich praktisch. Negativ
+fiel hier lediglich auf, das es nicht möglich ist eMails aus diesen
+Ordnern direkt in die IMAP Struktur (unterer Teil der linken Leiste) zu
+verschieben. Dazu muss man leider nach wie vor die INBOX der kompletten
+Ordnerstruktur aufrufen.</p>
+<p>Auch geht Opera Mail her und versucht aus allen heruntergeladenen Mails
+einen Verlauf zu erzeugen, wobei es erstaunlich gut erkennt, wenn es
+sich um eine Mailingliste handelt. Diese zeigt es dann ebenfalls als
+einzelne Kategorien in der linken Leiste an. Leider funktioniert die
+Erkennung  hier recht ungenau und die erkannten Mailinglistennamen
+lassen sich nicht umbenennen. Daher habe ich z.B. gerade 8
+Mailinglisten, die alle "Gentoo Linux mail" heißen. Dahinter verbergen
+sich jedoch unterschiedliche Gentoo Mailinglisten.</p>
+<p>Unterhalb jeder Nachricht hat Opera Mail ein so genanntes
+Schnellantwort-Feld. Dieses Tut genau was es soll: Man tippt hier nur
+etwas wie "Ist OK" oder so ein und klickt auf "Schnellantwort". Die Mail
+wird dann derart spartanisch, ohne große Anrede und Co. abgeschickt.
+Ebenfalls recht praktisch.</p>
+<p>PGP/GPG wird leider noch garnicht unterstützt.</p>
+<p>Alles in allem ein recht gelungener Mailclient.</p>
+<h2><a href="http://www.pmail.com/" title="Homepage von Pegasus Mail">Pegasus Mail 4.6 </a></h2>
+<p>Ich beschreibe meine Erfahrungen auf einem Windows 7 64 Bit System:</p>
+<p>Hmm ... geht schonmal komisch los: Man muss das Programm unter Windows 7
+in einen Ordner installieren, der nicht in einem durch die in Windows
+eingebauten  Zugriffsbeschränkungen (z.B.: "C:\Program Files")
+"geschützt" wird. Anderenfalls stürzt das Programm nach dem
+Account-Wizard umgehend ohne weitere Meldung ab. Ich habe mich also für
+C:\PMAIL entschieden. Das hinterlässt schonmal einen schlechten
+Eindruck: Würde jedes Programm dieses Verhalten an den Tag legen, wäre
+es unmöglich auf einem Computer Ordnung zu halten.</p>
+<p>Ich starte das Programm und ... es stürzt ab. Ich starte es nochmals -
+es bleibt an. Im Posteingang des Programms liegt zu Beginn eine
+Begrüßungsmail des Herstellers. Im Vorschaubereich des Programms findet
+sich folgender Text:</p>
+<blockquote>
+<p>Die Vorschauansicht wurde deaktiviert, weil Pegasus Mail beim letzten<br>
+Start unerwartet beendet wurde.</p>
+<p>Wenn eine solche unerwartete Programmbeendigung durch den Inhalt der<br>
+ersten Nachricht in einem Ordner verursacht wird (was manchmal bei<br>
+Nachrichten auftreten kann, die nicht dem HTML-Standard entsprechen),<br>
+lässt sich Pegasus Mail nicht mehr korrekt starten, weil die
+betreffende<br>
+fehlerhafte Nachricht bei jedem Start von Pegasus Mail erneut
+bearbeitet<br>
+wird und dann einen Absturz von Pegasus Mail verursacht. Aus diesem<br>
+Grund hat das Programm die Vorschauansicht automatisch abgeschaltet.</p>
+<p>Um den Vorschaumodus wieder einzuschalten, rufen Sie die Option<br>
+"Vorschauansicht" im Menü "Ordner" auf.</p>
+</blockquote>
+<p>Scheint also schonmal öfter vorzukommen. Ziemlich peinlich, das so auch
+gleich eingestanden wird, das die selbsterstellte Begrüßungsmail
+offenbar nicht selbst gesetzten Standards entspricht. Ich aktiviere die
+Vorschauansicht wieder, klicke auf die vom Hersteller bereitgestellte
+(!) Mail und ... es stürzt wieder ab.<br>
+An dieser Stelle breche ich den Test dieses Programms ab, da ein
+Programmabsturz, hervorgerufen durch minimale Unstimmigkeiten im Inhalt
+einer eMail, nichts ist, was ich im professionellem Betrieb einer
+Software gebrauchen kann. Da interessieren mich ehrlich gesagt <a href="http://www.pmail.com/overviews/ovw_winpmail.htm" title="Featurebeschreibung von Pegasus Mail">die
+restlichen Features, wie sie vollmundig auf der Homepage des Projektes
+angepriesen
+werden</a>,
+herzlich wenig.</p>
+<h2><a href="http://www.mulberrymail.com/" title="Homepage des Mulberry eMailclients">Mulberry 4.0.9a1 </a></h2>
+<p>Das Programm suggeriert anhand seiner umfangreichen
+Einstellungsmöglichkeiten zunächst einmal sehr viele Möglichkeiten.
+Leider sieht das Interface so aus:</p>
+<p>[caption id="attachment_963" align="aligncenter" width="300"
+caption="Defektes Mulberry Interface"]<a href="https://www.zoosau.de/images/mulberry_defective_interface.png"><img alt="Defektes Mulberry
+Interface" src="{filename}images/mulberry_defective_interface-300x151.png" title="Defektes Mulberry Interface">{.size-medium
+.wp-image-963 width="300"
+height="151"}</a>[/caption]</p>
+<p>Es werden keine Scrollbalken dargestellt, so das viele Elemente einfach
+in einem nicht angezeigten Bereich des Fensters liegen, das kleine weiße
+Dreieck unter der Mailliste ist die angezeigte Nachricht, welches sich
+weder komplett öffnen, noch größer ziehen lässt, etc. Das ganze ist so
+natürlich nicht zu gebrauchen. Daher breche ich den Test des Programms
+an dieser Stelle ab.</p>
+<h2>Alle anderen ...</h2>
+<p>... sehen sowas von lieblos und hingeklatscht aus, das ich diese erst
+garnicht in die engere Auswahl genommen habe, geschweige denn
+installiert. Bleibt nur zu sagen: Outlook ist kein eMailprogramm! Es ist
+ein Tool für Hacker, welches Ihnen erlaubt schnell und einfach Ihr
+Botnetz zu erweitern! Daher schaue ich mir den Mist hier erst garnicht
+an!</p>
+<h2>Fazit</h2>
+<p>And the winner is ... <strong>Thunderbird</strong>!</p>
+<p>Trotz aller Widrigkeiten stellt das freie eMailprogramm aus dem Hause
+Mozilla trotzdem noch das beste eMailprogramm am Markt dar. Es mag seine
+Ecken, Kanten und Unschönheiten haben, jedoch wenn man einmal den
+Schmerz des aktuellen Marktangebotes gekostet hat, fühlt sich die
+reumütige Rückkehr fast wie eine Erlösung an und einstige "Must have" -
+Anforderungen werden gerne zu "Nice to have" Punkten herabgestuft,
+solange die Basics funktionieren und einem das Programm ohne größere
+Behinderungen ermöglicht das Medium eMail einfach zu benutzen ist alles
+zu verschmerzen.<br>
+Ebenso ist das Programm ja gerade in einer neuen Major-Version, der
+Version 5.0, erschienen. Augenscheinlich hat sich nicht so viel geändert
+- der blöde Wizard ist immernoch da. Es wurden ein paar Knöpfe
+umarrangiert und der Nachrichten- und Gesprächsverlauf scheint in dieser
+Version auch wichtiger zu sein als vorher. Trotzdem können Mails nach
+wie vor nicht lokal auf der Festplatte verschlüsselt werden und es würde
+mich überraschen, wenn die Indexierungsdatenbank nun kleiner geworden
+wäre.</p>
+<p>Ich bin bei meiner Recherche auf diverse Clients gestoßen, die einfach
+garnicht funktionieren. Und zwar nicht irgendwie versteckt in
+irgendwelchen Unterfunktionen, oder nur, wenn eine handvoll Einflüsse
+zusammenkommen, sondern bereits bei den absoluten Basics! Es ist mir
+absolut unverständlich, wie ein Entwickler oder eine -gruppe so etwas
+zum Download bereitstellen kann. Mir wäre es gehörig peinlich mein
+Mailprogramm vollmundig als Topp-Software anzupreisen und den willigen
+User bereits bei einer Installation, welche nur die Vorauswahlen des
+Installers bestätigt, mit einem unbenutzbarem Interface und
+Programmabstürzen zu konfrontieren. Testen die Ihre eigene Software
+nicht? Nichtmal ob die Installation und ein reiner Start anschließend
+funktioniert? Es kann nur so sein, denn was die Jungs von Mulberry und
+Pegasus da abliefern ist ein Armutszeugnis.<br>
+Besonders schlimm finde ich, das auch das einzige kommerzielle Produkt
+im Test, TheBat! von Ritlabs, so arge Fehlfunktionen aufweist, das ich
+nur jedem davon abraten kann für so einen Müll Geld auszugeben. Wenn
+Open Source Projekte schlechte Arbeit abliefern: OK. Schließlich machen
+die das alles ehrenamtlich und den einzigen den sie damit Schaden sind
+sie selbst, weil Ihr Ruf als ernstzunehmender Programmierer darunter
+ziemlich leiden dürfte. Was Ritlabs da betreiben ist jedoch in meinen
+Augen nichts anderes als Betrug, bei dem arglose Kunden mit nicht
+funktionaler Software über's Ohr gehauen werden.</p>
+<p>Ich werde wohl erstmal bei Thunderbird bleiben und kann, nach diesen
+Erfahrungen, jedem nur raten dasselbe zu tun.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=2011%3A%2027%20Jahre%20eMail%20und%20kein%20gescheiter%20Mailclient%20am%20Markt&url=https%3A//www.zoosau.de/2011-27-jahre-email-und-kein-gescheiter-mailclient-am-markt.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=2011%3A%2027%20Jahre%20eMail%20und%20kein%20gescheiter%20Mailclient%20am%20Markt&amp;body=https%3A//www.zoosau.de/2011-27-jahre-email-und-kein-gescheiter-mailclient-am-markt.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/google-chrome-nicht-im-windowsprofil-installieren.html">Google Chrome NICHT im Windowsprofil installieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-10-28T00:45:00+02:00"> Do 28 Oktober 2010</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		212
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hallo zusammen!</p>
+<p>... boah - so lange nichts geschrieben ... peinlich! Egal, einfach ran
+an den Speck ;)</p>
+<p>Ich habe letztens erst eine interessante Entdeckung gemacht: Der Google
+Chrome - Browser installiert sich unter Windows standardmäßig in jedes
+einzelne Userprofil, statt einmalig global in den Programme - Ordner!
+Das bedeutet, das jeder User des PC rund 250 MB Speicherplatz nur für
+diesen Browser verschwendet. Das hört sich in der heutigen Zeit zwar
+wenig an, jedoch wird das ganze spätestens dann brisant, wenn der PC
+Teil einer Domäne ist und Roaming Profiles verwendet werden. Nicht nur
+das so 250 MB teuren Serverspeichers verschwendet werden (mal ganz
+abgesehen von dem ganzen unnützen Overhead für Backups und ähnliches),
+sondern es verlängert die Zeit zum ab- und anmelden enorm, ebenso, wie
+das gesamte Netzwerk mit diesem unnützen Traffic belastet wird.</p>
+<p>[caption id="attachment_826" align="alignleft" width="300"
+caption="Speicherverbrauch des Google Chrome Browsers im
+Userprofil"]<a href="https://www.zoosau.de/images/google_chrome_speicherverbrauch.png"><img alt="Speicherverbrauch des Google Chrome Browsers im
+Userprofil" src="{filename}images/google_chrome_speicherverbrauch-300x162.png" title="Speicherverbrauch des Google Chrome Browsers im Userprofil">{.size-medium
+.wp-image-826 width="300"
+height="162"}</a>[/caption]</p>
+<p>Seltsamerweise bekommt man auf so ziemlich jedem Wege nur diesen blöden
+Installer, der das ganze auf diese Art und Weise installiert. Umgehen
+kann man das ganze nur mit einem Trick: Man läd stattdessen die so
+genannte "Enterprise Edition" herunter, die als MSI - Paket angeboten
+wird und einem die Wahl über den Installationsort lässt. <a href="http://www.google.com/chrome/eula.html?msi=true" title="Google Chrome Enterprise Edition">Diese kann
+hier kostenlos heruntergeladen
+werden.</a></p>
+<p>Spart Speicherplatz und Euer Admin wird es Euch danken ;)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Google%20Chrome%20NICHT%20im%20Windowsprofil%20installieren&url=https%3A//www.zoosau.de/google-chrome-nicht-im-windowsprofil-installieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Google%20Chrome%20NICHT%20im%20Windowsprofil%20installieren&amp;body=https%3A//www.zoosau.de/google-chrome-nicht-im-windowsprofil-installieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/wordpress-und-plugins-automatisch-aktualisieren-ohne-den-ftp-dialog.html">Wordpress und Plugins automatisch aktualisieren ohne den FTP-Dialog</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-08-23T11:20:00+02:00"> Mo 23 August 2010</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		584
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/automatisches-update.html">automatisches update</a>
+        /
+	<a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+        /
+	<a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+        /
+	<a href="https://www.zoosau.de/tag/wordpress.html">Wordpress</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ich dachte lange Zeit das Verhalten von Wordpress, nach einem Klick auf
+"<strong>automatisch aktualisieren</strong>" (<em>Siehe Bild 1 - "automatisch
+aktualisieren ohne korrekte Rechte</em>") einen Dialog einzublenden, in dem
+man FTP-Zugangsdaten eingeben muss um das zuvor am PC heruntergeladene
+ZIP-Archiv mit der neuen Pluginversion auf seinen Server hochzuladen
+(<em>Siehe Bild 2 - "FTP-Abfragemaske"</em>), seie der Standard und die einzige
+Methode, die diese Funktion anbietet, um ein Plugin auf eine neue
+Version zu aktualisieren. War für mich natürlich extrem blöd, da ich gar
+keinen FTP Dienst hier auf meinem Server benötige. Was ich hoch- und
+herunterladen möchte, transferiere ich per SCP. Ein Einfallstor weniger,
+deutlich sicherer da von Haus aus verschlüsselt und solche Features wie
+Up-/Downloadquota benötige ich ohnehin nicht.</p>
+<p>[caption id="attachment_782" align="aligncenter" width="289"
+caption="automatisch aktualisieren ohne korrekte Rechte"]<a href="https://www.zoosau.de/images/20100823-Plugin-update.png"><img alt="automatisch
+aktualisieren ohne korrekte
+Rechte" src="{filename}images/20100823-Plugin-update-289x300.png" title="automatisch aktualisieren ohne korrekte Rechte">{.size-medium
+.wp-image-782 width="289"
+height="300"}</a>[/caption]</p>
+<p>[caption id="attachment_783" align="aligncenter" width="289"
+caption="FTP-Abfragemaske"]<a href="https://www.zoosau.de/images/20100823-FTP-Zugangsdatenmaske-in-WP.png"><img alt="FTP-Abfragemaske" src="{filename}images/20100823-FTP-Zugangsdatenmaske-in-WP-289x300.png" title="FTP-Abfragemaske">{.size-medium
+.wp-image-783 width="289"
+height="300"}</a>[/caption]</p>
+<p>Das dieses die einzige Methode ist ist jedoch garnicht der Fall! Ja,
+nicht einmal um die Standardvariante handelt es sich; das ganze ist
+schon eine Fallback-Funktion. Hat man sein WordPress richtig
+konfiguriert, wird man garnicht nach FTP Zugangsdaten gefragt, sondern
+Wordpress läd die Datei selbstständig von der Wordpress-Seite des
+Plugins herunter, deaktiviert es, überschreibt die alte Version mit der
+neuen und aktiviert diese anschließend wieder. Es hält sich somit an
+seine eigenen Empfehlungen und könnte komfortabler nicht sein.</p>
+<p>Warum klappt es jedoch bei so vielen nicht und wieso können einem auf
+Nachfrage die meisten Experten nichtmal sagen warum beim einen das
+Autoupdate und beim anderen die FTP-Datenabfrage kommt? Die Antwort auf
+die zweite Frage habe ich selber nicht parat, aber die Antwort auf die
+erste versuche ich im folgendem zu geben und versuche das ganze so
+leicht verständlich wie möglich zu halten.</p>
+<p>Der Webserver ist an sich auch nur ein Programm, welches als ein
+bestimmter User läuft. Der Webserver darf also auch immer nur auf genau
+die Ressourcen zugreifen (und mit den entsprechenden Rechten), wie es
+ein User auf der Shell, der als dieser User angemeldet ist, auch dürfte.
+Als welcher User/Gruppe der Webserver laufen soll, legt man
+beispielsweise beim Apache mit den Optionen "<strong>User</strong>" und "<strong>Group</strong>"
+fest. Im folgenden gehe ich exemplarisch davon aus, das es sich hierbei
+bei beidem um "apache2" handelt.<br>
+Dementsprechend muss ein Verzeichnis in dem der Webserver Dateien
+ablegen, verändern oder entfernen soll, auch mit den entsprechenden
+Rechten für diesen User versehen werden. Für Wordpress' Plugins wäre
+dieses das Verzeichnis "<strong>wp-content/plugins/</strong>". Selbstverständlich
+muss der User apache2 in diesem, sowie dessen Unterverzeichnisse für
+Dateien mindestens 644 und für Verzeichnisse mindestens 755 Rechte
+haben. Selbiges gilt jedoch natürlich für alle anderen Verzeichnisse, in
+denen der Webserver Daten ändern können muss, wie "wp-content/themes"
+oder "wp-content/uploads" gleichermaßen.<br>
+Jedoch war dieses immer schon so bei mir, und dennoch habe ich den zuvor
+genannten FTP-Datenabfrage - Dialog erhalten.</p>
+<p>Der Knackpunkt ist, das die Datei "<strong>wp-admin/update.php</strong>" dem User
+<strong>gehören</strong> muss, als der der Webserver läuft. Es genügt nicht das
+dieser User einfach sämtliche benötigten Rechte auf diese Datei haben
+muss, sie muss ihm tatsächlich gehören! Einen durch Berechtigungen
+gerechtfertigten Grund hierfür gibt es nicht, die Routine ist
+schlichtweg so programmiert. Selbstverständlich könnte man dieses Stück
+Code verändern, nur muss man das dann nach jedem Core - Update
+wiederholen. Grundsätzlich lässt man von sowas die Finger!</p>
+<p>Ist also beides gegeben, passende lese-/schreibrechte in den genannten
+Verzeichnissen, sowie das Eigentumsrecht auf die Datei
+"<strong>wp-admin/update.php</strong>", funktioniert es auch mit dem auto-Update!</p>
+<p>[caption id="attachment_784" align="aligncenter" width="289"
+caption="Funktionierendes Wordpress
+Plugin-Auto-Update"]<a href="https://www.zoosau.de/images/20100823-Plugin-auto-update.png"><img alt="Funktionierendes Wordpress
+Plugin-Auto-Update" src="{filename}images/20100823-Plugin-auto-update-289x300.png" title="Funktionierendes Wordpress Plugin-Auto-Update">{.size-medium
+.wp-image-784 width="289"
+height="300"}</a>[/caption]</p>
+<p>Vielen Dank an dieser Stelle an <a href="http://weblog.ononlinework.de/uber-stefan-david/" title="Über Stefan David">Stefan
+David</a>,
+der auf seinem
+<a href="http://weblog.ononlinework.de/webwelt/das-automatische-update-von-wordpress/" title="Das automatische Update von WordPress">Blog-Beitrag</a>
+nach Monaten als einziger in der Lage war, dieses Phänomen mal
+aufzudröseln! :)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Wordpress%20und%20Plugins%20automatisch%20aktualisieren%20ohne%20den%20FTP-Dialog&url=https%3A//www.zoosau.de/wordpress-und-plugins-automatisch-aktualisieren-ohne-den-ftp-dialog.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Wordpress%20und%20Plugins%20automatisch%20aktualisieren%20ohne%20den%20FTP-Dialog&amp;body=https%3A//www.zoosau.de/wordpress-und-plugins-automatisch-aktualisieren-ohne-den-ftp-dialog.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/heartbeat-und-das-ressource-script-filesystem-fatal-module-scsi_hostadapter-not-found.html">Heartbeat und das Ressource-Script "Filesystem" (FATAL: Module scsi_hostadapter not found.)</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-08-11T21:18:00+02:00"> Mi 11 August 2010</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		221
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/fatal.html">FATAL</a>
+        /
+	<a href="https://www.zoosau.de/tag/heartbeat.html">heartbeat</a>
+        /
+	<a href="https://www.zoosau.de/tag/lucid-lynx.html">lucid lynx</a>
+        /
+	<a href="https://www.zoosau.de/tag/scsi_hostadapter.html">scsi_hostadapter</a>
+        /
+	<a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>ALTA !!!</p>
+<p>Der neue Server ist up und ich entjungfere ihn mal direkt mit einem
+"LECK MICH AM ARSCH - WARUM???" - Blogeintrag.</p>
+<p>Ich sitze auf der Arbeit, richte, wie ich es sicher schon dutzende Male
+gemacht habe, ein Heartbeat mit DRBD ein und sehe (erstmals unter Lucid
+Lynx) folgendes beim starten einer Filesystem-Ressource im Log:</p>
+<blockquote>
+<p>...<br>
+ResourceManager[8524]:  2010/08/11_20:39:08 info: Running
+/etc/ha.d/resource.d/Filesystem /dev/drbd1 /server/data/nfs reiserfs
+defaults,acl,rw start<br>
+Filesystem[8840]:       2010/08/11_20:39:08 INFO: Running start for
+/dev/drbd1 on /server/data/nfs<br>
+FATAL: Module scsi_hostadapter not found.<br>
+...</p>
+</blockquote>
+<p>Worauf lässt es sich zurückführen? Man lese und staune:</p>
+<p>Zitat aus Datei "/usr/lib/ocf/resource.d/heartbeat/Filesystem", Zeilen
+404 bis 408:</p>
+<blockquote>
+<p>if [ "X\${HOSTOS}" != "XOpenBSD" ];then<br>
+# Insert SCSI module<br>
+# TODO: This probably should go away. Why should the filesystem<br>
+# RA magically load a kernel module?<br>
+\$MODPROBE scsi_hostadapter &gt;/dev/null</p>
+</blockquote>
+<p>So, Masterfrage: Was passiert, wenn ein Kernel das Modul
+scsi_hostadapter nicht oder nicht als Modul kompiliert hat (so wie es,
+nebenbei bemerkt, beim Standardkernel von Lucid Lynx (2.6.32-24-server)
+der Fall ist)? Riiiiiiiiiiiiichtig: Hier wird ein Exitcode ungleich 0
+generiert, und Heartbeat denkt die ganze Aktion ist fehlgeschlagen.</p>
+<p>Das ganze lässt sich also durch auskommentieren der Zeile 408
+("\$MODPROBE scsi_hostadapter &gt;/dev/null") beheben.</p>
+<p>12.08.2010 - UPDATE: Scheinbar hatte ich das gestern fehlinterpretiert.
+Es wird zwar die "<em>FATAL: Module scsi_hostadapter not found.</em>" -
+Meldung ausgegeben, jedoch hat dieses doch keine Auswirkungen auf den
+Errorcode des gesamten Scriptes. Dann lag das gestern an was anderes ...
+gnaaaahr :D</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Heartbeat%20und%20das%20Ressource-Script%20%22Filesystem%22%20%28FATAL%3A%20Module%20scsi_hostadapter%20not%20found.%29&url=https%3A//www.zoosau.de/heartbeat-und-das-ressource-script-filesystem-fatal-module-scsi_hostadapter-not-found.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Heartbeat%20und%20das%20Ressource-Script%20%22Filesystem%22%20%28FATAL%3A%20Module%20scsi_hostadapter%20not%20found.%29&amp;body=https%3A//www.zoosau.de/heartbeat-und-das-ressource-script-filesystem-fatal-module-scsi_hostadapter-not-found.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/deutsche-rechtschreibprufung-fur-thunderbird-3-0.html">Deutsche Rechtschreibprüfung für Thunderbird 3.0.*</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-26T12:42:00+01:00"> Fr 26 März 2010</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		170
+
+		<span class="label label-default">Read time</span>
+		1 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/3.html">3</a>
+        /
+	<a href="https://www.zoosau.de/tag/deutsche-rechtschreibung.html">deutsche rechtschreibung</a>
+        /
+	<a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+        /
+	<a href="https://www.zoosau.de/tag/version.html">version</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>HA! Endlich was cooles herausgefunden!</p>
+<p>Seit langem ärgere ich mich, das die deutsche Rechtschreibprüfung für
+den Thunderbird Mailclient nur für Versionen bis 2.0.0.* funktioniert,
+obwohl der Thunderbird 3.0 ja nun schon Monatelang veröffentlicht ist.
+Heute habe ich durch <a href="http://kb.mozillazine.org/Editing_an_add-on_to_change_its_compatibility" title="Change a Thunderbird Extension's compatibility">diesen
+Eintrag</a>
+eine Lösung hierzu gefunden!</p>
+<p>Diese *.xpi - Pakte sind simple, umbenannte ZIP - Archive. Sie lassen
+sich einfach entpacken. Anschließend kann man einfach mit einem
+Texteditor die Tags
+"<strong>&lt;em:maxVersion&gt;2.0.0.*&lt;/em:maxVersion&gt;</strong>" in der Datei
+<strong>install.rdf</strong> in 3.0.* abändern. Anschließend erstellt man nur wieder
+ein ZIP Archiv aus den Daten die vorher auch in dem Archiv gewesen sind
+und benennt es wieder in *.xpi um.</p>
+<p>Fertig! :)</p>
+<p><a href="{filename}images/wortliste_von_http___tkltrans.sf.net__alte_und_neue_deutsche_rechtschreibung_-20100326-fx+tb+sm.xpi">Ich habe das Paket für die alte und neue deutsche Rechtschreibung
+schonmal hier vorbereitet. Ihr könnt es gerne herunterladen und
+installieren.</a></p>
+<p><strong>Hinweis:</strong> Da Thunderbird und Firefox dummerweise dieselbe
+Dateierweiterung für Ihre Extensions nutzen, versucht der Firefox die
+Rechtschreib-Extension bei einem Linksklick auf den obigen Link zu
+installieren. Bitte klickt daher mit rechts darauf und wählt "<strong>Ziel
+speichern unter ...</strong>". Anschließend könnt ihr die Extension dann <a href="http://kb.mozillazine.org/Extensions_%28Thunderbird%29#Installation" title="Anleitung wie man Extensions im Thunderbird installiert">im
+Thunderbird wie gehabt
+installieren</a>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Deutsche%20Rechtschreibpr%C3%BCfung%20f%C3%BCr%20Thunderbird%203.0.%2A&url=https%3A//www.zoosau.de/deutsche-rechtschreibprufung-fur-thunderbird-3-0.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Deutsche%20Rechtschreibpr%C3%BCfung%20f%C3%BCr%20Thunderbird%203.0.%2A&amp;body=https%3A//www.zoosau.de/deutsche-rechtschreibprufung-fur-thunderbird-3-0.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/sehr-interessanter-artikel-uber-den-sogenannten-evil-maid-angriff-angewand-auf-truecrypt.html">Sehr interessanter Artikel über den sogenannten "Evil Maid" Angriff, angewand auf TrueCrypt</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-12-06T01:31:00+01:00"> So 06 Dezember 2009</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/technik.html">Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		524
+
+		<span class="label label-default">Read time</span>
+		3 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/angriff.html">angriff</a>
+        /
+	<a href="https://www.zoosau.de/tag/eveil-maid.html">eveil maid</a>
+        /
+	<a href="https://www.zoosau.de/tag/invisible-things-lab.html">invisible things lab</a>
+        /
+	<a href="https://www.zoosau.de/tag/joanna-rutkowska.html">joanna rutkowska</a>
+        /
+	<a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Normalerweise bin ich so der Typ, der wenn ein Artikel im Internet mehr
+als 20 Zeilen hat, nur die Schlagworte überspringt und auf diesen ersten
+Blick sieht das es sich um einen Artikel mit schon 100 mal gelesenem
+Lari-Fahri - Inhalt handelt und das ganze wieder schließt. Es existieren
+leider viel zu viele solcher Artikel, deren Autoren eindeutig die
+Fachkompetenz fehlt, das angeschnittene Thema zu behandeln oder die das
+ganze einfach wahnsinnig langweilig und unnötig ausufernd präsentieren.</p>
+<p>[caption id="attachment_569" align="aligncenter" width="200"
+caption="Evil Maid / Böses Zimmermädchen"]<img alt="Evil Maid / Böses
+Zimmermädchen" src="https://www.zoosau.de/images/evil-maid.jpg" title="Evil Maid">{.size-full
+.wp-image-569 width="200" height="130"}[/caption]</p>
+<p>Heute bin ich aber auf einen Artikel gestoßen, der mich sehr lange an
+den Bildschirm gefesselt hat, da sowohl der Inhalt sehr interessant ist,
+wie auch die Präsentation, die durchgeführte Recherche zu dem Thema und
+die Beschränkung auf relevante, interessante Fakten mich ungeheuer
+angesprochen haben. Die Rede ist von diesem Artikel: <a href="http://theinvisiblethings.blogspot.com/2009/10/evil-maid-goes-after-truecrypt.html" title="Ein sehr interessanter Artikel über den &quot;Evil Maid&quot; Angriff auf TrueCrypt.">Evil Maid goes
+after
+TrueCrypt!</a>,
+ein Blogeintrag von <a href="http://www.blogger.com/profile/07657268181166351141" title="Blogger Profil von Joanna Rutkowska">Joanna
+Rutkowska</a>.
+Es geht darin um die Demonstration eines Angriffes auf Computersysteme,
+welche mit TrueCrypt verschlüsselte Festplatten verwenden. Hierbei
+beschränkt sich Frau Rutkowska nicht bloß auf die bloße Beschreibung der
+theoretischen Möglichkeit einer solchen Attacke, sondern stellt neben
+einem konkretem, funktionierendem Exploit per Mini-Linux auf einem
+bootbaren USB-Stick und einem völlig realistischem Szenario die Frage,
+wie sicher die derzeitigen Verschlüsselungsverfahren wie TrueCrypt und
+BitLocker eigentlich sind. Hierzu hat die Firma, die sie scheinbar
+mitgegründet hat und bei der sie beschäftigt ist, <a href="http://invisiblethingslab.com/">Invisible Things
+Lab</a>, ein eigenes Mini-Linux für USB
+Sticks entwickelt und in diesem Artikel bereitgestellt, sowie einen
+Exploit für den "Evil Maid" - Angriff programmiert, welcher im Pre-Boot
+- TrueCrypt - Passwortpromt das eingegebene Passwort abfängt und
+aufzeichnet, um bei einem zweiten Besuch des "Bösen Zimmermädchens" aus
+dem Bootsektor der Partition ausgelesen werden zu können. Außerdem gibt
+sie Tipps wie man sich vor solchen Angriffen schützen kann und
+beschreibt dabei einen recht simplen, aber sehr genialen Einfall, den
+sie bei Invisible Things Lab offenbar selber einsetzen: Sie booten
+wiederum von einem USB Stick, welcher von dem Bootsektor, sowie der
+/boot - Partition einen Checksummenhash berechnet und auf eben diesem
+Stick speichert. Wenn man nun beispielsweise nach einem langen Tag
+wieder auf sein Hotelzimmer kommt, in dem ja die ganze Zeit über das
+(vermeintlich geschützte) Notebook stand, wird zunächst von diesem Stick
+gebootet und die Checksumme verglichen. So kann man sich sicher sein,
+das keiner am Bootsektor und der /boot- Partition herumgepfuscht hat (es
+sei denn natürlich er konnte auch irgendwie an den (hoffentlich)
+mitgeführten Stick kommen und die Checksumme verändern).</p>
+<p>Das ist alles zwar ziemlich paranoid und im alltäglichen Leben wird wohl
+kaum einer diesen Aufwand betreiben um die theoretische Möglichkeit
+einer Manipulation auszuschließen, aber ich finde das ein sehr
+interessantes Thema und vor allem: Ein hochgradig professionell
+aufgemachter und recherchierter Artikel! Ich kann jedem nur ans Herz
+legen sich den mal zur Gemüte zu führen! :) Ich jedenfalls werde diesen
+Blog ab jetzt fest abonieren.</p>
+<p>Der "Evil Maid" - Angriff heißt übrigens so, da er ein Szenario
+beschreibt, in dem es einem Zimmermädchen, welches ja in der Regel
+Zugang zu einem verschlossenem Hotelzimmer hat, möglich ist binnen
+weniger Minuten ohne großes technisches Know-How eine Manipulation an
+einem Computersystem vorzunehmen, ohne das der Betroffene dieses
+bemerkt. Sehr cool und lohnenswert mal darüber nachzudenken ;)</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Sehr%20interessanter%20Artikel%20%C3%BCber%20den%20sogenannten%20%22Evil%20Maid%22%20Angriff%2C%20angewand%20auf%20TrueCrypt&url=https%3A//www.zoosau.de/sehr-interessanter-artikel-uber-den-sogenannten-evil-maid-angriff-angewand-auf-truecrypt.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Sehr%20interessanter%20Artikel%20%C3%BCber%20den%20sogenannten%20%22Evil%20Maid%22%20Angriff%2C%20angewand%20auf%20TrueCrypt&amp;body=https%3A//www.zoosau.de/sehr-interessanter-artikel-uber-den-sogenannten-evil-maid-angriff-angewand-auf-truecrypt.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pager">
+                <li class="previous disabled"><a href="#">&larr; Newer</a></li>
+                <li class="next"><a
+                        href="https://www.zoosau.de/category/technik2.html">Older &rarr;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2016/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2016 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2014/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2014 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2013 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2013/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2013 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2011 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2010 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2010/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2010 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2009 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2009/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2009 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Dez/index.html"><i class="fa fa-calendar fa-lg"></i>Dezember 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>Juli 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jun/index.html"><i class="fa fa-calendar fa-lg"></i>Juni 2008 (4)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2008 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Apr/index.html"><i class="fa fa-calendar fa-lg"></i>April 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Mär/index.html"><i class="fa fa-calendar fa-lg"></i>März 2008 (3)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Feb/index.html"><i class="fa fa-calendar fa-lg"></i>Februar 2008 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2008/Jan/index.html"><i class="fa fa-calendar fa-lg"></i>Januar 2008 (4)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

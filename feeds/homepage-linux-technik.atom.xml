@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Linux, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-linux-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2010-07-06T01:00:00+02:00</updated><entry><title>Der neue Server</title><link href="https://www.zoosau.de/der-neue-server.html" rel="alternate"></link><published>2010-07-06T01:00:00+02:00</published><updated>2010-07-06T01:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-07-06:/der-neue-server.html</id><summary type="html">&lt;p&gt;Der Server, auf dem unter vielen anderen Seiten und Diensten, auch
+dieses Blog hier läuft, wird in den kommenden Tagen umgezogen. Zum einen
+sagt mir die aktuelle Linux-Distribution nicht mehr zu, zum anderen
+bietet mein Provider nach über 4 Jahren, in denen dieser Server in der
+aktuellen Form bereits besteht …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Der Server, auf dem unter vielen anderen Seiten und Diensten, auch
+dieses Blog hier läuft, wird in den kommenden Tagen umgezogen. Zum einen
+sagt mir die aktuelle Linux-Distribution nicht mehr zu, zum anderen
+bietet mein Provider nach über 4 Jahren, in denen dieser Server in der
+aktuellen Form bereits besteht, für's gleiche Geld inzwischen Server mit
+der doppelten Leistung und Ausstattung an. Die Gelegenheit ist also
+günstig.&lt;/p&gt;
+&lt;p&gt;Aktuell bereite ich im Hintergrund bereits das neue System vor. Wenn
+dieses soweit finalisiert wurde, wird es eine mehr oder weniger kurze
+Downtime geben, in der die Seiten umziehen. Entgegen dem professionellen
+Seitenhosting kann ich mir auf diesen Privatseiten ja bequem den Luxus
+gönnen und sagen: "&lt;em&gt;It's done, when it's done!&lt;/em&gt;" ;)&lt;/p&gt;
+&lt;p&gt;Ich weiß, das diese Seite mal nicht erreichbar sein könnte, trifft
+tausende da draußen schwer. .. , aber die Berufsehre gebietet es mir
+irgendwie diese erste Downtime über mehr als 5 Minuten überhaupt nach
+über 4 Jahren als geplant anzukündigen ;)&lt;/p&gt;</content><category term="downtime"></category><category term="umzug"></category><category term="wartungsarbeiten"></category></entry><entry><title>Update auf Wordpress 2.5.1</title><link href="https://www.zoosau.de/update-auf-wordpress-251.html" rel="alternate"></link><published>2008-04-26T15:28:00+02:00</published><updated>2008-04-26T15:28:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-26:/update-auf-wordpress-251.html</id><summary type="html">&lt;p&gt;Heute wurde eine &lt;a href="http://www.heise.de/newsticker/WordPress-2-5-1-behebt-Sicherheitsproblem--/meldung/107057" title="Heise Newsletter Meldung auf Version 2.5.1"&gt;Meldung auf
+Heise.de&lt;/a&gt;
+veröffentlicht, das &lt;a href="http://wordpress.org/" title="Homepage von Wordpress"&gt;Wordpress in Version 2.5.1
+erschienen&lt;/a&gt; ist.&lt;/p&gt;
+&lt;p&gt;Es soll eine "schwerwiegende Sicherheitslücke" behoben worden sein.
+Details zu dem Problem werden noch nicht genannt, sollen aber "bald"
+veröffentlicht werden. Zudem soll die Version 2.5.1 70 weitere
+Verbesserungen mit sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Heute wurde eine &lt;a href="http://www.heise.de/newsticker/WordPress-2-5-1-behebt-Sicherheitsproblem--/meldung/107057" title="Heise Newsletter Meldung auf Version 2.5.1"&gt;Meldung auf
+Heise.de&lt;/a&gt;
+veröffentlicht, das &lt;a href="http://wordpress.org/" title="Homepage von Wordpress"&gt;Wordpress in Version 2.5.1
+erschienen&lt;/a&gt; ist.&lt;/p&gt;
+&lt;p&gt;Es soll eine "schwerwiegende Sicherheitslücke" behoben worden sein.
+Details zu dem Problem werden noch nicht genannt, sollen aber "bald"
+veröffentlicht werden. Zudem soll die Version 2.5.1 70 weitere
+Verbesserungen mit sich bringen. Unter anderem auch eine
+Performacesteigerung im Backend.&lt;/p&gt;
+&lt;p&gt;Ich habe einen Fehler beim Upgrade gemacht. Dieser scheint jedoch ohne
+weitere Folgen geblieben zu sein:&lt;/p&gt;
+&lt;p&gt;Ich habe auf meinem System für jede Wordpress Version ein eigenes
+Verzeichnis (wordpress_2.5, wordpress_2.3.3, etc.). Das eigentliche
+"Live-Blog" wird dann aus einem Symlink "wordpress" auf die jeweils
+aktuelle Version bedient.&lt;/p&gt;
+&lt;p&gt;Das mache ich so, damit, falls ein Update mal nicht so läuft wie
+geplant, ich schnell wieder zurück switchen kann.&lt;/p&gt;
+&lt;p&gt;Das Updatearchiv auf Version 2.5.1 heisst "latest.tar.gz". Entpackt man
+es ohne weitere Optionen, landen alle Dateien im Verzeichniss wordpress.&lt;/p&gt;
+&lt;p&gt;Regulär lege ich ein neues Verzeichniss an, wordpress_2.5.1 in diesem
+Fall, und entpacke es dann mit "tar xfz latest.tar.gz -C
+wordpress_2.5.1". Dieses mal habe ich das allerdings versäumt und durch
+den Symlink "wordpress-&amp;gt;wordpress_2.5", die Dateien der Version 2.5
+überschrieben.&lt;/p&gt;
+&lt;p&gt;Zum Glück muss man zum einen die Konfigurationsdatei von
+wp-config-sample.php in wp-config.php umbenennen, wodurch man diese
+durch so eine Aktion nicht versehentlich überschreiben kann. Zum zweiten
+kommen alle User-Uploads wie Bilder, Sounds usw. (sog. "Assets") in
+einen Unterordner, wp-content/uploads . Dieser ist im neuen Release leer
+und unter Unix werden beim entpacken von Archiven mit tar standardmäßig
+Ordnerinhalte in einen bestehenden Ordner übernommen, statt diesen
+Ordner zu überschreiben.&lt;/p&gt;
+&lt;p&gt;Somit scheint alles fehlerfrei abgelaufen zu sein und die HP erstrahlt
+nun in Version 2.5.1 :D&lt;/p&gt;
+&lt;p&gt;Eine Änderung sehe ich direkt: Eingebettete Bilder werden nun offenbar
+mit einem weissen Rahmen umrahmt.&lt;/p&gt;
+&lt;p&gt;Naja - mir geht's in erster Linie um die Security Issues :D&lt;/p&gt;</content><category term="2.5.1"></category><category term="update"></category><category term="Wordpress"></category></entry><entry><title>Squirrelmail auf Deutsch unter (*)ubuntu / Debian Linux</title><link href="https://www.zoosau.de/squirrelmail-auf-deutsch-unter-ubuntu-linux.html" rel="alternate"></link><published>2008-01-07T13:14:00+01:00</published><updated>2008-01-07T13:14:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-07:/squirrelmail-auf-deutsch-unter-ubuntu-linux.html</id><summary type="html">&lt;p&gt;Wie der Autor des Originalbeitrages dieses Trackbacks (... des Vatters,
+dem seine Mutter sein Kind ... mann, schreib ich manchmal kompliziert
+=O.o=), hatte auch ich die Lösung hierfür irgendwann einmal im Netz
+gefunden, eingerichtet, gefreut, vergessen.&lt;/p&gt;
+&lt;p&gt;Damit mir sowas nicht mehr passiert sammle ich dieses Know-How ja in
+diesem Blog :)&lt;/p&gt;
+&lt;p&gt;Es …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wie der Autor des Originalbeitrages dieses Trackbacks (... des Vatters,
+dem seine Mutter sein Kind ... mann, schreib ich manchmal kompliziert
+=O.o=), hatte auch ich die Lösung hierfür irgendwann einmal im Netz
+gefunden, eingerichtet, gefreut, vergessen.&lt;/p&gt;
+&lt;p&gt;Damit mir sowas nicht mehr passiert sammle ich dieses Know-How ja in
+diesem Blog :)&lt;/p&gt;
+&lt;p&gt;Es funktioniert genau wie Beschrieben:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;"/var/lib/locales/supported.d/local" öffnen (unter Debian: /etc/locale.gen)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Eine neue Zeile mit "&lt;strong&gt;&lt;em&gt;&lt;code&gt;de_DE ISO-8859-1&lt;/code&gt;&lt;/em&gt;&lt;/strong&gt;" anfügen&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;"dpkg-reconfigure locales" ausführen. dpkg-reconfigure sollte diese neue locale nun auch auflisten: de_DE.ISO-8859-1... done&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In der Squirrelmail Konfiguration (cd /etc/squirrelmail ; ./conf.pl)
+    "&lt;strong&gt;&lt;em&gt;de_DE&lt;/em&gt;&lt;/strong&gt;" als Standardsprache festlegen.&lt;/li&gt;
+&lt;li&gt;Apache neu starten&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nun sollte alles Deutsch sein.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.pegu.de/2007/03/02/wie-bring-ich-squirrelmail-blos-deutsch-bei" title="Weblog Eintrag über Squirrelmail auf Deutsch"&gt;Hier findet Ihr den
+Originalbeitrag&lt;/a&gt;.&lt;/p&gt;</content><category term="Linux"></category><category term="mail"></category><category term="server"></category><category term="sprache"></category><category term="squirrelmail"></category></entry></feed>

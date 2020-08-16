@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Privates Leben</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/privates-leben.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-11-20T17:42:00+01:00</updated><entry><title>Nur schnell für mich ... CPAN</title><link href="https://www.zoosau.de/nur-schnell-fur-mich-cpan.html" rel="alternate"></link><published>2012-11-20T17:42:00+01:00</published><updated>2012-11-20T17:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-11-20:/nur-schnell-fur-mich-cpan.html</id><summary type="html">&lt;p&gt;Nur ein kleiner Quick-Tipp, denn ich jedoch jedes Mal wieder suche:&lt;/p&gt;
+&lt;p&gt;Wenn man Perl Module aus dem CPAN Archiv installieren möchte, geht das
+wie folgt:&lt;/p&gt;
+&lt;p&gt;perl -MCPAN -e 'install Algorithm::Diff'&lt;/p&gt;
+&lt;p&gt;"Algorithm::Diff" ist dabei durch die das korrekte Modul zu ersetzen.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Nur ein kleiner Quick-Tipp, denn ich jedoch jedes Mal wieder suche:&lt;/p&gt;
+&lt;p&gt;Wenn man Perl Module aus dem CPAN Archiv installieren möchte, geht das
+wie folgt:&lt;/p&gt;
+&lt;p&gt;perl -MCPAN -e 'install Algorithm::Diff'&lt;/p&gt;
+&lt;p&gt;"Algorithm::Diff" ist dabei durch die das korrekte Modul zu ersetzen.&lt;/p&gt;</content><category term="cpan"></category><category term="modul"></category><category term="module"></category><category term="perl"></category></entry><entry><title>Der Düsseldorfer Brötchen-Wahnsinn</title><link href="https://www.zoosau.de/der-dusseldorfer-brotchen-wahnsinn.html" rel="alternate"></link><published>2011-08-05T18:55:00+02:00</published><updated>2011-08-05T18:55:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-08-05:/der-dusseldorfer-brotchen-wahnsinn.html</id><summary type="html">&lt;p&gt;Also alles was recht ist: Die Düsseldorfer verlieren immer mehr den
+Bezug zur Realität. Ein Brötchen, belegt mit folgenden Zutaten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 Brötchen&lt;/li&gt;
+&lt;li&gt;1 Blatt Salat&lt;/li&gt;
+&lt;li&gt;1 Scheibe vom geschnittenem Kochei&lt;/li&gt;
+&lt;li&gt;Krautsalat&lt;/li&gt;
+&lt;li&gt;1 Scheibe Schlangengurke&lt;/li&gt;
+&lt;li&gt;3 Hähnchenstreifen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;kostet sage und schreibe 3,20 € ! Es gibt das auch in mehreren
+Backstuben in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Also alles was recht ist: Die Düsseldorfer verlieren immer mehr den
+Bezug zur Realität. Ein Brötchen, belegt mit folgenden Zutaten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 Brötchen&lt;/li&gt;
+&lt;li&gt;1 Blatt Salat&lt;/li&gt;
+&lt;li&gt;1 Scheibe vom geschnittenem Kochei&lt;/li&gt;
+&lt;li&gt;Krautsalat&lt;/li&gt;
+&lt;li&gt;1 Scheibe Schlangengurke&lt;/li&gt;
+&lt;li&gt;3 Hähnchenstreifen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;kostet sage und schreibe 3,20 € ! Es gibt das auch in mehreren
+Backstuben in leicht gewandelter Form; da ist dann z.B. kein Krautsalat
+und keine Hähnchenstreifen drauf, dafür Thunfisch. Die Preise bewegen
+sich alle im gleichen Rahmen.&lt;/p&gt;
+&lt;p&gt;Ich war gestern aus Spass mal einkaufen und habe mir diese Zutaten
+gekauft. Ich habe nun Material für 16 Brötchen, belegt wie oben
+aufgelistet; lediglich das Ei fehlt und das Brötchen sind
+Backofen-Baguettes. Die Zutaten kosten, ausreichend für 16 solcher
+Brötchen (mit Überschuss):&lt;/p&gt;
+&lt;p&gt;Hähnchenstreifen: 3x 1,99 € = 5,97 €&lt;br&gt;
+Schlangengurke: 1x 0,49 € = 0,49 €&lt;br&gt;
+Eisbergsalat: 1x 0,69 € = 0,69 €&lt;br&gt;
+Krautsalat: 1x 3,59 € = 3,59 €&lt;br&gt;
+Ofenbaguette (4 Stk): 4x 0,35 € = 1,40 €&lt;/p&gt;
+&lt;p&gt;==========================================&lt;/p&gt;
+&lt;p&gt;Summe: 12,14 €&lt;/p&gt;
+&lt;p&gt;Geteilt durch 16 Brötchen: 0,76 € !!!&lt;/p&gt;
+&lt;p&gt;OK, ich habe jetzt mit den Brötchen etwas minderwertigere Zutaten
+gewählt als echte Brötchen (bei einigen Backstuben auch Ciabatta- oder
+Käsebrötchen). Jedoch kosten die Bäckereien diese Brötchensorten ja auch
+nicht die 70 ct. oder 1,20 €, die da ausgeschrieben stehen, sondern
+lediglich den Einkaufswert der ungebackenen Brötchen plus ein wenig
+Strom für den Backofen ... Egal wie man rechnet: Man kommt nichtmal in
+die Region von 2 €, selbst wenn man die vollen 1,20 € für ein
+Käsebrötchen zu den 76 ct. dazurechnet.&lt;/p&gt;
+&lt;p&gt;Für 3,- € kriegt man einen &lt;span
+style="text-decoration: underline;"&gt;guten&lt;/span&gt; Döner, mit warmem
+Fleisch, Salat, Kraut, Sossen, .... und so ein blödes Brötchen ist &lt;span
+style="text-decoration: underline;"&gt;teurer&lt;/span&gt;! Ich kapiere das nicht
+... ich mache mir die auf jeden Fall in Zukunft mit o.g. Zutaten selber!
+:)&lt;/p&gt;</content><category term="brötchen"></category><category term="düsseldorf"></category><category term="preise"></category><category term="teuer"></category></entry><entry><title>Ich werde den heutigen Tag wohl nicht überleben ...</title><link href="https://www.zoosau.de/ich-werde-den-heutigen-tag-wohl-nicht-uberleben.html" rel="alternate"></link><published>2011-04-04T09:12:00+02:00</published><updated>2011-04-04T09:12:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-04-04:/ich-werde-den-heutigen-tag-wohl-nicht-uberleben.html</id><summary type="html">&lt;p&gt;... so wie der schon anfängt :P&lt;/p&gt;
+&lt;p&gt;Erst kann ich mein Portemonaie nicht finden und muss also ohne los. Wie
+kann es anders sein, als das genau in dieser Bahn die seltene Gattung
+der Kontrolleure anzutreffen ist? Ich konnte hier zum Glück noch
+rechtzeitig wieder aussteigen.&lt;br&gt;
+Ich steige also in die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;... so wie der schon anfängt :P&lt;/p&gt;
+&lt;p&gt;Erst kann ich mein Portemonaie nicht finden und muss also ohne los. Wie
+kann es anders sein, als das genau in dieser Bahn die seltene Gattung
+der Kontrolleure anzutreffen ist? Ich konnte hier zum Glück noch
+rechtzeitig wieder aussteigen.&lt;br&gt;
+Ich steige also in die nachfolgende Bahn.&lt;br&gt;
+Und es wird immer besser: An dieser Station war die Bahn das erste Mal
+falsch angeschlagen. Wurde also nach Köln Nippes statt Richtung
+Düsseldorf geschickt : Endstation. Dann stand da eine S Bahn
+angeschrieben: Nach Düsseldorf HBf. Ich steig also ein. Bisheriger
+Höhepunkt des ganzen: Ich stehe in Norf , irgendwo auf 'nem Kuhacker.
+Hier soll um 14 nach 9 die S11 nach Düsseldorf HBf kommen - schon
+wieder! Bin mal gespannt und habe vorsichtshalber auf der Arbeit per
+Mail bescheid gesagt, das ich ggf. später komme ...&lt;/p&gt;</content><category term="die bahn"></category><category term="scheisse"></category></entry><entry><title>Firmenumzug morgen</title><link href="https://www.zoosau.de/firmenumzug-morgen.html" rel="alternate"></link><published>2011-03-23T20:46:00+01:00</published><updated>2011-03-23T20:46:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-03-23:/firmenumzug-morgen.html</id><summary type="html">&lt;p&gt;Morgen zieht die Marketing Factory Consulting GmbH in Ihre neuen
+Büroräume in Düsseldorf. Für uns Tekkies bedeutet das doppelt- und
+dreifache Arbeit, da jeder von uns, zusätzlich zu dem, was jeder
+einzelne Mitarbeiter ohnehin zu schultern hat, die gesamte IT mit
+umziehen müssen. Bedeutet: Telefone, Server, Telefonanlage, bestimmt
+bleibt ein …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Morgen zieht die Marketing Factory Consulting GmbH in Ihre neuen
+Büroräume in Düsseldorf. Für uns Tekkies bedeutet das doppelt- und
+dreifache Arbeit, da jeder von uns, zusätzlich zu dem, was jeder
+einzelne Mitarbeiter ohnehin zu schultern hat, die gesamte IT mit
+umziehen müssen. Bedeutet: Telefone, Server, Telefonanlage, bestimmt
+bleibt ein Großteil des Clientaufbaus ebenfalls an uns hängen, etc.&lt;/p&gt;
+&lt;p&gt;Trotzdem freue ich mich auf das neue Büro! Das sieht wirklich wunderbar
+aus und bietet zudem viele Vorzüge, die im alten Gebäude aufgrund der
+baulichen Vorgaben garnicht möglich gewesen wären. So ist die
+Technikabteilung, incl. Programmierern, die in aller Regel vorallem Ruhe
+für Ihre Arbeit brauchen, auf einer eignen Halb-Etage (ähnlich einer
+Gallerie) untergebracht. Ebenso ist das Büro schön hell, da die Wände
+nahezu ausschließlich aus großen Glasflächen bestehen. Ebenso haben wir
+nun endlich eine RFID Zugangsanlage, womit die Klingelorgien morgens und
+zum Ende der Mittagspause endlich der Vergangenheit angehören!&lt;/p&gt;
+&lt;p&gt;Bin mal gespannt ob morgen wirklich alle an einem Strang ziehen, oder ob
+sich mein Horrorszenario, das wir Techniker, nachdem alle Server- und
+Anlagenkomponenten installiert sind, uns auch noch dem Großteil des
+Arbeitsplatzaufbaus widmen müssen, erfüllen wird.&lt;/p&gt;</content><category term="marketing factory consulting gmbh"></category><category term="umzug"></category></entry><entry><title>Krasse Spontan-Krankheit</title><link href="https://www.zoosau.de/krasse-spontan-krankheit.html" rel="alternate"></link><published>2011-03-20T13:37:00+01:00</published><updated>2011-03-20T13:37:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-03-20:/krasse-spontan-krankheit.html</id><summary type="html">&lt;p&gt;Am Freitag hat mein Kumpel David sein Verlassen der Firma gefeiert um
+anderswo seinen Weg zu gehen. Ich konnte leider nicht dabei sein, da
+mir, pünktlich zum Wochenende, am Freitag gegen Mittag dermaßen der
+Schädel gebrummt hat, das ich selbst nach 5 Aspirin froh war, das sich
+nun nicht nur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Am Freitag hat mein Kumpel David sein Verlassen der Firma gefeiert um
+anderswo seinen Weg zu gehen. Ich konnte leider nicht dabei sein, da
+mir, pünktlich zum Wochenende, am Freitag gegen Mittag dermaßen der
+Schädel gebrummt hat, das ich selbst nach 5 Aspirin froh war, das sich
+nun nicht nur der Feierabend, sondern zudem ein Wochenende zum
+ausschlafen und auskurieren nähert.&lt;/p&gt;
+&lt;p&gt;Kaum zuhause, wollte ich eigentlich noch Fussball gucken, musste jedoch
+nach der Anmoderation von der Couch in's Bett wechseln, weil mir
+schwindelig wurde, ich hammer-Fieder und Schüttelfrost bekam.&lt;br&gt;
+So stelle ich mir ein erholsames Wochenende vor ... genau was man
+braucht, wenn man so ein Wetter hat ... :P&lt;/p&gt;
+&lt;p&gt;Heute geht es mir jedoch wieder gut. Witzigerweise hatte meine Freundin,
+die ich nun seit zwei Wochen nicht mehr gesehen habe, zeitgleich genau
+dasselbe bekommen O.O&lt;/p&gt;
+&lt;p&gt;Naja, wenigstens kann ich heute abend noch 'ne Runde Rad fahren.&lt;/p&gt;
+&lt;p&gt;Tut mir nur leid darum, das ich bei David's Feier nicht dabei sein
+konnte. Naja, Du weißt ja, das ich dich lieb habe, Baby ;D In diesem
+Sinne: Viel Glück im neuen Job!&lt;/p&gt;</content><category term="david"></category><category term="krank"></category></entry><entry><title>Neues Wordpress eingespielt</title><link href="https://www.zoosau.de/neues-wordpress-eingespielt.html" rel="alternate"></link><published>2011-02-24T17:09:00+01:00</published><updated>2011-02-24T17:09:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-24:/neues-wordpress-eingespielt.html</id><summary type="html">&lt;p&gt;Wordpress ist seit heute in der Version
+&lt;a href="http://www.wordpress.com"&gt;3.1.0&lt;/a&gt; erschienen. Natürlich habe ich es auch
+umgehend hier eingespielt.&lt;/p&gt;
+&lt;p&gt;Ich dachte ich nutze diese Gelegenheit einmal um mich hier einmal bei
+den Entwicklern zu bedanken, das sie eine so tolle Software völlig
+kostenlos anbieten, das die Updates stets einer einheitlichen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wordpress ist seit heute in der Version
+&lt;a href="http://www.wordpress.com"&gt;3.1.0&lt;/a&gt; erschienen. Natürlich habe ich es auch
+umgehend hier eingespielt.&lt;/p&gt;
+&lt;p&gt;Ich dachte ich nutze diese Gelegenheit einmal um mich hier einmal bei
+den Entwicklern zu bedanken, das sie eine so tolle Software völlig
+kostenlos anbieten, das die Updates stets einer einheitlichen, einfachen
+Methode folgen und das nun einfach alles auf diesem Blog nun schon so
+lange völlig reibungslos funktioniert! :D&lt;/p&gt;</content><category term="danke"></category><category term="update"></category><category term="Wordpress"></category></entry><entry><title>Und wach isser :D</title><link href="https://www.zoosau.de/und-wach-isser-d.html" rel="alternate"></link><published>2011-02-16T15:11:00+01:00</published><updated>2011-02-16T15:11:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-16:/und-wach-isser-d.html</id><summary type="html">&lt;p&gt;Ha! Bin seit einer halben Stunde wieder wach. Scheint alles gut gelaufen
+zu sein.&lt;/p&gt;
+&lt;p&gt;Auf die Idee eines Kollegen hin habe ich mir auch den Spass gemacht nach
+dem aufwachen aus der Narkose zu fragen "werde ich mein Bein jetzt
+wieder benutzen können?". Wurde mit hektischem blättern in der Akte …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ha! Bin seit einer halben Stunde wieder wach. Scheint alles gut gelaufen
+zu sein.&lt;/p&gt;
+&lt;p&gt;Auf die Idee eines Kollegen hin habe ich mir auch den Spass gemacht nach
+dem aufwachen aus der Narkose zu fragen "werde ich mein Bein jetzt
+wieder benutzen können?". Wurde mit hektischem blättern in der Akte
+belohnt ;D&lt;/p&gt;</content></entry><entry><title>Morgen werde ich operiert und endlich das Junggesellenabschied-Video editiert</title><link href="https://www.zoosau.de/morgen-werde-ich-operiert-und-endlich-das-junggesellenabschied-video-editiert.html" rel="alternate"></link><published>2011-02-16T00:40:00+01:00</published><updated>2011-02-16T00:40:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-16:/morgen-werde-ich-operiert-und-endlich-das-junggesellenabschied-video-editiert.html</id><summary type="html">&lt;p&gt;Für diejenigen, die es noch nicht wissen und die es trotzdem
+interessiert: Ich werde morgen (/heute) operiert. Ich habe seit mehreren
+Jahren eine so genannte
+"&lt;a href="http://de.wikipedia.org/wiki/Hernie#Nabelbruch" title="Wikipedia Eintrag zu &amp;quot;Hernie&amp;quot;"&gt;Hernie&lt;/a&gt;",
+besser bekannt als
+&lt;a href="http://de.wikipedia.org/wiki/Hernie#Nabelbruch" title="Wikipedia Eintrag zu &amp;quot;Nabelbruch&amp;quot;"&gt;Nabelbruch&lt;/a&gt;.
+Dieser stört mich seit einiger Zeit massiv, indem ich nach jeder noch so
+kleinen körperlichen Anstrengung wie Magenschmerzen habe. Ich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Für diejenigen, die es noch nicht wissen und die es trotzdem
+interessiert: Ich werde morgen (/heute) operiert. Ich habe seit mehreren
+Jahren eine so genannte
+"&lt;a href="http://de.wikipedia.org/wiki/Hernie#Nabelbruch" title="Wikipedia Eintrag zu &amp;quot;Hernie&amp;quot;"&gt;Hernie&lt;/a&gt;",
+besser bekannt als
+&lt;a href="http://de.wikipedia.org/wiki/Hernie#Nabelbruch" title="Wikipedia Eintrag zu &amp;quot;Nabelbruch&amp;quot;"&gt;Nabelbruch&lt;/a&gt;.
+Dieser stört mich seit einiger Zeit massiv, indem ich nach jeder noch so
+kleinen körperlichen Anstrengung wie Magenschmerzen habe. Ich kann mich
+seit kurzem auch nicht mehr schmerzfrei bücken und an heben ist garnicht
+zu denken.&lt;/p&gt;
+&lt;p&gt;Leider war ich meiner Freundin, in Verbindung mit dem Ausfal meines
+Autos, bei Ihrem derzeitigem Umzug kaum eine Hilfe. Drückt mir die
+Daumen, das morgen alles gut geht - in ca. 6 Stunden werde ich ins
+Krankenhaus gefahren. Das positive daran: Schaut man gerade mal auf die
+Uhr (0:34 Uhr), ist man froh das ich da ausschlafen kann ;)&lt;/p&gt;
+&lt;p&gt;Ich habe irgendwann heute mittag angefangen das Videomaterial zu
+schneiden, welches ich auf dem Junggesellenabschied meines guten
+Freundes Robert am 22.1.2011 gefilmt habe. Ich habe nahezu pausenlos
+durchgearbeitet und bin gerade damit fertig - im Hintergrund zu dem
+Browserfenster, in dem dieser Beitrag entsteht, wird das Video gerendert
+:)&lt;br&gt;
+Ich bin zufrieden mit dem Ergebnis. Ich hoffe die anderen auch und das
+mir nachgesehen wird, das das meine erste Videoschnittarbeit überhaupt
+ist; geschweige denn das erste Mal, das ich das Programm dazu benutze
+... bin mal auf Feedback gespannt! :)&lt;/p&gt;
+&lt;p&gt;Naja, ich werde mich die laufende Woche bei meiner Mutter auskurieren.
+Danach schaffe ich es hoffentlich auch die aktuelle Blogfrequenz
+beizubehalten :)&lt;/p&gt;</content><category term="hernie"></category><category term="junggesellenabschied"></category><category term="nabelbruch"></category><category term="op"></category><category term="operation"></category></entry><entry><title>Weltrekord im schnell-Reifen-abfahren</title><link href="https://www.zoosau.de/weltrekord-im-schnell-reifen-abfahren.html" rel="alternate"></link><published>2011-02-12T14:02:00+01:00</published><updated>2011-02-12T14:02:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-02-12:/weltrekord-im-schnell-reifen-abfahren.html</id><summary type="html">&lt;p&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2011-02-12_12-06-45_565_Velbert.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2011-02-12_12-06-12_312_Velbert.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Oh mann - Ich komme vorgestern aus dem Krankenhaus, gehe an meinem Auto
+vorbei und sehe, das meine Vorderreifen &lt;strong&gt;völlig&lt;/strong&gt; runtergefahren sind!
+Das ist mir vorher nicht aufgefallen, weil ich nicht darauf geachtet
+habe. Immerhin habe ich die neu (!) Mitsamt Spurenlageneinstellung erst
+am 25. August 2010 machen lassen. Ich bin mit …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2011-02-12_12-06-45_565_Velbert.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2011-02-12_12-06-12_312_Velbert.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Oh mann - Ich komme vorgestern aus dem Krankenhaus, gehe an meinem Auto
+vorbei und sehe, das meine Vorderreifen &lt;strong&gt;völlig&lt;/strong&gt; runtergefahren sind!
+Das ist mir vorher nicht aufgefallen, weil ich nicht darauf geachtet
+habe. Immerhin habe ich die neu (!) Mitsamt Spurenlageneinstellung erst
+am 25. August 2010 machen lassen. Ich bin mit diesen Reifen nun ca 7.000
+km gefahren und die sehen so aus...&lt;/p&gt;
+&lt;p&gt;Eigentlich nicht in Ordnung und nach so kurzer Zeit eigentlich ein
+klarer Garantiefall, immerhin halten Reifen normalerweise irgendwas
+zwischen 50.000 und 100.000 km , bzw. 10 Jahre, bis das Gummi porös
+wird. Jedoch steht die Werkstatt auf dem (zugegebener Maßen: möglichem)
+Standpunkt, das sie laut Spurenlagenabschlussmessung das Fahrzeug mit
+korrekter Spurenlage übergeben haben und sich das nachträglich durch ein
+Schlagloch oder ähnliches wieder verstellt haben muss.  &lt;/p&gt;
+&lt;p&gt;Kann ich jetzt natürlich nicht das Gegenteil beweisen und kann mir
+demnach rechtliche Schritte sparen.&lt;/p&gt;
+&lt;p&gt;Naja, lange Rede, kurzer Sinn: Jetzt darf ich innerhalb von wenigen
+Monaten und 7.000 km das zweite Mal neue Reifen kaufen und die
+Spurenlage neu justieren lassen. Zusätzlich fiel auf, das die
+Stabilisierungsstange an der Hinterradaufhängung abgerissen ist. Alles
+zusammen darf ich jetzt "mal eben" 362 € aus der Portokasse zaubern -
+Geilomat :P&lt;/p&gt;</content><category term="abgenutzt"></category><category term="auto"></category><category term="reifen"></category><category term="spurlage"></category></entry><entry><title>Wie die Bahn meine misanthrophe Grundeinstellung fördert</title><link href="https://www.zoosau.de/wie-die-bahn-meine-misanthrophe-grundeinstellung-fordert.html" rel="alternate"></link><published>2011-01-09T19:42:00+01:00</published><updated>2011-01-09T19:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-01-09:/wie-die-bahn-meine-misanthrophe-grundeinstellung-fordert.html</id><summary type="html">&lt;p&gt;Es gibt Fehler, die passieren halt. Die können auch jedem passieren, da
+man ja nicht immer mit 100%iger Aufmerksamkeit durch's Leben geht. Dabei
+handelt es sich halt um Flüchtigkeitsfehler. Die Spreu vom Weizen trennt
+halt die Tatsache, ob derjenige sich dieses Fehlers bewusst wird oder
+nicht und daraus sowohl …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es gibt Fehler, die passieren halt. Die können auch jedem passieren, da
+man ja nicht immer mit 100%iger Aufmerksamkeit durch's Leben geht. Dabei
+handelt es sich halt um Flüchtigkeitsfehler. Die Spreu vom Weizen trennt
+halt die Tatsache, ob derjenige sich dieses Fehlers bewusst wird oder
+nicht und daraus sowohl lernt, wie auch sofort bemüht ist diesen Fehler
+zu korrigieren, oder eben nicht.&lt;/p&gt;
+&lt;p&gt;Ich habe auch absolut nichts gegen geistig behinderte Menschen! Jedoch
+gibt es für diese halt Aufgabenfelder, in denen sie überfordert wären.
+Was im Bundestag vielleicht noch ganz lustig anmutet, führt bei der Bahn
+halt zu Chaos.&lt;br&gt;
+Wir Deutsche hatten im weltweiten Vergleich vor ca. 20 oder dreißig
+Jahren auf der Ebene des schienengebundenen Personenverkehrs die Nase
+dermaßen weit vorn, das wohl selbst der kritischste Analytiker einen
+Ausverkauf von Zuverlässigkeit und Ruf, wie wir ihn derzeit erleben,
+nicht vorausgeahnt hätte. Doch spätestens seit der Privatisierung des
+ehemaligen Erfolgs- und Vorzeigeunternehmens "Deutsche Bahn", geht es
+steil bergab. So steil, das ich mir wünschen würde, das der Gesetzgeber
+weitere Gesetze und Bedingungen zugunsten des zahlenden Bahnkunden
+erlassen würde als derzeit.&lt;br&gt;
+Was gibt es beispielsweise gegen die Regeln "ab 15 Minuten Verspätung:
+Freie Zugwahl, incl. ICE" oder "fällt der letzte Zug des Tages zum Ziel
+aus, wird ein Taxi zu 100% erstattet" einzuwenden?&lt;/p&gt;
+&lt;p&gt;Die aktuell bestehenden Gesetze sind so unklar, das man nie im Leben in
+der Lage ist, hier durchzublicken, wenn man sich nicht vorher
+Stundenlang mit hunderten Zeilen Gesetzestext auseinander gesetzt hat.
+Das gängigste Szenario ist es immerhin, das man aufgrund von Fehlern der
+Bahn am Bahnsteig festsitzt, keiner mehr greifbar ist und man nicht weiß
+was man machen soll.&lt;/p&gt;
+&lt;p&gt;Ich werde hier demnächst mal meine ganz persönlichen Bahn - Fails
+schildern; dieser Winter hat mir echt den Rest gegeben ... :P&lt;/p&gt;</content><category term="bahn"></category><category term="taxi"></category></entry><entry><title>Bahn-Spass</title><link href="https://www.zoosau.de/bahn-spass.html" rel="alternate"></link><published>2010-11-04T10:17:00+01:00</published><updated>2010-11-04T10:17:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-11-04:/bahn-spass.html</id><summary type="html">&lt;p&gt;Ich schreibe hier unmittelbar aus dem Hurricane-Gebiet in Ratingen-Hösel
+in NRW. Um mich herum verwehte Autos, die der Sturm wie Blätter durch
+die Gegend weht. Der Eisregen steht Kniehoch und Cholera und Hungersnöte
+prägen das Stadtbild.&lt;/p&gt;
+&lt;p&gt;... so oder so ähnlich könnte man meinen sieht es hier aus, wenn man
+sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich schreibe hier unmittelbar aus dem Hurricane-Gebiet in Ratingen-Hösel
+in NRW. Um mich herum verwehte Autos, die der Sturm wie Blätter durch
+die Gegend weht. Der Eisregen steht Kniehoch und Cholera und Hungersnöte
+prägen das Stadtbild.&lt;/p&gt;
+&lt;p&gt;... so oder so ähnlich könnte man meinen sieht es hier aus, wenn man
+sich die aktuellen Verspätungen der S-Bahn S6, Richtung Köln-Nippes und
+die dazu gehörenden Erklärungen der Durchsagen hier anhört: "&lt;em&gt;Aufgrund
+der Witterungsbedingungen&lt;/em&gt;" heißt es hier. Die Gegenrichtung nach Essen
+HBf fällt gar ganz aus!&lt;/p&gt;
+&lt;p&gt;Letztes Jahr habe ich mich bereits darüber aufgeregt, das, obwohl im
+tiefstem Winter Autos mit Gummireifen auf einer vereisten Fahrbahn
+problemlos fahren konnten, ein viele Tonnen schweres, schienengebundenes
+Fahrzeug mehrfach stecken blieb.  &lt;/p&gt;
+&lt;p&gt;Aber im Herbst, bei deutlichen Plusgraden, ohne einen Sturm oder
+ähnliches im Bereich des Streckenverlaufes, da zweifel ich ernsthaft an
+der Kompetenz dieses Unternehmens.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/wpid-2010-11-04_09-10-47_159_Ratingen1.jpg"&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2010-11-04_09-10-47_159_Ratingen.jpg"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="bahn"></category><category term="db"></category><category term="hösel"></category><category term="ratingen"></category><category term="s6"></category><category term="verspätung"></category></entry><entry><title>Erster Eindruck vom Summer Breeze</title><link href="https://www.zoosau.de/erster-eindruck-vom-summer-breeze.html" rel="alternate"></link><published>2010-08-19T12:03:00+02:00</published><updated>2010-08-19T12:03:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-08-19:/erster-eindruck-vom-summer-breeze.html</id><summary type="html">&lt;p&gt;Ich schreibe nur kurz, da ich noch recht im Eimer bin (nur ein Bier!!).
+Es war eine super anstrengende Fahrt - mal eben so 480 km abzureißen ist
+schon 'ne Hausnummer. Ich war auf jeden Fall ziemlich im Eimer. War
+waren etwa um 20 Uhr fertig mit unserem Zeltaufbau. Diese stehen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich schreibe nur kurz, da ich noch recht im Eimer bin (nur ein Bier!!).
+Es war eine super anstrengende Fahrt - mal eben so 480 km abzureißen ist
+schon 'ne Hausnummer. Ich war auf jeden Fall ziemlich im Eimer. War
+waren etwa um 20 Uhr fertig mit unserem Zeltaufbau. Diese stehen hier
+übrigens dicht an dicht (siehe Bild).  &lt;/p&gt;
+&lt;p&gt;Der letzte Shuttlebus ins Dorf fuhr um 20 Uhr, so das wir nur noch mit
+einem teuren Taxi zurück gekommen wären. Einkaufen war also nicht, da
+die Pkw den Platz nur zur an- und abreise verlassen dürfen. So haben wir
+gestern nur noch Rage gesehen (muss sein!!!) und sind wie die alten
+Leute so um 0 Uhr in den Zelten verschwunden. Peavy meinte "boah, seid
+Ihr höflich! Da können wir im Ruhrgebiet uns 'ne Scheibe von
+abschneiden!" ;) Soso. .. ;)  &lt;/p&gt;
+&lt;p&gt;Was mich ziemlich ärgert ist, das hier sehr viele Asis sind. Metalfans
+waren immer ein nettes Völkchen, wo es so gut wie nie Stress gab, alle
+waren nett und man hatte meistens reife, vernünftige Leute, die sich
+trotz des regen Alkoholkonsumes weiestgehend unter Kontrolle hatten.  &lt;/p&gt;
+&lt;p&gt;Nicht nur das hier super viele unbeaufsichtigte Kinder (15/16!)
+rumrennen, nein: Die erwachsenen können sich auch zum Großteil nicht
+benehmen. Pissen hinter's eigene Auto, statt die 50 zum Zaun zu gehen,
+pogen um jeden Preis ohne Rücksicht auf irgendetwas, etc.  &lt;/p&gt;
+&lt;p&gt;Was mich auch aufregt sind die Bierpreise. Die Karten sind schon echt
+nicht gerade günstig. Da wirkt auf mich ein 0,4er Bier mit 3 Euro wie
+arge Geldmacherei.&lt;/p&gt;
+&lt;p&gt;Wie auch immer, wir fahren jetzt gleich erstmal ins Dorf und kaufen ein.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/wpid-2010-08-19_10-20-03_361.jpg"&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-2010-08-19_10-20-03_36.jpg"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="rage"></category><category term="summer breeze"></category></entry><entry><title>Auf zum Summer Breeze!</title><link href="https://www.zoosau.de/auf-zum-summer-breeze.html" rel="alternate"></link><published>2010-08-18T06:52:00+02:00</published><updated>2010-08-18T06:52:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-08-18:/auf-zum-summer-breeze.html</id><summary type="html">&lt;p&gt;Ja, gesagt getan! Ich mache Urlaub, die Zoosau nicht. Ich werde
+versuchen die Erlebnisse der kommenden Tage fleißig zu Bloggen. Wenn
+möglich auch Bilder zu reichen. Ggf. Werden diese, wie Videos, jedoch
+auch erst später folgen. Kommt drauf an, ob ich Bock haben werde da im
+Getümmel mit dem Handy …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ja, gesagt getan! Ich mache Urlaub, die Zoosau nicht. Ich werde
+versuchen die Erlebnisse der kommenden Tage fleißig zu Bloggen. Wenn
+möglich auch Bilder zu reichen. Ggf. Werden diese, wie Videos, jedoch
+auch erst später folgen. Kommt drauf an, ob ich Bock haben werde da im
+Getümmel mit dem Handy solche Datenmengen zu schaufeln und wie gut mich
+dieser mobile Android-Client dabei unterstützt. Ebenso bitte ich um
+Verständnis, da die Beiträge nicht so gut Layoutet, ausführlich und
+nichtmal durchgängig in rein deutscher Sprache verfasst sein werden: Ich
+bin halt unterwegs und habe Alkohol dabei ;)&lt;/p&gt;
+&lt;p&gt;Unter &lt;a href="http://www.summer-breeze.de"&gt;www.summer-breeze.de&lt;/a&gt; soll es sogar
+einen Live-Stream geben. Könnt ja mal schauen, ob ihr mich findet :)  &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/wpid-sb_banner_120x2401.gif"&gt;&lt;img alt="image" src="https://www.zoosau.de/images/wpid-sb_banner_120x240.gif"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="summer breeze"></category></entry><entry><title>BRB ...</title><link href="https://www.zoosau.de/brb.html" rel="alternate"></link><published>2010-07-31T11:12:00+02:00</published><updated>2010-07-31T11:12:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-07-31:/brb.html</id><summary type="html">&lt;p&gt;So, bald ist es soweit. Der neue Server, auf dem unter anderem diese
+Homepage zukünftig laufen wird, ist weitestgehend fertig. Die
+Datenbanken sind schon umgezogen. Was nun noch fehlt ist das Mailsystem
+und die Webseiten.&lt;/p&gt;
+&lt;p&gt;Sollte diese Seite also im Verlauf der kommenden Woche einmal nicht
+erreichbar sein, liegt's daran …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, bald ist es soweit. Der neue Server, auf dem unter anderem diese
+Homepage zukünftig laufen wird, ist weitestgehend fertig. Die
+Datenbanken sind schon umgezogen. Was nun noch fehlt ist das Mailsystem
+und die Webseiten.&lt;/p&gt;
+&lt;p&gt;Sollte diese Seite also im Verlauf der kommenden Woche einmal nicht
+erreichbar sein, liegt's daran :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_763" align="aligncenter" width="500"
+caption="brb ..."]&lt;img alt="brb
+..." src="https://www.zoosau.de/images/picdump-10-7-30-051.jpg" title="brb ..."&gt;{.size-full
+.wp-image-763 width="500" height="522"}[/caption]&lt;/p&gt;</content></entry><entry><title>Ist das warm!!!</title><link href="https://www.zoosau.de/ist-das-warm.html" rel="alternate"></link><published>2010-07-11T10:53:00+02:00</published><updated>2010-07-11T10:53:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-07-11:/ist-das-warm.html</id><summary type="html">&lt;p&gt;Mannomann, kommt mir das nur so vor, oder ist diese Sommer der heftigste
+seit langem? Ich sitze nur noch im Keller, weil ich in der Wohnung
+kaputt gehe. Fahrrad fahren kann man bei den Temperaturen ja auch nicht
+wirklich; das ist ja weder gesund noch macht das Spaß.  &lt;/p&gt;
+&lt;p&gt;Die einzige …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Mannomann, kommt mir das nur so vor, oder ist diese Sommer der heftigste
+seit langem? Ich sitze nur noch im Keller, weil ich in der Wohnung
+kaputt gehe. Fahrrad fahren kann man bei den Temperaturen ja auch nicht
+wirklich; das ist ja weder gesund noch macht das Spaß.  &lt;/p&gt;
+&lt;p&gt;Die einzige Möglichkeit heißt da ja schon fasst: Schwimmen gehen! Davon
+mache ich im grünen See auch gerade rege gebrauch.&lt;/p&gt;
+&lt;p&gt;Naja, so wird wenigstens der neue Server schneller fertig und ich übe
+Gitarre ;) Für beides ist mein Keller ja wie gemacht.&lt;/p&gt;</content><category term="gitarre"></category><category term="schwimmen"></category><category term="Sommer"></category><category term="warhammer"></category></entry><entry><title>Zwischenbericht meiner Diät</title><link href="https://www.zoosau.de/zwischenbericht-meiner-diat.html" rel="alternate"></link><published>2010-05-10T22:49:00+02:00</published><updated>2010-05-10T22:49:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-05-10:/zwischenbericht-meiner-diat.html</id><summary type="html">&lt;p&gt;Soll kein großer Beitrag werden - ich wurde nur in den Kommentaren zu
+vorigen Beiträgen dieses Blogs gebeten den aktuellen Zwischenstand
+meiner Diät bekannt zu geben. Stand heute morgen: 107,7 kg :)&lt;/p&gt;
+&lt;p&gt;Ich hoffe, das diese öffentliche Dauer-Demütigung mich bestärkt das
+baldmöglichst weniger peinlich sein zu lassen ;D&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_672 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Soll kein großer Beitrag werden - ich wurde nur in den Kommentaren zu
+vorigen Beiträgen dieses Blogs gebeten den aktuellen Zwischenstand
+meiner Diät bekannt zu geben. Stand heute morgen: 107,7 kg :)&lt;/p&gt;
+&lt;p&gt;Ich hoffe, das diese öffentliche Dauer-Demütigung mich bestärkt das
+baldmöglichst weniger peinlich sein zu lassen ;D&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_672" align="alignright" width="131"
+caption="Mama's so proud ..."]&lt;a href="https://www.zoosau.de/images/fat_boy.jpeg"&gt;&lt;img alt="Mama's so proud
+..." src="https://www.zoosau.de/images/fat_boy.jpeg" title="Mama's so proud ..."&gt;{.size-full
+.wp-image-672 width="131"
+height="87"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Aber hey: Et geht ja runter ... ich hoffe nur das die Geschwindigkeit
+reicht.&lt;/p&gt;</content><category term="diät"></category></entry><entry><title>Diät, Sport und Wassuuuuuup!</title><link href="https://www.zoosau.de/diat-sport-und-wassuuuuuup.html" rel="alternate"></link><published>2010-04-14T00:42:00+02:00</published><updated>2010-04-14T00:42:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-04-14:/diat-sport-und-wassuuuuuup.html</id><summary type="html">&lt;p&gt;Ha - lange nichts geschrieben.&lt;/p&gt;
+&lt;p&gt;Was hat sich getan? Also zunächst mal war ich ende März bei meinem
+Kumpel Marc in Bremerhaven. Da habe ich mit ihm und unserem gemeinsamen
+Freund Michael eine Wette abgeschlossen: Ausgehend von 115 kg
+Körpergewicht haben wir darum gewettet ob ich es schaffe bis zum 1 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ha - lange nichts geschrieben.&lt;/p&gt;
+&lt;p&gt;Was hat sich getan? Also zunächst mal war ich ende März bei meinem
+Kumpel Marc in Bremerhaven. Da habe ich mit ihm und unserem gemeinsamen
+Freund Michael eine Wette abgeschlossen: Ausgehend von 115 kg
+Körpergewicht haben wir darum gewettet ob ich es schaffe bis zum 1.
+April 2011 auf 85 kg runter zu kommen.&lt;br&gt;
+Im Zuge dieser Wette habe ich versprochen ab und zu mal einen
+Zwischenstand zu bloggen. Dieses möchte ich hiermit das erste Mal tun.
+Stand 14.4.2010, 00:02 Uhr: &lt;strong&gt;111,2 kg&lt;/strong&gt; :D Jajajajajaja: Wasser!
+Schweres Wasser :D&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_647" align="alignleft" width="300"
+caption="Focus Black Forest"]&lt;a href="https://www.zoosau.de/images/focus_blackforest_black.png"&gt;&lt;img alt="Focus Black
+Forest" src="{filename}images/focus_blackforest_black-300x219.png" title="Focus Black Forest"&gt;{.size-medium
+.wp-image-647 width="300"
+height="219"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Um dem ganzen den nötigen Sportsgeist zu bieten, habe ich mir mein schon
+lange gewünschtes Fahrrad gekauft! Ein Focus Black Forest. Gesamtpreis
+mit sämtlichem Zubehör: 1160,- Euro. Ich habe da die letzten Tage genug
+drüber diskutiert von wegen warum und weshalb so teuer - im Supermarkt
+kostet es ja schließlich "mit allem drum und dran" auch nur rund 100 €.
+Wer davon fest überzeugt ist: Kauft es und werdet glücklich! Alle
+anderen, denen es "etwas viel" vorkommt aber bereit ist sich zu
+informieren: Schaut mal was NUR eine gescheite Kassette oder eine
+Shimano Deore XT Gangschaltung kostet. Dann aufrechnen, dann nicken und
+"True ... true ..." sagen ;)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_644" align="alignright" width="276"
+caption="True ... true ..."]&lt;a href="https://www.zoosau.de/images/animated-gifs-28-08.gif"&gt;&lt;img alt="True ... true
+..." src="https://www.zoosau.de/images/animated-gifs-28-08.gif" title="True ... true ..."&gt;{.size-full
+.wp-image-644 width="276"
+height="208"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Bei dem Bild handelt es sich um das originale Produktfoto vom
+Hersteller. Meines ist Metalic blau. Ggf. liefere ich mal eigene Bilder
+nach.&lt;/p&gt;
+&lt;p&gt;Mehr fällt mir gerade nicht ein: Feddich! ;D&lt;/p&gt;</content><category term="black forest"></category><category term="diät"></category><category term="fahrrad"></category><category term="focus"></category><category term="hardtail"></category><category term="mib"></category><category term="wette"></category></entry><entry><title>Herzlichen Glückwunsch, Steffi und Robert!</title><link href="https://www.zoosau.de/herzlichen-gluckwunsch-steffi-und-robert.html" rel="alternate"></link><published>2010-02-21T16:37:00+01:00</published><updated>2010-02-21T16:37:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-02-21:/herzlichen-gluckwunsch-steffi-und-robert.html</id><summary type="html">&lt;p&gt;Gestern habe ich erfahren, das sich zwei gute Freunde von mir, Steffi
+und Robert, vergangene Woche verlobt haben!&lt;/p&gt;
+&lt;p&gt;Ich möchte ihnen auch hier noch einmal gratulieren und alles, alles gute
+für die Zukunft wünschen! Ihr seid ein super Paar! :)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gestern habe ich erfahren, das sich zwei gute Freunde von mir, Steffi
+und Robert, vergangene Woche verlobt haben!&lt;/p&gt;
+&lt;p&gt;Ich möchte ihnen auch hier noch einmal gratulieren und alles, alles gute
+für die Zukunft wünschen! Ihr seid ein super Paar! :)&lt;/p&gt;</content></entry><entry><title>Neue Armbanduhr</title><link href="https://www.zoosau.de/neue-armbanduhr.html" rel="alternate"></link><published>2009-11-14T12:58:00+01:00</published><updated>2009-11-14T12:58:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-14:/neue-armbanduhr.html</id><summary type="html">&lt;p&gt;Ich habe mir mal was gegönnt und mir eine neue Armbanduhr gekauft. So
+Sachen wie "Höhenmesser" und so einen Schnickschnack brauche ich
+garnicht. Die meisten Uhren werden durch sowas nur mehrere hunderter
+teurer und sind super dick.&lt;br&gt;
+Was ich cool finde ist, wenn die Uhr nicht geöffnet werden muss um …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe mir mal was gegönnt und mir eine neue Armbanduhr gekauft. So
+Sachen wie "Höhenmesser" und so einen Schnickschnack brauche ich
+garnicht. Die meisten Uhren werden durch sowas nur mehrere hunderter
+teurer und sind super dick.&lt;br&gt;
+Was ich cool finde ist, wenn die Uhr nicht geöffnet werden muss um eine
+Batterie zu wechseln. Da habe ich nur jedes Mal Angst, das dabei das
+Dichtungsgummi beschädigt wird und die Uhr nicht mehr dicht ist. Auch
+etwas, das mir für's tauchen (wenn ich das nochmal machen werde) recht
+wichtig ist: Die Uhr muss gescheit wasserdicht sein.&lt;br&gt;
+Und sie muss natürlich schick aussehen! :)&lt;/p&gt;
+&lt;p&gt;Lange Rede, kurzer Sinn: Die hier ist es geworden:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_498" align="alignnone" width="150"
+caption="Casio GW-2500BD-1AER"]&lt;a href="https://www.zoosau.de/images/GW-2500BD-1AER_2.jpg"&gt;&lt;img alt="Casio
+GW-2500BD-1AER" src="{filename}images/GW-2500BD-1AER_2-150x150.jpg" title="Casio GW-2500BD-1AER"&gt;{.size-thumbnail
+.wp-image-498 width="150"
+height="150"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Sie läd sich selbst mit Solarzellen im Display auf und muss daher nie
+geöffnet werden. Außerdem finde ich, das sie schick aussieht und somit
+bin ich glücklich :D&lt;/p&gt;
+&lt;p&gt;Nur an das Armbanduhr tragen muss ich mich noch gewöhnen.&lt;/p&gt;
+&lt;p&gt;Mehr zu den Features der Uhr findet ihr
+&lt;a href="http://www.casio-europe.com/de/watch/gshock/gw-2500bd-1aer/"&gt;hier&lt;/a&gt;.&lt;/p&gt;</content></entry><entry><title>Neues Layout</title><link href="https://www.zoosau.de/neues-layout.html" rel="alternate"></link><published>2009-11-13T00:43:00+01:00</published><updated>2009-11-13T00:43:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-13:/neues-layout.html</id><summary type="html">&lt;p&gt;Tja - es ist wohl nur schwer zu übersehen: Ich habe ein neues Layout!
+:)&lt;br&gt;
+Dieses Mal habe ich es selbst erstellt - das bisherige war mir einfach
+zu unpassend. Es sah nett aus - mehr aber auch nicht. Nicht wirklich
+stilvoll, nicht wirklich passend zu mir und meiner Seite. Keine
+Individualität.&lt;/p&gt;
+&lt;p&gt;Das jetzige …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Tja - es ist wohl nur schwer zu übersehen: Ich habe ein neues Layout!
+:)&lt;br&gt;
+Dieses Mal habe ich es selbst erstellt - das bisherige war mir einfach
+zu unpassend. Es sah nett aus - mehr aber auch nicht. Nicht wirklich
+stilvoll, nicht wirklich passend zu mir und meiner Seite. Keine
+Individualität.&lt;/p&gt;
+&lt;p&gt;Das jetzige ist völlig auf meinem Mist gewachsen. Ich bin ziemlich
+zufrieden damit.&lt;/p&gt;
+&lt;p&gt;Es gibt eine handvoll Dinge, die sind noch verbesserungswürdig. Zum
+Beispiel möchte ich eine rein deutsche Seite haben. Die Flags "Older
+Entries" und so unten auf der Seite werden noch ersetzt.&lt;/p&gt;
+&lt;p&gt;Ich würde mich über Feedback freuen! :)&lt;/p&gt;
+&lt;p&gt;PS: Sprache ist schon erledigt ;D&lt;/p&gt;</content><category term="layout"></category><category term="theme"></category><category term="Wordpress"></category></entry><entry><title>Finanzsoftware "StarMoney" in Version 6.0 für lau</title><link href="https://www.zoosau.de/finanzsoftware-starmoney-in-version-6-0-fur-lau.html" rel="alternate"></link><published>2009-11-10T15:03:00+01:00</published><updated>2009-11-10T15:03:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-10:/finanzsoftware-starmoney-in-version-6-0-fur-lau.html</id><summary type="html">&lt;p&gt;Ich habe die Tage mal nach einer gescheiten
+Internetbanking/Finanzsoftware gesucht. Hierbei wollte ich eigentlich
+zunächst "&lt;a href="http://www.gnucash.org/"&gt;GNUCash&lt;/a&gt;" nehmen, da es kostenlos
+und für Windows wie Linux verfügbar ist.&lt;br&gt;
+Dann bin ich jedoch darüber gestolpert, das der "Quasi- Standard"
+StarMoney in Version 6.0 zur Zeit kostenlos vom Hersteller verteilt
+wird …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe die Tage mal nach einer gescheiten
+Internetbanking/Finanzsoftware gesucht. Hierbei wollte ich eigentlich
+zunächst "&lt;a href="http://www.gnucash.org/"&gt;GNUCash&lt;/a&gt;" nehmen, da es kostenlos
+und für Windows wie Linux verfügbar ist.&lt;br&gt;
+Dann bin ich jedoch darüber gestolpert, das der "Quasi- Standard"
+StarMoney in Version 6.0 zur Zeit kostenlos vom Hersteller verteilt
+wird. Ich hatte hiermit irgendwie das bessere Gefühl, da diese Software
+ja für "User" gedacht ist und somit wenig KnowHow erfordert. Und ich
+habe was HBCI und Konsorten angeht zur Zeit weder Zeit noch Lust mich da
+einzuarbeiten.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://services.starfinanz.de/dist/smoney_m_18__0000000727_x_.exe"&gt;Herunterladen kann man die Software für Windows
+hier&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.starmoney.de/index.php?id=mactest"&gt;MacOS User können eine geeignete Version hier
+herunterladen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Was man dann noch benötigt ist eine Seriennummer, welche man nach einer
+&lt;a href="http://www.starmoney.de/?sm6_chip"&gt;Registrierung&lt;/a&gt; per eMail zugeschickt
+bekommt. &lt;a href="http://www.starmoney.de/?sm6_chip"&gt;Registrieren kann man sich
+hier&lt;/a&gt;.&lt;/p&gt;</content><category term="download"></category><category term="finanzsoftware"></category><category term="freeware"></category><category term="gnucash"></category><category term="hbci"></category><category term="homebanking"></category><category term="internetbanking"></category><category term="kostenlos"></category><category term="software"></category><category term="starmoney"></category></entry><entry><title>METL !! :D</title><link href="https://www.zoosau.de/metl-d.html" rel="alternate"></link><published>2009-11-10T14:34:00+01:00</published><updated>2009-11-10T14:34:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-10:/metl-d.html</id><summary type="html">&lt;p&gt;Dienstag ... 11.25 Uhr ... ein Tag wie jeder andere ... - mal abgesehen
+davon, das ich mir heute extra frei genommen habe, um mein Auto nach
+fast einem halben Jahr, das ich nun hier in Heiligenhaus wohne, endlich
+auch hier anzumelden.&lt;/p&gt;
+&lt;p&gt;Ich pelle mich also aus dem Bett, suche die Nummer der …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dienstag ... 11.25 Uhr ... ein Tag wie jeder andere ... - mal abgesehen
+davon, das ich mir heute extra frei genommen habe, um mein Auto nach
+fast einem halben Jahr, das ich nun hier in Heiligenhaus wohne, endlich
+auch hier anzumelden.&lt;/p&gt;
+&lt;p&gt;Ich pelle mich also aus dem Bett, suche die Nummer der Zulassungsstelle
+(und die zuständige Zulassungsstelle selbst) aus dem Internet raus und
+rufe an. Ich erkundige mich, was ich so alles mitbringen muss und so
+weiter ... da teilt mir um ca. 11.32 Uhr die nette Dame am Telefon auf
+einmal mit "Ähm - heute? Nee, da haben wir nachmittags keinen Termin
+mehr frei. Aber bis 12 Uhr können sie vorbei kommen, dann kommen sie
+noch so dran."&lt;/p&gt;
+&lt;p&gt;Super - angezogen, Zähne geputzt, Unterlagen rausgesucht ... um 11.38
+Uhr saß ich im Auto :D Es sind von mir bis zur Zulassungsstelle in
+Mettmann ca. 11,6 km. Um 11.55 Uhr war ich da. Zum Glück war kaum was
+los.&lt;/p&gt;
+&lt;p&gt;Die nette Dame am Empfang wollte meine Unterlagen sehen und siehe da:
+Mir fehlte die EVB - Nummer meiner Versicherung und ein Stempel auf der
+Bescheinigung für die Abgasuntersuchung.&lt;br&gt;
+Die EVB - Nummer hat mir der freundliche Sachbearbeiter der HDI
+Versicherung direkt durchgegeben. Eine gestempelte Kopie der
+Abgasuntersuchung hat mir die ausstellende Stelle, VW/Audi Kahage in der
+Frohnhauserstr. 55 in Essen, in ca. 3 Minuten durchgefaxt! Hätte ich
+nicht gedacht das die das so schnell alles parat haben! Nun fehlte
+nichts mehr.&lt;/p&gt;
+&lt;p&gt;Ab also zum Kennzeichenaussuchen.&lt;br&gt;
+Ich hatte eigentlich nur zwei im Kopf: ME-TL (spricht sich ja wie
+"Metal" ;D) 666 oder 2906. 666 war leider weg - aber 2906 war noch
+verfügbar. Prima!&lt;/p&gt;
+&lt;p&gt;Um 12.22 Uhr war alles erledigt. So ein Stress, mannomann :D&lt;/p&gt;
+&lt;p&gt;Aber hat zum Glück alles geklappt. Wie immer: Auf den
+aller,aller,allerletzten Drücker ;D&lt;/p&gt;</content><category term="auto"></category><category term="evb"></category><category term="hdi"></category><category term="kennzeichen"></category><category term="kfz"></category><category term="mettmann"></category><category term="ummelden"></category><category term="versicherung"></category></entry><entry><title>Mein Keller ist fast fertig! :D</title><link href="https://www.zoosau.de/mein-keller-ist-fast-fertig-d.html" rel="alternate"></link><published>2009-11-09T15:57:00+01:00</published><updated>2009-11-09T15:57:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-11-09:/mein-keller-ist-fast-fertig-d.html</id><summary type="html">&lt;p&gt;Am Wochenende hat mir mal wieder mein bester Freund Markus (er teilt
+diesen Posten mit Marc S.) geholfen meinen Keller auszubauen. Ich habe
+einen Keller, der gehört mir alleine und ist fast so groß wie mein
+Wohnzimmer.&lt;br&gt;
+Wir hatten die Idee das man da ein 1a Spiele- und Hobbyzimmer draus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Am Wochenende hat mir mal wieder mein bester Freund Markus (er teilt
+diesen Posten mit Marc S.) geholfen meinen Keller auszubauen. Ich habe
+einen Keller, der gehört mir alleine und ist fast so groß wie mein
+Wohnzimmer.&lt;br&gt;
+Wir hatten die Idee das man da ein 1a Spiele- und Hobbyzimmer draus
+machen kann. Der Keller ist recht groß, trocken, durch 2 Türen die ihn
+vom Hausflur trennen besser Schallisoliert als meine Wohnung und
+ansonsten auch gut in Schuss. Ich hatte noch einen alten Küchentisch.
+Mit drei Holzplatten aus dem Baumarkt, meinem alten Schreibtisch,
+Leuchtstoffröhrenhalterungen, einem Teppich und einem elektrischen Ofen
+ist es bereits jetzt total gemütlich da unten. Wir sind dieses
+Wochenende sehr weit gekommen. Wir haben Stromleitungen verlegt, die
+offenen Heizungsrohre unter der Decke isoliert (da schmolz schon das
+Styropor unter der Decke, weil meine Vermieter diese nicht ummantelt
+haben) usw.&lt;/p&gt;
+&lt;p&gt;Ich freue mich sehr darauf da unten die erste Partie Warhammer zu
+spielen! Und ich bin Markus echt dankbar für seine Hilfe dabei!&lt;/p&gt;
+&lt;p&gt;Auch meinen Plan, endlich mal autodidaktisch Gitarre zu lernen, werde
+ich da unten realisieren. Naja - so zumindest mein fester Vorsatz ;D&lt;br&gt;
+Durch die super Schallisolierung störe ich damit keinen und es lenkt
+mich da auch nicht so viel ab wie in meiner Wohnung.&lt;/p&gt;
+&lt;p&gt;Sogar eine Funkklingel habe ich da unten schon installiert. Ich muss mir
+nur noch was einfallen lassen, wie ich die mit der normalen Klingel
+koppeln kann.&lt;/p&gt;
+&lt;p&gt;Ich wünschte ich hätte einen gescheiten Fotoapparat! Mein Handy (&lt;a href="http://www.nokia.de/produkte/mobiltelefone/nokia-e71"&gt;Nokia
+E71&lt;/a&gt;) ist zwar
+super, aber bei der Qualität der Kamera hätten sie auf dieses Feature
+auch verzichten können!&lt;br&gt;
+Ich hoffe bald Fotos nachliefern zu können!&lt;/p&gt;</content><category term="keller"></category><category term="warhammer"></category></entry><entry><title>Schnipp schnapp, Haare ab</title><link href="https://www.zoosau.de/schnipp-schnapp-haare-ab.html" rel="alternate"></link><published>2009-09-03T14:16:00+02:00</published><updated>2009-09-03T14:16:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-09-03:/schnipp-schnapp-haare-ab.html</id><summary type="html">&lt;p&gt;Yeeeeeeha - es ist mal wieder so weit: Zopf #3 ist fertig!&lt;/p&gt;
+&lt;p&gt;Wer mich kennt weiß, das ich seit meinem 14. Lebensjahr immer mal wieder
+schulterlange Haare hatte, die ich dann mal wieder auf 1-2 cm Frisuren
+gekürzt habe. Nun wuchsen meine Haare wieder seit ca. 2005/2006 auf eine
+ganz …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yeeeeeeha - es ist mal wieder so weit: Zopf #3 ist fertig!&lt;/p&gt;
+&lt;p&gt;Wer mich kennt weiß, das ich seit meinem 14. Lebensjahr immer mal wieder
+schulterlange Haare hatte, die ich dann mal wieder auf 1-2 cm Frisuren
+gekürzt habe. Nun wuchsen meine Haare wieder seit ca. 2005/2006 auf eine
+ganz passable Länge.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.zoosau.de/gallery/main.php?g2_itemId=6486" title="Haare ab - Gallery"&gt;Ich habe in dieser Gallery die "Fotostrecke" und ein paar Videos
+veröffentlicht. Wer mag, kann's sich gerne ansehen
+;D&lt;/a&gt;&lt;/p&gt;</content><category term="haare"></category></entry><entry><title>Bald ist die Wohnung fertig! :)</title><link href="https://www.zoosau.de/bald-ist-die-wohnung-fertig.html" rel="alternate"></link><published>2009-06-28T12:20:00+02:00</published><updated>2009-06-28T12:20:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-06-28:/bald-ist-die-wohnung-fertig.html</id><summary type="html">&lt;p&gt;Gestern habe ich das Wohnzimmer fertig gestellt! Naja : Fertig bedeutet
+wie immer, wenn ich das sage, ohne Deckenleuchte, Fußleisten und Deko.
+Aber die Tapeten sind alle dran und ich kann die Möbel schonmal in ihren
+endgültige Position stellen. Das ist ein gute Gefühl :D&lt;/p&gt;
+&lt;p&gt;Nun fehlt nur noch der Flur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gestern habe ich das Wohnzimmer fertig gestellt! Naja : Fertig bedeutet
+wie immer, wenn ich das sage, ohne Deckenleuchte, Fußleisten und Deko.
+Aber die Tapeten sind alle dran und ich kann die Möbel schonmal in ihren
+endgültige Position stellen. Das ist ein gute Gefühl :D&lt;/p&gt;
+&lt;p&gt;Nun fehlt nur noch der Flur.&lt;/p&gt;</content></entry><entry><title>Yeeeeha - WE !! :)</title><link href="https://www.zoosau.de/yeeeeha-we.html" rel="alternate"></link><published>2009-06-05T21:23:00+02:00</published><updated>2009-06-05T21:23:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-06-05:/yeeeeha-we.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich freue mich irre darüber, das nun Wochenende ist!&lt;br&gt;
+Ich bin nun ca. 2 Stunden zuhause und habe eine Suppe gegessen, sowie
+die Arbeits-Klamotten abgestreift. Kommende Woche habe ich URLAUB :D ...
+nagut - wird kein richtiger Urlaub: Sonntag und Montag mache ich meinen
+Flur fertig (muss noch Tapeziert werden …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich freue mich irre darüber, das nun Wochenende ist!&lt;br&gt;
+Ich bin nun ca. 2 Stunden zuhause und habe eine Suppe gegessen, sowie
+die Arbeits-Klamotten abgestreift. Kommende Woche habe ich URLAUB :D ...
+nagut - wird kein richtiger Urlaub: Sonntag und Montag mache ich meinen
+Flur fertig (muss noch Tapeziert werden), Montag gehe ich zum Orthopäden
+und ab Dienstag spiele ich Hundesitter für den Rest der Woche.&lt;/p&gt;
+&lt;p&gt;Mir ist ehrlich gesagt garnicht so wohl bei dem Gedanken, das hier ein
+Hund schläft. Ich erinnere mich noch an die letzte Wohnung - da war da,
+wo der Hund gelegen hat ein großer Fleck vom Fell-Fett. Hab noch keine
+Idee, wie ich das umgehen kann. Naja, mal sehen :) Dann kommt der
+Hundeplatz halt an die Heizung oder in eine Ecke im Wohnzimmer, die noch
+nicht Tapeziert ist.&lt;/p&gt;
+&lt;p&gt;Auf jeden Fall freue ich mich sehr auf Samstag! :)&lt;/p&gt;
+&lt;p&gt;Erst werde ich mich (endlich!) als Heiligenhauser Bürger melden und
+anschließend werde ich eine BOMBEN-Frau (wieder-)treffen! Mehr wird
+nicht verraten, außer, das ich mich freuen würde, wenn ihr mir die
+Daumen drückt, das das Zukunft hat! :)&lt;/p&gt;
+&lt;p&gt;Ansonsten habe ich nun endlich die Baustellen-Seite für
+www.marc-richter.info fertig gestellt. Ich habe mir vorgenommen während
+meines Urlaubes hier eine ähnliche Seite wie die von Cap (guter Freund
+von mir) mit TYPO3 zu erstellen. Diese soll natürlich jugendfrei werden,
+um ein paar technische Fragen, die eigentlich die Seite von Cap
+betreffen, öffentlich stellen zu können ;)&lt;/p&gt;
+&lt;p&gt;Mal sehen wie ich vorran komme!&lt;/p&gt;
+&lt;p&gt;Jetzt geht's erstmal zum Sport :D&lt;/p&gt;</content></entry><entry><title>Was hat sich so getan, in letzter Zeit? =)</title><link href="https://www.zoosau.de/was-hat-sich-so-getan-in-letzter-zeit.html" rel="alternate"></link><published>2009-05-23T19:27:00+02:00</published><updated>2009-05-23T19:27:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-05-23:/was-hat-sich-so-getan-in-letzter-zeit.html</id><summary type="html">&lt;p&gt;Hallo mal wieder!&lt;/p&gt;
+&lt;p&gt;Gerade habe ich den größten Berg Wäsche, den ich jemals bewältigt habe,
+weggebügelt. Blöderweise tut mir vom langen stehen nun mein Rücken weh,
+und ich liege auf der Couch :P&lt;br&gt;
+Eine gute Freundin hat mir einen Orthopäden empfohlen. Da habe ich im
+Juni einen Termin. Bin ja …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo mal wieder!&lt;/p&gt;
+&lt;p&gt;Gerade habe ich den größten Berg Wäsche, den ich jemals bewältigt habe,
+weggebügelt. Blöderweise tut mir vom langen stehen nun mein Rücken weh,
+und ich liege auf der Couch :P&lt;br&gt;
+Eine gute Freundin hat mir einen Orthopäden empfohlen. Da habe ich im
+Juni einen Termin. Bin ja mal gespannt; ich habe seit langem immer in
+denselben Regionen Beschwerden, aber keinen Orthopäden interessiert es
+:P&lt;/p&gt;
+&lt;p&gt;Naja, auf jeden Fall werde ich heute nicht mehr tapezieren. Wenn mein
+Rücken es zuläßt, dann werde ich morgen die letzten 5 Bahnen Tepete im
+Schlafzimmer fertig machen. Dann ist auch dieser Raum geschafft!&lt;/p&gt;
+&lt;p&gt;Zur Zeit mache ich mich überall ziemlich rar .. an alle Betroffenen die
+das hier lesen: Es tut mir echt leid :P&lt;br&gt;
+Aber ich habe mir fest vorgenommen, das ich erst wieder die Wochenenden
+verplane, wenn die Bude fertig ist! Bis jetzt halte ich mich da auch
+ganz gut dran, und habe auch immer an den WEs etwas getan, damit die
+Wohnung weiter fertiggestellt wird.&lt;/p&gt;
+&lt;p&gt;Jaaa, was noch? Mein Auto ist beim Doc :( Er hatte kaum noch Leistung
+und fuhr sich wie ein Wohnmobil ... inzwischen habe ich schon die
+Diagnose: Ein frecher Marder hat mir die Zündkabel durchgekaut! Der
+Arsch ... ;) Egal: Ich bin froh, das es nichts schlimmeres ist! Zumal
+das von meiner Autoversicherung abgedeckt ist! :)&lt;/p&gt;
+&lt;p&gt;Sonst ist eigentlich nicht viel passiert. Zumindest: Nichts, was die
+Öffentlichkeit etwas angeht. ... noch nicht ;)&lt;/p&gt;
+&lt;p&gt;Ich feiere die Einweihung der Wohnung, wenn alles gut geht, zusammen mit
+meinem Geburtstag, Ende Juni. Bis dahin ist hier alles fertig und ich
+bin hochoffiziell "Heiligenhauser" ;)&lt;/p&gt;</content><category term="arzt"></category><category term="auto"></category><category term="wohnung"></category></entry><entry><title>Petition gegen die Sperrung von Internetseiten durch das BKA</title><link href="https://www.zoosau.de/petition-gegen-die-sperrung-von-internetseiten-durch-das-bka.html" rel="alternate"></link><published>2009-05-06T17:14:00+02:00</published><updated>2009-05-06T17:14:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-05-06:/petition-gegen-die-sperrung-von-internetseiten-durch-das-bka.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Wie jeder, der dieses Thema in den letzten Wochen in einem Artikel
+anspricht, möchte auch ich zunächst klargestellt wissen, das ich weder
+für die Verbreitung von Kinderpornografie bin, noch gegen deren
+Strafverfolgung.&lt;/p&gt;
+&lt;p&gt;Dennoch sehe ich, wie derzeit auch viele andere, in dem aktuell
+geplantem Vorgehen von Frau von …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Wie jeder, der dieses Thema in den letzten Wochen in einem Artikel
+anspricht, möchte auch ich zunächst klargestellt wissen, das ich weder
+für die Verbreitung von Kinderpornografie bin, noch gegen deren
+Strafverfolgung.&lt;/p&gt;
+&lt;p&gt;Dennoch sehe ich, wie derzeit auch viele andere, in dem aktuell
+geplantem Vorgehen von Frau von der Leyen mehrere Probleme. Diese
+beginnen bei der nachweislich technisch unheimlich naiv angegangenen
+(und leicht zu umgehenden) Umsetzung und erstrecken sich über Bedenken,
+wie denen, das ungerechtfertigt und willkürlich festgelegte Seiten unter
+diese Sperre gestellt werden.&lt;br&gt;
+So tauchten bereits jetzt in den Sperrlisten des BKA, welche auf der
+Seite &lt;a href="http://wikileaks.org/"&gt;Wikileaks.org&lt;/a&gt; veröffentlicht wurde,
+Seiten auf, die mit Kinderpornografie nicht das geringste zu tun haben.
+Auch Seiten mit politischen Inhalten fanden sich auf dieser Liste.
+Unerwünschte Meinungen wurden also bereits vorab auch gleich mit
+zensiert. Erinnert mich persönlich sehr an China ...&lt;br&gt;
+Selbst die Bundesregierung schließt offenbar nicht aus, dass auch legale
+Inhalte auf die Sperrliste geraten könnten. In einem Bericht
+der"Berliner Zeitung" heißt es, in einem Arbeitsentwurf des
+Bundeswirtschaftsministeriums werde festgehalten, dass die
+Diensteanbieter keine Schuld treffe, falls auch Seiten gesperrt würden,
+die keine Kinderpornografie enthalten. Die Haftung für solche Fälle
+übernehme das BKA.&lt;br&gt;
+Mit anderen Worten: So richtig verantwortlich ist keiner, und wie lasch
+das BKA für eigene Verstöße zur Verantwortung gezogen wird, konnten wir
+ja bereits mehrfach in den Medien verfolgen; nämlich, bis auf das der
+oberste Verantwortliche das Büro mit einem anderen Sündenbock tauscht,
+garnicht!&lt;/p&gt;
+&lt;p&gt;Wer kontrolliert die Kontrolleure?&lt;/p&gt;
+&lt;p&gt;Aufgrund dieser berechtigten Bedenken hat Franziska Heine am 22.04.2009
+eine
+&lt;a href="https://epetitionen.bundestag.de/index.php?action=petition;sa=details;petition=3860"&gt;ePetition&lt;/a&gt;
+gestellt. Bis JETZT (06.05.) zählt diese Petition rund 29300
+Mitzeichner. Sollten bis zum 16. Juni 50.000 Unterzeichner
+zusammenkommen, darf die Petitionsstellerin vor dem Bundestag sprechen
+und ihre Bedenken vortragen.&lt;/p&gt;
+&lt;p&gt;Ich kenne Franziska Heine nicht, und weiß nicht, ob Sie tief genug in
+der politischen Materie ist um diese Meinung vor dem Bundestag gut zu
+verkaufen, ich denke jedoch, das dieses ein Schritt in die richtige
+Richtung ist. Außerdem kostet jeden einzelnen die Teilname an dieser
+Petition nur ca. 10 Minuten Zeit. 10 Minuten, die jeder investieren
+sollte.&lt;/p&gt;
+&lt;p&gt;Wer sich etwas genauer informieren möchte, dem sei auch &lt;a href="http://www.rp-online.de/public/article/politik/deutschland/704938/Internetnutzer-trommeln-gegen-Web-Zensur.html"&gt;dieser Artikel
+auf
+RP-Online&lt;/a&gt;
+ans Herz gelegt.&lt;/p&gt;
+&lt;p&gt;Mein Aufruf: Zeigt Zivilcourage und zeichnet die Petition mit! :)&lt;/p&gt;</content><category term="internetsperren"></category><category term="kinderpornografie"></category><category term="von der leyen"></category><category term="zensur"></category><category term="zensursula"></category></entry><entry><title>Defekt am (neuen) Wäschetrockner</title><link href="https://www.zoosau.de/defekt-am-neuen-waschetrockner.html" rel="alternate"></link><published>2009-02-20T01:59:00+01:00</published><updated>2009-02-20T01:59:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-02-20:/defekt-am-neuen-waschetrockner.html</id><summary type="html">&lt;p&gt;Oh man ... wieder mal ein Griff ins Klo:&lt;br&gt;
+Seit dem ersten Tag an dem ich meinen neuen Wäschetrockner geliefert
+bekommen habe, läuft an dem Ding etwas Kondenswasser aus. OK, da ist
+auch der Lüfter, an dem ggf. Resttröpchen (noch?) nicht richtig
+verdampfen, der ist ja noch neu, vielleicht gibt sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Oh man ... wieder mal ein Griff ins Klo:&lt;br&gt;
+Seit dem ersten Tag an dem ich meinen neuen Wäschetrockner geliefert
+bekommen habe, läuft an dem Ding etwas Kondenswasser aus. OK, da ist
+auch der Lüfter, an dem ggf. Resttröpchen (noch?) nicht richtig
+verdampfen, der ist ja noch neu, vielleicht gibt sich das ja noch.&lt;br&gt;
+Nachdem ich das Dingen nun aber schon ca. 6 Mal betrieben habe, und ich
+das Gefühl hatte, das es eher mehr als weniger wird, habe ich mir die
+Stelle, wo das ausläuft, nun mal genauer angesehen (Ich hatte mir das am
+ersten Tag schonmal angesehen, jedoch auf den ersten Blick nichts
+gefunden und aufgegeben): Da ist ein Plastikteil abgebrochen! Das sieht
+man leider erst, wenn man eine ganz bestimmte Klappe geöffnet hat.&lt;br&gt;
+Gerade noch rechtzeitig: am 10.02. war der geliefert worden. Passt
+gerade noch in die 14 Tage Rücktrittsrecht ;)&lt;br&gt;
+Ich habe dem Händler gerade zur Sicherheit mal eine Mail geschrieben, in
+der ich meine Rücktrittsabsichten, sowie das Problem an sich, erkläre.
+Bin mal gespannt was daraus wird. Mein Geld kriege ich in jedem Fall
+zurück, darüber mache ich mir keine Sorgen. Wäre nur ärgerlich um die 42
+€ Versandkosten die dann weg sind ... :P&lt;/p&gt;</content><category term="14 tage rücktrittsrecht"></category><category term="defekt"></category><category term="fernabsatzgesetz"></category><category term="wäschetrockner"></category></entry><entry><title>WOW - Rekord im "Nicht-Posten"</title><link href="https://www.zoosau.de/wow-rekord-im-nicht-posten.html" rel="alternate"></link><published>2009-01-23T02:01:00+01:00</published><updated>2009-01-23T02:01:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-01-23:/wow-rekord-im-nicht-posten.html</id><summary type="html">&lt;p&gt;Hiermit beantrage ich den Titel des faulsten Bloggers in NRW für mich -
+49 Tage ohne Post - das mus sman erstmal nachmachen ;D&lt;/p&gt;
+&lt;p&gt;Und das für jemanden, der in einer Webmarketing-Agentur arbeitet und
+weiss, wie wichtig regelmäßige Updates bei der Bewertung von Websites
+sind... Schande über mein Haupt :P&lt;/p&gt;
+&lt;p&gt;Was ist …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hiermit beantrage ich den Titel des faulsten Bloggers in NRW für mich -
+49 Tage ohne Post - das mus sman erstmal nachmachen ;D&lt;/p&gt;
+&lt;p&gt;Und das für jemanden, der in einer Webmarketing-Agentur arbeitet und
+weiss, wie wichtig regelmäßige Updates bei der Bewertung von Websites
+sind... Schande über mein Haupt :P&lt;/p&gt;
+&lt;p&gt;Was ist passiert? Sehr viel! Ich blabbere im gewohnt lockerem Zoosau.de
+- Stil mal einfach drauf los:&lt;br&gt;
+Ich habe Weihnachten überlebt! Das ist schonmal gut.&lt;br&gt;
+Eines meiner Geschenke war ein TFT Monitor, mit dem ich sehr zufrieden
+bin! :) Minimal grösser wäre zwar noch besser, aber ich bin voll
+zufrieden! Für's Archiv: Es ist ein &lt;a href="http://www.samsung.de/produkte/detail2_main.aspx?guid=c346c8d6-d642-4774-92c5-58a665629646" title="Samsung SyncMaster 2053BW"&gt;Samsung SyncMaster
+2053BW&lt;/a&gt;.&lt;br&gt;
+Hättet ihr mich vor 2 Jahren gefragt "&lt;em&gt;Ey, was hällst Du von Samsung?&lt;/em&gt;"
+hätte ich als damaliger Samsung-Hotline-Mitarbeiter wahrscheinlich nur
+im Kaliber .45 geantwortet. Heute sage ich: Kaufen OK, da Kampfreise und
+Qualität OK. Allerdings um alles in der Welt Garantieansprüche
+vermeiden, da Samsung, meines Wissens, nach wie vor mit Teleplan
+zusammenarbeitet; der wohl missorganisiertesten und fehleranfälligsten
+Reperaturfirma in der Geschichte der modernen Elektrotechnik.&lt;br&gt;
+Wenn man in einer Hotline arbeitet und die interna der Support-Hotline
+kennen lernt, denkt man wahrscheinlich immer "mein Gott, ist der Laden
+SCHLECH!!". Das sieht jedoch immer von "innen" so aus. Man übersieht
+dabei, das die anderen NOCH mehr Mist bauen, wie die c't z.B. im grossen
+Support - Test berichtete. So verzweifelte ich meinerzeit an der
+Support-Hotline an der schlechtheit des Supports von Samsung, während
+der heise Verlag Samsung im Bereich der Hotline als #1 auszeichnete
+(insgesamt war Samsung nur #2, jedoch lag das in erster Linie an der
+schlechten Arbeit von Teleplan). Immerhin: #2 vor Firmen wie IBM, DELL
+und Sony.&lt;/p&gt;
+&lt;p&gt;Naja, ist wohl relativ egal was man kauft, solange man auf Marken setzt
+:)&lt;br&gt;
+Ich bin auf jeden Fall sehr zufrieden mit meinem TFT!&lt;br&gt;
+Einziger Tipp, den ich TFT - Interessierten auf den Weg geben kann:
+Nicht jeder Pixelfehler ist ein Garantierfall! Siehe
+&lt;a href="http://de.wikipedia.org/wiki/Pixelfehler" title="Wiki Eintrag zu verschiedenen Pixelfehlerklassen."&gt;Pixelfehlerklasse&lt;/a&gt;.
+Daher IMMER Online Bestellen! Die 4-8 € Versand rechnen sich spätestens,
+wenn man das erste Mal ein Neugerät zugesand bekommt, das Pixelfehler
+hat. Bei Onlinebestellungen hat man immer das Recht &lt;span
+style="text-decoration: underline;"&gt;ohne angabe von Gründen&lt;/span&gt; 14
+Tage lang vom Kauf zurückzutreten. Das trifft natürlich auch zu, wenn
+einem ein TFT wegen der Pixelfehler nicht passt ;)&lt;/p&gt;
+&lt;p&gt;So, dann ist hier, wie letztes Jahr zu Sylvester schon, etwas genau vor
+meiner Haustüre abgebrannt.&lt;br&gt;
+Letztes Jahr war es der Dachstuhl des gegenüber liegenden Gebäudes,
+dieses Jahr ist ein Auto &lt;span
+style="text-decoration: underline;"&gt;genau&lt;/span&gt; vor meiner Haustüre
+komplett ausgebrannt.&lt;br&gt;
+&lt;a href="http://www.zoosau.de/gallery/main.php?g2_itemId=5998" title="Bilder des Autobrandes vor meiner Haustüre"&gt;Bilder hierzu seht ihr
+hier&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, ausserdem habe ich meiner Freundin 2 Eintrittskarten zu "&lt;a href="http://www.tanz-der-vampire.de/" title="Tanz de Vampire"&gt;Tanz der
+Vampire&lt;/a&gt;" geschenkt.
+Der Termin dazu ist morgen. Es sind recht gute Plätze in der "Arena"
+unten auf höhe der Bühne. Dieses ist wohl eine Aktivität, die wir noch
+zusammen erledigen werden.&lt;/p&gt;
+&lt;p&gt;Ich halte es in diesem ... ja, anders kann ich es nicht mehr nennen:
+&lt;strong&gt;Rattenloch&lt;/strong&gt; von Wohnung nicht mehr aus! Die Bausubstanz ist schlecht,
+die komplette Immobilie ist so gut wie nicht gewartet worden, die Gegend
+ist ein Ghetto, die Nachbarn sind unterste Schublade der "Huch, es gibt
+Kondome???" - HartzIV-ler, etc.&lt;br&gt;
+Meiner Freundin zu liebe, habe ich mir diesen Krampf mit zwei Wohnungen
+(und die Hauptwohnung diese Scheisse hier, da ihre NOCH weniger
+bewohnbar ist), nun seit gut 2,5 Jahren mitgemacht.&lt;br&gt;
+Nur mit dieser Wohnung sehe ich das jetzt nicht mehr ein. Wenn das ganze
+solche Ausmaße annimmt, wie es das derzeit tut, dann muss ich hier die
+Reißleine ziehen.&lt;/p&gt;
+&lt;p&gt;So, was noch ... eigentlich nichts mehr.&lt;/p&gt;
+&lt;p&gt;Auf der Arbeit fühle ich mich SUPER wohl, zur Zeit leider um ein
+vielfaches wohler als zuhause. Und das ist ein Zustand, den ich einfach
+nicht länger bereit bin zu akzeptieren. Daher meine Pläne für die
+kommenden Monate:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Neue, vernünftige Wohnung&lt;/li&gt;
+&lt;li&gt;Endlich ein Auto&lt;/li&gt;
+&lt;li&gt;Abbau meiner Schulden&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das sind eigentlich meine nächsten Ziele :)&lt;/p&gt;
+&lt;p&gt;Blöd nur, das Punkte 1+2 direkt Punkt 3 behindern ;)&lt;br&gt;
+Ein Umzug kostet ca. 1000,- €; da bin ich mir sicher. Man muss &lt;span
+style="text-decoration: underline;"&gt;mindestens&lt;/span&gt; (ausser, man hat
+einen Vermieter, der kullanter ist als ich sie bisher hatte) einen Monat
+lang doppelte Miete zahlen. Für die alte und für die neue Wohnung. Dann
+braucht man Tapeten, Teppiche, Farbe, Werkzeug, einen Umzugswagen, etc.
+Da sind ganz schnell die 1000,- weg; leider.&lt;br&gt;
+Genauso ein Auto: Ich bin es einfach LEID Wohnungen mit Bus und Bahn
+abzuklappern. Genauso wie Einkäufe 3x die Woche zu machen, weil man
+einfach nicht genug auf einmal schleppen kann. Genauso wie für jeden
+Mini-Piss mehrere Stunden zu brauchen, den man mit einem Auto in wenigen
+Minuten geklärt hätte.&lt;br&gt;
+Tja, da komm ich wohl (zunächst) um 4000,- € neue Schulden nicht herum,
+wenn ich es ordentlich haben will. Jedoch ist es mit das wert, um
+endliche ein Leben, so wie ich es mir vorstelle, führen zu können! :)&lt;/p&gt;
+&lt;p&gt;Bin ja selber mal gespannt! Ich habe X Ideen für die neue Wohnung! Bin
+selber mal gespannt wie viele ich umsetzen werde ;)&lt;/p&gt;</content><category term="lirich"></category><category term="oberhausen"></category><category term="trennung"></category><category term="wohnung"></category></entry><entry><title>Ich bin viele ... und immer 3x mehr wie Du!</title><link href="https://www.zoosau.de/ich-bin-viele-und-immer-3x-mehr-wie-du.html" rel="alternate"></link><published>2008-12-04T19:16:00+01:00</published><updated>2008-12-04T19:16:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-12-04:/ich-bin-viele-und-immer-3x-mehr-wie-du.html</id><summary type="html">&lt;p&gt;Es ist mal wieder so weit: Nach über 20 Jahren findet 2011 in
+Deutschland mal wieder eine Volkszählung statt. Zuletzt gab es diese in
+Deutschland 1987; in der damaligen DDR 1981.&lt;br&gt;
+Ich finde diese Maßnahme grundsätzlich gut! Mich würde nur mal
+interessieren, wie viele Menschen tatsächlich in der BRD leben …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es ist mal wieder so weit: Nach über 20 Jahren findet 2011 in
+Deutschland mal wieder eine Volkszählung statt. Zuletzt gab es diese in
+Deutschland 1987; in der damaligen DDR 1981.&lt;br&gt;
+Ich finde diese Maßnahme grundsätzlich gut! Mich würde nur mal
+interessieren, wie viele Menschen tatsächlich in der BRD leben. Nur
+jetzt kommt der (in meinen Augen) Witz: Das wird diese Volkszählung
+garnicht hergeben! Wie wird nämlich gezählt? Es wird lediglich das
+Melderegister und andere Verwaltungsregister ausgewertet. Anschliessend
+wird in einem 7% bis 8% der Datensätze stichprobenartig geprüft, ob die
+Zahlen überhaupt aussagekräftig, bzw. wie aussagekräftig sie sind.&lt;br&gt;
+Ausserdem werden Eigentümer von Wohngebäuden schriftlich befragt werden.&lt;/p&gt;
+&lt;p&gt;Ich denke nicht, das diese Erhebung auch nur annähernd aussagekräftig
+sein wird. Wer sich beispielsweise illegal in Deutschland aufhält, und
+das werden in meinen Augen garnicht so wenige sein, werden kaum so dumm
+sein und in irgendwelchen Melderegistern auftauchen. Man stelle sich das
+mal vor: Haust 364 Tage im Jahr unter der Badewanne, um bei Kontrollen
+nicht entdeckt zu werden und an dem einen Tag, wo diese Person Freigang
+hat, rennt sie zum Amt und beantragt Sozialhilfe ;D&lt;/p&gt;
+&lt;p&gt;Der ganze Spass wird die BRD ca. 528 Millionen Euro kosten!! Hallo? Was
+soll denn daran so teuer sein? Für den Preis kann man ja fast über ganz
+Deutschland eine 1-tägige Ausgangssperre verhängen und Pro Stadtteil 100
+Zähler engagieren, die sich durch die Wohnungen klingeln ... So hätte
+man wenigstens zuverlässige Zahlen, aber auch die 3rd-Reich-Stimmung
+zurück ... :P&lt;/p&gt;
+&lt;p&gt;Was will ich eigentlich sagen?&lt;br&gt;
+Eigentlich nur, das mich eine zuverlässige Volkszählung zwar auch
+interessieren würde, jedoch das ich die Aussagekraft des Ergebnises mit
+dem geplantem Vorgehen schon jetzt anzweifle.. Zudem finde ich es schade
+um das Geld, das in ein falsch angegangenes Vorgehen fliesst ...&lt;/p&gt;
+&lt;p&gt;Mehr zum Thema:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.heise.de/newsticker/EU-Parlament-entschaerft-Verordnung-zur-Volkszaehlung--/meldung/103832" title="Heise Meldung: EU-Parlament entschärft Verordnung zur Volkszählung"&gt;EU-Parlament entschärft Verordnung zur
+    Volkszählung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.heise.de/newsticker/Volkszaehlung-2011-startet-in-die-operative-Phase--/meldung/102736" title="Heise Meldung: Volkszählung 2011 startet in die operative Phase"&gt;Volkszählung 2011 startet in die operative
+    Phase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.statistik-portal.de/Statistik-Portal/zensus/" title="Zensus 2011, Informationsseite der Statistischen Ämter des Bundes und der Länder"&gt;Zensus 2011, Informationsseite der Statistischen Ämter des Bundes
+    und der
+    Länder&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="2011"></category><category term="kritik"></category><category term="Volkszählung"></category><category term="Zensus"></category></entry><entry><title>Geräteempfehlung: Die Logitech Harmony 555 Universal Remote</title><link href="https://www.zoosau.de/gerateempfehlung-die-logitech-harmony-555-universal-remote.html" rel="alternate"></link><published>2008-11-05T23:50:00+01:00</published><updated>2008-11-05T23:50:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-11-05:/gerateempfehlung-die-logitech-harmony-555-universal-remote.html</id><summary type="html">&lt;p&gt;Wer mein Blog regelmäßig ließt (gibt es da überhaupt jemanden? ;) ), der
+wird sich erinnern, das ich in letzter Zeit sehr viele Fehlgriffe mit
+mitunter ziemlich teuren Geräten hatte.&lt;/p&gt;
+&lt;p&gt;So habe ich mir z.B. ein Windows Mobile 6 SmartPhone für 575,- €
+gekauft, welches sich im nachhinein als absoluter Abfall entpuppt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wer mein Blog regelmäßig ließt (gibt es da überhaupt jemanden? ;) ), der
+wird sich erinnern, das ich in letzter Zeit sehr viele Fehlgriffe mit
+mitunter ziemlich teuren Geräten hatte.&lt;/p&gt;
+&lt;p&gt;So habe ich mir z.B. ein Windows Mobile 6 SmartPhone für 575,- €
+gekauft, welches sich im nachhinein als absoluter Abfall entpuppt hat
+(siehe hierzu &lt;a href="http://www.zoosau.de/leben/mein-neues-smartphone-eten-x800" title="Mein Beitrag in Vorfreude auf meinen PDA"&gt;Mein neues Smartphone (eTen
+x800)&lt;/a&gt;,
+&lt;a href="http://www.zoosau.de/leben/neues-telefon-ist-unterwegsneues-telefon-ist-unterwegs" title="Mein Beitrag nach der PDA Bestellung"&gt;Neues Telefon ist unterwegs
+:)&lt;/a&gt;
+und &lt;a href="http://www.zoosau.de/leben/pda-kommt-weg" title="Mein Beitrag das der PDA wegkommt"&gt;PDA kommt
+weg&lt;/a&gt;
+), ich bin in dieses absolute von Schimmel verseuchte und mit
+Stromleitungen von vor dem letzten Weltkrieg ausgestattete Dreckloch von
+Ghetto-Wohnung eingezogen (siehe hierzu &lt;a href="http://www.zoosau.de/leben/versuchter-einbruch" title="Mein Beitrag zu meinem Pech mit meiner Wohnung"&gt;Versuchter
+Einbruch&lt;/a&gt;,
+&lt;a href="%e2%99%ab-reeeeeiss-die-ziiiimmer-ein-%e2%99%ab" title="Mein Beitrag zu meinem Pech mit meiner Wohnung"&gt;♫ Reeeeeiss die Ziiiimmer ein ...
+♫&lt;/a&gt;
+und &lt;a href="http://www.zoosau.de/leben/meine-kuche-wird-eingerissen" title="Mein Beitrag zu meinem Pech mit meiner Wohnung"&gt;Meine Küche wird eingerissen ...
+:'(&lt;/a&gt;
+), ich hatte sehr viel Pech mit meinem K770i Handy (siehe hierzu &lt;a href="http://www.zoosau.de/leben/white-vs-pechstranewhite-vs-pechstrane" title="Mein Beitrag zu meinem Pech mit dem K770i"&gt;White
+vs.
+Pechsträne&lt;/a&gt;,
+&lt;a href="http://www.zoosau.de/leben/k770i-reperatur-die-zweite" title="Mein Beitrag zu meinem Pech mit dem K770i"&gt;K770i Reperatur - die
+zweite&lt;/a&gt;
+und &lt;a href="http://www.zoosau.de/leben/mein-k770i-ist-wieder-da" title="Mein Beitrag zu meinem Pech mit dem K770i"&gt;Mein K770i ist wieder
+da&lt;/a&gt;
+) und mit meinem neuen Computer lief auch nicht alles so super ab (siehe
+hierzu &lt;a href="http://www.zoosau.de/leben/arger-mit-dem-neuen-rechnerarger-mit-dem-neuen-rechner" title="Mein Beitrag zu meinem Pech mit dem neuen Rechner"&gt;Ärger mit dem neuen
+Rechner&lt;/a&gt;
+und &lt;a href="probleme-mit-meinem-rechner-gelost-d" title="Mein Beitrag zu meinem Pech mit dem neuen Rechner"&gt;Probleme mit meinem Rechner gelöst!!
+:D&lt;/a&gt;
+).&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_309" align="alignleft" width="300"
+caption="Logitech Harmony 555"]&lt;a href="https://www.zoosau.de/images/logitech_harmony_555.jpg"&gt;&lt;img alt="Logitech Harmony
+555" src="{filename}images/logitech_harmony_555-300x200.jpg" title="Logitech Harmony 555"&gt;{.size-medium
+.wp-image-309 width="300"
+height="200"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Nach diesen Pleiten habe ich nun mal endlich wieder ein absolut geiles
+Gerät gekauft: Die Universalfernbedienung &lt;a href="http://www.logitech.com/index.cfm/remotes/universal_remotes/devices/376&amp;amp;cl=de,de#" title="Homepage der Logitech Harmony 555"&gt;Logitech Harmony
+555&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ich habe bei mir zuhause die folgende Kombination an Infrarotgesteuerten
+Geräten:&lt;/p&gt;
+&lt;p&gt;2 Boxen sind an einen Verstärker(/-Tuner) angeschlossen. Dieser
+Verstärker (Sony STR-DE185) verstärkt nun das Signal der DVB-T
+Reciever/DVD-Player-Kombo (Elta 8650 DVB-T) am Eingang "Video 2", welche
+wiederum das Bild auf meinem Fernseher (Grundig ST70 780) wiedergibt.
+Ausserdem habe ich noch einen MiniDisc Player (Sony MDS-JE480) am
+Eingang Tape/MD angeschlossen.&lt;/p&gt;
+&lt;p&gt;Eigentlich eine unmögliche Kombination.. ich hatte schon 2
+Universalfernbedienungen vorher. Beides Medion-Schnäppchen aus einem
+Mediamarkt oder Lidl.&lt;br&gt;
+Ich hatte hierbei eigentlich wenig Hoffnung, das es mir hiermit gelingen
+würde, eine halbwegs benutzbare Kombo an Tastenbelegung für meine doch
+schon recht verzwickte Geräteabhängigkeiten hin zu bekommen. Mein
+Hauptziel war, das ich (dank des USB-Anschlusses) eine einmal gemachte
+Kombination aus erlernten Infrarotcodes (denn das kann diese
+Fernbedienung: Das Signal der Original-Fernbedienung klonen) auf dem
+Rechner zu speichern, damit ich nicht nach jedem Batteriewechsel wieder
+dieses Martyrium durchleben muss. Und wenn überhaupt noch Hoffnung
+besteht, das es einen Hersteller gibt, der das gut löst, dann so eine
+Qualitätsmarke wie Logitech!&lt;br&gt;
+Ich bin echt Logitech Fan. Lass die Hardware ruhig etwas mehr kosten:
+Die Qualität stimmt in der Regel! Ich hatte erst einmal eine Logitech
+Hardware, mit der ich nicht zufrieden war, aber das mag an meinen
+Erwartungen gelegen haben.&lt;/p&gt;
+&lt;p&gt;Ich habe dieses Gerät in einem Sonderangebot für 49,- statt 99,- €
+gekauft.&lt;br&gt;
+Ich war zunächst überrascht: Ich musste nicht erst, wie bei anderen
+Universalfernbedinungen üblich, eine Vielzahl von Codes für die
+Herstellermarken meiner Geräte eingeben und hoffen, das die Vorbelegung
+halbwegs Sinn ergibt. Ich musste auch nicht einzeln Tasten mit den
+Infrarot-Codes der Originalfernbedienungen belegen. Stattdessen begrüsst
+mich die Fernbedinung mit einem freundlichem Text im beleuchteten
+LCD-Display und dem Hinweis, die Fernbedienung mit der mitgelieferten
+Software zu programmieren.&lt;/p&gt;
+&lt;p&gt;Das habe ich gemacht: Fernbedienung an den PC angeschlossen, Software
+installiert und los!&lt;br&gt;
+Es wurden nun eine Reihe an Fragen abgearbeitet. "Geben sie Hersteller
+und Modell ihres TV an", "Geben sie Hersteller und Modell ihres
+DVD-Players an", etc. Ich dachte mir schon "Hey: Nichtmal Elta hat auf
+ihrer Homepage mein DVB-T/DVD-Kombiplayer richtig aufgeführt, da werdet
+ihr kaum die Tastenbelegung der Fernbedienung vorrätig haben!". Aber:
+weit gefehlt: ALLE meine Geräte wurden perfekt erkannt! Jede Funktion
+wurde sinnvoll der hierfür vorgesehenen Taste zugewiesen. War eine Taste
+einfach zu exotisch und gab es hierfür keine bedruckte Taste auf der
+Fernbedienung (welche Universalfernbedienung hat schon eine taste für
+"zwischen DVB-T und DVD Betrieb umschalten"?), wurde dieser Funktion
+einfach eine der vier Tasten neben dem LCD Display der Fernbedienung
+zugewiesen und dort die Funktionsbezeichnung hinterlegt. Das
+funktioniert SUPER! Selbst die spezielste Funktion aller Geräte
+funktioniert ohne die geringste Konfiguration. Hier muss ich echt mal
+wieder sagen: Hut ab, für diese umfassende Gerätedatenbank, an Logitech!
+Das selbst meine exotische Hardware aufgeführt und sinnvoll Konfiguriert
+wurde, hätte ich nie gedacht.&lt;/p&gt;
+&lt;p&gt;Aber nicht nur das die einzelnen Funktionen der Geräte tadellos
+funktionieren: Es werden im Rahmen der Einrichtung ein paar Fragen
+gestellt, nachdem das Programm weiss, welche Geräte(/-typen) vorhanden
+sind. "Auf welchem Gerät regeln sie die Lautstärke: TV, DVB-T oder
+Verstärker?", "Auf welchem Gerät schalten sie die TV Programme weiter?",
+etc. Diese Dialoge sind jeweils abhängig von den zuvor hinzugefügten
+Geräten.&lt;br&gt;
+Was soll ich sagen: Als Resultat habe ich nun eine Fernbedienung, bei
+der ich auf die Voreinstellung "TV gucken" drücke und die mir in dieser
+Reihenfolge folgendes macht: TV einschalten, DVB-T Reciever einschalten,
+Verstärker einschalten, TV-Kanal 0 einstellen (da liegt DVB-T),
+Verstärkerquelle "Video 2" wählen (das ist der Soundeingang vom DVB-T
+Reciever). Ausserdem schaltet die Taste "Programm +" den nächsten Kanal
+am DVB-T Reciever um, "Lautstärke +" erhöht die Lautstärke am Verstärker
+und "Picture" verändert das Seitenverhältnis des TV Gerätes (4:3 /
+16:9).&lt;/p&gt;
+&lt;p&gt;Einfach optimal und sehr beeindruckend! :) Ich kann dieses Gerät echt
+nur empfehlen.&lt;/p&gt;</content><category term="555"></category><category term="fernbedienung"></category><category term="harmony"></category><category term="logitech"></category><category term="universal"></category></entry><entry><title>Fett schwimmt oben, also ...</title><link href="https://www.zoosau.de/fett-schwimmt-oben-also.html" rel="alternate"></link><published>2008-10-21T10:48:00+02:00</published><updated>2008-10-21T10:48:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-10-21:/fett-schwimmt-oben-also.html</id><summary type="html">&lt;p&gt;... nutze ich meine "Superkraft" und versuche wieder regelmäßig zum
+Schwimmtraining zu gehen. Seitdem ich ... ich glaube: 10 Jahre alt war,
+war ich immer irgendwie in einem Wassersportverein. Zunächt im DLRG, wo
+ich von
+&lt;a href="http://de.wikipedia.org/wiki/Fr%C3%BChschwimmer" title="Frühschwimmerabzeichen Seepferdchen"&gt;Seepferdchen&lt;/a&gt;
+bis hin zum &lt;a href="http://de.wikipedia.org/wiki/Deutscher_Jugendschwimmpass" title="Wiki Deutscher Jugendschwimmpass"&gt;Deutschen Jugendschwimmpass in
+Gold&lt;/a&gt;,
+frühzeitig alle Abzeichen die möglich waren gemacht habe.&lt;br&gt;
+&lt;a href="https://www.zoosau.de/images/seepferd.png"&gt;&lt;img alt="" src="https://www.zoosau.de/images/seepferd.png" title="Seepferdchen Frühschwimmerabzeichen"&gt;{.size-medium …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;... nutze ich meine "Superkraft" und versuche wieder regelmäßig zum
+Schwimmtraining zu gehen. Seitdem ich ... ich glaube: 10 Jahre alt war,
+war ich immer irgendwie in einem Wassersportverein. Zunächt im DLRG, wo
+ich von
+&lt;a href="http://de.wikipedia.org/wiki/Fr%C3%BChschwimmer" title="Frühschwimmerabzeichen Seepferdchen"&gt;Seepferdchen&lt;/a&gt;
+bis hin zum &lt;a href="http://de.wikipedia.org/wiki/Deutscher_Jugendschwimmpass" title="Wiki Deutscher Jugendschwimmpass"&gt;Deutschen Jugendschwimmpass in
+Gold&lt;/a&gt;,
+frühzeitig alle Abzeichen die möglich waren gemacht habe.&lt;br&gt;
+&lt;a href="https://www.zoosau.de/images/seepferd.png"&gt;&lt;img alt="" src="https://www.zoosau.de/images/seepferd.png" title="Seepferdchen Frühschwimmerabzeichen"&gt;{.size-medium
+.wp-image-251 .alignleft width="127"
+height="127"}&lt;/a&gt;&lt;a href="https://www.zoosau.de/images/jabz-gold2.png"&gt;&lt;img alt="" src="https://www.zoosau.de/images/jabz-gold2.png" title="Deutsches Jugendschwimmabzeichen Gold"&gt;{.size-medium
+.wp-image-250 .alignleft width="131"
+height="131"}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Später dann mit 11 Jahren wurde ich Mitglied im &lt;a href="http://www.tauchclub-hattingen.de" title="Homepage des DUC Hattingen"&gt;DUC
+Hattingen&lt;/a&gt;.
+Hier habe ich das &lt;a href="http://de.wikipedia.org/wiki/Rettungsschwimmabzeichen#Deutsches_Rettungsschwimmabzeichen_Bronze" title="Wiki Deutsches Rettungsschwimmabzeichen Bronze"&gt;Deutsches Rettungsschwimmabzeichen
+Bronze&lt;/a&gt;
+gemacht; danach hatte ich keine Lust mehr weiterzumachen. Dort war ich
+Trainingsmäßig sehr aktiv. Ging 2x die Woche, Dienstags und Donnerstags
+zum Konditionstraining und war dort Leistungsmäßig eigentlich immer
+unter den ersten 5 dabei. Das wurde jedoch immer weniger, so das ich mit
+ca. 17/18 Jahren nur noch einmal die Woche teilgenommen habe. Auch das
+wurde weniger, so das ich bis ca. 20 zwar noch Vereinsmitglied war,
+jedoch so gut wie nie mehr zum Training gegangen bin und mich
+schliesslich abgemeldet habe. Es wurde mir einfach neben dem Beruf und
+den Hobbys zu viel. Zudem sinkt das Leistungsniveau, wenn man ein paar
+Wochen nicht anwesend war, merklich. Und dann macht es auch keinen
+rechten Spass mehr.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/rsa_bronze.jpg"&gt;&lt;img alt="" src="{filename}images/rsa_bronze-300x224.jpg" title="Rettungsschwimmerabzeichen Bronze"&gt;{.alignleft
+.size-medium .wp-image-253 width="205"
+height="153"}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Aktiv getaucht habe ich nur ca. 20-30 Mal. Und auch nie in den
+erstrebenswerten Fernzielen Griechenland, Ägypten, etc. sondern immer
+nur in hiesigen Seen und Baggerlöchern.&lt;/p&gt;
+&lt;p&gt;Nun, inzwischen merke ich aber schon, das mir der Sport fehlt. Ich werde
+immer dicker, nehme trotz essensmäßigen Einschränkungen (kaum noch Bier,
+mengenmäßig in Maßen und oft nur Ei-Omlette oder Fisch) nicht ab. Klar:
+Ohne Bewegung bringt die Beste Diät nichts.&lt;br&gt;
+Zumal ich merke, das mich andere Sportarten ausser Schwimmen kaum
+reizen.&lt;/p&gt;
+&lt;p&gt;Daher nehme ich diesen Samstag am
+"&lt;a href="http://25h-schwimmen.ssb-oberhausen.de/" title="25h Schwimmen"&gt;25h-Schwimmen&lt;/a&gt;"
+im neuen Hallenbad Oberhausen teil. Meine Freundin Lena und meinen
+Kollegen Theclis konnte ich auch begeistern mitzukommen :) Ist eine
+witzige Idee - zum Anlass der Neueröffnung des Hallenbades in Oberhausen
+veranstalten die ein 25 Stunden Schwimmen mit vielen Vereinen aus der
+Umgebung. Ziel ist es, in 25 Stunden eine möglichst weite Strecke zurück
+zu legen. Man kann sooft aufhören wie man will, kommen und gehen wann
+man will, etc. 25 Stunden deshalb, weil in dieser Nacht die Uhren
+zurückgestellt werden.&lt;br&gt;
+Was es kostet, ob es was zu gewinnen gibt, etc. weiss ich nicht. Ist mir
+aber auch egal - ich werde in meiner aktuellen Kondition eh nichts
+gewinnen. Zudem werde ich nicht 25 Stunden lang da sein. Am Sonntag sind
+wir ja mit &lt;a href="http://www.bardor.de" title="HP von Bardor"&gt;Bardor&lt;/a&gt; auf der
+Spielemesse. Da wäre ich schon ganz gerne ausgeschlafen.&lt;/p&gt;
+&lt;p&gt;Ich nutze den Event um Kontakte zu Vereinen zu knüpfen. Das ist
+eigentlich mein Hauptanliegen :)&lt;/p&gt;
+&lt;p&gt;Bin ja mal gespannt...&lt;/p&gt;</content><category term="schwimmen"></category><category term="sport"></category><category term="tauchen"></category></entry><entry><title>Mein neues Handy und Vertag</title><link href="https://www.zoosau.de/neues_handy_und_vertrag.html" rel="alternate"></link><published>2008-09-18T19:00:00+02:00</published><updated>2008-09-18T19:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-09-18:/neues_handy_und_vertrag.html</id><summary type="html">&lt;p&gt;[caption id="attachment_241" align="alignleft" width="240"
+caption="Bild meines neuen Handys Nokia E71"]&lt;a href="https://www.zoosau.de/images/e71.jpg"&gt;&lt;img alt="Bild meines neuen
+Handys Nokia
+E71" src="{filename}images/e71-300x283.jpg" title="e71"&gt;{.size-medium
+.wp-image-241 width="240"
+height="226"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Ich habe mich nun endlich dazu entschieden doch wieder einen
+Mobilfunkvertrag abzuschliessen.&lt;/p&gt;
+&lt;p&gt;Was mich bisher davon abgehalten hatte, war ja diese Bindung für 2 Jahre
+an einen Anbieter und …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[caption id="attachment_241" align="alignleft" width="240"
+caption="Bild meines neuen Handys Nokia E71"]&lt;a href="https://www.zoosau.de/images/e71.jpg"&gt;&lt;img alt="Bild meines neuen
+Handys Nokia
+E71" src="{filename}images/e71-300x283.jpg" title="e71"&gt;{.size-medium
+.wp-image-241 width="240"
+height="226"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Ich habe mich nun endlich dazu entschieden doch wieder einen
+Mobilfunkvertrag abzuschliessen.&lt;/p&gt;
+&lt;p&gt;Was mich bisher davon abgehalten hatte, war ja diese Bindung für 2 Jahre
+an einen Anbieter und einen Preis; völlig unabhängig von der
+zwischenzeitlichen Entwicklung am Markt, welche ja nun tendenziell
+fällt.&lt;/p&gt;
+&lt;p&gt;Also hatte ich mich vor rund 1,5 Jahren (wenn mich nicht alles täuscht)
+für &lt;a href="http://www.congstar.de" title="Congstar"&gt;Congstar&lt;/a&gt; entschieden.
+Kündigungszeiten von zwei Wochen, zubuchbaren Paketen für Flatrates für
+SMS (pro Netz eine Option) und Telefonie (ebenfalls Netzabhängig) fand
+ich recht interessant.&lt;/p&gt;
+&lt;p&gt;Für mich hat es sich jedoch Rückblickend nicht rentiert. OK, ich möchte
+erst garnicht sehen wie die Rechnung ausgesehen hätte, wenn ich keine
+Festnetz-Flat gehabt hätte, jedoch habe ich mit allem drum und dran
+immer zwischen 70 und 95 € bezahlt.&lt;/p&gt;
+&lt;p&gt;Nun hat mich ePlus mit dem ALLin Tarif überzeugt. Man kauft monatlich
+Pakete von 100, 250, 500 oder 1000 Einheiten. Diese kann man dann
+unabhängig vom Netz oder der Tageszeit in Gesprächsminuten oder SMS
+investieren.&lt;/p&gt;
+&lt;p&gt;Ich wollte ursprünglich das 500er Paket für 42,50 €. Just an dem Tag wo
+ich da war (gestern), hatten sie jedoch ein 5-tägiges Angebot (gilt noch
+bis zum 20. 09. 2008), das die 1000er über die gesamte Vertragslaufzeit
+nur 39,99 € kosten.&lt;br&gt;
+Also: Wäre ich ja dumm gewesen, wenn ich nicht stattdessen dieses Paket
+genommen hätte ;)&lt;/p&gt;
+&lt;p&gt;Ich denke nicht, das ich es im Monat auf 1000 Einheiten bringe. Das sind
+ja über 16 Stunden Dauergespräch im Monat. Also: Unmöglich ist auch DAS
+nicht, wird aber wohl eher die Ausnahme darstellen.&lt;br&gt;
+Laut meiner Detailaufstellung von Congstar schreibe ich im Monat
+durchschnittlich 180 SMS, welche ich nicht von einer Flatrate habe
+abdecken lassen. Normalerweise habe ich eine Congstar SMS Flat gehabt.
+Jedoch hatte ich die zwischenzeitlich mal rausgenommen und vergessen
+wieder zu zubuchen. Daher kam ich in den letzten 3 Monaten in den Genuss
+ALLE SMS die ich schreibe aufgelistet zu bekommen und bezahlen zu dürfen
+... -.-&lt;/p&gt;
+&lt;p&gt;Egal: Hat auch sein gutes. So hatte ich wenigstens mal eine Übersicht
+darüber was ich so schreibe.&lt;/p&gt;
+&lt;p&gt;Das bedeutet, das ich bei rund 200 SMS / Monat immernoch 800 Minuten in
+alle Netze telefonieren kann, ohne jemals mehr zu bezahlen als meine 40
+€.&lt;/p&gt;
+&lt;p&gt;Jedoch: Da ich mit dem Nokia E71 auch vor habe viel zu surfen und Mails
+zu versenden, habe ich mir für weitere 10 € / Monat ein Surfvolumen von
+250 MB dazugebucht. Das hört ich verdammt wenig an. Mit diesen
+Mobile-Geräten macht man aber in der Regel nicht mehr. Und das an einem
+Notebook oder so anzuschliessen und den Esel anzuwerfen habe ich ohnehin
+nicht vor.&lt;/p&gt;
+&lt;p&gt;So zahle ich nun also für viel mehr (netzunabhängigkeit und
+Datentransfer inklusive) locker 20 bis 50 € weniger im Monat. Das finde
+ich toll! :)&lt;/p&gt;
+&lt;p&gt;Meine Erfahrung mit Flats ist: Die Kostenfalle ist die Bindung an
+bestimmte Netze. Man hat IMMER mal wen dabei, der ein anderes Netz hat
+als man nun gerade als Option drin hat. Für diese Gelegenheits-SMSe
+lohnt es sich wiederum aber auch nicht für jedes Netz IMMER eine 10 €
+teure Option zu buchen.&lt;/p&gt;
+&lt;p&gt;Somit kommt ePlus mit diesem Tarif bisher am nähesten an meine
+Vorstellung eines optimalen Vertrages heran, weil sie einfach alles
+abdecken was mir wichtig ist.&lt;/p&gt;
+&lt;p&gt;Das Handy selbst kann ich bisher übrigens nur empfehlen! Aber mehr mag
+ich jetzt noch nicht schreiben :)&lt;/p&gt;</content><category term="allin"></category><category term="congstar"></category><category term="e71"></category><category term="eplus"></category><category term="flatrate"></category><category term="nokia"></category></entry><entry><title>Einfach mal ein mini - Picdump :)</title><link href="https://www.zoosau.de/einfach-mal-ein-mini-picdump.html" rel="alternate"></link><published>2008-09-12T08:55:00+02:00</published><updated>2008-09-12T08:55:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-09-12:/einfach-mal-ein-mini-picdump.html</id><summary type="html">&lt;p&gt;Heute mal ohne viele Worte; einfach nur witzige Bilder :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_235" align="aligncenter" width="500"
+caption="See ma Hoomies, Dude !
+:D"]&lt;a href="https://www.zoosau.de/images/picdump-13.jpg"&gt;&lt;img alt="false_friends" src="https://www.zoosau.de/images/picdump-13.jpg" title="My Nigga - Hoomies"&gt;{.size-full
+.wp-image-235 width="500"
+height="367"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_238" align="aligncenter" width="445"
+caption="Witzige Idee :)"]&lt;a href="https://www.zoosau.de/images/picdump-41.jpg"&gt;&lt;img alt="Witzige Idee
+:)" src="https://www.zoosau.de/images/picdump-41.jpg" title="Noo , pleeease don't ..."&gt;{.size-full
+.wp-image-238 width="445"
+height="564"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_237" align …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Heute mal ohne viele Worte; einfach nur witzige Bilder :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_235" align="aligncenter" width="500"
+caption="See ma Hoomies, Dude !
+:D"]&lt;a href="https://www.zoosau.de/images/picdump-13.jpg"&gt;&lt;img alt="false_friends" src="https://www.zoosau.de/images/picdump-13.jpg" title="My Nigga - Hoomies"&gt;{.size-full
+.wp-image-235 width="500"
+height="367"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_238" align="aligncenter" width="445"
+caption="Witzige Idee :)"]&lt;a href="https://www.zoosau.de/images/picdump-41.jpg"&gt;&lt;img alt="Witzige Idee
+:)" src="https://www.zoosau.de/images/picdump-41.jpg" title="Noo , pleeease don't ..."&gt;{.size-full
+.wp-image-238 width="445"
+height="564"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_237" align="aligncenter" width="500"
+caption="Manche sind selbst für die einfachsten DInge zu
+blöd"]&lt;a href="https://www.zoosau.de/images/picdump-21.jpg"&gt;&lt;img alt="Manche sind selbst für die einfachsten DInge zu
+blöd" src="https://www.zoosau.de/images/picdump-21.jpg" title="wrist cut done wrong"&gt;{.size-full
+.wp-image-237 width="500"
+height="400"}&lt;/a&gt;[/caption]&lt;/p&gt;</content></entry><entry><title>Interessante Marketingaktion</title><link href="https://www.zoosau.de/interessante-marketingaktion.html" rel="alternate"></link><published>2008-08-31T13:00:00+02:00</published><updated>2008-08-31T13:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-08-31:/interessante-marketingaktion.html</id><summary type="html">&lt;p&gt;Ich warte seit gut einem Jahr darauf, das "&lt;a href="http://www.drakensang.de/" title="Homepage von Drakensang"&gt;Das Schwarze Auge -
+Drakensang&lt;/a&gt;" für
+den PC erscheint. Am 8.8.2008 schaue ich mal so nebenbei auf Amazon, was
+sehe ich?? Drakensang, Collector's Box für 99,- € von einem Privatmann!&lt;/p&gt;
+&lt;p&gt;Was heisst das?&lt;br&gt;
+Zunächst mal, das ich den Release verpennt habe!&lt;br&gt;
+Mein …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich warte seit gut einem Jahr darauf, das "&lt;a href="http://www.drakensang.de/" title="Homepage von Drakensang"&gt;Das Schwarze Auge -
+Drakensang&lt;/a&gt;" für
+den PC erscheint. Am 8.8.2008 schaue ich mal so nebenbei auf Amazon, was
+sehe ich?? Drakensang, Collector's Box für 99,- € von einem Privatmann!&lt;/p&gt;
+&lt;p&gt;Was heisst das?&lt;br&gt;
+Zunächst mal, das ich den Release verpennt habe!&lt;br&gt;
+Mein Kumpel Elthas sagte mir auch noch, das er das Spiel am 1.8., also
+gerade mal eine Woche vorher, noch für 49,- €, dem jetzigen Preis der
+Standard-Edition, auf Amazon gesehen hat.&lt;br&gt;
+Also heisst das zum zweiten, das das Spiel nach spätestens einer Woche
+in der Collector's Edition ausverkauft war.&lt;br&gt;
+Weiterhin bedeutet das, das diese Collector's Box mal eben innerhalb
+einer Woche um 100% teurer geworden ist, sprich: Doppelt so teuer.&lt;/p&gt;
+&lt;p&gt;Es war mir egal, ich wollte dieses Spiel unbedingt haben! Ich habe mir
+ja nun extra einen neuen PC dafür gekauft!&lt;/p&gt;
+&lt;p&gt;In der Produktbeschreibung auf Amazon stand:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ich habe das Spiel nur einmal ausgepakt und dann hat es mir nicht mehr
+gefallen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Naja, sollte mir auch egal sein!&lt;br&gt;
+Zu meiner (positiven) Überraschung kam das Spiel jedoch vollkommen
+unangetastet und original verschweißt bei mir an.&lt;/p&gt;
+&lt;p&gt;Da hat dieser Typ sich also die streng limitierte Version abgegriffen,
+um sie eine Woche später mit einem Gewinn von 50 € wieder zu verkaufen.&lt;br&gt;
+Geile Idee - das werde ich auch mal aufgreifen! :)&lt;/p&gt;
+&lt;p&gt;So, das war die eine gute Marketing Idee. schreiben wollte ich jedoch
+eigentlich über eine ganz andere ;D&lt;/p&gt;
+&lt;p&gt;Keine Angst, das folgende verrät, meiner Meinung nach, nichts vom Spiel:&lt;/p&gt;
+&lt;p&gt;Im Spiel begegnet einem ein "&lt;a href="http://drakensang.wikia.com/wiki/Berwin_R%C3%BCbenfein" title="Berwin Rübenfein"&gt;Berwin
+Rübenfein&lt;/a&gt;".
+Für diesen bereinigt man eine Situation und anschliessend bedankt er
+sich beim Spieler.&lt;br&gt;
+Ein paar Meter weiter erntet eine "&lt;a href="http://drakensang.wikia.com/wiki/Erna_R%C3%BCbenfein" title="Erna Rübenfein"&gt;Erna
+Rübenfein&lt;/a&gt;"
+auf einem Feld Kräuter.&lt;br&gt;
+Spricht man nun mit ihr, kommt heraus, das sie etwas für denjenigen
+bereithält, der Ihr das richtige Losungswort nennen kann. Ich dachte ich
+hätte hier einen Hinweis Ihres Mannes oder sonstwo übersehen. Also habe
+ich im Internet recherchiert.&lt;/p&gt;
+&lt;p&gt;Und jetzt kommt's:&lt;/p&gt;
+&lt;p&gt;Amazon hat wohl einen Werbevertrag mit Radeon Labs, dem Hersteller des
+Spiels. Wer eine bestimmte Version des Spiels, zu einem bestimmten
+Zeitpunkt bei Amazon bestellt hat, bekommt ein Losungswort mitgeteilt.
+Dieses muss man eben dieser Erna Rübenfein nennen, um einen
+Bonusgegenstand zu bekommen.&lt;/p&gt;
+&lt;p&gt;Etwas ähnliches gab es auch schon bei Two Worlds.&lt;br&gt;
+Ich finde die Idee eigentlich sehr gut, das in das Spiel einzubauen.
+Also: Das man erst einem Charakter begegnen muss, um seinen Bonus
+Gegenstand zu erhalten.&lt;/p&gt;
+&lt;p&gt;Was ich nun aber doch sehr negativ finde ist, das jemand (wie ich) der
+von dieser Aktion nichts weiss, garnicht weiss was diese Erna von einem
+will und man denkt etwas übersehen zu haben. Ein Hinweis hier wie "Kennt
+ihr das geheime Losungswort der (www.)Amazone(.de) ? Dann kann ich Euch
+etwas geheimes zur Verfügung stellen" - oder irgendwie so. Vielleicht
+noch dezenter. Ich habe gegen diese Form der Belohnung nichts, jedoch
+darf es den Spielfluss der übrigen Konsumenten nicht beienflussen.&lt;/p&gt;
+&lt;p&gt;Für diejenigen die es interessiert: Das Losungswort lautet: 9YF3LC&lt;/p&gt;
+&lt;p&gt;Einen Thread dazu findet ihr
+&lt;a href="http://forum.worldofplayers.de/forum/showthread.php?t=436213"&gt;hier&lt;/a&gt;.&lt;/p&gt;</content><category term="drakensang"></category><category term="dsa"></category><category term="erna"></category><category term="losungswort"></category><category term="rübenfein"></category></entry><entry><title>Batman - The Dark Knight</title><link href="https://www.zoosau.de/batman-the-dark-knight.html" rel="alternate"></link><published>2008-08-31T00:42:00+02:00</published><updated>2008-08-31T00:42:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-08-31:/batman-the-dark-knight.html</id><summary type="html">&lt;p&gt;OK, eines möchte ich mal vorweg schicken:&lt;/p&gt;
+&lt;p&gt;Ich mag &lt;span style="text-decoration: underline;"&gt;keine&lt;/span&gt; Batman -
+Filme.&lt;/p&gt;
+&lt;p&gt;Umso erstaunlicher finde ich selbst, was ich hier gerade schreibe:&lt;/p&gt;
+&lt;p&gt;Der Film ist super klasse!&lt;/p&gt;
+&lt;p&gt;Warum mag ich keine Batman Filme? Es ist immer das gleiche: Der Film
+fängt grundsätzlich mit Ganoven an. Diese machen dann irgendetwas böses …&lt;/p&gt;</summary><content type="html">&lt;p&gt;OK, eines möchte ich mal vorweg schicken:&lt;/p&gt;
+&lt;p&gt;Ich mag &lt;span style="text-decoration: underline;"&gt;keine&lt;/span&gt; Batman -
+Filme.&lt;/p&gt;
+&lt;p&gt;Umso erstaunlicher finde ich selbst, was ich hier gerade schreibe:&lt;/p&gt;
+&lt;p&gt;Der Film ist super klasse!&lt;/p&gt;
+&lt;p&gt;Warum mag ich keine Batman Filme? Es ist immer das gleiche: Der Film
+fängt grundsätzlich mit Ganoven an. Diese machen dann irgendetwas böses,
+und mittendrin platzt Batman rein und haut die mit dem kleinen Finger
+KO.&lt;br&gt;
+Meistens tritt im sehr frühen Verlaufe des Filmes auch irgendeine Frau
+auf den Plan, die Bruce Wayne schlimmer als jede 10-€-Nutte an der
+Laterne anbaggert, verschwindet, und meist selbst irgendwie in die
+aktuelle Schurkerei verwickelt ist. Sei es, weil sie eine Verwandte des
+Opfers ist, selbst zu der Bande gehört, oder wegen sonst was. Bruce und
+sie lassen dann irgendwann die Schlafzimmerwände wackeln und er muss sie
+beim Showdown, mit einem total blöden Spruch, in letzter Sekunde
+retten.&lt;br&gt;
+Meistens wird dann mitten im Film nochmal kurz Bruce's verkorkste
+Kindheit thematisiert, wo seine Eltern vom Joker vor seinen Augen
+erschossen werden und dafür muss dieser im Film auch irgendwann blechen.&lt;/p&gt;
+&lt;p&gt;... OK: VIEL anders ist auch dieser Film nicht; wären nicht ein paar
+entscheidende Punkte anders:&lt;/p&gt;
+&lt;p&gt;Batman kann richtig überzeugen. Er ist immernoch cooler als die Jungs
+auf den Untersuchungstischen in der Autopsie, und es geht mal wieder um
+den Joker.&lt;br&gt;
+Dieser ist jedoch mal super geil gespielt! Ich habe jetzt um halb 1 Uhr
+nachts nicht mehr wirklich den Nerv das zu recherchieren, aber der
+Schauspieler ist echt super in der Rolle!&lt;br&gt;
+Ausserdem fangen sie nun so langsam mal an eine Geschichte aufzubauen,
+nicht einfach immer und immer wieder durchzunudeln. So entsteht im Laufe
+des Filmes beispielsweise ein späterer Erzgegner von Batman.  Man kann
+bei dem Verlauf des Schicksales auch verstehen, warum dieser später
+einen Brass auf die Fledermaus hat, auch wenn dieser da nichts zu kann.
+Hierzu möchte ich jedoch nicht weiter sagen, da ich niemandem den Film
+versauen will.&lt;/p&gt;
+&lt;p&gt;Auch hat Batman dieses Mal mehr Hilfe als nur einen unterwürfigen
+Tattergreis als Buttler. Alfred ist zwar noch da, aber auch sehr viel
+überzeugender. Frühere Alfreds waren einfach nur DA, und es entstand der
+Eindruck, das hier lediglich Lizenzauflagen erfüllt werden mussten diese
+Figur in die Story aufzunehmen.&lt;/p&gt;
+&lt;p&gt;Von den anderen Fesseln der Lizenz ist wenig zu spüren: Die
+obligatorische Standard-Batman-Szene, in der während einer Rückblende in
+seine Kindheit seine Eltern erschossen werden fehlt völlig -&amp;gt; sehr
+positiv!&lt;br&gt;
+Auch die James Bond - artige Szene in der Q ... äääh - Alfred meine ich,
+Batman GENAU DAS Zubehör als neu andreht, was er im späteren Verlauf des
+Filmes unbedingt braucht ist in dieser Form nicht vorhanden.&lt;/p&gt;
+&lt;p&gt;Es ist kein reiner
+Batman-jagt-den-Bösewicht-verhaut-ihn-und-alle-sind-glücklich - Scheiss.
+Die Story hat richtigen Tiefgang, viele Wendepunkte und Überraschungen.
+Zumindest deutlich mehr als ich sie in einem Batman erwartet hätte.&lt;/p&gt;
+&lt;p&gt;Hut ab, gut gelungener Streifen.&lt;/p&gt;</content><category term="batman"></category><category term="dark"></category><category term="film"></category><category term="joker"></category><category term="knight"></category><category term="kritik"></category></entry><entry><title>Ich habe eine neue Wohnung! :)</title><link href="https://www.zoosau.de/ich-habe-eine-neue-wohnung.html" rel="alternate"></link><published>2008-08-29T21:03:00+02:00</published><updated>2008-08-29T21:03:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-08-29:/ich-habe-eine-neue-wohnung.html</id><summary type="html">&lt;h3 id="ha" style="text-align: justify;"&gt;Ha!!&lt;/h3&gt;
+&lt;p&gt;Damit hätte wohl keiner mehr gerechnet; am wenigsten ich selbst! Ich
+habe nun, auf den letzten Drücker, noch eine Wohnung gefunden!&lt;/p&gt;
+&lt;p&gt;Ich habe meine aktuelle Wohnung, hier in der Wilmsstr 47, noch für
+September diesen Jahres bezahlt. Anschliessend hätte ich mir etwas
+einfallen lassen müssen. Ich hatte mich innerlich …&lt;/p&gt;</summary><content type="html">&lt;h3 id="ha" style="text-align: justify;"&gt;Ha!!&lt;/h3&gt;
+&lt;p&gt;Damit hätte wohl keiner mehr gerechnet; am wenigsten ich selbst! Ich
+habe nun, auf den letzten Drücker, noch eine Wohnung gefunden!&lt;/p&gt;
+&lt;p&gt;Ich habe meine aktuelle Wohnung, hier in der Wilmsstr 47, noch für
+September diesen Jahres bezahlt. Anschliessend hätte ich mir etwas
+einfallen lassen müssen. Ich hatte mich innerlich schon so halb mit dem
+Gedanken abgefunden, meine Vermieterin anbetteln zu müssen, mir eine
+Verlängerung um einen Monat zu geben, und das mein Bremerhaven-Urlaub
+ins Wasser fällt.&lt;/p&gt;</content><category term="neue Wohnung"></category></entry><entry><title>Ärger mit dem neuen Rechner</title><link href="https://www.zoosau.de/arger-mit-dem-neuen-rechner.html" rel="alternate"></link><published>2008-08-19T20:01:00+02:00</published><updated>2008-08-19T20:01:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-08-19:/arger-mit-dem-neuen-rechner.html</id><summary type="html">&lt;p&gt;Wie ich zuvor schon erwähnt habe, habe ich mir einen neuen Rechner
+gegönnt. Wird nach 6 Jahren einfach mal Zeit - ich konnte kein einziges
+aktuelles Spiel mehr Spielen!&lt;/p&gt;
+&lt;p&gt;Ich liste hier zunächst mal die Komponenten auf:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bauteil             Marke         Modell                                                                                                                        Preis&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Mainboard           Asus          &lt;a href="http://www.asus.de/products.aspx?l1=3&amp;amp;l2=11&amp;amp;l3=709&amp;amp;l4=0&amp;amp;model=2331&amp;amp;modelmenu=1"&gt;P5QC&lt;/a&gt;                                        108.10 €
+  CPU                 Intel         &lt;a href="http://processorfinder.intel.com/details.aspx?sSpec=SLAPL"&gt;E8400 (Boxed)&lt;/a&gt;                                                    135 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Wie ich zuvor schon erwähnt habe, habe ich mir einen neuen Rechner
+gegönnt. Wird nach 6 Jahren einfach mal Zeit - ich konnte kein einziges
+aktuelles Spiel mehr Spielen!&lt;/p&gt;
+&lt;p&gt;Ich liste hier zunächst mal die Komponenten auf:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bauteil             Marke         Modell                                                                                                                        Preis&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Mainboard           Asus          &lt;a href="http://www.asus.de/products.aspx?l1=3&amp;amp;l2=11&amp;amp;l3=709&amp;amp;l4=0&amp;amp;model=2331&amp;amp;modelmenu=1"&gt;P5QC&lt;/a&gt;                                        108.10 €
+  CPU                 Intel         &lt;a href="http://processorfinder.intel.com/details.aspx?sSpec=SLAPL"&gt;E8400 (Boxed)&lt;/a&gt;                                                    135.77 €
+  HDD (Festplatten)   Samsung       &lt;a href="http://www.samsung.com/us/support/download/supportDown.do?model_nm=HD252KJ&amp;amp;mType=UM&amp;amp;vType=L&amp;amp;disp_nm=HD252KJ"&gt;HD252KJ (2x)&lt;/a&gt;   je 39.90 €
+  ODD (DVD Brenner)   Samsung       &lt;a href="http://www.samsung.com/us/support/download/supportDown.do?model_nm=SH-S203N&amp;amp;mType=UM&amp;amp;vType=L&amp;amp;disp_nm=SH-S203N"&gt;SH-S203N&lt;/a&gt;     28.99 €
+  Netzteil            SuperFlower   &lt;a href="http://www.super-flower.de/index.php?option=com_content&amp;amp;task=view&amp;amp;id=21&amp;amp;Itemid=34"&gt;SF550P-14P Black Edition&lt;/a&gt;                 44,99 €
+  Grafikkarte         MSI           &lt;a href="http://www.msi-computer.de/index.php?func=proddesc&amp;amp;prod_no=1488&amp;amp;maincat_no=130"&gt;N260GTX-T2D896-OC&lt;/a&gt;                           250.28 €
+  RAM                 Corsair       &lt;a href="http://www.corsairmemory.com/products/go.aspx?pn=TWIN3X2048-1333C9DHX"&gt;TWIN3X2048-1333C9DHX&lt;/a&gt;                                 79.42 €
+  USV                 APC           &lt;a href="http://www.apc.com/resource/include/techspec_index.cfm?base_sku=BK650EI&amp;amp;total_watts=200"&gt;Back UPS CS 650&lt;/a&gt;                    79,90 €&lt;/p&gt;
+&lt;p&gt;Diese Konfiguration hat sich als sehr, sehr unstabil heraus gestellt!
+Ich konnte keine 10 Minuten mit dem System arbeiten, ehe es abgestürzt
+ist. Ich konnte nichtmal ein Windows Vista installieren, da das System
+bereits hier an immer unterschiedlichen Stellen abgestürzt ist.&lt;br&gt;
+Ich habe &lt;a href="http://www.memtest.org" title="HP von Memtest86+"&gt;memtest86+&lt;/a&gt; laufen
+lassen, dieser hat jedoch keinen Fehler finden können.&lt;br&gt;
+Anschliessend habe ich mal das neueste BIOS Update für das Mainboard
+eingespielt (Version 1101). Anschliessend konnte ich Vista installieren.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das BIOS von Asus ist echt stark!&lt;br&gt;
+Ich finde es extrem geil, das man das BIOS Update Tool als BIOS Option
+vom Board aus vorinstalliert starten kann. anschliessend werden USB
+Sticks, USB HDDs, eingelegte CDs, etc. problemlos erkannt und können
+bequem per Pseudo-DOS Menü angebrowsed und ausgewählt werden. Da hat
+sich echt einiges getan!&lt;/p&gt;
+&lt;p&gt;Hier dachte ich bereits das Problem sei behoben. Nachdem ich Vista
+jedoch zuende installiert habe, ist mir das System in 1,5 Stunden ca.
+10x angestürzt. Immer an anderer Stelle, immer nach unterschiedlicher
+Laufzeit. Keine Komponente war nennenswert warm.&lt;/p&gt;
+&lt;p&gt;Ich habe es also einmal mit nur einem RAM Riegel probiert. Hierbei
+zeigte das System sich deutlich stabiler; allerdings, mit insgesamt nur
+1 GB RAM auch deutlich träger. An ein flüssiges arbeiten unter Vista ist
+hierbei nicht zu denken, geschweige denn Spielen! Die HDD LED blinkte
+nicht: Sie leuchtet konstant (Swapping).&lt;/p&gt;
+&lt;p&gt;Allerdings stürzte auch dabei das System nach einiger Zeit wieder ab.&lt;br&gt;
+Ich habe beide Module einzeln in beiden DDR3 Steckplätzen getestet.
+Jedoch alle Tests waren negativ. Ich kann also nicht sagen, das ein
+Modul, oder ein DDR3 Steckplatz defekt ist oder nicht.&lt;/p&gt;
+&lt;p&gt;Da ich nun die Schnauze voll hatte mit dieser Testerei bei neuen
+Komponenten (Hallo??), habe ich jeden Support angeschrieben: Asus, MSI
+und Corsair.&lt;br&gt;
+Bisher haben sich MSI und Corsair gemeldet. MSI sagte lediglich, das die
+von mir angegebenen Angaben zu ungenau seien, und ich bitte
+spezifizieren soll. Dabei habe ich jedes Feld in Ihrem Formular
+ausgefüllt, das, bis auf die Schuhgrösse, eigentlich alles an Fragen
+abdeckt. Zudem habe ich das Problem als Fliesstext geschildert.&lt;/p&gt;
+&lt;p&gt;Corsair haben ein Forum, in dem man seine Fragen stellen kann. Das halte
+ich für eine super Idee! So können schliesslich alle anderen eventuelle
+Problemlösungen auch anschliessend einsehen und durchbrowsen. Das
+gefällt mir sehr, sehr gut! Auch hier hat man mir nach einem Tag die
+erste Antwort gegeben, die leider noch nicht zu einer befriedigenden
+Antwort führte, aber ich fähle mich da auf jeden Fall schonmal gut
+afgehoben! :)&lt;/p&gt;
+&lt;p&gt;Weil ich so lange nicht warten will, ich es inzwischen auf das Mainboard
+(welches ich ja nicht wirklich testen kann), den RAM und die Grafikkarte
+eingrenzen kann, habe ich das Mainboard bei einem anderen Händler
+nochmal bestellt. Das erste schicke ich wegen "nicht gefallens" zurück.
+Das steht mir ja 14 Tage vollkommen frei.&lt;br&gt;
+Ausserdem habe ich mir RAM einer anderen Firma (GEIL) bestellt, um zu
+sehen, ob auf dem neuen Board anderer Speicher evtl. besser
+funktioniert.&lt;br&gt;
+Im Zweifelsfall kann ich auch den zurückschicken.&lt;/p&gt;
+&lt;p&gt;Durch diese Aktion verliere ich zwar ca. 20 € an Versandkosten, ich kann
+mich aber hinterher darauf verlassen keine schadhaften Teile zu
+besitzen, die in 2 Jahren wieder auseinander bröckeln.&lt;/p&gt;
+&lt;p&gt;Ausserdem habe ich mir ein neues, qualitativ hochwertigeres Netzteil
+gekauft. Dieses hat wenigstens den zuvor beschriebenen EATX12V Stecker
+in der richtig kodierten, 8-poligen Ausführung. Somit ist diese
+Fehlerquelle auch ausgemerzt.&lt;br&gt;
+Last but not Least habe ich mir das geilste Computergehäuse der Welt
+gekauft, das ich an dieser Stelle etwas bewerben will. Ich bin davon von
+der ersten Sekunde an sowas von völlig überzeugt und begeistert, das ich
+finde: So ein tolles Produkt kann man dann ruhig auch einmal lobend
+erwähnen:&lt;/p&gt;
+&lt;p&gt;Laut Post sollen Board und Prozessor heute in der Firma ankommen. Ich
+bin mal gespannt :)&lt;/p&gt;</content><category term="absturz"></category><category term="abstürzen"></category><category term="apc"></category><category term="asus"></category><category term="bios"></category><category term="corsair"></category><category term="e8400"></category><category term="eatx12v"></category><category term="hd252kj"></category><category term="memtest"></category><category term="msi"></category><category term="N260GTX-T2D896-OC"></category><category term="P5QC"></category><category term="samsung"></category><category term="sf550p-14P black edition"></category><category term="sh-s203n"></category><category term="superflower"></category><category term="twin3x2048-1333c9dhx"></category><category term="windows vista"></category></entry><entry><title>Wer Fehler findet, darf sie behalten</title><link href="https://www.zoosau.de/wer-fehler-findet-darf-sie-behalten.html" rel="alternate"></link><published>2008-08-15T00:58:00+02:00</published><updated>2008-08-15T00:58:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-08-15:/wer-fehler-findet-darf-sie-behalten.html</id><summary type="html">&lt;p&gt;Ich habe dieses Blog in den letzten Tagen sehr verändert.&lt;/p&gt;
+&lt;p&gt;Zum einen habe ich mein Theme geändert, da mein altes zwar super geil
+ausgesehen hat, jedoch selbst auf aktuellen Browsern das lesen der
+Beiträge zu einer Gedultprobe werden ließ. Die Seiten scrollten super
+langsam, der Webserver hatte auch teilweise Probleme …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe dieses Blog in den letzten Tagen sehr verändert.&lt;/p&gt;
+&lt;p&gt;Zum einen habe ich mein Theme geändert, da mein altes zwar super geil
+ausgesehen hat, jedoch selbst auf aktuellen Browsern das lesen der
+Beiträge zu einer Gedultprobe werden ließ. Die Seiten scrollten super
+langsam, der Webserver hatte auch teilweise Probleme beim kompilieren
+der Seite, so das sie temporär nicht erreichbar war, etc.&lt;/p&gt;
+&lt;p&gt;Ausserdem hat mich das Hinweisfenster im BackEnd genervt, das es eine
+neue Version gibt. Daher habe ich WordPress, sowie in diesem Zuge auch
+gleich alle Plugins mal aktualisiert.&lt;br&gt;
+Mindestens der Flashplayer geht offenbar gerade nicht. Was noch nicht
+geht, ist mir derzeit ehrlich gesagt egal - WordPress hat sich bei mir
+eh als Flickwerk und schlecht konzipierte, anfällige und super träge
+gewartete Blogsoftware gezeigt. Aber darüber habe ich ja schon diverse
+Male in diesem Blog resümiert..&lt;br&gt;
+Bald kommt TYPO3 und gut! Dann kommen die Fehler wenigstens wirklich von
+mir ... ;)&lt;/p&gt;
+&lt;p&gt;Wenn jemand also Fehler findet, dann wird es wahrscheinlich damit
+zusammen hängen.&lt;/p&gt;</content><category term="theme"></category><category term="Wordpress"></category></entry><entry><title>Mein K770i ist wieder da</title><link href="https://www.zoosau.de/mein-k770i-ist-wieder-da.html" rel="alternate"></link><published>2008-06-05T14:33:00+02:00</published><updated>2008-06-05T14:33:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-06-05:/mein-k770i-ist-wieder-da.html</id><summary type="html">&lt;p&gt;Ha!&lt;/p&gt;
+&lt;p&gt;Seit gestern ist mein Handy, ein K770i von SonyEricsson, aus der
+Garantiereperatur wieder da.&lt;/p&gt;
+&lt;p&gt;Es hatte ursprünglich den Defekt, das 3 Tasten nicht richtig
+funktionierten. Bei dieser ersten Reperatur wurde es am Gehäuse
+beschädigt. Daher musste ich es ein zweites Mal einsenden.&lt;/p&gt;
+&lt;p&gt;Dieses Mal ging offenbar alles glatt. Ich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ha!&lt;/p&gt;
+&lt;p&gt;Seit gestern ist mein Handy, ein K770i von SonyEricsson, aus der
+Garantiereperatur wieder da.&lt;/p&gt;
+&lt;p&gt;Es hatte ursprünglich den Defekt, das 3 Tasten nicht richtig
+funktionierten. Bei dieser ersten Reperatur wurde es am Gehäuse
+beschädigt. Daher musste ich es ein zweites Mal einsenden.&lt;/p&gt;
+&lt;p&gt;Dieses Mal ging offenbar alles glatt. Ich halte das reparierte Handy in
+Händen. Juhuu! \^.\^&lt;/p&gt;
+&lt;p&gt;Eine Sache wundert mich nur: Ich habe auf einmal andere Software drauf.
+Unter "Spiele" habe ich auf einmal ein "Wer wird Millionär" und "Poker".
+Als Demo - aha. Gute Werbung! :)&lt;/p&gt;
+&lt;p&gt;Ich habe leider versäumt mir meine IMEI Nummer zu notieren. Würde mich
+schon interessieren ob ich ein anderes Gerät bekommen habe oder nicht
+...&lt;/p&gt;
+&lt;p&gt;Egal.&lt;/p&gt;
+&lt;p&gt;Bin Glücklich ;)&lt;/p&gt;</content><category term="handy"></category><category term="k770i"></category><category term="sony ericsson"></category><category term="sonyericsson"></category></entry><entry><title>K770i Reperatur - die zweite</title><link href="https://www.zoosau.de/k770i-reperatur-die-zweite.html" rel="alternate"></link><published>2008-05-26T13:59:00+02:00</published><updated>2008-05-26T13:59:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-26:/k770i-reperatur-die-zweite.html</id><summary type="html">&lt;p&gt;Wie ich &lt;a href="http://www.zoosau.de/leben/white-vs-pechstrane" title="Blogeintrag vor Handy Reperatur"&gt;am 8. Mai bereits GeBlogged
+habe&lt;/a&gt;,
+habe ich befürchtet mein Handy in einem nicht akzeptablen Zustand von
+der Arvato GmbH in Harsewinkel zurückzubekommen.&lt;/p&gt;
+&lt;p&gt;Diese Firma ist für die Garantiereperaturen bei ePlus verantwortlich.&lt;/p&gt;
+&lt;p&gt;Die Tastatur funktioniert zwar, jedoch ist jetzt ein dicker, fetter
+Schraubenzieherkratzer im Gehäuse. Er beginnt seitlich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wie ich &lt;a href="http://www.zoosau.de/leben/white-vs-pechstrane" title="Blogeintrag vor Handy Reperatur"&gt;am 8. Mai bereits GeBlogged
+habe&lt;/a&gt;,
+habe ich befürchtet mein Handy in einem nicht akzeptablen Zustand von
+der Arvato GmbH in Harsewinkel zurückzubekommen.&lt;/p&gt;
+&lt;p&gt;Diese Firma ist für die Garantiereperaturen bei ePlus verantwortlich.&lt;/p&gt;
+&lt;p&gt;Die Tastatur funktioniert zwar, jedoch ist jetzt ein dicker, fetter
+Schraubenzieherkratzer im Gehäuse. Er beginnt seitlich, neben der
+"Internet" - Taste und zieht sich über die Tasten 1, 4 und 7.
+Selbstverständlich ist das zwischen den Tasten liegende Plastik mit
+zerkratzt.&lt;/p&gt;
+&lt;p&gt;Ironischerweise prangt ein dicker, fetter "Qualitätskontrolle
+durchgeführt von Platz XX" auf der Verpackung.&lt;/p&gt;
+&lt;p&gt;Das sowas passiert, kann ich verstehen. Das eine Reperatur auch mal
+länger dauert auch. Was ich jedoch nicht verstehe ist, das man blinde
+Menschen an die Qualitätskontrolle setzt. Wozu wird das dann
+kontrolliert?&lt;/p&gt;
+&lt;p&gt;Ich bin mir fast sicher, das ich dieses Mal die "das war schon so"
+Abfuhr bekomme.&lt;/p&gt;
+&lt;p&gt;Egal, ich sende es wieder ein und warte was passiert ...&lt;/p&gt;</content><category term="arvato"></category><category term="eplus"></category><category term="gmbh"></category><category term="kratzer"></category><category term="kundenservice"></category></entry><entry><title>Indiana Jones IV - Und die Pilze ...</title><link href="https://www.zoosau.de/indiana-jones-iv-und-die-pilze.html" rel="alternate"></link><published>2008-05-26T08:51:00+02:00</published><updated>2008-05-26T08:51:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-26:/indiana-jones-iv-und-die-pilze.html</id><summary type="html">&lt;p&gt;Yoooooo - wir haben uns ganz gut amüsiert bei dem Film.&lt;/p&gt;
+&lt;p&gt;Ich will hier nicht die ganze Handlung des Filmes verraten oder so. Nur
+eine Szene hat mich an dem eigentlich ganz netten Film super geärgert:&lt;/p&gt;
+&lt;p&gt;Indiana Jones verfährt sich mit seinem Raketenschlitten auf der Area 51.
+Dessen Endhaltestelle ist, wie …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yoooooo - wir haben uns ganz gut amüsiert bei dem Film.&lt;/p&gt;
+&lt;p&gt;Ich will hier nicht die ganze Handlung des Filmes verraten oder so. Nur
+eine Szene hat mich an dem eigentlich ganz netten Film super geärgert:&lt;/p&gt;
+&lt;p&gt;Indiana Jones verfährt sich mit seinem Raketenschlitten auf der Area 51.
+Dessen Endhaltestelle ist, wie es sich für echte Geheimprojekte gehört,
+neben einem zu Testgründen aufgebautem Dorf für Atombombentests.&lt;/p&gt;
+&lt;p&gt;Was will man dort: "&lt;strong&gt;Ich muss mal kurz telefonieren!&lt;/strong&gt;" O.o&lt;/p&gt;
+&lt;p&gt;OK... als unsere Oberleuchte merkt wo er ist, kriecht er in einen
+Bleiverkleideten Kühlschrank, um sich vor der Strahlung und Explosion zu
+schützen. Dieser Kühlschrank fliegt nun mehrere Kilometer weit durch die
+Luft, donnert auf Steinboden, titscht dort mehrere Male und Meter weit
+auf, und Indiana Jones kriecht ohne eine Schramme heraus und schaut sich
+den schönen Atompilz an.&lt;/p&gt;
+&lt;p&gt;Jeder andere wäre jetzt tot. Oder eine Woche später durch
+Blubberbläschen und Krebsexzeme im Körper gestorben. Nur als echter
+Superarchäologe reicht es kurz zu Duschen...&lt;/p&gt;
+&lt;p&gt;Ja nee, ist klar!&lt;/p&gt;
+&lt;p&gt;Das fand ich echt schade. Bisher waren die Filme zwar auch nicht 100%
+realistisch. Wer sowas bei so einem Film erwartet hat se eh nicht alle
+an der Scheibe. Aber wenn man so dummdreist verkackeiert wird, dann
+nimmt einem das den Spass am Film. Ein Held darf nicht einfach alles
+überleben. Kriegt 'ne Kugel in den Kopf, schreit einmal "&lt;strong&gt;Aaah!&lt;/strong&gt;" und
+rückt nur den Hut gerade ... so macht das keinen Spass :P&lt;/p&gt;
+&lt;p&gt;Klar soll der Hauptdarsteller nicht in der ersten halben Stunde sterben.
+Aber dann muss man ihn halt in Situationen "schreiben", die man mit
+einer 1:1.000.000 Chance überleben KANN. Nicht so ein Müll :P&lt;/p&gt;
+&lt;p&gt;Ansonsten: Wie gesagt, ganz netter Film! Aber meiner Meinung nach keine
+Eintrittskarte wert.&lt;/p&gt;</content><category term="indiana jones"></category><category term="kristallschädel"></category><category term="review"></category></entry><entry><title>Klassentreffen der FS03A</title><link href="https://www.zoosau.de/klassentreffen-der-fs03a.html" rel="alternate"></link><published>2008-05-18T16:55:00+02:00</published><updated>2008-05-18T16:55:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-18:/klassentreffen-der-fs03a.html</id><summary type="html">&lt;p&gt;Gestern hatte ich mit ausgesuchten Leuten meiner alten Berufschulklasse
+ein Klassentreffen im Cafe Nord in essen. "Cafe" ist gut - ist
+eigentlich ne Asikneipe, aber man kann es sich gemütlich machen.&lt;/p&gt;
+&lt;p&gt;Es waren da:&lt;/p&gt;
+&lt;p&gt;Alex, Florian, Timur, Patrick (Eimer) und später auch noch Claudia.&lt;/p&gt;
+&lt;p&gt;War ein sehr lustiger Abend. Nur denke …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gestern hatte ich mit ausgesuchten Leuten meiner alten Berufschulklasse
+ein Klassentreffen im Cafe Nord in essen. "Cafe" ist gut - ist
+eigentlich ne Asikneipe, aber man kann es sich gemütlich machen.&lt;/p&gt;
+&lt;p&gt;Es waren da:&lt;/p&gt;
+&lt;p&gt;Alex, Florian, Timur, Patrick (Eimer) und später auch noch Claudia.&lt;/p&gt;
+&lt;p&gt;War ein sehr lustiger Abend. Nur denke ich ich habe genervt. Ich war
+irgendwie suuuuuper besoffen.&lt;/p&gt;
+&lt;p&gt;Wenn ich richtig gezählt habe, hatte ich über die 6 Stunden hinweg 4 0,5
+Weizenbier. Eigentlich durchschnitt für mich. Aber die haben irgendwie
+super reingehauen. Ich war einfach nur stralle. Sorry Leute ;P&lt;/p&gt;
+&lt;p&gt;Was noch?&lt;/p&gt;
+&lt;p&gt;Achja: Ich habe Euch ein Video versprochen ;)&lt;/p&gt;
+&lt;p&gt;Das findet ihr aber unter dem Memberbereich - sorry, das muss nicht
+jeder sehen ;D&lt;/p&gt;</content><category term="betrunken"></category><category term="defekt"></category><category term="mikrowelle"></category></entry><entry><title>Video-Spiel "Darkest of Days"</title><link href="https://www.zoosau.de/video-spiel-darkest-of-days.html" rel="alternate"></link><published>2008-05-12T13:18:00+02:00</published><updated>2008-05-12T13:18:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-12:/video-spiel-darkest-of-days.html</id><summary type="html">&lt;p&gt;Ein recht vielversprechender Shooter kommt aus dem Hause &lt;a href="http://www.phantomefx.com" title="PhantomEFX"&gt;Phantom
+EFX&lt;/a&gt; / 8MonkeyLabs : &lt;a href="http://www.darkestofdays.com/" title="HP von Darkest of Days"&gt;&lt;em&gt;"Darkest
+of Days"&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vom GamePlay sieht man in den aktuellen Trailern noch nichts - die Story
+hört sich aber cool an. Man reist durch die Zeit zurück, um Katastrophen
+und Tragödien der Menschheitsgeschichte zu verhindern. Laut Trailer z.B.
+den …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ein recht vielversprechender Shooter kommt aus dem Hause &lt;a href="http://www.phantomefx.com" title="PhantomEFX"&gt;Phantom
+EFX&lt;/a&gt; / 8MonkeyLabs : &lt;a href="http://www.darkestofdays.com/" title="HP von Darkest of Days"&gt;&lt;em&gt;"Darkest
+of Days"&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vom GamePlay sieht man in den aktuellen Trailern noch nichts - die Story
+hört sich aber cool an. Man reist durch die Zeit zurück, um Katastrophen
+und Tragödien der Menschheitsgeschichte zu verhindern. Laut Trailer z.B.
+den &lt;a href="http://de.wikipedia.org/wiki/Pompeji#Der_Untergang" title="Wiki Eintrag zum Ausbruch des Vesuv"&gt;Vulkanausbruch des Vesuv in
+Pompeji&lt;/a&gt;,
+den
+&lt;a href="http://de.wikipedia.org/wiki/Holocaust" title="Wiki Eintrag zum Holocaust"&gt;Holocaust&lt;/a&gt;
+und den &lt;a href="http://de.wikipedia.org/wiki/Sezessionskrieg" title="Wiki Eintrag zum amerikanischen Bürgerkrieg"&gt;amerikanischen
+Bürgerkrieg&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Bin ja mal gespannt, ob das GamePlay und die generelle Umsetzung halten,
+was die gute Idee verspricht.&lt;/p&gt;
+&lt;p&gt;Hier noch ein kleiner Videotrailer:&lt;/p&gt;
+&lt;p&gt;[flashvideo filename=wp-content/uploads/darkestofdaysdebut.flv /]&lt;/p&gt;
+&lt;p&gt;Vorraussichtlich verfügbar für:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/system-pc-klein.jpg"&gt;&lt;img alt="" src="https://www.zoosau.de/images/system-pc-klein.jpg" title="system-pc-klein"&gt;{.alignnone
+.size-medium .wp-image-139 width="120"
+height="120"}&lt;/a&gt;&lt;/p&gt;</content><category term="darkest of days"></category><category term="pc"></category></entry><entry><title>White vs. Pechsträne</title><link href="https://www.zoosau.de/white-vs-pechstrane.html" rel="alternate"></link><published>2008-05-08T19:14:00+02:00</published><updated>2008-05-08T19:14:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-05-08:/white-vs-pechstrane.html</id><summary type="html">&lt;p&gt;Wer mein Blog in den letzten Tagen verfolgt hat, wird nicht umher
+gekommen sein zu bemerken, das ich zur Zeit nicht gerade viel Glück
+habe.&lt;/p&gt;
+&lt;p&gt;Heute ist nun mein neues Handy, ein SonyEricsson K770i,
+&lt;a href="https://www.zoosau.de/images/sony_ericsson_k770i.jpg"&gt;&lt;img alt="" src="{filename}images/sony_ericsson_k770i-300x225.jpg" title="sony_ericsson_k770i"&gt;{.alignleft
+.size-medium .wp-image-134 width="300"
+height="225"}&lt;/a&gt;
+von eBay hier angekommen. Ich hatte extra um eine …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wer mein Blog in den letzten Tagen verfolgt hat, wird nicht umher
+gekommen sein zu bemerken, das ich zur Zeit nicht gerade viel Glück
+habe.&lt;/p&gt;
+&lt;p&gt;Heute ist nun mein neues Handy, ein SonyEricsson K770i,
+&lt;a href="https://www.zoosau.de/images/sony_ericsson_k770i.jpg"&gt;&lt;img alt="" src="{filename}images/sony_ericsson_k770i-300x225.jpg" title="sony_ericsson_k770i"&gt;{.alignleft
+.size-medium .wp-image-134 width="300"
+height="225"}&lt;/a&gt;
+von eBay hier angekommen. Ich hatte extra um eine Rechnung gebeten, da
+das Teil erst am 05.01.2008 gekauft wurde, und ich somit ja noch gute
+1,5 Jahre Garantie habe.&lt;/p&gt;
+&lt;p&gt;Wie alles in den letzten Tagen hier natürlich ein Misserfolg: Die beiden
+Tasten links unten sind defekt.&lt;/p&gt;
+&lt;p&gt;Nun habe ich bei ePlus angerufen und gefragt, wie das läuft, wenn man
+ein Handy einem ihrer Kunden abgekauft hat. Ich war positiv überrascht:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"Ach, schicken sie's da und da unfrei ein, das wird innerhalb von 2-3
+Wochen repariert!"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ich kann mir nicht helfen - das wirkt in Hinblick auf meine letzten
+"Glücksfälle" zu einfach. Wenn ich's hinschicke, werde ich wohl nur
+einen Haufen geschmolzenen Plastiks wiederbekommen mit &lt;em&gt;"das war schon
+so!"&lt;/em&gt; oder erst nach meinem Geburtstag im Juni.&lt;/p&gt;
+&lt;p&gt;Soll ich wirklich?&lt;/p&gt;
+&lt;p&gt;Ja, was soll's! Es hilft ja nichts. Ich brauch die Tasten ..&lt;/p&gt;</content><category term="defekt"></category><category term="handy"></category><category term="k770i"></category><category term="sony ericsson"></category></entry><entry><title>Meine Küche wird eingerissen ... :'(</title><link href="https://www.zoosau.de/meine-kuche-wird-eingerissen.html" rel="alternate"></link><published>2008-04-23T19:53:00+02:00</published><updated>2008-04-23T19:53:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-23:/meine-kuche-wird-eingerissen.html</id><summary type="html">&lt;p&gt;Oh mann, oh mann ... ob ich das jemals wieder sauber kriege?&lt;/p&gt;
+&lt;p&gt;Na, ich bin ja mal gespannt. Bis jetzt ist die Rückwand meiner
+Küchenzeile verschimmelt, meine Fussleiste in der Küche kommt ab, da
+sich dahinter auch Schimmel gesammelt hat, die halbe Wand wurde
+aufgekloppt (die in sich übrigens hohl zu …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Oh mann, oh mann ... ob ich das jemals wieder sauber kriege?&lt;/p&gt;
+&lt;p&gt;Na, ich bin ja mal gespannt. Bis jetzt ist die Rückwand meiner
+Küchenzeile verschimmelt, meine Fussleiste in der Küche kommt ab, da
+sich dahinter auch Schimmel gesammelt hat, die halbe Wand wurde
+aufgekloppt (die in sich übrigens hohl zu sein scheint) und mein
+Kämmerchen wird gerade zerlegt.&lt;/p&gt;
+&lt;p&gt;Ich habe hier mal ein Bild der Küche:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/23-04-08_1945.jpg"&gt;&lt;img alt="Meine halb aufgekloppte
+Küche" src="{filename}images/23-04-08_1945-300x225.jpg" title="23-04-08_1945"&gt;{.alignnone
+.size-medium .wp-image-124 width="300"
+height="225"}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So langsam werde ich mit dieser Wohnung wirklich traurig ... :(&lt;/p&gt;
+&lt;p&gt;So viel Geld, so viel Arbeit, und alles für die Katz ...&lt;br&gt;
+Mir geht's grade echt nicht gut dabei :(&lt;/p&gt;</content><category term="küche"></category><category term="schimmel"></category></entry><entry><title>♫ Reeeeeiss die Ziiiimmer ein ... ♫</title><link href="https://www.zoosau.de/%e2%99%ab-reeeeeiss-die-ziiiimmer-ein-%e2%99%ab.html" rel="alternate"></link><published>2008-04-22T23:48:00+02:00</published><updated>2008-04-22T23:48:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-22:/%e2%99%ab-reeeeeiss-die-ziiiimmer-ein-%e2%99%ab.html</id><summary type="html">&lt;p&gt;So, morgen geht's los.&lt;/p&gt;
+&lt;p&gt;Die Küche war das erste Zimmer in meiner neuen Wohnung, welches ich
+wirklich mit all meiner Kraft, Geduld und nicht gerade ausgeprägtem
+Talent renoviert habe.&lt;/p&gt;
+&lt;p&gt;Alle Tapeten fein säuberlich abgescharbt, Löcher in den Wänden so gut es
+ging selbst zugeschmiert, neu Tapeziert, Schränke aufgehangen, Geräte
+angeschlossen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, morgen geht's los.&lt;/p&gt;
+&lt;p&gt;Die Küche war das erste Zimmer in meiner neuen Wohnung, welches ich
+wirklich mit all meiner Kraft, Geduld und nicht gerade ausgeprägtem
+Talent renoviert habe.&lt;/p&gt;
+&lt;p&gt;Alle Tapeten fein säuberlich abgescharbt, Löcher in den Wänden so gut es
+ging selbst zugeschmiert, neu Tapeziert, Schränke aufgehangen, Geräte
+angeschlossen, etc. Was halt so dazu gehört.&lt;/p&gt;
+&lt;p&gt;Jetzt durfte ich die ganze Küchenzeile wieder abmontieren, da die Wand
+aufgrund eines angeblich undichten Siffons im Bad (der angrenzende Raum)
+undicht war. Dadurch ist seit monaten die ganze Wand nass und inzwischen
+auch verschimmelt.&lt;/p&gt;
+&lt;p&gt;Nach langem Kampf, kommt nun morgen endlich der Nachbar, der (natürlich
+mal wieder unter der Hand) mir das aufbrechen, versiegeln und neu
+verputzen soll.&lt;/p&gt;
+&lt;p&gt;Aus Höflichkeit werde ich morgen wohl wieder fleissig mit anpacken
+dürfen. Eigentlich der Hauptgrund, weswegen ich eigentlich nur
+Fachmänner haben will. Die arbeiten alleine ... für das ganze sind 3
+Tage mit Arbeitsbeginn je um 19 Uhr angesetzt. Ich hoffe das kommt hin.
+Ich glaub's ja eigentlich weniger.&lt;/p&gt;
+&lt;p&gt;Naja, ich halt euch auf dem laufendem...&lt;/p&gt;
+&lt;p&gt;Jetzt bin ich erstmal todmüde ...&lt;/p&gt;</content></entry><entry><title>NVidia Grafiktreiber unter Linux ab Kernel 2.6.24</title><link href="https://www.zoosau.de/nvidia-grafiktreiber-unter-linux-ab-kernel-2624.html" rel="alternate"></link><published>2008-04-21T23:39:00+02:00</published><updated>2008-04-21T23:39:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-04-21:/nvidia-grafiktreiber-unter-linux-ab-kernel-2624.html</id><summary type="html">&lt;p&gt;Eine Veränderung im Linux Kernel 2.6 macht es unmöglich, ohne weitere
+Anpassungen einen NVidia Treiber der Versionen 71.86.04, 96.43.05,
+169.12 und 171.06 zu installieren. Es kommt eine Fehlermeldung.&lt;/p&gt;
+&lt;p&gt;Die einzige Möglichkeit trotzdem einen Treiber zu installieren besteht
+derzeit aus einem Patch für den …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Eine Veränderung im Linux Kernel 2.6 macht es unmöglich, ohne weitere
+Anpassungen einen NVidia Treiber der Versionen 71.86.04, 96.43.05,
+169.12 und 171.06 zu installieren. Es kommt eine Fehlermeldung.&lt;/p&gt;
+&lt;p&gt;Die einzige Möglichkeit trotzdem einen Treiber zu installieren besteht
+derzeit aus einem Patch für den Treiber. &lt;a href="http://www.nvnews.net/vbulletin/showthread.php?t=110088" title="NVidia Linux Treiber Patches"&gt;Diese findet man
+hier&lt;/a&gt;.
+Nachdem man sich den passenden Patch heruntergeladen hat, wird dieser
+mit der Kommandozeilenoption &lt;em&gt;--apply-patch&lt;/em&gt; installiert:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;sh NVIDIA-Linux-Version.run --apply-patch
+NVIDIA_kernel-Version.diff.txt&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Hierdurch wird ein neuer Installer generiert, der im selben Verzeichniss
+wie der originale liegt, jedoch auf &lt;em&gt;-custom.run&lt;/em&gt; endet.&lt;/p&gt;
+&lt;p&gt;Dieser lässt sich nun wie gewohnt installieren:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;sh NVIDIA-Linux-Version-custom.run&lt;/em&gt;&lt;/p&gt;</content><category term="fehler"></category><category term="Linux"></category><category term="nvidia"></category><category term="treiber"></category></entry><entry><title>Neue Möbel</title><link href="https://www.zoosau.de/neue-mobel.html" rel="alternate"></link><published>2008-03-04T15:47:00+01:00</published><updated>2008-03-04T15:47:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-03-04:/neue-mobel.html</id><summary type="html">&lt;p&gt;Ha!&lt;/p&gt;
+&lt;p&gt;Eben kam ein Lieferwagen der Vertragsspedition von IKEA an und legt mir
+meinen neuen Bücher-/CD-/DVD-Schrank, zusammen mit meiner neuen
+Schlafcouch (BEDDINGE), eingepackt ins Wohnzimmer. Das sah ein wenig
+chaotisch aus:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/chaos_couch.jpg" title="Meine Schlafcouch - Chaos"&gt;&lt;img alt="Meine Schlafcouch -
+Chaos" src="{filename}images/chaos_couch.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Die Leute stellen sich auch immer so an ... "Waaaah - IKEA ist doch voll
+schlimm!! Hälfte fehlt und …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ha!&lt;/p&gt;
+&lt;p&gt;Eben kam ein Lieferwagen der Vertragsspedition von IKEA an und legt mir
+meinen neuen Bücher-/CD-/DVD-Schrank, zusammen mit meiner neuen
+Schlafcouch (BEDDINGE), eingepackt ins Wohnzimmer. Das sah ein wenig
+chaotisch aus:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/chaos_couch.jpg" title="Meine Schlafcouch - Chaos"&gt;&lt;img alt="Meine Schlafcouch -
+Chaos" src="{filename}images/chaos_couch.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Die Leute stellen sich auch immer so an ... "Waaaah - IKEA ist doch voll
+schlimm!! Hälfte fehlt und es dauert STUNDEN bis das gut aussieht..."
+usw.Mir lag das Zeug auch ein bisschen im Weg, also habe ich den hier
+genommen:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/lappen.jpg" title="Ein Lappen"&gt;&lt;img alt="Ein
+Lappen" src="{filename}images/lappen.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;schnell drüber gewischt und schon sah es so aus:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/couch_fertig.jpg" title="Meine Schlafcouch - Fertig"&gt;&lt;img alt="Meine Schlafcouch -
+Fertig" src="{filename}images/couch_fertig.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fand ich jetzt garnicht so schwer ... aber ausruhen musste ich mich
+schon kurz:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/couch_ausruhen.jpg" title="Meine Schlafcouch - Tiere ruhen sich aus"&gt;&lt;img alt="Meine Schlafcouch - Tiere ruhen sich
+aus" src="{filename}images/couch_ausruhen.thumbnail.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;... nur HIER war leider schon besetzt! Schlaucht ganz schön das
+zugucken, was??? ;D&lt;/p&gt;</content><category term="BEDDINGE"></category><category term="IKEA"></category><category term="Schlafcouch"></category></entry><entry><title>Einen rechts, einen links, einen fallen lassen ...</title><link href="https://www.zoosau.de/einen-rechts-einen-links-einen-fallen-lassen.html" rel="alternate"></link><published>2008-02-12T21:05:00+01:00</published><updated>2008-02-12T21:05:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-12:/einen-rechts-einen-links-einen-fallen-lassen.html</id><summary type="html">&lt;p&gt;Heute bin ich, wie gestern bereits, durch meine Wohngegend gelaufen. Als
+Hundepapa kommt man ja öfter mal raus (täglich). Und wenn man sich mal
+umsieht, ist man hier in der Gegend als deutscher ehrlich schon die
+Ausnahme. Das ist mir auch gestern aufgefallen als ich mit Theclis
+zusammen draußen war …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Heute bin ich, wie gestern bereits, durch meine Wohngegend gelaufen. Als
+Hundepapa kommt man ja öfter mal raus (täglich). Und wenn man sich mal
+umsieht, ist man hier in der Gegend als deutscher ehrlich schon die
+Ausnahme. Das ist mir auch gestern aufgefallen als ich mit Theclis
+zusammen draußen war. Wir kamen dabei darauf zu sprechen, das
+Deutschland wirklich viel zu viele Ausländer aufnimmt. Selbst wenn man
+ab heute keinen einzigen mehr aufnehmen würde, auch solche nicht, die
+über 5 schöngeredete Ecken mit irgendwem verwand sind, würde Deutschland
+alleine aufgrund des Geburtenraten Unterschiedes ohne weiteres Einwirken
+von aussen über kurz oder lang vertürkt. Was soll überhaupt diese
+Scheiße mit der Schwachsinnsargumentation "ich bin hier, also muß meine
+Sippschaft auch herdürfen"? Das muß doch jeder selbst wissen ob er das
+Leben fern der Heimat wählt oder nicht. Ich bin niemand der mit Baseball
+Schlägern oder Benzinkanistern seine Freizeit oder Parteiprogramm
+gestalltet, aber ich bin schon in einigen Punkten folgender Meinung:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Man darf keine Ausländer aufnehmen, wenn ein bestimmter Anteil
+    erreicht ist&lt;/li&gt;
+&lt;li&gt;Kein Ausländer darf Arbeit bekommen, solange der Anteil
+    Arbeitswilliger, doch Arbeitsloser deutschen so hoch ist&lt;/li&gt;
+&lt;li&gt;Der Ausländeranteil pro Stadtteil darf nicht über einen bestimmten
+    Anteil liegen&lt;/li&gt;
+&lt;li&gt;Ohne Arbeit: Abschieben (ja, ich weiss das Punkt 2 hierauf eine
+    direkte Auswirkung hat)&lt;/li&gt;
+&lt;li&gt;Nach geschiedener Einbürgerungs-Zweckehe vor dem 10. Ehejahr:
+    Abschieben&lt;/li&gt;
+&lt;li&gt;Bei Straffälligkeit: Abschieben&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Klar liest sich sowas erstmal hart, aber denkt mal darüber nach.&lt;/p&gt;
+&lt;p&gt;Welche Verantwortung haben wir als Bürger für die Familie krimineller,
+ausländischer Jugendlicher? Genau: Keine! Wenn jemand wiederholt
+Straffällig wird, dann weg! Das kann er dann ja in Istanbul auf dem
+Großmarkt nochmal versuchen; spätestens nach der 2. Hand hat sich das
+mit der Klauerei erledigt.&lt;/p&gt;
+&lt;p&gt;Als Argumente &lt;strong&gt;gegen&lt;/strong&gt; eine Abschiebung kommt dann ja immer gerne "man
+kann weder einen jugendlichen alleine abschieben, noch die Eltern wegen
+der Verbrechen ihrer Kinder mit abschieben". ... Warum nicht? Klar! Wenn
+diese Asis (ich meine damit ausdrücklich &lt;strong&gt;nicht&lt;/strong&gt; pauschal alle
+Ausländer, sondern nur solche die ihre Adäquierten "der Mann ist
+Oberhaupt und darf &lt;strong&gt;alles&lt;/strong&gt;" Einstellung in Deutschland fahren) zuhause
+permanent den Einzelkämpfer vorgelebt bekommen ist doch klar das sie das
+auch auf der Straße so ausleben.&lt;/p&gt;
+&lt;p&gt;Ich würde mir wünschen, das Deutschland seine angebliche "Alt-" oder
+"Erbschuld" mal vergessen würde, und es nicht andauernd heißen würde
+sobald man etwas sagt wie "Straffällige abschieben" : Nazi, Erbschuld,
+usw., damit endlich mal eine objektive Problembesprechung möglich wird.
+Nahezu jedes Land macht es in dieser Beziehung besser als Deutschland.
+Und solange man diese Probleme nicht ansprechen darf, weil man dann ja
+direkt als Ausländerfeindlich eingestuft wird, werden wir nie was
+ändern.&lt;/p&gt;
+&lt;p&gt;Ich muss ganz ehrlich sagen: Soll man doch über mich sagen das ich
+rechts bin, diese Meinung zwingt sich mir bei genauerer Betrachtung aber
+inzwischen ehrlich auf. Als Politiker kann man sich sowas jedoch nicht
+leisten, völlig klar. Aber das bin ich ja zum Glück nicht ;D&lt;/p&gt;
+&lt;p&gt;Es kann doch nicht sein, das Deutschland erst ratzekahl abgefressen sein
+muss und die Anzahl der rechtsradikalen gross genug wird, um hier
+Straßenkämpfe und Bürgerkriege hervorzurufen. Das ist dann erst recht
+keine Lösung die irgendjemand will.&lt;/p&gt;
+&lt;p&gt;An Herrn Koch konnte man ja exzellent beobachten was geschieht wenn sich
+mal ein Politiker traut sowas anzusprechen: Andere Parteien sehen ihre
+Chance und pochen, egal wie richtig das gesagte sein mag, dagegen. &lt;em&gt;"Das
+kann man doch nicht saaagen, blahblah"&lt;/em&gt;...&lt;/p&gt;
+&lt;p&gt;So gesehen ist die Politik in der Beziehung quasi ohnmächtig, muß doch
+jeder der sich traut diese Tatsache, das wir uns als Volk kaum selber
+tragen können und da etwas gegen die Zuwandererhorden unternehmen
+müssen, befürchten, am nächsten Tag ein anderes Amt auszuüben (oder
+garkeines).&lt;/p&gt;
+&lt;p&gt;Die NPD ist in meinen Augen eine rechts&lt;strong&gt;radikale&lt;/strong&gt; Partei, die zur
+kompletten Volksverhetzung auffordert.&lt;/p&gt;
+&lt;p&gt;Doch eben das ist es ja was ich auch nicht will. Ich will nur das
+Problem in den Griff kriegen, niemanden grundsätzlich als Menschen
+ablehnen. Ich lebe als deutscher in Deutschland. Ich möchte mich in dem
+Land in dem ich arbeite und &lt;span
+style="text-decoration: underline;"&gt;für&lt;/span&gt; das ich arbeite, auch in
+Deutschland fühlen. Nicht in einer Deutschland kreuzenden, türkischen
+Landzunge wenn ich durch Stadtteile wie Duisburg Marxloh oder Oberhausen
+Lirich gehe.&lt;/p&gt;
+&lt;p&gt;Ist das zuviel verlangt? Ich finde diese Einstellung inzwischen nicht
+mehr rechts, sondern aufgrund der Entwicklung nur noch vernünftig.&lt;/p&gt;
+&lt;p&gt;Wir haben schon türkische Friseure, türkische Sparkassenschalter,
+türkische Kinderbetreuungsstätten und Moscheen. Jetzt werden auch noch
+türkische Universitäten gefordert. Da frage ich mich doch echt wann
+Schluß ist.&lt;/p&gt;
+&lt;p&gt;Würde es sowas in der Türkei jemals geben? Rein deutschsprachige
+Einrichtungen und das meistens auch noch auf türkische Staatskosten?&lt;/p&gt;
+&lt;p&gt;Ich denke nicht.&lt;/p&gt;
+&lt;p&gt;Um das alles nochmal klarzustellen:&lt;/p&gt;
+&lt;p&gt;Ich sehe mich selbst nicht als rechts. Ich habe nichts gegen Ausländer.
+Ich habe aber auch nichts gegen Regen, nur wenn es zuviel wird, schwemmt
+er alles weg und wird zur Naturkatastrophe.&lt;/p&gt;
+&lt;p&gt;So sehe ich das Thema Zuwanderung auch. Einzelne sind kein Problem. Nur
+wenn es zuviel wird, und das ist in meinen Augen der Fall, wenn ganze
+deutsche Stadtteile nahezu umgebaut werden und 1:1 so aussehen wie in
+der Türkei, dann wird Zuwanderung zum Problem. Und dieser Status ist
+leider längst erreicht.&lt;/p&gt;
+&lt;p&gt;Oben genannte Punkte mögen hart und rechts klingen, jedoch nur, weil man
+es in Deutschland gewohnt ist, sowas nicht sagen zu dürfen. Schliesslich
+sind wir doch das grosse, böse Ex-Naziland.. Das finde ich aber falsch.
+Ich orientiere mich dabei nur an anderen Ländern, wo sowas ganz und gebe
+ist.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ich bin weder Ausländerfeindlich, noch rechtsradikal!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ich mache mir lediglich kritische Gedanken um die aktuelle Entwicklung
+in meinem Heimatland und ich sehe eine Entwicklung, die mir nicht
+gefällt.&lt;/p&gt;</content></entry><entry><title>YEEEEEEEEEEEYA !! :D</title><link href="https://www.zoosau.de/yeeeeeeeeeeeya-d.html" rel="alternate"></link><published>2008-02-06T15:57:00+01:00</published><updated>2008-02-06T15:57:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-06:/yeeeeeeeeeeeya-d.html</id><summary type="html">&lt;p&gt;So, um 14:48 Uhr war es soweit: Eine SMS erreichte mich, das meine
+Lieferung nun in der Packstation läge (ist "läge" richtig? Egal, ich
+steh zu meinem Analphabethismus als gezeichnetes
+Rechtschreibreform-Wechselkind ;D )&lt;/p&gt;
+&lt;p&gt;Ich mache heute mal um 16:30 Uhr schluss. Also: Halbe Stunde noch, dann
+mach ich mich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, um 14:48 Uhr war es soweit: Eine SMS erreichte mich, das meine
+Lieferung nun in der Packstation läge (ist "läge" richtig? Egal, ich
+steh zu meinem Analphabethismus als gezeichnetes
+Rechtschreibreform-Wechselkind ;D )&lt;/p&gt;
+&lt;p&gt;Ich mache heute mal um 16:30 Uhr schluss. Also: Halbe Stunde noch, dann
+mach ich mich auf :D&lt;/p&gt;
+&lt;p&gt;Ich freu mich voll drauf =\^.\^=&lt;/p&gt;</content></entry><entry><title>Der Countdown :)</title><link href="https://www.zoosau.de/der-countdown.html" rel="alternate"></link><published>2008-02-06T10:10:00+01:00</published><updated>2008-02-06T10:10:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-06:/der-countdown.html</id><summary type="html">&lt;p&gt;Laut Sendungsverfolgung von DHL ist das Paket seit 7:44 Uhr heute morgen
+im Postwagen, der das Paket in die Packstation liefern soll.&lt;/p&gt;
+&lt;p&gt;Laut meinem
+&lt;a href="http://efa.vrr.de/" title="Elektronische Fahrplan Auskunft VRR"&gt;efa&lt;/a&gt;-Fahrplan
+bin ich um 17:38 Uhr aneben dieser Packstation :)&lt;/p&gt;
+&lt;p&gt;Bin ja mal gespannt ...&lt;/p&gt;
+&lt;p&gt;Leider werde ich heute kaum Zeit haben mich mit dem …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Laut Sendungsverfolgung von DHL ist das Paket seit 7:44 Uhr heute morgen
+im Postwagen, der das Paket in die Packstation liefern soll.&lt;/p&gt;
+&lt;p&gt;Laut meinem
+&lt;a href="http://efa.vrr.de/" title="Elektronische Fahrplan Auskunft VRR"&gt;efa&lt;/a&gt;-Fahrplan
+bin ich um 17:38 Uhr aneben dieser Packstation :)&lt;/p&gt;
+&lt;p&gt;Bin ja mal gespannt ...&lt;/p&gt;
+&lt;p&gt;Leider werde ich heute kaum Zeit haben mich mit dem neuen Gerät zu
+beschäftigen. Zum einen will ich auch mit der Wohnung fertig werden. Ich
+wohne jetzt seit November 2007 da und habe bisher gerade mal die Küche
+fertig eingerichtet.&lt;/p&gt;
+&lt;p&gt;Das Schlafzimmer ist benutzbar, aber eigentlich habe ich auch noch vor
+da zu streichen. Der Fernseher muss da ebenfalls raus und auf den
+Wohnzimmer-Fernsehschrank gestellt werden. Ausserdem fehlt im Wohnzimmer
+eine Schlafcouch. Die ist aber erst nächsten Monat dran.&lt;/p&gt;
+&lt;p&gt;Abends nach getaner Arbeit möchte ich auch nicht an dem Teil sitzen,
+weil ich sonst ja garkeine Zeit mehr für meine Freundin habe. Daher
+komme ich wohl erst morgen in der Bahn dazu einen ersten wirklichen
+Blick auf das Teil zu werfen :)&lt;/p&gt;
+&lt;p&gt;Egal: &lt;strong&gt;HABEN !!! ;)&lt;/strong&gt;&lt;/p&gt;</content></entry><entry><title>Kommt's heute, oder nicht? =)</title><link href="https://www.zoosau.de/kommts-heute-oder-nicht.html" rel="alternate"></link><published>2008-02-06T06:30:00+01:00</published><updated>2008-02-06T06:30:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-06:/kommts-heute-oder-nicht.html</id><summary type="html">&lt;p&gt;Ich bin ja mal gespannt: Ich fiebere natürlich meinem neuen Handy
+entgegen.&lt;/p&gt;
+&lt;p&gt;Ich drücke mir mal selber die Daumen, das es heute in der Packstation
+ankommt. Wäre super cool! :)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich bin ja mal gespannt: Ich fiebere natürlich meinem neuen Handy
+entgegen.&lt;/p&gt;
+&lt;p&gt;Ich drücke mir mal selber die Daumen, das es heute in der Packstation
+ankommt. Wäre super cool! :)&lt;/p&gt;</content></entry><entry><title>Neues Telefon ist unterwegs :)</title><link href="https://www.zoosau.de/neues-telefon-ist-unterwegs.html" rel="alternate"></link><published>2008-02-05T19:39:00+01:00</published><updated>2008-02-05T19:39:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-05:/neues-telefon-ist-unterwegs.html</id><summary type="html">&lt;p&gt;So, seit gestern ist es soweit: Ich habe mir ein neues Telefon bestellt!
+Das SmartPhone x800 von E-Ten (&lt;a href="http://www.zoosau.de/leben/mein-neues-smartphone-eten-x800" title="Mein Blogeintrag zum E-Ten x800"&gt;siehe diesen vorigen
+Blogeintrag&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Eigentlich sollte ich mich grenzenlos freuen - aber leider wird dieses
+Ereigniss ein wenig überschattet.&lt;/p&gt;
+&lt;p&gt;Ich habe mich dafür entschieden (nachdem alles bezahlt ist was ich
+diesen Monat so …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, seit gestern ist es soweit: Ich habe mir ein neues Telefon bestellt!
+Das SmartPhone x800 von E-Ten (&lt;a href="http://www.zoosau.de/leben/mein-neues-smartphone-eten-x800" title="Mein Blogeintrag zum E-Ten x800"&gt;siehe diesen vorigen
+Blogeintrag&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Eigentlich sollte ich mich grenzenlos freuen - aber leider wird dieses
+Ereigniss ein wenig überschattet.&lt;/p&gt;
+&lt;p&gt;Ich habe mich dafür entschieden (nachdem alles bezahlt ist was ich
+diesen Monat so aufbringen muss) von meinem restlichen Geld bis zu
+meiner Dispogrenze dieses Telefon zu bezahlen: Stolze 575,- €. Ich habe
+das zuvor mit meiner Freundin Lena besprochen. Ich sagte ihr das es
+geht, das ich nur den Gürtel sehr eng schnallen muss diesen Monat, damit
+ich mit 85,- € auskomme.&lt;/p&gt;
+&lt;p&gt;Sie fand das es das nicht ganz trifft und das ich ihr irgendwie nur die
+Hälfte erzählt hätte, während ich davon ausging das ihr das bewußt sei.
+Genauer geht das jetzt niemanden etwas an.&lt;/p&gt;
+&lt;p&gt;Jetzt ist alles wieder gut. Wir haben es geklärt und alles ist wieder
+OK. Ich wollte hier nur nochmal die Gelegenheit nutzen mich dafür bei
+Dir zu entschuldigen, mein Schatz, das es zu diesem Missverständniss
+gekommen ist. War echt nicht böse gemeint! :/&lt;/p&gt;
+&lt;p&gt;So, mehr gehört hier nicht her :)&lt;/p&gt;
+&lt;p&gt;Ich wollte jetzt nochmal die härteste Rechnung bisher hier posten:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;To: whitewolf_fox@gmx.de From: bestellung@pdamax.de Subject: Zahlungseingang zu Best.Nr: XXXXXXX Date: Tue,  5 Feb 2008 10:17:34 +0100 (CET)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;========================&lt;br&gt;
+Ihre Bestell-Nr.: XXXXXXX&lt;br&gt;
+========================&lt;/p&gt;
+&lt;p&gt;Sehr geehrte Damen und Herren,&lt;/p&gt;
+&lt;p&gt;zu der obigen Bestellung mit der Zahlungsweise Vorkasse haben wir
+folgende&lt;br&gt;
+Zahlungseingänge in unserem System verbucht:&lt;/p&gt;
+&lt;p&gt;Zahlungseingang vom 05.02.2008: 573.95 EUR&lt;/p&gt;
+&lt;p&gt;Endsumme der Bestellung vom 05.02.2008: 573.95 EUR&lt;/p&gt;
+&lt;p&gt;Restliche offene Forderung vom 05.02.2008: 0.00 EUR&lt;/p&gt;
+&lt;p&gt;Sobald die Ware an Sie versendet wird, erhalten Sie eine weitere
+E-Mail. Dies&lt;br&gt;
+geschieht umgehend, wenn alle bestellten Artikel ab Lager verfügbar
+sind.&lt;br&gt;
+Andernfalls verlässt die Sendung unser Haus, sobald die fehlenden
+Artikel bei&lt;br&gt;
+uns eingetroffen sind.&lt;/p&gt;
+&lt;p&gt;Den aktuellen Status Ihrer Bestellung können Sie jederzeit über den
+Login-&lt;br&gt;
+Bereich unter:&lt;br&gt;
+http://mein.pdamax.de&lt;br&gt;
+abrufen.&lt;/p&gt;
+&lt;p&gt;PDA Max - Kompetenzzentrum für PDAs und mobile Navigation&lt;br&gt;
+Inh. M. Wisniewski&lt;br&gt;
+Berliner Ring 141&lt;br&gt;
+64625 Bensheim&lt;/p&gt;
+&lt;p&gt;Internet: http://www.pdamax.de&lt;br&gt;
+E-Mail: info@pdamax.de&lt;br&gt;
+Tel: 06251-704848&lt;br&gt;
+Fax: 06251-704849&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Inzwischen habe ich auch direkt die Bestätigung, das das Teil heute, um
+12:15 Uhr an den Versand übergeben.&lt;/p&gt;
+&lt;p&gt;Das weckt in mir natürlich die Hoffnung, das ich das Teil schon morgen
+abend in der Packstation liegen habe :D&lt;/p&gt;
+&lt;p&gt;Bin ja mal gespannt :)&lt;/p&gt;</content><category term="bestellung"></category><category term="e-ten"></category><category term="pdamax.de"></category><category term="smartphone"></category><category term="x800"></category></entry><entry><title>Mein neues Smartphone (eTen x800)</title><link href="https://www.zoosau.de/mein-neues-smartphone-eten-x800.html" rel="alternate"></link><published>2008-02-03T05:29:00+01:00</published><updated>2008-02-03T05:29:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-02-03:/mein-neues-smartphone-eten-x800.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich möchte heute meine freude mit Euch teilen und verkünden: Ich habe
+endlich die Schnauze voll von meiner Taschenkrankheit die sich Motorola
+L9 schimpft und mir ein richtiges Telefon bestellt!&lt;/p&gt;
+&lt;p&gt;Bisher:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/motorola-l9.png" title="Motorola L9"&gt;&lt;img alt="Motorola
+L9" src="https://www.zoosau.de/images/motorola-l9.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sieht auf diesem Bild garnicht mal SO Scheisse aus, aber es ist das am
+schlechtesten verarbeitete Gerät …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Ich möchte heute meine freude mit Euch teilen und verkünden: Ich habe
+endlich die Schnauze voll von meiner Taschenkrankheit die sich Motorola
+L9 schimpft und mir ein richtiges Telefon bestellt!&lt;/p&gt;
+&lt;p&gt;Bisher:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/motorola-l9.png" title="Motorola L9"&gt;&lt;img alt="Motorola
+L9" src="https://www.zoosau.de/images/motorola-l9.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sieht auf diesem Bild garnicht mal SO Scheisse aus, aber es ist das am
+schlechtesten verarbeitete Gerät das ich je in der Hand hatte. Die ganze
+Tastatur ist dermaßen minderwertig, das es jetzt, nach nichtmal einem
+halben Jahr, die beiden obersten Tasten komplett von der schwarzen
+Folie, welche als Hintergrund zur Tasten-Folie dient, komplett gelöst
+hat und das Hand aussieht als hat ein hyperaktiver Hamster 10 Jahre dran
+rumgeknabbert.&lt;/p&gt;
+&lt;p&gt;Ist natürlich kein Garantiefall, denn laut Motorola ist das ein ganz
+normaler Verschleiß. Naja, Scheiss drauf.&lt;/p&gt;
+&lt;p&gt;Es ist bei weitem nicht der einzige Mangel. Das Teil ist bereits einmal
+gegen meine Zimmerwand geflogen. Eigentlich neige ich nicht zu solchen
+Ausbrüchen, aber dieses Teil treibt einen in den Wahnsinn.&lt;/p&gt;
+&lt;p&gt;Manchmal drückt man eine Taste und das Beschriftungsfeld im Display
+leuchtet zur Bestätigung auf. Das Gerät hat also schon ganz genau
+verstanden das es was tun soll, weigert sich dann aber. Dann muss man
+dieselbe Taste nochmal drücken.&lt;/p&gt;
+&lt;p&gt;Oder auch ganz großes Tennis: Im Display steht für die Taste links oben
+als Funktion "Neue Nachricht" für SMS schreiben. Man drückt drauf und
+erst DANN wird man davon in Kenntniß gesetzt, das man erst die
+Tastensperre lösen muss. Symbian (Sony Ericsson &amp;amp; Co.) blenden diese
+Funktion dann aus und haben da nur "Freischalten" oder so stehen. So
+gehört sich's ja auch ...&lt;/p&gt;
+&lt;p&gt;Oder das T9 ist eine einzige Katastrophe. Wenn man 2 2 4 6 4 6 3 tippt,
+sollte das Telefon schon das Wort "Bahnhof" zusammensetzen können.
+Stattdessen kommt das "viel näherliegende" cbiohoe ....&lt;/p&gt;
+&lt;p&gt;Man kann ohne erfahrung nichtmal zuverlässig die Uhr ablesen. Drückt man
+eine Taste, damit das Display aufleutet, kommt zunächst Licht ins
+Display und die Uhr zeigt z.B. 13:30 Uhr an.&lt;/p&gt;
+&lt;p&gt;Was man jetzt wissen muss: Das ist die Zeit, seitdem das Display das
+letzte Mal beleuchtet war ... es folgt ein etwa 6 Sekunden anhaltendes
+Hinweisfenster, das der Keylock drin ist. Und erst wenn dieses
+verschwindet, zeigt die Uhr die tatsächliche Zeit an ...&lt;/p&gt;
+&lt;p&gt;Das ganze Gerät macht den Eindruck als hat sich ein Japaner das beim
+Kacken an der Klotür zusammenkonzipiert ... total unüberlegt und
+unprofessionell das ganze.&lt;/p&gt;
+&lt;p&gt;Aber egal - ich ziehe meine Lehre daraus.&lt;/p&gt;
+&lt;p&gt;Ich hatte jetzt die Schnauze voll mit den Abstrichen bei Handys und habe
+mir diesen Burner hier bestellt:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoosau.de/images/x800.jpg" title="eTen x800"&gt;&lt;img alt="eTen
+x800" src="https://www.zoosau.de/images/x800.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Whuahahahha ... geil!&lt;/p&gt;
+&lt;p&gt;Da freue ich mich schon drauf :)&lt;/p&gt;
+&lt;p&gt;Das Teil kann alles, vom Mailen, über Terminverwaltung bis hin zu
+Navigation per GPS. Und ich finde es sieht auch noch hammer stylisch
+aus.&lt;/p&gt;
+&lt;p&gt;Naja,  ich werde angemessen Bericht erstatten, wenn ich den Akku das
+erste Mal leergedaddelt habe und mich ablenken muss wenn ich darauf
+warte das er wieder voll ist ;D&lt;/p&gt;
+&lt;p&gt;Bisher habe ich es ja nichtmal ... der blöde Postbote soll mal Hackengas
+geben :P&lt;/p&gt;</content><category term="eten"></category><category term="handy"></category><category term="l9"></category><category term="motorola"></category><category term="x800"></category></entry><entry><title>Ich hab einen dicken Kopf</title><link href="https://www.zoosau.de/ich-hab-einen-dicken-kopf.html" rel="alternate"></link><published>2008-01-18T12:48:00+01:00</published><updated>2008-01-18T12:48:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-18:/ich-hab-einen-dicken-kopf.html</id><summary type="html">&lt;p&gt;Leider wird der liebe Whitewolf wohl krank :(&lt;/p&gt;
+&lt;p&gt;Gestern war ich, wie meistens, mit Lena zusammen im Pulp tanzen. War
+sehr lustig, vor allem, weil der
+&lt;a href="http://blog.borkert.net/" title="Blog von Spoth"&gt;Sven&lt;/a&gt; spontan Bock hatte
+einfach mal mitzukommen :)&lt;/p&gt;
+&lt;p&gt;Ich denke er hat sich auch zumindest auf einem "Och ja - kann man mal
+'nen Abend mit reden …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Leider wird der liebe Whitewolf wohl krank :(&lt;/p&gt;
+&lt;p&gt;Gestern war ich, wie meistens, mit Lena zusammen im Pulp tanzen. War
+sehr lustig, vor allem, weil der
+&lt;a href="http://blog.borkert.net/" title="Blog von Spoth"&gt;Sven&lt;/a&gt; spontan Bock hatte
+einfach mal mitzukommen :)&lt;/p&gt;
+&lt;p&gt;Ich denke er hat sich auch zumindest auf einem "Och ja - kann man mal
+'nen Abend mit reden" - Level mit den Standard-Pulpern wie Tina, Andreas
+und Co. unterhalten. Es kamen keine Beschwerden, also werden sie ihn
+auch ganz sympathisch gefunden haben :)&lt;/p&gt;
+&lt;p&gt;Andreas war so lieb ihn später noch nach Hause zu fahren, da er ja eh
+für uns nach Oberhausen gefahren ist.&lt;/p&gt;
+&lt;p&gt;Auf die Gefahr hin das er das hier sowieso NIE lesen wird, trootzdem an
+dieser Stelle mal ein dickes, dickes Dankeschön an Andreas/Umbra für die
+dauernde Kutschiererei!! :)&lt;/p&gt;
+&lt;p&gt;Sven hat ihm dafür als kleines Danke auch eine Cola spendiert. Fand ich
+cool :)&lt;/p&gt;
+&lt;p&gt;Nur leider habe ich wohl etwas zu viel getrunken. Ich hatte 5 oder 6
+Bananenweizen. Ich war nicht betrunken, aber mir war schlecht :(&lt;/p&gt;
+&lt;p&gt;Egal; alles in allem ein sehr geiler Abend! Nur geht es mir heute echt
+nicht so gut. Ich habe eine Art Kater und bin einfach nur erledigt. Ich
+denke da bahnt sich was an, da ich bei krasseren Saufzügen sonst auch
+nicht so leicht verkatert bin.&lt;/p&gt;
+&lt;p&gt;Naja, egal: Abwarten! :)&lt;/p&gt;</content></entry><entry><title>Zweiter Teil von "Wie alles Begann"</title><link href="https://www.zoosau.de/zweiter-teil-von-wie-alles-begann.html" rel="alternate"></link><published>2006-04-29T23:11:00+02:00</published><updated>2006-04-29T23:11:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2006-04-29:/zweiter-teil-von-wie-alles-begann.html</id><summary type="html">&lt;p&gt;Den heutigen Tag haben wir damit begonnen zu ... verschlafen =v.v=&lt;/p&gt;
+&lt;p&gt;Wir hatten uns zunächst vorgenommen um 6 Uhr den Wecker zu stellen. Da
+wir es jedoch vorzogen des abends noch ein wenig zu reden und zu
+kuscheln, stellten wir diesen jedoch erst auf 8 Uhr. Irgendwie schafften
+wir es …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Den heutigen Tag haben wir damit begonnen zu ... verschlafen =v.v=&lt;/p&gt;
+&lt;p&gt;Wir hatten uns zunächst vorgenommen um 6 Uhr den Wecker zu stellen. Da
+wir es jedoch vorzogen des abends noch ein wenig zu reden und zu
+kuscheln, stellten wir diesen jedoch erst auf 8 Uhr. Irgendwie schafften
+wir es jedoch erst uns gegen 11 Uhr aus den Kissen zu pellen.&lt;/p&gt;
+&lt;p&gt;Anschließend begannen wir dann ziemlich direkt mit dem lernen. ...
+zumindest setzten wir uns mit unseren Notebooks und den Unterlagen schon
+mal ins Wohnzimmer. Leider haben wir uns ziemlich lange verhaspelt an
+den Notebooks, ehe wir so fleißig zu lernen begonnen haben wie wir uns
+das vorgenommen hatten.&lt;/p&gt;
+&lt;p&gt;Jedoch haben wir es geschafft ein gewisses Pensum an
+Prüfungsvorbereitungsstoff abzuarbeiten. So langsam kristallisiert sich
+auch so in etwa ein Marschplan für die kommenden 1,5 Wochen vor der
+Prüfung heraus. Ich denke wir werden zum Thema IT jeden Tag 2 Prüfungen
+machen, die Aufgaben, mit denen wir nicht klar kommen lernen und
+nebenbei für "Wirtschaft und Geschäftsprozesse" lernen. Mehr können wir
+nicht machen und wenn das nicht reicht, verlängern wir eben um ein
+halbes Jahr.&lt;/p&gt;
+&lt;p&gt;Die Übungsprüfung von heute hat Lena übrigens mit 52 Punkten bestanden.
+Ich mit 68,5. Sie war jedoch deutlich härter zu sich bei der
+Punktevergabe, da sie meinte, das sie sonst ein schlechtes Gewissen
+hätte weil sie sich was vormacht.&lt;/p&gt;
+&lt;p&gt;Wie versprochen folgt nun jedoch trotzdem der zweite Teil der
+Geschichte.&lt;/p&gt;
+&lt;p&gt;Wir waren gestern da stehen geblieben, das wir beschrieben haben, wie
+und wann wir "inoffiziell" zusammen kamen. Nun erklären wir, was wir mit
+"inoffiziell" meinen und wie es dazu kam.&lt;/p&gt;
+&lt;p&gt;Ich passe nicht ganz in Lenas "bisheriges Schema". So nennt sie es
+zumindest. Ich wusste nicht, das Frauen sich auf ein bestimmtest Schema
+festlegen - inzwischen habe ich das aber schon öfter gehört.
+Normalerweise hatte sie wohl immer große, schlanke, langhaarige Typen.
+Jemand wie ich sieht für ihren Freundeskreis wohl etwas merkwürdig aus.&lt;/p&gt;
+&lt;p&gt;Daher wollte ich ganz gerne, das die Leute mich erstmal als "Marc"
+kennen lernen und (hoffentlich) merken, das ich ganz OK bin, statt
+direkt als "Lena's Neuer". Also haben wir uns entschieden, erst eine
+zeitlang als Kollegen aufzutreten und nicht direkt als Paar. Offenbar
+wurde ich auch ganz gut von den Jungs und Mädels der "schwarzen Bande
+Duisburg" aufgenommen, so das zumindest dieser Teil des Planes sehr gut
+aufging.&lt;/p&gt;
+&lt;p&gt;Lena verhielt sich also vor ihren Leuten wie immer. Wie Tina sie am 27.
+April nannte: "&lt;em&gt;Typisch Gummifloh&lt;/em&gt;". Ich muss wirklich sagen, das das
+hervorragend zu ihr passt ;)&lt;/p&gt;
+&lt;p&gt;Ich saß halt (da ich nicht der Tänzer bin) meistens bei den anderen
+Leuten am Stammtisch und habe versucht diese kennen zu lernen. Das
+klappte bei einigen gut, bei anderen weniger gut. Der Mike wollte mich
+beispielsweise am ersten Abend tothauen, dafür mochten mich andere recht
+gerne. Laut späterer Erklärungen der Leute ist der Mike manchmal ein
+wenig komisch und es lag nicht an mir. Jedoch verstehe ich mich mit dem
+inzwischen auch ganz gut.&lt;/p&gt;
+&lt;p&gt;Diese Phase war für uns beide ein wenig schwierig. Lena durfte mich halt
+nicht herzlicher in den Arm nehmen, und ich musste mir teilweise recht
+weit gehende Begrüßungsrituale und Sprüche anhören, die mich schon recht
+nahe an den Zustand der Eifersucht brachten.&lt;/p&gt;
+&lt;p&gt;Am Abend des 27. April (es war &lt;strong&gt;natürlich&lt;/strong&gt; mal wieder im &lt;a href="http://www.pulp-duisburg.de/" title="Homepage der Disco Pulp in Duisburg"&gt;Pulp
+Duisburg&lt;/a&gt;),
+hatten wir dann zuvor verabredet, das wir an diesem Abend eine Show
+spielen werden, das wir zusammenkommen.&lt;/p&gt;
+&lt;p&gt;Beide waren sehr aufgeregt. Der Abend begann wie immer: Erst saßen wir
+alle bis zum Beginn des Discobetriebs am Stammtisch, und Lena verschwand
+anschließend auf der Tanzfläche. Ich nutzte diese Gelegenheit um die
+Tina unter 4 Augen darauf anzusprechen, wie ihrer Meinung meine Chancen
+bei Lena stehen und ihr meine "Bedenken", welche natürlich gespielt
+waren, da ich Lena da ja schon sehr gut kannte, zu erzählen. Auch das
+ich mir Sorgen darum machte, was Oliver nun genau für Lena empfindet
+habe ich ihr spaßeshalber erzählt. Wie Lena schon vermutet hatte, hielt
+Tina keine 2 Sätze damit hinter'm Busch, das Lena sie auch schon "vor 8
+Wochen" darauf angesprochen hatte, das sie ja diesen Marc sooo toll
+findet, und sich garnicht erklären kann warum er sie nicht küsst oder so
+:) Dieses Gespräch ging ca. 1,5 Stunden. Da muss ich selbst im nach
+hinein noch sagen: Hut ab, das sie sich so viel Zeit genommen hat.&lt;/p&gt;
+&lt;p&gt;Als der "Gummifloh" dann mal wieder an den Stammtisch zurückkehrte, bat
+ich Lena auch um ein 4-Augen-Gespräch. Etwas abseits vom Stammtisch
+(jedoch beabsichtigt in Sichtweite) habe ich ihr dann von dem Gespräch
+mit Tina erzählt und sie im Rahmen des Spieles gefragt, ob sie sich eine
+Beziehung mit mir vorstellen könne. "Überraschender weise" sagte sie ja
+und wir sind seitdem "offiziell" zusammen. Das wir zu dato schon einen
+Monat zusammen waren, werden die anderen voraussichtlich nie erfahren.&lt;/p&gt;
+&lt;p&gt;Auf jeden Fall ist unser Plan hervorragend aufgegangen. Von diesem Abend
+gibt es auch ein paar Fotos. Diese werden, sobald wir sie von Tina
+bekommen haben, in die Gallery gestellt und von diesem Blog verlinkt
+werden, versprochen :)&lt;/p&gt;
+&lt;p&gt;An diesem Abend konnten wir uns das erste Mal in der Öffentlichkeit als
+Paar verhalten und sogar küssen. Das war für uns beide ein wunderbarer
+Moment. Im Hintergrund begann genau (!!!) in diesem Moment das Intro von
+"This Corrosion" von den "Sisters of Mercy". Wer diesen Song kennt weiß,
+das er mit einem Chor von Engelsstimmen beginnt, was für uns beide in
+diesem Augenblick irgendwie einen Touch von "&lt;em&gt;Haaaaaaaalleluja ...&lt;/em&gt;"
+hatte. Nachdem wir das gemacht hatten, sind wir auch ziemlich sofort (es
+muss ca. 2 Uhr morgens gewesen sein) nach Hause gefahren.&lt;/p&gt;
+&lt;p&gt;Das Wochenende verbrachten wir dann hier in Bochum. Tina hatte sich
+natürlich auch nochmal höchst interessiert telefonisch gemeldet und eine
+versaute Anspielung nach der anderen zum besten gegeben. Das gehört nun
+mal dazu und wir haben uns auch darüber gefreut.&lt;/p&gt;
+&lt;p&gt;Oliver nimmt das ganze offenbar auch sehr gut auf.&lt;/p&gt;
+&lt;p&gt;Lena und ich haben uns im Vorfeld teilweise gefragt, ob er diese ganzen
+Sprüche zu "&lt;em&gt;Lena wird Olli entjungfern&lt;/em&gt;" wirklich als Spaß aufgefasst
+hatte. Offenbar ist dem so, da er sich für uns freut und mich nicht
+tothauen will. ;)&lt;/p&gt;
+&lt;p&gt;Morgen sind wir zum "Tanz in den Mai" bei Tina eingeladen. Dieses wird
+der erste Event, bzw. Treffen sein, an dem wir gleich von Anfang an als
+Paar auftreten. Wir freuen uns beide unheimlich darauf und allgemein auf
+einen wunderbaren Abend bei Freunden, die sich augenscheinlich
+größtenteils genauso für uns freuen wie wir uns selbst.&lt;/p&gt;</content><category term="Beziehung"></category><category term="Disco"></category><category term="Liebe"></category><category term="Pulp"></category></entry><entry><title>Wie alles begann ...</title><link href="https://www.zoosau.de/wie-alles-begann.html" rel="alternate"></link><published>2006-04-28T23:20:00+02:00</published><updated>2006-04-28T23:20:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2006-04-28:/wie-alles-begann.html</id><summary type="html">&lt;p&gt;Es ist jetzt 23:17 Uhr am 28.04.2006 und Lena (noch) Hecht und Marc (für
+immer!) Richter sitzen gemeinsam bei mir auf der Couch. Eben habe ich
+von Lena ein "&lt;em&gt;Von wegen!!&lt;/em&gt;" ins Ohr geraunt bekommen, weil ich
+geschrieben habe, das sie "noch" Hecht heißt.&lt;/p&gt;
+&lt;p&gt;So geht das …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Es ist jetzt 23:17 Uhr am 28.04.2006 und Lena (noch) Hecht und Marc (für
+immer!) Richter sitzen gemeinsam bei mir auf der Couch. Eben habe ich
+von Lena ein "&lt;em&gt;Von wegen!!&lt;/em&gt;" ins Ohr geraunt bekommen, weil ich
+geschrieben habe, das sie "noch" Hecht heißt.&lt;/p&gt;
+&lt;p&gt;So geht das irgendwie immer zwischen uns. Diese Umgangsweise miteinander
+finden wir beide sehr schön. Eben weil es ein paar Dinge gibt, die uns
+zur Zeit durch den Kopf gehen, und die zu schön und zu ungewöhnlich sind
+um sie einfach in Vergessenheit geraten zu lassen, haben wir uns
+entschieden, dieses Blog gemeinsam dazu zu nutzen, um eine Art
+"Beziehungstagebuch" zu führen.&lt;/p&gt;
+&lt;p&gt;Wir kennen uns jetzt seit August/September 2003 aus der Berufschule, dem
+&lt;a href="http://www.hnbk.de/" title="Homepage des Heinz Nixdorf Berufkollegs"&gt;HNBK (Heinz Nixdorf
+BerufsKolleg)&lt;/a&gt;.
+Lena war zu dato bereits seit einem Jahr auf dieser Schule, hat dieses
+erste Jahr jedoch bereits freiwillig wiederholt, da sie (bedingt durch
+häufige Krankheit) in diesem ersten Jahr zuviel des Schulstoffes
+versäumt hatte.&lt;/p&gt;
+&lt;p&gt;Diesem (im Nachhinein) glücklichem Umstand hatten wir es zu verdanken,
+das wir seitdem dieselbe Klasse für Fachinformatiker für
+Systemintegration besucht haben.&lt;/p&gt;
+&lt;p&gt;Leider hatten wir jedoch nie wirklich viel miteinander zu tun, bis auf
+das Schulkollegenhafte "Hallo, weisste wie XYZ geht, oder Kannste das?".
+Männlein und Weiblein haben üblicherweise eher weniger miteinander zu
+tun. Ist es anders, kommen von Kollegen in der Regel immer gleich
+"Verliebt, verlobt, verheiratet" - Neckereien. Diese ist man natürlich
+immer eher bemüht zu vermeiden.&lt;/p&gt;
+&lt;p&gt;Dazu kam noch, das Lena zu dieser Zeit noch mit Sascha zusammen war. Ich
+wusste nur "die Dame ist vergeben", und hatte deswegen keinerlei
+Versuche gestartet sie außer als Schulkollegin näher kennen zu lernen.
+Die Trennung hatte ich nicht mitbekommen, so das ich eigentlich die
+ganze Schulzeit über davon ausgegangen war, das Lena vergeben ist.&lt;/p&gt;
+&lt;p&gt;Ich bin Lena offenbar zunächst zwar durch meine damals sehr langen Haare
+(bis unterhalb des Schulterblatts) aufgefallen, jedoch traute sie sich
+nicht die "Männer unter sich" Clique aus Alexander, Timur, Darda,
+Klusemann, usw. zu korrumpieren. Des weiteren war ich ihr dadurch
+aufgefallen, das ich regelmäßig mit meiner seitlich geschnürten
+Lederhose in die Schule kam, und das ich mich einmal bei einem Referat
+mit frei wählbarem Thema dafür entschieden hatte, über
+&lt;a href="http://de.wikipedia.org/wiki/Tabletop" title="Wiki Eintrag zu Tabletops"&gt;Tabletops&lt;/a&gt;
+(&lt;a href="http://www.battletech.info/" title="Deutsche Informationsseite zum BattleTech Tabletop"&gt;BattleTech&lt;/a&gt;)
+zu Referieren. Dieses fand sie als Rollenspielerin natürlich ganz toll.
+:)&lt;/p&gt;
+&lt;p&gt;Hätten wir damals nur ein wenig mehr voneinander gewusst, vor allem,
+wann der andere jeweils Single war, hätte zumindest ich diese
+Gelegenheit sie kennen zu lernen schon früher genutzt.&lt;/p&gt;
+&lt;p&gt;Beschweren wollen wir uns jedoch beide nicht, da unser zusammenkommen
+und letztlich das ganze drumherum nicht romantischer hätte ablaufen
+können.&lt;/p&gt;
+&lt;p&gt;Zu diesem Zeitpunkt sind wir genau einen Monat und 8 Tage zusammen. Das
+Datum unseres Zusammenkommens ist der 20. März 2006. Jedoch nur für uns.&lt;/p&gt;
+&lt;p&gt;Für alle anderen sind wir erst seit gestern, dem 27. April 2006
+zusammen.&lt;/p&gt;
+&lt;p&gt;Dieses kam wie folgt:&lt;br&gt;
+Wie haben wir uns nun eigentlich überhaupt näher kennen gelernt? Ganz
+einfach: Dadurch, das wir beide in der Schule nicht die besten sind,
+habe ich Lena gefragt, was sie vom gemeinsamen Lernen für die
+Abschlussprüfung am 9. Mai 2006 hält. Das ich ausgerechnet sie gefragt
+habe, hat sie zwar sehr verwundert, da sie, wie gesagt, auch keine
+Leuchte in dem Bereich ist, jedoch hat sie zugestimmt. Ich habe deswegen
+ausgerechnet sie gefragt, weil mit den anderen aus unserer Klasse kein
+Lernen möglich ist. Es geht dann permanent so "&lt;em&gt;Ööööööh - kein Bock&lt;/em&gt;",
+oder "&lt;em&gt;Nääää - heute kann ich nicht&lt;/em&gt;", etc. Bei Lena hatte ich das
+Gefühl, das sie einfach genauso wie ich daran interessiert ist, diese
+Ausbildung zu packen. Außerdem wollte ich, zugegebenermaßen, diese
+letzte Möglichkeit nutzen sie doch noch wenigstens näher kennen zu
+lernen.&lt;/p&gt;
+&lt;p&gt;So kam es, das wir uns am 21. Februar 2006 das erste Mal zum lernen
+trafen. Als wir so gelernt haben, sprachen wir natürlich zwischendurch
+auch mal über unser Privatleben. Hierbei kam auch heraus, das wir beide
+Single sind, und es eigentlich keinen Grund gibt, sich nicht näher
+kennen zu lernen, wie ich und auch Lena es sich sicher über die 2,5
+Jahre Berufschule hinweg schon öfter gewünscht hätten.&lt;/p&gt;
+&lt;p&gt;Zwischen dem 21. Februar und dem 17. März 2006 haben wir viel privat
+miteinander gesprochen. Trotz alledem haben wir, entgegen anders
+lautender Unterstellungen seitens Alexander Wieringer und Patrick
+Klusemann (Schulkollegen), unheimlich produktiv, fleißig und viel
+gelernt. Wir haben auch unheimliche Fortschritte im Verständnis gemacht.
+Da wir uns Fahrzeit sparen wollten, die gegenseitige Gesellschaft
+unheimlich angenehm fanden und obendrein beide Erwachsen sind, haben wir
+abwechselnd beieinander geschlafen. Im selben Bett zwar, jedoch ohne das
+viel passiert ist. Das einzige was in dieser Zeit gewesen ist, war das
+wir uns gegenseitig gestreichelt haben, uns gegenseitig als Kuscheltiere
+benutzten und ich mich öfter nicht beherrschen konnte und an Lenas Hals
+und Ohren geknabbert habe.&lt;/p&gt;
+&lt;p&gt;Am 17. März 2006 waren wir bei Lena zu hause. Als wir mal wieder etwas
+zusammen gekuschelt hatten (bei 80 cm Bettbreite nicht weiter
+verwunderlich), begann Lena gedanken- und schlafversunken mir über den
+Hintern zu streicheln. Zwar freute mich das ungemein, da ich da bereits
+deutlich mehr für Lena empfunden hatte als nur Freundschaft, jedoch
+wurde ich dadurch auch sehr erregt, so das ich ihr sagen musste, was
+das, was sie da gerade tut für Auswirkungen hat. Schließlich wollte ich
+mich nicht umdrehen und sie dabei einfach mir einem erregten Penis
+konfrontieren. Ihr war das sehr peinlich und sie dachte hierdurch einen
+Schritt zu weit gegangen zu sein und was wir bis dahin hatten zerstört
+zu haben.&lt;/p&gt;
+&lt;p&gt;Am Abend des 18. März 2006 dachte ich meinerseits, das ich das, was sich
+da anbahnt durch ungestümtheit kaputt gemacht hätte, da ich Lena mehrere
+dunkle Knutschflecken am Hals zugefügt hatte. Das ist etwas viel für
+einen Schulkollegen, jedoch fand sie das zum Glück eher amüsant.&lt;/p&gt;
+&lt;p&gt;Als wir am 20. März 2006 wieder bei mir geschlafen hatten, konnte ich
+nicht anders, als Lena in meine Arme zu nehmen und zu küssen. Meine
+Hände wanderten in Körperregionen, welche man als Kollege normalerweise
+nicht berührt und ihre Hände taten dasselbe bei mir. Ich fragte sie, ob
+sie sich bereit fühlte Sex mit mir zu haben, jedoch war sie zu unsicher
+und bat mich, zu warten. Da ich es ihr angeboten hatte, sich zu
+entscheiden, habe ich dieses Nein hingenommen und ihr gesagt, das ich
+ihr alle Zeit der Welt lassen werde sich zu entscheiden und ihre Gefühle
+zu ordnen. Bereits einen Tag später war dieses offenbar geschehen, und
+wir haben miteinander geschlafen. Seitdem sind wir inoffiziell ein Paar.&lt;/p&gt;
+&lt;p&gt;Seit wann und warum wir offiziell ein Paar sind, was dahinter steckt und
+wie es dazu kam, erzählen wir morgen, oder die Tage. Wenn die ganze
+Geschichte einmal erzählt ist, führen wir dieses Tagebuch regelmäßig um
+keine einzige dieser wunderbaren Erinnerungen zu verlieren.&lt;/p&gt;</content><category term="Ausbildung"></category><category term="Beziehung"></category><category term="Liebe"></category></entry><entry><title>Telefonsupport bei Keule</title><link href="https://www.zoosau.de/telefonsupport-bei-keule.html" rel="alternate"></link><published>2006-02-13T01:35:00+01:00</published><updated>2006-02-13T01:35:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2006-02-13:/telefonsupport-bei-keule.html</id><summary type="html">&lt;p&gt;Heute hat sich mal wieder gezeigt wie vergesslich ich bin und das so ein
+Tagebuch wie dieses mehr als nötig ist!&lt;/p&gt;
+&lt;p&gt;Eben hat mich Sascha "Keule" Styner angerufen - ein alter
+Bundeswehrkollege. Er hatte mich vor ein paar Wochen schon zu seinem
+Geburtstag eingeladen. Dieser ist am Donnerstag (16.2.) und …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Heute hat sich mal wieder gezeigt wie vergesslich ich bin und das so ein
+Tagebuch wie dieses mehr als nötig ist!&lt;/p&gt;
+&lt;p&gt;Eben hat mich Sascha "Keule" Styner angerufen - ein alter
+Bundeswehrkollege. Er hatte mich vor ein paar Wochen schon zu seinem
+Geburtstag eingeladen. Dieser ist am Donnerstag (16.2.) und wird am
+Samstag (18.2.) bei ihm zuhause gefeiert. Ich denke zwar, das ich da
+ziemlich fehl am Platz bin, aber ich hatte ihm zugesagt. Ausserdem würde
+ich den gerne mal wiedersehen. Wir haben uns so lange nicht mehr
+gesehen, das er mich nur noch mit ca. 25 kg weniger kennt. Denke mal, da
+werde ich den einen oder anderen blöden Spruch für kassieren.&lt;/p&gt;
+&lt;p&gt;Ein Geschenk brauche ich ja dann auch. Habe keine Ahnung was das sein
+soll. Ich war noch nie gut im Geschenke kaufen.&lt;/p&gt;
+&lt;p&gt;Ausserdem ist noch erwähnenwert, das meine Mutter heute nach ziemlich
+langer Pause mal wieder richtig nervt. Ich wusste schon, warum ich ihr
+bisher nicht gesagt hatte, das ich nicht übernommen werde..&lt;/p&gt;
+&lt;p&gt;Das sie mir nun täglich mit Weisheiten, die ohnehin einem 3.-Klässler
+bewusst sind, auf den Geist geht "&lt;em&gt;Maaarc: Du musst langsam ehrlich mal
+was gutes zum Anziehen kaufen, wenn Du dann bald Deine
+Vorstellungsgespräche hast!&lt;/em&gt;" und "&lt;em&gt;Maaarc: Hast Du denn die beiden
+Adressen die ich Dir aus der Zeitung ausgeschnitten habe schon
+angeschrieben??&lt;/em&gt;" . Das wäre ja noch zu ertragen; ausserdem hat sie ja
+recht mit dem was sie sagt, nur ist mir das selbst nur zu gut jede
+Stunde des Tages bewusst. Da brauche ich nicht auch noch ihre
+Blockwartartige Kontrolle. Wenn ich nicht wüsste, das sie es nur gut
+meint, und dieses gut Gewollte aufgrund von Persönlichkeitsmängeln nur
+nicht richtig umsetzen kann, würde ich mir das wohl auch nicht so
+gefallen lassen.&lt;/p&gt;
+&lt;p&gt;Aber was sie sich heute wieder erlaubt hat ist mal wieder typisch
+Regina: Nicht nur, das sie meinen Vater angerufen hat und diesen dazu
+drängen wollte, das er die Kosten für meine Bewerbungs-Gaderobe
+übernimmt. Sie muss ihn am Telefon wieder dermassen beleidigend
+behandelt haben, das dieser dieser gezwungen war ihr entsprechend Kontra
+zu geben. Daraufhin hat sie (mal wieder) den Hörer einfach aufgelegt.&lt;/p&gt;
+&lt;p&gt;Zwar habe ich dieses Gespräch nicht mitbekommen, aber ich kenne meine
+Mutter inzwischen sehr gut und bin mir ziemlich sicher, das es sich auch
+dieses Mal wieder genau so zugetragen hat. Auch wenn SIE es natürlich in
+ihrem Kopf wieder so hindreht, als habe mein Vater sie grundlos zu
+beschimpfen angefangen.&lt;/p&gt;
+&lt;p&gt;Da man ja "&lt;em&gt;mit meinem Vater nicht reden kann&lt;/em&gt;", wie sie nach dieser
+Aktion mal wieder behauptet, hat sie mir und meinem Bruder (der damit ja
+nun mal so überhaupt nichts zu tun hat), einen Brief vorgelegt, welchen
+sie am PC geschrieben hat und meinem Vater schicken will. Fast unnötig
+zu erwähnen, das auch dieser Brief mal wieder vor Unrichtigkeit und
+Beleidigungen nur so tropft. Selbst mir, der sie nun, durch den Abstand,
+den eine Scheidung mit sich bringt, besser kennt als mein Vater, fällt
+es mir schwer in diesem Brief eine Bitte zu lesen. Also: Mein Vater wird
+es sich denken können, aber was sie nun eigentlich von ihm will, geht
+mal wieder in den Beleidigungen unter.&lt;/p&gt;
+&lt;p&gt;Ich werde ihn morgen mal anrufen und ihm sagen, das er diesen Brief
+ungeöffnet in den Eimer werfen soll, da er ohnehin keinerlei
+Informationsgehalt hat und man sich so einfach nicht behandeln lassen
+muss.&lt;/p&gt;
+&lt;p&gt;Ich habe vorhin versucht, meiner Mutter klarzumachen, das sie so mit den
+Menschen nicht umgehen kann, erst recht nicht, wenn man etwas von denen
+will! Aber sie hört garnicht zu. Ich glaube nicht, das sie die Worte,
+die ich sage überhaupt verarbeitet, da auch ihre Antworten, die darauf
+kommen lediglich solche sind wie "&lt;em&gt;... er war NIE für uns da! ... mir
+doch egal! ...&lt;/em&gt;" usw. Sie merkt auch nicht, wenn man ihr eine Frage
+stellt. Es kommt dann keine Antwort, sondern nur so eine
+"Aussagenhülse".&lt;/p&gt;
+&lt;p&gt;Deswegen habe ich es für heute aufgegeben und gehe schlafen. Soll sie
+doch machen was sie will. Ist ihr Leben.&lt;/p&gt;</content><category term="Familie"></category><category term="Mutter"></category></entry><entry><title>Und wieder weg</title><link href="https://www.zoosau.de/und-wieder-weg.html" rel="alternate"></link><published>2006-02-11T20:26:00+01:00</published><updated>2006-02-11T20:26:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2006-02-11:/und-wieder-weg.html</id><summary type="html">&lt;p&gt;Ich habe heute mal wieder ein perfektes Beispiel dafür gefunden, was an
+dieser "Geiz-ist-geil!" - Gesellschaft nicht stimmt und bin sauer!&lt;/p&gt;
+&lt;p&gt;Heute habe ich zum ersten mal versucht, mein neues Keyboard (&lt;a href="{filename}images/2008/01/mccrypt-mc-710.jpg" title="McCrypt MC-710 Keyboard Produktfoto"&gt;McCrypt
+MC-710&lt;/a&gt;)
+mit meinem neuen &lt;a href="http://www-307.ibm.com/pc/support/site.wss/document.do?sitestyle=lenovo&amp;amp;lndocid=MIGR-42218" title="IBM T30 Produktseite"&gt;IBM T30
+Notebook&lt;/a&gt;
+zu verbinden, und dabei das &lt;a href="http://en.wikipedia.org/wiki/Sustain_pedal" title="Wiki Eintrag zu Sustain Pedal (Englisch)"&gt;Sustain
+Pedal&lt;/a&gt;
+zu verwenden. Hierbei ist mir …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe heute mal wieder ein perfektes Beispiel dafür gefunden, was an
+dieser "Geiz-ist-geil!" - Gesellschaft nicht stimmt und bin sauer!&lt;/p&gt;
+&lt;p&gt;Heute habe ich zum ersten mal versucht, mein neues Keyboard (&lt;a href="{filename}images/2008/01/mccrypt-mc-710.jpg" title="McCrypt MC-710 Keyboard Produktfoto"&gt;McCrypt
+MC-710&lt;/a&gt;)
+mit meinem neuen &lt;a href="http://www-307.ibm.com/pc/support/site.wss/document.do?sitestyle=lenovo&amp;amp;lndocid=MIGR-42218" title="IBM T30 Produktseite"&gt;IBM T30
+Notebook&lt;/a&gt;
+zu verbinden, und dabei das &lt;a href="http://en.wikipedia.org/wiki/Sustain_pedal" title="Wiki Eintrag zu Sustain Pedal (Englisch)"&gt;Sustain
+Pedal&lt;/a&gt;
+zu verwenden. Hierbei ist mir aufgefallen, das zwar durch die Boxen des
+Keyboards der &lt;a href="http://en.wikipedia.org/wiki/Sustain" title="Wiki Eintrag zum Sustain Effekt (Englisch)"&gt;Sustain
+Effekt&lt;/a&gt;
+wiedergegeben wird und der Ton länger anhält, jedoch ist dieses bei den
+von
+&lt;a href="http://www.propellerheads.se/products/reason/" title="Homepage von Propellerheads Reason"&gt;Reason&lt;/a&gt;
+erzeugten Klängen nicht der Fall. Zum Glück hat mein &lt;a href="http://www.esi-audio.com/products/romio/" title="Produktseite des ESI Romio MIDI Interfaces"&gt;Romio MIDI
+Interface&lt;/a&gt;
+Kontrolleuchten, durch die ich auch sehen kann, das von dem McCrypt
+Keyboard ein anderes Signal übertragen wird als vom &lt;a href="{filename}images/2008/01/roland-jw_50.jpg" title="Produktfoto des Roland JW-50 Keyboards"&gt;Roland
+JW-50&lt;/a&gt;.
+Der Anelitung des McCrypt Gerätes lässt sich nichts weiter zu
+Einstellungen der
+&lt;a href="http://de.wikipedia.org/wiki/Musical_Instrument_Digital_Interface" title="Wiki Eintrag zu MIDI"&gt;MIDI&lt;/a&gt;
+Datenübertragung entnehmen. Daher werde ich das Scheissteil wieder
+abgeben.&lt;/p&gt;
+&lt;p&gt;Dazu muss ich nur die Quittung finden ... ich hoffe, die habe ich noch.
+Müsste eigentlich in meinem
+&lt;a href="http://www.4you.de/" title="Homepage der Firma 4You"&gt;4You&lt;/a&gt; Rucksack sein...&lt;/p&gt;
+&lt;p&gt;Jetzt muss ich mir ein anderes Keyboard suchen. Ich denke, am besten
+nehme ich mein T30 mal mit in so einen SecondHand - Laden und teste das
+vor Ort. Nochmal falle ich nicht auf die leeren Versprechungen der
+Verkäufer rein. In der Regel haben die auch nicht soooo viel mehr
+Ahnung, wenn man denen mit einer so ungewöhnlichen Kombination wie MIDI
+und Reason ankommt.&lt;/p&gt;
+&lt;p&gt;Die wissen in der Regel nur: "&lt;em&gt;Dieses Modell kann jenes, dieses das
+andere und das da drüben kann beides.&lt;/em&gt;" Das sind dann aber in der Regel
+nur die Infos, die auf dem Karton stehen und alles was darüber hinaus
+geht, da sind se so schlau wie man selbst. Wie sollte das auch anders
+sein - man kann schliesslich nicht erwarten, das die jede Leiterbahn von
+jedem ihrer Instrumente auswendig kennen.&lt;/p&gt;</content><category term="Computer"></category><category term="Keyboard"></category><category term="Music Store"></category><category term="Musik"></category></entry></feed>

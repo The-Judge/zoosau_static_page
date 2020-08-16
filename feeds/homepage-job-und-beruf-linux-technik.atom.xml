@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Job und Beruf, Linux, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-job-und-beruf-linux-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2008-10-30T23:56:00+01:00</updated><entry><title>Apache - Anfragen ohne www. umleiten</title><link href="https://www.zoosau.de/apache-anfragen-ohne-www-umleiten.html" rel="alternate"></link><published>2008-10-30T23:56:00+01:00</published><updated>2008-10-30T23:56:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-10-30:/apache-anfragen-ohne-www-umleiten.html</id><summary type="html">&lt;p&gt;Suchmaschinen bewerten eine Seite und deren Inhalt anhand vieler,
+teilweise dem normalen User garnicht bewusste, Kriterien um den
+&lt;a href="http://de.wikipedia.org/wiki/PageRank" title="Wiki Eintrag zu PageRank"&gt;PageRank&lt;/a&gt;
+einer Seite zu bestimmen, bzw. deren Relevanz zu einem Suchbegriff.&lt;br&gt;
+So wird es z.B. von Suchmaschinen inzwischen geahndet, wenn ein und
+derselbe Inhalt über zwei verschiedene Adressen erreichbar ist.&lt;br&gt;
+Es …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Suchmaschinen bewerten eine Seite und deren Inhalt anhand vieler,
+teilweise dem normalen User garnicht bewusste, Kriterien um den
+&lt;a href="http://de.wikipedia.org/wiki/PageRank" title="Wiki Eintrag zu PageRank"&gt;PageRank&lt;/a&gt;
+einer Seite zu bestimmen, bzw. deren Relevanz zu einem Suchbegriff.&lt;br&gt;
+So wird es z.B. von Suchmaschinen inzwischen geahndet, wenn ein und
+derselbe Inhalt über zwei verschiedene Adressen erreichbar ist.&lt;br&gt;
+Es ist für eine Suchmaschine bereits ein Unterschied, ob eine Seite ohne
+www. Subdomain-Präfix (z.B. http://webseite.de ) oder mit www.
+Subdomain-Präfix (z.B. http://www.webseite.de ) aufgerufen werden kann.
+Das ist auch soweit korrekt, da in verschiedenen Subdomains ja
+vollkommen andere Inhalte bereitgestellt werden &lt;span
+style="text-decoration: underline;"&gt;können&lt;/span&gt;. Im weitesten Sinne
+können sich ja gar vollkommen andere Server hinter jeder Subdomain
+verbergen. Und www ist letzten endes auch nur eine Subdomain. Aus Sicht
+der Bewertungslogik einer Suchmaschine, handelt es sich bei einer Domain
+http://webseite.de und http://www.webseite.de um völlig verschiedene
+Webseiten.&lt;/p&gt;
+&lt;p&gt;Man nehme nur mal an das wäre nicht so. Dann könnte sich ja jeder Kinz
+und Kunz, der nur ein einziges Mal eine HTML Seite mit allen möglichen
+Suchbegriffen von Abakus bis Zypern hochgeladen hat, beliebig viele
+(Sub-/)Domains auf diese HTML Seite zeigen lassen, und somit quasi
+alleine in den Suchergebnissen auftauchen. Somit verdrängen
+Website-Spammer ja fast alle anderen relevanten Seiten, die
+ordnungsgemäß nur eine Domain auf ihre Webpräsenz zeigen lassen, völlig
+aus den Suchergebnissen.&lt;/p&gt;
+&lt;p&gt;Man kann dieser Herabstufung der eigenen Präsenz jedoch ganz einfach
+entgegenwirken: Indem man einfach alle Anfragen an http://webseite.de
+nach http://www.webseite.de umleitet.&lt;br&gt;
+Hierzu bietet sich das Apache Modul
+&lt;a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html" title="Onlinemanual des Apache Modules mod_rewrite"&gt;mod_rewrite&lt;/a&gt;
+an. Es handelt sich hierbei um ein sehr mächtiges Modul, welches
+bestimmte Adressen zu beliebigen anderen Adressen umformen kann. Es hat
+dabei seine ganz eigene Syntax um hierfür Regeln zu definieren. Diese
+ist viel zu mächtig um sie hier auch nur annähernd zu erklären; wen es
+interessiert, der kann &lt;a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html" title="Onlinemanual des Apache Modules mod_rewrite"&gt;die Anleitung zu diesem Modul
+hier&lt;/a&gt;
+finden.&lt;br&gt;
+An dieser Stelle sei nur erklärt, wie man seinen Apache Webserver dazu
+bringen kann, die URL ohne www. zu einer Adresse mit www. umzuformen:&lt;/p&gt;
+&lt;p&gt;RewriteEngine On&lt;br&gt;
+RewriteCond %{HTTP_HOST} \^webseite\.de\$ [NC]&lt;br&gt;
+RewriteRule \^(.*)\$ http://www\.webseite\.de\$1 [R=301,L]&lt;/p&gt;
+&lt;p&gt;Dieser Absatz kann per .htaccess Datei, per vHost oder global in der
+Apache Konfiguration eingefügt werden. Nicht vergessen den Webserver neu
+zu starten und ausprobieren!&lt;br&gt;
+Ich erkläre die drei Zeilen wie gesagt nur ganz grob, da ich keine Lust
+habe der 1.000. Wiederkäuer der Moduldokumentation zu werden:&lt;/p&gt;
+&lt;p&gt;Zeile 1:&lt;br&gt;
+Hier wird die Rewrite Engine eigentlich nur aktiviert, damit das Modul
+überhaupt angesteuert werden kann.&lt;/p&gt;
+&lt;p&gt;Zeile 2:&lt;br&gt;
+Mit "&lt;strong&gt;RewriteCond&lt;/strong&gt;" wird das Muster definiert, welches, sofern es in
+der eingegebenen Adresse vorkommt, nach den Bedingungen der Direktive
+"&lt;strong&gt;RewriteRule&lt;/strong&gt;" schliesslich umgeformt werden soll. &lt;strong&gt;%{HTTP_HOST}&lt;/strong&gt;
+ist eine Variable, die vom Modul mod_rewrite zur Laufzeit der Rewrite
+Engine automatisch erzeugt wird. Sie beinhaltet die in der
+HTTP-Protokollanfrage angegebenen &lt;strong&gt;Hostnamen&lt;/strong&gt;.&lt;br&gt;
+Dadurch das diese Variable an der 1. Position nach "&lt;strong&gt;RewriteCond&lt;/strong&gt;"
+steht, wird dieses bei der Anfrage nach dem an der 2. Position stehendem
+Muster durchsucht.&lt;br&gt;
+Das Muster an der 2. Position nach "&lt;strong&gt;RewriteCond&lt;/strong&gt;" ist ein &lt;a href="http://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck" title="Wiki Eintrag zu &amp;quot;reguläre Ausdrücke&amp;quot;"&gt;regulärer
+Ausdruck&lt;/a&gt;;
+eine weitere Technik, die zu erklären hier den Rahmen sprengen würde. Er
+besagt, das die Zeichenkette in der Variable &lt;strong&gt;%{HTTP_HOST}&lt;/strong&gt; genau
+"webseite.de" sein muss; ohne ein Zeichen davor und ohne ein Zeichen
+dahinter. ("/unterseite.html" zum Beispiel ist nicht Teil dieser
+Veriablen, da es hinter dem "/" steht). Die Zusatzoption [NC] an der
+3. Position nach "&lt;strong&gt;RewriteCond&lt;/strong&gt;" bedeutet, das Groß- und
+Kleinschreibung in der URL egal ist. (NC = Non Casesensitive).&lt;/p&gt;
+&lt;p&gt;Zeile 3:&lt;br&gt;
+Diese Zeile definiert letzten Endes die Regel, nach der die Anfrage
+modifiziert werden soll. Es handelt sich zunächst wieder um einen
+regulären Ausdruck, der besagt, das die gesamte Zeichenkette, welche
+durch "&lt;strong&gt;RewriteCond&lt;/strong&gt;" analysiert wurde, durch
+"http://www.webseite.de/urspruengliche/anfrage.html" ersetzt werden soll
+("/ursprüngliche/anfrage.html" ist selbstverständlich nur ein Beispiel.
+Hier wird immer eingefügt, was nach der TLD angegeben worden ist). Dabei
+soll der &lt;a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" title="Liste der HTTP Statuscodes"&gt;HTTP
+Statuscode&lt;/a&gt;
+301 (Permanent Redirect) in der Antwort versendet werden und dieses ist
+die letzte Regel ([L]). Danach sollen keine mehr folgen. So werden
+Endlosschleifen vermieden und der Arbeitsbereich der RewriteEngine klar
+abgegrenzt.&lt;/p&gt;</content><category term="Apache"></category><category term="http"></category><category term="http_host"></category><category term="mit"></category><category term="mod_rewrite"></category><category term="ohne"></category><category term="redirect"></category><category term="umleitung"></category><category term="www"></category></entry></feed>

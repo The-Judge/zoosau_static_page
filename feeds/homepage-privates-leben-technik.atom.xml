@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Privates Leben, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-privates-leben-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2010-08-25T21:29:00+02:00</updated><entry><title>Abschied von der alten Zoosau</title><link href="https://www.zoosau.de/abschied-von-der-alten-zoosau.html" rel="alternate"></link><published>2010-08-25T21:29:00+02:00</published><updated>2010-08-25T21:29:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-08-25:/abschied-von-der-alten-zoosau.html</id><summary type="html">&lt;p&gt;Irgendwie sind wir Menschen ja schon bei Zeiten etwas komisch gestrickt:
+Wir wollen uns zum Beispiel ein neues Auto kaufen, sind uns den Vorzügen
+der Neuanschaffung völlig bewusst und wägen das Für und Wider dieser
+Entscheidung sorgfältig ab. Doch wenn wir uns schließlich zu diesem
+Schritt entschlossen haben und uns …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Irgendwie sind wir Menschen ja schon bei Zeiten etwas komisch gestrickt:
+Wir wollen uns zum Beispiel ein neues Auto kaufen, sind uns den Vorzügen
+der Neuanschaffung völlig bewusst und wägen das Für und Wider dieser
+Entscheidung sorgfältig ab. Doch wenn wir uns schließlich zu diesem
+Schritt entschlossen haben und uns vom alten Wagen trennen sollen,
+werden wir sentimental und lassen uns von Emotionen plagen, die einem
+fast das Gefühl geben man gibt ein lieb gewonnenes Familienmitglied in
+fremde Hände, bzw. gibt ihm den Gnadenschuss. Vergessen sind plötzlich
+die letzten vierstelligen Rechnungen für Verschleißreparaturen; wir
+haben ein schlechtes Gewissen gegenüber einer &lt;span
+style="text-decoration: underline;"&gt;Sache&lt;/span&gt; und empfinden sogar
+Trauer. Da hilft einem auch die Erkenntnis, wie unsinnig solche Gefühle
+sind, nicht wirklich weiter.&lt;/p&gt;
+&lt;p&gt;Ähnliches habe ich eben beim letzten einloggen in die alte "Zoosau"
+empfunden. zoosau.de war meine erste, eigene Domain. Ich habe sie seit
+2003, also inzwischen über 7 Jahre. Zunächst lief sie ca. 2 oder 3 Jahre
+auf einem vServer von "Server4You". Bereits für diesen Server bürgerte
+sich der Name "die Zoosau" ein. "&lt;em&gt;Ich lad's dir nachher auf die
+Zoosau!&lt;/em&gt;" - Solche und ähnliche Sätze machten dann im IRC Stammchannel
+und der Berufsschule die Runde. Dieser Name hat sich inzwischen sogar im
+professionellen Umfeld meiner Arbeitsstelle etabliert - jeder weiß was
+gemeint ist und keinem Stößt dieser Name mehr sauer auf. ;)&lt;br&gt;
+Auf diesem vServer stieß ich jedoch sehr schnell an dessen Grenzen.
+Schließlich konnte man ja nichtmal einen neuen Kernel kompilieren, da
+dieser mit closed source - Patches versehen war um auf der
+Virtualisierungsplattform laufen zu können. Sofern man seinen Server
+ordnungsgemäß gewartet und aktualisiert hat, füllten die Updates auch
+schnell ca. 1/4 der gesamten Festplattenkapazität, da die zugrunde
+liegende Virtualisierungsplattform nur "originale" Dateien nicht von dem
+zur Verfügung stehenden Speicherplatz abgezogen hat. Kaum hat man ein
+Paket aktualisiert, war dieser Speicherplatz auf einmal "mehr" belegt.
+Hat ein Paket von 1 MB Größe also ein älteres von 1 MB Größe
+überschrieben und hatte man zuvor ... sagen wir 100 MB frei, so hatte
+man nach diesem Update nur noch 99 MB frei. Klingt komisch, war aber
+so!&lt;br&gt;
+Seit ca. 2006 bis heute bestand also "die Zoosau" in der aktuellen Form
+eines Debian 4.0 Servers auf echter (wenn auch alter) Hardware. Was
+zunächst als reine Homepage-Maschine begonnen hat, hat sich auf diesem
+System schnell zu einer immer weiter wachsenden Spielwiese entwickelt,
+auf der ich ungeheuer viel gelernt habe. Jeden Tag kam ein wenig mehr
+zum Funktionsportfolio hinzu. Zu Mails, die per fetchmail auf den Server
+von meinen Freemail-Accounts geholt und gesammelt wurden, kamen schnell
+eigene Mailaccounts auf dem Server, die direkt angesteuert werden
+konnten. Zum lesen der Mails auf der Shell kamen schnell die
+Möglichkeiten diese per IMAP und Webmailer zu lesen. Ein Spamfilter,
+Datenbanken, Backupsysteme (dessen Konzept ich auf der &lt;a href="http://www.bacula-konferenz.de/historie" title="History-Seite der Bacula Konferenz Cologne"&gt;Bacula Konferenz
+2009 in
+Köln&lt;/a&gt;
+sogar als Gastredner präsentieren durfte (&lt;a href="{filename}images/BaculaKonferenz2009-MarcRichter-MarketingFactory.pdf"&gt;Präsentationsunterlagen
+Bacula Konferenz 2009 von Marc Richter fa. Marketing Factory Consulting
+GmbH&lt;/a&gt;
+- Punkt "Vorstellung der Lösung für extern gehostete (z.B. vServer) mit
+FTP - Backupspace")), Monitoring der Last, Zugriffsstatistiken, etc.
+sollten folgen. Alle diese Themen konnte ich hier nicht nur nach 0815 -
+Schema "mal eben installieren" sondern konnte mir stets die Zeit lassen,
+diese Programme wirklich zu verstehen; sowohl was die Funktion, wie auch
+was die Bedienung und Implementation angeht.&lt;br&gt;
+Um es kurz zu machen: In diesem System steckt mein ganzes KnowHow und
+auch ein Teil Herzblut. Fast alles was ich heute kann, habe ich hier
+gelernt. Zudem stellt es für mich so eine Art IT-Utopia dar, welches mir
+stets zum Vorbild und als Maßstab für weitere Systeme gereicht. In den
+nunmehr über 4 Jahren Dauerbetrieb komme ich (ohne die jüngsten
+Migrations-Downtimes) auf weniger als 2 Stunden kummulierte Ausfallzeit,
+trotz stetigem basteln im Hintergrund.&lt;/p&gt;
+&lt;p&gt;Inzwischen laufen insgesamt 8 produktive Seiten auf diesem Server. Mit
+allen Metadiensten wie Statistiken, Backups, etc. lief das System jedoch
+schon lange auf einer durchschnittlichen Load von ca. 0,8 . Zudem boten
+neue Server-Pakete für denselben Preis schlichtweg inzwischen ... mehr:
+mehr Platz, mehr Inklusivtraffic, mehrere CPU-Kerne, schnellere
+CPU-Kerne, mehr RAM, etc. Last but not Least ist Debian 4.0 stable ja
+nun nicht mehr der jüngste Kandidat auf dem Markt, so das ich immer
+öfter, um an aktuellere Versionen einer Software zu kommen, händisch
+kompilieren musste. Und mit jedem Paket, welches ich so jenseits des
+Paketmanagements warten musste, wuchs der Aufwand, da man ja trotzdem
+auf aktuelle Sicherheitsprobleme Rücksicht nehmen muss (jajaja, man kann
+ja auch das testing oder unstable - Release nehmen oder gar mischen.
+Habe ich aber nie gute Erfahrungen mit gemacht).&lt;/p&gt;
+&lt;p&gt;Als ich mich eben um ca. 19.43 Uhr auf der alten Zoosau eingelogged
+habe, hatte ich schon ein komisches Gefühl und schlechtes Gewissen, da
+ich wusste, das ich das System, was mir jahrelang treue Dienste
+geleistet hat und auf dem ich eine Menge Spaß hatte, gleich binnen
+Sekunden zerstören werde.&lt;br&gt;
+Einmal eingelogged, habe ich zunächst alle persönlichen Daten gelöscht.
+Anschließend habe ich um 19.47 Uhr folgende "Schleife-of-Death"
+losgetreten:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;while [ 1 -gt 0 ]; do
+dd if=/dev/urandom of=/dev/hda
+done
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;p&gt;Da bleibt wohl nicht viel über ... :'(&lt;br&gt;
+Tut mir irgendwie in der Seele weh. Zumal wenn ich sehe, das das ganze
+inzwischen schon 1 Stunde, 23 Minuten läuft und das System immer noch
+tapfer auf Pings reagiert.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_795" align="aligncenter" width="300"
+caption="Abschied von der alten Zoosau - h1322702"]&lt;a href="https://www.zoosau.de/images/20100825-Abschied-von-der-alten-Zoosau-h1322702.png"&gt;&lt;img alt="Abschied von der
+alten Zoosau -
+h1322702" src="{filename}images/20100825-Abschied-von-der-alten-Zoosau-h1322702-300x168.png" title="Abschied von der alten Zoosau - h1322702"&gt;{.size-medium
+.wp-image-795 width="300"
+height="168"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;1: Hier läuft die "Schleife of Death"&lt;br&gt;
+2: Hier antwortet das System immer noch tapfer auf Pings&lt;br&gt;
+3: Im Schatten der alten Zoosau, steht hier bereits die neue Zoosau
+Gewehr bei Fuß&lt;/p&gt;
+&lt;p&gt;Schon blöd - selbst wenn man sich das Auto, was unmittelbar nach dem
+eigenen vom Band gerollt ist, als Ersatz für das eigene kauft, fühlt man
+sich dennoch darin fremd und merkt, das es nicht dasselbe ist.&lt;br&gt;
+Ich habe jetzt alle Dienste übertragen, alle Dateien kopiert. Ja, sogar
+funktionieren tut alles. Schneller als vorher. Und dennoch fällt mir der
+Abschied schwer.&lt;/p&gt;
+&lt;p&gt;Naja, nun ist's eh zu spät.&lt;br&gt;
+Auf zum letzten Shutdown - sofern das System den überhaupt noch
+hinbekommt ;)&lt;/p&gt;</content><category term="abschied"></category><category term="debian"></category><category term="server4you"></category><category term="zoosau"></category></entry></feed>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Funtoo, Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/funtoo-linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-10-05T19:17:00+02:00</updated><entry><title>Teamspeak3 Server unter Gentoo/Funtoo Linux mit MySQL installieren</title><link href="https://www.zoosau.de/teamspeak3-server-unter-gentoofuntoo-linux-mit-mysql-installieren.html" rel="alternate"></link><published>2012-10-05T19:17:00+02:00</published><updated>2012-10-05T19:17:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-10-05:/teamspeak3-server-unter-gentoofuntoo-linux-mit-mysql-installieren.html</id><summary type="html">&lt;p&gt;Hallo zusammen,&lt;/p&gt;
+&lt;p&gt;das Gentoo/Funtoo Paket 'media-sound/teamspeak-server-bin' benötigt noch
+MySQL 5.1; dieses ist jedoch im ebuild nicht richtig aufgelöst, so das
+es nicht als Installationsbedingung aufgelistet wird. Installiert man
+das Paket, setzt in der Datei '/etc/teamspeak3-server/server.conf'
+'dbplugin=ts3db_mysql' (um die Einstellungen statt in einer SQLite-DB …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen,&lt;/p&gt;
+&lt;p&gt;das Gentoo/Funtoo Paket 'media-sound/teamspeak-server-bin' benötigt noch
+MySQL 5.1; dieses ist jedoch im ebuild nicht richtig aufgelöst, so das
+es nicht als Installationsbedingung aufgelistet wird. Installiert man
+das Paket, setzt in der Datei '/etc/teamspeak3-server/server.conf'
+'dbplugin=ts3db_mysql' (um die Einstellungen statt in einer SQLite-DB
+in einer MySQL-DB zu speichern) und versucht dann den TeamSpeak3 Server
+zu starten, bekommt man im Log folgende Meldung:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;|INFO |ServerLibPriv | | TeamSpeak 3 Server 3.0.5 (2012-04-23
+04:46:12)&lt;br&gt;
+|INFO |DatabaseQuery | | Please make sure you use the supplied
+ts3server_minimal_runscript.sh to run the server, or set
+LD_LIBRARY_PATH yourself&lt;br&gt;
+|CRITICAL|DatabaseQuery | | unable to load database plugin library
+"libts3db_mysql.so", halting!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;LD_LIBRARY_PATH ist aber (im Init-Script) schon auf das Verzeichnis
+gesetzt, in welchem die Datei libts3db_mysql.so liegt:
+/opt/teamspeak3-server/, also was soll die Meldung?&lt;br&gt;
+Das ganze wird klar, wenn man sich mit ldd einmal die  shared library
+dependencies der Datei /opt/teamspeak3-server/libts3db_mysql.so
+anzeigen lässt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ldd /opt/teamspeak3-server/libts3db_mysql.so&lt;br&gt;
+linux-vdso.so.1 =&amp;gt;  (0x00007fff4efa4000)&lt;br&gt;
+&lt;strong&gt;libmysqlclient.so.15 =&amp;gt; not found&lt;/strong&gt;&lt;br&gt;
+libstdc++.so.6 =&amp;gt;
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.3.4/libstdc++.so.6
+(0x00007f17f2bc0000)&lt;br&gt;
+libm.so.6 =&amp;gt; /lib/libm.so.6 (0x00007f17f293d000)&lt;br&gt;
+libgcc_s.so.1 =&amp;gt; /lib/libgcc_s.so.1 (0x00007f17f2727000)&lt;br&gt;
+libc.so.6 =&amp;gt; /lib/libc.so.6 (0x00007f17f23ca000)&lt;br&gt;
+/lib64/ld-linux-x86-64.so.2 (0x00007f17f30fd000)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Es fehlt also die Datei libmysqlclient.so.15 ; diese ist jedoch leider
+nur in MySQL 5.1 enthalten. Nun hat man zwei Möglichkeiten:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Man installiert und betreibt MySQL 5.1 . Dann löst sich das Problem
+    ohne weiteres Zutun, jedoch finde ich es blöd sich von einem
+    einzigen Programm eine veraltete MySQL Version aufzwingen zu lassen.&lt;/li&gt;
+&lt;li&gt;Man besorgt sich die libmysqlclient.so.15.0.0 Datei von einem
+    Build-Chain kompatiblen System (gleiche GCC Version, gleiche
+    Arch, etc.). Das geht z.B. indem man erst MySQL in Version 5.1
+    installiertst, die Datei wegkopiert und wieder die MySQL Version,
+    die man eigentlich haben möchte installiert.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Sofern man sich für Variante 2 entscheidet, kopiert man, während MySQL
+5.1 installiert ist, die Datei /usr/lib64/mysql/libmysqlclient.so.15.0.0
+nach /usr/local/lib/, erstellt einen Symlink von
+/usr/local/lib/libmysqlclient.so.15 auf /usr/local/lib/libmysqlclient.so.15.0.0
+und installiert anschließend wieder die eigentliche Version von MySQL.&lt;/p&gt;
+&lt;p&gt;Hat man dieses alles erledigt, sollte sich der Teamspeak3 Server
+problemlos starten lassen.&lt;/p&gt;
+&lt;p&gt;Nachzulesen ist das ganze außerdem im &lt;a href="http://forums.gentoo.org/viewtopic-p-7155620.html#7155620" title="teamspeak-server-bin startprobleme"&gt;Gentoo
+Forum&lt;/a&gt;.
+Auf die Idee gebracht hat mich der Blogeintrag von &lt;a href="http://www.dermute.de/425-howto-teamspeak-3-mit-mysql" title="HowTo: Teamspeak 3 mit MySQL"&gt;Alexander
+Winkler&lt;/a&gt;.&lt;/p&gt;</content><category term="funtoo"></category><category term="gentoo"></category><category term="libts3db_mysql.so"></category><category term="Linux"></category><category term="media-sound/teamspeak-server-bin"></category><category term="teamspeak"></category><category term="teamspeak3"></category></entry><entry><title>Meine ersten Funtoo ebuilds sind in Flora! :D</title><link href="https://www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html" rel="alternate"></link><published>2011-09-22T01:05:00+02:00</published><updated>2011-09-22T01:05:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-09-22:/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html</id><summary type="html">&lt;p&gt;Um zu erklären, was das bedeutet, muss ich ganz kurz ausholen...&lt;/p&gt;
+&lt;p&gt;Als ich vor vielen Jahren mit Linux angefangen habe, stolperte ich
+ziemlich bald über &lt;a href="http://www.gentoo.org/" title="Homepage von Gentoo Linux"&gt;Gentoo
+Linux&lt;/a&gt;. Damals
+konnte ich aber weder den Wert dieser Distribution ermessen, noch kam
+ich als absoluter Linuxeinsteiger damit zurecht. Also habe ich sie
+damals …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Um zu erklären, was das bedeutet, muss ich ganz kurz ausholen...&lt;/p&gt;
+&lt;p&gt;Als ich vor vielen Jahren mit Linux angefangen habe, stolperte ich
+ziemlich bald über &lt;a href="http://www.gentoo.org/" title="Homepage von Gentoo Linux"&gt;Gentoo
+Linux&lt;/a&gt;. Damals
+konnte ich aber weder den Wert dieser Distribution ermessen, noch kam
+ich als absoluter Linuxeinsteiger damit zurecht. Also habe ich sie
+damals recht bald wieder fallen lassen.&lt;br&gt;
+Nachdem ich inzwischen jedoch einige Jahre mit diesem Fachgebiet auf dem
+Buckel habe, keimte vor ein paar Jahren das Interesse an dieser
+Distribution wieder auf. So läuft &lt;a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Blogeintrag wegen des Umbaus der Zoosau auf Gentoo Linux"&gt;seit knapp 13 Monaten dieser Server
+auch unter Gentoo
+Linux&lt;/a&gt;.&lt;br&gt;
+In dieser Zeit stand ich natürlich auch ab und an mal auf dem Schlauch
+und musste mich, als Google, das &lt;a href="http://forums.gentoo.org" title="Gentoo Foren"&gt;Gentoo
+Forum&lt;/a&gt; und IRC nicht mehr
+helfen konnten, des &lt;a href="http://bugs.gentoo.org" title="Bugtracker von Gentoo Linux"&gt;Gentoo
+Bugtrackers&lt;/a&gt;
+bedienen. Und genau hier machte ich Erfahrungen, welche mich
+enttäuschten. Oft, wenn ich auf diesem Wege mit den Gentoo Entwicklern
+in Kontakt treten musste, wurde ich enttäuscht. So sind zwei Bugs, die
+ich &lt;a href="https://bugs.gentoo.org/show_bug.cgi?id=376737" title="Gentoo Bug #376737"&gt;vor fast 2
+Monaten&lt;/a&gt;
+und &lt;a href="https://bugs.gentoo.org/show_bug.cgi?id=367713" title="Gentoo Bug #367713"&gt;über 4
+Monaten&lt;/a&gt;
+eingetragen habe, bis heute nicht final bearbeitet und geschlossen
+worden. Den Vogel abgeschossen hat aber der &lt;a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675"&gt;Gentoo
+Bug 363675&lt;/a&gt;,
+bei dem ich über 1,5 Monate der einzige gewesen bin, der den auch nur
+angesehen hat. Und dabei ging es nicht etwa um irgendeinen
+Schönheitsfehler: Ich konnte den &lt;a href="http://gcc.gnu.org" title="Homepage des GNU C Compilers (gcc)"&gt;GNU C Compiler
+(gcc)&lt;/a&gt; nahezu
+garnicht mehr benutzen. Das bedeutet im Falle von Gentoo Linux, das man
+nahezu kein Paket mehr installieren kann. Als ob das nicht ärgerlich
+genug wäre: Auch Sicherheitsupdates sind so natürlich nicht mehr
+möglich. Als ich mir nicht mehr zu helfen wusste, habe ich &lt;a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=49245" title="GNU C Compiler Bug #49245"&gt;dasselbe
+Problem im Bugtracker vom gcc
+direkt&lt;/a&gt;
+eingestellt. Nach sage und schreibe 3 Minuten und 42 Sekunden hat einer
+der dortigen Entwickler mein Problem gelöst!&lt;br&gt;
+Es stellte sich letzten Endes heraus, das es sich um ein lokales Problem
+bei mir gehandelt hatte, jedoch hat sich ja kein Mensch den Bug
+gründlich genug angeschaut um das wissen zu können. Wäre es ein globales
+Problem am gcc gewesen, wäre eine nichtbeachtung eines Bugs in dieser
+Kategorie fatal gewesen!&lt;br&gt;
+Als ich das dann im verlinktem &lt;a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675"&gt;Gentoo
+Bug 363675&lt;/a&gt; mal
+so angemerkt habe, bekam ich folgende Antwort:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;{#comment_text_10}
+it's a volunteer system.  if you dont like how it works, then
+step up and help. expecting people to help you isnt how things work.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mit anderen Worten also: Da Gentoo ein System von Freiwilligen ist, darf
+man sich nicht beschweren. Grundsätzlich natürlich richtig. Jedoch zwei
+Punkte dazu (was mich ganz dezent dann auch wieder zum eigentlichen
+Thema zurückführt :D ):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Wenn ich das selber hätte lösen können, hätte ich wohl kaum einen
+    Bug dazu erstellt.&lt;/li&gt;
+&lt;li&gt;Ich &lt;span style="text-decoration: underline;"&gt;möchte&lt;/span&gt; ja gerne
+    helfen, aber die Einstiegshürde bei Gentoo ist leider sehr hoch!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+
+Es haben sich in der jüngsten Vergangenheit mehrere Dinge ereignet bei
+denen ich mich frage, ob die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation")
+den Karren absichtlich an die Wand fahren will. Viele Entwickler
+beschwerten sich in jüngster Vergangenheit darüber, das ihnen vom Gentoo
+Linux Council, den Leitern und Koordinatoren also, völlig hanebüchene
+und fachfremde Vorgaben gemacht werden, wie Software zu entwickeln ist
+und wie die Workflows dazu auszusehen haben.  
+Das kann ich mir gut vorstellen; wie eben beschrieben scheinen die
+Entwickler ja mit den Anfragen völlig überfordert zu sein. ... was ja
+nichts mit Unfähigkeit, sondern mehr mit mangelnder Organisation zu tun
+hat. Umso unverständlicher ist es, das Hilfsangebote am laufendem Band
+ausgeschlagen werden. Das sieht man besonders drastisch am Beispiel von
+[Daniel
+Robbins](http://en.wikipedia.org/wiki/Daniel_Robbins "Wikipedia Eintrag zu Daniel Robbins"):
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Daniel Robbins hat Gentoo Linux erschaffen. Bevor er im Mai 2005 bei
+Microsoft anfing, gründete er die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation") und
+übergab das Projekt an diese. Die Gründe hierfür waren wohl zu gleichen
+Teilen, das er zum einen fürchtete sein neuer Arbeitgeber Microsoft
+könnte einen negativen Einfluss auf die weitere Entwicklung der
+Distribution haben und zum anderen wollte er mehr Zeit für seine Familie
+haben.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Als er dann im Februar 2007 wieder als Entwickler für Gentoo anfing,
+wurden ihm, als geistigem Vater der Distribution, so viele Steine in den
+Weg gelegt, das er bereits einen Monat später seine Arbeit an Gentoo
+Linux wieder einstellte und 2008 schließlich sein aktuelles Projekt
+initialisierte: [Funtoo
+Linux](http://www.funtoo.org/wiki/Welcome "Homepage der Linuxdistribution Funtoo");
+einen Fork von Gentoo Linux.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Inzwischen hat Funtoo viele Anhänger und ein sehr fähiges
+Entwicklerteam, an dessen Spitze Daniel Robbins steht, der (ähnlich zu
+Linus Torvalds über den Kernel) als gutmütiger Diktator die
+Marschrichtung der Distribution vorgibt und dessen Entwicklung
+koordiniert.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Noch hängen Funtoo und Gentoo zwar eng zusammen, jedoch driften (nicht
+zuletzt wegen größerer Fortschritte bei Funtoo) die beiden immer weiter
+auseinander. Wie das bei einem Fork nunmal so ist.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Ich habe mich daher dafür entschieden meine Freizeit und mein Engagement
+lieber in Funtoo Linux zu investieren ehe ich zunächst Monatelang den
+Leuten und Infos von Gentoo Linux hinterherlaufe, nur damit meine
+Beteiligungen dann im Sande verlaufen. Man sehe sich nur einmal den
+[Gentoo Bug
+\#228343](https://bugs.gentoo.org/show_bug.cgi?id=228343 "Gentoo Bug #228343")
+an. Da wird den Entwicklern ein nahezu fertiges
+[TYPO3](http://typo3.org/ "Homepage vom CMS TYPO3") Paket geliefert und
+es kümmert sich einfach keiner drum! Das Paket für TYPO3 Version 4.2.1
+wurde am 19.06.2008 eingereicht. Heute, 3 Jahre und 3 Monate später, hat
+der Bug nach wie vor den Status "CONFIRMED", was in etwa soviel bedeutet
+wie *"zur Kenntnis genommen - weitere Aktionen abwarten, bis wir das
+geprüft haben"*. Ist doch ein Scherz, oder?  
+Wie gesagt: Völlig überlastet und unkoordiniert das Team.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Einer der Fortschritte von Funtoo Linux ist, das der Portage Tree, das
+bedeutet: Das Paketverzeichnis mit allen Installationsscripten, nun
+nicht mehr per rsync abgeglichen, sondern in einem git Repository
+gepflegt wird. Das macht das ganze einfacher zu warten, es gibt
+automatisch ein ChangeLog und eine History und es können mehr Personen
+einfacher miteinander an diesem Projekt arbeiten.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+[Martin "golodhrim"
+Scholz](http://www.funtoo.org/wiki/User:Golodhrim "Funtoo Profil von Martin "golodhrim " Scholz")
+hat am [7. 7. 2011 mit einer super-Idee für eine neue Art des
+Overlays](http://groups.google.com/group/funtoo-dev/browse_thread/thread/c37339e78c641afc "Martin "golodhrim" Scholz Vorschlag für "flora" auf der Funtoo Google Group"),
+mit dem nahezu jedermann zur Entwicklung von Funtoo beitragen kann,
+einen Meilenstein (in meinen Augen) für die Distribution gelegt.
+Inzwischen ist die Idee umgesetzt, das ganze nennt sich
+"[flora](http://www.funtoo.org/wiki/Flora "Funtoo Wikieintrag zu "flora"")"
+und Martin Scholz wurde inzwischen von Daniel Robbins [zum Core Member
+für die Communityentwicklung und speziell zum vorantreiben von flora
+ernannt](http://groups.google.com/group/funtoo-dev/browse_thread/thread/f5b259a0a7be2945 "Daniel Robbins Mail an die Funtoo Mailingliste vom 17.9.").
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Ich habe mich in den letzten Tagen mit der Funktionsweise und der
+Erstellung von (Ge|Fu)ntoo Paketen (ebuilds) beschäftigt und heute
+[meine erste Version das TYPO3 Paketes an flora
+übermittelt](https://github.com/funtoo/flora/commit/203bde9df309a5c1a13853329e7a01fa1f9190ef "Mein erster flora commit für das TYPO3 Paket in Funtoo").
+Martin Scholz nimmt seine Aufgabe sehr ernst und ist ungeheuer fleissig!
+So hat er auch nur knapp eine Stunde später [meine Änderungen
+unverändert in flora
+übernommen](https://github.com/funtoo/flora/commit/c7d6f68535315365d40ea3705cc4825862abeaeb "Martin Scholz übernimmt mein TYPO3 Paket für Funtoo unverändert in flora").
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Es ist zwar als PHP Paket nur ein vergleichsweise einfaches Paket, da
+die ganzen Kompilierungsvorgänge und was damit zusammenhängt dabei nicht
+berücksichtigt werden müssen, trotzdem ist es etwas völlig neues für
+mich. Gerade weil das vergleichweise einfach ist, bot es sich als erstes
+Paket besonders an. Ich hoffe, das ich mir dabei keinen groben Schnitzer
+erlaubt habe ... nicht das ich mich bei meinem Gesellenstück gleich vor
+der ganzen Community blamiere ... :D  
+Naja, mehr als stundenlang hin-und-hertesten kann man ja nicht. Und zum
+Glück hat so ein PHP Paket ja in der Regel nicht das Potential
+irgendetwas wichtiges zu zerstören.
+
+&lt;/div&gt;
+
+&lt;div&gt;
+
+Ich bin mal gespannt ob, wann und wie das ganze schließlich im Portage
+Tree landet und ob Fehler gefunden werden.
+
+&lt;/div&gt;</content><category term="ebuild"></category><category term="flora"></category><category term="funtoo"></category><category term="gentoo"></category><category term="typo3"></category></entry></feed>

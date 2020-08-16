@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Kurztipp, Linux, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/kurztipp-linux-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2014-05-30T19:00:00+02:00</updated><entry><title>Knacken in Skype unter Linux</title><link href="https://www.zoosau.de/knacken-in-skype-unter-linux.html" rel="alternate"></link><published>2014-05-30T19:00:00+02:00</published><updated>2014-05-30T19:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2014-05-30:/knacken-in-skype-unter-linux.html</id><summary type="html">&lt;p&gt;Ich hatte vor einiger Zeit auf einem Sabayon Linux System das Problem,
+das ich unter Skype absolut nichts verstehen konnte. Aus dem Kopfhörer
+drang nur eine Art "knirschen"; da es auch beim Skype Echo Service
+auftrat, war klar das es an mir und nicht an der Gegenseite liegt. Es
+trat …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich hatte vor einiger Zeit auf einem Sabayon Linux System das Problem,
+das ich unter Skype absolut nichts verstehen konnte. Aus dem Kopfhörer
+drang nur eine Art "knirschen"; da es auch beim Skype Echo Service
+auftrat, war klar das es an mir und nicht an der Gegenseite liegt. Es
+trat jedoch nur bei Skype auf; keine andere Anwendung war hiervon
+betroffen.&lt;/p&gt;
+&lt;p&gt;Ich verwende KDE und damit unter Sabayon Standardmäßig PulseAudio. Ein
+Beitrag der User
+"&lt;a href="https://bbs.archlinux.org/viewtopic.php?pid=1287044#p1287044"&gt;ball&lt;/a&gt;"
+und
+"&lt;a href="https://bbs.archlinux.org/viewtopic.php?pid=1287653#p1287653"&gt;swordfish&lt;/a&gt;"
+brachten mir letzten Endes die Lösung, indem Sie im &lt;a href="https://bbs.archlinux.org/viewtopic.php?pid=1288881"&gt;ArchLinux
+Forum&lt;/a&gt; auf &lt;a href="https://bugs.freedesktop.org/show_bug.cgi?id=50510#c4"&gt;Bug
+#50510 im FreeDesktop.org Bugtracker
+verwiesen&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Wenn man Skype wie folgt mit einer Wert von 30 in der
+Umgebungsvariable PULSE_LATENCY_MSEC startet, gibt es von jetzt auf
+gleich keine Probleme mehr:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bash -c "PULSE_LATENCY_MSEC=30 skype %U"&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Linux"></category><category term="skype"></category><category term="störung"></category></entry></feed>

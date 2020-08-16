@@ -1,0 +1,45 @@
+--- search_engines.old.pm	2009-08-20 08:26:48.000000000 +0000
++++ search_engines.pm	2009-08-20 08:45:45.000000000 +0000
+@@ -145,6 +145,8 @@
+ # added Steadysearch http://www.steady-search.com/
+ # modified 216\.239\.5[0-9]\.104/search to 216\.239\.5[0-9]\.104
+ 
++# 2009-08-20 (Marc Richter - http://www.marc-richter.info/)
++# added Bing search engine http://www.bing.com/
+ 
+ # SearchEnginesSearchIDOrder
+ # It contains all matching criteria to search for in log fields. This list is
+@@ -188,7 +190,8 @@
+ 'search\.terra\.',
+ 'www\.search\.com',
+ 'search\.sli\.sympatico\.ca', 
+-'excite\.'
++'excite\.',
++'bing\.com'
+ );
+ 
+ @SearchEnginesSearchIDOrder_list2=(
+@@ -405,6 +408,7 @@
+ 'search\.aol\.co','aol',
+ 'search\.sli\.sympatico\.ca','sympatico',
+ 'excite\.','excite',
++'bing\.com','bing',
+ # Minor international search engines
+ '4\-counter\.com','google4counter',
+ 'att\.net','att',
+@@ -674,6 +678,7 @@
+ 'yahoo','p=',
+ 'sympatico', 'query=', 
+ 'excite','search=',
++'bing','q=',
+ # Minor international search engines
+ 'google4counter','(p|q|as_p|as_q)=',
+ 'att','qry=',
+@@ -902,6 +907,7 @@
+ 'yahoo','<a href="http://www.yahoo.com/" title="Search Engine Home Page [new window]" target="_blank">Yahoo!</a>',
+ 'sympatico','<a href="http://sympatico.msn.ca/" title="Search Engine Home Page [new window]" target="_blank">Sympatico</a>',
+ 'excite','<a href="http://www.excite.com/" title="Search Engine Home Page [new window]" target="_blank">Excite</a>',
++'bing','<a href="http://www.bing.com/" title="Search Engine Home Page [new window]" target="_blank">Bing</a>',
+ # Minor international search engines
+ 'google4counter','<a href="http://www.4-counter.com/" title="Search Engine Home Page [new window]" target="_blank">4-counter (Google)</a>',
+ 'att','<a href="http://www.att.net/" title="Search Engine Home Page [new window]" target="_blank">AT&T search (powered by Google)</a>',

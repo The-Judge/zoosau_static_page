@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Funtoo, Linux - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="Funtoo, Linux" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+        <link href="https://www.zoosau.de/feeds/funtoo-linux.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog Funtoo, Linux ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Marc Richter's Weblog Categories">Categories</a></li>
+        <li class="active">Funtoo, Linux</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/teamspeak3-server-unter-gentoofuntoo-linux-mit-mysql-installieren.html">Teamspeak3 Server unter Gentoo/Funtoo Linux mit MySQL installieren</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-10-05T19:17:00+02:00"> Fr 05 Oktober 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/funtoo-linux.html">Funtoo, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		325
+
+		<span class="label label-default">Read time</span>
+		2 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/libts3db_mysqlso.html">libts3db_mysql.so</a>
+        /
+	<a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+        /
+	<a href="https://www.zoosau.de/tag/media-soundteamspeak-server-bin.html">media-sound/teamspeak-server-bin</a>
+        /
+	<a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+        /
+	<a href="https://www.zoosau.de/tag/teamspeak3.html">teamspeak3</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hallo zusammen,</p>
+<p>das Gentoo/Funtoo Paket 'media-sound/teamspeak-server-bin' benötigt noch
+MySQL 5.1; dieses ist jedoch im ebuild nicht richtig aufgelöst, so das
+es nicht als Installationsbedingung aufgelistet wird. Installiert man
+das Paket, setzt in der Datei '/etc/teamspeak3-server/server.conf'
+'dbplugin=ts3db_mysql' (um die Einstellungen statt in einer SQLite-DB
+in einer MySQL-DB zu speichern) und versucht dann den TeamSpeak3 Server
+zu starten, bekommt man im Log folgende Meldung:</p>
+<blockquote>
+<p>|INFO |ServerLibPriv | | TeamSpeak 3 Server 3.0.5 (2012-04-23
+04:46:12)<br>
+|INFO |DatabaseQuery | | Please make sure you use the supplied
+ts3server_minimal_runscript.sh to run the server, or set
+LD_LIBRARY_PATH yourself<br>
+|CRITICAL|DatabaseQuery | | unable to load database plugin library
+"libts3db_mysql.so", halting!</p>
+</blockquote>
+<p>LD_LIBRARY_PATH ist aber (im Init-Script) schon auf das Verzeichnis
+gesetzt, in welchem die Datei libts3db_mysql.so liegt:
+/opt/teamspeak3-server/, also was soll die Meldung?<br>
+Das ganze wird klar, wenn man sich mit ldd einmal die  shared library
+dependencies der Datei /opt/teamspeak3-server/libts3db_mysql.so
+anzeigen lässt:</p>
+<blockquote>
+<p>ldd /opt/teamspeak3-server/libts3db_mysql.so<br>
+linux-vdso.so.1 =&gt;  (0x00007fff4efa4000)<br>
+<strong>libmysqlclient.so.15 =&gt; not found</strong><br>
+libstdc++.so.6 =&gt;
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.3.4/libstdc++.so.6
+(0x00007f17f2bc0000)<br>
+libm.so.6 =&gt; /lib/libm.so.6 (0x00007f17f293d000)<br>
+libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x00007f17f2727000)<br>
+libc.so.6 =&gt; /lib/libc.so.6 (0x00007f17f23ca000)<br>
+/lib64/ld-linux-x86-64.so.2 (0x00007f17f30fd000)</p>
+</blockquote>
+<p>Es fehlt also die Datei libmysqlclient.so.15 ; diese ist jedoch leider
+nur in MySQL 5.1 enthalten. Nun hat man zwei Möglichkeiten:</p>
+<ol>
+<li>Man installiert und betreibt MySQL 5.1 . Dann löst sich das Problem
+    ohne weiteres Zutun, jedoch finde ich es blöd sich von einem
+    einzigen Programm eine veraltete MySQL Version aufzwingen zu lassen.</li>
+<li>Man besorgt sich die libmysqlclient.so.15.0.0 Datei von einem
+    Build-Chain kompatiblen System (gleiche GCC Version, gleiche
+    Arch, etc.). Das geht z.B. indem man erst MySQL in Version 5.1
+    installiertst, die Datei wegkopiert und wieder die MySQL Version,
+    die man eigentlich haben möchte installiert.</li>
+</ol>
+<p>Sofern man sich für Variante 2 entscheidet, kopiert man, während MySQL
+5.1 installiert ist, die Datei /usr/lib64/mysql/libmysqlclient.so.15.0.0
+nach /usr/local/lib/, erstellt einen Symlink von
+/usr/local/lib/libmysqlclient.so.15 auf /usr/local/lib/libmysqlclient.so.15.0.0
+und installiert anschließend wieder die eigentliche Version von MySQL.</p>
+<p>Hat man dieses alles erledigt, sollte sich der Teamspeak3 Server
+problemlos starten lassen.</p>
+<p>Nachzulesen ist das ganze außerdem im <a href="http://forums.gentoo.org/viewtopic-p-7155620.html#7155620" title="teamspeak-server-bin startprobleme">Gentoo
+Forum</a>.
+Auf die Idee gebracht hat mich der Blogeintrag von <a href="http://www.dermute.de/425-howto-teamspeak-3-mit-mysql" title="HowTo: Teamspeak 3 mit MySQL">Alexander
+Winkler</a>.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Teamspeak3%20Server%20unter%20Gentoo/Funtoo%20Linux%20mit%20MySQL%20installieren&url=https%3A//www.zoosau.de/teamspeak3-server-unter-gentoofuntoo-linux-mit-mysql-installieren.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Teamspeak3%20Server%20unter%20Gentoo/Funtoo%20Linux%20mit%20MySQL%20installieren&amp;body=https%3A//www.zoosau.de/teamspeak3-server-unter-gentoofuntoo-linux-mit-mysql-installieren.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html">Meine ersten Funtoo ebuilds sind in Flora! :D</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-09-22T01:05:00+02:00"> Do 22 September 2011</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/funtoo-linux.html">Funtoo, Linux</a>
+
+
+		<span class="label label-default">Words</span>
+		1239
+
+		<span class="label label-default">Read time</span>
+		5 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/ebuild.html">ebuild</a>
+        /
+	<a href="https://www.zoosau.de/tag/flora.html">flora</a>
+        /
+	<a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+        /
+	<a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Um zu erklären, was das bedeutet, muss ich ganz kurz ausholen...</p>
+<p>Als ich vor vielen Jahren mit Linux angefangen habe, stolperte ich
+ziemlich bald über <a href="http://www.gentoo.org/" title="Homepage von Gentoo Linux">Gentoo
+Linux</a>. Damals
+konnte ich aber weder den Wert dieser Distribution ermessen, noch kam
+ich als absoluter Linuxeinsteiger damit zurecht. Also habe ich sie
+damals recht bald wieder fallen lassen.<br>
+Nachdem ich inzwischen jedoch einige Jahre mit diesem Fachgebiet auf dem
+Buckel habe, keimte vor ein paar Jahren das Interesse an dieser
+Distribution wieder auf. So läuft <a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Blogeintrag wegen des Umbaus der Zoosau auf Gentoo Linux">seit knapp 13 Monaten dieser Server
+auch unter Gentoo
+Linux</a>.<br>
+In dieser Zeit stand ich natürlich auch ab und an mal auf dem Schlauch
+und musste mich, als Google, das <a href="http://forums.gentoo.org" title="Gentoo Foren">Gentoo
+Forum</a> und IRC nicht mehr
+helfen konnten, des <a href="http://bugs.gentoo.org" title="Bugtracker von Gentoo Linux">Gentoo
+Bugtrackers</a>
+bedienen. Und genau hier machte ich Erfahrungen, welche mich
+enttäuschten. Oft, wenn ich auf diesem Wege mit den Gentoo Entwicklern
+in Kontakt treten musste, wurde ich enttäuscht. So sind zwei Bugs, die
+ich <a href="https://bugs.gentoo.org/show_bug.cgi?id=376737" title="Gentoo Bug #376737">vor fast 2
+Monaten</a>
+und <a href="https://bugs.gentoo.org/show_bug.cgi?id=367713" title="Gentoo Bug #367713">über 4
+Monaten</a>
+eingetragen habe, bis heute nicht final bearbeitet und geschlossen
+worden. Den Vogel abgeschossen hat aber der <a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675">Gentoo
+Bug 363675</a>,
+bei dem ich über 1,5 Monate der einzige gewesen bin, der den auch nur
+angesehen hat. Und dabei ging es nicht etwa um irgendeinen
+Schönheitsfehler: Ich konnte den <a href="http://gcc.gnu.org" title="Homepage des GNU C Compilers (gcc)">GNU C Compiler
+(gcc)</a> nahezu
+garnicht mehr benutzen. Das bedeutet im Falle von Gentoo Linux, das man
+nahezu kein Paket mehr installieren kann. Als ob das nicht ärgerlich
+genug wäre: Auch Sicherheitsupdates sind so natürlich nicht mehr
+möglich. Als ich mir nicht mehr zu helfen wusste, habe ich <a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=49245" title="GNU C Compiler Bug #49245">dasselbe
+Problem im Bugtracker vom gcc
+direkt</a>
+eingestellt. Nach sage und schreibe 3 Minuten und 42 Sekunden hat einer
+der dortigen Entwickler mein Problem gelöst!<br>
+Es stellte sich letzten Endes heraus, das es sich um ein lokales Problem
+bei mir gehandelt hatte, jedoch hat sich ja kein Mensch den Bug
+gründlich genug angeschaut um das wissen zu können. Wäre es ein globales
+Problem am gcc gewesen, wäre eine nichtbeachtung eines Bugs in dieser
+Kategorie fatal gewesen!<br>
+Als ich das dann im verlinktem <a href="https://bugs.gentoo.org/show_bug.cgi?id=363675" title="Gentoo Bug #363675">Gentoo
+Bug 363675</a> mal
+so angemerkt habe, bekam ich folgende Antwort:</p>
+<blockquote>
+<p><code>{#comment_text_10}
+it's a volunteer system.  if you dont like how it works, then
+step up and help. expecting people to help you isnt how things work.</code></p>
+</blockquote>
+<p>Mit anderen Worten also: Da Gentoo ein System von Freiwilligen ist, darf
+man sich nicht beschweren. Grundsätzlich natürlich richtig. Jedoch zwei
+Punkte dazu (was mich ganz dezent dann auch wieder zum eigentlichen
+Thema zurückführt :D ):</p>
+<ol>
+<li>Wenn ich das selber hätte lösen können, hätte ich wohl kaum einen
+    Bug dazu erstellt.</li>
+<li>Ich <span style="text-decoration: underline;">möchte</span> ja gerne
+    helfen, aber die Einstiegshürde bei Gentoo ist leider sehr hoch!</li>
+</ol>
+<div>
+
+Es haben sich in der jüngsten Vergangenheit mehrere Dinge ereignet bei
+denen ich mich frage, ob die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation")
+den Karren absichtlich an die Wand fahren will. Viele Entwickler
+beschwerten sich in jüngster Vergangenheit darüber, das ihnen vom Gentoo
+Linux Council, den Leitern und Koordinatoren also, völlig hanebüchene
+und fachfremde Vorgaben gemacht werden, wie Software zu entwickeln ist
+und wie die Workflows dazu auszusehen haben.  
+Das kann ich mir gut vorstellen; wie eben beschrieben scheinen die
+Entwickler ja mit den Anfragen völlig überfordert zu sein. ... was ja
+nichts mit Unfähigkeit, sondern mehr mit mangelnder Organisation zu tun
+hat. Umso unverständlicher ist es, das Hilfsangebote am laufendem Band
+ausgeschlagen werden. Das sieht man besonders drastisch am Beispiel von
+[Daniel
+Robbins](http://en.wikipedia.org/wiki/Daniel_Robbins "Wikipedia Eintrag zu Daniel Robbins"):
+
+</div>
+
+<div>
+
+Daniel Robbins hat Gentoo Linux erschaffen. Bevor er im Mai 2005 bei
+Microsoft anfing, gründete er die [Gentoo
+Foundation](http://en.wikipedia.org/wiki/Gentoo_Foundation "Wiki Eintrag der Gentoo Foundation") und
+übergab das Projekt an diese. Die Gründe hierfür waren wohl zu gleichen
+Teilen, das er zum einen fürchtete sein neuer Arbeitgeber Microsoft
+könnte einen negativen Einfluss auf die weitere Entwicklung der
+Distribution haben und zum anderen wollte er mehr Zeit für seine Familie
+haben.
+
+</div>
+
+<div>
+
+Als er dann im Februar 2007 wieder als Entwickler für Gentoo anfing,
+wurden ihm, als geistigem Vater der Distribution, so viele Steine in den
+Weg gelegt, das er bereits einen Monat später seine Arbeit an Gentoo
+Linux wieder einstellte und 2008 schließlich sein aktuelles Projekt
+initialisierte: [Funtoo
+Linux](http://www.funtoo.org/wiki/Welcome "Homepage der Linuxdistribution Funtoo");
+einen Fork von Gentoo Linux.
+
+</div>
+
+<div>
+
+Inzwischen hat Funtoo viele Anhänger und ein sehr fähiges
+Entwicklerteam, an dessen Spitze Daniel Robbins steht, der (ähnlich zu
+Linus Torvalds über den Kernel) als gutmütiger Diktator die
+Marschrichtung der Distribution vorgibt und dessen Entwicklung
+koordiniert.
+
+</div>
+
+<div>
+
+Noch hängen Funtoo und Gentoo zwar eng zusammen, jedoch driften (nicht
+zuletzt wegen größerer Fortschritte bei Funtoo) die beiden immer weiter
+auseinander. Wie das bei einem Fork nunmal so ist.
+
+</div>
+
+<div>
+
+Ich habe mich daher dafür entschieden meine Freizeit und mein Engagement
+lieber in Funtoo Linux zu investieren ehe ich zunächst Monatelang den
+Leuten und Infos von Gentoo Linux hinterherlaufe, nur damit meine
+Beteiligungen dann im Sande verlaufen. Man sehe sich nur einmal den
+[Gentoo Bug
+\#228343](https://bugs.gentoo.org/show_bug.cgi?id=228343 "Gentoo Bug #228343")
+an. Da wird den Entwicklern ein nahezu fertiges
+[TYPO3](http://typo3.org/ "Homepage vom CMS TYPO3") Paket geliefert und
+es kümmert sich einfach keiner drum! Das Paket für TYPO3 Version 4.2.1
+wurde am 19.06.2008 eingereicht. Heute, 3 Jahre und 3 Monate später, hat
+der Bug nach wie vor den Status "CONFIRMED", was in etwa soviel bedeutet
+wie *"zur Kenntnis genommen - weitere Aktionen abwarten, bis wir das
+geprüft haben"*. Ist doch ein Scherz, oder?  
+Wie gesagt: Völlig überlastet und unkoordiniert das Team.
+
+</div>
+
+<div>
+
+Einer der Fortschritte von Funtoo Linux ist, das der Portage Tree, das
+bedeutet: Das Paketverzeichnis mit allen Installationsscripten, nun
+nicht mehr per rsync abgeglichen, sondern in einem git Repository
+gepflegt wird. Das macht das ganze einfacher zu warten, es gibt
+automatisch ein ChangeLog und eine History und es können mehr Personen
+einfacher miteinander an diesem Projekt arbeiten.
+
+</div>
+
+<div>
+
+[Martin "golodhrim"
+Scholz](http://www.funtoo.org/wiki/User:Golodhrim "Funtoo Profil von Martin "golodhrim " Scholz")
+hat am [7. 7. 2011 mit einer super-Idee für eine neue Art des
+Overlays](http://groups.google.com/group/funtoo-dev/browse_thread/thread/c37339e78c641afc "Martin "golodhrim" Scholz Vorschlag für "flora" auf der Funtoo Google Group"),
+mit dem nahezu jedermann zur Entwicklung von Funtoo beitragen kann,
+einen Meilenstein (in meinen Augen) für die Distribution gelegt.
+Inzwischen ist die Idee umgesetzt, das ganze nennt sich
+"[flora](http://www.funtoo.org/wiki/Flora "Funtoo Wikieintrag zu "flora"")"
+und Martin Scholz wurde inzwischen von Daniel Robbins [zum Core Member
+für die Communityentwicklung und speziell zum vorantreiben von flora
+ernannt](http://groups.google.com/group/funtoo-dev/browse_thread/thread/f5b259a0a7be2945 "Daniel Robbins Mail an die Funtoo Mailingliste vom 17.9.").
+
+</div>
+
+<div>
+
+Ich habe mich in den letzten Tagen mit der Funktionsweise und der
+Erstellung von (Ge|Fu)ntoo Paketen (ebuilds) beschäftigt und heute
+[meine erste Version das TYPO3 Paketes an flora
+übermittelt](https://github.com/funtoo/flora/commit/203bde9df309a5c1a13853329e7a01fa1f9190ef "Mein erster flora commit für das TYPO3 Paket in Funtoo").
+Martin Scholz nimmt seine Aufgabe sehr ernst und ist ungeheuer fleissig!
+So hat er auch nur knapp eine Stunde später [meine Änderungen
+unverändert in flora
+übernommen](https://github.com/funtoo/flora/commit/c7d6f68535315365d40ea3705cc4825862abeaeb "Martin Scholz übernimmt mein TYPO3 Paket für Funtoo unverändert in flora").
+
+</div>
+
+<div>
+
+Es ist zwar als PHP Paket nur ein vergleichsweise einfaches Paket, da
+die ganzen Kompilierungsvorgänge und was damit zusammenhängt dabei nicht
+berücksichtigt werden müssen, trotzdem ist es etwas völlig neues für
+mich. Gerade weil das vergleichweise einfach ist, bot es sich als erstes
+Paket besonders an. Ich hoffe, das ich mir dabei keinen groben Schnitzer
+erlaubt habe ... nicht das ich mich bei meinem Gesellenstück gleich vor
+der ganzen Community blamiere ... :D  
+Naja, mehr als stundenlang hin-und-hertesten kann man ja nicht. Und zum
+Glück hat so ein PHP Paket ja in der Regel nicht das Potential
+irgendetwas wichtiges zu zerstören.
+
+</div>
+
+<div>
+
+Ich bin mal gespannt ob, wann und wie das ganze schließlich im Portage
+Tree landet und ob Fehler gefunden werden.
+
+</div>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Meine%20ersten%20Funtoo%20ebuilds%20sind%20in%20Flora%21%20%3AD&url=https%3A//www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Meine%20ersten%20Funtoo%20ebuilds%20sind%20in%20Flora%21%20%3AD&amp;body=https%3A//www.zoosau.de/meine-ersten-funtoo-ebuilds-sind-in-flora-d.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Okt/index.html"><i class="fa fa-calendar fa-lg"></i>Oktober 2012 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2011/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2011 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2012 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

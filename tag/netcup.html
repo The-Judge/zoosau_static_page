@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>netcup - Marc Richter's Weblog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.zoosau.de/images/favicon_wolfpfote_transparent.ico" rel="icon">
+
+
+    <meta name="author" content="Marc Richter" />
+    <meta name="keywords" content="netcup" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Marc Richter's Weblog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Marc Richter's Weblog"/>
+        <meta property="og:url" content="https://www.zoosau.de"/>
+        <meta property="og:description" content="Marc Richter's Weblog"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.zoosau.de/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="https://www.zoosau.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.zoosau.de/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="https://www.zoosau.de/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.zoosau.de/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.zoosau.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Marc Richter's Weblog ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.zoosau.de/" class="navbar-brand">
+Marc Richter's Weblog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.zoosau.de/pages/impressum.html">
+                             Impressum
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <ol class="breadcrumb">
+        <li><a href="https://www.zoosau.de" title="Marc Richter's Weblog"><i class="fa fa-home fa-lg"></i></a></li>
+        <li><a href="https://www.zoosau.de/" title="Tags">Tags</a></li>
+        <li class="active">netcup</li>
+    </ol>
+            <article>
+                <h2><a href="https://www.zoosau.de/vergleich-strato-dedicated-power-server-mr-gegen-netcup-vserver-uranus.html">Vergleich Strato Dedicated Power-Server MR gegen netcup vServer Uranus</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-05-02T01:31:00+02:00"> Mi 02 Mai 2012</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="https://www.zoosau.de/author/marc-richter.html"><i class="fa fa-user"></i> Marc Richter</a>
+
+        <span class="label label-default">Category</span>
+        <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html">Homepage, Linux, Privates Leben, Technik</a>
+
+
+		<span class="label label-default">Words</span>
+		1488
+
+		<span class="label label-default">Read time</span>
+		6 minutes
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.zoosau.de/tag/benchmark.html">benchmark</a>
+        /
+	<a href="https://www.zoosau.de/tag/bonnie.html">bonnie++</a>
+        /
+	<a href="https://www.zoosau.de/tag/domain-factory.html">Domain Factory</a>
+        /
+	<a href="https://www.zoosau.de/tag/jiffybox.html">JiffyBox</a>
+        /
+	<a href="https://www.zoosau.de/tag/netcup.html">netcup</a>
+        /
+	<a href="https://www.zoosau.de/tag/performance.html">performance</a>
+        /
+	<a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+        /
+	<a href="https://www.zoosau.de/tag/strato.html">strato</a>
+        /
+	<a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Jaaaa - also ich betreibe ja seit einigen Jahren diesen Server. Seit dem
+letzten <a href="http://www.zoosau.de/leben/abschied-von-der-alten-zoosau" title="Serverumzug">Umzug im August
+2010</a>
+läuft er unter einem bei Strato angemietetem "Dedicated Power-Server MR
+(v5.4)". Dabei handelt es sich um "echte" Hardware, nicht um ein
+virtualisiertes System. Schon länger reicht dieses recht spartanisch
+ausgestattete System nicht mehr wirklich für die Anforderungen. Aktuell
+laufen 8 nicht ganz inaktive Homepages auf der Maschine (keine
+statischen HTML Dateien: PHP Scriptseiten wie WordPress, TYPO3, phpBB
+Foren, etc.), er ist Mailserver für etwa 9 Domains (samt Spamfilter),
+berechnet Statistiken, das System selbst (Gentoo Linux -&gt; Software
+wird kompiliert) will auch gewartet werden, ...</p>
+<p>Kurz: Das Teil hat einiges zu tun! Dabei war nichtmal unbedingt der
+Prozessor das Problem, sondern RAM und Storage. Das ganze System ist
+recht betagt, wie wir gleich noch sehen werden. Neben diesen Diensten
+mit 1 GB RAM auch noch gescheit einen MySQL Server darauf zu betreiben
+"geht" technisch zwar, macht aber nicht wirklich Spass.<br>
+Es musste also ein zweiter Server als MySQL Host her. Seitdem laufen
+diese Seiten auf 2 Servern. Seitdem denke ich jedoch auch, das der
+Basis-Server nicht mehr wirklich rentabel funktioniert. Also habe ich
+mal die Fühler nach günstigeren Angeboten ausgestreckt. Kriterien waren
+dabei:</p>
+<ul>
+<li>Speicherplatz mindestens 50 GB ( \~ 30 aktuell verwendet )</li>
+<li>Möglichkeit ein
+    <a href="http://www.gentoo.org" title="Homepage von Gentoo Linux">Gentoo</a> /
+    <a href="http://www.funtoo.org" title="Homepage von Funtoo Linux">Funtoo</a> auf dem
+    System installieren zu können</li>
+<li>CPU und RAM mehr / schneller als aktuell</li>
+<li>Preis sollte geringer sein als aktuell</li>
+<li>Keine Mindestvertragslaufzeit</li>
+</ul>
+<p>Ob das ganze virtuell oder physikalisch ist, ist mir dabei erstmal egal.</p>
+<p>Ich bin also letztendlich auf die vServer der Firma
+<a href="http://www.netcup.de/" title="Homepage der Firma netcup">netcup</a> aufmerksam
+geworden.
+<a href="https://www.server4you.de/vserver/" title="Server4You vServer Angebote">Server4You</a>,
+<a href="http://www.jiffybox.de" title="Homepage des &quot;JiffyBox&quot; Angebotes von Domain Factory">Domain
+Factory</a>
+und (wieder) <a href="http://www.strato.de/" title="Homepage von Strato">Strato</a> haben
+zwar auch atraktive Angebote, jedoch schneiden sie (für meine
+Anforderungen) leider "schlechter"* ab als netcup:</p>
+<blockquote>
+<p>*:<br>
+Kurzes Vorwort zu "schlechter": Um fair zu bleiben: Ich habe hier nur
+reine Zahlen aus den Angeboten verglichen. Ich habe mich nicht in
+jedem Angebot eingelogged und die Performance so detailiert verglichen
+wie zwischen netcup und Strato. Jedoch: Wenn die Anbieter die absolute
+Performance Ihrer Produkte in's Feld führen möchten, sollten Sie diese
+Zahlen mit in die Angebote aufnehmen.<br>
+PS: @Alle Hoster: Sollte irgendwer daran interessiert sein, das ich
+deren Angebot hier kostenlos Re-Evaluiere: Über mein
+<a href="http://www.zoosau.de/kontakt-2" title="Mailformular">Mailformular</a> könne
+Sie mir gerne unverbindliche Probezugänge zu Ihren Produkten mit der
+Bitte um Tests zukommen lassen ;)</p>
+</blockquote>
+<ul>
+<li><strong>Strato</strong><br>
+   Das Angebot für "Dedicated Server" ist zwar nach wie vor nahezu
+    ungeschlagen gut was das Preis-/Leistungsverhältnis angeht (
+    <a href="http://www.strato-pro.de/root_server/dedicated_server/linux.html?sc=1900800204" title="Strato Angebot HighQ-Server XS">HighQ-Server
+    XS</a>
+    ist sehr cool! ), jedoch hat man hier leider ( selbst als
+    Stammkunde ) wenigstens 6 Monate Mindestvertragslaufzeit. Ebenso
+    muss man 29,- € für die Grundeinrichtung bezahlen. Beides etwas, was
+    ich nicht mehr möchte.<br>
+   Die vServer von Strato können (mich) da jedoch schon weniger
+    überzeugen: Die Preise beginnen (mit powerServer A) bei 7,90 / Monat
+    (was OK, aber mehr ist als bei netcup), der RAM beträgt nur 512 MB
+    (statt 1 GB bei der Konkurenz), der Speicherplatz beträgt nur 25 GB
+    (ebenfalls Markt-Schlusslicht), ... nichts für mich.</li>
+<li><strong>Domain Factory / JiffyBox</strong><br>
+   Domain Factory hat mit seinem "JiffyBox" getauften vServer Angebot
+    schon eine coole Sache am Start: Man meldet sich an und bezahlt
+    erstmal nichts. Man kann in Minuten neue (v-)Server hochfahren,
+    herunterfahren, einfrieren, löschen, klonen, ... sehr cool! Man
+    bezahlt dann nur für die Nutzung der tatsächlich
+    genutzten Maschinen. Allerdings: Will man diese dauerhaft betreiben
+    wird's verhätnismäßig teuer: Selbst das günstigste Angebot kostet
+    dann rund 14,90 € / Monat (0,02 ct pro Stunde * 744 Stunden
+    pro Monat). Das ist für temporäre Präsenzen OK, aber auf Dauer gibt
+    es günstigere Alternativen.</li>
+<li><strong>Server4You</strong><br>
+   Für meine Anforderungen: Einfach zu teuer! 8,85 € / Monat für einen
+    vServer mit 25 GB Storage: netcup ist auch hier wieder günstiger.
+    Allerdings: Man kann deren Produkte unverbindlich 4 Tage lang testen
+    und herausfinden, ob sie passen oder nicht. Allerdings scheidet das
+    Angebot für mich wegen des Storage-/Preisverhältnisses aus.</li>
+<li><strong>netcup</strong><br>
+   Ich habe mich für das Angebot <a href="http://www.netcup.de/bestellen/produkt.php?produkt=279" title="netcup vS Uranus light">vS Uranus
+    <em>light</em></a> entschieden.
+    Das ganze hat eigentlich alles was ich brauche, ist mit 6,99 € /
+    Monat sehr günstig und deckt alle zuvor genannten Kriterien ab.
+    Details folgen.</li>
+</ul>
+<p>Was bei netcup sehr cool ist: Man kann das Angebot in Ruhe unter die
+Lupe nehmen (da monatlich kündbar). Ebenso hat man alle Zeit der Welt
+für eine Migration, da man für \~ 7 € / Monat ruhig mal einen bis zwei
+Monate diese Server parallel betreiben kann.</p>
+<p>Für mich ist jetzt natürlich wichtig, das ich das, was bereits auf
+diesem Server besteht und läuft, übernehmen kann und dabei nichts
+merkbar langsamer wird. Also habe ich einmal einen Benchmark der beiden
+Systeme in den für mich relevanten Bereichen durchgeführt:</p>
+<ol>
+<li>Storage-Performance</li>
+<li>RAM-Performance</li>
+<li>CPU-Performance</li>
+</ol>
+<p>Um dieses zu messen, habe ich auf dem aktuellen Server alle Dienste
+beendet (was die Downtime zwischen 15 und 23 Uhr am 01.04.2012 erklärt)
+und auf diesem wie dem netcup-System die folgenden Tests durchgeführt:</p>
+<ul>
+<li><a href="http://sysbench.sourceforge.net/" title="sysbench Homepage">sysbench</a> RAM</li>
+<li><a href="http://sysbench.sourceforge.net/" title="sysbench Homepage">sysbench</a> CPU</li>
+<li>dd</li>
+<li><a href="http://www.coker.com.au/bonnie++/" title="Homepage von bonnie++">bonnie++</a></li>
+<li>kompilieren von gcc-4.5.3</li>
+</ul>
+<p>Im folgenden die Ergebnisse.<br>
+Zunächst einmal ein reiner Listenleistung-Vergleich:</p>
+<p>Strato</p>
+<p>netcup</p>
+<p><strong>RAM</strong></p>
+<p>Typ</p>
+<p>DDR2 133</p>
+<p><em>Unbekannt</em></p>
+<p>Menge</p>
+<p>1 GB</p>
+<p>1 GB</p>
+<p><strong>HDD</strong></p>
+<p>Typ</p>
+<p>Hitachi HDT725025VLA380</p>
+<p><em>Unbekannt</em></p>
+<p>Größe</p>
+<p>250 GB</p>
+<p>80 GB</p>
+<p><strong>CPU</strong></p>
+<p>Typ</p>
+<p>AMD Opteron 1210 HE</p>
+<p>Intel Xeon CPU E5620</p>
+<p>Anzahl</p>
+<p>1x2 Cores (2)</p>
+<p>4x4 Cores (16)</p>
+<p>Geschwindigkeit (Liste)</p>
+<p>1,8 GHz</p>
+<p>2,5 GHz</p>
+<p><strong>Preis</strong></p>
+<p>29,90 €</p>
+<p>6,99 €</p>
+<p>HDD ist zwar bei netcup deutlich kleiner als beim aktuellen
+Stratovertrag, aber für meine Anforderungen ausreichend.<br>
+Alles andere sieht laut Liste deutlich besser aus. OK, fairer weise muss
+man sagen, das das aktuelle Strato Angebot besser ist (<a href="http://www.strato-pro.de/root_server/dedicated_server/linux.html?sc=1900800204" title="Strato Angebot HighQ-Server XS">HighQ-Server
+XS</a>),
+aber für mich halt nicht so leicht zu wechseln wie zu netcup. Weder kann
+ich so lange günstig parallel fahren wie bei netcup, noch sehe ich die
+Notwendigkeit weiterhin monatlich fast 30 € zu bezahlen, wo es rund 7 €
+auch tun. So viel ist "Platz nach oben" nun im privatem Sektor auch
+wieder nicht wert.</p>
+<p>Kommen wir zu den Messergebnissen:</p>
+<p>Als Messgrundlage dienen dd
+, <a href="http://www.coker.com.au/bonnie++/" title="Homepage von bonnie++">bonnie++</a>
+(v1.96) und
+<a href="http://sysbench.sourceforge.net/" title="sysbench Homepage">sysbench</a>
+(v0.4.10).</p>
+<p>Die ausgeführten Kommandos lauten:</p>
+<ul>
+<li>sysbench --test=memory --memory-scope=\$scope
+    --memory-oper=\$operation --memory-access-mode=\$accessmode run</li>
+<li>sysbench --test=cpu --num-threads=\$numthreads --cpu-max-prime=20000
+    run</li>
+<li>dd if=/dev/urandom of=benchfile bs=1024K count=1024</li>
+<li>bonnie++ -u root | bon_csv2html</li>
+</ul>
+<p>Die mit "\$"-vorangestellten Werte zu sysbench findet man in folgender
+Tabelle nebst Ergebnissen:</p>
+<p>Strato</p>
+<p>netcup</p>
+<p><strong>sysbench - RAM</strong></p>
+<p>\$scope=global, \$operation=read, \$accessmode=seq</p>
+<p>839.4359s</p>
+<p>36.9148s</p>
+<p>\$scope=global, \$operation=read, \$accessmode=rnd</p>
+<p>839.9471s</p>
+<p>39.1572s</p>
+<p>\$scope=global, \$operation=write, \$accessmode=seq</p>
+<p>869.6518s</p>
+<p>66.8758s</p>
+<p>\$scope=global, \$operation=write, \$accessmode=rnd</p>
+<p>848.0943s</p>
+<p>41.8068s</p>
+<p>\$scope=local, \$operation=read, \$accessmode=seq</p>
+<p>837.1526s</p>
+<p>37.4726s</p>
+<p>\$scope=local, \$operation=read, \$accessmode=rnd</p>
+<p>849.7811s</p>
+<p>38.9301s</p>
+<p>\$scope=local, \$operation=write, \$accessmode=seq</p>
+<p>877.9626s</p>
+<p>67.3201s</p>
+<p>\$scope=local, \$operation=write, \$accessmode=rnd</p>
+<p>852.2366s</p>
+<p>40.9074s</p>
+<p><strong>sysbench - CPU</strong></p>
+<p>\$numthreads=2</p>
+<p>60.5573s</p>
+<p>20.1742s</p>
+<p>\$numthreads=16</p>
+<p>n/a</p>
+<p>4.2365s</p>
+<p>Wir sehen also schonmal zum Thema CPU und RAM: Das netcup vServer -
+System hat hier klar die Nase vorn! Der RAM ist rund 20x schneller als
+der des Strato-Systems und die CPU ist bei der Berechnung von Primzahlen
+bei "nur" 2 von 16 möglichen, parallelen Threads ebenfalls etwa 3x
+schneller. Gesteht man der Primzahlenberechnung die zur Verfügung
+stehenden 16 parallelen Threads zu, ist sie beim netcup-System gar ca.
+15x schneller.</p>
+<p>Im Bereich RAM und CPU also klarer Sieger: netcup vServer!</p>
+<p>Schaut man sich an wie lange es dauert eine 1GB große Datei wegschreiben
+zu lassen gewinnt hingegen klar das Strato-System:</p>
+<p>Strato</p>
+<p>netcup</p>
+<p><strong>dd - Benchmark</strong></p>
+<p>dd if=/dev/urandom of=benchfile bs=1024K count=1024</p>
+<p>140 Sekunden</p>
+<p>245 Sekunden</p>
+<p>Der dd-Test zeigt eine Schreibperformance beim Strato-System, die rund
+1,75x so schnell ist wie die des netcup vServers. Klar, das ist ein sehr
+realitätsferner Test, aber es folgt noch ein Test mit bonnie++, welcher
+diesen Eindruck unterstreicht:</p>
+<p><span style="font-size: xx-small;"><strong>Version 1.96</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Output</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Input</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Random<br>
+Seeks</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Create</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Random Create</strong></span></p>
+<p>Size</p>
+<p>Per Char</p>
+<p>Block</p>
+<p>Rewrite</p>
+<p>Per Char</p>
+<p>Block</p>
+<p>Num Files</p>
+<p>Create</p>
+<p>Read</p>
+<p>Delete</p>
+<p>Create</p>
+<p>Read</p>
+<p>Delete</p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span style="font-size: xx-small;">netcup vServer<br>
+</span></p>
+<p>2G</p>
+<p>559</p>
+<p>95</p>
+<p>118663</p>
+<p>23</p>
+<p>130356</p>
+<p>15</p>
+<p>2958</p>
+<p>97</p>
+<p>3083240</p>
+<p>98</p>
+<p>11990</p>
+<p>168</p>
+<p>16</p>
+<p>86</p>
+<p>0</p>
+<p>+++++</p>
+<p>+++</p>
+<p>92</p>
+<p>0</p>
+<p>1986</p>
+<p>15</p>
+<p>+++++</p>
+<p>+++</p>
+<p>8211</p>
+<p>58</p>
+<p>Latency</p>
+<p>33601us</p>
+<p>6533us</p>
+<p>14883us</p>
+<p>15201us</p>
+<p>3187us</p>
+<p>5198us</p>
+<p>Latency</p>
+<p>14321us</p>
+<p>915us</p>
+<p>73617us</p>
+<p>1517ms</p>
+<p>1302us</p>
+<p>26563us</p>
+<p><span style="font-size: xx-small;"><strong>Version 1.96</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Output</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Input</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Random<br>
+Seeks</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Sequential Create</strong></span></p>
+<p><span style="font-size: x-small;"><strong>Random Create</strong></span></p>
+<p>Size</p>
+<p>Per Char</p>
+<p>Block</p>
+<p>Rewrite</p>
+<p>Per Char</p>
+<p>Block</p>
+<p>Num Files</p>
+<p>Create</p>
+<p>Read</p>
+<p>Delete</p>
+<p>Create</p>
+<p>Read</p>
+<p>Delete</p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>K/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span>/sec</span></p>
+<p><span>% CPU</span></p>
+<p><span style="font-size: xx-small;">Strato Server<br>
+</span></p>
+<p>2G</p>
+<p>276</p>
+<p>99</p>
+<p>50075</p>
+<p>20</p>
+<p>31729</p>
+<p>14</p>
+<p>1207</p>
+<p>98</p>
+<p>73802</p>
+<p>15</p>
+<p>411.0</p>
+<p>10</p>
+<p>16</p>
+<p>16859</p>
+<p>66</p>
+<p>+++++</p>
+<p>+++</p>
+<p>23837</p>
+<p>73</p>
+<p>18097</p>
+<p>75</p>
+<p>+++++</p>
+<p>+++</p>
+<p>23827</p>
+<p>73</p>
+<p>Latency</p>
+<p>50975us</p>
+<p>1783ms</p>
+<p>968ms</p>
+<p>20773us</p>
+<p>44806us</p>
+<p>375ms</p>
+<p>Latency</p>
+<p>11620us</p>
+<p>2495us</p>
+<p>2336us</p>
+<p>307us</p>
+<p>27us</p>
+<p>356us</p>
+<p>In puncto Storage hat also sowohl in Größe wie in Geschwindigkeit das
+(nicht-virtuelle) Strato-System klar die Nase vorn.</p>
+<p>Wie sieht das ganze bei einem etwas realitätsnäherem Test aus? Zum
+Vergleich habe ich einmal den <a href="http://gcc.gnu.org/" title="Homepage des Gnu C Compilers">Gnu C Compiler
+(gcc)</a> in Version
+4.5.3 auf beiden Systemen kompiliert. Hier die Ergebnisse:</p>
+<p>Strato</p>
+<p>netcup</p>
+<p><strong>Gnu C Compiler Kompilierung - Benchmark<br>
+</strong></p>
+<p>Kompileren (emerge =sys-devel/gcc-4.5.3)</p>
+<p>57m57.791s</p>
+<p>24m55.387s</p>
+<p>Ergo: Das netcup System ist hierbei gut doppelt so schnell.</p>
+<p>Da das Ganze ja nun doch recht I/O - lastig werden wird, bin ich mir
+noch nicht ganz sicher ob das wirklich die richtige Entscheidung ist,
+das bestehende System gegen dieses netcup vServer System zu ersetzen.
+Wir werden sehen.</p>
+<p>Soweit zumindest schonmal meine Analyse :)</p>
+<p>Wie immer bin ich für Kritik offen und dankbar.</p>
+                        <section>
+                            <p id="post-share-links">
+                                Teilen per:
+                                <a href="https://twitter.com/intent/tweet?text=Vergleich%20Strato%20Dedicated%20Power-Server%20MR%20gegen%20netcup%20vServer%20Uranus&url=https%3A//www.zoosau.de/vergleich-strato-dedicated-power-server-mr-gegen-netcup-vserver-uranus.html" target="_blank" title="Share on Twitter">Twitter</a>
+                                ❄
+                                <a href="mailto:?subject=Vergleich%20Strato%20Dedicated%20Power-Server%20MR%20gegen%20netcup%20vServer%20Uranus&amp;body=https%3A//www.zoosau.de/vergleich-strato-dedicated-power-server-mr-gegen-netcup-vserver-uranus.html" target="_blank" title="Share via Email">Email</a>
+                            </p>
+                        </section>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.zoosau.de/"><i class="fa fa-home fa-lg"></i> Startseite</a></li>
+    <li class="list-group-item"><a href="https://www.marc-richter.info/"><i class="fa fa-home fa-lg"></i> Homepage</a></li>
+    <li class="list-group-item"><a href="https://www.xing.com/profile/Marc_Richter18"><i class="fa fa-xing-square fa-lg"></i> Xing</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Judge82/"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+    <li class="list-group-item"><a href="https://github.com/The-Judge"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.youtube.com/user/MrMarcJudge"><i class="fa fa-youtube-square fa-lg"></i> Youtube</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/marc_richter"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun.html"><i class="fa fa-folder-open fa-lg"></i>Fun</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-linux.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/fun-technik.html"><i class="fa fa-folder-open fa-lg"></i>Fun, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/funtoo-linux.html"><i class="fa fa-folder-open fa-lg"></i>Funtoo, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gagfah-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>GAGFAH, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/gedanken-und-traume-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Gedanken und Träume, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage.html"><i class="fa fa-folder-open fa-lg"></i>Homepage</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/homepage-technik.html"><i class="fa fa-folder-open fa-lg"></i>Homepage, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-kurztipp-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Kurztipp, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-larp-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, LARP, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-musik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/job-und-beruf-technik.html"><i class="fa fa-folder-open fa-lg"></i>Job und Beruf, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/kurztipp-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Kurztipp, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux.html"><i class="fa fa-folder-open fa-lg"></i>Linux</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-shorthint.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Shorthint</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/linux-technik.html"><i class="fa fa-folder-open fa-lg"></i>Linux, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik.html"><i class="fa fa-folder-open fa-lg"></i>Musik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/musik-privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Musik, Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/privates-leben-technik.html"><i class="fa fa-folder-open fa-lg"></i>Privates Leben, Technik</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.zoosau.de/category/technik.html"><i class="fa fa-folder-open fa-lg"></i>Technik</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://www.zoosau.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/2010.html">2010</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/7.html">7</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/abstellen.html">abstellen</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/android.html">android</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/apache.html">Apache</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/asus.html">asus</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/auto.html">auto</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/bahn.html">bahn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/band.html">Band</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/beta.html">beta</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/blog.html">Blog</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/box.html">box</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/computer.html">Computer</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/cron.html">cron</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/crontab.html">crontab</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/defekt.html">defekt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/diat.html">diät</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/domane.html">domäne</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/download.html">download</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/einbruch.html">Einbruch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/error.html">error</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fahrrad.html">fahrrad</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/fcron.html">fcron</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/fehler.html">fehler</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/firefox.html">firefox</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/fritz.html">fritz</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/fritzbox.html">fritz.box</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ftp.html">ftp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/funtoo.html">funtoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gagfah.html">GAGFAH</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/gentoo.html">gentoo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/gitarre.html">gitarre</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/google.html">google</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/handy.html">handy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/heise.html">heise</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/homepage.html">Homepage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/imap.html">imap</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/k770i.html">k770i</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/keyboard.html">Keyboard</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/konvertieren.html">konvertieren</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/kopieren.html">kopieren</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/linux.html">Linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macos.html">macos</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/macosx.html">macosx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/marketing-factory-consulting-gmbh.html">marketing factory consulting gmbh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mavericks.html">mavericks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/mortemia.html">Mortemia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/morten-veland.html">morten veland</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/motorola.html">motorola</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/msi.html">msi</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/music-store.html">Music Store</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/musik.html">Musik</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/n260gtx-t2d896-oc.html">N260GTX-T2D896-OC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/nurnberg.html">nürnberg</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/nvidia.html">nvidia</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/opera.html">opera</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/p5qc.html">P5QC</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/park-inn.html">park inn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/pc.html">pc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/permission-denied.html">permission denied</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/plugins.html">plugins</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/review.html">review</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/rezension.html">rezension</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/samba.html">samba</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/samsung.html">samsung</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/schwimmen.html">schwimmen</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/server4you.html">server4you</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/sirenia.html">sirenia</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/sony-ericsson.html">sony ericsson</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/starcraft-2.html">starcraft 2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/strato.html">strato</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/summer-breeze.html">summer breeze</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/suss.html">süss</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/sync.html">sync</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/synchronisieren.html">synchronisieren</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/teamspeak.html">teamspeak</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/test.html">test</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/testbericht.html">testbericht</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/thunderbird.html">thunderbird</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/truecrypt.html">truecrypt</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/typo3.html">typo3</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/umzug.html">umzug</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/update.html">update</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/vergleich.html">vergleich</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/vim.html">vim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/vista.html">vista</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/warhammer.html">warhammer</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://www.zoosau.de/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/witzig.html">witzig</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/wlan.html">wlan</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://www.zoosau.de/tag/wohnung.html">wohnung</a>
+    </li>
+    <li class="list-group-item tag-0">
+      <a href="https://www.zoosau.de/tag/wordpress.html">wordpress</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://www.zoosau.de/tag/x800.html">x800</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://www.zoosau.de/tag/xp.html">xp</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="https://www.zoosau.de/posts/2012/Mai/index.html"><i class="fa fa-calendar fa-lg"></i>Mai 2012 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2012 Marc Richter
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.zoosau.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.zoosau.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.zoosau.de/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoosau-static'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23597251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://piwik.marc-richter.info/" : "http://piwik.marc-richter.info/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+</body>
+</html>

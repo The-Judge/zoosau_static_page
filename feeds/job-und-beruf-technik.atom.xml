@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Job und Beruf, Technik</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/job-und-beruf-technik.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2012-03-05T22:50:00+01:00</updated><entry><title>"Einbruch" bei GitHub.com</title><link href="https://www.zoosau.de/einbruch-bei-github-com.html" rel="alternate"></link><published>2012-03-05T22:50:00+01:00</published><updated>2012-03-05T22:50:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2012-03-05:/einbruch-bei-github-com.html</id><summary type="html">&lt;p&gt;Mit einer eher interessanten als gefährlichen Variante eines &lt;a href="http://www.pro-linux.de/news/1/18114/massive-sicherheitsluecke-in-github-geschlossen.html" title="Bericht von Pro-Linux.de über den &amp;quot;Einbruch&amp;quot; bei GitHub"&gt;Einbruchs
+in Ihre
+Infrastruktur&lt;/a&gt;
+sah sich gestern, am 4. März 2012, der Code Hoster
+&lt;a href="https://github.com/about" title="GitHub"&gt;GitHub&lt;/a&gt; konfrontiert, als der
+russische Programmierer &lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Egor
+Homakov&lt;/a&gt;
+diese Präsenz benutzte um auf eine Sicherheitslücke in &lt;a href="http://rubyonrails.org/" title="Homepage des Ruby Web-Framework &amp;quot;Ruby on Rails&amp;quot;"&gt;Ruby on
+Rails&lt;/a&gt; (kurz:
+Rails), ~~einem~~ &lt;strong&gt;dem&lt;/strong&gt; Ruby basierendem Framework für
+Webapplikationen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Mit einer eher interessanten als gefährlichen Variante eines &lt;a href="http://www.pro-linux.de/news/1/18114/massive-sicherheitsluecke-in-github-geschlossen.html" title="Bericht von Pro-Linux.de über den &amp;quot;Einbruch&amp;quot; bei GitHub"&gt;Einbruchs
+in Ihre
+Infrastruktur&lt;/a&gt;
+sah sich gestern, am 4. März 2012, der Code Hoster
+&lt;a href="https://github.com/about" title="GitHub"&gt;GitHub&lt;/a&gt; konfrontiert, als der
+russische Programmierer &lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Egor
+Homakov&lt;/a&gt;
+diese Präsenz benutzte um auf eine Sicherheitslücke in &lt;a href="http://rubyonrails.org/" title="Homepage des Ruby Web-Framework &amp;quot;Ruby on Rails&amp;quot;"&gt;Ruby on
+Rails&lt;/a&gt; (kurz:
+Rails), ~~einem~~ &lt;strong&gt;dem&lt;/strong&gt; Ruby basierendem Framework für
+Webapplikationen, aufmerksam zu machen. GitHub ist ein sagenhaft
+populärer Hoster von Git-Repositorien, der neben dem reinen Hosting des
+Codes auch ein Wiki, Bugtracker, usw. bietet. Auch &lt;a href="https://github.com/The-Judge" title="Mein GitHub - Profil"&gt;ich partizipiere
+darüber an
+Projekten&lt;/a&gt; wie z.B.
+"&lt;a href="https://github.com/funtoo/flora" title="Funtoo Flora Overlay auf GitHub"&gt;flora&lt;/a&gt;".
+Zufällig verwendet GitHub selbst das Rails Framework; ebenso nutzen die
+Rails Entwickler &lt;a href="https://github.com/rails/rails" title="GitHub Repository der Ruby on Rails Quellen"&gt;GitHub als Code Hoster der
+Rails-Quellen&lt;/a&gt;.
+Ein ideales Ziel also für
+&lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Homakov&lt;/a&gt; um,
+nach anfänglichen Schwierigkeiten sein Anliegen den Rails Entwicklern
+darzulegen, diese Lücke zu demonstrieren:&lt;/p&gt;
+&lt;p&gt;Er nutzte sie erfolgreich aus, verschaffte sich administrativen Zugang
+zum &lt;a href="https://github.com/rails/rails"&gt;Rails-Projekt&lt;/a&gt;, bewies das er volle
+Admin-Rechte erlangt hatte und beispielsweise Fehlerberichte nach
+Belieben öffnen, schließen und sogar aus der Zukunft schreiben konnte.
+Außerdem fügte er dem Repositorium eine Datei hinzu. Auch das
+vollständige Löschen der gesamten Projekthistorie wäre möglich gewesen.&lt;/p&gt;
+&lt;p&gt;GitHub sperrte daraufhin den Account von
+&lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Homakov&lt;/a&gt;,
+behob die Sicherheitslücke und gab eine
+&lt;a href="https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation" title="Sicherheitswarnung von GitHub nach dem &amp;quot;Angriff&amp;quot; vom 4. März 2012"&gt;Sicherheitswarnung&lt;/a&gt;
+heraus. Wenig später folgte eine &lt;a href="https://github.com/blog/1069-responsible-disclosure-policy" title="Zweite Ankündigung von GitHub zum &amp;quot;Einbruch&amp;quot; vom 4. März 2012"&gt;zweite
+Ankündigung&lt;/a&gt;,
+in der man (wohl auch nicht zuletzt aufgrund anhaltender Proteste der
+Community)
+&lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Homakov&lt;/a&gt;
+weitestgehend rehabilitierte und die Sperrung seines Accounts aufhob.&lt;br&gt;
+Einige  Leute, die nach wie vor keine wirklich schwerwiegenden Probleme
+zu haben scheinen und ansonsten offenbar wenig mit Ihrer Freizeit
+anzufangen wissen, diskutieren immernoch ob
+&lt;a href="http://homakov.blogspot.com/" title="Blog des Programmierers Egor Homakov"&gt;Homakov&lt;/a&gt;
+ein "Held" oder ein "Krimineller" ist ... &lt;strong&gt;OMG&lt;/strong&gt;!&lt;br&gt;
+&lt;a href="http://homakov.blogspot.com/2012/03/im-disappoint-github.html" title="Egor Homakov's Entschuldigung bei GitHub"&gt;Er selbst entschuldigt sich auf seinem Blog für sein
+Vorgehen&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yes I behaved like a jerk.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub selbst hat alleine dadurch, das sie dem Urheber eines wie auch
+immer beabsichtigten, jedoch dadurch juristisch nicht weniger
+strafbaren, Hackerangriffs bereits am nächsten Tag wieder
+uneingeschränkten Zugriff auf Ihre Systeme gewährten und dem ganzen
+scheinbar auch keine Strafanzeige folgen lassen, seinen guten Willen
+bewiesen.&lt;br&gt;
+Damit sollte doch alles gesagt sein, meine Güte! Beide sind sich einig
+und wieder Freunde :) . Das GitHub erstmal vorsorglich das Einfallstor
+schließt, bis alles geklärt ist, ist doch nur normal! Alles andere wäre
+strafbar fahrlässig.&lt;/p&gt;
+&lt;p&gt;Die Rails-Entwickler sind in meinen Augen die, die viel zu wenig tun.
+Sie wollen die Funktionen, die soetwas ermöglicht, auf Produktivsystemen
+künftig &lt;a href="http://news.ycombinator.com/item?id=3664334" title="Rails Funktionen zukünftig standardmäßig abschalten"&gt;standardmäßig
+abschalten&lt;/a&gt;.
+Mit einem Fix ist "bereits" mit Rails 3 als Plugin zu rechnen ...
+Sicherheit als zukünftige, optionale Alternative ... na super. &lt;strong&gt;Leute,
+das ist armseelig und unterstreicht in meinen Augen das Rails ein
+Framework ist, von dem man tunlichst die Finger lassen sollte!&lt;/strong&gt;&lt;br&gt;
+Man stelle sich folgendes Gespräch in einem Autohaus vor:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"Chef, Chef! Man kann in unserem neuen Auto Modell 2012 ohne den
+Originalschlüssel die Türen öffnen und losfahren! Ein Sicherheitsexperte
+vom ADAC hat das bereits im Fernsehen demonstriert! Was machen wir??" &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"Ruhig Blut ... wir bieten mit dem 2013er Modell nächstes Jahr ein
+Bonuspaket an, mit dem man den Wagen dann wirklich abschließen kann ...
+jetzt hauen sie ab und verkaufen erstmal die Hallen leer!"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Da hat jemand offenbar absolut keine Ahnung davon, was sie da anrichten
+und was sie auch nicht zuletzt dem Ruf von Ruby ansich antun. Ein
+Projekt solcher Größe sollte nicht von solch blauäugigen Diletanten
+geführt werden. Dann nimmt man halt viele bestehende Projekte erstmal vm
+Netz - na und ?? Das Fundament muss doch trotzdem frei von solchen
+Kloppern sein; wem das nicht passt soll halt auf ein Update verzichten!
+Und wenn es in der Tat zwei Lager gibt, dann muss man halt forken! Aber
+sowas,  was die jetzt auf die Roadmap gesetzt haben, ist die denkbar
+schlechteste "Lösung".&lt;/p&gt;</content><category term="Einbruch"></category><category term="github"></category><category term="Homakov"></category><category term="rails"></category><category term="ruby"></category></entry><entry><title>Windows XP, Vista und 7 Profile kopieren</title><link href="https://www.zoosau.de/windows-xp-vista-und-7-profile-kopieren.html" rel="alternate"></link><published>2011-10-12T18:27:00+02:00</published><updated>2011-10-12T18:27:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-10-12:/windows-xp-vista-und-7-profile-kopieren.html</id><summary type="html">&lt;p&gt;... ich kann es zwar selbst nicht wirklich glauben, aber ich werde nun
+tatsächlich einen Artikel über Windows und das kopieren / übertragen von
+dessen Profilen schreiben! Ich hoffe der Internet Explorer klettert in
+meinen Zugriffsstatistiken trotzdem nicht auf Platz 1 ;D&lt;/p&gt;
+&lt;p&gt;Dieser Artikel entstand, weil ich auf der Arbeit gerade einen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;... ich kann es zwar selbst nicht wirklich glauben, aber ich werde nun
+tatsächlich einen Artikel über Windows und das kopieren / übertragen von
+dessen Profilen schreiben! Ich hoffe der Internet Explorer klettert in
+meinen Zugriffsstatistiken trotzdem nicht auf Platz 1 ;D&lt;/p&gt;
+&lt;p&gt;Dieser Artikel entstand, weil ich auf der Arbeit gerade einen neuen PDC
+implementiere und hierfür selber eine Lösung gesucht habe, wie ich die
+bestehenden Profile (lokal und Domänen-Roaming-Profile) dabei möglichst
+nahtlos in die neue Domäne übernehmen kann. Besonders tricky hierbei
+war, das die aktuelle Domäne nicht wirklich fehlerfrei funktioniert und
+nun ein Wildwuchs aus lokalen Profilen (da nicht jede Anmeldung an der
+Domäne funktionierte) und Domänenprofilen besteht und wir nun von
+Roaming Profiles auf lokale Profile wechseln.&lt;br&gt;
+... mal ehrlich: Hat _irgendjemand_ schonmal Roaming Profiles benutzt
+ohne entweder dazu überzugehen den PC nicht mehr abzuschalten
+oder(/und?) Dateien nur noch ausserhalb der eigentlich zum speichern
+vorgesehenen Ordner abzulegen? Wenn ja: Ich hoffe er kriegt seine
+Medizin ;D&lt;/p&gt;
+&lt;p&gt;Ich habe nun für alle drei aktuellen Windowsversionen (XP, Vista und 7 -
+Wer noch &amp;lt;=2000 im Unternehmensumfeld einsetzt bekommt hoffentlich
+psychologische Hilfe und vorallem Prügel ;D ... &lt;em&gt;"Das ist das stabilste
+Betriebssystem überhaupt - seit 5 Jahren habe ich keine
+Sicherheitsupdates mehr einspielen müssen!"&lt;/em&gt; ... ihr armen, armen irren
+Kacknoob-Möchtegern-Admins ... ) einen mehr oder weniger einheitlichen
+Weg gefunden dieses zu realisieren! Vieles basiert auf &lt;a href="http://www.raygibson.net/kb/profile_migration/" title="Windows Profile Migration KB auf www.raygibson.net"&gt;dieser
+(englischsprachigen)
+Anleitung&lt;/a&gt;,
+jedoch bevorzuge ich für meine Zwecke eher eine hybride Variante aus
+dieser und &lt;a href="http://www.bluemoonpcrepair.com/wp/?p=39" title="Manual mit Hinweis auf &amp;quot;Windows Enabler&amp;quot; um den &amp;quot;Kopieren&amp;quot; Button in Windows 7 in den Benutzerkonteneinstellungen zu aktivieren - ... bisschen kurz dieser Text oder? Da schreib ich doch nochmal das Alphabet dahinter, um sicher zu gehen, das man den auch garantiert nicht auf einen Blick erfassen kann: : abcdefghijklmnopqrstuvwxyz ;D"&gt;einer zweiten
+Methode&lt;/a&gt;.&lt;br&gt;
+Keine Sorge, das hier wird eine Schritt-für-Schritt - Anleitung und
+keiner muss sich diese beiden Englischen Artikel durchlesen. Ich erwähne
+diese hier nur, damit ich mich nicht mit fremden Federn schmücke.&lt;/p&gt;
+&lt;p&gt;Am Ende dieses Artikels findet Ihr eine chronologische Screenshotreihe,
+welche diese Anleitung verdeutlichen soll.&lt;/p&gt;
+&lt;p&gt;Ich gehe im folgenden davon aus, das ein Profil aus einer alten Domäne
+(&lt;strong&gt;MFC2&lt;/strong&gt;) für einen identischen Account (&lt;strong&gt;mr&lt;/strong&gt;) in einer neuen Domäne
+(&lt;strong&gt;MFC3&lt;/strong&gt;) bereitgestellt werden soll. Die Screenshots stammen, sofern
+nicht anders erwähnt, von einem Windows XP. Die Dialoge und die
+Vorgehensweise ist in den unterschiedlichen Windowsversionen jedoch
+nahezu identisch. Daher beschreibe ich auch zunächst einmal das
+grundsätzliche Vorgehen und erwähne hinterher, welcher Punkt unter
+Vista/7 einer kleine Abweichung bedarf.&lt;br&gt;
+Damit man diesem Guide gut folgen kann, sollte man sich die alte und die
+neue SID des zu migrierenden Accounts notieren, ehe man anfängt.
+Passiert das ganze von einem Samba-Server auf einen Samba-Server, ist es
+einfach: Einfach auf beiden DC folgenden Befehl ausführen:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pdbedit -Lv mr | egrep '\^User SID'&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Diese Zeichenketten &lt;strong&gt;notiert man sich nun&lt;/strong&gt; und nicht vergessen zu
+vermerken, welche die alte und welche die neue ist.&lt;/p&gt;
+&lt;p&gt;Ich gehe davon aus, das der User, dessen Profil migriert werden soll,
+sich bereits früher am System angemeldet hat und das gecachedte Profil
+sich somit bereits auf der lokalen Festplatte befindet. Sollte dem nicht
+so sein, weil der PC z.B. gleich mit erneuert werden soll, oder weil man
+diesen Guide erstmal "durchspielen" will, sollte man dieses also
+zunächst tun, damit das Profil auf das System kopiert wird.&lt;/p&gt;
+&lt;p&gt;Die folgenden Schritte führt man am besten als ein Domänenadmin aus -
+Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NACHTRAG 02.11.2011:&lt;/strong&gt; Es ist hierbei sehr wichtig, das der folgende
+Schritt nicht mit dem User gemacht wird, dessen Profil kopiert werden
+soll! Benutzt hierfür einen anderen; der User, dessen Profil kopiert
+werden soll, darf währenddessen nicht eingelogged sein.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Zunächst muss das bisherige Profil des Users kopiert werden.&lt;br&gt;
+Unter &lt;strong&gt;Windows XP&lt;/strong&gt; navigiert man dazu nach : &lt;em&gt;Systemsteuerung -&amp;gt;
+System -&amp;gt; Tab: Erweitert -&amp;gt; Benutzerprofile: Einstellungen&lt;/em&gt;.&lt;br&gt;
+Unter &lt;strong&gt;Windows Vista und 7&lt;/strong&gt; navigiert man dazu nach : &lt;em&gt;Systemsteuerung
+-&amp;gt; Benutzerkonten -&amp;gt; Erweiterte Benutzerprofileinstellungen
+konfigurieren&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Es öffnet sich jeweils ein Fenster namens "&lt;em&gt;Benutzerprofile&lt;/em&gt;" mit einer
+Liste der bestehenden Userprofile. Man wählt hier nun das zu kopierende
+Profil aus; im Beispiel: &lt;strong&gt;MFC2\mr&lt;/strong&gt;.&lt;br&gt;
+... nun würde man gerne auf "&lt;em&gt;Kopieren nach&lt;/em&gt;" klicken, richtig? Aber
+ratet mal: Dieser Weg war Microsoft zu einfach. Also hat man es einfach
+kurzerhand deaktiviert und verweist stattdessen auf den &lt;a href="http://support.microsoft.com/kb/973289" title="Microsoft KB 973289"&gt;KB
+973289&lt;/a&gt;.
+Damit nicht genug die Funktion zu deaktivieren: Diese Sadisten grauen
+den nur aus statt zu entfernen, um allen unter die Nase zu reiben "&lt;em&gt;So
+leicht könnt's sein ...&lt;/em&gt;". Aber glücklicherweise kommt uns genau diese
+Tatsache nun zu gute:&lt;/p&gt;
+&lt;p&gt;Ich weise an dieser Stelle darauf hin, das mir zwar keine Meldung
+bekannt ist, das das folgende Verfahren irgendwo einmal zu einem Problem
+geführt hat. Jedoch handelt es sich nicht um das offizielle Microsoft -
+Vorgehen und jeder handelt dabei auf eigene Gefahr.&lt;br&gt;
+Zunächst läd man das kleine Tool &lt;a href="http://www.zoosau.de/software/windowsenabler.zip" title="Download &amp;quot;Windows Enabler&amp;quot;"&gt;"Windows Enabler"
+herunter&lt;/a&gt;.
+Es handelt sich dabei um ein kleines Programm, welches nicht installiert
+werden muss. Dieses tut man schließlich auch. &lt;strong&gt;Achtung:&lt;/strong&gt; Unter Windows
+7/Vista bitte unbedingt "&lt;em&gt;Ausführen als Administrator&lt;/em&gt;" auswählen. In
+der Systemleiste neben der Uhr erscheint daraufhin ein kleines, blaues
+Icon. Klickt man 1x darauf, erscheint "On" darin. Klickt man nun auf die
+ausgegraute "&lt;em&gt;Kopieren nach&lt;/em&gt;" Schaltfläche, wird sie verfügbar -&amp;gt;
+Verarscht! ;)&lt;/p&gt;
+&lt;p&gt;Wir klicken nun auf die neu verfügbare "&lt;em&gt;Kopieren nach&lt;/em&gt;" - Schaltfläche.
+In dem sich daraufhin öffnendem Dialog wählen wir als Ziel "Dokumente
+und Einstellungen\&amp;lt;username&amp;gt;.&amp;lt;neue_domäne&amp;gt;" (im
+Beispiel: "Dokumente und Einstellungen\mr.MFC3"; unter Vista/7:
+"Users"- o. "Benutzer"\&amp;lt;username&amp;gt;.&amp;lt;neue_domäne&amp;gt;). Dieser
+Ordner kann nicht im sich hier öffnendem Dialog angelegt werden, daher
+dieses bitte zuvor selbst im Explorer tun. Bei großen Profilen kann es
+sein, das das Fenster eine zeitlang den Eindruck macht es sei
+abgestürzt; einen Fortschrittsbalken gibt es nicht. Aber das ist glaube
+ich eine Sache, mit der man in einer eigentlich deaktivierten Funktion
+ganz gut leben kann ;)&lt;/p&gt;
+&lt;p&gt;Ist dieses abgeschlossen, bringt man den PC in die neue Domäne und
+startet neu. Anschließend meldet man sich am besten als Domänenadmin an
+- Mit dem lokalen Admin geht es nicht, da dann die Domänen-SID-Username
+Mappings nicht zur Verfügung stehen.&lt;br&gt;
+Man klickt den neuen Profilordner nun mit rechts an und wählt
+"&lt;em&gt;Eigenschaften&lt;/em&gt;"; im sich öffnendem Fester wechselt man zum Tab
+"&lt;em&gt;Sicherheit&lt;/em&gt;". Man sieht hier nun mindestens eine SID mit einem weißen
+Symbol. Diese User entfernt man zunächst, indem man ihn durch einen
+Klick auswählt und anschließend auf "&lt;em&gt;Entfernen&lt;/em&gt;" klickt. Das sind die
+Useraccounts der alten Domäne, die der neue Domänencontroller natürlich
+nicht auflösen kann.&lt;br&gt;
+Der nächste Schritt besteht nun darin, das man dem neuen User rekursiv
+Vollzugriff auf diesen Profilordner gewährt. Hierzu klickt man auf
+"&lt;em&gt;Hinzufügen&lt;/em&gt;" und gibt im Feld "&lt;em&gt;Geben Die die zu verwendenden
+Objektnamen ein&lt;/em&gt;" den Usernamen ein (Im Beispiel: &lt;strong&gt;mr&lt;/strong&gt;). Hierbei ist
+darauf zu achten, das im Feld "&lt;em&gt;Suchpfad&lt;/em&gt;" der Name der neuen Domäne
+angezeigt wird. Nach einem Klick auf "&lt;em&gt;OK&lt;/em&gt;" taucht der User in der
+Rechteliste auf, sofern er in der neuen Domäne gefunden wird.&lt;br&gt;
+Man wählt diesen Eintrag nun an und setzt danach im Feld
+"&lt;em&gt;Berechtigungen für USERNAME&lt;/em&gt;" alle Haken auf "&lt;em&gt;Zulassen&lt;/em&gt;".
+Anschließend klickt man auf "&lt;em&gt;Erweitert&lt;/em&gt;" und setzt den Haken bei
+"&lt;em&gt;Berechtigungen für alle untergeordneten Objekte durch die angezeigten
+Einträge, sofern anwendbar, ersetzen.&lt;/em&gt;". Nun bestätigt man alle Dialoge
+mit "&lt;em&gt;OK&lt;/em&gt;". Es kann anschließend zu einer Fehlermeldung kommen, das
+nicht alles richtig gesetzt werden konnte. Das kann man jedoch in der
+Regel ignorieren.&lt;/p&gt;
+&lt;p&gt;Als letzten Schritt muss man eine kleine Anpassung in der Registry
+vornehmen. Die Datei "NTUSER.dat" im neuen Profil hat nun zwar bereits
+die passenden Berechtigungen für den neuen User, jedoch hat diese Datei
+in sich auch nocheinmal eine Berechtigungsstruktur, die wir nun setzen.&lt;br&gt;
+Hierzu öffnet man zunächst den Registrierungs-Editor ("&lt;strong&gt;regedit&lt;/strong&gt;"
+eingeben unter Start-&amp;gt;Ausführen) und wählt den Schlüssel
+"&lt;em&gt;HKEY_LOCAL_MACHINE&lt;/em&gt;" durch anklicken aus. Anschließend klickt man
+auf "&lt;em&gt;Datei&lt;/em&gt;" und wählt "&lt;em&gt;Struktur laden ...&lt;/em&gt;" aus. Man navigiert nun in
+den neuen Profilordner. Hierin befindet sich eine Datei namens
+"NTUSER.dat". Es kann sein, das sie garnicht oder ohne ".dat" angezeigt
+wird. Das kommt darauf an, ob man in Windows die Anzeige von bekannten
+Dateiendungen und Systemdateien aktiviert hat, oder nicht. Wie auch
+immer: Diese Datei muss nun ausgewählt werden. Anschließend wird man
+aufgefordert, sich einen temporären Namen für diese Struktur
+auszudenken. Das Originaltutorial empfiehlt hier "chickenfucker" -
+tatsächlich sind der Phantasie hier jedoch keine Grenzen gesetzt und hat
+keinerlei Auswirkungen, da es nur temporär benutzt wird ;)&lt;br&gt;
+Die geladene Struktur wird nun mit dem soeben vergebenem Namen unter
+ "&lt;em&gt;HKEY_LOCAL_MACHINE&lt;/em&gt;" eingebunden. Man öffnet nun mit einem
+Rechtsklick auf diesen Namen das Kontextmenü und wählt
+"&lt;em&gt;Berechtigungen...&lt;/em&gt;". Es öffnet sich nun derselbe Dialog wie wir ihn
+schon vom setzen der Berechtigungen auf den neuen Profilordner her
+kennen. Man setzt nun einfach dieselben Rechte erneut und entfernt die
+Alt-Domain SIDs. Auch hier kann man den Hinweis, das einige Teile nicht
+gesetzt werden konnten, ignorieren.&lt;br&gt;
+&lt;strong&gt;Achtung! Der folgende Schritt ist sehr wichtig:&lt;/strong&gt; Ist das ganze
+durchgelaufen, klickt man erneut auf "&lt;em&gt;Datei&lt;/em&gt;" und wählt "&lt;em&gt;Struktur
+entfernen ...&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Das war's! Meldet sich nun der User an, für den wir auf diesem Wege das
+Profil vorbereitet haben, sollte er genau dieselben Einstellungen
+vorfinden, wie er sie auch in der alten Domäne hatte; inklusive
+Hintergrundbild und sogar Anordnung der Desktop-Symbole ;)&lt;br&gt;
+Sollte das nicht der Fall sein, könnte es daran liegen, das Windows
+einen anderen Ordner für das Profil gewählt hat als wir es gedacht
+haben. In freier Wildbahn ist mir so z.B. schon "user.domäne.000"
+begegnet.&lt;br&gt;
+In diesem Fall meldet man sich als Admin an (dieses Mal kann es ruhig
+der lokale Admin sein); &lt;strong&gt;es muss aber unbedingt ein anderer User sein
+als der, dessen Profil man umbiegt! Diesen meldet man vor dem folgendem
+Schritt ab.&lt;br&gt;
+&lt;/strong&gt;Man startet nun erneut den Registrierungs-Editor ("&lt;strong&gt;regedit&lt;/strong&gt;"
+eingeben unter Start-&amp;gt;Ausführen) und navigiert zur Struktur
+"&lt;em&gt;HKEY_LOCAL_Machine\SOFTWARE\Microsoft\Windows
+NT\CurrentVersion\ProfileList&lt;/em&gt;". Darin befinden sich eine Menge
+Unterschlüssel, beginnend mit "&lt;em&gt;S-1-5-21-&lt;/em&gt;". Diese Namen stehen für
+SIDs, daher brauchen wir nun die Liste der SIDs vom neuen
+Domänencontroller, die man zu Beginn dieses Artikels auslesen sollte.
+Sucht nach dem Schlüssel, der 1:1 identisch mit der SID des Users auf
+dem Domänencontroller ist und klickt darauf. Darin befindet sich unter
+anderem ein REG_EXPAND_SZ mit dem Pfad zum zu verwendendem
+Domänenprofilcache als Wert. Dieser Wert kann einfach auf den richtigen
+Profilordner geändert werden.&lt;br&gt;
+Nach einem Neustart sollte schließlich das richtige Profil geladen
+werden.&lt;/p&gt;
+&lt;p&gt;[gallery link="file"]&lt;/p&gt;</content><category term="7"></category><category term="domäne"></category><category term="kopieren"></category><category term="profile"></category><category term="roaming profile"></category><category term="samba"></category><category term="übernehmen"></category><category term="vista"></category><category term="windows"></category><category term="xp"></category></entry><entry><title>Erster Eindruck zu Windows 8</title><link href="https://www.zoosau.de/erster-eindruck-zu-windows-8.html" rel="alternate"></link><published>2011-09-15T20:00:00+02:00</published><updated>2011-09-15T20:00:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-09-15:/erster-eindruck-zu-windows-8.html</id><summary type="html">&lt;p&gt;Seit gestern können Interessierte die kommende Windowsversion "Windows
+8" völlig legal im Rahmen einer "Developer Preview" als ISO Image
+überraschend schnell &lt;a href="http://dev.windows.com/" title="Downloadlocation der Windows 8 Developer Preview"&gt;von den Microsoft Servern
+herunterladen&lt;/a&gt;
+und testen. Eine Registrierung ist hierbei nicht erforderlich.&lt;/p&gt;
+&lt;p&gt;Ich habe mir gestern mal den Spass gemacht und musste nach erfolgter
+Installation erstmal einen Blick …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Seit gestern können Interessierte die kommende Windowsversion "Windows
+8" völlig legal im Rahmen einer "Developer Preview" als ISO Image
+überraschend schnell &lt;a href="http://dev.windows.com/" title="Downloadlocation der Windows 8 Developer Preview"&gt;von den Microsoft Servern
+herunterladen&lt;/a&gt;
+und testen. Eine Registrierung ist hierbei nicht erforderlich.&lt;/p&gt;
+&lt;p&gt;Ich habe mir gestern mal den Spass gemacht und musste nach erfolgter
+Installation erstmal einen Blick auf den Wandkalender werfen. Nein, es
+ist in der Tat September und nicht April. Ich konnte, was ich da sehe,
+nicht glauben! Wer sich den Download des bis zu 4.8 GB großen ISO Images
+sparen möchte, der kann einfach in den nächsten
+&lt;a href="http://www.saturn.de/" title="Homepage des Saturn Marktes"&gt;Saturn&lt;/a&gt; oder
+&lt;a href="www.mediamarkt.de/" title="Homepage des Media Marktes"&gt;Media Markt&lt;/a&gt; gehen und
+sich ein x-beliebiges Windows Phone ansehen. Man bekommt den Eindruck,
+das Microsoft zukünftig nur noch ein Betriebssystem für Computer,
+Tablets, Handys, usw. entwickeln will, da sie das komplette Startmenü in
+dieser ... ich weiss garnicht wie man das nennen soll: "Swype -
+Oberfläche" gehalten haben. Klickt man auf "Start" (der Button sieht
+übrigens so aus als hat ein Kind den gemalt), öffnet sich zunächst mal
+ein Menü, welches zig kleine Icons auf dem Bildschirm anzeigt - völlig
+unsortiert und bei vielem ohne Text. Man muss anhand des Bildes raten,
+was passiert, wenn man darauf klickt.&lt;/p&gt;
+&lt;p&gt;Das ist sowas von völlig schrecklich geworden ... ich habe das komplette
+Teil nach 10 Minuten wieder gelöscht!&lt;/p&gt;
+&lt;p&gt;Naja, OK. Wenn das jetzt Microsoft's neuer Releasezyklus wird, im
+Wechsel ein unbenutzbares und ein gutes OS herauszubringen (wie ja seit
+XP begonnen: XP = gut, Vista = Schrott, 7 = gut, 8 = Schrott, ...),
+wieso nicht? Müssen die selber wissen ob sie sich so einen Mist bei
+zunehmender Konkurenz durch Apple und Linux leisten können.&lt;/p&gt;
+&lt;p&gt;Ebenfalls erschreckend: Während der Installation bietet Windows einem an
+das Live - Konto als Login zu verwenden!!!! HALLO??? Sicherheit und
+so??? Die haben doch wohl den Schuss nicht gehört: Man soll nun allen
+ernstes seinen PC mit weiss-der-geier wie privaten und vertraulichen
+Daten über's Internet mit denselben Daten anmelden, wie man sie ggf.
+seit Jahren mit seinem MSN Messenger verwendet anmelden? Ich komme auf
+anhieb auf locker 20 Möglichkeiten wie ich als Security Laie diese Daten
+bereits heute ausspähen kann. Der Weg zu &lt;strong&gt;&lt;em&gt;"Ja - aber ... ich will mich
+mit meinen Facebook - Daten anmelden können!"&lt;/em&gt;&lt;/strong&gt; ist da echt nicht mehr
+weit. Und das bietet man dann auch noch dem IT-Technisch hinrtotem Volk
+an, welches trotz jahrelangen Berichten darüber, wie unsicher
+Online-Banking ist und wie leicht sich Handydaten ausspähen lassen,
+beide Unsicherheitsfaktoren durch Smartphone-Internetbanking
+kombinieren?&lt;br&gt;
+Au Backe ... man sollte echt mal drüber nachdenken umzusatteln und unter
+die Onlinekriminellen gehen - das mausert sich ja immer mehr zum
+Selbstbedienungsladen ...&lt;/p&gt;
+&lt;p&gt;Positiv fiel hingegen der neue Windows Explorer auf. Das Menü ist nun
+ähnlich wie bei Office 2011 viel umfangreicher und weniger
+zusammengefaltet, so das man sich für viele (sinnvolle) Funktionen den
+Umweg über "Datei &amp;gt; Neu &amp;gt; Ordner &amp;gt; ..." oder das Kontextmenü
+sparen kann.&lt;/p&gt;
+&lt;p&gt;Mehr kann ich zu diesem Betriebssystem ehrlich gesagt garnicht sagen, da
+ich es, wie gesagt, umgehend wieder gelöscht habe. Es mag sein, das man
+diesen Schrott-Modus auch irgendwie abstellen kann, aber ich bin ehrlich
+gesagt nicht bereit dazu mich mit einer Vorabversion von Windows zu
+beschäftigen; zumal die Systemsteuerung auch so beschissen angeordnet
+ist, das man um eine Einarbeitung garnicht herum kommt.&lt;br&gt;
+Macht Euch einfach den Spaß, ladet das herunter und stellt die Kotztüten
+bereit.&lt;/p&gt;</content><category term="developer preview"></category><category term="download"></category><category term="windows 8"></category></entry><entry><title>VirtualBox mit WLAN im Host nutzen</title><link href="https://www.zoosau.de/virtualbox-mit-wlan-im-host-nutzen.html" rel="alternate"></link><published>2011-03-16T21:42:00+01:00</published><updated>2011-03-16T21:42:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2011-03-16:/virtualbox-mit-wlan-im-host-nutzen.html</id><summary type="html">&lt;p&gt;Seit Monaten kotze ich jetzt einen armdicken Strahl, wenn ich zuhause
+mit meinen
+&lt;a href="http://www.virtualbox.org/" title="Homepage von VirtualBox"&gt;VirtualBox&lt;/a&gt;
+&lt;a href="http://de.wikipedia.org/wiki/Virtuelle_Maschine" title="Wiki Erläuterung über virtuelle Maschinen"&gt;Virtual
+Machines&lt;/a&gt;
+etwas entwickeln oder evaluieren möchte, weil ich jedes Mal ein Kabel
+quer durch mein Wohnzimmer legen muss, da die &lt;a href="http://www.virtualbox.org/manual/ch06.html#id403166" title="Auszug aus VirtualBox Online Manual zum &amp;quot;Bridged Networking&amp;quot;"&gt;Netzwerkbrückenverbindung
+(Bridged
+Networking)&lt;/a&gt;
+über verschiedenste WLAN USB Sticks nicht funktionierte.&lt;br&gt;
+Vielleicht kurz zur Erläuterung: Das …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Seit Monaten kotze ich jetzt einen armdicken Strahl, wenn ich zuhause
+mit meinen
+&lt;a href="http://www.virtualbox.org/" title="Homepage von VirtualBox"&gt;VirtualBox&lt;/a&gt;
+&lt;a href="http://de.wikipedia.org/wiki/Virtuelle_Maschine" title="Wiki Erläuterung über virtuelle Maschinen"&gt;Virtual
+Machines&lt;/a&gt;
+etwas entwickeln oder evaluieren möchte, weil ich jedes Mal ein Kabel
+quer durch mein Wohnzimmer legen muss, da die &lt;a href="http://www.virtualbox.org/manual/ch06.html#id403166" title="Auszug aus VirtualBox Online Manual zum &amp;quot;Bridged Networking&amp;quot;"&gt;Netzwerkbrückenverbindung
+(Bridged
+Networking)&lt;/a&gt;
+über verschiedenste WLAN USB Sticks nicht funktionierte.&lt;br&gt;
+Vielleicht kurz zur Erläuterung: Das "Bridged Networking" ist eine der
+zur Verfügung stehenden Netzwerkemulationstechniken in VirtualBox,
+welche es einem, anders als "Host-Only" oder
+"&lt;a href="http://de.wikipedia.org/wiki/Network_Address_Translation" title="Wikipedia EIntrag über &amp;quot;Network Address Translation&amp;quot;"&gt;NAT&lt;/a&gt;",
+erlaubt die virtuellen Maschinen so an das Netzwerk anzuschließen, das
+diese &lt;span style="text-decoration: underline;"&gt;direkt&lt;/span&gt; mit den
+sich darin befindenden Komponenten kommunizieren können, ohne irgendwie
+vom Host geProxyt oder geNATed werden zu müssen. So können sich die VMs
+beispielsweise per DHCP von den realen Verteilern im Netz eine IP holen,
+von diesen ohne Port Forwarding angesprochen werden (z.B. per HTTP oder
+SSH), usw.&lt;/p&gt;
+&lt;p&gt;Die Lösung war, nach mehreren Monaten der Unkenntnis und erfolglosen
+Google- und IRC Recherche, ganz simpel, jedoch so seltsam, das ich die
+Lösung gerne hier kundtun möchte in der Hoffnung, das es anderen diesen
+Ärger ersparen möge:&lt;/p&gt;
+&lt;p&gt;Standardmäßig nutzt eine VM als virtuellen Netzwerkadapter einen "Intel
+PRO / 1000 MT Desktop (82540EM)" Adapter. Der funktioniert mit
+kabelgebundenem LAN auch hervorragend, versagt jedoch scheinbar wenn der
+Host per WLAN ins Netzwerk integriert ist.&lt;br&gt;
+Stellt man diesen auf "Intel PRO / 1000 MT Server (82545EM)" um
+funktioniert auf einmal alles reibungslos! Man benötigt im
+Gastbetriebssystem (zumindest unter Linux) nicht einmal einen neuen
+Treiber!&lt;/p&gt;
+&lt;p&gt;Verstehen tue ich es nicht wirklich, aber Hauptsache ist doch, das es
+nun funktioniert :)&lt;/p&gt;
+&lt;p&gt;Auf dem folgenden Bild seht Ihr, wie man diesen Adaptertyp umstellt:&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_904" align="aligncenter" width="300"
+caption="1. = "Erweitert" muss zunächst aufgeklappt werden, damit der
+Dialog erscheint. --- 2. = Hier muss der Adaptertyp "Intel PRO / 1000 MT
+Server" ausgewählt werden."]&lt;a href="https://www.zoosau.de/images/virtual_box_virtueller_adaptertyp.png"&gt;![VirtualBox 4 - Auswahl des virtuellen
+Adaptertypes für WLAN-Hosts --- 1. = "Erweitert" muss zunächst
+aufgeklappt werden, damit der Dialog erscheint. --- 2. = Hier muss der
+Adaptertyp "Intel PRO / 1000 MT Server" ausgewählt
+werden.]({filename}images/virtual_box_virtueller_adaptertyp-300x214.png "VirtualBox 4 - Auswahl des virtuellen Adaptertypes für WLAN-Hosts --- 1. = "Erweitert" muss zunächst aufgeklappt werden, damit der Dialog erscheint. --- 2. = Hier muss der Adaptertyp "Intel PRO / 1000 MT Server" ausgewählt werden."){.size-medium
+.wp-image-904 width="300"
+height="214"}&lt;/a&gt;[/caption]&lt;/p&gt;</content><category term="bridged"></category><category term="host"></category><category term="netzwerkbrücke"></category><category term="virtual box"></category><category term="virtualbox"></category><category term="wireless"></category><category term="wlan"></category></entry><entry><title>CeBit 2010</title><link href="https://www.zoosau.de/cebit2010.html" rel="alternate"></link><published>2010-03-26T12:30:00+01:00</published><updated>2010-03-26T12:30:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2010-03-26:/cebit2010.html</id><summary type="html">&lt;p&gt;Ich war auf der CeBit! Das ganze wurde inklusive Fahrt und Verpflegung
+von meiner Firma bezahlt. Um es kurz zu machen: Wenn die irgendwann
+einmal irgendwo ... sagen wir: In Duisburg oder Bochum, also: in der
+Nähe, stattfinden sollte und ich gerade rein GARNICHTS anderes vorhaben
+sollte, würde ich in Erwägung …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich war auf der CeBit! Das ganze wurde inklusive Fahrt und Verpflegung
+von meiner Firma bezahlt. Um es kurz zu machen: Wenn die irgendwann
+einmal irgendwo ... sagen wir: In Duisburg oder Bochum, also: in der
+Nähe, stattfinden sollte und ich gerade rein GARNICHTS anderes vorhaben
+sollte, würde ich in Erwägung ziehen diese Messe noch einmal zu
+besuchen. Aber Hannover? No Way - Die Messe ist Mega langweilig. Neben
+zig No-Name China-Ständen stehen da nur noch langweilige 0815 - Stände.
+Keinerlei Innovationen, ja: Nichtmal echter Herstellerkontakt ist dort
+möglich.&lt;/p&gt;
+&lt;p&gt;Ich interessiere mich zum Beispiel für vertikal montierbare PDUs für
+unsere Server-Racks. Klingt komisch, ist aber so! :D Die Leute von APC,
+die da vor Ort waren konnten mir die simpelsten Fragen nicht
+beantworten. Aber OK: Sie haben mir angeboten diese Fragen gezielt
+weiterzuleiten (an der Hotline waren sie ebenfalls überfragt) und sich
+bei mir zu melden. Ähnliches habe ich auch mit anderen Herstellern
+gemacht - das wird hier keinesfalls ein APC - Exklusives
+negativ-Ranking. Und ein paar Tage nach Messeende bekommt man nur eine
+Standard-Spammail "Sie haben uns auf der CeBit besucht - schön! Besuchen
+Sie doch mal unsere Homepage. ...." :P&lt;/p&gt;
+&lt;p&gt;Ich brauch da nie wieder hin. Weder privat noch geschäftlich. Außer
+Spesen nichts gewesen ...&lt;/p&gt;</content><category term="2010"></category><category term="cebit"></category><category term="reinfall"></category></entry><entry><title>Zugriff auf Samba Freigaben mit Windows Vista</title><link href="https://www.zoosau.de/zugriff-auf-samba-freigaben-mit-windows-vista.html" rel="alternate"></link><published>2008-01-29T11:03:00+01:00</published><updated>2008-01-29T11:03:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-29:/zugriff-auf-samba-freigaben-mit-windows-vista.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Wir hatten hier in meiner Firma das Problem, das man sich an Windows XP
+Workstations anmelden konnte und problemlos auf eine von einem Linux
+Samba Server bereitgestellte Ressource zugreifen konnte, jedoch als
+derselbe User, der an einer Windows Vista Workstation angemeldet ist,
+auf dieselbe Ressource keinen Zugriff bekam …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;Wir hatten hier in meiner Firma das Problem, das man sich an Windows XP
+Workstations anmelden konnte und problemlos auf eine von einem Linux
+Samba Server bereitgestellte Ressource zugreifen konnte, jedoch als
+derselbe User, der an einer Windows Vista Workstation angemeldet ist,
+auf dieselbe Ressource keinen Zugriff bekam.&lt;/p&gt;
+&lt;p&gt;Ich habe zunächst vermutet, das ich einen Fehler in meiner PDC
+Konfiguration hatte oder ähnliches, da der Domänencontroller und die
+Bindung der Samba Dateiserver an diesen erst recht neu implementiert
+wurde. Jedoch liegt es an einem neuen "Feature" von Windows Vista das
+diese Zugriffe überhaupt nicht klappen &lt;strong&gt;können&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Nach kurzer Suche bin ich auf &lt;a href="http://www.bit-bloc.de/archives/4" title="Blog von Jörn Domnik"&gt;dieses
+Blog&lt;/a&gt;
+gestossen, in dem genau dieses Problem beschrieben wurde.&lt;/p&gt;
+&lt;p&gt;Ich denke ohne diesen Beitrag wäre ich da nie drauf gekommen.&lt;/p&gt;
+&lt;p&gt;Da ich immer Angst habe, das Beiträge die ich verlinke in naher Zukunft
+wieder verschwinden, kopiere ich den Inhalt des erwähnten Beitrages in
+mein eigenes Blog. Ich hoffe Jörn hat nichts dagegen. Ansonsten bitte
+einfach einen Kommentar schreiben :)&lt;/p&gt;
+&lt;h1&gt;Vista und Samba Shares&lt;/h1&gt;
+&lt;p&gt;Ich habe mir Vista zum Testen installiert. Da ich ein WL700gE habe nutze
+ich auch die eingebaute Platte als Netzlaufwerke. In den ersten Wochen
+ging noch alles gut mit den Netzlaufwerken unter Vista.&lt;br&gt;
+Nachdem ich aber eines Tages auf meine Laufwerke zugreifen wollte bekam
+ich die Abfrage nach einem anderen “richtigen” Passwort, da der alte
+Nutzer nicht authentifiziert werden konnte. Ich habe nicht lange
+nachgedacht und schnell mein Username und Passwort eingetippt, und..
+nichts. Es funktioniert nicht.&lt;/p&gt;
+&lt;p&gt;Nach etwas Suchen habe ich dann eine Lösung gefunden.&lt;/p&gt;
+&lt;p&gt;Vista nutzt eine neuen Version des SMB Protokolls. Soll sicherer sein,
+einziges Problem war nur, dass Samba dieses nicht unterstützt. Und da
+mein WL700g auf einem Linux läuft und Samba für die Shares nutzt kann es
+nicht funktionieren.&lt;/p&gt;
+&lt;p&gt;Um das Problem zu beheben muss man die Lokalen Sicherheitsrichtlinien
+bearbeiten. Erstmal den Richtlinieneditor über&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Start -&amp;gt; Eingabeleiste -&amp;gt; secpol.msc&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;starten und dann folgenden Pfad hinunter hangeln.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lokale Richtlinien -&amp;gt; Sicherheitsoptionen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dort findet ihr dann auf der rechten Seite einen Punkt der&lt;br&gt;
+Netzwerksicherheit: LAN-Manager-Authentifizierungsebene&lt;br&gt;
+heißt. Dort ein Doppelklick und die Option&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LM-und NTLM-Antworten senden (NTLMv2-Sitzungssicherheit verwenden)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;auswählen. Dann nur noch auf Ok klicken und den Editor wieder
+schließen.&lt;br&gt;
+Nun sollte es wieder möglich sein Samba Shares zu öffnen und zu
+verbinden. Falls nicht sollte noch ein Neustart gemacht werden. Bei mir
+hat es zwar ohne funktioniert, aber bei Windows kann man ja nie wissen.
+;)&lt;/p&gt;
+&lt;p&gt;Ob das jetzt ein Versuch von Microsoft sein soll Linux als Fileserver
+Betriebssystem auszustechen ist fraglich, da es zu einfach zu umgehen
+ist. ;)&lt;br&gt;
+Grüße Jörn&lt;/p&gt;
+&lt;p&gt;Kleine Ergänzung noch von mir selbst:&lt;/p&gt;
+&lt;p&gt;Bei  Vista Home Basic und Vista Home Premium soll es anders sein. Da
+sind stattdessen folgende Schritte notwendig:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In der Registry den Schlüssel
+    "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Contr ol\Lsa"
+    suchen&lt;/li&gt;
+&lt;li&gt;Den Wert für LmCompatibilityLevel von "3" auf "1" ändern&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dieses kann ich nur leider nicht nachstellen, da wir diese Versionen in
+der Firma nicht haben.&lt;/p&gt;</content><category term="freigabe"></category><category term="samba"></category><category term="vista"></category></entry><entry><title>Dateien im Thunderbird Profil</title><link href="https://www.zoosau.de/dateien-im-thunderbird-profil.html" rel="alternate"></link><published>2008-01-21T11:47:00+01:00</published><updated>2008-01-21T11:47:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-21:/dateien-im-thunderbird-profil.html</id><summary type="html">&lt;p&gt;Ich habe mich eben mal wieder gefragt, welche Datei im
+&lt;a href="http://www.mozilla.com/en-US/thunderbird/" title="Homepage des Thunderbird"&gt;Thunderbird&lt;/a&gt;
+Profil eigentlich was macht.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.thunderbird-mail.de/wiki/Die_Dateien_im_Profil_kurz_erklärt" title="Wiki Seite zum Thema"&gt;Hier ist eine coole Seite wo viele Dateien beschrieben
+werden.&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe mich eben mal wieder gefragt, welche Datei im
+&lt;a href="http://www.mozilla.com/en-US/thunderbird/" title="Homepage des Thunderbird"&gt;Thunderbird&lt;/a&gt;
+Profil eigentlich was macht.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.thunderbird-mail.de/wiki/Die_Dateien_im_Profil_kurz_erklärt" title="Wiki Seite zum Thema"&gt;Hier ist eine coole Seite wo viele Dateien beschrieben
+werden.&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Zeichensatz von Dateinamen unter Linux umwandeln</title><link href="https://www.zoosau.de/zeichensatz-von-dateinamen-unter-linux-umwandeln.html" rel="alternate"></link><published>2008-01-15T09:08:00+01:00</published><updated>2008-01-15T09:08:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-15:/zeichensatz-von-dateinamen-unter-linux-umwandeln.html</id><summary type="html">&lt;p&gt;Ich musste heute wieder einmal mit mkisofs ein ISO File eines
+Verzeichnisses unter Linux erstellen. Dabei stand ich mal wieder vor dem
+Problem, das es Dateien aus einem ehemaligen Samba - Share eines Samba
+Servers waren, dessen Zeichensatz nicht explizit gesetzt war, wodurch
+der Windows Zeichensatz cp850 verwendet wird. Dieses sieht …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich musste heute wieder einmal mit mkisofs ein ISO File eines
+Verzeichnisses unter Linux erstellen. Dabei stand ich mal wieder vor dem
+Problem, das es Dateien aus einem ehemaligen Samba - Share eines Samba
+Servers waren, dessen Zeichensatz nicht explizit gesetzt war, wodurch
+der Windows Zeichensatz cp850 verwendet wird. Dieses sieht unter linux
+nicht nur "ganz toll" aus, nein: Programme wie mkisofs können daher auch
+solche Dateien nicht wirklich gut verarbeiten.&lt;/p&gt;
+&lt;p&gt;Ich hatte wie der Autor des Blogeintrages, durch welchen ich
+letztendlich mal wieder fündig wurde, das Problem das ich das Programm
+convmv kannte, damit auch schonmal gearbeitet hatte, ich mir den Namen
+jedoch nicht wirklich gut einprägen konnte.&lt;/p&gt;
+&lt;p&gt;Unter openSuSe 10.3 heisst das RPM auch einfach convmv.&lt;/p&gt;
+&lt;p&gt;Um nun Dateien eines Samba - Shares gescheit umzubenennen, gibt man
+convmv folgende Parameter mit:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;convmv -f cp850 -t utf-8 --notest -r ordner&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mit &lt;strong&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/strong&gt; wird der aktuelle Zeichensatz angegeben.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/strong&gt; definiert den Ziel-Zeichensatz.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;-r&lt;/code&gt;&lt;/strong&gt; führt das ganze Programm rekursiv auf das ganze Verzeichniss
+aus und&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;--notest&lt;/code&gt;&lt;/strong&gt; sorgt dafür, das die Dateien effektiv umbenannt werden.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Achtung:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Wer sich über das Ergebniss nicht ganz sicher ist, der sollte die Option
+&lt;strong&gt;&lt;code&gt;--notest&lt;/code&gt;&lt;/strong&gt; zunächst mal weglassen. Dann Zeigt das Programm nur an
+was es tun &lt;strong&gt;würde&lt;/strong&gt;.&lt;/p&gt;</content><category term="convmv"></category><category term="cp850"></category><category term="konvertieren"></category><category term="Linux"></category><category term="samba"></category><category term="umbenennen"></category><category term="utf-8"></category><category term="utf8"></category><category term="zeichensatz"></category></entry><entry><title>Mit Postfix Mails an bestimmte Adressen an ein Script übergeben</title><link href="https://www.zoosau.de/mit-postfix-mails-an-bestimmte-adressen-an-ein-script-ubergeben.html" rel="alternate"></link><published>2008-01-03T13:19:00+01:00</published><updated>2008-01-03T13:19:00+01:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2008-01-03:/mit-postfix-mails-an-bestimmte-adressen-an-ein-script-ubergeben.html</id><summary type="html">&lt;p&gt;Heute war es auf der Arbeit nötig einem Postfix MTA folgendes
+Konfigurationsszenario beizubringen:&lt;/p&gt;
+&lt;p&gt;Es sollte ein Verteiler eingerichtet werden, dessen Mails an ein PHP
+Script auf einem anderen Server übergibt.&lt;br&gt;
+Zum Glück sollte es nicht eine bestimmte Mailadresse auf demselben
+Server sein - das wäre deutlich umfangreicher geworden ..&lt;/p&gt;
+&lt;p&gt;Der Zielserver hat …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Heute war es auf der Arbeit nötig einem Postfix MTA folgendes
+Konfigurationsszenario beizubringen:&lt;/p&gt;
+&lt;p&gt;Es sollte ein Verteiler eingerichtet werden, dessen Mails an ein PHP
+Script auf einem anderen Server übergibt.&lt;br&gt;
+Zum Glück sollte es nicht eine bestimmte Mailadresse auf demselben
+Server sein - das wäre deutlich umfangreicher geworden ..&lt;/p&gt;
+&lt;p&gt;Der Zielserver hat eine UMTS Karte und kann daher direkt SMS
+verschicken. Wird nun eine Mail an die Adresse
+&lt;strong&gt;&lt;em&gt;fantasie@traumland.de&lt;/em&gt;&lt;/strong&gt; geschrieben, soll diese Mail an den Server
+&lt;strong&gt;&lt;em&gt;smsgateway&lt;/em&gt;&lt;/strong&gt; weitergeleitet werden und dort von einem PHP Script an
+gammu weitergegeben werden.&lt;/p&gt;
+&lt;p&gt;Es ließ sich auf dem Primary MX sehr leicht konfigurieren. Dazu muss in
+die Datei &lt;strong&gt;&lt;em&gt;/etc/postfix/virtual&lt;/em&gt;&lt;/strong&gt; folgendes eingetragen werden:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;smsuser@traumland.de    smsuser@smsgateway.traumland.de&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Auf dem Server &lt;strong&gt;&lt;em&gt;smsgateway&lt;/em&gt;&lt;/strong&gt; musste in die Datei &lt;strong&gt;&lt;em&gt;/etc/aliases&lt;/em&gt;&lt;/strong&gt;
+folgendes eingetragen werden:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;smsuser:     "|/pfad/zum/phpscript.php"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Damit war diese Aufgabe erledigt.&lt;br&gt;
+Die Datei &lt;strong&gt;&lt;em&gt;/etc/postfix/virtual&lt;/em&gt;&lt;/strong&gt; unterstützt dieses Format &lt;em&gt;user:
+"|script"&lt;/em&gt; wohl nicht so ohne weiteres. Hätte das Script auf dem Primary
+MX direkt laufen sollen, wäre das Anlegen des aliases Eintrages fatal:
+Jede Mail an smsuser@ , ganz gleich an welche Domain, würde eine SMS
+auslösen und ggf. sehr teuer werden.&lt;/p&gt;</content></entry></feed>

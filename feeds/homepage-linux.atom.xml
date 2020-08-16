@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marc Richter's Weblog - Homepage, Linux</title><link href="https://www.zoosau.de/" rel="alternate"></link><link href="https://www.zoosau.de/feeds/homepage-linux.atom.xml" rel="self"></link><id>https://www.zoosau.de/</id><updated>2009-04-16T23:35:00+02:00</updated><entry><title>Mit dem vim eine farbige motd erstellen</title><link href="https://www.zoosau.de/mit-dem-vim-eine-farbige-motd-erstellen.html" rel="alternate"></link><published>2009-04-16T23:35:00+02:00</published><updated>2009-04-16T23:35:00+02:00</updated><author><name>Marc Richter</name></author><id>tag:www.zoosau.de,2009-04-16:/mit-dem-vim-eine-farbige-motd-erstellen.html</id><summary type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;ENDLICH! Endlich habe ich den Kniff wieder gefunden!&lt;br&gt;
+Ich habe auf diesem Server, auf dem auch diese Homepage gehostet ist,
+eine farbige
+&lt;a href="http://de.wikipedia.org/wiki/MOTD" title="Wiki EIntrag zu &amp;quot;MOTD&amp;quot;"&gt;motd&lt;/a&gt; Datei
+angelegt. Hierin werden neben der IP und einem kleinen ASCII - Bildchen
+die auf diesem Server konfigurierten Domains aufgelistet.&lt;br&gt;
+Damals habe ich mir nicht weiter …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hallo zusammen!&lt;/p&gt;
+&lt;p&gt;ENDLICH! Endlich habe ich den Kniff wieder gefunden!&lt;br&gt;
+Ich habe auf diesem Server, auf dem auch diese Homepage gehostet ist,
+eine farbige
+&lt;a href="http://de.wikipedia.org/wiki/MOTD" title="Wiki EIntrag zu &amp;quot;MOTD&amp;quot;"&gt;motd&lt;/a&gt; Datei
+angelegt. Hierin werden neben der IP und einem kleinen ASCII - Bildchen
+die auf diesem Server konfigurierten Domains aufgelistet.&lt;br&gt;
+Damals habe ich mir nicht weiter aufgeschrieben wie das geht, hatte ich
+das doch nach 1-2 Minuten googlen direkt gefunden.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_415" align="alignleft" width="150"
+caption="Screenshot der MOTD von zoosau.de"]&lt;a href="https://www.zoosau.de/images/motd_zoosau.png"&gt;&lt;img alt="Screenshot der MOTD von
+zoosau.de" src="{filename}images/motd_zoosau-150x150.png" title="motd_zoosau"&gt;{.size-thumbnail
+.wp-image-415 width="150"
+height="150"}&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;Heute laufen auf demselben Server, auf dem früher nur diese eine Domain,
+zoosau.de, lief schon 6.&lt;br&gt;
+Natürlich wollte ich die neuen 5 Domains immer auch gerne in diese Datei
+eintragen, jedoch fand ich auf Teufel komm raus den Kniff nicht mehr,
+wie das geht mit farbigem Text!&lt;br&gt;
+Heute bin ich der Sache endlich deutlich näher gekommen. Damit ich das
+nächste Mal nicht wieder umsonst Ewigkeiten suche, beschreibe ich das
+Vorgehen hier.&lt;/p&gt;
+&lt;p&gt;Zunächst öffnet man eine Datei, oder legt halt mit dem vim eine neue an.
+Will man nun ... sagen wir: Rot, blinkend und auf grünem Hintergrund
+schreiben, dann begibt man sich zunächst in den Insert - Modus (i) und
+drückt dann STRG+v , gefolgt von der "Pfeiltaste-nach-rechts"-Taste. Man
+sieht nun folgendes erscheinen: "\^[OC " , wobei der Teil "\^[" blau
+dargestellt wird (sofern Konsole und vim auf farbige Darstellung
+konfiguriert sind). Die letzten beiden Zeichen, das "OC" löscht man nun
+wieder - es geht um darum, das man die Escape-Character "\^[" erzeugt
+hat. Warum man nicht einfach "\^[" eintippt? Nun: Testet meine Methode
+und vergleicht das Ergebnis mit dem Vorgehen "\^[" nur einzutippen ;)
+Es wird dann halt als die Zeichen "\^[" eingefügt, nicht aber als die
+Kontrollzeichen. Diese werden nur als blaue "\^[" angezeigt; eigentlich
+stecken da ganz andere Codes hinter. Schwer zu erklären, einfach mal
+nach "escape sequences" googlen.&lt;/p&gt;
+&lt;p&gt;So, damit wird die Sequenz eingeleitet. Nun müssen wir eingeben, was wir
+darstellen wollen. Ein Blick in die Manpage von "dir_colors" gibt uns
+hier ein paar Möglichkeiten an die Hand. Man kann hier verschiedene
+Werte übergeben, welche durch ein ";" getrennt und durch ein weiteres
+"[" initialisiert werden. Für unser "Rote, blinkende Schrift auf grünem
+Grund" - Beispiel nehmen wir also "05;31;42" (05 = blinkender Text; 31 =
+rote Schrift im Vordergrund und 42 = Hintergrundfarbe grün).
+Anschließend wird ein "m" angehangen, um die Kontrollstruktur zu beenden
+und zu signalisieren "Jetzt kommt mein Text!". Bisher haben wir also:
+"\^[[05;31;42m"&lt;/p&gt;
+&lt;p&gt;Als kleines Beispiel schreibe ich nun einfach "&lt;em&gt;Ich bin haesslicher,
+blinkender Text auf einem unmoeglichen Hintergrund!&lt;/em&gt;" direkt hinter das
+"m". Dieser Text soll also gleich in unserer sehr eigenwilligen
+Farbkonstellation ausgegeben werden.&lt;/p&gt;
+&lt;p&gt;Genau wie die Escapesequenz eingeleitet und aktiviert wurde, muss sie
+nun auch wieder beendet werden um normalen Text schreiben zu können.
+Sonst hätte man am Ende ja nur eine große, blinkende, häßliche
+Textdatei, und das wollen wir wohl nicht ;)&lt;br&gt;
+Hierzu bedienen wir uns wieder der Tastenkombination STRG-v,
+"Pfeiltaste-nach-rechts" - Taste und dem löschen der Zeichen "OC". Als
+nächstes folgt noch ein "[0m". Die 0 setzt den Text wieder auf seine
+Standardeigenschaften zurück.&lt;br&gt;
+Zur Überprüfung schreibe ich in diesem Beispiel noch den Text "&lt;em&gt;Puh,
+endlich ist der Albtraum vorbei!&lt;/em&gt;" dahinter.&lt;/p&gt;
+&lt;p&gt;So, dann bewundern wir mal unser Werk: Abspeichern, vim verlassen und
+"cat Dateiname" eingeben.&lt;/p&gt;
+&lt;p&gt;Ich bin mir seeeeeehr sicher, das dieses HowTo vor inhaltlichen und
+fachlichen Ungenauigkeiten nur so strotzt. Ich habe jedoch bisher keine
+bessere Anleitung gefunden. Wer Fehler findet, kann mich gerne durch
+einen Kommentar korrigieren :)&lt;/p&gt;</content><category term="ascii art"></category><category term="bash"></category><category term="color"></category><category term="colour"></category><category term="escape"></category><category term="farbe"></category><category term="farbig"></category><category term="kommandozeile"></category><category term="Linux"></category><category term="motd"></category><category term="sequence"></category><category term="sequenz"></category><category term="vi"></category><category term="vim"></category></entry></feed>
